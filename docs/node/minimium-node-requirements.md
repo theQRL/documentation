@@ -4,7 +4,7 @@ title: QRL Node Requirements
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL Node Requirements
-sidebar_position: 3
+sidebar_position: 4
 pagination_label: QRL Node Requirements
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node Requirements
