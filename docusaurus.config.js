@@ -12,7 +12,10 @@ module.exports = {
   favicon: 'assets/favicon.svg',
   organizationName: 'theQRL', // Usually your GitHub org/user name.
   projectName: 'The Quantum Resistant Ledger', // Usually your repo name.
-  plugins: ['@docusaurus/theme-live-codeblock'],
+  plugins: [
+    '@docusaurus/theme-live-codeblock',
+
+  ],
   customFields: {
   },
   themeConfig: {

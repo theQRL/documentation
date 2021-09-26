@@ -23,7 +23,7 @@ Forming the basic structure for a trust-less network is a complicated thing, and
 
 The Peer-To-Peer network that is formed by the QRL nodes allows the basic foundational security to exist in the chain. Through some incredible math and an ultra-secure address scheme using post quantum cryptography QRL has created one of the most secure and trusted blockchains in existence today.
 
-Running a node is not a difficult task, and we cover it in detail in the [Node Section](#FIXME!). 
+Running a node is simple, see the [installation documentation](node-installation) to get started. 
 
 ## Functions
 
