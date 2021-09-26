@@ -29,14 +29,12 @@ The QRL Node can be configured using a config file (`~.qrl/config.yml`)saved in 
 
 This file allows modification of user configurable directives to be set such as changing the port in which the node listens for incoming transactions. 
 
-Below are explanations of the node configuration options. 
-
 :::tip
 The node must be restarted to pick up any modifications to the configuration if already running.
 :::
 
 
-### QRL Mining Configuration
+### QRL Mining Config
 
 This section covers all of the required settings needed to setup and mine QRL on a local node. This will use the local processor of the machine the node is running on.
 
@@ -78,7 +76,7 @@ mining_thread_count: 0
 
 
 
-###  Ephemeral Configuration
+###  Ephemeral Config
 
 Ephemeral messaging configuration details are shown below. 
 
@@ -118,7 +116,7 @@ outgoing_message_expiry: 90
 ```
 
 
-###  P2P Configuration
+###  P2P Config
 
 Configure the Peer to Peer settings.
 
@@ -353,7 +351,7 @@ stale_transaction_threshold: 15
 ```
 
 
-### Admin API Configuration
+### Admin API Config
 
 > FIXME! What is this directive for? ^^^
 
@@ -404,7 +402,7 @@ admin_api_max_concurrent_rpc: 100
 ```
 
 
-### Public API Configuration
+### Public API Config
 
 
 #### `public_api_enabled`
@@ -453,7 +451,7 @@ public_api_max_concurrent_rpc: 100
 
 
 
-### Mining API Configuration
+### Mining API Config
 
 #### `mining_api_enabled`
 
@@ -499,7 +497,7 @@ mining_api_threads: 1
 mining_api_max_concurrent_rpc: 100
 ```
 
-### Debug API Configurations
+### Debug API Config
 
 #### `debug_api_enabled`
 
@@ -545,7 +543,7 @@ debug_api_threads: 1
 debug_api_max_concurrent_rpc: 100
 ```
 
-###  GRPC Proxy Configuration
+###  GRPC Proxy Config
 
 #### `grpc_proxy_host`
 
@@ -569,7 +567,7 @@ grpc_proxy_host: "127.0.0.1"
 grpc_proxy_port: 18090
 ```
 
-### Wallet Daemon Configuration
+### Wallet Daemon Config
 
 #### `public_api_server`
 
@@ -610,7 +608,7 @@ number_of_slaves: 3
 ```
 
 
-### Wallet API Configuration
+### Wallet API Config
 
 #### `wallet_api_host`
 
@@ -648,7 +646,7 @@ wallet_api_threads: 1
 wallet_api_max_concurrent_rpc: 100
 ```
 
-## Example QRL Configuration
+## Example QRL Config
 
 ```yaml
 ## qrl conf.yml file
