@@ -12,6 +12,7 @@ keywords:
   - cryptography
   - xmss
 image: /assets/img/icons/yellow.png
+slug: /ots-keys
 
 ---
 
