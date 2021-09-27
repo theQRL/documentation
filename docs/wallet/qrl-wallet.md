@@ -26,25 +26,79 @@ Where the QRL wallet differs from most, and where the post quantum aspects come 
 XMSS is a hash based cryptography that's been around since the 70's and  recently has been [approved for use in cryptographic systems by NIST](https://csrc.nist.gov/publications/detail/sp/800-208/final). XMSS is considered to be one of the most secure quantum resistant algorithms in use today.
 
 
-:::info One Time Signature Keys
-OTS keys can only be used to sign one transaction. There are limited keys for an address depending on tree height. See the [OTS Documentation](ots-keys) for more. 
+:::info One Time Signature Keys *(OTS)*
+OTS keys can only be used to sign one transaction. There are limited keys for an address depending on tree height. See the [OTS Documentation](ots-keys) for more information. 
 :::
 
 ## QRL Wallet Applications
 
 <Tabs
-    defaultValue="ubuntu"
+    defaultValue="web"
+    className="unique-tabs"
+    groupId="wallets"
     values={[
-        {label: 'Ubuntu', value: 'ubuntu'},
+        {label: 'Web Wallet', value: 'web'},
+        {label: 'Desktop Wallet', value: 'desktop'},
+        {label: 'Mobile Wallet', value: 'mobile'},
+        {label: 'Ledger Wallet', value: 'ledger'},
+        {label: 'CLI Wallet', value: 'cli'},
     ]}>
 
-<TabItem value="ubuntu">
 
+<TabItem value="web" label="Web Wallet" default>
+
+#### QRL Web Wallet
+
+The QRL Web wallet is found at [https://wallet.theqrl.org](https://wallet.theqrl.org).
+
+:::tip Web Wallet Docs
+Check out the [Web Wallet documentation](docs/web/web-wallet)
+:::
+
+![QRL Web Wallet Open](/assets/img/docs/wallet/web/webWalletOpenSend.png)
+
+</TabItem>
+
+<TabItem value="desktop" label="Desktop Wallet">
+
+#### QRL Desktop Wallet
+
+Download the desktop wallet from the main [QRL Website](https://theqrl.org/downloads/) for most operating systems including MacOS and Linux.
+
+</TabItem>
+
+<TabItem value="mobile" label="Mobile Wallet">
+
+#### QRL Mobile Wallet
+
+THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
+
+> FIXME!! Need addresses and images for iOS and Android apps ^^^
+
+</TabItem>
+<TabItem value="ledger" label="Ledger Wallet">
+
+#### QRL Mobile Wallet
+
+THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
+
+> FIXME!! Need addresses and images for iOS and Android apps ^^^
 
 </TabItem>
 
 
-## Cryptographic Keys
+<TabItem value="cli" label="CLI Wallet">
+
+#### QRL CLI Wallet
+
+THe QRL CLI wallet is available through the QRL Node installation. 
+
+> FIXME!! ^^^
+
+</TabItem>
+</Tabs>
+
+## QRL Wallet Keys
 
 A QRL wallet is made up of a key pair, from which the Merkle tree of OTS keys are generated. These OTS keys are used to sign transactions, never exposing the root secret private key. 
 
@@ -62,7 +116,7 @@ The Public address represents the account and is what would be given to receive 
 
 ### Private Keys
 
-A private key is required to interact with the QRL blockchain, signing a transaction verifying it only originated using this key linked to the public address.
+A private key is required to interact with the QRL blockchain. This key is used to sign a transaction, verifying it originated using this key.Anyone with this key can send transactions on behalf of the address.
 
 The private keys can be represented in either a hexseed or a mnemonic phrase. Either can be used to restore a wallet and best practice should be followed to ensure the security of these keys.
 
@@ -75,21 +129,13 @@ Private keys can not be recovered or regenerated if lost. Without them, any fund
 
 #### Example QRL Mnemonic
 
+This list of 34 works represents the same key as the hexseed, with each word corresponding to an index location in the [QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp). This list is converted into binary/hexadecimal representation of the private keys.
+
 `absorb filled elder lake swing behind thirst ink easter lucy sinful viola judge flint sample bleak ransom supply very liquid silky tensor wild panel clue croft aroma duress nail gender milk myself devoid toward`
 
-### Example QRL Hexseed
+#### Example QRL Hexseed
 
 `010500457794dcc149e3570243d837c90f3b75252abeb17fb08db6f267fdc88e16fa29e72cc33a0b04259305bb8c692c3bde81`
 
 
 
-
-
-
-makeup the foundational security 
-
-Being Quantum Resistant comes with some inherent challenges. 
-
-
-
-Before creating your new wallet, there are a few quirks worth noting about QRL.

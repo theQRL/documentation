@@ -31,6 +31,7 @@ Follow the directions below to get started running a QRL Node.
 
 <Tabs
     defaultValue="ubuntu"
+    groupId="os"
     values={[
         {label: 'Ubuntu', value: 'ubuntu'},
         {label: 'MacOS', value: 'macos'},
@@ -54,11 +55,15 @@ sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-conf
 # Install latest setuptools
 pip3 install -U setuptools
 
+# Install latest service identity package
+pip3 install service-identity==21.1.0
+
 # Install QRL
 pip3 install -U qrl
 ```
 
-:::tip Recommended Installation Method
+:::tip 
+This is the recommended installation method, and most common way to run a QRL Node. Even functions in Windows subsystem for Linux.
 :::
 
 </TabItem>
@@ -85,6 +90,8 @@ pip3 install -U setuptools
 pip3 install -U qrl
 ```
 
+> FIXME!! Need to update install instructions for MacOS
+
 </TabItem>
 <TabItem value="redhat">
 
@@ -104,6 +111,10 @@ pip3 install -U setuptools
 # Install QRL
 pip3 install -U qrl
 ```
+
+> FIXME!! Need to update install instructions for MacOS
+
+
 </TabItem>
 </Tabs>
 

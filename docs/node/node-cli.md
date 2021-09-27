@@ -70,7 +70,7 @@ Commands:b
 
 You can browse even further into sub commands like:
 
-```
+```sh {1}
 qrl tx_transfer --help
 
 Usage: qrl tx_transfer [OPTIONS]
@@ -1020,6 +1020,10 @@ Number  Address                                                                 
 ### wallet_secret
 
 Gives the secret keys via mnemonic and hexseed for a given wallet.json index id. This index starts at 0, and counts up for each address in the wallet.json file. You can see the index with the [`wallet_ls`](#wallet_ls) command.
+
+:::warning Contains Secret Keys 
+This command outputs the secret keys for the address. Anyone with these keys can send transactions from this address.
+:::
 
 #### Help
 
