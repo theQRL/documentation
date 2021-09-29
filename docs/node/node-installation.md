@@ -99,17 +99,39 @@ pip3 install -U qrl
 Installation instructions for the QRL Node on Ubuntu.
 
 ```bash
-# Update && Upgrade Software Packages
-sudo apt update && sudo apt upgrade -y
+# Update packages
+sudo dnf update
 
-# Install the required packages for QRL
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake
+# Enable developer tools Codeready linux Builder repo
+subscription-manager repos --enable codeready-builder-for-rehl-8-x86_64-rpms
+
+# Install requirements
+sudo dnf install swig cmake gcc gcc-c++ redhat-rpm-config python36-devel python2-devel dnf-plugins-core boost-devel openssl-devel hwloc-devel
+
+# Install latest CMAKE-3.21 from sources
+## First remove old cmake if exists
+sudo dnf remove cmake
+## Get the latest cmkake
+wget https://github.com/Kitware/CMake/releases/download/v3.21.3/cmake-3.21.3.tar.gz
+## Extract the files
+tar -xfz cmake-3.21.3.tar.gz
+## Enter the directory and bootstrap the build and install the latest
+cd cmake-3.21.3.tar.gz && ./bootstrap && make && sudo make install
+
+# Upgrade pip to latest
+pip3 install --user --upgrade pip
+
+# Install latest service identity package
+pip3 install --user service-identity==21.1.0
+
+# Install latest wheel package
+pip3 install --user wheel
 
 # Install latest setuptools
-pip3 install -U setuptools
+pip3 install --user -U setuptools
 
 # Install QRL
-pip3 install -U qrl
+pip3 install --user -U qrl
 ```
 
 > FIXME!! Need to update install instructions for MacOS
