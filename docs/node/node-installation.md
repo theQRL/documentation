@@ -81,10 +81,13 @@ Installation instructions for the QRL Node on MacOS. Tested with the latest MacO
 brew update
 
 # Install Required Packages
-brew install python3 swig boost hwloc leveldb openssl gcc cmake
+brew install python3 swig boost hwloc leveldb openssl gcc cmake xcodegen
 
 # Install latest setuptools
 pip3 install -U setuptools
+
+# Install latest service identity package
+pip3 install --user service-identity==21.1.0
 
 # Install QRL
 pip3 install -U qrl
@@ -103,10 +106,10 @@ Installation instructions for the QRL Node on Ubuntu.
 sudo dnf update
 
 # Enable developer tools Codeready linux Builder repo
-subscription-manager repos --enable codeready-builder-for-rehl-8-x86_64-rpms
+subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
 # Install requirements
-sudo dnf install swig cmake gcc gcc-c++ redhat-rpm-config python36-devel python2-devel dnf-plugins-core boost-devel openssl-devel hwloc-devel
+sudo dnf install swig make gcc gcc-c++ redhat-rpm-config python36-devel python2-devel dnf-plugins-core boost-devel openssl-devel hwloc-devel
 
 # Install latest CMAKE-3.21 from sources
 ## First remove old cmake if exists
@@ -114,9 +117,9 @@ sudo dnf remove cmake
 ## Get the latest cmkake
 wget https://github.com/Kitware/CMake/releases/download/v3.21.3/cmake-3.21.3.tar.gz
 ## Extract the files
-tar -xfz cmake-3.21.3.tar.gz
+tar -xvf cmake-3.21.3.tar.gz
 ## Enter the directory and bootstrap the build and install the latest
-cd cmake-3.21.3.tar.gz && ./bootstrap && make && sudo make install
+cd cmake-3.21.3 && ./bootstrap && make && sudo make install
 
 # Upgrade pip to latest
 pip3 install --user --upgrade pip
@@ -143,9 +146,11 @@ pip3 install --user -U qrl
 
 ## Running QRL
 
-After successful installation of the QRL node the command line tools are available without syncing the node. 
+After successful installation of the QRL node the command line tools are available immediately. For more information see the [Node CLI Documentation](node-cli).
 
-For more information see the [Node CLI Documentation](node-cli)
+The node software runs in the current shell, to run the node in the background, use something like `screen` to disconnect the shell from the running node allowing syncing to happen in the background.
+
+See the [screen documentation](https://www.gnu.org/software/screen/manual/screen.html) for more information and installation instructions.
 
 #### `start_qrl`
 
@@ -154,6 +159,8 @@ To begin the syncing process run the node software.
 ```sh
 start_qrl
 ```
+
+Output looks something like this.
 
 ```
 2021-09-25 18:22:28,045|2.1.2 python|unsynced|MainThread | INFO : grpc public service - started !
