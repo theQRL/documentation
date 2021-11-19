@@ -1,5 +1,8 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -14,6 +17,8 @@ module.exports = {
   projectName: 'The Quantum Resistant Ledger', // Usually your repo name.
   plugins: [
     '@docusaurus/theme-live-codeblock',
+    '@docusaurus/plugin-ideal-image',
+
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // whether to index docs pages
       indexDocs: true,
@@ -150,6 +155,8 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           // Please change this to your repo.
           editUrl:
             'https://github.com/theqrl/documentation/edit/master/',
@@ -159,5 +166,13 @@ module.exports = {
         },
       },
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      integrity:
+        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+      crossorigin: 'anonymous',
+    },
   ],
 };
