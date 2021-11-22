@@ -41,13 +41,12 @@ These are the basic functions of the node.
 - Sending transactions
 - Validating funds in wallets
 
-### Node Transactions
+### Broadcasting Transactions
 
 A node is interacted with every time a transaction is sent to the network, no matter the source. 
 
 For instance, the wallet software uses a private key to sign a transaction which is then sent to the network via a QRL node operated by the foundation. The node listens for these incoming transactions from the wallet application from users and broadcasts them to be minted into a future block.
 
-#### Broadcasting Transactions
 
 When a new transaction is created the node runs through a few verification checks prior to sending the transaction to the mempool. If the address OTS key used to sign the transaction is already known to the blockchain the node will reject the transaction, protecting the address from broadcasting a OTS key re-use.
 
@@ -57,8 +56,9 @@ OTS key information can be found in the [OTS Key Documentation](#)
 
 If there are enough funds in the address to cover the fee and any fund transfer the node will send the transaction to it's peers to be added to the next available block. 
 
-#### Chain Data Lookup
+### Chain Data Lookup
 
 When an address balance is looked up or a  transaction is verified, this is simply looking at the history in the chain for the address/transaction involved. All of this data is stored on the chain and is validated and agreed upon by a majority of nodes in the network. 
 
 These transactions are stored in the nodes chain state files which compose a level database that has been verified through a p2p syncing process. These historical transactions are validated by verifying cryptographic hashes provided by peers on the network.
+

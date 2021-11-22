@@ -13,5 +13,4 @@ keywords:
   - intro
 image: /assets/img/icons/yellow.png
 slug: /integrations
-
 ---
