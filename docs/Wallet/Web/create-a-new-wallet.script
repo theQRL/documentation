@@ -1,0 +1,73 @@
+Desktop wallet script
+
+
+# INTRODUCTION
+
+Welcome to the QRL Video Documentation series
+
+I'm your host Fr1t2, lead technical documentation writer and developer for the QRL.
+
+Today I will be walking through creating a wallet on the QRL web application found at wallet.theqrl.org  
+
+Don't worry it's easy and wont take much time at all
+
+Once you are done you will have a quantum safe wallet to stack your quanta. 
+
+
+# ASSUMPTIONS
+
+This guide assumes you have installed the qrl desktop application
+
+If you have not done this already please go download and install the software now
+
+Now lets get started...
+
+# STEPS
+
+Open the application
+
+Along the left hand side you will see available wallet options
+
+select the New wallet tab and enter a passphrase 
+
+This will be used to encrypt the wallet file if you chose
+
+you can leave the settings at default values which will create a wallet with 1024  OTS keys available.
+
+Click the create wallet button and wait for the cryptographic keys to generate
+
+Next you are presented with details of your new wallet you will need to save
+
+On top we have the public address
+
+this is safe to share with others and is how you will receive quanta to this wallet
+
+next we have the mnemonic phrase and hex seed.
+
+these are both considered your private key and either will unlock your wallet
+
+make sure you save these in a safe place and never share them with anyone
+
+There are also options to save a wallet file named wallet.json both plain text and encrypted 
+
+Don't lose the passphrase you entered if you save the encrypted file
+
+there is really nothing anyone can do to recover an encrypted wallet file if the passphrase is lost
+
+Save these details and once done select open wallet
+
+Now you will need to enter the private keys or wallet.json file to open the new wallet
+
+enter your details click unlock wallet and your new wallet opens
+
+
+
+# CLOSE
+
+Make sure to backup any private keys and wallet files in multiple places and 
+
+always make sure you can open your new wallet from your backup before you send any funds.
+
+Enjoy your new wallet
+
+
