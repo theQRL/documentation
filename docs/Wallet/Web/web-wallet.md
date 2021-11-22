@@ -1,34 +1,40 @@
 ---
-# What is the web wallet
-# Use cases w/links
-# How is the wallet secure
-# Best Practices
+id: web-wallet
+title: QRL Web Walet
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: QRL Web Walet 
+sidebar_position: 1
+pagination_label: QRL Web Walet
+custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+description: QRL Web Walet
+keywords:
+  - docs
+  - Web Wallet
+image: /assets/img/icons/yellow.png
+slug: /wallet/web
 ---
 
-# The QRL Web Wallet
 
+The QRL web wallet allows a user to create new addresses, open and transact with the network as well as access to all of the on chain tools. 
 
+Visit the [Web Wallet](https://wallet.theqrl.org) for access to the quantum resistant ledger network.
 
+:::note
+The wallet is secure with all private funcctions happening locally on the users computer.
+:::
 
-#### Best Wallet Practices 
+Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few quirks worth noting about QRL. 
+
+* The QRL uses hash based cryptography, and due to this requires a new signature for each transaction.
+* 
+
+## Best Wallet Practices 
+
 * Track all OTS Keys used in a spreadsheet *(ledger)* or paper file
 * Backup the wallet onto paper or other physical media 
 * Store your private keys somewhere safe offline
 
-
-
-
-
-
-* Setting up a new wallet
-
-* Sending a transaction over the network - *(Send QRL)*
-
-* Receiving a transaction over the network - *(Get QRL)*
-
-* Checking transaction details on the QRL Explorer, including your current wallet balance
-
-Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few quirks worth noting about QRL. 
  
 ## OTS Key Index
 

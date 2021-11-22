@@ -1,9 +1,19 @@
 ---
-# Transfer funds - 
-# Send
-# Receive
+id: send-funds
+title: QRL Web Walet - Send Funds
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: QRL Web Walet - Send Funds 
+sidebar_position: 3
+pagination_label: QRL Web Walet - Send Funds
+custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+description: QRL Web Walet - Send Funds
+keywords:
+  - docs
+  - Send Funds
+image: /assets/img/icons/yellow.png
+slug: /wallet/web/send-funds
 ---
-
 
 ## Send QRL
 

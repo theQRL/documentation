@@ -1,10 +1,22 @@
 ---
-# Explain wallet options; tree height, hash function
-# Saving wallet file / Recording keys
+id: create-new-wallet
+title: QRL Web Walet - Create New
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: QRL Web Walet - Create New 
+sidebar_position: 2
+pagination_label: QRL Web Walet - Create New
+custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+description: QRL Web Walet - Create New
+keywords:
+  - docs
+  - New Wallet
+image: /assets/img/icons/yellow.png
+slug: /wallet/web/create-new-wallet
 ---
 
 
-# Create a New QRL Web Wallet
+From the main QRL web wallet menu, select new wallet to begin.
 
 Enter a strong password into the password field. The password must be at least 8 characters in length, and must contain at least 1 number and 1 letter
 
