@@ -25,7 +25,7 @@ module.exports = {
       // must start with "/" and correspond to the routeBasePath configured for the docs plugin
       // use "/" if you use docs-only-mode
       // (see https://v2.docusaurus.io/docs/2.0.0-alpha.70/docs-introduction#docs-only-mode)
-      docsRouteBasePath: '/docs',
+      docsRouteBasePath: '/',
 
       // Whether to also index the titles of the parent categories in the sidebar of a doc page.
       // 0 disables this feature.
@@ -34,7 +34,9 @@ module.exports = {
       // 3...
       //
       // Do _not_ use Infinity, the value must be a JSON-serializable integer.
-      indexDocSidebarParentCategories: 3,
+      indexDocSidebarParentCategories: 4,
+
+
 
       // whether to index blog pages
       indexBlog: false,
@@ -67,10 +69,12 @@ module.exports = {
         tokenizerSeparator: /[\s\-]+/
       }
     }],
+     
   ],
   customFields: {
   },
   themeConfig: {
+    hideableSidebar: true,    
     liveCodeBlock: {
       /**
        * The position of the live playground, above or under the editor
@@ -86,12 +90,12 @@ module.exports = {
       },
       items: [
         {
-          to: '/docs', 
+          to: '/', 
           label: 'Docs', 
           position: 'left'
         },
         {
-          to: '/docs/tutorials', 
+          to: '/tutorials', 
           label: 'Tutorials', 
           position: 'left'
         },
@@ -110,7 +114,7 @@ module.exports = {
           items: [
             {
               label: 'Docs',
-              to: '/docs',
+              to: '/',
             },
           ],
         },
@@ -141,7 +145,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Quantum Resistant Ledger. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -155,11 +159,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/', // Set this value to '/'.
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/theqrl/documentation/edit/master/',
+            'https://github.com/theqrl/documentation/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -1,11 +1,12 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-config
 title: QRL Node Configuration
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node Config
-sidebar_position: 3
-pagination_label: QRL Node Config
+sidebar_label: QRL Node - Config
+sidebar_position: 4
+pagination_label: QRL Node - Config
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node Configuration
 keywords:
@@ -17,6 +18,9 @@ image: /assets/img/icons/yellow.png
 slug: /node/node-config
 ---
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 The QRL node allows custom configurable settings to be established by user directives. These configuration settings guide how the node functions and allows for custom integration.
 

@@ -1,21 +1,25 @@
 ---
-id: backup-desktop-wallet
-title: Backup Desktop Wallet
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: desktop-wallet-backup
+title: QRL Desktop Wallet - Backup
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: Backup Desktop Wallet
-sidebar_position: 2
-pagination_label: Backup Desktop Wallet
+sidebar_label: Desktop Wallet - Backup
+sidebar_position: 4
+pagination_label: Desktop Wallet - Backup
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: Backup Desktop Wallet
+description: Desktop Wallet - Backup
 keywords:
   - wallet
   - Backup Desktop Wallet
   - Backup
 image: /assets/img/icons/yellow.png
-slug: /wallet/backup-desktop-wallet
+slug: /wallet/desktop/desktop-wallet-backup
 ---
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 The process to backup the Desktop wallet is simple. The software gives a few options for backing up an address during address creation. Additionally after the wallet is created the recovery seed can be displayed for backup. 
 
