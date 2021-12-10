@@ -1,23 +1,29 @@
 ---
-id: ledger-nano
-title: Ledger Nano
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: ledger-wallet
+title: Ledger Wallet
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: Ledger Nano
+sidebar_label: Ledger Wallet
 sidebar_position: 1
-pagination_label: Ledger Nano
+pagination_label: Ledger Wallet
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: The QRL Ledger Nano Wallet documentation
+description: The QRL Ledger Wallet documentation
 keywords:
   - docs
   - wallet
   - ledger
 image: /assets/img/icons/yellow.png
-slug: /wallet/ledger/ledger-nano
+slug: /wallet/ledger
 ---
 
 
-The QRL development team has added some new features with the latest release we are very excited about. 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
+
+The QRL development team have built into the ledger allowing users to store their QRL on the Ledger line of devices. 
 
 * Support for Ledger [Nano S](https://shop.ledger.com/products/ledger-nano-s) and [Nano X](https://shop.ledger.com/pages/ledger-nano-x)
 * Multi-Tree support

@@ -1,11 +1,12 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-uses
 title: QRL Node Uses
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node Uses
+sidebar_label: QRL Node - Uses
 sidebar_position: 6
-pagination_label: QRL Node Uses
+pagination_label: QRL Node - Uses
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node Uses
 keywords:
@@ -14,6 +15,11 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /node/node-uses
 ---
+
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 Ruining a valid, up to date node client will by it's very presence in the blockchain process help secure the network and any transactions routed through the node. We covered the basic functions of the node in previous documents. This document will dive deeper into the uses of a QRL Node.
 

@@ -1,4 +1,27 @@
-# Send QRL Using Desktop Wallet
+---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: desktop-wallet-send
+title: QRL Desktop Wallet - Send
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Desktop Wallet - Send
+sidebar_position: 6
+pagination_label: Desktop Wallet - Send
+custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+description: Desktop Wallet - Send Funds
+keywords:
+  - docs
+  - wallet
+  - Desktop
+  - Send Funds
+image: /assets/img/icons/yellow.png
+slug: /wallet/desktop/desktop-wallet-send
+---
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
 
 Send funds using the desktop wallet
 
