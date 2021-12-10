@@ -1,19 +1,27 @@
 ---
-id: send-funds
-title: QRL Web Walet - Send Funds
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: web-wallet-send
+title: QRL Web Wallet - Send Funds
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Web Walet - Send Funds 
-sidebar_position: 3
-pagination_label: QRL Web Walet - Send Funds
+sidebar_label: Web Wallet - Send 
+sidebar_position: 5
+pagination_label: Web Wallet - Send
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Web Walet - Send Funds
+description: QRL Web Wallet - Send Funds
 keywords:
   - docs
+  - Web Wallet
   - Send Funds
 image: /assets/img/icons/yellow.png
-slug: /wallet/web/send-funds
+slug: /wallet/web/web-wallet-send
 ---
+
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
 
 ## Send QRL
 

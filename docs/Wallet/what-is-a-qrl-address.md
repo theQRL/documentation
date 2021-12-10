@@ -1,4 +1,5 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: what-is-a-qrl-address
 title: What is a QRL Address
 hide_title: false
@@ -16,6 +17,9 @@ image: /assets/img/icons/yellow.png
 slug: /wallet/what-is-a-qrl-address
 ---
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 The QRL address is a fundamental building block to the ecosystem. The address is responsible for representing the public location 
 

@@ -1,4 +1,5 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: initial-ledger-setup
 title: Initial Ledger Setup
 hide_title: false
@@ -15,3 +16,7 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /wallet/ledger/initial-ledger-setup
 ---
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::

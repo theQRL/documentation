@@ -1,11 +1,12 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-installation
 title: QRL Node Installation
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node Installation
-sidebar_position: 2
-pagination_label: QRL Node Installation
+sidebar_label: QRL Node - Installation
+sidebar_position: 3
+pagination_label: QRL Node - Installation
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node Installation
 keywords:
@@ -15,6 +16,12 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /node/node-installation
 ---
+
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

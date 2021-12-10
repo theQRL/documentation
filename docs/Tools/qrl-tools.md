@@ -1,4 +1,5 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-tools
 title: QRL Tools
 hide_title: false
@@ -12,5 +13,10 @@ keywords:
   - docs
   - tools
 image: /assets/img/icons/yellow.png
-slug: /tools
+slug: /tools/
 ---
+
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::

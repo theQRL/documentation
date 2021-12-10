@@ -1,4 +1,5 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-wallet
 title: QRL Wallet
 hide_title: false
@@ -6,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL wallet
 sidebar_position: 1
 pagination_label: QRL wallet
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
 description: QRL wallet
 keywords:
   - docs
@@ -15,15 +16,20 @@ image: /assets/img/icons/yellow.png
 slug: /wallet
 ---
 
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import PartialExample from './_open-wallet.md';
 import Image from '@theme/IdealImage';
 
 import thumbnail from './assets/img/desktop/desktopWallet.png';
 
 
-<PartialExample name="" />
+
 
 
 
@@ -116,11 +122,11 @@ THe QRL mobile wallet is available on both iOS and Android. Search in the applic
 </TabItem>
 <TabItem value="ledger" label="Ledger Wallet">
 
-#### QRL Mobile Wallet
+#### QRL Ledger Wallet
 
-THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
+THe QRL Ledger wallet one of the most secure methods to store QRL.
 
-> FIXME!! Need addresses and images for iOS and Android apps ^^^
+> FIXME!! Ledger Image and links to buy ^^^
 
 </TabItem>
 
@@ -157,6 +163,10 @@ The Public address represents the account and is what would be given to receive 
 ```
 Q010500cf8971ae2f24cecc4296a23c24277bd107dbbc630bc0799dca65f9c25449d781148b7a85
 ```
+
+:::info QRL PUBLIC KEY
+Public keys are safe to share with trusted parties you will be transacting with. Use this to request funds from another user or to deposit funds yourself. 
+:::
 
 ### Private Keys
 

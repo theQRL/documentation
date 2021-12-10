@@ -1,11 +1,12 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-requirements
 title: QRL Node Requirements
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node Requirements
-sidebar_position: 4
-pagination_label: QRL Node Requirements
+sidebar_label: QRL Node - Requirements
+sidebar_position: 2
+pagination_label: QRL Node - Requirements
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node Requirements
 keywords:
@@ -15,6 +16,10 @@ image: /assets/img/icons/yellow.png
 slug: /node/node-requirements
 ---
 
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 In order to run a QRL node, the computer must meet some basic requirements. This doc will cover these minimum requirements and give some known working examples.
 

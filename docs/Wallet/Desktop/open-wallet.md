@@ -1,4 +1,26 @@
-# Open Desktop Wallet
+---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: desktop-wallet-open
+title: QRL Desktop Wallet - Open
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Desktop Wallet - Open
+sidebar_position: 5
+pagination_label: Desktop Wallet - Open
+custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+description: Desktop Wallet - Open
+keywords:
+  - docs
+  - wallet
+  - Desktop
+image: /assets/img/icons/yellow.png
+slug: /wallet/desktop/desktop-wallet-open
+---
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
 
 To access a wallet using the desktop application you will need to install the [Desktop Application](#) and have your private keys available, either in mnemonic, hex, or a wallet.json file.
 
