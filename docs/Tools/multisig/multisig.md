@@ -41,7 +41,8 @@ A family account where either party in the group is authorized to spend from the
 
 For each additional member to the example below, add each parties address and set the weight to 1. Leaving the threshold at one means that any one of the signatories can spend funds from teh address.
 
-:::info 2 party Joint Account setup
+2 party Joint Account setup
+
 | Input | Value | 
 | --- | --- |
 |**Signatory** | Both party's are setup as a signatory |
@@ -49,7 +50,6 @@ For each additional member to the example below, add each parties address and se
 |**Threshold to Spend** | 1 |
 |**Fee** | 0.01 |
 |**OTS Key Index**| {NEXT UNUSED} |
-:::
 
 This will use an OTS key from the originating address to broadcast the [multisig create transaction](#).
 
@@ -62,7 +62,6 @@ This comes with the added OTS key usage to spend funds as it requires both a [Sp
 
 
 ### Board Of Directors - Majority 
-
 
 A board or group of people with a minimum quorum needed to approve the spend (greater than 50% of the group). Any member in the group can propose the spend, with 
 
