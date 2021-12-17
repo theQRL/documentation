@@ -1,19 +1,19 @@
 ---
 docstatus: DRAFT
-id: qrl-maintenance 
-title: QRL Maintenance
+id: node-update
+title: QRL Node Update
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Maintenance
+sidebar_label: QRL Node Update
 sidebar_position: 1
-pagination_label: QRL Maintenance
+pagination_label: QRL Node Update
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Maintenance
+description: QRL Node Update
 keywords:
   - docs
-  - maintenance
+  - Node Update
 image: /assets/img/icons/yellow.png
-slug: /maintenance
+slug: /maintenance/node-update
 
 ---
 
