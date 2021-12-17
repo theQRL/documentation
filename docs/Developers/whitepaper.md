@@ -1,21 +1,20 @@
 ---
 docstatus: DRAFT
-id: ots
-title: OTS Keys
+id:  whitepaper
+title: QRL Whitepaper
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: OTS Keys
+sidebar_label: QRL Whitepaper
 sidebar_position: 2
-pagination_label: OTS Keys
+pagination_label: QRL Whitepaper
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: OTS Keys documentation for the Quantum Resistant Ledger.
+description: QRL Whitepaper
 keywords:
   - docs
   - Advanced
-  - One Time Signature
-  - OTS
+  - QRL 
 image: /assets/img/icons/yellow.png
-slug: /developers/ots
+slug: /developers/whitepaper
 ---
 
 :::caution DOCUMENT STATUS 

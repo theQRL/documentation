@@ -5,7 +5,7 @@ title: QRL-CLI
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL-CLI
-sidebar_position: 2
+sidebar_position: 5
 pagination_label: QRL-CLI
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL-CLI documentation for the Quantum Resistant Ledger.
