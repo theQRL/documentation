@@ -1,18 +1,17 @@
 ---
 docstatus: DRAFT
 id: qip
-title: QRL Improvement Proposal - QIP
+title: QRL Improvement Proposal (QIPs)
 hide_title: false
 hide_table_of_contents: false
-sidebar_label:  QIP 
-sidebar_position: 11
-pagination_label:  QIP 
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description:  QIP 
+sidebar_label: QRL Improvement Proposal
+sidebar_position: 1
+pagination_label: QRL Improvement Proposal
+custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
+description: QRL Improvement Proposal
 keywords:
-  - docs
-  - Advanced
-  - QIP  
+  - cryptography
+  - xmss
 image: /assets/img/icons/yellow.png
 slug: /developers/qip
 ---
@@ -20,6 +19,7 @@ slug: /developers/qip
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
+
 
 QRL Improvement Proposals (QIPs) are open proposals put forward to improve the QRL core-protocol and other components of the QRL system.
 
@@ -50,17 +50,17 @@ Anyone can and is encouraged to submit a QRL Improvement Proposal (QIP) if they 
 
 Once an idea is put by the community, the QRL Improvement Proposal (QIP) starts and remains as a draft until it's to the point where the authors are happy with it (such as where it will likely gain widest acceptance) and which is sufficiently specified to the satisfaction of the QIP custodians Jack Matier (@jackalyst), James Gordon (@fr1t2), and JP Lomas (@jplomas).  
 
-At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our '[qip-workflow](qip-workflow.md)' document.
+At this point the QIP enters a proposal, and parameters are set for on-chain governance. More can be read in our [qip-workflow](./QIP/qip-workflow) document.
 
 ## How to submit
 
-Please see the [qip-workflow](qip-workflow.md) for a detailed submission process guide.
+Please see the [qip-workflow](./QIP/qip-workflow) for a detailed submission process guide.
 
 Other important documents include:
 
-- [qips/reference](qips/reference.md): Reference QIP to duplicate and build off of.
-- [qip-template](qip-template.md): Includes a kitchen sink of everything that can be included in a QIP.
-- [qip-specification](qip-specification.md): Expands on the specification of each section.
+- [qips/reference](./QIP/qip-reference): Reference QIP to duplicate and build off of.
+- [qip-template](./QIP/qip-template): Includes a kitchen sink of everything that can be included in a QIP.
+- [qip-specification](./QIP/qip-specification): Expands on the specification of each section.
 
 ## Special thanks
 

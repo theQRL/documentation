@@ -20,3 +20,8 @@ slug: /tools/explorer/
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
+
+
+The Block Explorer is a portal into the blockchain allowing users to lookup information from the chain.
+
+The explorer is connected through a QRL node and parses data directly from the immutable data contained in the chain. Any transaction, address with funds, mining payouts etc. are all stored and accessible through the explorer. 

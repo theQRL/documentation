@@ -22,7 +22,6 @@ module.exports = {
         'Learn/what-is-qrl',
         'Learn/ots-keys',
         'Learn/qrl-emission',
-        'Learn/qip',
         {
           // Basics category for things like what is QRL, blockchain, XMSS OTS keys, Quantum Threat etc
           type: 'category',

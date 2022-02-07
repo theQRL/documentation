@@ -58,7 +58,6 @@ The QRL Foundation provides a multitude of wallet applications including support
         {label: 'Desktop Wallet', value: 'desktop'},
         {label: 'Mobile Wallet', value: 'mobile'},
         {label: 'Ledger Wallet', value: 'ledger'},
-        {label: 'CLI Wallet', value: 'cli'},
     ]}>
 
 <TabItem value="web" label="Web Wallet" default>
@@ -69,14 +68,14 @@ The QRL Foundation provides a multitude of wallet applications including support
 This is the QRL Web wallet developed by The QRL team, hosted at [https://wallet.theqrl.org](https://wallet.theqrl.org).
 
 :::note Web Wallet Docs
-Check out the [Web Wallet documentation](Wallet/Web/web-wallet) for detailed usage and more information.
+Check out the [Web Wallet documentation](wallet/web) for detailed usage and more information.
 :::
 
 
 - Built securely using [Meteor](https://www.meteor.com/), [Semantic UI](https://semantic-ui.com/), [NodeJS](https://nodejs.org/en/) and [Electron](https://electronjs.org/)
 - All secure XMSS operations are run in a web assembly compiled version of [qrllib](https://github.com/theQRL/qrllib) locally in your browser
 - Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window
-- Code is all open source and can be found at https://github.com/theqrl/
+- Code is all open source, [3rd party audited](https://github.com/theQRL/audits) and can be found at https://github.com/theqrl/
 
 [<Image img={require('./assets/img/web/webWalletOpenSend.png')} quality="85"/>](https://wallet.theqrl.org)
 
@@ -89,7 +88,7 @@ Check out the [Web Wallet documentation](Wallet/Web/web-wallet) for detailed usa
 This is the QRL Desktop wallet application developed by The QRL team, identical to the web wallet in most ways and developed to run on most modern operating systems.
 
 :::note Desktop Wallet Docs
-Check out the [Desktop Wallet documentation](wallet/desktop/desktop-wallet) for detailed usage and more information.
+Check out the [Desktop Wallet documentation](wallet/desktop) for detailed usage and more information.
 
 :::
 
@@ -97,7 +96,7 @@ Check out the [Desktop Wallet documentation](wallet/desktop/desktop-wallet) for 
 - Built securely using [Meteor](https://www.meteor.com/), [Semantic UI](https://semantic-ui.com/), [NodeJS](https://nodejs.org/en/) and [Electron](https://electronjs.org/)
 - All secure XMSS operations are run in a web assembly compiled version of [qrllib](https://github.com/theQRL/qrllib) locally in your browser
 - Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window
-- Code is all open source and can be found at https://github.com/theqrl/
+- Code is all open source, [3rd party audited](https://github.com/theQRL/audits) and can be found at https://github.com/theqrl/
 
 
 [<Image img={require('./assets/img/desktop/desktopWallet.png')} quality="85"/>](https://github.com/theQRL/qrl-wallet/releases/latest)
@@ -114,8 +113,11 @@ Click on the image above to go to the downloads or grab them from the main [QRL 
 
 THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
 
-[<Image img={require('./Mobile/assets/android1.webp')} quality="85"/>](https://itunes.apple.com/us/app/qrl-wallet/id1458620542?ls=1&mt=8)
+:::note Desktop Wallet Docs
+Find the [QRL Mobile Wallet documentation here](wallet/mobile) for detailed usage and more information.
+:::
 
+[<Image img={require('./Mobile/assets/android1.webp')} quality="85"/>](https://itunes.apple.com/us/app/qrl-wallet/id1458620542?ls=1&mt=8)
 
 > FIXME!! Need addresses and images for iOS and Android apps ^^^
 
@@ -124,23 +126,20 @@ THe QRL mobile wallet is available on both iOS and Android. Search in the applic
 
 #### QRL Ledger Wallet
 
-THe QRL Ledger wallet one of the most secure methods to store QRL.
+The QRL Ledger wallet is considered one of the most secure methods to store QRL. 
 
-> FIXME!! Ledger Image and links to buy ^^^
+Hardware storage requires user interaction for any on-chain functions and signs all transactions on device, never exposing the secret keys. The QRL Ledger integration provides 2 QRL address trees that can vbe used to stack QRL. 
 
-</TabItem>
+[<Image img={require('./assets/img/ledger/QRL-ledger.png')} quality="85"/>](https://shop.ledger.com/products/ledger-nano-s)
 
-
-<TabItem value="cli" label="CLI Wallet">
-
-#### QRL CLI Wallet
-
-THe QRL CLI wallet is available through the QRL Node installation. 
-
-> FIXME!! ^^^
+:::note Desktop Wallet Docs
+There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](wallet/ledger).
+:::
 
 </TabItem>
 </Tabs>
+
+
 
 ## QRL Wallet Keys
 
@@ -194,4 +193,7 @@ absorb filled elder lake swing behind thirst ink easter lucy sinful viola judge 
 010500457794dcc149e3570243d837c90f3b75252abeb17fb08db6f267fdc88e16fa29e72cc33a0b04259305bb8c692c3bde81
 ```
 
+:::note
+More information on the [QRL address scheme](developers/address/qrl-address-scheme), the [Hash based cryptography used](basics/cryptography). Also the [Whitepaper ](https://github.com/theQRL/Whitepaper) is a great resource.
+:::
 

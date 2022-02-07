@@ -1,16 +1,17 @@
 ---
-id: keybase-io
-title: Keybase.io
+id: league-of-entropy
+title: League of Entropy
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: Keybase.io
+sidebar_label: League of Entropy
 sidebar_position: 1
-pagination_label: Keybase.io
+pagination_label: League of Entropy
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: Overview of the Keybase identity system and QRL
+description: League of Entropy
 keywords:
   - docs
-  - keybase
+  - LoE
 image: /assets/img/icons/yellow.png
-
+slug: /integrations/league-of-entropy
 ---
+
