@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-wallet
 title: QRL Wallet
 hide_title: false
@@ -16,9 +16,8 @@ image: /assets/img/icons/yellow.png
 slug: /wallet
 ---
 
-
 :::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs review!</span>
 :::
 
 
@@ -27,11 +26,6 @@ import TabItem from '@theme/TabItem';
 import Image from '@theme/IdealImage';
 
 import thumbnail from './assets/img/desktop/desktopWallet.png';
-
-
-
-
-
 
 The Quantum Resistant Ledger's wallet functions similar to other cryptocurrencies in which there are both public and private keys that represent an address. Where the QRL wallet differs from most, and where the post quantum security derives, is the signature scheme used.
 
@@ -48,6 +42,9 @@ See the [OTS Documentation](ots-keys) for more information.
 
 The QRL Foundation provides a multitude of wallet applications including support for the Ledger Nano through the desktop application.
 
+All of the wallets listed here are supported by the project and all can send quanta, the base currency of the Quantum Resistant Ledger. Some may provide advanced functionality and access to new features.
+
+---
 
 <Tabs
     defaultValue="web"
@@ -60,10 +57,11 @@ The QRL Foundation provides a multitude of wallet applications including support
         {label: 'Ledger Wallet', value: 'ledger'},
     ]}>
 
+
 <TabItem value="web" label="Web Wallet" default>
 
 
-### QRL Web Wallet
+#### QRL Web Wallet
 
 This is the QRL Web wallet developed by The QRL team, hosted at [https://wallet.theqrl.org](https://wallet.theqrl.org).
 
@@ -141,44 +139,61 @@ There is an additional address space that can be unlocked to extend the amount o
 
 
 
-## QRL Wallet Keys
+## QRL Wallet Security
 
-A QRL wallet is made up of a key pair, from which the Merkle tree of OTS keys are generated. These OTS keys are used to sign transactions, never exposing the root secret private key. 
+All QRL wallets are made up of a cryptographic key pair, or *public* and *private* keys, from which the Merkle tree of One Time Signature keys are generated. These OTS keys are then used to sign user transactions, never exposing the root secret "private" key. 
 
-These public and private keys can be stored in a wallet file, mnemonic, or hex-phrase and are utilized through a wallet application. 
 
-:::note
-For more information on QRL's cryptography see the [Address Scheme](#),  
+:::caution 
+Correctly recording and securing recovery keys is the most important thing a user needs to do before interacting with the QRL network.
 :::
 
 ### Public Keys
 
-At the base of the wallet is the QRL address. The public key starts with a `Q` and consists of 79 hexadecimal characters.
+At the base of the wallet is the QRL address. The public key starts with a `Q` and consists of $79$ hexadecimal characters. The Public address represents an account, and is what would be given to receive funds into the address.
 
-The Public address represents the account and is what would be given to receive funds into the account.
+Public keys are safe to share with trusted parties you will be transacting with. Use this to request funds from another user or to deposit funds yourself. 
 
 #### Example QRL Public Address
 
-```
+$$
 Q010500cf8971ae2f24cecc4296a23c24277bd107dbbc630bc0799dca65f9c25449d781148b7a85
-```
-
-:::info QRL PUBLIC KEY
-Public keys are safe to share with trusted parties you will be transacting with. Use this to request funds from another user or to deposit funds yourself. 
-:::
+$$
 
 ### Private Keys
 
-A private key is required to interact with the QRL blockchain. This key is used to sign a transaction, verifying it originated using this key.Anyone with this key can send transactions on behalf of the address.
+The private keys can be represented in either a hexseed, a mnemonic phrase, or a `wallet.json` file containing both. Any can be used to restore a wallet and best practice should be followed to ensure the security of these keys.
 
-The private keys can be represented in either a hexseed or a mnemonic phrase. Either can be used to restore a wallet and best practice should be followed to ensure the security of these keys.
+- A private key is required to interact with the QRL blockchain
+- Private keys are used to sign transactions
+- No two private keys are the same
+- Anyone with this key can send transactions on behalf of the address.
+- Ensure any recovery keys open the address expected prior to using the address 
 
+:::danger Never Share Private Wallet Keys
+Any of the private keys above will be able to recover an address and access all funds associated with that address.
+These keys should **NEVER** be shared! 
+
+It is up to the end user to ensure that any encryption phrase, and all secret keys are stored in a secure location. Any loss of funds will be at the owners fault if these keys are lost, compromised, or copied incorrectly. Verify that any backup method re-opens the same address as expected **before** depositing any funds into the address!
+:::
+
+Private keys can not be recovered or regenerated if lost. Without them, any funds in the address will not be recoverable. Backup address keys and store them in a safe locations.
+
+#### Typical QRL Private Key Format
+
+Public and private keys can be stored in a multitude of ways and are typically utilized through a wallet application.
+
+| Private Key Medium | Information |
+| --- | --- |
+|[`wallet.json` file](developers/address/wallet-json) |  <ul><li>Contains both Hexphrase and Mnemonic as well as the Public Key</li><li>May be encrypted (recommended) and passphrase will be required to open</li><li>Generated from the desktop, web and cli wallet applications</li></ul> |
+| [Mnemonic Phrase](developers/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the master QRL wordlist</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
+| [Hexphrase](developers/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation steps</li></ul> |
+| [Ledger Hardware](/wallet/ledger) | <ul><li>Ledger manages QRL private keys on device, never exposing them to the end user</li><li>Master Ledger Recovery Seed is required to recover a QRL address stored on a Ledger device</li></ul> |
+| [Slave Keys](developers/address/slave-keys) | <ul><li>Advanced address functionality. CLI tools are required to generate slave Keys</li><li>Generated slaves files are typically named `slaves.json` or `payment_slaves.json`</li><li>Slave keys are additional secret key(s) that are allowed to spend for a given master address</li></ul> |
 
 :::danger Never Share Private Wallet Keys
 These keys should never be shared! Anyone can transfer funds using a secret key. 
 :::
-
-Private keys can not be recovered or regenerated if lost. Without them, any funds in the address will not be recoverable. Backup address keys and store in safe locations.
 
 #### Example QRL Mnemonic
 
@@ -192,8 +207,6 @@ absorb filled elder lake swing behind thirst ink easter lucy sinful viola judge 
 ```
 010500457794dcc149e3570243d837c90f3b75252abeb17fb08db6f267fdc88e16fa29e72cc33a0b04259305bb8c692c3bde81
 ```
-
-:::note
-More information on the [QRL address scheme](developers/address/qrl-address-scheme), the [Hash based cryptography used](basics/cryptography). Also the [Whitepaper ](https://github.com/theQRL/Whitepaper) is a great resource.
+:::info
+For more information on QRL's cryptography see the [Address Scheme](developers/address/qrl-address-scheme), [QRL Cryptography Overview](developers/cryptography/qrl-cryptography) documentation, as well as the [QRL Whitepaper (PDF)](https://github.com/theQRL/Whitepaper/raw/f1b0f61b7cf61195fa9489aeaf1a2e05643c12ec/QRL_whitepaper.pdf)
 :::
-
