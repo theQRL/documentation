@@ -1,21 +1,21 @@
 ---
 id: node-cli-wallet
 docstatus: DRAFT
-title: QRL Node CLI Wallet
+title: QRL Node CLI
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node CLI Wallet
+sidebar_label: QRL Node CLI
 sidebar_position: 1
-pagination_label: QRL Node CLI Wallet
+pagination_label: QRL Node CLI
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: The QRL Ledger Node CLI Wallet documentation
+description: The QRL Ledger Node CLI documentation
 keywords:
   - docs
   - wallet
   - CLI
   - Node
 image: /assets/img/icons/yellow.png
-slug: /Build/wallet/cli/node-cli-wallet
+slug: /Build/wallet/cli/node-cli
 ---
 
 
@@ -37,7 +37,71 @@ It is possible to connect to a remote node that allows external connections. Use
 
 Running commands using the qrl node cli requires the QRL node software is installed. [See the documentation to get started installing the QRL node](/node/node-installation) as well as the full [Node cli documentation](/Node/node-cli)
 
-This document covers the general flow for creating a wallet
+## CLI Help
+
+All command line options have a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
+
+```bash
+qrl --help
+```
+```bash
+Usage: qrl [OPTIONS] COMMAND [ARGS]...
+
+  QRL Command Line Interface
+
+Options:
+  -v, --verbose       verbose output whenever possible
+  --host TEXT         remote host address             [127.0.0.1]
+  --port_pub INTEGER  remote port number (public api) [19009]
+  --wallet_dir TEXT   local wallet dir
+  --json              output in json
+  --version           Show the version and exit.
+  --help              Show this message and exit.
+
+Commands:
+  slave_tx_generate    Generates Slave Transaction for the wallet
+  state                Shows Information about a Node\'s State
+  token_list           Fetch the list of tokens owned by an address.
+  tx_inspect           Inspected a transaction blob
+  tx_message           Message Transaction
+  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
+  tx_multi_sig_spend   Transfer coins from src to dsts
+  tx_push              Sends a signed transaction blob to a node
+  tx_token             Create Token Transaction, that results into...
+  tx_transfer          Transfer coins from src to dsts
+  tx_transfertoken     Create Transfer Token Transaction, which...
+  wallet_add           Adds an address or generates a new wallet...
+  wallet_decrypt
+  wallet_encrypt
+  wallet_gen           Generates a new wallet with one address
+  wallet_ls            Lists available wallets
+  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
+  wallet_rm            Removes an address from the wallet using the...
+  wallet_secret        Provides the mnemonic/hexseed of the given...
+
+```
+
+You can browse even further into sub commands like:
+
+```bash
+qrl tx_transfer --help
+```
+```bash
+Usage: qrl tx_transfer [OPTIONS]
+
+  Transfer coins from src to dsts
+
+Options:
+  --src TEXT               signer QRL address
+  --master TEXT            master QRL address
+  --dsts TEXT              List of destination addresses
+  --amounts TEXT           List of amounts to transfer (Quanta)
+  --message_data TEXT      Message (Optional)
+  --fee DECIMAL            fee in Quanta
+  --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
+  --help                   Show this message and exit.
+
+```
 
 ## Wallet Functions
 
@@ -487,68 +551,3 @@ The `wallet_idx` used in various commands is the number to the left in the outpu
 :::
 
 
-## CLI Help
-
-All command line options have a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
-
-```bash
-qrl --help
-```
-```bash
-Usage: qrl [OPTIONS] COMMAND [ARGS]...
-
-  QRL Command Line Interface
-
-Options:
-  -v, --verbose       verbose output whenever possible
-  --host TEXT         remote host address             [127.0.0.1]
-  --port_pub INTEGER  remote port number (public api) [19009]
-  --wallet_dir TEXT   local wallet dir
-  --json              output in json
-  --version           Show the version and exit.
-  --help              Show this message and exit.
-
-Commands:
-  slave_tx_generate    Generates Slave Transaction for the wallet
-  state                Shows Information about a Node\'s State
-  token_list           Fetch the list of tokens owned by an address.
-  tx_inspect           Inspected a transaction blob
-  tx_message           Message Transaction
-  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
-  tx_multi_sig_spend   Transfer coins from src to dsts
-  tx_push              Sends a signed transaction blob to a node
-  tx_token             Create Token Transaction, that results into...
-  tx_transfer          Transfer coins from src to dsts
-  tx_transfertoken     Create Transfer Token Transaction, which...
-  wallet_add           Adds an address or generates a new wallet...
-  wallet_decrypt
-  wallet_encrypt
-  wallet_gen           Generates a new wallet with one address
-  wallet_ls            Lists available wallets
-  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
-  wallet_rm            Removes an address from the wallet using the...
-  wallet_secret        Provides the mnemonic/hexseed of the given...
-
-```
-
-You can browse even further into sub commands like:
-
-```bash
-qrl tx_transfer --help
-```
-```bash
-Usage: qrl tx_transfer [OPTIONS]
-
-  Transfer coins from src to dsts
-
-Options:
-  --src TEXT               signer QRL address
-  --master TEXT            master QRL address
-  --dsts TEXT              List of destination addresses
-  --amounts TEXT           List of amounts to transfer (Quanta)
-  --message_data TEXT      Message (Optional)
-  --fee DECIMAL            fee in Quanta
-  --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
-  --help                   Show this message and exit.
-
-```

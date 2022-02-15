@@ -5,7 +5,7 @@ title: QRL API - walletd-rest-proxy
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL API - walletd-rest-proxy
-sidebar_position: 4
+sidebar_position: 3
 pagination_label: QRL API - walletd-rest-proxy
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL API - walletd-rest-proxy
@@ -2080,6 +2080,5 @@ Removes given address from the the `walletd.json` wallet file.
 </TabItem>
 
 </Tabs>
-
 
 
