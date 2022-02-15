@@ -156,9 +156,9 @@ Public keys are safe to share with trusted parties you will be transacting with.
 
 #### Example QRL Public Address
 
-$$
+```
 Q010500cf8971ae2f24cecc4296a23c24277bd107dbbc630bc0799dca65f9c25449d781148b7a85
-$$
+```
 
 ### Private Keys
 
@@ -185,9 +185,9 @@ Public and private keys can be stored in a multitude of ways and are typically u
 
 | Private Key Medium | Information |
 | --- | --- |
-|[`wallet.json` file](developers/address/wallet-json) |  <ul><li>Contains both Hexphrase and Mnemonic as well as the Public Key</li><li>May be encrypted (recommended) and passphrase will be required to open</li><li>Generated from the desktop, web and cli wallet applications</li></ul> |
-| [Mnemonic Phrase](developers/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the master QRL wordlist</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
-| [Hexphrase](developers/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation steps</li></ul> |
+|[`wallet.json` file](developers/address/wallet-json) |  <ul><li>Contains both Hexphrase and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](wallet/desktop), [Web](wallet/web) and [CLI](Build/wallet/cli/node-cli-wallet) wallet applications</li></ul> |
+| [Mnemonic Phrase](developers/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
+| [Hexphrase](developers/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
 | [Ledger Hardware](/wallet/ledger) | <ul><li>Ledger manages QRL private keys on device, never exposing them to the end user</li><li>Master Ledger Recovery Seed is required to recover a QRL address stored on a Ledger device</li></ul> |
 | [Slave Keys](developers/address/slave-keys) | <ul><li>Advanced address functionality. CLI tools are required to generate slave Keys</li><li>Generated slaves files are typically named `slaves.json` or `payment_slaves.json`</li><li>Slave keys are additional secret key(s) that are allowed to spend for a given master address</li></ul> |
 

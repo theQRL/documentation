@@ -7,7 +7,7 @@ hide_table_of_contents: true
 sidebar_label: Getting Started
 sidebar_position: 1
 pagination_label: Getting Started
-custom_edit_url: 
+custom_edit_url: https://github.com/fr1t2/documentation/edit/main/docs/getting-started.md
 description: Getting started with the QRL Blockchain and ecosystem
 keywords:
   - docs

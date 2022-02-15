@@ -21,6 +21,7 @@ module.exports = {
       items: [
         'Learn/what-is-qrl',
         'Learn/ots-keys',
+        'Learn/whitepaper',
         'Learn/qrl-emission',
         {
           // Basics category for things like what is QRL, blockchain, XMSS OTS keys, Quantum Threat etc

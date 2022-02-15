@@ -5,7 +5,7 @@ title: QRL Emission
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL Emission
-sidebar_position: 3
+sidebar_position: 4
 pagination_label: QRL Emission
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
 description: QRL Emission schedule and rate
@@ -30,3 +30,4 @@ Explain the emission schedule of the project, and how it decreases over the year
 - Explain the updated QIP16 emission schedule
 
 :::
+

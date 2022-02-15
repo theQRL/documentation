@@ -5,7 +5,7 @@ title: QRL Whitepaper
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL Whitepaper
-sidebar_position: 2
+sidebar_position: 3
 pagination_label: QRL Whitepaper
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Whitepaper
@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - QRL 
 image: /assets/img/icons/yellow.png
-slug: /developers/whitepaper
+slug: /whitepaper
 ---
 
 :::caution DOCUMENT STATUS 

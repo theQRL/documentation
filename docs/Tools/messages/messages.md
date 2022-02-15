@@ -14,7 +14,7 @@ keywords:
   - tools
   - Messages
 image: /assets/img/icons/yellow.png
-slug: /tools/messages/Messages
+slug: /tools/messages
 ---
 
 
