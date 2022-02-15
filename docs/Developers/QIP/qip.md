@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qip
 title: QRL Improvement Proposal (QIPs)
 hide_title: false

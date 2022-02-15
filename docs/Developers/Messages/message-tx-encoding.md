@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  message-tx-encoding
 title: QRL Message Transaction Encoding
 hide_title: false
@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - QRL Message Encoding
 image: /assets/img/icons/yellow.png
-slug: /developers/message-tx-encoding
+slug: /developers/messages/message-tx-encoding
 ---
 
 :::caution DOCUMENT STATUS 
@@ -41,5 +41,13 @@ i.e. where the encoding for specific message type is (in hex) "0x0000", a valid 
 - 0003 - github
 - 0004 - on-chain voting
 
+## Encoding Proposals
+
+To add a new message type submit a Pull Request to this GitHub repository with the additional message type added to the list above.
+
+Additionally, leave comments that justify the new encoding as well as any information on the specification to use this new encoding.
+
+
+ 
 
 

@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - QRL Explorer Helpers
 image: /assets/img/icons/yellow.png
-slug: /developers/explorer-helpers
+slug: /developers/qrl-helpers/explorer-helpers
 ---
 
 :::caution DOCUMENT STATUS 

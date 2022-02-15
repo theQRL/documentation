@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ephemeral
 title: QRL Ephemeral
 hide_title: false
@@ -22,45 +22,12 @@ slug: /tools/ems/
 :::
 
 
-:::tip [FROM THE WHITEPAPER](#)
-EMS is a peer-to-peer broadcast messaging upgrade, where messages will be optionally relayed by QRL nodes that
-choose to route the traffic. It is a data messaging layer which is agnostic to the chain, but which
-extends the functionality of the network in new and interesting ways. Apps and services will be
-able to interact with EMS by means of a user friendly API, enabling asynchronous, authenticated
-end-to-end encrypted data communication between QRL nodes via the network.
+:::tip [FROM THE EMS WHITEPAPER](https://github.com/theQRL/ephemeral/blob/master/EMS_whitepaper_v1.pdf)
+*EMS is a peer-to-peer broadcast messaging upgrade, where messages will be optionally relayed by QRL nodes that choose to route the traffic. It is a data messaging layer which is agnostic to the chain, but which extends the functionality of the network in new and interesting ways. Apps and services will be able to interact with EMS by means of a user friendly API, enabling asynchronous, authenticated end-to-end encrypted data communication between QRL nodes via the network.*
 
 
-These properties are achieved by utilizing quantum resistant public key encryption and stateless
-digital signatures. For maximal security, the quantum resistant algorithms will be combined
-with existing pre-quantum schemes, that have proven to be secure against normal computers for
-decades: a hybrid mode. To derive the keys for encryption and signatures, only the master seed of
-the wallet is used to derive the EMS key-pairs. Public keys are securely stored via XMSS on the
-QRL blockchain, by means of a “lattice transaction”. By deploying this functionality, the QRL
-blockchain can also serve as a standalone public-key infrastructure by any third-party application.
+*These properties are achieved by utilizing quantum resistant public key encryption and stateless digital signatures. For maximal security, the quantum resistant algorithms will be combined with existing pre-quantum schemes, that have proven to be secure against normal computers for decades: a hybrid mode. To derive the keys for encryption and signatures, only the master seed of the wallet is used to derive the EMS key-pairs. Public keys are securely stored via XMSS on the QRL blockchain, by means of a “lattice transaction”. By deploying this functionality, the QRL blockchain can also serve as a standalone public-key infrastructure by any third-party application.*
 :::
-
-
-## Definitions
-
-Some of the concepts and terms used in this document.
-
-|     | Definition |
-| --- | ---------- |
-| EMS | Ephemeral Messaging System |
-| Ephemeral | Lasting a very short time |
-| Lattice Based Cryptography |  |
-| Crystals |  |
-| Kyber |  |
-| Dilithium |  |
-| ECDSA |  |
-| QuantumSecure |  |
-| Key Pair | A pair of Public and Secret Keys that are directly correlated to each other such that through cryptography, the public key is derived from the Secret Key |
-| Public Key | Represents cryptographically through an asymmetric algorithm the Secret key. This public key can be shared and used to encrypt/sign data that only the secret key that corresponds can read or verify. |
-| Secret Key |  |
-| Hash Based Cryptography |  |
-| Shared Key |  |
-|  |  |
-|  |  |
 
 
 ## Overview

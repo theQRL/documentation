@@ -1,26 +1,24 @@
 ---
 docstatus: DRAFT
-id: walletd
-title: QRL Wallet Daemon
+id: wallet-api
+title: QRL API - Wallet
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Wallet Daemon
-sidebar_position: 6
-pagination_label: QRL Wallet Daemon
+sidebar_label: QRL API - Wallet
+sidebar_position: 2
+pagination_label: QRL API - Wallet
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Wallet Daemon
+description: QRL API - Wallet
 keywords:
   - docs
   - build
   - developers
   - API
-  - Wallet Daemon
+  - Wallet
 image: /assets/img/icons/yellow.png
-slug: /developers/api/walletd
+slug: /developers/api/wallet-api
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>

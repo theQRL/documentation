@@ -5,7 +5,7 @@ title: QRL Security
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL Security
-sidebar_position: 4
+sidebar_position: 2
 pagination_label: QRL Security
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Security

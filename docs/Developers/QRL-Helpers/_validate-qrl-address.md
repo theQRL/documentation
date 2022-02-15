@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - Validate QRL Address
 image: /assets/img/icons/yellow.png
-slug: /developers/validate-qrl-address
+slug: /developers/qrl-helpers/validate-qrl-address
 ---
 
 :::caution DOCUMENT STATUS 

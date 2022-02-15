@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - QRL Node Helpers
 image: /assets/img/icons/yellow.png
-slug: /developers/node-helpers
+slug: /developers/qrl-helpers/node-helpers
 ---
 
 :::caution DOCUMENT STATUS 
