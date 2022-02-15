@@ -1,20 +1,24 @@
 ---
-id: create-new-wallet
-title: QRL Web Walet - Create New
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: web-wallet-new
+title: QRL Web Wallet - New
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Web Walet - Create New 
+sidebar_label: Web Wallet - New 
 sidebar_position: 2
-pagination_label: QRL Web Walet - Create New
+pagination_label: Web Wallet - New
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Web Walet - Create New
+description: QRL Web Wallet - Create a new address using the QRL Web Wallet
 keywords:
   - docs
   - New Wallet
 image: /assets/img/icons/yellow.png
-slug: /wallet/web/create-new-wallet
+slug: /wallet/web/web-wallet-new
 ---
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 From the main QRL web wallet menu, select new wallet to begin.
 

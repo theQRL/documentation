@@ -1,13 +1,14 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet
-title: QRL Web Walet
+title: QRL Web Wallet
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Web Walet 
+sidebar_label: Web Wallet 
 sidebar_position: 1
-pagination_label: QRL Web Walet
+pagination_label: Web Wallet
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Web Walet
+description: QRL Web Wallet
 keywords:
   - docs
   - Web Wallet
@@ -15,6 +16,9 @@ image: /assets/img/icons/yellow.png
 slug: /wallet/web
 ---
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 The QRL web wallet allows a user to create new addresses, open and transact with the network as well as access to all of the on chain tools. 
 

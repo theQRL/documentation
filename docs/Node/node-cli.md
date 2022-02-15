@@ -1,11 +1,12 @@
 ---
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-cli
 title: QRL Node CLI
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL Node CLI
+sidebar_label: QRL Node - CLI
 sidebar_position: 5
-pagination_label: QRL Node CLI
+pagination_label: QRL Node - CLI
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Node CLI
 keywords:
@@ -15,6 +16,11 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /node/node-cli
 ---
+
+
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
 
 The QRL CLI allows users and developers the ability to interact with the QRL network for fundamental chain operations. This allows users to create new wallet files, transfer quanta, and create tokens.
 
