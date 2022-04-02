@@ -32,8 +32,11 @@ Interaction with wallet functions is simplified with the use of the walletd-rest
 QRL node. This proxy eliminates any need to interact with the GRPC functions, allowing typical CURL calls to be utilized making interaction 
 with wallet functions simple.
 
-This system also uses the [QRL walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy) to make automatic wallet management simple while 
-interacting with the QRL network.
+
+
+Interaction with wallet functions is simplified with the use of the walletd-rest-proxy, allowing typical REST API calls to be made to the 
+QRL node. This proxy eliminates any need to interact with the GRPC functions, allowing typical CURL calls to be utilized making interaction with wallet functions simple.
+
 
 #### Automatic Slave transactions 
 
@@ -46,6 +49,12 @@ tier 3 slave OTS keys are used.
 
 Any `walletd-rest-proxy` function that utilizes slaves will use this automatic slave system. *The address will need to be initially setup using 
 the [`AddNewAddressWithSlaves`](#addnewaddresswithslaves) function*.
+
+:::
+
+:::tip
+The `qrl_walletd` API is available with the base QRL Python package install. 
+This system also uses the [QRL walletd-rest-proxy](https://github.com/theQRL/walletd-rest-proxy) to make automatic wallet management simple.
 :::
 
 ## `walletd-rest-proxy` General Info
@@ -54,8 +63,10 @@ By default the `walletd-rest-proxy` expects there to be a QRL node running on th
 
 - Wallet API on `19010` 
 
+
+By default the API expects there to be a QRL node running on the localhost with port `19009` available. 
 This [configuration setting](https://github.com/theQRL/QRL/blob/353b32aeb3897c7ffb50c9a5759091928f493f1d/src/qrl/core/config.py#L121) can be 
-overridden with the `self.public_api_server = "127.0.0.1:19009"` directive. Adjust the walletd-rest-proxy command with the appropriate port
+overridden with the `self.public_api_server = "127.0.0.1:19009"` directive.
 
 
 The wallet daemon will by default create the wallet file at `~/.qrl/walletd.json`.
@@ -75,14 +86,44 @@ The `qrl_walletd` API is installed with the base [QRL Node](/node). Follow [this
 Running the wallet daemon is simple. Once you have met the requirements above, follow the steps below, ensuring the `wallet-rest-proxy` stays 
 running as this will allow interaction with the GRPC node.
 
-### Run the QRL Wallet Daemon `qrl_walletd`
+
+#### Run the QRL Wallet Daemon `qrl_walletd`
 
 ```bash
 qrl_walletd
 ````
 
-This must be started and running to expose the wallet daemon functions to the proxy. Will run in the background until next reboot or it is 
-stopped manually.
+#### Install the `walletd-rest-proxy`
+
+**GO Install**
+
+```bash
+go install github.com/theqrl/walletd-rest-proxy/generated@latest
+````
+
+**Manual Install** 
+
+Clone walletd-rest-proxy from the repo hosted at https://github.com/theQRL/walletd-rest-proxy 
+
+```bash
+git clone github.com/theQRL/walletd-rest-proxy
+```
+
+```bash
+cd walletd-rest-proxy
+```
+
+```bash
+go build
+```
+
+#### Start the wallet-rest-proxy 
+
+```bash
+./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 -walletServiceEndpoint 127.0.0.1:19010
+```
+
+This will expose port `5359` for typical REST connections.
 
 :::info
 The QRL wallet Daemon loads the `walletd.json` file into memory. To use another wallet file, the `qrl_walletd` daemon must be restarted with the correct file 
@@ -140,8 +181,6 @@ screen -Sdm wallet-rest-proxy ./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 
 ``` 
 :::
 
-
-
 ---
 
 
@@ -150,7 +189,6 @@ screen -Sdm wallet-rest-proxy ./walletd-rest-proxy -serverIPPort 127.0.0.1:5359 
 
 Adds new randomly generated address to the wallet located at `~/.qrl/walletd.json`. 
 
-Will create a new wallet if none is found.
 
 #### AddNewAddress Request
 
@@ -1234,7 +1272,8 @@ Response is a blank array `{}` if successful.
 
 ## GetRecoverySeeds
 
-Print out the recovery seeds, or secret keys for the given QRL address if it exists in the local wallet file.
+
+Print out the recovery seeds, or secret keys for the given QRL address.
 
 :::note
 The address must exist in the wallet.
@@ -1467,6 +1506,8 @@ print(getWalletInfo.text)
 
 </TabItem>
 </Tabs>
+
+
 
 </TabItem>
 </Tabs>
@@ -4250,7 +4291,8 @@ Retrieve block information from a given block headerhash.
 Given correct headerhash will return information on specified block.
 
 :::info
-Example headerhash returned from transaction lookup: 72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800
+
+Example headerhash returned from transaction lookup: $$72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800$$
 :::
 
 </TabItem>
@@ -4793,7 +4835,4 @@ print(json.loads(getNodeInfo.text))
 </TabItem>
 </Tabs>
 <br />
-
----
-
 
