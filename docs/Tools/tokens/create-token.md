@@ -5,7 +5,7 @@ title: QRL Token - Create
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: QRL Token - Create
-sidebar_position: 1
+sidebar_position: 2
 pagination_label: QRL Token - Create
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Token - Create new token
