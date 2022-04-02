@@ -222,6 +222,7 @@ module.exports = {
       label: 'Tutorials',
       items: [
         'Tutorials/qrl-tutorials',
+        'Tutorials/notarize-qrl-cli',
         {
           type: 'category',
           label: 'Node',
