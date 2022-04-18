@@ -23,15 +23,37 @@ slug: /tools/tokens/
 :::
 
 
-The initial token balance will be sent to the QRL addresses listed in the `addresses` array, with initial 
-balances being a combination of the `decimals` and `amounts` fields. 
+QRL supports the generation of colored tokens, allowing a multitude of functionality in addition to the typical blockchain functions. 
 
-The total token distribution is calculated by taking the amounts and multiplying it by the decimal place. 
+These tokens are generated and sent in separate transaction types *([`RelayTokenTxn`](/developers/api/wallet-api) and [`RelayTransferTokenTxn`](/developers/api/wallet-api))* allowing additional versatility as they are not tied to any QRL funds and can be transferred interdependently from an QRL coins. 
 
-For example, say you have a token with a decimal of `2` with `100` minted tokens 
+:::note
+Additional functionality is possible using the token system. See the NFT documentation for an example of encoding data into a token, as well as the token encoding standard established.
+:::
 
-$$
-100 \times 0.01=1\text{ token}
-$$
 
-Creating a whole token that can be divided into `100` sub-token derivatives to the second decimal place, similar as pennies are to a dollar. 
+
+## Token Generation
+
+One can generate new tokens using the [QRL wallet](/wallet) interface via the web wallet, desktop wallet as well as through multiple API's and command line tools.
+
+
+There are various fields and information required to create a token transaction. The full documentation [can be found here](/tools/tokens/token-create)
+
+:::info
+THis section covers the GUI interface through the web wallet tools section. For automated token functionality, including using slave OTS keys to generate and send see the [API Documentation](/developers/api/wallet-api) as well as the [QRL Command Line Documentation](/Build/wallet/cli/node-cli)
+:::
+
+
+## Send Tokens
+
+Tokens can be transferred between addresses on the QRL blockchain. These tokens can be split into derivatives and fractionally split as well depending on the initial criteria set during the token creation. 
+
+Tokens are tracked by their creation transaction hash and may be transferred between addresses paying only the transaction cost to send them around. 
+
+## Token Uses
+
+While the versatility is yet to be fully realized, we think there are some great opportunities for quantum resistant functional systems to be developed using these tools.
+
+A great example is the NFT generation system that has utilized the various input forms for the token transaction to mint NFT tokens while storing metadata information as a hash of the JSON data served by a 3rd party.
+
