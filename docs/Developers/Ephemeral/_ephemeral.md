@@ -24,3 +24,15 @@ slug: /developers/ephemeral
 
 
 # [Ephemeral Whitepaper](https://github.com/theQRL/ephemeral/raw/master/EMS_whitepaper_v1.pdf)
+
+
+The QRL Ephemeral system relies on the qualities and security provided by the Crystals cryptographic library. 
+
+There is a transaction type allocated to support these public keys, authoring them from a QRL address. This allows a multitude of available opportunities. 
+
+By broadcasting the public lattice keys onto the chain, an address or transaction hash can become a key store allowing 3rd parties to find and use these public keys.
+
+
+
+
+Dilithium and Kyber provide functionality that XMSS

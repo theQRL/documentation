@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 60%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-installation
 title: QRL Node Installation
 hide_title: false
@@ -36,6 +36,8 @@ There are some basic requirements that must be met to run a QRL node. See the [Q
 
 Follow the directions below to get started running a QRL Node.
 
+## Node Installation
+
 <Tabs
     defaultValue="ubuntu"
     groupId="os"
@@ -47,7 +49,7 @@ Follow the directions below to get started running a QRL Node.
 
 <TabItem value="ubuntu">
 
-## QRL Ubuntu Installation
+#### QRL Ubuntu Installation
 Installation instructions for the QRL Node on Ubuntu.
 
 Tested in the latest LTS version `Ubuntu 20.04`
@@ -57,7 +59,7 @@ Tested in the latest LTS version `Ubuntu 20.04`
 sudo apt update && sudo apt upgrade -y
 
 # Install the required packages for QRL
-sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake
+sudo apt-get -y install swig3.0 python3-dev python3-pip build-essential pkg-config libssl-dev libffi-dev libhwloc-dev libboost-dev cmake libleveldb-dev
 
 # Install latest setuptools
 pip3 install -U setuptools
@@ -76,7 +78,7 @@ This is the recommended installation method, and most common way to run a QRL No
 </TabItem>
 <TabItem value="macos">
 
-## QRL MacOS Installation
+#### QRL MacOS Installation
 Installation instructions for the QRL Node on MacOS. Tested with the latest MacOS version `Big Sur 11.6`
 
 
@@ -108,14 +110,14 @@ pip3 install -U qrl
 </TabItem>
 <TabItem value="redhat">
 
-## QRL RedHat Installation
+#### QRL RedHat Installation
 Installation instructions for the QRL Node on Ubuntu.
 
 ```bash
 # Update packages
 sudo dnf update
 
-# Enable developer tools Codeready linux Builder repo
+# Enable developer tools Codeready Linux Builder repo
 subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
 # Install requirements
@@ -124,7 +126,7 @@ sudo dnf install swig make gcc gcc-c++ redhat-rpm-config python36-devel python2-
 # Install latest CMAKE-3.21 from sources
 ## First remove old cmake if exists
 sudo dnf remove cmake
-## Get the latest cmkake
+## Get the latest cmake
 wget https://github.com/Kitware/CMake/releases/download/v3.21.3/cmake-3.21.3.tar.gz
 ## Extract the files
 tar -xvf cmake-3.21.3.tar.gz
@@ -147,7 +149,7 @@ pip3 install --user -U setuptools
 pip3 install --user -U qrl
 ```
 
-> FIXME!! Need to update install instructions for MacOS
+> FIXME!! Need to update install instructions for Redhat
 
 
 </TabItem>
@@ -156,13 +158,12 @@ pip3 install --user -U qrl
 
 ## Running QRL
 
-After successful installation of the QRL node the command line tools are available immediately. For more information see the [Node CLI Documentation](node-cli).
+After successful installation of the node the QRL command line tools are available. For more information see the [QRL Node CLI Documentation](node-cli).
 
-The node software runs in the current shell, to run the node in the background, use something like `screen` to disconnect the shell from the running node allowing syncing to happen in the background.
+The node software runs in the foreground of the current shell, to run the node in the background, use something like `screen` to disconnect the shell from the running node allowing syncing to happen in the background.
 
-See the [screen documentation](https://www.gnu.org/software/screen/manual/screen.html) for more information and installation instructions.
 
-#### `start_qrl`
+### start_qrl
 
 To begin the syncing process run the node software.
 
@@ -179,10 +180,10 @@ Output looks something like this.
 2021-09-25 18:22:29,049|2.1.2 python|synced  |MainThread | INFO : Status changed to ESyncState.synced
 ```
 
-This will start the node software, create a default node directory at `~/.qrl` and begin syncing blocks from the known peers.
+This will start the node software in the foreground of the current shell, create a default node directory at `~/.qrl` and begin syncing blocks from the known peers via the p2p network.
 
 
-#### `start_qrl` Help
+#### start_qrl Help
 
 The `start_qrl` command has additional advanced configuration that can be passed via the command line. Below is an explanation of each additional option.
 
@@ -227,5 +228,186 @@ optional arguments:
 | --mocknet  | |
 
 
+### Screen Session
 
+Run the QRL node in a background screen terminal to allow the node to run after user disconnects from the shell. For more information on [Screen, read the manual here](https://www.gnu.org/software/screen/manual/screen.html)
+
+Install screen if not already installed.
+
+```bash
+sudo apt install screen
+```
+
+Start the node in a detached screen session named `QRL`:
+
+```bash
+screen -dm start_qrl -S QRL
+``` 
+
+Reattach to the screen shell:
+
+```bash
+screen -r qrl-node
+```
+
+Disconnect from the shell using the `ctl + a` then `d` key sequence [described here in the screen docs](https://www.gnu.org/software/screen/manual/screen.html#Detach).
+
+
+### Systemd Service
+
+Enable the QRL node to start at boot and restart using the `systemd` utility that ships with most Linux systems.
+
+Create the new `qrl.service` file in the `/etc/systemd/system/` directory. This will require `sudo` privileges to write into the directory.
+
+
+```bash
+sudo touch /etc/systemd/system/qrl.service
+```
+
+Now modify that file to contain the following, edit for your local user and settings.
+
+```bash {title='qrl.service'}
+### save this into /etc/systemd/system/qrl.service
+## enable with sudo systemctl enable qrl.service
+## start with sudo systemctl start qrl
+
+[Unit]
+Description=QRL Node
+After=network.target
+
+# Modify the following to suit your user
+[Service]
+Type=simple
+User=ubuntu # Local Username
+WorkingDirectory=/home/ubuntu # Local users home directory
+ExecStart=/home/ubuntu/.local/bin/start_qrl # Location of the start_qrl executable `which start_qrl`
+Restart=always 
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable the script to start at boot an restart if failed:
+
+```bash
+sudo systemctl enable qrl.service
+```
+
+Now start the node service and begin syncing blocks from the network.
+
+```bash
+sudo systemctl start qrl.service
+```
+
+Check the status of the node with
+
+```bash
+sudo systemctl status qrl.service
+```
+
+### Crontab Script
+
+To start the node upon reboot, use a script and crontab to enable a fault tolerant node.
+
+:::tip
+Recommended to enable a [system service](#systemd-service) for a more robust monitored node operation.
+:::
+
+Create the script below somewhere on your system.
+
+```bash
+nano ~/start-node.sh
+```
+
+Add the following content to the file, save and exit.
+
+```bash {title="start-node.sh"}
+#!/bin/bash
+
+####################
+## Start QRL node ##
+####################
+# 
+# Requires modification to function on local system
+# Must point to absolute directory for start_qrl 
+#
+# Typically found at /home/$USER/.local/bin/start_qrl
+# locate with `which start_qrl` 
+
+screen -Sdm QRL /home/fr1t2/.local/bin/start_qrl
+
+```
+
+Change the permissions to allow the script to be executed
+
+```bash
+chmod +x ~/start-node.sh
+```
+
+
+Modify crontab to enable the script to start at every reboot.
+
+```bash
+crontab -e
+```
+
+Add the following to the end of the crontab configuration file, changing the user home directory to suite the local installation. Must be an absolute file path.
+
+
+```bash
+@reboot /home/$USER/start-node.sh
+```
+
+Now anytime the computer reboots the script will run, starting the node.
+
+## Check for Running Node
+
+
+On a Linux system, depending on how the node was started you can see if it's running in a few ways.
+
+### QRL Node Log
+
+By default the node will write a log to the home qrl directory `~/.qrl`. The last action of the node is recorded and the log will be fairly constant as the node validates blocks.
+
+To view this log, use the `tail` function that ships with most Linux systems.
+
+```bash
+tail -f ~/.qrl/qrl.log
+```
+
+This will stream any changes to the log file.
+
+### `ps`  Process Status Command
+
+Using the process status or `ps` command we can see what is running. Combine this with something like `grep` and we can narrow it down to only qrl processes
+
+```bash
+ps aux |grep qrl
+```
+
+If the node is running it will print the process and related information.
+
+### In a screen Session
+
+If the node is running in a screen service following the guides above one can see what is running using the `screen list` command
+
+```bash
+screen -ls
+```
+
+Reattach using `screen -r SCREEN_NAME`
+
+### Systemd Service
+
+Print the status of the running systemd service.
+
+```bash
+sudo service qrl.service status
+```
+
+Or
+
+```bash
+sudo systemctl status qrl.service
+```
 
