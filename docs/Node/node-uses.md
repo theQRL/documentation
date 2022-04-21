@@ -21,7 +21,9 @@ slug: /node/node-uses
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-Ruining a valid, up to date node client will by it's very presence in the blockchain process help secure the network and any transactions routed through the node. We covered the basic functions of the node in previous documents. This document will dive deeper into the uses of a QRL Node.
+Ruining a valid, up to date node client will, by it's very presence in the blockchain process, help secure the network and any transactions routed through the node. 
+
+We have covered the basic functions of the node in previous documents. This document will dive deeper into the uses of a QRL Node.
 
 ## Security 
 
@@ -29,7 +31,7 @@ At the core of the QRL blockchain is a decentralized peer to peer network. This 
 
 There are known vulnerabilities where the majority of the active nodes in a network are taken over by a malicious actor allowing the manipulation of the chain data being submitted and accepted. This can lead to a variety of exploits for any blockchain. The best solution to this issue is to run as many nodes possible to make the possibility of a bad actor successfully performing any of the attacks this could make possible. 
 
-In addition to the network security provided by as many nodes on network as possible, running a node can additionally secure any transactions being made to the chain on a users behalf as well as ensuring valid chain data is provided un-modified.
+In addition to the network security provided by as many nodes on network as possible, running a node can additionally secure any transactions being made to the chain on a users behalf as well as ensuring valid chain data is provided unmodified.
 
 ### Transaction Security
 
@@ -64,7 +66,7 @@ For instance, the wallet software uses a private key to sign a transaction which
 When a new transaction is created the node runs through a few verification checks prior to sending the transaction to the mempool. If the address OTS key used to sign the transaction is already known to the blockchain the node will reject the transaction, protecting the address from broadcasting a OTS key re-use.
 
 :::info
-OTS key information can be found in the [OTS Key Documentation](#)
+OTS key information can be found in the [OTS Key Documentation](/ots-keys)
 :::
 
 If there are enough funds in the address to cover the fee and any fund transfer the node will send the transaction to it's peers to be added to the next available block. 
@@ -73,7 +75,7 @@ If there are enough funds in the address to cover the fee and any fund transfer 
 
 When an address balance is looked up or a  transaction is verified, this is simply looking at the history in the chain for the address/transaction involved. All of this data is stored on the chain and is validated and agreed upon by a majority of nodes in the network. 
 
-These transactions are stored in the nodes chain state files which compose a level database that has been verified through a p2p syncing process. These historical transactions are validated by verifying cryptographic hashes provided by peers on the network.
+These transactions are stored in the nodes chain state files which compose a level database that has been verified through a P2P syncing process. These historical transactions are validated by verifying cryptographic hashes provided by peers on the network.
 
 
 
