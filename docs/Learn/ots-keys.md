@@ -13,7 +13,7 @@ keywords:
   - cryptography
   - xmss
 image: /assets/img/icons/yellow.png
-slug: /ots-keys
+slug: /learn/ots-keys
 
 ---
 :::caution DOCUMENT STATUS 
@@ -29,7 +29,7 @@ The OTS key and how it applies to the QRL can be a little confusing and is diffe
 Once all keys are used, no other transactions can be preformed from that address. 
 :::
 
-## What is a One Time Key?
+## What is a One Time Signature?
 
 An OTS key is used to sign a message, or in the QRL's case, to sign a transaction.
 
@@ -78,7 +78,7 @@ By default the QRL wallet application generates wallet addresses with a tree hei
 | 18 | 262,144 | Can send 700 transactions a day for a year, may take some time to open |
 
 :::info
-A typical user will not need an address larger than the default tree height of 10. If you expect to more than that, generate a larger tree or take a look at the [slave keys system.](developers/address/slave-keys)
+A typical user will not need an address larger than the default tree height of 10. If you expect to more than that, generate a larger tree or take a look at the [slave keys system.](/build/address/slave-keys)
 :::
 
 ## How Does This Apply to the QRL? 

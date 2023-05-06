@@ -13,7 +13,7 @@ keywords:
   - tutorials
   - Node
 image: /assets/img/icons/yellow.png
-slug: /Tutorials/Node/public-api-use
+slug: /tutorials/node/public-api-use
 ---
 
 

@@ -14,7 +14,7 @@ keywords:
   - emission
   - mining
 image: /assets/img/icons/yellow.png
-
+slug: /learn/qrl-emission
 ---
 
 :::caution DOCUMENT STATUS 

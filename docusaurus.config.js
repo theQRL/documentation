@@ -1,183 +1,281 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
-
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-module.exports = {
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'QRL Docs',
-  tagline: 'Documentation for The Quantum Resistant Ledger Ecosystem',
-  url: 'https://theqrl.org/docs',
+  tagline: 'Documentation for The Quantum Resistant Ledger - QRL',
+  url: 'https://docs.theqrl.org',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'assets/favicon.svg',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'theQRL', // Usually your GitHub org/user name.
   projectName: 'The Quantum Resistant Ledger', // Usually your repo name.
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        debug: true, // This will enable the plugin in production  
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          //path: 'docs/',
+          routeBasePath: '/', // Serve the docs at the site's root
+          editUrl:
+            'https://github.com/theqrl.org/documentation',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+        },
+
+        
+        theme: {
+//          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
+        },
+      }),
+    ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   plugins: [
-    '@docusaurus/theme-live-codeblock',
-    '@docusaurus/plugin-ideal-image',
+    //'@docusaurus/theme-live-codeblock',
+    //'@docusaurus/plugin-ideal-image',
 
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // whether to index docs pages
       indexDocs: true,
-      // must start with "/" and correspond to the routeBasePath configured for the docs plugin
-      // use "/" if you use docs-only-mode
-      // (see https://v2.docusaurus.io/docs/2.0.0-alpha.70/docs-introduction#docs-only-mode)
-      docsRouteBasePath: '/',
-
-      // Whether to also index the titles of the parent categories in the sidebar of a doc page.
-      // 0 disables this feature.
-      // 1 indexes the direct parent category in the sidebar of a doc page
-      // 2 indexes up to two nested parent categories of a doc page
-      // 3...
-      //
-      // Do _not_ use Infinity, the value must be a JSON-serializable integer.
       indexDocSidebarParentCategories: 4,
-
-
-
-      // whether to index blog pages
       indexBlog: false,
-      // must start with "/" and correspond to the routeBasePath configured for the blog plugin
-      // use "/" if you use blog-only-mode
-      // (see https://v2.docusaurus.io/docs/2.0.0-alpha.70/blog#blog-only-mode)
-      blogRouteBasePath: '/blog',
-
-      // whether to index static pages
-      // /404.html is never indexed
       indexPages: false,
-
-      // language of your documentation, see next section
       language: "en",
-
-      // setting this to "none" will prevent the default CSS to be included. The default CSS
-      // comes from autocomplete-theme-classic, which you can read more about here:
-      // https://www.algolia.com/doc/ui-libraries/autocomplete/api-reference/autocomplete-theme-classic/
       style: undefined,
-      // style: "none",
-
-      // lunr.js-specific settings
       lunr: {
-        // When indexing your documents, their content is split into "tokens".
-        // Text entered into the search box is also tokenized.
-        // This setting configures the separator used to determine where to split the text into tokens.
-        // By default, it splits the text at whitespace and dashes.
-        //
-        // Note: Does not work for "ja" and "th" languages, since these use a different tokenizer.
         tokenizerSeparator: /[\s\-]+/
       }
     }],
      
   ],
-  customFields: {
-  },
-  themeConfig: {
-    hideableSidebar: true,    
-    liveCodeBlock: {
-      /**
-       * The position of the live playground, above or under the editor
-       * Possible values: "top" | "bottom"
-       */
-      playgroundPosition: 'bottom',
-    },
-    navbar: {
-      title: '',
-      logo: {
-        alt: 'The QRL Logo',
-        src: 'assets/img/icons/qrl-logo.svg',
+
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: 'bottom',
       },
-      items: [
-        {
-          to: '/', 
-          label: 'Docs', 
-          position: 'left'
-        },
-        {
-          to: '/tutorials', 
-          label: 'Tutorials', 
-          position: 'left'
-        },
-        {
-          href: 'https://github.com/theqrl/documentation',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Docs',
-              to: '/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/theqrl',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/theqrl/documentation/',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} The Quantum Resistant Ledger. Built with Docusaurus.`,
-    },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
-      additionalLanguages: ['powershell'],
-    },
-  },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/', // Set this value to '/'.
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          editUrl:
-            'https://github.com/theqrl/documentation/edit/main/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-//          customCss: require.resolve('./static/assets/css/overrides.css'),
+
+      docs: {
+        sidebar: {
+          hideable: true,
         },
       },
-    ],
-  ],
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
-      integrity:
-        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
-      crossorigin: 'anonymous',
-    },
-  ],
+
+      navbar: {
+        title: '',
+        hideOnScroll: true,    
+        logo: {
+          alt: 'The QRL Logo',
+          src: 'assets/img/icons/qrl-logo.svg',
+        },
+        items: [
+        // Left Side
+          {
+            type: 'dropdown',
+            label: 'Using QRL',
+            position: 'left',
+            items: [
+              {
+                label: 'Wallet',
+                href: '/use/wallet'
+              },
+              {
+                label: 'Mining',
+                href: '/use/mining'
+              },
+              {
+                label: 'Node',
+                href: '/use/node'
+              },
+              {
+                label: 'Tools',
+                href: '/use/tools'
+              },
+              // ... more using items
+            ],
+          },
+
+          {
+            type: 'dropdown',
+            label: 'Learn QRL',
+            position: 'left',
+            items: [
+              {
+                label: 'Learn QRL',
+                href: '/learn'
+              },
+              {
+                label: 'Blockchain',
+                href: '/learn/blockchain'
+              },
+                          
+              // ... more learn items
+            ],
+          },
+          
+          {
+            type: 'dropdown',
+            label: 'Build On QRL',
+            position: 'left',
+            items: [
+              {
+                label: 'Build On QRL',
+                href: '/build'
+              },
+              {
+                label: 'Address Scheme',
+                href: '/build/addresses'
+              },
+              {
+                label: 'Node CLI',
+                href: '/build/node-cli'
+              },
+              {
+                label: 'QRL Helpers',
+                href: '/build/helpers'
+              },
+              // ... more build items
+            ],
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'tutorialSidebar',
+            label: 'Tutorials',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'apiSidebar',
+            label: 'API',
+          },
+
+        // Right Side
+
+          {
+            type: 'dropdown',
+            label: 'QRL Network',
+            position: 'right',
+            items: [
+              {
+                label: 'Main Site',
+                href: 'https://theqrl.org',
+              },
+              {
+                label: 'Explorer',
+                href: 'https://explorer.theqrl.org',
+              },
+              {
+                label: 'QRL Wallet',
+                href: 'https://wallet.theqrl.org',
+              },
+              {
+                label: 'Status',
+                href: 'https://status.theqrl.org',
+              },
+            ],
+          },
+          {
+            href: 'https://github.com/facebook/docusaurus',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+
+
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Getting Started',
+                to: '/docs/getting-started',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      },
+      prism: {
+        theme: require('prism-react-renderer/themes/github'),
+        darkTheme: require('prism-react-renderer/themes/dracula'),
+      },
+    }),
 };
+
+module.exports = config;

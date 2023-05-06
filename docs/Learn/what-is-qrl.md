@@ -6,14 +6,14 @@ hide_title: false
 hide_table_of_contents: false
 sidebar_label: What is The QRL
 sidebar_position: 1
-pagination_label: Markdown features
+pagination_label: What is The QRL
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: Overview of the Quantum Resistant Ledger
 keywords:
   - docs
   - intro
 image: /assets/img/icons/yellow.png
-slug: /what-is-qrl
+slug: /learn/what-is-qrl
 
 ---
 
@@ -32,7 +32,15 @@ HELP NEEDED:
 
 
 
-An externally audited enterprise-grade blockchain platform secure today from the quantum computing advances of tomorrow. The QRL is a visionary blockchain and digital asset security
+An externally audited enterprise-grade blockchain platform secure today from the quantum computing advances of tomorrow. 
+
+QRL is the first industrial implementation to utilize [IETF specified XMSS](https://tools.ietf.org/html/rfc8391); a hash-based, forward secure signature scheme with minimal security assumptions and reusable addresses that comes with [NIST approval](https://csrc.nist.gov/publications/detail/sp/800-208/final).
+
+QRL utilizes an [extensible address format](/developers/address/qrl-address-scheme) with quantum security built in from the genesis block. We maintain an open source code-base with implementation [verified by third-party audits](https://github.com/theQRL/audits) from [red4sec](https://red4sec.com/) and [x41 D-sec](https://www.x41-dsec.de/).
+
+Aiming to be developer friendly, we have built this extensive documentation as well as an API reference, giving the tools to build anything, today, on an industrial grade platform that will survive tomorrow.
+
+Offering a full suite of user-facing applications to make interacting with the QRL blockchain and digital assets a breeze, we have taken most of the complexity of a quantum resistant blockchain out of the users view. We offer products for Desktop (Windows, Mac, Linux), Mobile (iOS, Android) and the web to allow a user a quick on-boarding to use our tools.
 
 
 ## The QRL Mission
@@ -69,3 +77,5 @@ This is what cryptographers call **classically secure**, or secure against the a
 ## Developers
 
 ## Resources
+
+

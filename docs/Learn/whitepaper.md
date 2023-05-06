@@ -14,7 +14,7 @@ keywords:
   - Advanced
   - QRL 
 image: /assets/img/icons/yellow.png
-slug: /whitepaper
+slug: /learn/whitepaper
 ---
 
 :::caution DOCUMENT STATUS 
