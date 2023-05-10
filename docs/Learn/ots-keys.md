@@ -21,12 +21,21 @@ slug: /learn/ots-keys
 :::
 
 
-**O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of hash based cryptography like [XMSS](basics/cryptography/xmss), the underlying cryptography that The Quantum Resistant Ledger uses. 
+**O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of the hash based cryptography [XMSS](basics/cryptography/xmss), the underlying cryptography that The Quantum Resistant Ledger uses. 
 
 The OTS key and how it applies to the QRL can be a little confusing and is different from most other cryptocurrencies. Understanding the basics will help prevent any issues later on. 
 
-:::note The most important take away:
-Once all keys are used, no other transactions can be preformed from that address. 
+:::note The most important OTS concepts:
+- OTS keys can only be used one time
+- A default address contains 1,024 OTS keys for outgoing transactions
+- Once all keys are used, no other transactions can be preformed from that address
+- Incoming transactions **Do Not** consume OTS keys by the receiving address
+- OTS keys are used to sign transactions on-chain
+
+:::
+
+:::caution
+If an OTS key were to be exposed more than once, the address should be considered compromised and all funds moved to a newly generated address. 
 :::
 
 ## What is a One Time Signature?
@@ -35,9 +44,6 @@ An OTS key is used to sign a message, or in the QRL's case, to sign a transactio
 
 Each OTS key can sign only once, as it reveals some information about the secret key. Not enough data is revealed to compromise the secret key if exposed exactly one time however.
 
-:::caution
-If an OTS key were to be exposed more than once, the address should be considered compromised and all funds moved to a new address. 
-:::
 
 An individual address will contain multiple OTS keys (*default of 1024*) all available to sign transactions. This tree height is selected during address creation.
 
@@ -58,27 +64,35 @@ Only the secret key is able to produce this digital signature, and it can be lin
 
 There are some limitations on the size an OTS tree can be for practical reasons. The tree height of an address is selected during address creation. This height is important and can not later be changed.
 
-Any funds left in an address with all OTS keys used will be lost. These funds must be sent to an address with available OTS keys before all keys are used in the current wallet address.
-
 :::danger Track OTS Key use to avoid locking funds!
 There is nothing that can be done once funds are locked in an address without keys available to sign a transaction.
 :::
 
-### Tree Height
+Any funds left in an address with all OTS keys used will be lost. These funds must be sent to an address with available OTS keys before all keys are used in the current wallet address.
+
+:::info
+There are advanced methods to extend the allowable transactions from a single address seed to an almost infinite transaction count. 
+
+These methods are described in the whitepaper as *Hypertrees*, and documented here under the [slave keys documentation](/build/address/slave-keys)
+:::
+
+## Tree Height
 
 By default the QRL wallet application generates wallet addresses with a tree height of 10, generating 1024 available OTS keys for signing. This is adjustable, though larger tree's will require some additional time to open a wallet file, as the entire tree must be regenerated each time the address is opened.
 
 | Tree Height | Available Keys | Info |
 |--- | --- |--- |
-| 8  | 256 | Ledger hardware limitations limit to this height |
-| 10 | 1,024 | Default wallet height, able to send 2 transactions a day for a year |
+| 8  | 256 | Ledger hardware memory limitations restrict the internal tree to this height |
+| 10 | 1,024 | Default wallet height, able to send 2 transactions a day for a year and likely acceptable to most users |
 | 12 | 4,096 | Can send 11 transactions a day for a year, or one tx a day for 11 years |
 | 14 | 16,384 | Can send 44 transactions a day for a year, or one tx a day for 44 years | |
 | 16 | 65,536 | Can send 179 transactions a day for a year, or one tx a day for 179 years | |
 | 18 | 262,144 | Can send 700 transactions a day for a year, may take some time to open |
 
 :::info
-A typical user will not need an address larger than the default tree height of 10. If you expect to more than that, generate a larger tree or take a look at the [slave keys system.](/build/address/slave-keys)
+A typical user will not need an address larger than the default tree height of 10. Larger trees will take longer to initialize as the full tree must be generated each time the address is opened.
+
+If you expect the need for larger transaction counts, generate a larger tree or take a look at the [slave keys system.](/build/address/slave-keys) and usage of the [automatic wallet API](/api/walletd-rest-proxy#automatic-slave-transactions)
 :::
 
 ## How Does This Apply to the QRL? 
@@ -88,7 +102,9 @@ A typical user will not need an address larger than the default tree height of 1
 - QRL Address tree height is chosen during the initial address creation and cannot be changed
 - The QRL network nodes will reject any transaction that uses a duplicate OTS key
 
-OTS keys are a limiting as each address has a finite maximum amount of transactions (*outgoing*) that can be sent from any address. Once all keys are used the address will not be able to sign any further transactions. While limiting, it is also what we owe the advanced security to. 
+OTS keys are limited as each address has a finite maximum amount of transactions (*outgoing*) that can be sent from any address. Once all keys are used the address will not be able to sign any further transactions. While limiting, it is also what we owe the advanced security and quantum resistance to. 
+
+
 
 ### QRL's Hash Based System
 

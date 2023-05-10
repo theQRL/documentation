@@ -382,8 +382,9 @@ const sidebars = {
         'Learn/whitepaper',
         'Learn/qrl-emission',
         'Learn/ots-keys',
+        'Learn/on-chain-voting',
         // Learn Blockchain
-        {
+        /*{
           type: 'category',
           label: 'Blockchain',
           link: {
@@ -400,7 +401,7 @@ const sidebars = {
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
-        },
+        },*/
 
 
       ],
