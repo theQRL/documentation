@@ -237,7 +237,7 @@ const sidebars = {
             image: '/assets/img/icons/yellow.png',
           },
           items: [
-            'Use/Tools/qrl-tools',
+            //'Use/Tools/qrl-tools',
 
             // Tools Explorer
             {
@@ -253,6 +253,10 @@ const sidebars = {
               },
               items: [
                 'Use/Tools/explorer/qrl-explorer',
+                'Use/Tools/explorer/address-lookup',
+                'Use/Tools/explorer/transaction-lookup',
+                'Use/Tools/explorer/block-lookup',
+                'Use/Tools/explorer/token-lookup',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default

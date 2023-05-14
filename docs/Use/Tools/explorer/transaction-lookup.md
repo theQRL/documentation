@@ -1,11 +1,11 @@
 ---
 docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: transaction-lookup
-title: Explorer Transaction Lookup
+title: QRL Explorer Transaction Lookup
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Transaction Lookup
-sidebar_position: 1
+sidebar_position: 4
 pagination_label: Transaction Lookup
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Explorer Transaction Lookup

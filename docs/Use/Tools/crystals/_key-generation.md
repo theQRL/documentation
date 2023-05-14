@@ -16,7 +16,7 @@ keywords:
   - tools
   - Crystals Key Generation
 image: /assets/img/icons/yellow.png
-slug: /tools/crystals/crystals-key-generation
+slug: /use/tools/crystals/crystals-key-generation
 ---
 
 
@@ -47,7 +47,6 @@ Using public key encryption Alice then sends Bob the cyphertext, encrypted share
 - Shared Key
 - Cyphertext
 - Broadcast
-- 
 
 
 ## Requirements
