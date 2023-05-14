@@ -14,7 +14,7 @@ keywords:
   - tools
   - Crystals Keys
 image: /assets/img/icons/yellow.png
-slug: /tools/crystals/
+slug: /use/tools/crystals/
 ---
 
 

@@ -14,7 +14,7 @@ keywords:
   - tools
   - Ephemeral
 image: /assets/img/icons/yellow.png
-slug: /tools/ems/
+slug: /use/tools/ems
 ---
 
 :::caution DOCUMENT STATUS 
