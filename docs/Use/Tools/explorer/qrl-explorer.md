@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-explorer
 title: QRL Explorer Overview
 hide_title: false
@@ -33,113 +33,124 @@ More information can be found in the [Address Documentation.](/use/wallet/check-
 
 The main explorer page can be access through any modern web browser and is located at https://explorer.theqrl.org. 
 
-From the main page there are links along the side bar for all of the various functions of the tool including:
+From the main page there are links along the side bar for all of the various functions of the tool. These link to additional functionality that expands on the main page info.
 
-- [Blocks](#blocks)
-- [Recent Transactions](#recent-transactions)
-- [Unconfirmed Transactions](#unconfirmed-transactions)
-- [Peers](#peers)
-- [Link to the Web Wallet](/use/wallet/web/overview)
-
-Along with these links the explorer displays some general information on the blockchain.
+- **Blocks** - Shows the latest blocks minted onto the chain
+- **Recent Transactions** - Shows a list of the latest transactions shown on the chain
+- **Unconfirmed Transactions **- Shows any transactions that are in the Mempool awaiting a block to mint
+- **Peers** - Gives a list of all peers the explorer node is aware of
+- **Wallet** - This is a link the the QRL Web Wallet
 
 
-### Network Status
 
-This section gives overall information on the network based on the node that the explorer is using.
+## Network Status
+
+This section gives overall information on the network and is pulled directly from the QRL node that the explorer is using. This helps to verify that the node is synced and up to date, ensuring correct blockchain information is provided.
 
 
-#### Connected Status
+### Connected Status
 
 This gives confirmation that the node is connected to other peers and is working to secure and further the chain. 
 
-Typical status: SYNCED
+**Example status:** - *Connected: SYNCED*
 
 
-#### Uptime
+### Uptime
 
 This gives the connected explorer node's uptime, or how long the node has been connected and functioning on the chain.
 
+This information is provided in Days, Hours and Min that the connected node has been running.
 
-#### Network Code Name
+**Example status:** - *Uptime: 1784d 1h 44min*
+
+### Network Code Name
 
 This section gives information on the chain connected to using the chains code name.
 
 For MainNet this will be **The Sleeper Must Awaken**, the code name given to the chain at the time of genesis, or the launch of the chain.
+
+**Example status:** - *The sleeper must awaken*
 
 :::info
 TestNet will have a different code name, and this will change each time the test network is re-started. Ensure you are looking at the correct chain information!
 :::
 
 
-#### Active Peers
+### Active Peers
 
 This section prints the number of active peers that are connected to the explorer node. This is not necessarily the total number of peers connected on the entire chain due to how Peer-To-Peer networks.
 
-
-#### Version 
-
-This information refers to the version of core code that the node is running.
-
-This can be found in the core code repository located in [The QRL's GitHub](https://github.com/theqrl/qrl). 
-
-At the time of writing this is **Version 4.0.0**
+**Example status:** - *Explorer node active peers: 63*
 
 
+### Version 
 
-### Blocks
+This information refers to the version of core code that the node is running. This can be found in the core code repository located in [The QRL's GitHub](https://github.com/theqrl/qrl). 
 
-The blocks section covers information on the connected node an the blocks
 
-#### Max Index
+**Example status:** - *Version: 4.0.0 python*
+
+:::info
+At the time of writing, the latest is **Version 4.0.0**
+:::
+
+## Blocks
+
+The blocks section covers information on the connected node related to blocks found in the chain. These blocks contain all transaction minted in that block, as well as the mining reward that is paid to the miner who minted the block. 
+
+### Max Index
 
 The max index section shows the *current blockheight* as seen by the connected node. 
 
 If the Connected status is SYNCED, this will be the agreed and coordinated blockheight of all connected nodes, and the latest block of the chain. 
 
-:::info
+**Example status:** - *Max Index: 2579678*
 
+:::info
 If you are syncing a local node, this number should match once your node is fully synced.
 :::
 
-#### Block Time 
+### Block Time 
 
-This gives the last time between minting new blocks, or the time taken to mine and agree on consensus of the chain by all nodes.
+This gives the last time between minting new blocks, or the time taken to mine and agree on consensus of the chain by all nodes.This time may fluctuate a little depending on network traffic and the amount of mining hashrate seen on the network.
 
-This time may fluctuate a little depending on network traffic and the amount of mining hashrate seen on the network.
+**Example status:** - *Block Time: 58*
 
-
-#### Block Time Std Dev
+### Block Time Std Dev
 
 This shows the standard variation of block time between blocks.
 
+**Example status:** - *Block Time Std Dev: 64*
 
-### Coin Supply
+## Coin Supply
 
 This section shows general information on the emissions of the block rewards and total amount of coins mined and to be mined.
 
-#### Emission
+### Emission
 
 This is the percentage of total coin supply that has been distributed, and the total number of $quanta$ that is in circulation.
 
-#### Unmined
+**Example status:** - *Emission: 74% (77,200,307.48)*
 
-This shows the total supply that is yet to be mined and distributed in block rewards.
+### Unmined
 
-These $quanta$ will be distributed over the exponential decay curve over the next est. 200 years.
+This shows the total supply that is yet to be mined and distributed in block rewards. These $quanta$ will be distributed over the exponential decay curve over the next est. 200 years.
 
-#### Block Reward
+**Example status:** - *Unmined: 27,799,692.52*
+
+### Block Reward
 
 This is the current block reward that is distributed to the miner who mints the next block. This number will continue to diminish according the the [emission algorithm](/learn/qrl-emission).
 
+**Example Status** - *Block Reward: 1.733252118*
 
-### Hash Graph
+## Hash Graph
 
 The graph shows various information on the mining status, and difficulty of the chain.
 
 This information changes depending on a few different conditions such as the network hashrate, connected miners and recent changes to the hashrate that effect the difficulty of mining operations. 
 
-### Latest Blocks
+## Latest Blocks
 
 This section shows the latest blocks that have been mined. You can select a block by clicking on it to drive into the details for that block.
 
@@ -149,7 +160,7 @@ See the [Block Lookup documentation](/use/tools/explorer/block-lookup) for more 
 
 :::
 
-### Latest Transactions
+## Latest Transactions
 
 The latest transactions section shows any transactions that have shown up in the mempool since the last block was mined, as well as some of the most recent transactions on the chain.
 
