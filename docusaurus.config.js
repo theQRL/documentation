@@ -30,6 +30,11 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  markdown: {
+      mermaid: true,
+    },
+    themes: ['@docusaurus/theme-mermaid'],
+
 
   presets: [
     [
@@ -66,9 +71,10 @@ const config = {
     },
   ],
 
+
+
   plugins: [
-    //'@docusaurus/theme-live-codeblock',
-    //'@docusaurus/plugin-ideal-image',
+
 
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // whether to index docs pages
