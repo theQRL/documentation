@@ -267,7 +267,7 @@ p code {
   font-size: 32px;
   line-height: 150%;
   text-transform: uppercase;
-  font-family: 'Alte DIN 1451 Mittelschrift';
+/*  font-family: 'Alte DIN 1451 Mittelschrift';*/
   font-weight: bold;
 
 }
@@ -300,7 +300,7 @@ p code {
   color: #FFF;
   font-size: 16px;
   line-height: 20px;
-  font-family: "Source Sans Pro",sans-serif;
+  font-family: sans-serif;
   cursor: default;
   border-top: 6px solid #4AAFFF;
   border-radius: 6px;
@@ -323,7 +323,7 @@ p code {
   display: block;
   background-color: #4AAFFF;
   font-size: 14px;
-  font-family: "Alte DIN 1451 Mittelschrift",sans-serif;
+  font-family: sans-serif;
   transition: 300ms ease-in-out;
   cursor: pointer;
 }
