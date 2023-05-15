@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: transaction-lookup
 title: QRL Explorer Transaction Lookup
 hide_title: false
@@ -50,4 +50,10 @@ At the top of the transaction search screen is a list of general information rel
 
 ## Transaction Information
 
-Below the general information detailed transaction information is shown.
+Detailed transaction information is shown below for the transaction that was queried. This includes the type of transaction, sending QRL address, receiving QRL address and amount sent for a typical transfer.
+
+The Large amount sent will also show a value in USD underneath, this is the current estimated value of the amount of QRL transferred, not the historical value at the time of transfer. 
+
+Additional information is shown in the meta tab, this is the detailed information that has been simplified and presented in the page above. Most of the time there is no need to view this data, however there is no sensitive information contained within.
+
+
