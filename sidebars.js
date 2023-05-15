@@ -27,12 +27,61 @@ const sidebars = {
       id: 'getting-started', // document ID
       label: 'Getting Started', // sidebar label
     },
+
+    /////////////////////////////
+    // learn collapsible section
+    /////////////////////////////
+    {
+      type: 'category',
+      label: 'Learn The QRL',
+      link: {
+        type: 'generated-index',
+        title: 'Learn About the QRL',
+        description: 'Learn about the basic QRL Concepts!',
+        slug: '/learn',
+        keywords: ['learn'],
+        image: '/assets/img/icons/yellow.png',
+      },
+      items: [
+        'Learn/what-is-qrl',
+        'Learn/whitepaper',
+        'Learn/qrl-emission',
+        'Learn/ots-keys',
+        'Learn/on-chain-voting',
+        // Learn Blockchain
+        /*{
+          type: 'category',
+          label: 'Blockchain',
+          link: {
+            type: 'generated-index',
+            title: 'Blockchain',
+            description: 'General blockchain info and how its used in QRL.',
+            slug: '/learn/blockchain',
+            keywords: ['blockchain'],
+            image: '/assets/img/icons/yellow.png',
+          },
+          items: [
+            'Learn/Blockchain/pow-overview',
+            'Learn/Blockchain/pos-overview',
+          ],
+          collapsible: true, // Set the category to be collapsible
+          collapsed: true, // Set the category to be initially collapsed or open by default
+        },*/
+
+
+      ],
+      collapsible: true, // Set the category to be collapsible
+      collapsed: true, // Set the category to be initially collapsed or open by default
+    },
+
+
+
     /////////////////////////////////
     // Using-QRL collapsible section
     /////////////////////////////////
     {
       type: 'category',
-      label: 'Using QRL',
+      label: 'Use The QRL',
       link: {
         type: 'generated-index',
         title: 'Using The QRL',
@@ -367,51 +416,6 @@ const sidebars = {
       collapsible: true, // Set the category to be collapsible
       collapsed: true, // Set the category to be initially collapsed or open by default
     },
-    /////////////////////////////
-    // learn collapsible section
-    /////////////////////////////
-    {
-      type: 'category',
-      label: 'Learn QRL',
-      link: {
-        type: 'generated-index',
-        title: 'Learn About the QRL',
-        description: 'Learn about the basic QRL Concepts!',
-        slug: '/learn',
-        keywords: ['learn'],
-        image: '/assets/img/icons/yellow.png',
-      },
-      items: [
-        'Learn/what-is-qrl',
-        'Learn/whitepaper',
-        'Learn/qrl-emission',
-        'Learn/ots-keys',
-        'Learn/on-chain-voting',
-        // Learn Blockchain
-        /*{
-          type: 'category',
-          label: 'Blockchain',
-          link: {
-            type: 'generated-index',
-            title: 'Blockchain',
-            description: 'General blockchain info and how its used in QRL.',
-            slug: '/learn/blockchain',
-            keywords: ['blockchain'],
-            image: '/assets/img/icons/yellow.png',
-          },
-          items: [
-            'Learn/Blockchain/pow-overview',
-            'Learn/Blockchain/pos-overview',
-          ],
-          collapsible: true, // Set the category to be collapsible
-          collapsed: true, // Set the category to be initially collapsed or open by default
-        },*/
-
-
-      ],
-      collapsible: true, // Set the category to be collapsible
-      collapsed: true, // Set the category to be initially collapsed or open by default
-    },
 
 
 
@@ -601,7 +605,6 @@ const sidebars = {
   tutorialSidebar: [
     'Tutorials/qrl-tutorials',
     'Tutorials/notarize-qrl-cli',
-//    'hello',
 
     { // Node tutorials //
       type: 'category',
@@ -652,35 +655,6 @@ const sidebars = {
     'API/zeus-proxy-api',
     'API/explorer-api',
   ],
-
-//  learnSidebar: [
-//    'Learn/QRL-Intro',
-////    'hello',
-//    {
-//      type: 'category',
-//      label: 'Node',
-//      items: ['Tutorials/Node/public-api-use', 'Tutorials/Node/mainnet-testnet-node',],
-//    },
-//    {
-//      type: 'category',
-//      label: 'Wallet',
-//      items: ['Tutorials/Wallet/automatic-wallet-api-use', 'Tutorials/Wallet/automatic-wallet-api', 'Tutorials/Wallet/generate-address-dice',],
-//    },
-//  ],
-//  devSidebar: [
-//    'Learn/QRL-Intro',
-////    'hello',
-//    {
-//      type: 'category',
-//      label: 'Node',
-//      items: ['Tutorials/Node/public-api-use', 'Tutorials/Node/mainnet-testnet-node',],
-//    },
-//    {
-//      type: 'category',
-//      label: 'Wallet',
-//      items: ['Tutorials/Wallet/automatic-wallet-api-use', 'Tutorials/Wallet/automatic-wallet-api', 'Tutorials/Wallet/generate-address-dice',],
-//    },
-//  ],
 
 };
 

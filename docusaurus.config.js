@@ -114,7 +114,25 @@ const config = {
         // Left Side
           {
             type: 'dropdown',
-            label: 'Using QRL',
+            label: 'Learn The QRL',
+            position: 'left',
+            items: [
+              {
+                label: 'Learn QRL',
+                href: '/learn'
+              },
+              {
+                label: 'Blockchain',
+                href: '/learn/blockchain'
+              },
+                          
+              // ... more learn items
+            ],
+          },
+
+          {
+            type: 'dropdown',
+            label: 'Use The QRL',
             position: 'left',
             items: [
               {
@@ -137,23 +155,6 @@ const config = {
             ],
           },
 
-          {
-            type: 'dropdown',
-            label: 'Learn QRL',
-            position: 'left',
-            items: [
-              {
-                label: 'Learn QRL',
-                href: '/learn'
-              },
-              {
-                label: 'Blockchain',
-                href: '/learn/blockchain'
-              },
-                          
-              // ... more learn items
-            ],
-          },
           
           {
             type: 'dropdown',
