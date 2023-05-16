@@ -286,13 +286,3 @@ If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [E
 9. Click **Save New XMSS Index**. A confirmation window will appear, and your Ledger Nano will ask you for confirmation.
 10. Your Ledger Nano device will show **WARNING Set XMSS Index New Value XX** where _XX_ is the XMSS Index you entered.
 11. Press the right button on your Ledger Nano to confirm, or left button to reject the update.
-
-
-## QRL Ledger Nano Video Demonstration
-
-:::info 
-Click the image below to watch the video demonstration.
-:::
-
-[![The QRL - Ledger Nano Release Candidate Demo
-](http://img.youtube.com/vi/NL_u9biLy1g/0.jpg)](http://www.youtube.com/watch?v=NL_u9biLy1g)

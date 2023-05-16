@@ -21,9 +21,7 @@ slug: /use/wallet/qrl-address-overview
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-The QRL address is a fundamental building block to the ecosystem. 
-
-The public address is responsible for representing a users wallet in a publicly sharable identity without fear of the funds being vulnerable. 
+The QRL address is a fundamental building block to the ecosystem. The public address is responsible for representing a users wallet in a publicly sharable identity without fear of the funds being vulnerable. 
 
 The corresponding private key is the piece responsible for interaction on-chain and allows access to any funds stored in the public address.
 

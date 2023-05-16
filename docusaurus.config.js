@@ -30,6 +30,11 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  markdown: {
+      mermaid: true,
+    },
+    themes: ['@docusaurus/theme-mermaid'],
+
 
   presets: [
     [
@@ -66,9 +71,10 @@ const config = {
     },
   ],
 
+
+
   plugins: [
-    //'@docusaurus/theme-live-codeblock',
-    //'@docusaurus/plugin-ideal-image',
+
 
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // whether to index docs pages
@@ -114,7 +120,25 @@ const config = {
         // Left Side
           {
             type: 'dropdown',
-            label: 'Using QRL',
+            label: 'Learn The QRL',
+            position: 'left',
+            items: [
+              {
+                label: 'Learn QRL',
+                href: '/learn'
+              },
+              {
+                label: 'Blockchain',
+                href: '/learn/blockchain'
+              },
+                          
+              // ... more learn items
+            ],
+          },
+
+          {
+            type: 'dropdown',
+            label: 'Use The QRL',
             position: 'left',
             items: [
               {
@@ -137,23 +161,6 @@ const config = {
             ],
           },
 
-          {
-            type: 'dropdown',
-            label: 'Learn QRL',
-            position: 'left',
-            items: [
-              {
-                label: 'Learn QRL',
-                href: '/learn'
-              },
-              {
-                label: 'Blockchain',
-                href: '/learn/blockchain'
-              },
-                          
-              // ... more learn items
-            ],
-          },
           
           {
             type: 'dropdown',
