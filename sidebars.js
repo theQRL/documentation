@@ -256,7 +256,7 @@ const sidebars = {
             type: 'generated-index',
             title: 'QRL Node',
             description: 'Covering QRL Node installation and operation.',
-            slug: '/use/node',
+            slug: '/use/node/ovrview',
             keywords: ['use-node'],
             image: '/assets/img/icons/yellow.png',
           },
