@@ -27,7 +27,7 @@ slug: /use/tools/multi-sig/overview
 :::
 
 
-“Multisig” or *multiple signature transactions* require one or more different valid signatures to transfer funds from a special construct called a multisignature address to a destination address. The idea being that funds held in a multisignature address cannot be spent without the cryptographic agreement of a specified number of parties.
+“Multisig” or *multiple signature transactions* require one or more different valid signatures to transfer funds from a special construct called a multi-signature address to a destination address. The idea being that funds held in a multi-signature address cannot be spent without the cryptographic agreement of a specified number of parties.
 
 A multisig address can be setup with a certain number of addresses able to take part ($n$), of which a specified number ($m$) must provide valid signatures together for a multisig transaction to be valid and spendable. Thus, a multisig address may be said to require $m$ of $n$ signatures.
 
@@ -126,7 +126,7 @@ For directions on creating a multisig address see the [Generate Multisig Address
 
 OTS keys are used at various stages and from various addresses in the lifetime of a multi-sig addresses. All transaction on-chain require a valid OTS key and is used from the address sending the transaction, regardless of the transaction type.
 
-- One key is used for creating the multisig address (tx ID) (*creators address*)
+- One key is used for creating the multi-sig address (tx ID) (*creators address*)
 - One key is used to create the spend tx (*spend vote initiator address*)
 - one key is used for each vote of the multi-sig (*each signatory that votes*)
 

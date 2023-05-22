@@ -22,12 +22,16 @@ slug: /use/node/overview
 :::
 
 
-A QRL node is a dedicated computer running software developed by the QRL team. These computers make up the core building blocks of the network and strengthen the consensus method used as validators to each block. 
+A QRL node is a dedicated computer running software developed by the QRL team. These computers make up the core building blocks of the network and strengthen the chain by helping to agree on the immutable consensus of each block.
 
-Each node works in conjunction with other nodes to form a consensus on what the next valid block is in the chain, as well as which transactions to write to into the chains history from the transaction mempool. This is what makes up the distributed ledger and forms the core blockchain.
 
-:::note
-For more information on the p2p interaction between nodes take a look at the QRL [White Paper](https://github.com/theQRL/Whitepaper/blob/f1b0f61b7cf61195fa9489aeaf1a2e05643c12ec/QRL_whitepaper.pdf) 
+Each node works in conjunction with other nodes to form a an agreed upon chain, gaining consensus on what the next valid block is in the chain. Additionally they are responsible for collecting and inserting transactions into the chains history from the transaction mempool. 
+
+This is what makes up the distributed ledger and forms the core blockchain.
+
+
+:::info
+For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/learn/whitepaper) 
 :::
 
 ## QRL Network
