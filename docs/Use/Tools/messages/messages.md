@@ -23,10 +23,17 @@ slug: /use/tools/messages/overview
 :::
 
 
-The QRL supports message transactions that allow limited characters to be sent from an address onto the QRL blockchain. 
+The QRL supports message transactions as well as messages that can be added to a funds transfer transaction. These different messages are sent onto the QRL network, writing the data into the immutable blockchain.
 
-There two different messages that can be sent on the QRL blockchain, one during a transfer of funds, and a dedicated message transaction where only the message data is transferred.
+Anyone is able to write data to the chain and can do so in multiple ways.
 
+- `Transafer_TX` - This message data is written during a transfer of funds. Most wallet software supports the adition of message data during a transfer of funds.
+- `Message_tx` - 
+and a dedicated message transaction, or `message_tx` where only the message data is transferred. Take a look at the tools section of the QRL Wallet software.
+
+These messages can be retrieved by any user by simply [searching for the block number](/use/tools/explorer/block-lookup) that the message was added, or by [searching the transaction hash](/use/tools/explorer/transaction-lookup) using the [block explorer](https://explorer.theqrl.org).
+
+These messages are limited to 80 bytes or characters that may be sent onto the QRL blockchain. 
 
 ## Transfer Transaction Message
 
