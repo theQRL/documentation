@@ -1,6 +1,6 @@
 ---
 docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
-id: mainnet-testnet-node
+id: dual-node-host
 title: Dual Node Shared Host
 hide_title: false
 hide_table_of_contents: false
@@ -15,7 +15,7 @@ keywords:
   - Mainnet
   - Testnet
 image: /assets/img/icons/yellow.png
-slug: /Tutorials/Node/mainnet-testnet-node
+slug: /tutorials/node/dual-node-host
 ---
 
 

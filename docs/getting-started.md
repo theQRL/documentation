@@ -1,7 +1,7 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: Development  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: getting-started
-title: Getting Started
+title: The QRL Documentation
 hide_title: false
 hide_table_of_contents: true
 sidebar_label: Getting Started
@@ -18,132 +18,227 @@ slug: /
 
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-### Needed:
-
-- Inforgraphic type interface with accessable icons and obvious paths to get started needed!!!!
-- dashboard to getting started with most popular topics called out
-- Fancy graphics to accompany (can things move like the main site dots?)
-- General overview description paragraph.
-:::
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
+:::caution DOCUMENT STATUS 
+<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 
-Welcome to the Quantum Resistant Ledger documentation! This documentation aims to be the central source of information whether you are developing a new project or simply understanding the project basics this is the source. 
-
-Our doc's are broken into 4 main categories, [Learn](/), [Build](/build) , [Maintain](/Maintenance) and [Tutorials](/tutorials). These sections aim to guide a user through the project from basic functionality into more advanced topics like the quantum resistant nature of our cryptography.
-
-## What Is The QRL?
-
-An externally audited enterprise-grade blockchain platform secure today from the quantum computing advances of tomorrow. QRL is the first industrial implementation to utilize [IETF specified XMSS](https://tools.ietf.org/html/rfc8391); a hash-based, forward secure signature scheme with minimal security assumptions and reusable addresses that comes with [NIST approval](https://csrc.nist.gov/publications/detail/sp/800-208/final).
-
-QRL utilizes an [extensible address format](/developers/address/qrl-address-scheme) with quantum security built in from the genesis block. We maintain an open source code-base with implementation [verified by third-party audits](https://github.com/theQRL/audits) from [red4sec](https://red4sec.com/) and [x41 D-sec](https://www.x41-dsec.de/).
-
-Aiming to be developer friendly, we have built this extensive documentation as well as an API reference, giving the tools to build anything, today, on an industrial grade platform that will survive tomorrow.
-
-Offering a full suite of user-facing applications to make interacting with the QRL blockchain and digital assets a breeze, we have taken most of the complexity of a quantum resistant blockchain out of the users view. We offer products for Desktop (Windows, Mac, Linux), Mobile (iOS, Android) and the web to allow a user a quick on-boarding to use our tools.
-
-
-
-
-
-
-
-
-
-
-### The QRL Mission
-
-Provide enterprise grade security to the blockchain space with the future quantum threat in mind. Instead of relying on the classical secure elliptical curve cryptography to secure signatures The QRL has deployed XMSS, a NIST-approved post-quantum secure digital signature scheme.
-
-By utilizing this post-quantum secure signature scheme from genesis, we are able to provide advanced asset protection now, as well as the future.
-
-
-
-:::info
-If you don't find all you need from these docs, please join us in our Discord server for more direct help.
+- Fix color issues on light tabs
+- Better introduction 
 :::
 
+Welcome to the Quantum Resistant Ledger documentation! These doc's aim to be the central source of information for the QRL for all topics from using the base tools to building on the project. Whether you are developing a new project or simply understanding the basics this is the source.
 
-<Tabs
-  defaultValue="learn"
-  groupID="syntaxSelection"
-  values={[
-    { label: 'Learn', value: 'learn', },
-    { label: 'Build', value: 'developer', },
-    { label: 'Tutorials', value: 'tutorials', },
-    { label: 'Maintain', value: 'maintain', },
-  ]
-}>
+The docs are broken into 4 main categories, [Use](/use), [Learn](/learn), [Build](/build) , and [Tutorials](/tutorials). These sections aim to guide a user through the project from basic functionality into more advanced topics like the quantum resistant nature of the cryptography used.
 
+---
 
-
-<TabItem value="learn">
-
-<h2>User Documentation</h2>
-
-:::note getting started
-From creating your first wallet to sending multi-signiture transactions, this is the place to start!
-:::
-
-
-
-Get started with the basics of The QRL.
-
-
-<span><img src={frontMatter.image} alt='QRL logo' /></span>
-
-</TabItem>
-
-
-
-
-<TabItem value="developer">
-
-<h2>Advanced Documentation</h2>
-
-:::note 
-
-Diving into the more complex topics!
-:::
-
-Discussing things like the quantum resistant cryptography that makes The QRL what it is.
-
-
-</TabItem>
-
-
-
-<TabItem value="tutorials">
-
-<h2>Tutorials</h2>
-
-:::note 
-
-Walking through basic tasks like setting up a node, requesting blockchain data etc.
-:::
-
-Tutorial guides to get started using The QRL.
-
-
-</TabItem>
-<TabItem value="maintain">
-
-<h2>Developer Documentation</h2>
-
-:::note 
-
-API documentation and maintain information for core functions and advanced usage.
-:::
-
-Developers information
-
-</TabItem>
-
-
+<Tabs defaultValue="use" 
+      groupID="syntaxSelection" 
+      values={[
+        { label: 'Use', value: 'use', },
+        { label: 'Learn', value: 'learn', },
+        { label: 'Build', value: 'developer', },
+        { label: 'Tutorials', value: 'tutorials', },
+      ]}>
+  <TabItem value="use">
+    <h2>Using QRL</h2>
+    <p>Start here to begin using the QRL and all of the cool features available!</p>
+    <span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Wallet">
+              QRL Wallet       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Creating Addresses, Sending and Receiving QRL">Creating Addresses, Sending and Receiving QRL</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/mining">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Wallet">
+              Mining QRL       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Full Node Solo Mining and Pool Mining">Full Node Solo Mining and Pool Mining</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/mining">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Node">
+              QRL Node       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL node installation, configuration and operation">QRL node installation, configuration and operation</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/mining">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Tools">
+              QRL Tools       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Tools usage and guides">QRL Tools usage and guides</p>
+          </a>
+        </article>
+      </section>
+    </span>
+  </TabItem>
+  <TabItem value="learn">
+    <h2>Learn About The QRL</h2>
+    <p>Covering all aspects of the project, basic concepts, core cryptography conventions and anything that is not directly related to using or building on The QRL.</p>
+    <span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/what-is-qrl">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="What Is The QL">
+              What is The QRL       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Project explainer and information.">Project explainer and information.</p>
+          </a>
+        </article>
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/whitepaper">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Wallet">
+              QRL Whitepaper       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="The QRL Technical Documentation">The QRL Technical Documentation</p>
+          </a>
+        </article>
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/qrl-emission">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Node">
+              Qrl Emission 
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Emission Rate Explanation">QRL Emission Rate Explanation</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/ots-keys">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Tools">
+              OTS Keys       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="One Time Signature Keys Overview">One Time Signature Keys Overview</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg" >
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/blockchain">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="Blockchain">
+              Blockchain     
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Blockchain Basics">Blockchain Basics</p>
+          </a>
+        </article>
+      </section>
+    </span>
+  </TabItem>
+  <TabItem value="developer">
+    <h2>Advanced Documentation</h2>
+    <p>From API calls to address schemes, cli commands and Docker nodes. This is where all of the technical things are kept!</p>
+    <span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/overview">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="Developers Overview">
+              Developers Overview       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Developers general information.">Developers general information.</p>
+          </a>
+        </article>
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/qrllib">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Wallet">
+              QRLLIB       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="The QRL Core Library">The QRL Core Library</p>
+          </a>
+        </article>
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/mining/qrandomx">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Node">
+              QrandomX
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="RandomX Library modified for QRL usage">RandomX Library modified for QRL usage</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/ots-keys">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="OTS Keys">
+              OTS Keys       
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="One Time Signature Keys Overview">One Time Signature Keys Overview</p>
+          </a>
+        </article>
+        <article class="col col--6 margin-bottom--lg" >
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL API's">
+              QRL API's     
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL API documentation and examples">QRL API documentation and examples</p>
+          </a>
+        </article>
+      </section>
+    </span>
+  </TabItem>
+  <TabItem value="tutorials">
+    <h2>Tutorials</h2>
+    <p>Tutorial guides to get started using The QRL. Walking through basic tasks like setting up a node, requesting blockchain data etc.</p>
+    <span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/tutorials/node">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="Node Tutorials">
+              Node Tutorials
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Node related tutorials.">QRL Node related tutorials.</p>
+          </a>
+        </article>
+        <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/tutorials/wallet">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="Wallet Tutorials">
+              Wallet Tutorials
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Wallet Related Tutorials">QRL Wallet Related Tutorials</p>
+          </a>
+        </article>
+      </section>
+    </span>
+  </TabItem>
 </Tabs>
+
+---
+
+:::info MORE QUESTIONS?
+If you don't find all you need from these docs, please join us in our [Discord Server](https://theqrl.org/discord) for more direct help.
+:::
+
+:::caution DOCUMENT STATUS 
+**Contributions welcome and appreciated!**
+
+<span> This site is in <i>{frontMatter.docstatus}</i> status and needs additional input and work! </span>
+
+<span>Use the links to edit any document in Github, sign in and make your changes. For in-depth contributions, fork the <a href="https://github.com/theqrl/documentation">documentation repo</a> and branch your changes to get started, or see us in the <a href="https://theqrl.org/discord">QRL Discord server. </a></span>
+:::

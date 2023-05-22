@@ -13,7 +13,7 @@ keywords:
   - docs
   - tutorials
 image: /assets/img/icons/yellow.png
-slug: /tutorials
+slug: /tutorials/overview
 ---
 
 

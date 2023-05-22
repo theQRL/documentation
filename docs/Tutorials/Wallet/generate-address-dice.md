@@ -2,6 +2,7 @@
 docstatus: DRAFT
 id: generate-address-dice
 title: Generate QRL Address - Dice
+displayed_sidebar: tutorialSidebar
 hide_title: false
 hide_table_of_contents: true
 sidebar_label: Generate Address - Dice
