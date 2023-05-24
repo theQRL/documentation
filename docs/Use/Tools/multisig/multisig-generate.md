@@ -1,12 +1,12 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
-id: multisig-generate
-title: QRL MultiSig - Generate Address
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: multi-sig-generate
+title: Generate Multi-Sig Address
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Generate
 sidebar_position: 2
-pagination_label: Multisig - Generate
+pagination_label: Multi-Sig Generate
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: QRL Multisig - Generate new address
 keywords:
@@ -23,18 +23,34 @@ slug: /use/tools/multi-sig/generate
 
 ### HELP NEEDED
 
-- Graphics showing multi-sig overall flow, relationships and weights
+- Better graphics showing multi-sig overall flow, relationships and weights
 
 :::
 
+A multisig address is generated using signatory addresses and their respective weight to vote. These addresses are cryptographically associated together with their output being a new multisig address.
+
+This new address can accept a deposit of funds from any QRL address, similar to a normal QRL address. Where the multisig address differs is in how funds are authorized to spend.
+
+Once funds have been transferred into the new multi-sig address it will require the threshold to be met in order for any outgoing transaction to happen. This ensures that all parties have a say in how these funds are spent.
+
 ![Generate Multisig Address Flow](./assets/img/generate-multisig.png)
 
+## Multi-sig Address Creation
 
-## Required Info
+Using the tools tab in the QRL Wallet with an address opened, select the multi-sig function. This will open a new screen with tabs along the top. Select the Create tab and enter the required information, making sure to include each address intended to have input on the new address.
+
+The initiator of a multi-sig address does not need to be an authorized party to the new address, you must include __all__ addresses that will be included in the vote and spend proposals during the initiation.
+
+:::info
+Once a multi-sig address has been created the details cannot be changed! Ensure that the correct information is entered initially or create a new address with correct information. 
+:::
+
+
+
+### Required Info
 
 Here are the various pieces of required information needed to generate a Multisig Address.
 
-:::info Required Data For Multisig Address
 | Input | Description | Value | 
 | --- | --- | ---- | 
 |**Signatory** | Parties to be setup as a signatories | {QRL PUBLIC ADDRESS} |
@@ -42,22 +58,43 @@ Here are the various pieces of required information needed to generate a Multisi
 |**Threshold to Spend** | Minimum vote threshold required for vote to pass | {INTEGER} |
 |**Fee** | Fee for the *multisig-generate* transaction | {0.01} |
 |**OTS Key Index**| Next unused OTS key used to sign *multisig-generate* transaction | {INTEGER} |
-:::
 
-### Signatory(s)
+#### Signatory(s)
 
-Each voting party in the multisig address is required to have generated a QRL Address. This address will be associated to the multisig address and used for all further transactions related to the multisig address.
+Each voting party in the multisig address is required to have a QRL address. This address will be associated to the multisig address and used for all further transactions related to the multisig address.
 
-The creator of the multisig address will need to collect all of the public keys for voting members of the multisig address prior to generating a new address. 
+The creator of the multisig address will need to collect all of the public keys for voting members of the multisig address prior to generating a new address.
 
-### Weight
+This address can be with additional on-chain functions and can contain additional funds not related to the multi-sig transaction. 
+
+#### Weight
 
 Each signatory will be assigned a weight during the address creation process. This weight cannot be changed after the multisig address is created. 
 
 This weight determines the voting power the signatory has. 
 
-### Threshold To Spend
+#### Threshold To Spend
 
-### Fee
+This threshold must be met by the sum of votes for a transaction to be sent from a multi-sig address. This is the addition of all yes votes in the spend proposal, each with their individual thresholds.
 
-### OTS Key Index
+#### Fee
+
+The transaction fee for the multi-sig address creation to be broadcast onto the network
+
+#### OTS Key Index
+
+An unused OTS key for the initiating address sending the create multi-sig transaction. 
+
+
+### New Multi-Sig Address
+
+With all information entered and the transaction sent onto the QRL network, a new address will be presented at the top of the wallet screen. A transaction hash will also be shown that can be used to look up the multi-sig address generation transaction in the [QRL Block Explorer](https://explorer.theqrl.org). 
+
+
+This new address looks similar to any other QRL public address, and it's balance can be looked up in the same way. Main difference being that it requires enough signatories to reach the established threshold to transfer any funds held by this address.
+
+
+
+
+
+

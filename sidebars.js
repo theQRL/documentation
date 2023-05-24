@@ -343,8 +343,10 @@ const sidebars = {
                 image: '/assets/img/icons/yellow.png',
               },
               items: [
-                'Use/Tools/multisig/multisig',
-                'Use/Tools/multisig/multisig-generate',
+                'Use/Tools/multisig/multi-sig',
+                'Use/Tools/multisig/multi-sig-generate',
+                'Use/Tools/multisig/multi-sig-spend-proposal',
+                'Use/Tools/multisig/multi-sig-vote',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
