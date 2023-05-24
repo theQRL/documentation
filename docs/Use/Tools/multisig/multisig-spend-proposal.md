@@ -1,7 +1,7 @@
 ---
 docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
-id: multi-sig-spend-proposal
-title: Multi-Sig Spend Proposal
+id: multisig-spend-proposal
+title: Multisig Spend Proposal
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Spend Proposal
@@ -15,7 +15,7 @@ keywords:
   - Multi-Signature
   - spend proposal
 image: /assets/img/icons/yellow.png
-slug: /use/tools/multi-sig/spend-proposal
+slug: /use/tools/multisig/spend-proposal
 ---
 
 
@@ -23,11 +23,11 @@ slug: /use/tools/multi-sig/spend-proposal
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-To initiate a transfer of funds from a multi-sig address you must open the QRL wallet using one of the addresses that are authorized signatories for the multi-sig address.
+To initiate a transfer of funds from a multisig address you must open the QRL wallet using one of the addresses that are authorized signatories for the multisig address.
 
-With the wallet open, browse to the tools tab and select multi-sig. This will open the multi-sig screen with tabs along the top, select the spend tab.
+With the wallet open, browse to the tools tab and select multisig. This will open the multisig screen with tabs along the top, select the spend tab.
 
-All valid multi-sig addresses will be shown, allowing the user to select the multi-sig address they want to propose spending from. A single address may be a signatory to multiple multi-sig addresses.
+All valid multisig addresses will be shown, allowing the user to select the multisig address they want to propose spending from. A single address may be a signatory to multiple multisig addresses.
 
 
 ### Required Data
@@ -45,11 +45,11 @@ Enter the required information for the transaction including the address of the 
 
 #### Recipient(s)
 
-The intended recipients that will receive funds if the spend proposal is voted for with enough threshold to fulfill the multi-sig rules established when the address was created.
+The intended recipients that will receive funds if the spend proposal is voted for with enough threshold to fulfill the multisig rules established when the address was created.
 
 #### Amount
 
-Amount of quanta to send to the recipient from the multi-sig address balance. There must be enough funds in the multi-sig address to cover the transaction.
+Amount of quanta to send to the recipient from the multisig address balance. There must be enough funds in the multisig address to cover the transaction.
 
 #### Expiry block number
 
@@ -65,10 +65,14 @@ This fee will cover the spend proposal transaction being sent onto the chain.
 
 #### OTS Key Index
 
-This transaction will use an OTS key from the initiators address, not the multi-sig address. There must be unused OTS keys available to send this transaction.
+This transaction will use an OTS key from the initiators address, not the multisig address. There must be unused OTS keys available to send this transaction.
 
 ## Spend Proposal Validation
 
 Once the transaction has been sent onto the network you can see the details using the [QRL Block Explorer](https://explorer.theqrl.org) by looking up the transaction hash.
 
 This will show the initiating address, and who the funds are proposed to be sent to. This transaction will not happen until enough signatories have voted to approve the transfer.
+
+## Spend Proposal Approval
+
+In order for the proposal to be accepted and funds sent the intended recipients the minimum threshold must be met by approve votes from signatories. 

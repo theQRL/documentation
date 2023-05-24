@@ -1,12 +1,12 @@
 ---
 docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
-id: multi-sig
+id: multisig
 title: QRL Multi-Signature Overview
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
-pagination_label: Multi-Sig Overview
+pagination_label: Multisig Overview
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
 description: Multi-Signature - Overveiw
 keywords:
@@ -14,7 +14,7 @@ keywords:
   - tools
   - Multi-Signature
 image: /assets/img/icons/yellow.png
-slug: /use/tools/multi-sig/overview
+slug: /use/tools/multisig/overview
 ---
 
 :::caution DOCUMENT STATUS 
@@ -36,10 +36,10 @@ A multisig address can be setup with a single address, or up to 100 addresses ab
 ## Multi-sig Overview
 
 1. Multiple users create individual QRL addresses, and backup their secret keys. Each party must have a QRL address they control. [See the Wallet Documentation](/use/wallet/overview) for more on generating a new address
-2. After establishing the users in the multi-sig agreement one of the users creates a new Multi-Sig address, inputting all of the parties public addresses into the transaction information. This transaction is sent onto the QRL network and is required to generate the new multi-sig shared address.
-3. Funds are then transferred into the new address to be a shared responsibility of the group as established in the initial multi-sig generation.
+2. After establishing the users in the multisig agreement one of the users creates a new Multisig address, inputting all of the parties public addresses into the transaction information. This transaction is sent onto the QRL network and is required to generate the new multisig shared address.
+3. Funds are then transferred into the new address to be a shared responsibility of the group as established in the initial multisig generation.
 4. A single user in the group initiates a **vote transaction** to propose funds are sent to a given address. 
-5. Members of the multi-sig group must vote to approve or deny the transaction. No funds will be transferred until the threshold is met that was established in the initial multi-sig creation. example, 2 of 3 addresses or 4 of 4 need to vote yes to approve.
+5. Members of the multisig group must vote to approve or deny the transaction. No funds will be transferred until the threshold is met that was established in the initial multisig creation. example, 2 of 3 addresses or 4 of 4 need to vote yes to approve.
 6. After the threshold has been met the funds will be sent to the address as outlined in the vote proposal. If the threshold is not met within the given time frame the transaction will not happen, and another vote proposal will need to be initiated.
 
 
@@ -49,11 +49,12 @@ A multisig address can be setup with a single address, or up to 100 addresses ab
 There are a few nuances with multi-signature addresses that are good to know.
 
 - There is a limit of 100 addresses allowed to be signatories in a multisig address
-- There is no way to "backup" the multi-sig address, there is no private key associated to this address
+- There is no way to "backup" the multisig address, there is no private key associated to this address
   - Each address that is authorized must be backed up independently by the user 
   - The **Only** way to spend funds deposited to a multisig address is by reaching the set vote threshold through a spend proposal
-- A multisig address cannot be a signatory to an additional multisig address (nested multi-sig addresses) as there is no private key associated to a multisig address
-- Each signatory must use OTS keys for initiating a spend proposal as well as any votes on the proposal. 
+- A multisig address cannot be a signatory to an additional multisig address (nested multisig addresses) as there is no private key associated to a multisig address
+- Each signatory must use OTS keys for initiating a spend proposal as well as any votes on the proposal.
+- Votes may be changed up until the threshold has been reached with Approval votes or the block experation is reached. Once this threshold is met the funds are transfered.
 
 
 ## Definitions 
@@ -63,11 +64,11 @@ There are a few nuances with multi-signature addresses that are good to know.
 | **Transaction** |   An action (*typically spending funds*) on-chain which requires at least one signature from a private key|
 | **Multi-Sig** |  *Multi-signature Transaction* - A transaction sent from a defined multi-signature address that require one or more signatures from a group of signatories before being accepted by the network. |
 | **Weight** | Each signatory has an associated weight their vote is counted as  |
-| **Signatory** |   One of up to 100 addresses allowed to initiate a spend transaction or vote on a multi-sig spend proposal|
+| **Signatory** |   One of up to 100 addresses allowed to initiate a spend transaction or vote on a multisig spend proposal|
 | **Threshold** | The accumulative amount of votes needed to accept a spend proposal |
 | **Fee** | The fee required for the transaction to broadcast on the network |
 | **OTS** | The *One Time Signature* key used to sign the transaction |
-| **Creator** | Address who created the multi-sig address |
+| **Creator** | Address who created the multisig address |
 | **Vote** | A vote transaction on a spend proposal |
 | **Spend** | A proposal to spend funds allocated to the address, must be initiated by an address associated with the multisig address  |
 | **Expiry Block Number** | A block number in the future where, if the threshold is not met, the spend proposal expires without approval |
@@ -83,19 +84,19 @@ There are a few nuances with multi-signature addresses that are good to know.
 
 ### OTS Key Usage
 
-OTS keys are used at various stages and from various addresses in the lifetime of a multi-sig addresses. All transaction on-chain require a valid OTS key and is used from the address sending the transaction, regardless of the transaction type.
+OTS keys are used at various stages and from various addresses in the lifetime of a multisig addresses. All transaction on-chain require a valid OTS key and is used from the address sending the transaction, regardless of the transaction type.
 
-- One key is used for creating the multi-sig address (tx ID) (*creators address*)
+- One key is used for creating the multisig address (tx ID) (*creators address*)
 - One key is used to create the spend tx (*spend vote initiator address*)
-- one key is used for each vote of the multi-sig (*each signatory that votes*)
+- one key is used for each vote of the multisig (*each signatory that votes*)
 
 
 
 ## References
 
-- Create a new multi-sig address
-- Deposit funds to a multi-sig address
-- Propose a vote from a multi-sig address
+- Create a new multisig address
+- Deposit funds to a multisig address
+- Propose a vote from a multisig address
 - Vote on a spend proposal
 - Reject a spend proposal
 - Multi-sig transaction type 
@@ -104,7 +105,7 @@ OTS keys are used at various stages and from various addresses in the lifetime o
 
 ## Multi-Signature Example Uses
 
-Here are some examples of uses for multi-sig addresses.
+Here are some examples of uses for multisig addresses.
 
 ### Joint Account
 

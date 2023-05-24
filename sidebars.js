@@ -333,7 +333,7 @@ const sidebars = {
             // Tools multi-sig
             {
               type: 'category',
-              label: 'Multi-Sig',
+              label: 'Multisig',
               link: {
                 type: 'generated-index',
                 title: 'QRL Multi-signature Usage',
@@ -343,10 +343,10 @@ const sidebars = {
                 image: '/assets/img/icons/yellow.png',
               },
               items: [
-                'Use/Tools/multisig/multi-sig',
-                'Use/Tools/multisig/multi-sig-generate',
-                'Use/Tools/multisig/multi-sig-spend-proposal',
-                'Use/Tools/multisig/multi-sig-vote',
+                'Use/Tools/multisig/multisig',
+                'Use/Tools/multisig/multisig-generate',
+                'Use/Tools/multisig/multisig-spend-proposal',
+                'Use/Tools/multisig/multisig-vote',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
