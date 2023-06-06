@@ -43,6 +43,30 @@ A multisig address can be setup with a single address, or up to 100 addresses ab
 6. After the threshold has been met the funds will be sent to the address as outlined in the vote proposal. If the threshold is not met within the given time frame the transaction will not happen, and another vote proposal will need to be initiated.
 
 
+```mermaid
+graph LR
+    subgraph Multisig Flow
+
+      subgraph Multisig Address Creation
+        A[Alice] -->|QRL Address| B(Multisig Address)
+        C[Bob] -->|QRL Address| B
+        D[Eve] -->|QRL Address| B
+        B --- O(Fund Multisig)
+      end
+
+      subgraph Spend 10 To Bob
+        E[Alice] -->  |Yes| F
+        J[Bob] --> |Yes| F
+        K[Eve] --> |No| F
+        F --> |Threshold = 2| N[Transfer Funds]
+        N --> |Funds Sent to Bob| P[Bob]
+      end
+      B --> N
+      A --10 QRL<br/>Spend Proposal-->  F{Spend Proposal}
+    end    
+```
+
+
 
 ## Important Concepts
 
@@ -54,7 +78,7 @@ There are a few nuances with multi-signature addresses that are good to know.
   - The **Only** way to spend funds deposited to a multisig address is by reaching the set vote threshold through a spend proposal
 - A multisig address cannot be a signatory to an additional multisig address (nested multisig addresses) as there is no private key associated to a multisig address
 - Each signatory must use OTS keys for initiating a spend proposal as well as any votes on the proposal.
-- Votes may be changed up until the threshold has been reached with Approval votes or the block experation is reached. Once this threshold is met the funds are transfered.
+- Votes may be changed up until the threshold has been reached with Approval votes or the block expiration is reached. Once this threshold is met the funds are transferred.
 
 
 ## Definitions 
@@ -78,8 +102,6 @@ There are a few nuances with multi-signature addresses that are good to know.
 ### Spend Proposal
 ![Spend Multisig Flow](./assets/img/spend-vote.png)
 
-
-### Vote Transaction
 
 
 ### OTS Key Usage

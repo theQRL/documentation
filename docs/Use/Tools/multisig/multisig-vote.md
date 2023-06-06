@@ -32,6 +32,17 @@ There is no notification to the signatories that a vote is needed, and there is 
 
 ## Multisig Vote
 
+```mermaid
+graph
+    subgraph Multisig Vote
+        A[Alice] -->|yes| B{Spend <br/>Proposal}
+        C[Bob] -->|yes| B
+        C -. 10 QRL<br/>to Bob .-> B{Spend <br/>Proposal}
+        D[Eve] -->|no| B
+        B -. Threshold Met<br/>before blocktime expired .-> O(Transfer Approved)
+    end    
+```
+
 To vote on a [Spend Proposal](/use/tools/multisig/spend-proposal), authorized signatories must open their personal addresses that have been associated with the Multisig address using the QRL wallet software.
 
 From within an open wallet, select the "Tools" tab, select "Multisig" and find the tab along the top titles "Vote"
