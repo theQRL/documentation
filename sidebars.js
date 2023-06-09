@@ -256,7 +256,7 @@ const sidebars = {
             type: 'generated-index',
             title: 'QRL Node',
             description: 'Covering QRL Node installation and operation.',
-            slug: '/use/node/overview',
+            slug: '/use/node/node-overview',
             keywords: ['use-node'],
             image: '/assets/img/icons/yellow.png',
           },
@@ -333,7 +333,7 @@ const sidebars = {
             // Tools multi-sig
             {
               type: 'category',
-              label: 'Multi-Sig',
+              label: 'Multisig',
               link: {
                 type: 'generated-index',
                 title: 'QRL Multi-signature Usage',
@@ -345,6 +345,8 @@ const sidebars = {
               items: [
                 'Use/Tools/multisig/multisig',
                 'Use/Tools/multisig/multisig-generate',
+                'Use/Tools/multisig/Multisig-spend-proposal',
+                'Use/Tools/multisig/multisig-vote',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
