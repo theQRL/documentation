@@ -15,7 +15,7 @@ keywords:
   - Multi-Signature
   - spend proposal
 image: /assets/img/icons/yellow.png
-slug: /use/tools/Multisig/spend-proposal
+slug: /use/tools/multisig/spend-proposal
 ---
 
 

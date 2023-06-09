@@ -345,7 +345,7 @@ const sidebars = {
               items: [
                 'Use/Tools/multisig/multisig',
                 'Use/Tools/multisig/multisig-generate',
-                'Use/Tools/multisig/multisig-spend-proposal',
+                'Use/Tools/multisig/Multisig-spend-proposal',
                 'Use/Tools/multisig/multisig-vote',
               ],
               collapsible: true, // Set the category to be collapsible
