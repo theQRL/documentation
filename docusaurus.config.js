@@ -120,7 +120,7 @@ const config = {
         // Left Side
           {
             type: 'dropdown',
-            label: 'Learn The QRL',
+            label: 'Learn',
             position: 'left',
             items: [
               {
@@ -138,7 +138,7 @@ const config = {
 
           {
             type: 'dropdown',
-            label: 'Use The QRL',
+            label: 'Use',
             position: 'left',
             items: [
               {
@@ -164,7 +164,7 @@ const config = {
           
           {
             type: 'dropdown',
-            label: 'Build On QRL',
+            label: 'Build',
             position: 'left',
             items: [
               {
