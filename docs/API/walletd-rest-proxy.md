@@ -4,9 +4,9 @@ id: walletd-rest-proxy
 title: QRL API - walletd-rest-proxy
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: QRL API - walletd-rest-proxy
-sidebar_position: 3
-pagination_label: QRL API - walletd-rest-proxy
+sidebar_label: API - walletd-rest-proxy
+sidebar_position: 4
+pagination_label: API - walletd-rest-proxy
 custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Developers/API/walletd-rest-proxy.md
 description: QRL API - walletd-rest-proxy
 keywords:
