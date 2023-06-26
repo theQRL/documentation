@@ -123,7 +123,12 @@ const sidebars = {
                 'Use/Wallet/Web/web-wallet-new',
                 'Use/Wallet/Web/web-wallet-open',
                 'Use/Wallet/Web/web-wallet-send',
-                'Use/Wallet/Web/web-wallet-tools',
+                {
+                  type: 'link',
+                  label: 'Tools', // The link label
+                  description: 'QRL Wallet tools and integrations',
+                  href: '../tools/', // The external URL
+                },
                 'Use/Wallet/Web/web-wallet-backup',
               ],
               collapsible: true, // Set the category to be collapsible
@@ -146,7 +151,12 @@ const sidebars = {
                 'Use/Wallet/Desktop/desktop-wallet-new',
                 'Use/Wallet/Desktop/desktop-wallet-open',
                 'Use/Wallet/Desktop/desktop-wallet-send',
-                'Use/Wallet/Desktop/desktop-wallet-tools',
+                {
+                  type: 'link',
+                  label: 'Tools', // The link label
+                  description: 'QRL Wallet tools and integrations',
+                  href: '../tools/', // The external URL
+                },
                 'Use/Wallet/Desktop/desktop-wallet-backup',
               ],
               collapsible: true, // Set the category to be collapsible
