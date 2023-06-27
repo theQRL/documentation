@@ -22,9 +22,7 @@ slug: /api/qrl-public-api
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!
 
-- Give brief overview of each API, their functions and good use cases to implement the API from a development perspective.
-- Integrqate openapi into the API docs: https://docusaurus-openapi.tryingpan.dev/  https://github.com/PaloAltoNetworks/docusaurus-openapi-docs
-- need to write an OPENAPI spec file.
+- Rework intro and code usage examples with functional examples.
 
 </span>
 :::
@@ -178,10 +176,10 @@ The PublicAPIService service provides public API methods for interacting with th
 
 | Method | Request | Response |
 | :---: | :---: | :---: |
-| [GetNodeState](#getnodestate) | GetNodeStateReq | GetNodeStateResp |
-| [GetKnownPeers](#getknownpeers) | GetKnownPeersReq | GetKnownPeersResp |
-| [GetPeersStat](#getpeerstate) | GetPeersStatReq | GetPeersStatResp |
-| [GetStats](#getstats) | GetStatsReq | GetStatsResp |
+| [GetNodeState](#getnodestate) | [GetNodeStateReq](#getnodestate) | [GetNodeStateResp](#getnodestate) |
+| [GetKnownPeers](#getknownpeers) | [GetKnownPeersReq](#getknownpeers) | [GetKnownPeersResp](#getknownpeers) |
+| [GetPeersStat](#getpeersstat) | [GetPeersStatReq](#getpeersstat) | [GetPeersStatResp](#getpeersstat) |
+| [GetStats](#getstats) | [GetStatsReq](#getstats) | [GetStatsResp](#getstats) |
 | [GetAddressState](#getaddressstate) | GetAddressStateReq | GetAddressStateResp |
 | [GetOptimizedAddressState](#getoptimizedaddressstate) | GetAddressStateReq | GetOptimizedAddressStateResp |
 | [GetMultiSigAddressState](#getmultisigaddressstate) | GetMultiSigAddressStateReq | GetMultiSigAddressStateResp |
@@ -219,23 +217,37 @@ The PublicAPIService service provides public API methods for interacting with th
 | [GetBlockByNumber](#getblockbynumber) | GetBlockByNumberReq | GetBlockByNumberResp |
 
 
+
+
 ### GetNodeState
 
 Retrieves the current state of the QRL node.
 
+The response `GetNodeStateResp` contains the following fields:
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `version` | (string) | The version of the QRL node |
+| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
+| `num_connections` | (uint32) | Number of connections seen to node |
+| `num_known_peers` | (uint32) | Number of know peers seen by node |
+| `uptime` | (uint64) | The uptime of the node in seconds |
+| `block_height` | (uint64) | Blockheight currently known to node |
+| `block_last_hash` | (bytes) | Last block hash; |
+| `network_id` | (string) | Network ID |
 
 
 <Tabs
   groupId="getnodestate"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetNodeState', value: 'method'},
+    {label: 'GetNodeStateReq', value: 'request'},
+    {label: 'GetNodeStateResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetNodeState
   
   ```go
   service PublicAPI
@@ -252,11 +264,14 @@ Retrieves the current state of the QRL node.
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetNodeStateReq  
 
   No additional request parameters needed. 
 
   ```go
+  /**
+   * Represents the reply message to node state query
+  */
   message GetNodeStateReq {
     // No request parameters required
   }
@@ -266,71 +281,58 @@ Retrieves the current state of the QRL node.
   
   <TabItem value="response">
 
-  #### Response
-  
-  The response `GetNodeStateResp` contains the following fields:
-
-  | Field | Type | Details | 
-  | :--: | :---: | :--- |
-  | `version` | (string) | The version of the QRL node |
-  | `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-  | `num_connections` | (uint32) | Number of connections seen to node |
-  | `num_known_peers` | (uint32) | Number of know peers seen by node |
-  | `uptime` | (uint64) | The uptime of the node in seconds |
-  | `block_height` | (uint64) | Blockheight currently known to node |
-  | `block_last_hash` | (bytes) | Last block hash; |
-  | `network_id` | (string) | Network ID |
+  #### GetNodeStateResp
 
 
   ```go
-  message GetNodeStateResponse {
-    message NodeInfo
-      {
-        enum State {
-            UNKNOWN = 0;
-            UNSYNCED = 1;
-            SYNCING = 2;
-            SYNCED = 3;
-            FORKED = 4;
-        }
-
-        string version = 1;
-        State  state = 2;
-        uint32 num_connections = 3;
-        uint32 num_known_peers = 4;
-        uint64 uptime = 5;               // Uptime in seconds
-        uint64 block_height = 6;
-        bytes  block_last_hash = 7;
-        string network_id = 8;
-      }
-
+  /**
+   * Represents the reply message to node state query
+  */
+  message GetNodeStateResp {
       NodeInfo info = 1;
   }
-  ```
 
+  message NodeInfo
+  {
+      enum State {
+          UNKNOWN = 0;
+          UNSYNCED = 1;
+          SYNCING = 2;
+          SYNCED = 3;
+          FORKED = 4;
+      }
+
+      string version = 1;
+      State  state = 2;
+      uint32 num_connections = 3;
+      uint32 num_known_peers = 4;
+      uint64 uptime = 5;               // Uptime in seconds
+      uint64 block_height = 6;
+      bytes  block_last_hash = 7;
+      string network_id = 8;
+  }
+  ```
   </TabItem>
 
 </Tabs>
 
 
-:::info
-:::
+
+
 
 ### GetKnownPeers
-
-
 
 <Tabs
   groupId="getknownpeers"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetKnownPeers', value: 'method'},
+    {label: 'GetKnownPeersReq', value: 'request'},
+    {label: 'GetKnownPeersResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetKnownPeers
   
   ```go
   service PublicAPI
@@ -346,20 +348,65 @@ Retrieves the current state of the QRL node.
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetKnownPeersReq  
+
+  ```go
+  /**
+   * Represents a query to get known peers
+  */
+  message GetKnownPeersReq {
+    // No request parameters required
+  }
+```
 
   </TabItem>
   
   <TabItem value="response">
 
-  #### Response
+  #### GetKnownPeersResp
   
+  ```go
+  /**
+   * Represents the reply message to known peers query
+  */
+  message GetKnownPeersResp {
+      NodeInfo node_info = 1;             // NodeInfo object containing node state information
+      repeated Peer known_peers = 2;      // List of Peer objects containing peer nodes detailed information
+  }
+
+
+  message NodeInfo
+  {
+      enum State {
+          UNKNOWN = 0;
+          UNSYNCED = 1;
+          SYNCING = 2;
+          SYNCED = 3;
+          FORKED = 4;
+      }
+
+      string version = 1;
+      State  state = 2;
+      uint32 num_connections = 3;
+      uint32 num_known_peers = 4;
+      uint64 uptime = 5;               // Uptime in seconds
+      uint64 block_height = 6;
+      bytes  block_last_hash = 7;
+      string network_id = 8;
+  }
+
+  message Peer {
+      string ip = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
-:::info
 
-:::
+
+
+
 
 ### GetPeersStat
 
@@ -368,13 +415,13 @@ Retrieves the current state of the QRL node.
   groupId="getpeerstat"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetPeersStat', value: 'method'},
+    {label: 'GetPeersStatReq', value: 'request'},
+    {label: 'GetPeersStatResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetPeersStat
   
   ```go
   service PublicAPI
@@ -391,8 +438,15 @@ Retrieves the current state of the QRL node.
   
   <TabItem value="request">
 
-  #### Request  
-
+  #### GetPeersStatReq  
+  ```go
+  /**
+   * Represents a query to get connected peers stat
+  */
+  message GetPeersStatReq {
+    // No request parameters required
+  }
+  ```
 
 
   </TabItem>
@@ -400,27 +454,40 @@ Retrieves the current state of the QRL node.
   <TabItem value="response">
 
  
-  #### Response
+  #### GetPeersStatResp
   
+  ```go
+  /**
+   * Represents the reply message to peers stat query
+  */
+  message GetPeersStatResp {
+      repeated PeerStat peers_stat = 1;    // PeerState object contains peer_ip, port and peer state information
+  }
+
+  message PeerStat {
+      bytes peer_ip = 1;
+      uint32 port = 2;
+      NodeChainState node_chain_state = 3;
+  }
+  ```
   </TabItem>
 </Tabs>
 
+
+
 ### GetStats
-
-
-
 
 <Tabs
   groupId="getstats"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetStats', value: 'method'},
+    {label: 'GetStatsReq', value: 'request'},
+    {label: 'GetStatsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetStats
   
   ```go
   service PublicAPI
@@ -437,18 +504,70 @@ Retrieves the current state of the QRL node.
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetStatsReq  
 
+
+  ```go
+  /**
+   * Represents a query to get statistics about node
+  */
+  message GetStatsReq {
+      bool include_timeseries = 1;            // Boolean to define if block timeseries should be included in reply or not
+  }
+
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetStatsResp
   
+  ```go
+  /**
+   * Represents the reply message to get statistics about node
+  */
+  message NodeInfo
+  {
+      enum State {
+          UNKNOWN = 0;
+          UNSYNCED = 1;
+          SYNCING = 2;
+          SYNCED = 3;
+          FORKED = 4;
+      }
+
+      string version = 1;
+      State  state = 2;
+      uint32 num_connections = 3;
+      uint32 num_known_peers = 4;
+      uint64 uptime = 5;               // Uptime in seconds
+      uint64 block_height = 6;
+      bytes  block_last_hash = 7;
+      string network_id = 8;
+  }
+
+  message GetStatsResp {
+      NodeInfo node_info = 1;                 // NodeInfo object containing node state information
+      uint64 epoch = 2;                       // Current epoch
+      uint64 uptime_network = 3;              // Indicates uptime in seconds
+
+      uint64 block_last_reward = 4;           // Block reward
+      uint64 block_time_mean = 5;             // Blocktime average
+      uint64 block_time_sd = 6;               // Blocktime standrad deviation
+
+      uint64 coins_total_supply = 7;          // Total coins supply
+      uint64 coins_emitted = 8;               // Total coins emitted
+
+      repeated BlockDataPoint block_timeseries = 9;
+  }
+  ```  
+
   </TabItem>
 </Tabs>
+
+
 
 
 
