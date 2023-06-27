@@ -127,7 +127,7 @@ const sidebars = {
                   type: 'link',
                   label: 'Tools', // The link label
                   description: 'QRL Wallet tools and integrations',
-                  href: '../tools/', // The external URL
+                  href: '/use/tools/', // The external URL
                 },
                 'Use/Wallet/Web/web-wallet-backup',
               ],
@@ -155,7 +155,7 @@ const sidebars = {
                   type: 'link',
                   label: 'Tools', // The link label
                   description: 'QRL Wallet tools and integrations',
-                  href: '../tools/', // The external URL
+                  href: '/use/tools/', // The external URL
                 },
                 'Use/Wallet/Desktop/desktop-wallet-backup',
               ],
