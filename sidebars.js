@@ -123,7 +123,12 @@ const sidebars = {
                 'Use/Wallet/Web/web-wallet-new',
                 'Use/Wallet/Web/web-wallet-open',
                 'Use/Wallet/Web/web-wallet-send',
-                'Use/Wallet/Web/web-wallet-tools',
+                {
+                  type: 'link',
+                  label: 'Tools', // The link label
+                  description: 'QRL Wallet tools and integrations',
+                  href: '/use/tools/', // The external URL
+                },
                 'Use/Wallet/Web/web-wallet-backup',
               ],
               collapsible: true, // Set the category to be collapsible
@@ -146,7 +151,12 @@ const sidebars = {
                 'Use/Wallet/Desktop/desktop-wallet-new',
                 'Use/Wallet/Desktop/desktop-wallet-open',
                 'Use/Wallet/Desktop/desktop-wallet-send',
-                'Use/Wallet/Desktop/desktop-wallet-tools',
+                {
+                  type: 'link',
+                  label: 'Tools', // The link label
+                  description: 'QRL Wallet tools and integrations',
+                  href: '/use/tools/', // The external URL
+                },
                 'Use/Wallet/Desktop/desktop-wallet-backup',
               ],
               collapsible: true, // Set the category to be collapsible
@@ -512,6 +522,61 @@ const sidebars = {
       collapsed: true, // Set the category to be initially collapsed or open by default
     },
 
+    /////////////////////////////
+    // API collapsible section
+    /////////////////////////////
+/*
+    {
+      type: 'category',
+      label: 'API',
+      link: {
+        type: 'generated-index',
+        title: 'API Docs',
+        description: 'API Documentation for The QRL',
+        slug: '/api',
+        keywords: ['developer', 'build', 'api'],
+        image: '/assets/img/icons/yellow.png',
+      },
+      items: [
+        'API/qrl-api',
+        'API/wallet-api',
+        'API/explorer-api',
+        'API/walletd-rest-proxy',
+        'API/zeus-proxy',
+      ]
+    },
+*/
+
+
+
+
+
+
+
+    {
+      type: 'category',
+      label: 'API',
+      link: {
+        type: 'doc',
+        id: 'API/qrl-api-overview', // document ID
+        //label: 'Getting Started', // sidebar label
+        //description: 'API Documentation for The QRL',
+        //slug: '/api',
+        //keywords: ['developer', 'build', 'api'],
+        //image: '/assets/img/icons/yellow.png',
+      },
+      items: [
+        'API/qrl-api-overview',
+        'API/qrl-public-api',
+        'API/wallet-api',
+        'API/explorer-api',
+        'API/walletd-rest-proxy',
+        'API/zeus-proxy',
+      ]
+    },
+
+
+
     //////////////////////////////
     // DEV Wallet collapsible section
     //////////////////////////////
@@ -651,10 +716,11 @@ const sidebars = {
   ],
 
   apiSidebar: [
-    'API/qrl-api',
+    'API/qrl-api-overview',
+    'API/qrl-public-api',
     'API/wallet-api',
     'API/walletd-rest-proxy',
-    'API/zeus-proxy-api',
+    'API/zeus-proxy',
     'API/explorer-api',
   ],
 
