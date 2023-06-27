@@ -179,41 +179,41 @@ The PublicAPIService service provides public API methods for interacting with th
 | [GetKnownPeers](#getknownpeers) | [GetKnownPeersReq](#getknownpeers) | [GetKnownPeersResp](#getknownpeers) |
 | [GetPeersStat](#getpeersstat) | [GetPeersStatReq](#getpeersstat) | [GetPeersStatResp](#getpeersstat) |
 | [GetStats](#getstats) | [GetStatsReq](#getstats) | [GetStatsResp](#getstats) |
-| [GetAddressState](#getaddressstate) | GetAddressStateReq | GetAddressStateResp |
-| [GetOptimizedAddressState](#getoptimizedaddressstate) | GetAddressStateReq | GetOptimizedAddressStateResp |
-| [GetMultiSigAddressState](#getmultisigaddressstate) | GetMultiSigAddressStateReq | GetMultiSigAddressStateResp |
-| [IsSlave](#isslave) | IsSlaveReq | IsSlaveResp |
-| [GetObject](#getobject) | GetObjectReq | GetObjectResp |
-| [GetLatestData](#getlatestdata) | GetLatestDataReq | GetLatestDataResp |
-| [PushTransaction](#pushtransaction) | PushTransactionReq | PushTransactionResp |
-| [TransferCoins](#transfercoins) | TransferCoinsReq | TransferCoinsResp |
-| [ParseAddress](#parseaddress) | ParseAddressReq | ParseAddressResp |
-| [GetChainStats](#getchainstats) | GetChainStatsReq | GetChainStatsResp |
-| [GetAddressFromPK](#getaddressfrompk) | GetAddressFromPKReq | GetAddressFromPKResp |
-| [GetMultiSigCreateTxn](#getmultisigcreatetxn) | MultiSigCreateTxnReq | TransferCoinsResp |
-| [GetMultiSigSpendTxn](#getmultisigspendtxn) | MultiSigSpendTxnReq | TransferCoinsResp |
-| [GetMultiSigVoteTxn](#getmultisigvotetxn) | MultiSigVoteTxnReq | TransferCoinsResp |
-| [GetMessageTxn](#getmessagetxn) | MessageTxnReq | TransferCoinsResp |
-| [GetTokenTxn](#gettokentxn) | TokenTxnReq | TransferCoinsResp |
-| [GetTransferTokenTxn](#gettransfertokentxn) | TransferTokenTxnReq | TransferCoinsResp |
-| [GetSlaveTxn](#getslavetxn) | SlaveTxnReq | TransferCoinsResp |
-| [GetLatticeTxn](#getlatticetxn) | LatticeTxnReq | TransferCoinsResp |
-| [GetTransaction](#gettransaction) | GetTransactionReq | GetTransactionResp |
-| [GetMiniTransactionsByAddress](#getminitransactionsbyaddress) | GetMiniTransactionsByAddressReq | GetMiniTransactionsByAddressResp |
-| [GetTransactionsByAddress](#gettransactionsbyaddress) | GetTransactionsByAddressReq | GetTransactionsByAddressResp |
-| [GetTokensByAddress](#gettokensbyaddress) | GetTransactionsByAddressReq | GetTokensByAddressResp |
-| [GetSlavesByAddress](#getslavesbyaddress) | GetTransactionsByAddressReq | GetSlavesByAddressResp |
-| [GetLatticePKsByAddress](#getlatticepksbyaddress) | GetTransactionsByAddressReq | GetLatticePKsByAddressResp |
-| [GetMultiSigAddressesByAddress](#getmultisigaddressesbyaddress) | GetTransactionsByAddressReq | GetMultiSigAddressesByAddressResp |
-| [GetMultiSigSpendTxsByAddress](#getmultisigspendtxsbyaddress) | GetMultiSigSpendTxsByAddressReq | GetMultiSigSpendTxsByAddressResp |
-| [GetVoteStats](#getvotestats) | GetVoteStatsReq | GetVoteStatsResp |
-| [GetInboxMessagesByAddress](#getinboxmessagesbyaddress) | GetTransactionsByAddressReq | GetInboxMessagesByAddressResp |
-| [GetBalance](#getbalance) | GetBalanceReq | GetBalanceResp |
-| [GetTotalBalance](#gettotalbalance) | GetTotalBalanceReq | GetTotalBalanceResp |
-| [GetOTS](#getots) | GetOTSReq | GetOTSResp |
-| [GetHeight](#getheight) | GetHeightReq | GetHeightResp |
-| [GetBlock](#getblock) | GetBlockReq | GetBlockResp |
-| [GetBlockByNumber](#getblockbynumber) | GetBlockByNumberReq | GetBlockByNumberResp |
+| [GetAddressState](#getaddressstate) | [GetAddressStateReq](#getaddressstate) | [GetAddressStateResp](#getaddressstate) |
+| [GetOptimizedAddressState](#getoptimizedaddressstate) | [GetAddressStateReq](#getoptimizedaddressstate) | [GetOptimizedAddressStateResp](#getoptimizedaddressstate) |
+| [GetMultiSigAddressState](#getmultisigaddressstate) | [GetMultiSigAddressStateReq](#getmultisigaddressstate) | [GetMultiSigAddressStateResp](#getmultisigaddressstate) |
+| [IsSlave](#isslave) | [IsSlaveReq](#isslave) | [IsSlaveResp](#isslave) |
+| [GetObject](#getobject) | [GetObjectReq](#getobject) | [GetObjectResp](#getobject) |
+| [GetLatestData](#getlatestdata) | [GetLatestDataReq](#getlatestdata) | [GetLatestDataResp](#getlatestdata) |
+| [PushTransaction](#pushtransaction) | [PushTransactionReq](#pushtransaction) | [PushTransactionResp](#pushtransaction) |
+| [TransferCoins](#transfercoins) | [TransferCoinsReq](#transfercoins) | [TransferCoinsResp](#transfercoins) |
+| [ParseAddress](#parseaddress) | [ParseAddressReq](#parseaddress) | [ParseAddressResp](#parseaddress) |
+| [GetChainStats](#getchainstats) | [GetChainStatsReq](#getchainstats) | [GetChainStatsResp](#getchainstats) |
+| [GetAddressFromPK](#getaddressfrompk) | [GetAddressFromPKReq](#getaddressfrompk) | [GetAddressFromPKResp](#getaddressfrompk) |
+| [GetMultiSigCreateTxn](#getmultisigcreatetxn) | [MultiSigCreateTxnReq](#getmultisigcreatetxn) | [TransferCoinsResp](#getmultisigcreatetxn) |
+| [GetMultiSigSpendTxn](#getmultisigspendtxn) | [MultiSigSpendTxnReq](#getmultisigspendtxn) | [TransferCoinsResp](#getmultisigspendtxn) |
+| [GetMultiSigVoteTxn](#getmultisigvotetxn) | [MultiSigVoteTxnReq](#getmultisigvotetxn) | [TransferCoinsResp](#getmultisigvotetxn) |
+| [GetMessageTxn](#getmessagetxn) | [MessageTxnReq](#getmessagetxn) | [TransferCoinsResp](#getmessagetxn) |
+| [GetTokenTxn](#gettokentxn) | [TokenTxnReq](#gettokentxn) | [TransferCoinsResp](#gettokentxn) |
+| [GetTransferTokenTxn](#gettransfertokentxn) | [TransferTokenTxnReq](#gettransfertokentxn) | [TransferCoinsResp](#gettransfertokentxn) |
+| [GetSlaveTxn](#getslavetxn) | [SlaveTxnReq](#getslavetxn) | [TransferCoinsResp](#getslavetxn) |
+| [GetLatticeTxn](#getlatticetxn) | [LatticeTxnReq](#getlatticetxn) | [TransferCoinsResp](#getlatticetxn) |
+| [GetTransaction](#gettransaction) | [GetTransactionReq](#gettransaction) | [GetTransactionResp](#gettransaction) |
+| [GetMiniTransactionsByAddress](#getminitransactionsbyaddress) | [GetMiniTransactionsByAddressReq](#getminitransactionsbyaddress) | [GetMiniTransactionsByAddressResp](#getminitransactionsbyaddress) |
+| [GetTransactionsByAddress](#gettransactionsbyaddress) | [GetTransactionsByAddressReq](#gettransactionsbyaddress) | [GetTransactionsByAddressResp](#gettransactionsbyaddress) |
+| [GetTokensByAddress](#gettokensbyaddress) | [GetTransactionsByAddressReq](#gettokensbyaddress) | [GetTokensByAddressResp](#gettokensbyaddress) |
+| [GetSlavesByAddress](#getslavesbyaddress) | [GetTransactionsByAddressReq](#getslavesbyaddress) | [GetSlavesByAddressResp](#getslavesbyaddress) |
+| [GetLatticePKsByAddress](#getlatticepksbyaddress) | [GetTransactionsByAddressReq](#getlatticepksbyaddress) | [GetLatticePKsByAddressResp](#getlatticepksbyaddress) |
+| [GetMultiSigAddressesByAddress](#getmultisigaddressesbyaddress) | [GetTransactionsByAddressReq](#getmultisigaddressesbyaddress) | [GetMultiSigAddressesByAddressResp](#getmultisigaddressesbyaddress) |
+| [GetMultiSigSpendTxsByAddress](#getmultisigspendtxsbyaddress) | [GetMultiSigSpendTxsByAddressReq](#getmultisigspendtxsbyaddress) | [GetMultiSigSpendTxsByAddressResp](#getmultisigspendtxsbyaddress) |
+| [GetVoteStats](#getvotestats) | [GetVoteStatsReq](#getvotestats) | [GetVoteStatsResp](#getvotestats) |
+| [GetInboxMessagesByAddress](#getinboxmessagesbyaddress) | [GetTransactionsByAddressReq](#getinboxmessagesbyaddress) | [GetInboxMessagesByAddressResp](#getinboxmessagesbyaddress) |
+| [GetBalance](#getbalance) | [GetBalanceReq](#getbalance) | [GetBalanceResp](#getbalance) |
+| [GetTotalBalance](#gettotalbalance) | [GetTotalBalanceReq](#gettotalbalance) | [GetTotalBalanceResp](#gettotalbalance) |
+| [GetOTS](#getots) | [GetOTSReq](#getots) | [GetOTSResp](#getots) |
+| [GetHeight](#getheight) | [GetHeightReq](#getheight) | [GetHeightResp](#getheight) |
+| [GetBlock](#getblock) | [GetBlockReq](#getblock) | [GetBlockResp](#getblock) |
+| [GetBlockByNumber](#getblockbynumber) | [GetBlockByNumberReq](#getblockbynumber) | [GetBlockByNumberResp](#getblockbynumber) |
 
 
 
@@ -385,7 +385,7 @@ The response `GetNodeStateResp` contains the following fields:
       }
 
       string version = 1;
-      State  state = 2;
+      State  statGetKnownPeersRespe = 2;
       uint32 num_connections = 3;
       uint32 num_known_peers = 4;
       uint64 uptime = 5;               // Uptime in seconds
@@ -572,19 +572,17 @@ The response `GetNodeStateResp` contains the following fields:
 
 ### GetAddressState
 
-
-
 <Tabs
   groupId="getaddressstate"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetAddressState', value: 'method'},
+    {label: 'GetAddressStateReq', value: 'request'},
+    {label: 'GetAddressStateResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetAddressState
 
   ```go
   service PublicAPI
@@ -601,36 +599,48 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetAddressStateReq  
 
-
+  ```go
+  message GetAddressStateReq {
+      bytes address = 1;
+      bool exclude_ots_bitfield = 2;
+      bool exclude_transaction_hashes = 3; 
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetAddressStateResp
+
+  ```go
+  message GetAddressStateResp {
+      AddressState state = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetOptimizedAddressState
-
-
 
 <Tabs
   groupId="getoptimizedaddressstate"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetOptimizedAddressState', value: 'method'},
+    {label: 'GetAddressStateReq', value: 'request'},
+    {label: 'GetOptimizedAddressStateResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetOptimizedAddressState
   
   ```go
   service PublicAPI
@@ -647,36 +657,48 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetAddressStateReq  
 
-
+  ```go
+  message GetAddressStateReq {
+      bytes address = 1;
+      bool exclude_ots_bitfield = 2;
+      bool exclude_transaction_hashes = 3; 
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### GetOptimizedAddressStateResp
+
+  ```go
+  message GetOptimizedAddressStateResp {
+      OptimizedAddressState state = 1;
+  }
+  ```
+    
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetMultiSigAddressState
-
-
 
 <Tabs
   groupId="getmultisigaddressstate"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigAddressState', value: 'method'},
+    {label: 'GetMultiSigAddressStateReq', value: 'request'},
+    {label: 'GetMultiSigAddressStateResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigAddressState
   
   ```go
   service PublicAPI
@@ -693,36 +715,46 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetMultiSigAddressStateReq  
 
-
+  ```go
+  message GetMultiSigAddressStateReq {
+      bytes address = 1;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetMultiSigAddressStateResp
+
+  ```go
+  message GetMultiSigAddressStateResp {
+      MultiSigAddressState state = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### IsSlave
-
-
 
 <Tabs
   groupId="isslave"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'IsSlave', value: 'method'},
+    {label: 'IsSlaveReq', value: 'request'},
+    {label: 'IsSlaveResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### IsSlave
   
   ```go
   service PublicAPI
@@ -739,36 +771,47 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
-
-
-
+  #### IsSlaveReq  
+  
+  ```go
+  message IsSlaveReq {
+      bytes master_address = 1;
+      bytes slave_pk = 2;
+  }
+  ```
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### IsSlaveResp
   
+  ```go
+  message IsSlaveResp {
+      bool result = 1;
+  }
+  ```
+
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetObject
-
-
 
 <Tabs
   groupId="getobject"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetObject', value: 'method'},
+    {label: 'GetObjectReq', value: 'request'},
+    {label: 'GetObjectResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetObject
 
   ```go
   service PublicAPI
@@ -786,36 +829,51 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetObjectReq  
 
-
+  ```go
+  message GetObjectReq {  
+      bytes query = 1;    
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetObjectResp
+
+  ```go
+  message GetObjectResp {
+      bool found = 1;
+      oneof result {
+          OptimizedAddressState address_state = 2;
+          TransactionExtended transaction = 3;
+          BlockExtended block_extended = 4;
+      }
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetLatestData
-
-
 
 <Tabs
   groupId="getlatestdata"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetLatestData', value: 'method'},
+    {label: 'GetLatestDataReq', value: 'request'},
+    {label: 'GetLatestDataResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetLatestData
   
   ```go
   service PublicAPI
@@ -832,36 +890,56 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetLatestDataReq  
 
-
+  ```go
+  message GetLatestDataReq {
+      enum Filter {
+          ALL = 0;
+          BLOCKHEADERS = 1;
+          TRANSACTIONS = 2;
+          TRANSACTIONS_UNCONFIRMED = 3;
+      }
+      Filter filter = 1;
+      uint32 offset = 2;                      // Offset in the result list (works backwards in this case)
+      uint32 quantity = 3;                    // Number of items to retrive. Capped at 100
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### GetLatestDataResp
+
+  ```go
+  message GetLatestDataResp {
+      repeated BlockHeaderExtended blockheaders = 1;
+      repeated TransactionExtended transactions = 2;
+      repeated TransactionExtended transactions_unconfirmed = 3;
+  }
+  ```    
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### PushTransaction
-
-
 
 <Tabs
   groupId="pushtransaction"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'PushTransaction', value: 'method'},
+    {label: 'PushTransactionReq', value: 'request'},
+    {label: 'PushTransactionResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### PushTransaction
   
   ```go
   service PublicAPI
@@ -878,36 +956,56 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### PushTransactionReq  
 
-
+  ```go
+  message PushTransactionReq {    
+      Transaction transaction_signed = 1;     
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### PushTransactionResp
+
+  ```go
+  message PushTransactionResp {
+      enum ResponseCode {
+          UNKNOWN = 0;
+          ERROR = 1;
+          VALIDATION_FAILED = 2;
+          SUBMITTED = 3;
+      }
+
+      ResponseCode error_code = 1;
+      string error_description = 2;
+      bytes tx_hash = 3;
+  }
+  ```
+
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### TransferCoins
-
-
 
 <Tabs
   groupId="transfercoins"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'TransferCoins', value: 'method'},
+    {label: 'TransferCoinsReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### TransferCoins
   
   ```go
   service PublicAPI
@@ -925,36 +1023,50 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### TransferCoinsReq  
 
-
+```go
+message TransferCoinsReq {
+    bytes master_addr = 1;                 // Transaction source address
+    repeated bytes addresses_to = 2;       // Transaction destination address
+    repeated uint64 amounts = 3;           // Amount. It should be expressed in Shor
+    bytes message_data = 4;                // Message Data. Optional field to send messages
+    uint64 fee = 5;                        // Fee. It should be expressed in Shor
+    bytes xmss_pk = 6;                     // XMSS Public key
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
   
+```go
+message TransferCoinsResp {
+    TransactionExtended extended_transaction_unsigned = 1;
+}
+```  
   </TabItem>
 </Tabs>
 
 
+
+
 ### ParseAddress
-
-
 
 <Tabs
   groupId="parseaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'ParseAddress', value: 'method'},
+    {label: 'ParseAddressReq', value: 'request'},
+    {label: 'ParseAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### ParseAddress
   
   ```go
   service PublicAPI
@@ -971,8 +1083,13 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### ParseAddressReq  
 
+```go
+message ParseAddressReq { 
+    bytes address = 1;
+}
+```
 
 
   </TabItem>
@@ -980,27 +1097,35 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="response">
 
  
-  #### Response
+  #### ParseAddressResp
+
+
+```go
+message ParseAddressResp {
+    bool is_valid = 1;
+    AddressDescriptor desc = 2;
+}
+```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetChainStats
-
-
 
 <Tabs
   groupId="getchainstats"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetChainStats', value: 'method'},
+    {label: 'GetChainStatsReq', value: 'request'},
+    {label: 'GetChainStatsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetChainStats
   
   ```go
   service PublicAPI
@@ -1017,36 +1142,54 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetChainStatsReq  
 
+  ```go
+  /**
+   * Represents the query for get chain size
+  */
 
+  message GetChainStatsReq { }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetChainStatsResp
   
+```go
+/**
+ * Represents the reply message for get chain stats
+*/
+
+message GetChainStatsResp {
+    uint64 state_size = 1;                    // whole state folder size in bytes
+    string state_size_mb = 2;                 // megabytes
+    string state_size_gb = 3;                 // gigabytes
+}
+```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetAddressFromPK
-
-
 
 <Tabs
   groupId="getaddressfrompk"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetAddressFromPK', value: 'method'},
+    {label: 'GetAddressFromPKReq', value: 'request'},
+    {label: 'GetAddressFromPKResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetAddressFromPK
   
   ```go
   service PublicAPI
@@ -1063,35 +1206,46 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetAddressFromPKReq  
 
-
+  ```go
+  message GetAddressFromPKReq {
+      bytes pk = 1;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetAddressFromPKResp
   
+  ```go
+  message GetAddressFromPKResp {
+      bytes address = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
-### GetMultiSigCreateTxn
 
+
+### GetMultiSigCreateTxn
 
 <Tabs
   groupId="getmultisigcreatetxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigCreateTxn', value: 'method'},
+    {label: 'MultiSigCreateTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigCreateTxn
   
   ```go
   service PublicAPI
@@ -1108,37 +1262,54 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### MultiSigCreateTxnReq  
 
+  ```go 
+  message MultiSigCreateTxnReq {
+      bytes master_addr = 1;
 
+      repeated bytes signatories = 2;
+      repeated uint32 weights = 3;
+      uint32 threshold = 4;
+
+      uint64 fee = 5;
+      bytes xmss_pk = 6;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### TransferCoinsResp
+
+  ```go 
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
 
+
+
 ### GetMultiSigSpendTxn
-
-
 
 <Tabs
   groupId="getmultisigspendtxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigSpendTxn', value: 'method'},
+    {label: 'MultiSigSpendTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigSpendTxn
   
   ```go
   service PublicAPI
@@ -1155,36 +1326,55 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### MultiSigSpendTxnReq  
 
+  ```go
+  message MultiSigSpendTxnReq {
+      bytes master_addr = 1;
 
+      bytes multi_sig_address = 2;
+      repeated bytes addrs_to = 3;
+      repeated uint64 amounts = 4;
+      uint64 expiry_block_number = 5;
+
+      uint64 fee = 6;
+      bytes xmss_pk = 7;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
   
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
-### GetMultiSigVoteTxn
 
+
+### GetMultiSigVoteTxn
 
 
 <Tabs
   groupId="getmultisigvotetxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigVoteTxn', value: 'method'},
+    {label: 'MultiSigVoteTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigVoteTxn
   
   ```go
   service PublicAPI
@@ -1201,36 +1391,52 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### MultiSigVoteTxnReq  
 
+  ```go
+  message MultiSigVoteTxnReq {
+      bytes master_addr = 1;
 
+      bytes shared_key = 2;
+      bool unvote = 3;
+
+      uint64 fee = 4;
+      bytes xmss_pk = 5;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetMessageTxn
-
-
 
 <Tabs
   groupId="getmessagetxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMessageTxn', value: 'method'},
+    {label: 'MessageTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMessageTxn
   
   ```go
   service PublicAPI
@@ -1247,36 +1453,52 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### MessageTxnReq  
 
-
+```go
+message MessageTxnReq {
+    bytes master_addr = 1;
+    bytes message = 2;
+    bytes addr_to = 3;
+    uint64 fee = 4;
+    bytes xmss_pk = 5;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   
   </TabItem>
 </Tabs>
 
 
+
+
+
 ### GetTokenTxn
-
-
 
 <Tabs
   groupId="gettokentxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTokenTxn', value: 'method'},
+    {label: 'TokenTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTokenTxn
   
   ```go
   service PublicAPI
@@ -1293,36 +1515,54 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### TokenTxnReq  
 
-
+  ```go
+  message TokenTxnReq {
+      bytes master_addr = 1;
+      bytes symbol = 2;
+      bytes name = 3;
+      bytes owner = 4;
+      uint64 decimals = 5;
+      repeated AddressAmount initial_balances = 6;
+      uint64 fee = 7;
+      bytes xmss_pk = 8;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetTransferTokenTxn
-
-
 
 <Tabs
   groupId="gettransfertokentxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTransferTokenTxn', value: 'method'},
+    {label: 'TransferTokenTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTransferTokenTxn
   
   ```go
   service PublicAPI
@@ -1339,36 +1579,52 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### TransferTokenTxnReq  
 
-
+  ```go
+  message TransferTokenTxnReq {
+      bytes master_addr = 1;
+      repeated bytes addresses_to = 2;
+      bytes token_txhash = 3;
+      repeated uint64 amounts = 4;
+      uint64 fee = 5;
+      bytes xmss_pk = 6;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetSlaveTxn
-
-
 
 <Tabs
   groupId="getslavetxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetSlaveTxn', value: 'method'},
+    {label: 'SlaveTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetSlaveTxn
   
   ```go
   service PublicAPI
@@ -1385,36 +1641,50 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### SlaveTxnReq  
 
-
+  ```go
+  message SlaveTxnReq {
+      bytes master_addr = 1;
+      repeated bytes slave_pks = 2;
+      repeated uint32 access_types = 3;
+      uint64 fee = 4;
+      bytes xmss_pk = 5;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetLatticeTxn
-
-
 
 <Tabs
   groupId="getlatticetxn"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetLatticeTxn', value: 'method'},
+    {label: 'LatticeTxnReq', value: 'request'},
+    {label: 'TransferCoinsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetLatticeTxn
   
   ```go
   service PublicAPI
@@ -1431,36 +1701,52 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### LatticeTxnReq  
 
-
+  ```go
+  message LatticeTxnReq {
+      bytes master_addr = 1;
+      bytes pk1 = 2;
+      bytes pk2 = 3;
+      bytes pk3 = 4;
+      uint64 fee = 5;
+      bytes xmss_pk = 6;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### TransferCoinsResp
+
+  ```go
+  message TransferCoinsResp {
+      TransactionExtended extended_transaction_unsigned = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
+
 ### GetTransaction
-
-
 
 <Tabs
   groupId="gettransaction"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTransaction', value: 'method'},
+    {label: 'GetTransactionReq', value: 'request'},
+    {label: 'GetTransactionResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTransaction
   
   ```go
   service PublicAPI
@@ -1477,35 +1763,52 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionReq  
 
-
+  ```go
+  message GetTransactionReq {
+      bytes tx_hash = 1;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetTransactionResp
+
+  ```go
+  message GetTransactionResp {
+      Transaction tx = 1;
+      uint64 confirmations = 2;
+      uint64 block_number = 3;
+      bytes block_header_hash = 4;
+      uint64 timestamp = 5;
+      bytes addr_from = 6;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
-### GetMiniTransactionsByAddress
 
+
+
+### GetMiniTransactionsByAddress
 
 <Tabs
   groupId="getminitransactionsbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMiniTransactionsByAddress', value: 'method'},
+    {label: 'GetMiniTransactionsByAddressReq', value: 'request'},
+    {label: 'GetMiniTransactionsByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMiniTransactionsByAddress
   
   ```go
   service PublicAPI
@@ -1522,37 +1825,50 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetMiniTransactionsByAddressReq  
 
-
+  ```go
+  message GetMiniTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetMiniTransactionsByAddressResp
+
+  ```go
+  message GetMiniTransactionsByAddressResp {
+      repeated MiniTransaction mini_transactions = 1;
+      uint64 balance = 2;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
 
+
+
 ### GetTransactionsByAddress
-
-
 
 <Tabs
   groupId="gettransactionsbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTransactionsByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetTransactionsByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTransactionsByAddress
   
   ```go
   service PublicAPI
@@ -1569,35 +1885,48 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetTransactionsByAddressResp
   
+  ```go
+  message GetTransactionsByAddressResp {
+      repeated GetTransactionResp transactions_detail = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetTokensByAddress
-
-
 
 <Tabs
   groupId="gettokensbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTokensByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetTokensByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTokensByAddress
   
   ```go
   service PublicAPI
@@ -1614,36 +1943,49 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
-
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetTokensByAddressResp
+
+  ```go
+  message GetTokensByAddressResp {
+      repeated TokenDetail tokens_detail = 1;
+  }
+  ```
+
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetSlavesByAddress
-
-
 
 <Tabs
   groupId="getslavesbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetSlavesByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetSlavesByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetSlavesByAddress
   
   ```go
   service PublicAPI
@@ -1660,35 +2002,48 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
-
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetSlavesByAddressResp
+
+  ```go
+  message GetSlavesByAddressResp {
+      repeated SlaveDetail slaves_detail = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
-### GetLatticePKsByAddress
 
+
+### GetLatticePKsByAddress
 
 <Tabs
   groupId="getlatticepksbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetLatticePKsByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetLatticePKsByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetLatticePKsByAddress
 
   ```go
   service PublicAPI
@@ -1705,19 +2060,33 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
-
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### GetLatticePKsByAddressResp
+
+  ```go
+  message GetLatticePKsByAddressResp {
+      repeated LatticePKsDetail lattice_pks_detail = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
+
+
 
 
 ### GetMultiSigAddressesByAddress
@@ -1726,13 +2095,13 @@ The response `GetNodeStateResp` contains the following fields:
   groupId="getmultisigaddressesbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigAddressesByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetMultiSigAddressesByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigAddressesByAddress
 
   ```go
   service PublicAPI
@@ -1749,17 +2118,29 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
-
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetMultiSigAddressesByAddressResp
   
+  ```go
+  message GetMultiSigAddressesByAddressResp {
+      repeated MultiSigDetail multi_sig_detail = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
@@ -1767,19 +2148,17 @@ The response `GetNodeStateResp` contains the following fields:
 
 ### GetMultiSigSpendTxsByAddress
 
-
-
 <Tabs
   groupId="getmultisigspendtxsbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetMultiSigSpendTxsByAddress', value: 'method'},
+    {label: 'GetMultiSigSpendTxsByAddressReq', value: 'request'},
+    {label: 'GetMultiSigSpendTxsByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetMultiSigSpendTxsByAddress
   
   ```go
   service PublicAPI
@@ -1796,8 +2175,25 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetMultiSigSpendTxsByAddressReq  
 
+  ```go
+  message GetMultiSigSpendTxsByAddressReq {
+      enum FilterType {
+          NONE = 0;
+          EXECUTED_ONLY = 1;
+          NON_EXECUTED = 2;
+          EXPIRED = 3;
+          NON_EXPIRED = 4;
+          NON_EXECUTED_EXPIRED = 5;
+          NON_EXECUTED_NON_EXPIRED = 6;
+      }
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+      FilterType filter_type = 4;
+  }
+  ```
 
 
   </TabItem>
@@ -1805,27 +2201,34 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="response">
 
  
-  #### Response
+  #### GetMultiSigSpendTxsByAddressResp
   
+
+  ```go
+  message GetMultiSigSpendTxsByAddressResp {
+      repeated GetTransactionResp transactions_detail = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetVoteStats
-
-
 
 <Tabs
   groupId="getvotestats"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetVoteStats', value: 'method'},
+    {label: 'GetVoteStatsReq', value: 'request'},
+    {label: 'GetVoteStatsResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetVoteStats
   
   ```go
   service PublicAPI
@@ -1843,36 +2246,46 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetVoteStatsReq  
 
-
+  ```go
+  message GetVoteStatsReq {
+      bytes multi_sig_spend_tx_hash = 1;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetVoteStatsResp
+
+  ```go
+  message GetVoteStatsResp {
+      VoteStats vote_stats = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetInboxMessagesByAddress
-
-
 
 <Tabs
   groupId="getinboxmessagesbyaddress"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetInboxMessagesByAddress', value: 'method'},
+    {label: 'GetTransactionsByAddressReq', value: 'request'},
+    {label: 'GetInboxMessagesByAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetInboxMessagesByAddress
   
   ```go
   service PublicAPI
@@ -1889,36 +2302,48 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTransactionsByAddressReq  
 
-
+  ```go
+  message GetTransactionsByAddressReq {
+      bytes address = 1;
+      uint64 item_per_page = 2;
+      uint64 page_number = 3;
+  }
+  ```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetInboxMessagesByAddressResp
+
+  ```go
+  message GetInboxMessagesByAddressResp {
+      repeated GetTransactionResp transactions_detail = 1;
+  }
+  ```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetBalance
-
-
 
 <Tabs
   groupId="getbalance"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetBalance', value: 'method'},
+    {label: 'GetBalanceReq', value: 'request'},
+    {label: 'GetBalanceResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetBalance
   
   ```go
   service PublicAPI
@@ -1935,36 +2360,46 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetBalanceReq  
 
-
+```go
+message GetBalanceReq {
+    bytes address = 1;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetBalanceResp
   
+```go
+message GetBalanceResp {
+    uint64 balance = 1;
+}
+```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetTotalBalance
-
-
 
 <Tabs
   groupId="gettotalbalance"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetTotalBalance', value: 'method'},
+    {label: 'GetTotalBalanceReq', value: 'request'},
+    {label: 'GetTotalBalanceResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetTotalBalance
   
   ```go
   service PublicAPI
@@ -1981,36 +2416,47 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetTotalBalanceReq  
 
-
+```go
+message GetTotalBalanceReq {
+    repeated bytes addresses = 1;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetTotalBalanceResp
   
+```go
+message GetTotalBalanceResp {
+    uint64 balance = 1;
+}
+```
+
   </TabItem>
 </Tabs>
 
 
+
+
+
 ### GetOTS
-
-
 
 <Tabs
   groupId="getots"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetOTS', value: 'method'},
+    {label: 'GetOTSReq', value: 'request'},
+    {label: 'GetOTSResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetOTS
   
   ```go
   service PublicAPI
@@ -2027,36 +2473,60 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetOTSReq  
 
-
+```go
+message GetOTSReq {
+    bytes address = 1;
+    uint64 page_from = 2;
+    uint64 page_count = 3;
+    uint64 unused_ots_index_from = 4;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
-  
+  #### GetOTSResp
+
+  ```go
+  message GetOTSResp {
+      repeated OTSBitfieldByPage ots_bitfield_by_page = 1;
+      uint64 next_unused_ots_index = 2;
+      bool unused_ots_index_found = 3;
+  }
+  ```
+
+  #### GetOTSResp
+
+  ```go
+  message OTSBitfieldByPage {
+      repeated bytes ots_bitfield = 1;
+      uint64 page_number = 2;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetHeight
-
-
 
 <Tabs
   groupId="getheight"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetHeight', value: 'method'},
+    {label: 'GetHeightReq', value: 'request'},
+    {label: 'GetHeightResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetHeight
   
   ```go
   service PublicAPI
@@ -2073,8 +2543,12 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetHeightReq  
 
+  ```go
+  message GetHeightReq {
+  }
+  ```
 
 
   </TabItem>
@@ -2082,28 +2556,33 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="response">
 
  
-  #### Response
+  #### GetHeightResp
   
+  ```go
+  message GetHeightResp {
+      uint64 height = 1;
+  }
+  ```
+
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetBlock
-
-
-
 
 <Tabs
   groupId="getblock"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetBlock', value: 'method'},
+    {label: 'GetBlockReq', value: 'request'},
+    {label: 'GetBlockResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetBlock
   
   ```go
   service PublicAPI
@@ -2119,36 +2598,46 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetBlockReq  
 
-
+```go
+message GetBlockReq {
+    bytes header_hash = 1;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetBlockResp
+
+```go
+message GetBlockResp {
+    Block block = 1;
+}
+```
   
   </TabItem>
 </Tabs>
 
 
+
+
 ### GetBlockByNumber
-
-
 
 <Tabs
   groupId="getblockbynumber"
   defaultValue="method"
   values={[
-    {label: 'Method', value: 'method'},
-    {label: 'Request', value: 'request'},
-    {label: 'Response', value: 'response'},
+    {label: 'GetBlockByNumber', value: 'method'},
+    {label: 'GetBlockByNumberReq', value: 'request'},
+    {label: 'GetBlockByNumberResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
-  #### Method
+  #### GetBlockByNumber
   
   ```go
   service PublicAPI
@@ -2165,16 +2654,26 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="request">
 
-  #### Request  
+  #### GetBlockByNumberReq  
 
-
+```go
+message GetBlockByNumberReq {
+    uint64 block_number = 1;
+}
+```
 
   </TabItem>
   
   <TabItem value="response">
 
  
-  #### Response
+  #### GetBlockByNumberResp
+
+```go
+message GetBlockByNumberResp {
+    Block block = 1;
+}
+```
   
   </TabItem>
 </Tabs>
@@ -4818,6 +5317,7 @@ message GetBlockByNumberResp {
   
   </TabItem>
 </Tabs>
+
 
 
 
