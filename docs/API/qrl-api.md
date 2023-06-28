@@ -2860,21 +2860,7 @@ The PublicAPIService service provides public API methods for interacting with th
 
 ### GetNodeState
 
-Retrieves the current state of the QRL node.
-
-The response `GetNodeStateResp` contains the following fields:
-
-| Field | Type | Details | 
-| :--: | :---: | :--- |
-| `version` | (string) | The version of the QRL node |
-| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-| `num_connections` | (uint32) | Number of connections seen to node |
-| `num_known_peers` | (uint32) | Number of know peers seen by node |
-| `uptime` | (uint64) | The uptime of the node in seconds |
-| `block_height` | (uint64) | Blockheight currently known to node |
-| `block_last_hash` | (bytes) | Last block hash; |
-| `network_id` | (string) | Network ID |
-
+Retrieves the current state of the QRL node queried.
 
 <Tabs
   groupId="getnodestate"
@@ -2922,6 +2908,20 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetNodeStateResp
 
+  `GetNodeStateResp` returns [NodeInfo](#nodeinfo) data from the connected node.
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `version` | (string) | The version of the QRL node |
+| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
+| `num_connections` | (uint32) | Number of connections seen to node |
+| `num_known_peers` | (uint32) | Number of know peers seen by node |
+| `uptime` | (uint64) | The uptime of the node in seconds |
+| `block_height` | (uint64) | Blockheight currently known to node |
+| `block_last_hash` | (bytes) | Last block hash; |
+| `network_id` | (string) | Network ID |
+
+
 
   ```go
   /**
@@ -2930,27 +2930,12 @@ The response `GetNodeStateResp` contains the following fields:
   message GetNodeStateResp {
       NodeInfo info = 1;
   }
-
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  state = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
   ```
+
+:::note 
+Please refer to the [NodeInfo](#nodeinfo) content for more details.
+:::
+
   </TabItem>
 
 </Tabs>
@@ -2958,8 +2943,13 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 
-
 ### GetKnownPeers
+
+:::caution Need clarification
+Does this return a list of Peers IP's from the `Peer` function? Or detailed information from the `PeerInfo` function? 
+:::
+
+Returns data on known peers connected to the node queried.
 
 <Tabs
   groupId="getknownpeers"
@@ -3003,6 +2993,13 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="response">
 
   #### GetKnownPeersResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `node_info` | [NodeInfo Object](#nodeinfo) | NodeInfo object containing: *version, state, num_connections, num_known_peers, uptime, block_height, block_last_hash, network_id* |
+| `known_peers` | [Repeated Peer Object](#peer) | List of Peer objects containing peer nodes detailed information |
+
+
   
   ```go
   /**
@@ -3013,31 +3010,12 @@ The response `GetNodeStateResp` contains the following fields:
       repeated Peer known_peers = 2;      // List of Peer objects containing peer nodes detailed information
   }
 
-
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  statGetKnownPeersRespe = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
-
-  message Peer {
-      string ip = 1;
-  }
   ```
+
+
+:::note 
+Please refer to the [NodeInfo function](#nodeinfo) and [Peers function](#peers) content for more details.
+:::
 
   </TabItem>
 </Tabs>
@@ -3049,6 +3027,7 @@ The response `GetNodeStateResp` contains the following fields:
 
 ### GetPeersStat
 
+Returns stats on known peers.
 
 <Tabs
   groupId="getpeerstat"
@@ -3061,7 +3040,7 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="method">
 
   #### GetPeersStat
-  
+
   ```go
   service PublicAPI
   {
@@ -3095,6 +3074,11 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetPeersStatResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `peers_stat` | [repeated PeerStat Object](#peerstat) | PeerState object containing: *peer_ip, port and peer state information* |
+
+
   ```go
   /**
    * Represents the reply message to peers stat query
@@ -3103,18 +3087,20 @@ The response `GetNodeStateResp` contains the following fields:
       repeated PeerStat peers_stat = 1;    // PeerState object contains peer_ip, port and peer state information
   }
 
-  message PeerStat {
-      bytes peer_ip = 1;
-      uint32 port = 2;
-      NodeChainState node_chain_state = 3;
-  }
   ```
+
+:::note
+Please refer to the [PeerStat function](#peerstat) for more information.
+:::
+
   </TabItem>
 </Tabs>
 
 
 
 ### GetStats
+
+Returns Node stats for the QRL Node queried with optional block timeseries data returned
 
 <Tabs
   groupId="getstats"
@@ -3145,6 +3131,10 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetStatsReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `include_timeseries` | bool | Boolean to define if block timeseries should be included in reply or not |
+
 
   ```go
   /**
@@ -3163,30 +3153,21 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetStatsResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `node_info` | [NodeInfo Object](#nodeinfo) | NodeInfo object containing: *version, state, num_connections, num_known_peers, uptime, block_height, block_last_hash, network_id* |
+| `epoch` | uint64 | Current epoch |
+| `uptime_network` | uint64 | Indicates uptime in seconds |
+| `block_last_reward` | uint64 | Block reward |
+| `block_time_mean` | uint64 | Blocktime average |
+| `block_time_sd` | uint64 | Blocktime standard deviation |
+| `coins_total_supply` | uint64 | Total coins supply |
+| `coins_emitted` | uint64 | Total coins emitted |
+| `BlockDataPoint` | [repeated BlockDataPoint Object](#blockdatapoint) | BlockDataPoint Object containing: *Block number, Block difficulty, Block timestamp, Hash power, Block header hash, Previous block's header hash* |
+
+
+
   ```go
-  /**
-   * Represents the reply message to get statistics about node
-  */
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  state = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
-
   message GetStatsResp {
       NodeInfo node_info = 1;                 // NodeInfo object containing node state information
       uint64 epoch = 2;                       // Current epoch
@@ -3203,6 +3184,10 @@ The response `GetNodeStateResp` contains the following fields:
   }
   ```  
 
+:::note
+Please see the [NodeInfo Object](#nodeinfo) and [BlockDataPoint Object](#blockdatapoint) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -3211,6 +3196,10 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 ### GetAddressState
+
+`GetAddressState` returns information on a given address. 
+
+This function requires a *QRL address* with optional fields to include *OTS Bitfield* and *Transaction Hashes*.
 
 <Tabs
   groupId="getaddressstate"
@@ -3241,6 +3230,12 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address to query address state |
+| `exclude_ots_bitfield` | bool | Boolean to include OTS bitfield information or not |
+| `exclude_transaction_hashes` | bool | Boolean to include transaction hashes from address |
+
   ```go
   message GetAddressStateReq {
       bytes address = 1;
@@ -3256,12 +3251,23 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetAddressStateResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state` | [AddressState Object](#addressstate) | AddressState object containing: *address, balance, nonce, ots_bitfield\*, transaction_hashes\*, tokens, latticePK_list, slave_pks_access_type, ots_counter* | 
+
+\**Optional boolean request needed for this data to be returned .*
+
   ```go
   message GetAddressStateResp {
       AddressState state = 1;
   }
   ```
   
+
+:::note
+See the [AddressState object](#addressstate) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -3269,6 +3275,8 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 ### GetOptimizedAddressState
+
+Returns Optimized Address State information.
 
 <Tabs
   groupId="getoptimizedaddressstate"
@@ -3299,6 +3307,12 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | **Required** QRL Address for the state information lookup |
+| `exclude_ots_bitfield` | bool | **Optional** Boolean to exclude OTS Bitfield information|
+| `exclude_transaction_hashes` | bool | **Optional** Boolean to exclude transaction hash information |
+
   ```go
   message GetAddressStateReq {
       bytes address = 1;
@@ -3314,14 +3328,60 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetOptimizedAddressStateResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state` | [OptimizedAddressState Object](#optimizedaddressstate) | OptimizedAddressState object containing: *address, balance, nonce, ots_bitfield_used_page, used_ots_key_count, transaction_hash_count, tokens_count, slaves_count, lattice_pk_count, multi_sig_address_count, multi_sig_spend_count, inbox_message_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
+
+
   ```go
   message GetOptimizedAddressStateResp {
       OptimizedAddressState state = 1;
   }
   ```
-    
+
+:::note
+See the [OptimizedAddressState object](#optimizedaddressstate) for more information
+:::
+
+
   </TabItem>
 </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5948,6 +6008,8 @@ message BlockNumberMapping {
 
 ### PeerStat
 
+`PeerStat` returns stats on a peer.
+
 ```go
 message PeerStat {
     bytes peer_ip = 1;
@@ -5956,6 +6018,9 @@ message PeerStat {
 }
 ```
 
+:::note
+See the [NodeChainState object](#nodechainstate) for more information
+:::
 
 ### NodeChainState
 
@@ -5991,6 +6056,8 @@ message P2PAcknowledgement {
 
 ### PeerInfo
 
+`PeerInfo` returns data on a peer.
+
 ```go
 message PeerInfo {
     bytes peer_ip = 1;
@@ -6004,9 +6071,31 @@ message PeerInfo {
 
 ### Peers
 
+Peers message returns all information from the [PeerInfo](#peerinfo) message function.
+
 ```go
 message Peers {
     repeated PeerInfo peer_info_list = 1;
+}
+```
+
+### BlockDataPoint
+
+```go
+/**
+ * BlockDataPoint message definition
+*/
+message BlockDataPoint
+{
+    uint64 number = 1;                      // Block number
+    string difficulty = 2;                  // Block difficulty
+    uint64 timestamp = 3;                   // Block timestamp
+    uint64 time_last = 4;
+    uint64 time_movavg = 5;
+    float hash_power = 6;                   // Hash power
+
+    bytes header_hash = 7;                  // Block header hash
+    bytes header_hash_prev = 8;             // Previous block's header hash
 }
 ```
 
