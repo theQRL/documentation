@@ -3350,42 +3350,6 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### GetMultiSigAddressState
 
 <Tabs
@@ -3417,6 +3381,11 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### GetMultiSigAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address for state lookup |
+
+
   ```go
   message GetMultiSigAddressStateReq {
       bytes address = 1;
@@ -3427,7 +3396,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
   
   <TabItem value="response">
 
- 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `state` | [MultiSigAddressState object](#multisigaddressstate) | MultiSigAddressState object containing: *address, creation_tx_hash, nonce, balance, signatories, weights, threshold, transaction_hash_count, multi_sig_spend_count, multi_sig_address_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
+
   #### GetMultiSigAddressStateResp
 
   ```go
@@ -3436,6 +3408,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
   }
   ```
   
+:::note
+See the [MultiSigAddressState object](#multisigaddressstate) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -3473,6 +3449,11 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### IsSlaveReq  
   
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_address` | bytes | Master QRL address slave is associated with |
+| `slave_pk` | bytes | Public key from slave address |
+
   ```go
   message IsSlaveReq {
       bytes master_address = 1;
@@ -3485,7 +3466,12 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
  
   #### IsSlaveResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `result` | bool | Boolean result if address is a slave address or not |
+
   ```go
   message IsSlaveResp {
       bool result = 1;
@@ -3500,6 +3486,9 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
 
 ### GetObject
+
+Returns information based on the query submitted. Can be one of: QRL Address, Transaction Hash, Block height.
+
 
 <Tabs
   groupId="getobject"
@@ -3531,6 +3520,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### GetObjectReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `query` | bytes | Query data to lookup, can be one of: *QRL Address, Transaction Hash, Block Number* |
+
   ```go
   message GetObjectReq {  
       bytes query = 1;    
@@ -3544,6 +3537,12 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
  
   #### GetObjectResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address_state` | [OptimizedAddressState Object](#optimizedaddressstate) | OptimizedAddressState object containing: *address, balance, nonce, ots_bitfield_used_page, used_ots_key_count, transaction_hash_count, tokens_count, slaves_count, lattice_pk_count, multi_sig_address_count, multi_sig_spend_count, inbox_message_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
+| `transaction` | [TransactionExtended Object](#transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
+| `block_extended` | [BlockExtended Object](#blockextended) | BlockExtended Object contains: *header, extended_transactions,* \[genesis block only: *genesis_balance, size\]* |
+
   ```go
   message GetObjectResp {
       bool found = 1;
@@ -3555,6 +3554,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
   }
   ```
   
+:::note
+See [OptimizedAddressState Object](#optimizedaddressstate), [TransactionExtended Object](#transactionextended), [BlockExtended Object](#blockextended) for more information.
+:::
+
   </TabItem>
 </Tabs>
 
@@ -3592,6 +3595,13 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### GetLatestDataReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `filter` | filter | One of: *ALL, BLOCKHEADERS, TRANSACTIONS, TRANSACTIONS_UNCONFIRMED* |
+| `offset` | uint32 | Offset in the result list (works backwards in this case) |
+| `quantity` | uint32 | Number of items to retrieve. Capped at 100 |
+
+
   ```go
   message GetLatestDataReq {
       enum Filter {
@@ -3602,7 +3612,7 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
       }
       Filter filter = 1;
       uint32 offset = 2;                      // Offset in the result list (works backwards in this case)
-      uint32 quantity = 3;                    // Number of items to retrive. Capped at 100
+      uint32 quantity = 3;                    // Number of items to retrieve. Capped at 100
   }
   ```
 
@@ -3613,6 +3623,14 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
  
   #### GetLatestDataResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `blockheaders` | [BlockHeaderExtended Object](blockheaderextended) | BlockHeaderExtended Object contains: *header, transaction_count *| 
+| `transactions` | [TransactionExtended Object](transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
+| `transactions_unconfirmed` | [TransactionExtended Object](transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
+
+
   ```go
   message GetLatestDataResp {
       repeated BlockHeaderExtended blockheaders = 1;
@@ -3620,6 +3638,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
       repeated TransactionExtended transactions_unconfirmed = 3;
   }
   ```    
+
+:::note
+See [BlockHeaderExtended Object](blockheaderextended), [TransactionExtended Object](transactionextended), [TransactionExtended Object](transactionextended) for more information
+:::
 
   </TabItem>
 </Tabs>
@@ -3658,18 +3680,31 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### PushTransactionReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `transaction_signed` | [Transaction Object](#transaction) | Transaction object contains: *master_addr, fee, public_key, signature, nonce, transaction_hash, transactionType* |
+
   ```go
   message PushTransactionReq {    
       Transaction transaction_signed = 1;     
   }
   ```
 
+:::note
+See the [Transaction Object](#transaction) for more information.
+:::
+
   </TabItem>
-  
   <TabItem value="response">
 
  
   #### PushTransactionResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `error_code` | enum `ResponseCode` |  Response code will be one of: *UNKNOWN, ERROR, VALIDATION_FAILED, SUBMITTED* |
+| `error_description` | string | String description of the error |
+| `tx_hash` | bytes | Transaction hash from the PushTransaction  |
 
   ```go
   message PushTransactionResp {
@@ -3725,6 +3760,15 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
   #### TransferCoinsReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | Transaction source address |
+| `addresses_to` | repeated bytes | Transaction destination address |
+| `amounts` | repeated uint64 | Amount. It should be expressed in Shor |
+| `message_data` | bytes | Message Data. Optional field to send messages |
+| `fee` | uint64 | Fee. It should be expressed in Shor |
+| `xmss_pk` | bytes | XMSS Public key |
+
 ```go
 message TransferCoinsReq {
     bytes master_addr = 1;                 // Transaction source address
@@ -3742,14 +3786,65 @@ message TransferCoinsReq {
 
  
   #### TransferCoinsResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds* |
+
 ```go
 message TransferCoinsResp {
     TransactionExtended extended_transaction_unsigned = 1;
 }
 ```  
+
+:::note
+See [TransactionExtended Object](#transactionextended) for more information.
+:::
+
   </TabItem>
 </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
