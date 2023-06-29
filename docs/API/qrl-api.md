@@ -2910,16 +2910,12 @@ Retrieves the current state of the QRL node queried.
 
   `GetNodeStateResp` returns [NodeInfo](#nodeinfo) data from the connected node.
 
+
+
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `version` | (string) | The version of the QRL node |
-| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-| `num_connections` | (uint32) | Number of connections seen to node |
-| `num_known_peers` | (uint32) | Number of know peers seen by node |
-| `uptime` | (uint64) | The uptime of the node in seconds |
-| `block_height` | (uint64) | Blockheight currently known to node |
-| `block_last_hash` | (bytes) | Last block hash; |
-| `network_id` | (string) | Network ID |
+| `info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
+
 
 
 
@@ -2996,7 +2992,7 @@ Returns data on known peers connected to the node queried.
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `node_info` | [NodeInfo Object](#nodeinfo) | NodeInfo object containing: *version, state, num_connections, num_known_peers, uptime, block_height, block_last_hash, network_id* |
+| `node_info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
 | `known_peers` | [Repeated Peer Object](#peer) | List of Peer objects containing peer nodes detailed information |
 
 
@@ -3076,7 +3072,7 @@ Returns stats on known peers.
   
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `peers_stat` | [repeated PeerStat Object](#peerstat) | PeerState object containing: *peer_ip, port and peer state information* |
+| `peers_stat` | [repeated PeerStat Object](#peerstat) | <dl><dt>PeerState object contains:</dt><dd style={{ display:'list-item' }}>peer_ip</dd><dd style={{ display:'list-item' }}>port</dd><dd style={{ display:'list-item' }}>node_chain_state</dd></dl> |
 
 
   ```go
@@ -3155,7 +3151,7 @@ Returns Node stats for the QRL Node queried with optional block timeseries data 
   
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `node_info` | [NodeInfo Object](#nodeinfo) | NodeInfo object containing: *version, state, num_connections, num_known_peers, uptime, block_height, block_last_hash, network_id* |
+| `node_info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
 | `epoch` | uint64 | Current epoch |
 | `uptime_network` | uint64 | Indicates uptime in seconds |
 | `block_last_reward` | uint64 | Block reward |
@@ -3163,7 +3159,9 @@ Returns Node stats for the QRL Node queried with optional block timeseries data 
 | `block_time_sd` | uint64 | Blocktime standard deviation |
 | `coins_total_supply` | uint64 | Total coins supply |
 | `coins_emitted` | uint64 | Total coins emitted |
-| `BlockDataPoint` | [repeated BlockDataPoint Object](#blockdatapoint) | BlockDataPoint Object containing: *Block number, Block difficulty, Block timestamp, Hash power, Block header hash, Previous block's header hash* |
+| `BlockDataPoint` | [repeated BlockDataPoint Object](#blockdatapoint) | <dl><dt>BlockDataPoint Object contains:</dt><dd style={{ display:'list-item' }}>number</dd><dd style={{ display:'list-item' }}>difficulty</dd><dd style={{ display:'list-item' }}>timestamp</dd><dd style={{ display:'list-item' }}>time_last</dd><dd style={{ display:'list-item' }}>time_movavg</dd><dd style={{ display:'list-item' }}>hash_power</dd><dd style={{ display:'list-item' }}>header_hash</dd><dd style={{ display:'list-item' }}>header_hash_prev</dd></dl> |
+
+
 
 
 
@@ -3253,7 +3251,8 @@ This function requires a *QRL address* with optional fields to include *OTS Bitf
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `state` | [AddressState Object](#addressstate) | AddressState object containing: *address, balance, nonce, ots_bitfield\*, transaction_hashes\*, tokens, latticePK_list, slave_pks_access_type, ots_counter* | 
+| `state` | [AddressState Object](#addressstate) | <dl><dt>AddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> *<i>ots_bitfield</i></dd><dd style={{ display:'list-item' }}> *<i>transaction_hashes</i></dd><dd style={{ display:'list-item' }}> tokens</dd><dd style={{ display:'list-item' }}> latticePK_list</dd><dd style={{ display:'list-item' }}> slave_pks_access_type</dd><dd style={{ display:'list-item' }}> ots_counter</dd></dl> |
+
 
 \**Optional boolean request needed for this data to be returned .*
 
@@ -3330,7 +3329,7 @@ Returns Optimized Address State information.
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `state` | [OptimizedAddressState Object](#optimizedaddressstate) | OptimizedAddressState object containing: *address, balance, nonce, ots_bitfield_used_page, used_ots_key_count, transaction_hash_count, tokens_count, slaves_count, lattice_pk_count, multi_sig_address_count, multi_sig_spend_count, inbox_message_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
+| `state` | [OptimizedAddressState Object](#optimizedaddressstate) | <dl><dt>OptimizedAddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> ots_bitfield_used_page</dd><dd style={{ display:'list-item' }}> used_ots_key_coun</dd><dd style={{ display:'list-item' }}> transaction_hash_count</dd><dd style={{ display:'list-item' }}> tokens_count</dd><dd style={{ display:'list-item' }}> slaves_count</dd><dd style={{ display:'list-item' }}> lattice_pk_count</dd><dd style={{ display:'list-item' }}> multi_sig_address_count</dd><dd style={{ display:'list-item' }}> multi_sig_spend_count</dd><dd style={{ display:'list-item' }}> inbox_message_count</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> proposal_vote_stats</dd>  </dl> |
 
 
   ```go
@@ -3398,7 +3397,10 @@ See the [OptimizedAddressState object](#optimizedaddressstate) for more informat
 
 | Field | Type | Details | 
 | :--: | :---: | :--- | 
-| `state` | [MultiSigAddressState object](#multisigaddressstate) | MultiSigAddressState object containing: *address, creation_tx_hash, nonce, balance, signatories, weights, threshold, transaction_hash_count, multi_sig_spend_count, multi_sig_address_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
+| `state` | [MultiSigAddressState object](#multisigaddressstate) | <dl>  <dt>MultiSigAddressState Object contains:</dt>  <dd style={{ display:'list-item' }}> address</dd>  <dd style={{ display:'list-item' }}> creation_tx_hash</dd>  <dd style={{ display:'list-item' }}> nonce</dd>  <dd style={{ display:'list-item' }}> balance</dd>  <dd style={{ display:'list-item' }}> signatories</dd>  <dd style={{ display:'list-item' }}> weights</dd>  <dd style={{ display:'list-item' }}> threshold</dd>  <dd style={{ display:'list-item' }}> transaction_hash_count</dd>  <dd style={{ display:'list-item' }}> multi_sig_spend_count</dd>  <dd style={{ display:'list-item' }}> multi_sig_address_count</dd>  <dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd>  <dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd>  <dd style={{ display:'list-item' }}> unvotes</dd>  <dd style={{ display:'list-item' }}> proposal_vote_stats</dd></dl> |
+
+
+
 
   #### GetMultiSigAddressStateResp
 
@@ -3539,9 +3541,10 @@ Returns information based on the query submitted. Can be one of: QRL Address, Tr
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `address_state` | [OptimizedAddressState Object](#optimizedaddressstate) | OptimizedAddressState object containing: *address, balance, nonce, ots_bitfield_used_page, used_ots_key_count, transaction_hash_count, tokens_count, slaves_count, lattice_pk_count, multi_sig_address_count, multi_sig_spend_count, inbox_message_count, foundation_multi_sig_spend_txn_hash, foundation_multi_sig_vote_txn_hash, unvotes, proposal_vote_stats* |
-| `transaction` | [TransactionExtended Object](#transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
-| `block_extended` | [BlockExtended Object](#blockextended) | BlockExtended Object contains: *header, extended_transactions,* \[genesis block only: *genesis_balance, size\]* |
+| `address_state` | [OptimizedAddressState Object](#optimizedaddressstate) | <dl><dt>OptimizedAddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> ots_bitfield_used_page</dd><dd style={{ display:'list-item' }}> used_ots_key_coun</dd><dd style={{ display:'list-item' }}> transaction_hash_count</dd><dd style={{ display:'list-item' }}> tokens_count</dd><dd style={{ display:'list-item' }}> slaves_count</dd><dd style={{ display:'list-item' }}> lattice_pk_count</dd><dd style={{ display:'list-item' }}> multi_sig_address_count</dd><dd style={{ display:'list-item' }}> multi_sig_spend_count</dd><dd style={{ display:'list-item' }}> inbox_message_count</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> proposal_vote_stats</dd>  </dl> |
+| `transaction` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}>header</dd><dd style={{ display:'list-item' }}>tx</dd><dd style={{ display:'list-item' }}>addr_from</dd><dd style={{ display:'list-item' }}>size</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd></dl> |
+| `block_extended` | [BlockExtended Object](#blockextended) | <dl><dt>BlockExtended Object contains:</dt><dd style={{ display:'list-item' }}>header</dd><dd style={{ display:'list-item' }}>extended_transactions</dd><dt>genesis block only:</dt><dd style={{ display:'list-item' }}>genesis_balance</dd><dd style={{ display:'list-item' }}>size</dd></dl> |
+
 
   ```go
   message GetObjectResp {
@@ -3626,9 +3629,10 @@ See [OptimizedAddressState Object](#optimizedaddressstate), [TransactionExtended
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `blockheaders` | [BlockHeaderExtended Object](blockheaderextended) | BlockHeaderExtended Object contains: *header, transaction_count *| 
-| `transactions` | [TransactionExtended Object](transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
-| `transactions_unconfirmed` | [TransactionExtended Object](transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds * |
+| `blockheaders` | [BlockHeaderExtended Object](blockheaderextended) | <dl><dt>BlockHeaderExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transaction_count</dd></dl> |
+| `transactions` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+| `transactions_unconfirmed` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
 
 
   ```go
@@ -3682,7 +3686,7 @@ See [BlockHeaderExtended Object](blockheaderextended), [TransactionExtended Obje
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `transaction_signed` | [Transaction Object](#transaction) | Transaction object contains: *master_addr, fee, public_key, signature, nonce, transaction_hash, transactionType* |
+| `transaction_signed` | [Transaction Object](#transaction) | <dl><dt>Transaction Object contains:</dt><dd style={{ display:'list-item' }}> master_addr</dd><dd style={{ display:'list-item' }}> fee</dd><dd style={{ display:'list-item' }}> public_key</dd><dd style={{ display:'list-item' }}> signature</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> transaction_hash</dd><dd style={{ display:'list-item' }}> transactionType</dd></dl> |
 
   ```go
   message PushTransactionReq {    
@@ -3702,7 +3706,7 @@ See the [Transaction Object](#transaction) for more information.
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `error_code` | enum `ResponseCode` |  Response code will be one of: *UNKNOWN, ERROR, VALIDATION_FAILED, SUBMITTED* |
+| `error_code` | enum `ResponseCode` | <dl><dt>Response code will be one of:</dt><dd style={{ display:'list-item' }}> UNKNOWN</dd><dd style={{ display:'list-item' }}> ERROR</dd><dd style={{ display:'list-item' }}> VALIDATION_FAILED</dd><dd style={{ display:'list-item' }}> SUBMITTED</dd></dl> |
 | `error_description` | string | String description of the error |
 | `tx_hash` | bytes | Transaction hash from the PushTransaction  |
 
@@ -3790,7 +3794,7 @@ message TransferCoinsReq {
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | TransactionExtended Object contains: *header, tx, addr_from, size, timestamp_seconds* |
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
 
 ```go
 message TransferCoinsResp {
@@ -3800,6 +3804,80 @@ message TransferCoinsResp {
 
 :::note
 See [TransactionExtended Object](#transactionextended) for more information.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+
+### ParseAddress
+
+`ParseAddress` returns a `AddressDescriptor` object containing information about the given QRL address, as well as verification that the address is valid.
+
+<Tabs
+  groupId="parseaddress"
+  defaultValue="method"
+  values={[
+    {label: 'ParseAddress', value: 'method'},
+    {label: 'ParseAddressReq', value: 'request'},
+    {label: 'ParseAddressResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+  #### ParseAddress
+  
+  ```go
+  service PublicAPI
+  {
+      rpc ParseAddress (ParseAddressReq) returns (ParseAddressResp) {
+        option (google.api.http) = {
+          get: "/parse-address"
+        };
+      };
+  }
+  ```
+
+  </TabItem>
+  
+  <TabItem value="request">
+
+  #### ParseAddressReq  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address to parse |
+
+  ```go
+  message ParseAddressReq { 
+      bytes address = 1;
+  }
+```
+
+
+  </TabItem>
+  
+  <TabItem value="response">
+
+ 
+  #### ParseAddressResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `is_valid` | bool | Returns `True` if address given is valid |
+| `desc` | [AddressDescriptor Object](#addressdescriptor) | <dl><dt>AddressDescriptor object contains:</dt><dd style={{ display:'list-item' }}>hash_function</dd><dd style={{ display:'list-item' }}>signature_scheme</dd><dd style={{ display:'list-item' }}>tree_height</dd><dd style={{ display:'list-item' }}>signatures</dd><dd style={{ display:'list-item' }}>address_format</dd></dl>| 
+
+
+```go
+message ParseAddressResp {
+    bool is_valid = 1;
+    AddressDescriptor desc = 2;
+}
+```
+  
+:::note
+See [AddressDescriptor object](#addressdescriptor) for more information.
 :::
 
   </TabItem>
@@ -3838,72 +3916,6 @@ See [TransactionExtended Object](#transactionextended) for more information.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-### ParseAddress
-
-<Tabs
-  groupId="parseaddress"
-  defaultValue="method"
-  values={[
-    {label: 'ParseAddress', value: 'method'},
-    {label: 'ParseAddressReq', value: 'request'},
-    {label: 'ParseAddressResp', value: 'response'},
-  ]}>
-  <TabItem value="method">
-
-  #### ParseAddress
-  
-  ```go
-  service PublicAPI
-  {
-      rpc ParseAddress (ParseAddressReq) returns (ParseAddressResp) {
-        option (google.api.http) = {
-          get: "/parse-address"
-        };
-      };
-  }
-  ```
-
-  </TabItem>
-  
-  <TabItem value="request">
-
-  #### ParseAddressReq  
-
-```go
-message ParseAddressReq { 
-    bytes address = 1;
-}
-```
-
-
-  </TabItem>
-  
-  <TabItem value="response">
-
- 
-  #### ParseAddressResp
-
-
-```go
-message ParseAddressResp {
-    bool is_valid = 1;
-    AddressDescriptor desc = 2;
-}
-```
-  
-  </TabItem>
-</Tabs>
 
 
 
