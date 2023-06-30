@@ -3884,42 +3884,6 @@ See [AddressDescriptor object](#addressdescriptor) for more information.
 </Tabs>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### GetChainStats
 
 <Tabs
@@ -3955,8 +3919,9 @@ See [AddressDescriptor object](#addressdescriptor) for more information.
   /**
    * Represents the query for get chain size
   */
-
-  message GetChainStatsReq { }
+  message GetChainStatsReq {
+    // No request parameters required
+  }
   ```
 
   </TabItem>
@@ -3965,6 +3930,12 @@ See [AddressDescriptor object](#addressdescriptor) for more information.
 
  
   #### GetChainStatsResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state_size` | uint64 | Returns the whole state folder size, in bytes |
+| `state_size_mb` | string | Returns the whole state folder size, in megabytes |
+| `state_size_gb` | string | Returns the whole state folder size, in gigabytes |
   
 ```go
 /**
@@ -3985,6 +3956,10 @@ message GetChainStatsResp {
 
 
 ### GetAddressFromPK
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 <Tabs
   groupId="getaddressfrompk"
@@ -4015,6 +3990,12 @@ message GetChainStatsResp {
 
   #### GetAddressFromPKReq  
 
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `pk` | bytes | Requires PK |
+
   ```go
   message GetAddressFromPKReq {
       bytes pk = 1;
@@ -4027,12 +4008,18 @@ message GetChainStatsResp {
 
  
   #### GetAddressFromPKResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | Returns the QRL Address from the PK |
   
+
   ```go
   message GetAddressFromPKResp {
       bytes address = 1;
   }
   ```
+
 
   </TabItem>
 </Tabs>
@@ -4041,6 +4028,8 @@ message GetChainStatsResp {
 
 
 ### GetMultiSigCreateTxn
+
+Create a Multisig address transaction
 
 <Tabs
   groupId="getmultisigcreatetxn"
@@ -4071,6 +4060,17 @@ message GetChainStatsResp {
 
   #### MultiSigCreateTxnReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Address used to create the multisig address |
+| `signatories` | repeated bytes | List of authorized signatories for multisig address  |
+| `weights` | repeated uint32 | List of weights associated with signatories |
+| `threshold` | threshold | Threshold required for approval of multisig spend transaction  |
+| `fee` | uint64 | Fee for creation of multisig address transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go 
   message MultiSigCreateTxnReq {
       bytes master_addr = 1;
@@ -4091,14 +4091,61 @@ message GetChainStatsResp {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}>             <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigCreate</dt><dd style={{ display:'list-item' }}>signatories</dd> <dd style={{ display:'list-item' }}>weights</dd> <dd style={{ display:'list-item' }}>threshold</dd>    </dd></dd><dd style={{ display:'list-item' }}>addr_from</dd><dd style={{ display:'list-item' }}>size</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd></dl> | 
+
+
+
   ```go 
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
   }
   ```
 
+:::note
+See the [TransactionExtended Object](#transactionextended) for more information
+:::
+
   </TabItem>
 </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
