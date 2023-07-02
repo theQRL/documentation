@@ -4434,41 +4434,15 @@ Creates a token on the QRL network
   }
   ```
 
-  
   </TabItem>
 </Tabs>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### GetTransferTokenTxn
+
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="gettransfertokentxn"
@@ -4499,6 +4473,16 @@ Creates a token on the QRL network
 
   #### TransferTokenTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_addr` | bytes | QRL Address sending the token |
+| `addresses_to` | repeated bytes | List of addresses to send tokens to (Up to 100) |
+| `token_txhash` | bytes | Transaction hash from token creation, identifying token to send |
+| `amounts` | repeated uint64 | List of amounts to send corresponding to the `address_to` list  |
+| `fee` | uint64 | Fee for the token transfer transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message TransferTokenTxnReq {
       bytes master_addr = 1;
@@ -4517,12 +4501,16 @@ Creates a token on the QRL network
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>TransferToken</dt><dd style={{ display:'list-item' }}>  token_txhash </dd> <dd style={{ display:'list-item' }}>  addrs_to </dd> <dd style={{ display:'list-item' }}>  amounts </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
   }
   ```
-
   
   </TabItem>
 </Tabs>
@@ -4531,6 +4519,8 @@ Creates a token on the QRL network
 
 
 ### GetSlaveTxn
+
+Create slave addresses associated to a master address
 
 <Tabs
   groupId="getslavetxn"
@@ -4561,6 +4551,14 @@ Creates a token on the QRL network
 
   #### SlaveTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | Master address creating the slaves addresses |
+| `slave_pks` | repeated bytes | List of slave public keys (up to 100) |
+| `access_types` | repeated uint32 | List Slave access type 0 or 1 (0 = Full access 1 = Depreciated) |
+| `fee` |  uint64| Fee for the slave transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
   ```go
   message SlaveTxnReq {
       bytes master_addr = 1;
@@ -4578,6 +4576,12 @@ Creates a token on the QRL network
  
   #### TransferCoinsResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Slave</dt><dd style={{ display:'list-item' }}>  slave_pks </dd> <dd style={{ display:'list-item' }}>  access_types </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4591,6 +4595,9 @@ Creates a token on the QRL network
 
 
 ### GetLatticeTxn
+
+Generate a lattice transaction, sending Crystals public keys into chain
+
 
 <Tabs
   groupId="getlatticetxn"
@@ -4621,12 +4628,22 @@ Creates a token on the QRL network
 
   #### LatticeTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | Master address creating the lattice transaction |
+| `pk1` | bytes | kyber Public Key |
+| `pk2` | bytes | dilithium Public Key |
+| `pk3` | bytes | ecdsa Public Key |
+| `fee` | uint64 | Lattice key transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message LatticeTxnReq {
       bytes master_addr = 1;
-      bytes pk1 = 2;
-      bytes pk2 = 3;
-      bytes pk3 = 4;
+      bytes pk1 = 2; // kyber_pk
+      bytes pk2 = 3; // dilithium_pk
+      bytes pk3 = 4; // ecdsa_pk
       uint64 fee = 5;
       bytes xmss_pk = 6;
   }
@@ -4638,6 +4655,13 @@ Creates a token on the QRL network
 
  
   #### TransferCoinsResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>LatticePublicKey</dt><dd style={{ display:'list-item' }}>  pk1 </dd> <dd style={{ display:'list-item' }}>  pk2 </dd><dd style={{ display:'list-item' }}>  pk3 </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
 
   ```go
   message TransferCoinsResp {
@@ -4653,6 +4677,8 @@ Creates a token on the QRL network
 
 
 ### GetTransaction
+
+Get transaction data from transaction hash provided
 
 <Tabs
   groupId="gettransaction"
@@ -4683,6 +4709,11 @@ Creates a token on the QRL network
 
   #### GetTransactionReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `tx_hash` | bytes | Transaction hash to lookup |
+
   ```go
   message GetTransactionReq {
       bytes tx_hash = 1;
@@ -4695,6 +4726,17 @@ Creates a token on the QRL network
 
  
   #### GetTransactionResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `tx` | [Transaction Object](#transaction)| Providing transaction data related to the transaction hash provided (Varies per transaction type) |
+| `confirmations` | uint64 | Number of confirmations since transaction was minted |
+| `block_number` | uint64 | Block number transaction was seen |
+| `block_header_hash` | bytes | header hash from block |
+| `timestamp` | uint64 | Timestamp of transaction |
+| `addr_from` | bytes | QRL address transaction was sent from |
+
 
   ```go
   message GetTransactionResp {
@@ -4709,8 +4751,6 @@ Creates a token on the QRL network
   
   </TabItem>
 </Tabs>
-
-
 
 
 
@@ -4745,6 +4785,13 @@ Creates a token on the QRL network
 
   #### GetMiniTransactionsByAddressReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `address` | bytes | Address to lookup |
+| `item_per_page` | uint64 | Items per page |
+| `page_number` | uint64 | Page number for data response |
+
   ```go
   message GetMiniTransactionsByAddressReq {
       bytes address = 1;
@@ -4759,6 +4806,13 @@ Creates a token on the QRL network
 
  
   #### GetMiniTransactionsByAddressResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `mini_transactions` | repeated [MiniTransaction Object](#minitransaction) | <dl><dt>MiniTransaction Object contains:</dt><dd style={{ display:'list-item' }}> transaction_hash</dd><dd style={{ display:'list-item' }}> out</dd><dd style={{ display:'list-item' }}> amount</dd> </dl> |
+| `balance` | uint64 | Address balance  |
+
 
   ```go
   message GetMiniTransactionsByAddressResp {
@@ -4805,6 +4859,12 @@ Creates a token on the QRL network
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -4820,6 +4880,10 @@ Creates a token on the QRL network
  
   #### GetTransactionsByAddressResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail` | repeated [GetTransactionResp Object](#gettransactionresp-1) | <dl><dt>GetTransactionResp Object contains:</dt><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> confirmations</dd><dd style={{ display:'list-item' }}> block_number</dd><dd style={{ display:'list-item' }}> block_header_hash</dd><dd style={{ display:'list-item' }}> timestamp</dd><dd style={{ display:'list-item' }}> addr_from</dd></dl> |
+
   ```go
   message GetTransactionsByAddressResp {
       repeated GetTransactionResp transactions_detail = 1;
@@ -4863,6 +4927,13 @@ Creates a token on the QRL network
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -4878,16 +4949,18 @@ Creates a token on the QRL network
  
   #### GetTokensByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `tokens_detail` | repeated [TokenDetail Object](#tokendetail) | <dl><dt>TokenDetail Object contains:</dt><dd style={{ display:'list-item' }}> token_txhash</dd><dd style={{ display:'list-item' }}> name</dd><dd style={{ display:'list-item' }}> symbol</dd><dd style={{ display:'list-item' }}> balance</dd></dl> |
+
   ```go
   message GetTokensByAddressResp {
       repeated TokenDetail tokens_detail = 1;
   }
   ```
 
-  
   </TabItem>
 </Tabs>
-
 
 
 
@@ -4922,6 +4995,12 @@ Creates a token on the QRL network
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | Address to lookup for slave data |
+| `item_per_page` | uint64 | items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -4937,6 +5016,11 @@ Creates a token on the QRL network
  
   #### GetSlavesByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `slaves_detail` | repeated [SlaveDetail Object](#slavedetail) | <dl><dt>SlaveDetail Object contains:</dt><dd style={{ display:'list-item' }}> slave_address</dd><dd style={{ display:'list-item' }}> access_type</dd></dl> |
+
+
   ```go
   message GetSlavesByAddressResp {
       repeated SlaveDetail slaves_detail = 1;
@@ -4945,6 +5029,38 @@ Creates a token on the QRL network
   
   </TabItem>
 </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6083,6 +6199,52 @@ message Transaction {
     }
 }
 ```
+
+
+### MiniTransaction
+
+```go
+message MiniTransaction {
+    string transaction_hash = 1;
+    bool out = 2;
+    uint64 amount = 3;
+}
+```
+
+### GetTransactionResp 
+
+```go
+message GetTransactionResp {
+    Transaction tx = 1;
+    uint64 confirmations = 2;
+    uint64 block_number = 3;
+    bytes block_header_hash = 4;
+    uint64 timestamp = 5;
+    bytes addr_from = 6;
+}
+```
+
+
+### TokenDetail
+
+```go
+message TokenDetail {
+    bytes token_txhash = 1;
+    bytes name = 2;
+    bytes symbol = 3;
+    uint64 balance = 4;
+}
+```
+
+### SlaveDetail
+
+```go
+message SlaveDetail {
+    bytes slave_address = 1;
+    uint64 access_type = 2;
+}
+```
+
 
 ### VoteStats
 
