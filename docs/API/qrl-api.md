@@ -4096,7 +4096,6 @@ Create a Multisig address transaction
 | `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}>             <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigCreate</dt><dd style={{ display:'list-item' }}>signatories</dd> <dd style={{ display:'list-item' }}>weights</dd> <dd style={{ display:'list-item' }}>threshold</dd>    </dd></dd><dd style={{ display:'list-item' }}>addr_from</dd><dd style={{ display:'list-item' }}>size</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd></dl> | 
 
 
-
   ```go 
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4109,45 +4108,6 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
   </TabItem>
 </Tabs>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4182,6 +4142,17 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
   #### MultiSigSpendTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Address must be a signatory of the multisig address |
+| `multi_sig_address` | bytes  | The multisig address used for the spend transaction |
+| `addrs_to` | repeated bytes | List of QRL addresses to send funds to from the multisig address  |
+| `amounts` | repeated uint64| List of amounts to send corresponding to the `addrs_to` list |
+| `expiry_block_number` | uint64  | Block at which the multisig spend transaction expires if not approved |
+| `fee` | uint64 | Fee for multisig spend transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+  
+
   ```go
   message MultiSigSpendTxnReq {
       bytes master_addr = 1;
@@ -4202,7 +4173,12 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
  
   #### TransferCoinsResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}><dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigSpend</dt><dd style={{ display:'list-item' }}>  multi_sig_address </dd> <dd style={{ display:'list-item' }}>  addrs_to </dd> <dd style={{ display:'list-item' }}>  amounts </dd> <dd style={{ display:'list-item' }}>  expiry_block_number </dd></dd></dd>    <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4214,9 +4190,11 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
 
 
-
 ### GetMultiSigVoteTxn
 
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="getmultisigvotetxn"
@@ -4247,6 +4225,16 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
   #### MultiSigVoteTxnReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | QRL Address must be a signatory of the multisig address |
+| `shared_key` | bytes | Multisig spend transaction to vote on |
+| `unvote` | bool | |
+| `fee` | uint64 | Fee for the multisig vote transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message MultiSigVoteTxnReq {
       bytes master_addr = 1;
@@ -4266,6 +4254,13 @@ See the [TransactionExtended Object](#transactionextended) for more information
  
   #### TransferCoinsResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigVote</dt><dd style={{ display:'list-item' }}>  shared_key </dd> <dd style={{ display:'list-item' }}>  unvote </dd> <dd style={{ display:'list-item' }}>  prev_tx_hash </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4279,6 +4274,10 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
 
 ### GetMessageTxn
+
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="getmessagetxn"
@@ -4309,6 +4308,15 @@ See the [TransactionExtended Object](#transactionextended) for more information
 
   #### MessageTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Public address | 
+| `message` | bytes | Message to send | 
+| `addr_to` | bytes | Address to send message to (Optional) | 
+| `fee` | uint64 | Fee for message transaction | 
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
 ```go
 message MessageTxnReq {
     bytes master_addr = 1;
@@ -4326,6 +4334,12 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Message</dt><dd style={{ display:'list-item' }}>  message_hash </dd> <dd style={{ display:'list-item' }}>  addr_to </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4340,7 +4354,11 @@ message MessageTxnReq {
 
 
 
+
 ### GetTokenTxn
+
+Creates a token on the QRL network
+
 
 <Tabs
   groupId="gettokentxn"
@@ -4371,6 +4389,19 @@ message MessageTxnReq {
 
   #### TokenTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_addr` | bytes | QRL Address creating the token |
+| `symbol` | bytes | Token symbol |
+| `name` | bytes | Token name |
+| `owner` |  bytes| QRL Address of the token owner |
+| `decimals` | uint64 | Number of decimals for the token (limit of 9 decimal places)|
+| `initial_balances` | repeated [AddressAmount Object](#addressamount)  | list of QRL address and initial balances for up to 100 initial token holders  |
+| `fee` | uint64 | Fee for the token transaction  |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
+
   ```go
   message TokenTxnReq {
       bytes master_addr = 1;
@@ -4391,6 +4422,12 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Token</dt><dd style={{ display:'list-item' }}>  symbol </dd> <dd style={{ display:'list-item' }}>  name </dd> <dd style={{ display:'list-item' }}>  owner </dd> <dd style={{ display:'list-item' }}>  decimals </dd> <dd style={{ display:'list-item' }}>  initial_balances </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -4400,6 +4437,33 @@ message MessageTxnReq {
   
   </TabItem>
 </Tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
