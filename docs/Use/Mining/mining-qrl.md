@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: mining-qrl-overview
 title: Mining QRL Overview
 hide_title: false
@@ -19,30 +19,41 @@ slug: /use/mining/overview
 
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
 :::
 
-QRL uses a Proof Of Work consensus algorithm called RandomX. Miners can run specialized software on most modern computers and earn rewards in return for the block validation they perform.
+Mining QRL is the basis of the blockchain network and powers the security and utility of the project. This in turn gives back a reward for those that chose to share their computer power for cryptographic hashes.
 
-The algorithm is developed to be more efficient on a CPU, limiting any other mining devices such as ASICS and GPU's virtually useless to mine QRL with. This allows more overall participation and decentralization due to accessibility.
+:::tip Block Rewards
+See the [QRL Emission](/learn/qrl-emission) documentation for more on the block reward
+:::
 
-All mining PC's are working on finding new blocks in the chain along with all of the other miners in a race to the reward. As soon as a miner discovers a new block, the entire chain moves onto the next block starting the sprint again.
+QRL uses a Proof Of Work consensus algorithm called RandomX which favors mining with traditional CPU hardware. The algorithm is developed to be more efficient on a CPU, limiting other mining devices such as ASICS and GPU's profitability.
 
-Most modern processors can mine QRL using either a full QRL node, or some mining software such as XMR-Stak. Each computer that is providing hash-rate, or the amount of hashes you can produce in a given time, increases a miners chances of wining a block.
+Miners simply run some custom mining software and can use most modern computers to earn rewards in return for the block validation they perform.
+
+All mining PC's are working on finding new blocks in the chain along with other miners in a race to the reward. As soon as a miner discovers a new block, the entire chain moves onto the next block starting the sprint again.
+
+Most modern processors can mine QRL using either a full QRL node, or some pool mining software such as XMR-Stak. Each computer that is providing hash-rate, or the amount of hashes you can produce in a given time, increases a miners chances of wining a block.
+
+As a general rule, you will have a better chance at finding blocks using a pool. Solo mining strengthens the QRL network by running a synced node, verifying transactions on the network.  Either way you decide to go, over time your block rewards should even out.
+
+
 
 ## Solo Mining
 
-The QRL Full Node supports solo mining, where the local computer, using a local fully synced QRL node can submit valid hashes to the chain for consensus. If this single mining node discovers a block that is adopted into the chain the full block reward is given to the address the node is mining for. 
+Solo mining is referred to a QRL node that is also used for mining new blocks. This method uses the CPU of the node for hashing and is working alone to solve blocks on the network. 
 
-The benefit of earning a full block is outweighed by the amount of time it may take to find this block. Since you are competing against the entire mining network in search for the next block it is a bit of a luck game. It has been shown that the rewards typically average out between pool mining and solo node mining. 
+Any found block is submitted through the locally synced QRL node and adds to the decentralization of the network by adding additional validation to the chain. This method is limited to the hash power of the local CPU.
 
-:::tip
-Learn more about solo mining in our [solo-mining](#) guide and get started syncing a full QRL node with the [QRL Node Documentation](/docs/node)
+If solo mining node discovers a block that is accepted into the chain the full block reward is given to the miner. This has a larger payout however is less likely to happen when compared to pool mining.
+
+:::tip Solo Mining Docs
+Learn more in our [solo-mining](/use/mining/solo-mining) guide and get started syncing a full QRL node with the [QRL Node Documentation](/use/node/overview)
 :::
 
 ## Pool Mining
 
-In contrast to solo mining where all of the work and the entire reward is sent to the winning mining PC, a pool shares the work, and the reward.
+In contrast to solo mining where all of the work and the entire reward is sent to the winning mining PC, a mining pool shares the work and the reward between multiple CPU's.
 
 Each mining PC runs a version of mining software that offloads the node requirements and "pools" the work in finding a new block.
 
@@ -51,10 +62,5 @@ Typically a miner will configure each PC they have running mining software to se
 The payout to an address is dependent on the amount of hashes or hashrate they send to the pool node. The more hashrate the more rewards the miner will earn.
 
 :::tip
-Learn more about pool mining in our [pool-mining](#) guide and see the pool list to find somewhere to send some hashes to!
+Learn more about pool mining in our [pool-mining](/use/mining/pool-mining) guide and see the pool list to find somewhere to send some hashes to!
 :::
-
-
-
-
-> FIX-ME - add links to the list of pools that we have
