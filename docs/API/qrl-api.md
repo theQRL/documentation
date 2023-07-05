@@ -5034,38 +5034,9 @@ Get transaction data from transaction hash provided
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### GetLatticePKsByAddress
+
+Returns any Lattice keys associated with the QRL address given.
 
 <Tabs
   groupId="getlatticepksbyaddress"
@@ -5096,6 +5067,12 @@ Get transaction data from transaction hash provided
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -5111,6 +5088,11 @@ Get transaction data from transaction hash provided
  
   #### GetLatticePKsByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `lattice_pks_detail` | repeated [LatticePKsDetail Object](#latticepksdetail) | <dl><dt>LatticePKsDetail Object contains:</dt><dd style={{ display:'list-item' }}> pk1</dd><dd style={{ display:'list-item' }}> pk2</dd><dd style={{ display:'list-item' }}> pk3</dd><dd style={{ display:'list-item' }}> tx_hash</dd></dl> |
+
+
   ```go
   message GetLatticePKsByAddressResp {
       repeated LatticePKsDetail lattice_pks_detail = 1;
@@ -5122,8 +5104,9 @@ Get transaction data from transaction hash provided
 
 
 
-
 ### GetMultiSigAddressesByAddress
+
+Lookup and return all multisig addresses associated with a QRL address
 
 <Tabs
   groupId="getmultisigaddressesbyaddress"
@@ -5154,6 +5137,13 @@ Get transaction data from transaction hash provided
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` |  bytes | QRL Address for lookup |
+| `item_per_page` |  uint64 | Items to return per page |
+| `page_number` |  uint64 | Number of page to return |
+
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -5168,7 +5158,13 @@ Get transaction data from transaction hash provided
 
  
   #### GetMultiSigAddressesByAddressResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `multi_sig_detail` | repeated [MultiSigDetail Object](#multisigdetail) | <dl><dt>MultiSigDetail Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd></dl> |
+
+
   ```go
   message GetMultiSigAddressesByAddressResp {
       repeated MultiSigDetail multi_sig_detail = 1;
@@ -5181,6 +5177,8 @@ Get transaction data from transaction hash provided
 
 
 ### GetMultiSigSpendTxsByAddress
+
+Returns any multisig spend transactions associated with the address given.
 
 <Tabs
   groupId="getmultisigspendtxsbyaddress"
@@ -5209,7 +5207,14 @@ Get transaction data from transaction hash provided
   
   <TabItem value="request">
 
-  #### GetMultiSigSpendTxsByAddressReq  
+  #### GetMultiSigSpendTxsByAddressReq
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+| `filter_type` | FilterType Object | NONE, EXECUTED_ONLY, NON_EXECUTED, EXPIRED, NON_EXPIRED, NON_EXECUTED_EXPIRED, NON_EXECUTED_NON_EXPIRED |
 
   ```go
   message GetMultiSigSpendTxsByAddressReq {
@@ -5228,15 +5233,14 @@ Get transaction data from transaction hash provided
       FilterType filter_type = 4;
   }
   ```
-
-
   </TabItem>
-  
   <TabItem value="response">
 
- 
   #### GetMultiSigSpendTxsByAddressResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail` | repeated [GetTransactionResp Object](#gettransactionresp-1) | <dl><dt>GetTransactionResp Object contains:</dt><dd style={{ display:'list-item' }}><dt style={{ display:'list-item' }}> tx</dt><dd style={{ display:'list-item' }}> multi_sig_address</dd><dd style={{ display:'list-item' }}> addrs_to</dd><dd style={{ display:'list-item' }}> amounts</dd><dd style={{ display:'list-item' }}> expiry_block_number</dd></dd><dd style={{ display:'list-item' }}> confirmations</dd><dd style={{ display:'list-item' }}> block_number</dd><dd style={{ display:'list-item' }}> block_header_hash</dd><dd style={{ display:'list-item' }}> timestamp</dd><dd style={{ display:'list-item' }}> addr_from</dd></dl>  |
 
   ```go
   message GetMultiSigSpendTxsByAddressResp {
@@ -5249,8 +5253,9 @@ Get transaction data from transaction hash provided
 
 
 
-
 ### GetVoteStats
+
+Returns multisig spend vote stats with a given multisig spend transaction hash
 
 <Tabs
   groupId="getvotestats"
@@ -5280,7 +5285,13 @@ Get transaction data from transaction hash provided
   
   <TabItem value="request">
 
+
   #### GetVoteStatsReq  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `multi_sig_spend_tx_hash` | bytes | multisig transaction hash for stats |
 
   ```go
   message GetVoteStatsReq {
@@ -5289,11 +5300,17 @@ Get transaction data from transaction hash provided
   ```
 
   </TabItem>
-  
   <TabItem value="response">
 
- 
+
   #### GetVoteStatsResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `vote_stats` | [VoteStats Object](#votestats) |  <dl><dt>VoteStats Object contains:</dt><dd style={{ display:'list-item' }}> multi_sig_address</dd><dd style={{ display:'list-item' }}> shared_key</dd><dd style={{ display:'list-item' }}> signatories</dd><dd style={{ display:'list-item' }}> tx_hashes</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> expiry_block_number</dd><dd style={{ display:'list-item' }}> total_weight</dd><dd style={{ display:'list-item' }}> executed</dd></dl> |
+
+
 
   ```go
   message GetVoteStatsResp {
@@ -5303,7 +5320,6 @@ Get transaction data from transaction hash provided
   
   </TabItem>
 </Tabs>
-
 
 
 
@@ -5338,6 +5354,13 @@ Get transaction data from transaction hash provided
 
   #### GetTransactionsByAddressReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -5347,11 +5370,13 @@ Get transaction data from transaction hash provided
   ```
 
   </TabItem>
-  
   <TabItem value="response">
 
- 
   #### GetInboxMessagesByAddressResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail`  | repeated [GetTransactionResp Object](#gettransactionresp-1) |  |
 
   ```go
   message GetInboxMessagesByAddressResp {
@@ -5364,8 +5389,9 @@ Get transaction data from transaction hash provided
 
 
 
-
 ### GetBalance
+
+Returns a given QRL address balance
 
 <Tabs
   groupId="getbalance"
@@ -5396,19 +5422,25 @@ Get transaction data from transaction hash provided
 
   #### GetBalanceReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup for balance |
+
 ```go
 message GetBalanceReq {
     bytes address = 1;
 }
 ```
 
-  </TabItem>
-  
+  </TabItem>  
   <TabItem value="response">
 
- 
   #### GetBalanceResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `balance` | uint64 | Balance response with latest known balance |
+
 ```go
 message GetBalanceResp {
     uint64 balance = 1;
@@ -5419,9 +5451,9 @@ message GetBalanceResp {
 </Tabs>
 
 
-
-
 ### GetTotalBalance
+
+Returns total balance of all addresses given. 
 
 <Tabs
   groupId="gettotalbalance"
@@ -5452,6 +5484,10 @@ message GetBalanceResp {
 
   #### GetTotalBalanceReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `addresses` | repeated bytes | List of QRL addresses for address lookup  |
+
 ```go
 message GetTotalBalanceReq {
     repeated bytes addresses = 1;
@@ -5465,6 +5501,10 @@ message GetTotalBalanceReq {
  
   #### GetTotalBalanceResp
   
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `balance` |  uint64 | Combined balance of all addresses in request |
+
 ```go
 message GetTotalBalanceResp {
     uint64 balance = 1;
@@ -5476,9 +5516,11 @@ message GetTotalBalanceResp {
 
 
 
-
-
 ### GetOTS
+
+:::caution Need clarification
+Define the Request parameters 
+:::
 
 <Tabs
   groupId="getots"
@@ -5509,6 +5551,14 @@ message GetTotalBalanceResp {
 
   #### GetOTSReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `address` | address | QRL Address to lookup OTS keys |
+| `page_from` | page_from | Page to return starting point |
+| `page_count` | page_count | Count of pages to return |
+| `unused_ots_index_from` | unused_ots_index_from |  |
+
+
 ```go
 message GetOTSReq {
     bytes address = 1;
@@ -5524,6 +5574,12 @@ message GetOTSReq {
 
  
   #### GetOTSResp
+
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `ots_bitfield_by_page` | repeated [OTSBitfieldByPage Object](#otsbitfieldbypage) | <dl><dt>OTSBitfieldByPage Object contains:</dt><dd style={{ display:'list-item' }}> ots_bitfield</dd><dd style={{ display:'list-item' }}> page_number</dd></dl> |
+| `next_unused_ots_index` | uint64 | Next available un-used OTS key for the address given |
+| `unused_ots_index_found` | bool | If any available OTS keys exist for the address given |
 
   ```go
   message GetOTSResp {
@@ -5546,9 +5602,11 @@ message GetOTSReq {
 </Tabs>
 
 
-
-
 ### GetHeight
+
+:::caution Need clarification
+Define this function and response values 
+:::
 
 <Tabs
   groupId="getheight"
@@ -5584,7 +5642,6 @@ message GetOTSReq {
   }
   ```
 
-
   </TabItem>
   
   <TabItem value="response">
@@ -5592,6 +5649,10 @@ message GetOTSReq {
  
   #### GetHeightResp
   
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `height` | uint64 |  |
+
   ```go
   message GetHeightResp {
       uint64 height = 1;
@@ -5603,8 +5664,9 @@ message GetOTSReq {
 
 
 
-
 ### GetBlock
+
+Returns QRL block data from given block header hash
 
 <Tabs
   groupId="getblock"
@@ -5618,6 +5680,7 @@ message GetOTSReq {
 
   #### GetBlock
   
+
   ```go
   service PublicAPI
   {
@@ -5634,6 +5697,10 @@ message GetOTSReq {
 
   #### GetBlockReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `header_hash` | bytes | Block header hash to lookup |
+
 ```go
 message GetBlockReq {
     bytes header_hash = 1;
@@ -5647,6 +5714,10 @@ message GetBlockReq {
  
   #### GetBlockResp
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block` | [Block object](#block) | <dl><dt>Block Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transactions</dd></dl>  |
+
 ```go
 message GetBlockResp {
     Block block = 1;
@@ -5656,10 +5727,9 @@ message GetBlockResp {
   </TabItem>
 </Tabs>
 
-
-
-
 ### GetBlockByNumber
+
+Returns block data by given block number.
 
 <Tabs
   groupId="getblockbynumber"
@@ -5690,6 +5760,10 @@ message GetBlockResp {
 
   #### GetBlockByNumberReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block_number` | uint64 | Block number for lookup |
+
 ```go
 message GetBlockByNumberReq {
     uint64 block_number = 1;
@@ -5702,6 +5776,10 @@ message GetBlockByNumberReq {
 
  
   #### GetBlockByNumberResp
+
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block` | [Block object](#block) | <dl><dt>Block Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transactions</dd></dl>  |
 
 ```go
 message GetBlockByNumberResp {
@@ -6245,6 +6323,25 @@ message SlaveDetail {
 }
 ```
 
+### LatticePKsDetail
+
+```go
+message LatticePKsDetail {
+    bytes pk1 = 1;
+    bytes pk2 = 2;
+    bytes pk3 = 3;
+    bytes tx_hash = 4;
+}
+```
+
+### MultiSigDetail
+
+```go
+message MultiSigDetail {
+    bytes address = 1;
+    uint64 balance = 2;
+}
+```
 
 ### VoteStats
 
@@ -6300,6 +6397,15 @@ message TokenBalance {
     uint64 decimals = 2;
     bytes tx_hash = 3; // Tx hash responsible for the creation of this data
     bool delete = 4;  // For internal use only
+}
+```
+
+### OTSBitfieldByPage
+
+```go
+message OTSBitfieldByPage {
+    repeated bytes ots_bitfield = 1;
+    uint64 page_number = 2;
 }
 ```
 
