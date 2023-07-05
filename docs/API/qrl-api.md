@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrl-public-api
 title: QRL Public API
 hide_title: false
@@ -37,7 +37,6 @@ import TabItem from '@theme/TabItem';
 
 
 The QRL Public API allows developers to interact with the QRL blockchain network, perform various operations, and access blockchain data.
-
 
 While there is no authentication required to interact with most of the QRL's API's, you will need to be able to reach a node at the API service IP and port. It is recommended that you run a local QRL node and serve the API from the local node.
 
@@ -175,7 +174,7 @@ The PublicAPIService service provides public API methods for interacting with th
 
 
 | Method | Request | Response |
-| :---: | :---: | :---: |
+| :---: | :---: | :--- |
 | [GetNodeState](#getnodestate) | [GetNodeStateReq](#getnodestate) | [GetNodeStateResp](#getnodestate) |
 | [GetKnownPeers](#getknownpeers) | [GetKnownPeersReq](#getknownpeers) | [GetKnownPeersResp](#getknownpeers) |
 | [GetPeersStat](#getpeersstat) | [GetPeersStatReq](#getpeersstat) | [GetPeersStatResp](#getpeersstat) |
@@ -221,21 +220,7 @@ The PublicAPIService service provides public API methods for interacting with th
 
 ### GetNodeState
 
-Retrieves the current state of the QRL node.
-
-The response `GetNodeStateResp` contains the following fields:
-
-| Field | Type | Details | 
-| :--: | :---: | :--- |
-| `version` | (string) | The version of the QRL node |
-| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-| `num_connections` | (uint32) | Number of connections seen to node |
-| `num_known_peers` | (uint32) | Number of know peers seen by node |
-| `uptime` | (uint64) | The uptime of the node in seconds |
-| `block_height` | (uint64) | Blockheight currently known to node |
-| `block_last_hash` | (bytes) | Last block hash; |
-| `network_id` | (string) | Network ID |
-
+Retrieves the current state of the QRL node queried.
 
 <Tabs
   groupId="getnodestate"
@@ -283,6 +268,16 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetNodeStateResp
 
+  `GetNodeStateResp` returns [NodeInfo](#nodeinfo) data from the connected node.
+
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
+
+
+
 
   ```go
   /**
@@ -291,27 +286,12 @@ The response `GetNodeStateResp` contains the following fields:
   message GetNodeStateResp {
       NodeInfo info = 1;
   }
-
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  state = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
   ```
+
+:::note 
+Please refer to the [NodeInfo](#nodeinfo) content for more details.
+:::
+
   </TabItem>
 
 </Tabs>
@@ -319,8 +299,13 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 
-
 ### GetKnownPeers
+
+:::caution Need clarification
+Does this return a list of Peers IP's from the `Peer` function? Or detailed information from the `PeerInfo` function? 
+:::
+
+Returns data on known peers connected to the node queried.
 
 <Tabs
   groupId="getknownpeers"
@@ -364,6 +349,13 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="response">
 
   #### GetKnownPeersResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `node_info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
+| `known_peers` | [Repeated Peer Object](#peer) | List of Peer objects containing peer nodes detailed information |
+
+
   
   ```go
   /**
@@ -374,31 +366,12 @@ The response `GetNodeStateResp` contains the following fields:
       repeated Peer known_peers = 2;      // List of Peer objects containing peer nodes detailed information
   }
 
-
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  statGetKnownPeersRespe = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
-
-  message Peer {
-      string ip = 1;
-  }
   ```
+
+
+:::note 
+Please refer to the [NodeInfo function](#nodeinfo) and [Peers function](#peers) content for more details.
+:::
 
   </TabItem>
 </Tabs>
@@ -410,6 +383,7 @@ The response `GetNodeStateResp` contains the following fields:
 
 ### GetPeersStat
 
+Returns stats on known peers.
 
 <Tabs
   groupId="getpeerstat"
@@ -422,7 +396,7 @@ The response `GetNodeStateResp` contains the following fields:
   <TabItem value="method">
 
   #### GetPeersStat
-  
+
   ```go
   service PublicAPI
   {
@@ -456,6 +430,11 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetPeersStatResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `peers_stat` | [repeated PeerStat Object](#peerstat) | <dl><dt>PeerState object contains:</dt><dd style={{ display:'list-item' }}>peer_ip</dd><dd style={{ display:'list-item' }}>port</dd><dd style={{ display:'list-item' }}>node_chain_state</dd></dl> |
+
+
   ```go
   /**
    * Represents the reply message to peers stat query
@@ -464,18 +443,20 @@ The response `GetNodeStateResp` contains the following fields:
       repeated PeerStat peers_stat = 1;    // PeerState object contains peer_ip, port and peer state information
   }
 
-  message PeerStat {
-      bytes peer_ip = 1;
-      uint32 port = 2;
-      NodeChainState node_chain_state = 3;
-  }
   ```
+
+:::note
+Please refer to the [PeerStat function](#peerstat) for more information.
+:::
+
   </TabItem>
 </Tabs>
 
 
 
 ### GetStats
+
+Returns Node stats for the QRL Node queried with optional block timeseries data returned
 
 <Tabs
   groupId="getstats"
@@ -506,6 +487,10 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetStatsReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `include_timeseries` | bool | Boolean to define if block timeseries should be included in reply or not |
+
 
   ```go
   /**
@@ -524,30 +509,23 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetStatsResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `node_info` | [NodeInfo Object](#nodeinfo) | <dl><dt>NodeInfo object contains:</dt><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>state</dd><dd style={{ display:'list-item' }}>num_connections</dd><dd style={{ display:'list-item' }}>num_known_peers</dd><dd style={{ display:'list-item' }}>uptime</dd><dd style={{ display:'list-item' }}>block_height</dd><dd style={{ display:'list-item' }}>block_last_hash</dd><dd style={{ display:'list-item' }}>network_id</dd></dl> |
+| `epoch` | uint64 | Current epoch |
+| `uptime_network` | uint64 | Indicates uptime in seconds |
+| `block_last_reward` | uint64 | Block reward |
+| `block_time_mean` | uint64 | Blocktime average |
+| `block_time_sd` | uint64 | Blocktime standard deviation |
+| `coins_total_supply` | uint64 | Total coins supply |
+| `coins_emitted` | uint64 | Total coins emitted |
+| `BlockDataPoint` | [repeated BlockDataPoint Object](#blockdatapoint) | <dl><dt>BlockDataPoint Object contains:</dt><dd style={{ display:'list-item' }}>number</dd><dd style={{ display:'list-item' }}>difficulty</dd><dd style={{ display:'list-item' }}>timestamp</dd><dd style={{ display:'list-item' }}>time_last</dd><dd style={{ display:'list-item' }}>time_movavg</dd><dd style={{ display:'list-item' }}>hash_power</dd><dd style={{ display:'list-item' }}>header_hash</dd><dd style={{ display:'list-item' }}>header_hash_prev</dd></dl> |
+
+
+
+
+
   ```go
-  /**
-   * Represents the reply message to get statistics about node
-  */
-  message NodeInfo
-  {
-      enum State {
-          UNKNOWN = 0;
-          UNSYNCED = 1;
-          SYNCING = 2;
-          SYNCED = 3;
-          FORKED = 4;
-      }
-
-      string version = 1;
-      State  state = 2;
-      uint32 num_connections = 3;
-      uint32 num_known_peers = 4;
-      uint64 uptime = 5;               // Uptime in seconds
-      uint64 block_height = 6;
-      bytes  block_last_hash = 7;
-      string network_id = 8;
-  }
-
   message GetStatsResp {
       NodeInfo node_info = 1;                 // NodeInfo object containing node state information
       uint64 epoch = 2;                       // Current epoch
@@ -564,6 +542,10 @@ The response `GetNodeStateResp` contains the following fields:
   }
   ```  
 
+:::note
+Please see the [NodeInfo Object](#nodeinfo) and [BlockDataPoint Object](#blockdatapoint) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -572,6 +554,10 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 ### GetAddressState
+
+`GetAddressState` returns information on a given address. 
+
+This function requires a *QRL address* with optional fields to include *OTS Bitfield* and *Transaction Hashes*.
 
 <Tabs
   groupId="getaddressstate"
@@ -602,6 +588,12 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address to query address state |
+| `exclude_ots_bitfield` | bool | Boolean to include OTS bitfield information or not |
+| `exclude_transaction_hashes` | bool | Boolean to include transaction hashes from address |
+
   ```go
   message GetAddressStateReq {
       bytes address = 1;
@@ -617,12 +609,24 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetAddressStateResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state` | [AddressState Object](#addressstate) | <dl><dt>AddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> *<i>ots_bitfield</i></dd><dd style={{ display:'list-item' }}> *<i>transaction_hashes</i></dd><dd style={{ display:'list-item' }}> tokens</dd><dd style={{ display:'list-item' }}> latticePK_list</dd><dd style={{ display:'list-item' }}> slave_pks_access_type</dd><dd style={{ display:'list-item' }}> ots_counter</dd></dl> |
+
+
+\**Optional boolean request needed for this data to be returned .*
+
   ```go
   message GetAddressStateResp {
       AddressState state = 1;
   }
   ```
   
+
+:::note
+See the [AddressState object](#addressstate) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -630,6 +634,8 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 ### GetOptimizedAddressState
+
+Returns Optimized Address State information.
 
 <Tabs
   groupId="getoptimizedaddressstate"
@@ -660,6 +666,12 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | **Required** QRL Address for the state information lookup |
+| `exclude_ots_bitfield` | bool | **Optional** Boolean to exclude OTS Bitfield information|
+| `exclude_transaction_hashes` | bool | **Optional** Boolean to exclude transaction hash information |
+
   ```go
   message GetAddressStateReq {
       bytes address = 1;
@@ -675,12 +687,22 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetOptimizedAddressStateResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state` | [OptimizedAddressState Object](#optimizedaddressstate) | <dl><dt>OptimizedAddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> ots_bitfield_used_page</dd><dd style={{ display:'list-item' }}> used_ots_key_coun</dd><dd style={{ display:'list-item' }}> transaction_hash_count</dd><dd style={{ display:'list-item' }}> tokens_count</dd><dd style={{ display:'list-item' }}> slaves_count</dd><dd style={{ display:'list-item' }}> lattice_pk_count</dd><dd style={{ display:'list-item' }}> multi_sig_address_count</dd><dd style={{ display:'list-item' }}> multi_sig_spend_count</dd><dd style={{ display:'list-item' }}> inbox_message_count</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> proposal_vote_stats</dd>  </dl> |
+
+
   ```go
   message GetOptimizedAddressStateResp {
       OptimizedAddressState state = 1;
   }
   ```
-    
+
+:::note
+See the [OptimizedAddressState object](#optimizedaddressstate) for more information
+:::
+
+
   </TabItem>
 </Tabs>
 
@@ -718,6 +740,11 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetMultiSigAddressStateReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address for state lookup |
+
+
   ```go
   message GetMultiSigAddressStateReq {
       bytes address = 1;
@@ -728,7 +755,13 @@ The response `GetNodeStateResp` contains the following fields:
   
   <TabItem value="response">
 
- 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `state` | [MultiSigAddressState object](#multisigaddressstate) | <dl>  <dt>MultiSigAddressState Object contains:</dt>  <dd style={{ display:'list-item' }}> address</dd>  <dd style={{ display:'list-item' }}> creation_tx_hash</dd>  <dd style={{ display:'list-item' }}> nonce</dd>  <dd style={{ display:'list-item' }}> balance</dd>  <dd style={{ display:'list-item' }}> signatories</dd>  <dd style={{ display:'list-item' }}> weights</dd>  <dd style={{ display:'list-item' }}> threshold</dd>  <dd style={{ display:'list-item' }}> transaction_hash_count</dd>  <dd style={{ display:'list-item' }}> multi_sig_spend_count</dd>  <dd style={{ display:'list-item' }}> multi_sig_address_count</dd>  <dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd>  <dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd>  <dd style={{ display:'list-item' }}> unvotes</dd>  <dd style={{ display:'list-item' }}> proposal_vote_stats</dd></dl> |
+
+
+
+
   #### GetMultiSigAddressStateResp
 
   ```go
@@ -737,6 +770,10 @@ The response `GetNodeStateResp` contains the following fields:
   }
   ```
   
+:::note
+See the [MultiSigAddressState object](#multisigaddressstate) for more information
+:::
+
   </TabItem>
 </Tabs>
 
@@ -774,6 +811,11 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### IsSlaveReq  
   
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_address` | bytes | Master QRL address slave is associated with |
+| `slave_pk` | bytes | Public key from slave address |
+
   ```go
   message IsSlaveReq {
       bytes master_address = 1;
@@ -786,7 +828,12 @@ The response `GetNodeStateResp` contains the following fields:
 
  
   #### IsSlaveResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `result` | bool | Boolean result if address is a slave address or not |
+
   ```go
   message IsSlaveResp {
       bool result = 1;
@@ -801,6 +848,9 @@ The response `GetNodeStateResp` contains the following fields:
 
 
 ### GetObject
+
+Returns information based on the query submitted. Can be one of: QRL Address, Transaction Hash, Block height.
+
 
 <Tabs
   groupId="getobject"
@@ -832,6 +882,10 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetObjectReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `query` | bytes | Query data to lookup, can be one of: *QRL Address, Transaction Hash, Block Number* |
+
   ```go
   message GetObjectReq {  
       bytes query = 1;    
@@ -845,6 +899,13 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetObjectResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address_state` | [OptimizedAddressState Object](#optimizedaddressstate) | <dl><dt>OptimizedAddressState Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> ots_bitfield_used_page</dd><dd style={{ display:'list-item' }}> used_ots_key_coun</dd><dd style={{ display:'list-item' }}> transaction_hash_count</dd><dd style={{ display:'list-item' }}> tokens_count</dd><dd style={{ display:'list-item' }}> slaves_count</dd><dd style={{ display:'list-item' }}> lattice_pk_count</dd><dd style={{ display:'list-item' }}> multi_sig_address_count</dd><dd style={{ display:'list-item' }}> multi_sig_spend_count</dd><dd style={{ display:'list-item' }}> inbox_message_count</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_spend_txn_hash</dd><dd style={{ display:'list-item' }}> foundation_multi_sig_vote_txn_hash</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> proposal_vote_stats</dd>  </dl> |
+| `transaction` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}>header</dd><dd style={{ display:'list-item' }}>tx</dd><dd style={{ display:'list-item' }}>addr_from</dd><dd style={{ display:'list-item' }}>size</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd></dl> |
+| `block_extended` | [BlockExtended Object](#blockextended) | <dl><dt>BlockExtended Object contains:</dt><dd style={{ display:'list-item' }}>header</dd><dd style={{ display:'list-item' }}>extended_transactions</dd><dt>genesis block only:</dt><dd style={{ display:'list-item' }}>genesis_balance</dd><dd style={{ display:'list-item' }}>size</dd></dl> |
+
+
   ```go
   message GetObjectResp {
       bool found = 1;
@@ -856,6 +917,10 @@ The response `GetNodeStateResp` contains the following fields:
   }
   ```
   
+:::note
+See [OptimizedAddressState Object](#optimizedaddressstate), [TransactionExtended Object](#transactionextended), [BlockExtended Object](#blockextended) for more information.
+:::
+
   </TabItem>
 </Tabs>
 
@@ -893,6 +958,13 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### GetLatestDataReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `filter` | filter | One of: *ALL, BLOCKHEADERS, TRANSACTIONS, TRANSACTIONS_UNCONFIRMED* |
+| `offset` | uint32 | Offset in the result list (works backwards in this case) |
+| `quantity` | uint32 | Number of items to retrieve. Capped at 100 |
+
+
   ```go
   message GetLatestDataReq {
       enum Filter {
@@ -903,7 +975,7 @@ The response `GetNodeStateResp` contains the following fields:
       }
       Filter filter = 1;
       uint32 offset = 2;                      // Offset in the result list (works backwards in this case)
-      uint32 quantity = 3;                    // Number of items to retrive. Capped at 100
+      uint32 quantity = 3;                    // Number of items to retrieve. Capped at 100
   }
   ```
 
@@ -914,6 +986,15 @@ The response `GetNodeStateResp` contains the following fields:
  
   #### GetLatestDataResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `blockheaders` | [BlockHeaderExtended Object](blockheaderextended) | <dl><dt>BlockHeaderExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transaction_count</dd></dl> |
+| `transactions` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+| `transactions_unconfirmed` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message GetLatestDataResp {
       repeated BlockHeaderExtended blockheaders = 1;
@@ -921,6 +1002,10 @@ The response `GetNodeStateResp` contains the following fields:
       repeated TransactionExtended transactions_unconfirmed = 3;
   }
   ```    
+
+:::note
+See [BlockHeaderExtended Object](blockheaderextended), [TransactionExtended Object](transactionextended), [TransactionExtended Object](transactionextended) for more information
+:::
 
   </TabItem>
 </Tabs>
@@ -959,18 +1044,31 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### PushTransactionReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `transaction_signed` | [Transaction Object](#transaction) | <dl><dt>Transaction Object contains:</dt><dd style={{ display:'list-item' }}> master_addr</dd><dd style={{ display:'list-item' }}> fee</dd><dd style={{ display:'list-item' }}> public_key</dd><dd style={{ display:'list-item' }}> signature</dd><dd style={{ display:'list-item' }}> nonce</dd><dd style={{ display:'list-item' }}> transaction_hash</dd><dd style={{ display:'list-item' }}> transactionType</dd></dl> |
+
   ```go
   message PushTransactionReq {    
       Transaction transaction_signed = 1;     
   }
   ```
 
+:::note
+See the [Transaction Object](#transaction) for more information.
+:::
+
   </TabItem>
-  
   <TabItem value="response">
 
  
   #### PushTransactionResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `error_code` | enum `ResponseCode` | <dl><dt>Response code will be one of:</dt><dd style={{ display:'list-item' }}> UNKNOWN</dd><dd style={{ display:'list-item' }}> ERROR</dd><dd style={{ display:'list-item' }}> VALIDATION_FAILED</dd><dd style={{ display:'list-item' }}> SUBMITTED</dd></dl> |
+| `error_description` | string | String description of the error |
+| `tx_hash` | bytes | Transaction hash from the PushTransaction  |
 
   ```go
   message PushTransactionResp {
@@ -1026,6 +1124,15 @@ The response `GetNodeStateResp` contains the following fields:
 
   #### TransferCoinsReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | Transaction source address |
+| `addresses_to` | repeated bytes | Transaction destination address |
+| `amounts` | repeated uint64 | Amount. It should be expressed in Shor |
+| `message_data` | bytes | Message Data. Optional field to send messages |
+| `fee` | uint64 | Fee. It should be expressed in Shor |
+| `xmss_pk` | bytes | XMSS Public key |
+
 ```go
 message TransferCoinsReq {
     bytes master_addr = 1;                 // Transaction source address
@@ -1043,19 +1150,30 @@ message TransferCoinsReq {
 
  
   #### TransferCoinsResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
 ```go
 message TransferCoinsResp {
     TransactionExtended extended_transaction_unsigned = 1;
 }
 ```  
+
+:::note
+See [TransactionExtended Object](#transactionextended) for more information.
+:::
+
   </TabItem>
 </Tabs>
 
 
 
-
 ### ParseAddress
+
+`ParseAddress` returns a `AddressDescriptor` object containing information about the given QRL address, as well as verification that the address is valid.
 
 <Tabs
   groupId="parseaddress"
@@ -1086,10 +1204,15 @@ message TransferCoinsResp {
 
   #### ParseAddressReq  
 
-```go
-message ParseAddressReq { 
-    bytes address = 1;
-}
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | QRL Address to parse |
+
+  ```go
+  message ParseAddressReq { 
+      bytes address = 1;
+  }
 ```
 
 
@@ -1100,6 +1223,11 @@ message ParseAddressReq {
  
   #### ParseAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `is_valid` | bool | Returns `True` if address given is valid |
+| `desc` | [AddressDescriptor Object](#addressdescriptor) | <dl><dt>AddressDescriptor object contains:</dt><dd style={{ display:'list-item' }}>hash_function</dd><dd style={{ display:'list-item' }}>signature_scheme</dd><dd style={{ display:'list-item' }}>tree_height</dd><dd style={{ display:'list-item' }}>signatures</dd><dd style={{ display:'list-item' }}>address_format</dd></dl>| 
+
 
 ```go
 message ParseAddressResp {
@@ -1108,10 +1236,12 @@ message ParseAddressResp {
 }
 ```
   
+:::note
+See [AddressDescriptor object](#addressdescriptor) for more information.
+:::
+
   </TabItem>
 </Tabs>
-
-
 
 
 ### GetChainStats
@@ -1149,8 +1279,9 @@ message ParseAddressResp {
   /**
    * Represents the query for get chain size
   */
-
-  message GetChainStatsReq { }
+  message GetChainStatsReq {
+    // No request parameters required
+  }
   ```
 
   </TabItem>
@@ -1159,6 +1290,12 @@ message ParseAddressResp {
 
  
   #### GetChainStatsResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `state_size` | uint64 | Returns the whole state folder size, in bytes |
+| `state_size_mb` | string | Returns the whole state folder size, in megabytes |
+| `state_size_gb` | string | Returns the whole state folder size, in gigabytes |
   
 ```go
 /**
@@ -1179,6 +1316,10 @@ message GetChainStatsResp {
 
 
 ### GetAddressFromPK
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 <Tabs
   groupId="getaddressfrompk"
@@ -1209,6 +1350,12 @@ message GetChainStatsResp {
 
   #### GetAddressFromPKReq  
 
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `pk` | bytes | Requires PK |
+
   ```go
   message GetAddressFromPKReq {
       bytes pk = 1;
@@ -1221,12 +1368,18 @@ message GetChainStatsResp {
 
  
   #### GetAddressFromPKResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | bytes | Returns the QRL Address from the PK |
   
+
   ```go
   message GetAddressFromPKResp {
       bytes address = 1;
   }
   ```
+
 
   </TabItem>
 </Tabs>
@@ -1235,6 +1388,8 @@ message GetChainStatsResp {
 
 
 ### GetMultiSigCreateTxn
+
+Create a Multisig address transaction
 
 <Tabs
   groupId="getmultisigcreatetxn"
@@ -1265,6 +1420,17 @@ message GetChainStatsResp {
 
   #### MultiSigCreateTxnReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Address used to create the multisig address |
+| `signatories` | repeated bytes | List of authorized signatories for multisig address  |
+| `weights` | repeated uint32 | List of weights associated with signatories |
+| `threshold` | threshold | Threshold required for approval of multisig spend transaction  |
+| `fee` | uint64 | Fee for creation of multisig address transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go 
   message MultiSigCreateTxnReq {
       bytes master_addr = 1;
@@ -1285,16 +1451,23 @@ message GetChainStatsResp {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}>             <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigCreate</dt><dd style={{ display:'list-item' }}>signatories</dd> <dd style={{ display:'list-item' }}>weights</dd> <dd style={{ display:'list-item' }}>threshold</dd>    </dd></dd><dd style={{ display:'list-item' }}>addr_from</dd><dd style={{ display:'list-item' }}>size</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd></dl> | 
+
+
   ```go 
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
   }
   ```
 
+:::note
+See the [TransactionExtended Object](#transactionextended) for more information
+:::
+
   </TabItem>
 </Tabs>
-
-
 
 
 
@@ -1329,6 +1502,17 @@ message GetChainStatsResp {
 
   #### MultiSigSpendTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Address must be a signatory of the multisig address |
+| `multi_sig_address` | bytes  | The multisig address used for the spend transaction |
+| `addrs_to` | repeated bytes | List of QRL addresses to send funds to from the multisig address  |
+| `amounts` | repeated uint64| List of amounts to send corresponding to the `addrs_to` list |
+| `expiry_block_number` | uint64  | Block at which the multisig spend transaction expires if not approved |
+| `fee` | uint64 | Fee for multisig spend transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+  
+
   ```go
   message MultiSigSpendTxnReq {
       bytes master_addr = 1;
@@ -1349,7 +1533,12 @@ message GetChainStatsResp {
 
  
   #### TransferCoinsResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}><dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigSpend</dt><dd style={{ display:'list-item' }}>  multi_sig_address </dd> <dd style={{ display:'list-item' }}>  addrs_to </dd> <dd style={{ display:'list-item' }}>  amounts </dd> <dd style={{ display:'list-item' }}>  expiry_block_number </dd></dd></dd>    <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -1361,9 +1550,11 @@ message GetChainStatsResp {
 
 
 
-
 ### GetMultiSigVoteTxn
 
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="getmultisigvotetxn"
@@ -1394,6 +1585,16 @@ message GetChainStatsResp {
 
   #### MultiSigVoteTxnReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | QRL Address must be a signatory of the multisig address |
+| `shared_key` | bytes | Multisig spend transaction to vote on |
+| `unvote` | bool | |
+| `fee` | uint64 | Fee for the multisig vote transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message MultiSigVoteTxnReq {
       bytes master_addr = 1;
@@ -1413,6 +1614,13 @@ message GetChainStatsResp {
  
   #### TransferCoinsResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>MultiSigVote</dt><dd style={{ display:'list-item' }}>  shared_key </dd> <dd style={{ display:'list-item' }}>  unvote </dd> <dd style={{ display:'list-item' }}>  prev_tx_hash </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -1426,6 +1634,10 @@ message GetChainStatsResp {
 
 
 ### GetMessageTxn
+
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="getmessagetxn"
@@ -1456,6 +1668,15 @@ message GetChainStatsResp {
 
   #### MessageTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `master_addr` | bytes | QRL Public address | 
+| `message` | bytes | Message to send | 
+| `addr_to` | bytes | Address to send message to (Optional) | 
+| `fee` | uint64 | Fee for message transaction | 
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
 ```go
 message MessageTxnReq {
     bytes master_addr = 1;
@@ -1473,6 +1694,12 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Message</dt><dd style={{ display:'list-item' }}>  message_hash </dd> <dd style={{ display:'list-item' }}>  addr_to </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -1487,7 +1714,11 @@ message MessageTxnReq {
 
 
 
+
 ### GetTokenTxn
+
+Creates a token on the QRL network
+
 
 <Tabs
   groupId="gettokentxn"
@@ -1518,6 +1749,19 @@ message MessageTxnReq {
 
   #### TokenTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_addr` | bytes | QRL Address creating the token |
+| `symbol` | bytes | Token symbol |
+| `name` | bytes | Token name |
+| `owner` |  bytes| QRL Address of the token owner |
+| `decimals` | uint64 | Number of decimals for the token (limit of 9 decimal places)|
+| `initial_balances` | repeated [AddressAmount Object](#addressamount)  | list of QRL address and initial balances for up to 100 initial token holders  |
+| `fee` | uint64 | Fee for the token transaction  |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
+
   ```go
   message TokenTxnReq {
       bytes master_addr = 1;
@@ -1538,20 +1782,27 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Token</dt><dd style={{ display:'list-item' }}>  symbol </dd> <dd style={{ display:'list-item' }}>  name </dd> <dd style={{ display:'list-item' }}>  owner </dd> <dd style={{ display:'list-item' }}>  decimals </dd> <dd style={{ display:'list-item' }}>  initial_balances </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
   }
   ```
 
-  
   </TabItem>
 </Tabs>
 
 
-
-
 ### GetTransferTokenTxn
+
+:::caution Define this function and parameters
+Define the function and cover what each request parameter is
+:::
 
 <Tabs
   groupId="gettransfertokentxn"
@@ -1582,6 +1833,16 @@ message MessageTxnReq {
 
   #### TransferTokenTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `master_addr` | bytes | QRL Address sending the token |
+| `addresses_to` | repeated bytes | List of addresses to send tokens to (Up to 100) |
+| `token_txhash` | bytes | Transaction hash from token creation, identifying token to send |
+| `amounts` | repeated uint64 | List of amounts to send corresponding to the `address_to` list  |
+| `fee` | uint64 | Fee for the token transfer transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message TransferTokenTxnReq {
       bytes master_addr = 1;
@@ -1600,12 +1861,16 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>TransferToken</dt><dd style={{ display:'list-item' }}>  token_txhash </dd> <dd style={{ display:'list-item' }}>  addrs_to </dd> <dd style={{ display:'list-item' }}>  amounts </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
   }
   ```
-
   
   </TabItem>
 </Tabs>
@@ -1614,6 +1879,8 @@ message MessageTxnReq {
 
 
 ### GetSlaveTxn
+
+Create slave addresses associated to a master address
 
 <Tabs
   groupId="getslavetxn"
@@ -1644,6 +1911,14 @@ message MessageTxnReq {
 
   #### SlaveTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | Master address creating the slaves addresses |
+| `slave_pks` | repeated bytes | List of slave public keys (up to 100) |
+| `access_types` | repeated uint32 | List Slave access type 0 or 1 (0 = Full access 1 = Depreciated) |
+| `fee` |  uint64| Fee for the slave transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
   ```go
   message SlaveTxnReq {
       bytes master_addr = 1;
@@ -1661,6 +1936,12 @@ message MessageTxnReq {
  
   #### TransferCoinsResp
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>Slave</dt><dd style={{ display:'list-item' }}>  slave_pks </dd> <dd style={{ display:'list-item' }}>  access_types </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
   ```go
   message TransferCoinsResp {
       TransactionExtended extended_transaction_unsigned = 1;
@@ -1674,6 +1955,9 @@ message MessageTxnReq {
 
 
 ### GetLatticeTxn
+
+Generate a lattice transaction, sending Crystals public keys into chain
+
 
 <Tabs
   groupId="getlatticetxn"
@@ -1704,12 +1988,22 @@ message MessageTxnReq {
 
   #### LatticeTxnReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `master_addr` | bytes | Master address creating the lattice transaction |
+| `pk1` | bytes | kyber Public Key |
+| `pk2` | bytes | dilithium Public Key |
+| `pk3` | bytes | ecdsa Public Key |
+| `fee` | uint64 | Lattice key transaction |
+| `xmss_pk` | bytes | QRL Private key for transaction signature |
+
+
   ```go
   message LatticeTxnReq {
       bytes master_addr = 1;
-      bytes pk1 = 2;
-      bytes pk2 = 3;
-      bytes pk3 = 4;
+      bytes pk1 = 2; // kyber_pk
+      bytes pk2 = 3; // dilithium_pk
+      bytes pk3 = 4; // ecdsa_pk
       uint64 fee = 5;
       bytes xmss_pk = 6;
   }
@@ -1721,6 +2015,13 @@ message MessageTxnReq {
 
  
   #### TransferCoinsResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `extended_transaction_unsigned` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd>   <dd style={{ display:'list-item' }}>  <dt>tx</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}><dt>LatticePublicKey</dt><dd style={{ display:'list-item' }}>  pk1 </dd> <dd style={{ display:'list-item' }}>  pk2 </dd><dd style={{ display:'list-item' }}>  pk3 </dd> </dd>  </dd> <dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+
+
 
   ```go
   message TransferCoinsResp {
@@ -1736,6 +2037,8 @@ message MessageTxnReq {
 
 
 ### GetTransaction
+
+Get transaction data from transaction hash provided
 
 <Tabs
   groupId="gettransaction"
@@ -1766,6 +2069,11 @@ message MessageTxnReq {
 
   #### GetTransactionReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `tx_hash` | bytes | Transaction hash to lookup |
+
   ```go
   message GetTransactionReq {
       bytes tx_hash = 1;
@@ -1778,6 +2086,17 @@ message MessageTxnReq {
 
  
   #### GetTransactionResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `tx` | [Transaction Object](#transaction)| Providing transaction data related to the transaction hash provided (Varies per transaction type) |
+| `confirmations` | uint64 | Number of confirmations since transaction was minted |
+| `block_number` | uint64 | Block number transaction was seen |
+| `block_header_hash` | bytes | header hash from block |
+| `timestamp` | uint64 | Timestamp of transaction |
+| `addr_from` | bytes | QRL address transaction was sent from |
+
 
   ```go
   message GetTransactionResp {
@@ -1792,8 +2111,6 @@ message MessageTxnReq {
   
   </TabItem>
 </Tabs>
-
-
 
 
 
@@ -1828,6 +2145,13 @@ message MessageTxnReq {
 
   #### GetMiniTransactionsByAddressReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `address` | bytes | Address to lookup |
+| `item_per_page` | uint64 | Items per page |
+| `page_number` | uint64 | Page number for data response |
+
   ```go
   message GetMiniTransactionsByAddressReq {
       bytes address = 1;
@@ -1842,6 +2166,13 @@ message MessageTxnReq {
 
  
   #### GetMiniTransactionsByAddressResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `mini_transactions` | repeated [MiniTransaction Object](#minitransaction) | <dl><dt>MiniTransaction Object contains:</dt><dd style={{ display:'list-item' }}> transaction_hash</dd><dd style={{ display:'list-item' }}> out</dd><dd style={{ display:'list-item' }}> amount</dd> </dl> |
+| `balance` | uint64 | Address balance  |
+
 
   ```go
   message GetMiniTransactionsByAddressResp {
@@ -1888,6 +2219,12 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |  
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -1903,6 +2240,10 @@ message MessageTxnReq {
  
   #### GetTransactionsByAddressResp
   
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail` | repeated [GetTransactionResp Object](#gettransactionresp-1) | <dl><dt>GetTransactionResp Object contains:</dt><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> confirmations</dd><dd style={{ display:'list-item' }}> block_number</dd><dd style={{ display:'list-item' }}> block_header_hash</dd><dd style={{ display:'list-item' }}> timestamp</dd><dd style={{ display:'list-item' }}> addr_from</dd></dl> |
+
   ```go
   message GetTransactionsByAddressResp {
       repeated GetTransactionResp transactions_detail = 1;
@@ -1946,6 +2287,13 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -1961,16 +2309,18 @@ message MessageTxnReq {
  
   #### GetTokensByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `tokens_detail` | repeated [TokenDetail Object](#tokendetail) | <dl><dt>TokenDetail Object contains:</dt><dd style={{ display:'list-item' }}> token_txhash</dd><dd style={{ display:'list-item' }}> name</dd><dd style={{ display:'list-item' }}> symbol</dd><dd style={{ display:'list-item' }}> balance</dd></dl> |
+
   ```go
   message GetTokensByAddressResp {
       repeated TokenDetail tokens_detail = 1;
   }
   ```
 
-  
   </TabItem>
 </Tabs>
-
 
 
 
@@ -2005,6 +2355,12 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | Address to lookup for slave data |
+| `item_per_page` | uint64 | items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -2020,6 +2376,11 @@ message MessageTxnReq {
  
   #### GetSlavesByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `slaves_detail` | repeated [SlaveDetail Object](#slavedetail) | <dl><dt>SlaveDetail Object contains:</dt><dd style={{ display:'list-item' }}> slave_address</dd><dd style={{ display:'list-item' }}> access_type</dd></dl> |
+
+
   ```go
   message GetSlavesByAddressResp {
       repeated SlaveDetail slaves_detail = 1;
@@ -2032,7 +2393,10 @@ message MessageTxnReq {
 
 
 
+
 ### GetLatticePKsByAddress
+
+Returns any Lattice keys associated with the QRL address given.
 
 <Tabs
   groupId="getlatticepksbyaddress"
@@ -2063,6 +2427,12 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -2078,6 +2448,11 @@ message MessageTxnReq {
  
   #### GetLatticePKsByAddressResp
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `lattice_pks_detail` | repeated [LatticePKsDetail Object](#latticepksdetail) | <dl><dt>LatticePKsDetail Object contains:</dt><dd style={{ display:'list-item' }}> pk1</dd><dd style={{ display:'list-item' }}> pk2</dd><dd style={{ display:'list-item' }}> pk3</dd><dd style={{ display:'list-item' }}> tx_hash</dd></dl> |
+
+
   ```go
   message GetLatticePKsByAddressResp {
       repeated LatticePKsDetail lattice_pks_detail = 1;
@@ -2089,8 +2464,9 @@ message MessageTxnReq {
 
 
 
-
 ### GetMultiSigAddressesByAddress
+
+Lookup and return all multisig addresses associated with a QRL address
 
 <Tabs
   groupId="getmultisigaddressesbyaddress"
@@ -2121,6 +2497,13 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` |  bytes | QRL Address for lookup |
+| `item_per_page` |  uint64 | Items to return per page |
+| `page_number` |  uint64 | Number of page to return |
+
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -2135,7 +2518,13 @@ message MessageTxnReq {
 
  
   #### GetMultiSigAddressesByAddressResp
-  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `multi_sig_detail` | repeated [MultiSigDetail Object](#multisigdetail) | <dl><dt>MultiSigDetail Object contains:</dt><dd style={{ display:'list-item' }}> address</dd><dd style={{ display:'list-item' }}> balance</dd></dl> |
+
+
   ```go
   message GetMultiSigAddressesByAddressResp {
       repeated MultiSigDetail multi_sig_detail = 1;
@@ -2148,6 +2537,8 @@ message MessageTxnReq {
 
 
 ### GetMultiSigSpendTxsByAddress
+
+Returns any multisig spend transactions associated with the address given.
 
 <Tabs
   groupId="getmultisigspendtxsbyaddress"
@@ -2176,7 +2567,14 @@ message MessageTxnReq {
   
   <TabItem value="request">
 
-  #### GetMultiSigSpendTxsByAddressReq  
+  #### GetMultiSigSpendTxsByAddressReq
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | Page number to return |
+| `filter_type` | FilterType Object | NONE, EXECUTED_ONLY, NON_EXECUTED, EXPIRED, NON_EXPIRED, NON_EXECUTED_EXPIRED, NON_EXECUTED_NON_EXPIRED |
 
   ```go
   message GetMultiSigSpendTxsByAddressReq {
@@ -2195,15 +2593,14 @@ message MessageTxnReq {
       FilterType filter_type = 4;
   }
   ```
-
-
   </TabItem>
-  
   <TabItem value="response">
 
- 
   #### GetMultiSigSpendTxsByAddressResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail` | repeated [GetTransactionResp Object](#gettransactionresp-1) | <dl><dt>GetTransactionResp Object contains:</dt><dd style={{ display:'list-item' }}><dt style={{ display:'list-item' }}> tx</dt><dd style={{ display:'list-item' }}> multi_sig_address</dd><dd style={{ display:'list-item' }}> addrs_to</dd><dd style={{ display:'list-item' }}> amounts</dd><dd style={{ display:'list-item' }}> expiry_block_number</dd></dd><dd style={{ display:'list-item' }}> confirmations</dd><dd style={{ display:'list-item' }}> block_number</dd><dd style={{ display:'list-item' }}> block_header_hash</dd><dd style={{ display:'list-item' }}> timestamp</dd><dd style={{ display:'list-item' }}> addr_from</dd></dl>  |
 
   ```go
   message GetMultiSigSpendTxsByAddressResp {
@@ -2216,8 +2613,9 @@ message MessageTxnReq {
 
 
 
-
 ### GetVoteStats
+
+Returns multisig spend vote stats with a given multisig spend transaction hash
 
 <Tabs
   groupId="getvotestats"
@@ -2247,7 +2645,13 @@ message MessageTxnReq {
   
   <TabItem value="request">
 
+
   #### GetVoteStatsReq  
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `multi_sig_spend_tx_hash` | bytes | multisig transaction hash for stats |
 
   ```go
   message GetVoteStatsReq {
@@ -2256,11 +2660,17 @@ message MessageTxnReq {
   ```
 
   </TabItem>
-  
   <TabItem value="response">
 
- 
+
   #### GetVoteStatsResp
+
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `vote_stats` | [VoteStats Object](#votestats) |  <dl><dt>VoteStats Object contains:</dt><dd style={{ display:'list-item' }}> multi_sig_address</dd><dd style={{ display:'list-item' }}> shared_key</dd><dd style={{ display:'list-item' }}> signatories</dd><dd style={{ display:'list-item' }}> tx_hashes</dd><dd style={{ display:'list-item' }}> unvotes</dd><dd style={{ display:'list-item' }}> expiry_block_number</dd><dd style={{ display:'list-item' }}> total_weight</dd><dd style={{ display:'list-item' }}> executed</dd></dl> |
+
+
 
   ```go
   message GetVoteStatsResp {
@@ -2270,7 +2680,6 @@ message MessageTxnReq {
   
   </TabItem>
 </Tabs>
-
 
 
 
@@ -2305,6 +2714,13 @@ message MessageTxnReq {
 
   #### GetTransactionsByAddressReq  
 
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL address to lookup |
+| `item_per_page` | uint64 | Items per page to return |
+| `page_number` | uint64 | page number to return |
+
   ```go
   message GetTransactionsByAddressReq {
       bytes address = 1;
@@ -2314,11 +2730,13 @@ message MessageTxnReq {
   ```
 
   </TabItem>
-  
   <TabItem value="response">
 
- 
   #### GetInboxMessagesByAddressResp
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `transactions_detail`  | repeated [GetTransactionResp Object](#gettransactionresp-1) |  |
 
   ```go
   message GetInboxMessagesByAddressResp {
@@ -2331,8 +2749,9 @@ message MessageTxnReq {
 
 
 
-
 ### GetBalance
+
+Returns a given QRL address balance
 
 <Tabs
   groupId="getbalance"
@@ -2363,19 +2782,25 @@ message MessageTxnReq {
 
   #### GetBalanceReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `address` | bytes | QRL Address to lookup for balance |
+
 ```go
 message GetBalanceReq {
     bytes address = 1;
 }
 ```
 
-  </TabItem>
-  
+  </TabItem>  
   <TabItem value="response">
 
- 
   #### GetBalanceResp
-  
+
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `balance` | uint64 | Balance response with latest known balance |
+
 ```go
 message GetBalanceResp {
     uint64 balance = 1;
@@ -2386,9 +2811,9 @@ message GetBalanceResp {
 </Tabs>
 
 
-
-
 ### GetTotalBalance
+
+Returns total balance of all addresses given. 
 
 <Tabs
   groupId="gettotalbalance"
@@ -2419,6 +2844,10 @@ message GetBalanceResp {
 
   #### GetTotalBalanceReq  
 
+| Field | Type | Details | 
+| :--: | :---: | :--- | 
+| `addresses` | repeated bytes | List of QRL addresses for address lookup  |
+
 ```go
 message GetTotalBalanceReq {
     repeated bytes addresses = 1;
@@ -2432,6 +2861,10 @@ message GetTotalBalanceReq {
  
   #### GetTotalBalanceResp
   
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `balance` |  uint64 | Combined balance of all addresses in request |
+
 ```go
 message GetTotalBalanceResp {
     uint64 balance = 1;
@@ -2443,9 +2876,11 @@ message GetTotalBalanceResp {
 
 
 
-
-
 ### GetOTS
+
+:::caution Need clarification
+Define the Request parameters 
+:::
 
 <Tabs
   groupId="getots"
@@ -2476,6 +2911,14 @@ message GetTotalBalanceResp {
 
   #### GetOTSReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `address` | address | QRL Address to lookup OTS keys |
+| `page_from` | page_from | Page to return starting point |
+| `page_count` | page_count | Count of pages to return |
+| `unused_ots_index_from` | unused_ots_index_from |  |
+
+
 ```go
 message GetOTSReq {
     bytes address = 1;
@@ -2491,6 +2934,12 @@ message GetOTSReq {
 
  
   #### GetOTSResp
+
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `ots_bitfield_by_page` | repeated [OTSBitfieldByPage Object](#otsbitfieldbypage) | <dl><dt>OTSBitfieldByPage Object contains:</dt><dd style={{ display:'list-item' }}> ots_bitfield</dd><dd style={{ display:'list-item' }}> page_number</dd></dl> |
+| `next_unused_ots_index` | uint64 | Next available un-used OTS key for the address given |
+| `unused_ots_index_found` | bool | If any available OTS keys exist for the address given |
 
   ```go
   message GetOTSResp {
@@ -2513,9 +2962,11 @@ message GetOTSReq {
 </Tabs>
 
 
-
-
 ### GetHeight
+
+:::caution Need clarification
+Define this function and response values 
+:::
 
 <Tabs
   groupId="getheight"
@@ -2551,7 +3002,6 @@ message GetOTSReq {
   }
   ```
 
-
   </TabItem>
   
   <TabItem value="response">
@@ -2559,6 +3009,10 @@ message GetOTSReq {
  
   #### GetHeightResp
   
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `height` | uint64 |  |
+
   ```go
   message GetHeightResp {
       uint64 height = 1;
@@ -2570,8 +3024,9 @@ message GetOTSReq {
 
 
 
-
 ### GetBlock
+
+Returns QRL block data from given block header hash
 
 <Tabs
   groupId="getblock"
@@ -2585,6 +3040,7 @@ message GetOTSReq {
 
   #### GetBlock
   
+
   ```go
   service PublicAPI
   {
@@ -2601,6 +3057,10 @@ message GetOTSReq {
 
   #### GetBlockReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `header_hash` | bytes | Block header hash to lookup |
+
 ```go
 message GetBlockReq {
     bytes header_hash = 1;
@@ -2614,6 +3074,10 @@ message GetBlockReq {
  
   #### GetBlockResp
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block` | [Block object](#block) | <dl><dt>Block Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transactions</dd></dl>  |
+
 ```go
 message GetBlockResp {
     Block block = 1;
@@ -2623,10 +3087,9 @@ message GetBlockResp {
   </TabItem>
 </Tabs>
 
-
-
-
 ### GetBlockByNumber
+
+Returns block data by given block number.
 
 <Tabs
   groupId="getblockbynumber"
@@ -2657,6 +3120,10 @@ message GetBlockResp {
 
   #### GetBlockByNumberReq  
 
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block_number` | uint64 | Block number for lookup |
+
 ```go
 message GetBlockByNumberReq {
     uint64 block_number = 1;
@@ -2669,6 +3136,10 @@ message GetBlockByNumberReq {
 
  
   #### GetBlockByNumberResp
+
+| Field | Type | Details |
+| :--: | :---: | :--- |
+| `block` | [Block object](#block) | <dl><dt>Block Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transactions</dd></dl>  |
 
 ```go
 message GetBlockByNumberResp {
@@ -2683,13 +3154,7 @@ message GetBlockByNumberResp {
 
 
 
-
-
-
 ## Content
-
-
-
 
 ### NodeInfo
 
@@ -2697,14 +3162,14 @@ Node info returns the following:
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `version` | (string) | The version of the QRL node |
-| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-| `num_connections` | (uint32) | Number of connections seen to node |
-| `num_known_peers` | (uint32) | Number of know peers seen by node |
-| `uptime` | (uint64) | The uptime of the node in seconds |
-| `block_height` | (uint64) | Blockheight currently known to node |
-| `block_last_hash` | (bytes) | Last block hash; |
-| `network_id` | (string) | Network ID |
+| `version` | string | The version of the QRL node |
+| `state` | State | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
+| `num_connections` | uint32 | Number of connections seen to node |
+| `num_known_peers` | uint32 | Number of know peers seen by node |
+| `uptime` | uint64 | The uptime of the node in seconds |
+| `block_height` | uint64 | Blockheight currently known to node |
+| `block_last_hash` | bytes | Last block hash; |
+| `network_id` | string | Network ID |
 
 
 ```go
@@ -2731,6 +3196,11 @@ message NodeInfo
 ```
 
 ### AddressDescriptor
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
 
 | Name | Bits | Count | Description |
 | ---- | ---- | ----- | ----------- |
@@ -2766,6 +3236,10 @@ message AddressDescriptor {
 
 ### StoredPeers
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `peers` | repeated [Peer Object](#peer) | <dl><dt>Peer Object contains:</dt><dd style={{ display:'list-item' }}> ip</dd></dl> |
+
 
 ```go
 message StoredPeers {
@@ -2775,26 +3249,29 @@ message StoredPeers {
 
 ### Peer
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `ip` | string | Returns the public peer IP Address |
+
 ```go
 message Peer {
     string ip = 1;
 }
 ```
 
-
 ### AddressState
 
 | Field | Type | Details | 
-| :---: | :---: | :---: |
-| address | bytes | Pub Address in bytes |
-| balance | uint64 | Address balance |
-| nonce | uint64 | Address Nonce |
-| ots_bitfield | repeated bytes | One Time Signature Bitfield |
-| transaction_hashes | repeated bytes | Repeated list of all transaction hashes |
-| tokens | map<string, uint64> | Map of tokens found in address |
-| latticePK_list | repeated [LatticePK](#latticepk) | Repeated list of lattice public keys |
-| slave_pks_access_type | map<string, uint32> | Map of slave key access type |
-| ots_counter | uint64 | Count of used OTS Keys |
+| :---: | :---: | :--- |
+| `address` | bytes | Pub Address in bytes |
+| `balance` | uint64 | Address balance |
+| `nonce` | uint64 | Address Nonce |
+| `ots_bitfield` | repeated bytes | One Time Signature Bitfield |
+| `transaction_hashes` | repeated bytes | Repeated list of all transaction hashes |
+| `tokens` | map<string, uint64> | Map of tokens found in address |
+| `latticePK_list` | repeated [LatticePK](#latticepk) | Repeated list of lattice public keys |
+| `slave_pks_access_type` | map<string, uint32> | Map of slave key access type |
+| `ots_counter` | uint64 | Count of used OTS Keys |
 
 
 ```go
@@ -2812,24 +3289,28 @@ message AddressState {
 ```
 ### OptimizedAddressState
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
-| :---: | :---: | :---: |
-| address | bytes | Pub Address in bytes  |
-| balance | uint64 | Address balance  |
-| nonce | uint64 | Address Nonce  |
-| ots_bitfield_used_page | uint64 | Keep track of last page till which all ots key has been used |
-| used_ots_key_count | uint64 | Keep track of number of ots key that has been used |
-| transaction_hash_count | uint64 | |
-| tokens_count | uint64 | |
-| slaves_count | uint64 | |
-| lattice_pk_count | uint64 | |
-| multi_sig_address_count | uint64 | |
-| multi_sig_spend_count | uint64 | |
-| inbox_message_count | uint64 | |
-| foundation_multi_sig_spend_txn_hash | repeated | |
-| foundation_multi_sig_vote_txn_hash | repeated | |
-| unvotes | repeated | |
-| proposal_vote_stats | repeated | |
+| :---: | :---: | :--- |
+| `address` | bytes | Pub Address in bytes  |
+| `balance` | uint64 | Address balance  |
+| `nonce` | uint64 | Address Nonce  |
+| `ots_bitfield_used_page` | uint64 | Keep track of last page till which all ots key has been used |
+| `used_ots_key_count` | uint64 | Keep track of number of ots key that has been used |
+| `transaction_hash_count` | uint64 | |
+| `tokens_count` | uint64 | |
+| `slaves_count` | uint64 | |
+| `lattice_pk_count` | uint64 | |
+| `multi_sig_address_count` | uint64 | |
+| `multi_sig_spend_count` | uint64 | |
+| `inbox_message_count` | uint64 | |
+| `foundation_multi_sig_spend_txn_hash` | repeated | |
+| `foundation_multi_sig_vote_txn_hash` | repeated | |
+| `unvotes` | repeated | |
+| `proposal_vote_stats` | repeated | |
 
 
 ```go
@@ -2856,6 +3337,28 @@ message OptimizedAddressState {
 ```
 ### MultiSigAddressState
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bbytes | Pub Address in bytes  |
+| `creation_tx_hash` | bytes | | 
+| `nonce` | uint64  | | 
+| `balance` | uint64 | Address balance  |
+| `signatories` | bytes  | |
+| `weights` | uint32  | | 
+| `threshold` | uint32  | | 
+| `transaction_hash_count` | uint64  | | 
+| `multi_sig_spend_count` | uint64  | | 
+| `multi_sig_address_count` | uint64  | | 
+| `foundation_multi_sig_spend_txn_hash` | bytes  | | 
+| `foundation_multi_sig_vote_txn_hash` | bytes  | | 
+| `unvotes` | bytes  | | 
+| `proposal_vote_stats` | [Transaction Object](#transaction)  | Returns a transaction object with address state proposal vote stats | 
+
 ```go
 message MultiSigAddressState {
     bytes address = 1;
@@ -2877,28 +3380,68 @@ message MultiSigAddressState {
     repeated Transaction proposal_vote_stats = 14;
 }
 ```
+
 ### MultiSigAddressesList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `hashes` | repeated bytes |  |
 
 ```go
 message MultiSigAddressesList {
     repeated bytes hashes = 1;
 }
 ```
+
 ### DataList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `values` | repeated bytes |  |
 
 ```go
 message DataList {
     repeated bytes values = 1;
 }
 ```
+
 ### Bitfield
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| bitfields | repeated bytes | |
 
 ```go
 message Bitfield {
     repeated bytes bitfields = 1;
 }
 ```
+
 ### TransactionHashList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `hashes` | repeated bytes |  |
 
 ```go
 message TransactionHashList {
@@ -2906,6 +3449,16 @@ message TransactionHashList {
 }
 ```
 ### LatticePK
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `kyber_pk` | bytes |  |
+| `dilithium_pk` | bytes |  |
 
 ```go
 message LatticePK {
@@ -2915,6 +3468,17 @@ message LatticePK {
 ```
 ### AddressAmount 
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bytes |  |  
+| `amount` | uint64 |  |  
+
+
 ```go
 message AddressAmount {
     bytes address = 1;
@@ -2922,6 +3486,24 @@ message AddressAmount {
 }
 ```
 ### BlockHeader
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `hash_header` | bytes |  |
+| `block_number` | uint64 |  |
+| `timestamp_seconds` | uint64 |  |
+| `hash_header_prev` | bytes |  |
+| `reward_block` | uint64 |  |
+| `reward_fee` | uint64 |  |
+| `merkle_root` | bytes |  |
+| `mining_nonce` | uint32 |  |
+| `extra_nonce` | uint64 |  |
+
 
 ```go
 message BlockHeader {
@@ -2941,6 +3523,16 @@ message BlockHeader {
 ```
 ### BlockHeaderExtended
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `transaction_count` | [TransactionCount Object](#transactioncount) |  |
+
 ```go
 message BlockHeaderExtended {
     BlockHeader header = 1;
@@ -2948,6 +3540,15 @@ message BlockHeaderExtended {
 }
 ```
 ### TransactionCount
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `count` | map<uint32, uint32>  |  |
 
 ```go
 message TransactionCount {
@@ -2957,6 +3558,17 @@ message TransactionCount {
 
 ### TransactionExtended
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader)  |  |
+| `tx` | [Transaction Object](#transacction)  |  |
+| `addr_from` | bytes  |  |
+| `size` | uint64  |  |
+| `timestamp_seconds` | uint64  |  |
 ```go
 message TransactionExtended {
     BlockHeader header = 1;
@@ -2970,6 +3582,21 @@ message TransactionExtended {
 
 ### BlockExtended
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `extended_transactions` | repeated [TransactionExtended Object](#transactionextended) |  |
+| \*`genesis_balance` | repeated [GenesisBalance Object](#genesisbalance) | This is only applicable to genesis blocks |
+| `size` | uint64 | Block size |
+
+:::note \* Genesis_Balance
+`genesis_balance` is only applicable to genesis blocks.
+:::
+
 ```go
 message BlockExtended {
     BlockHeader header = 1;
@@ -2981,7 +3608,23 @@ message BlockExtended {
 }
 ```
 
+
+
 ### Block
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `transactions` | [Transaction Object](#transaction) |  |
+| \*`genesis_balance` | [repeated GenesisBalance Object](#genesisbalance) | This is only applicable to genesis blocks |
+
+:::note \* Genesis_Balance
+`genesis_balance` is only applicable to genesis blocks.
+:::
 
 ```go
 message Block {
@@ -2993,7 +3636,18 @@ message Block {
 }
 ```
 
+
+
 ### GenesisBalance
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bytes | Address is string only here to increase visibility |
+| `balance` | uint64 |  |
 
 ```go
 message GenesisBalance
@@ -3003,7 +3657,13 @@ message GenesisBalance
 }
 ```
 
+
+
 ### BlockMetaDataList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number_hashes` | repeated [BlockMetaData Object](#blockmetadata) | <dl><dt>BlockMetaData object contains:</dt>    <dd style={{ display:'list-item' }}>block_difficulty</dd><dd style={{ display:'list-item' }}>cumulative_difficulty</dd><dd style={{ display:'list-item' }}>child_headerhashes</dd><dd style={{ display:'list-item' }}>last_N_headerhashes</dd>    </dl> |
 
 ```go
 message BlockMetaDataList {
@@ -3011,7 +3671,24 @@ message BlockMetaDataList {
 }
 ```
 
+
+
 ### Transaction
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `master_addr` | bytes |  |
+| `fee` | uint64 |  |
+| `public_key` | bytes |  |
+| `signature` | bytes |  |
+| `nonce` | uint64 |  |
+| `transaction_hash` | bytes |  |
+| `transactionType` | One of: | <dl><dt>transactionType:</dt>    <dd style={{ display:'list-item' }}>transfer</dd><dd style={{ display:'list-item' }}>coinbase</dd><dd style={{ display:'list-item' }}>latticePK</dd><dd style={{ display:'list-item' }}>message</dd><dd style={{ display:'list-item' }}>token</dd><dd style={{ display:'list-item' }}>transfer_token</dd><dd style={{ display:'list-item' }}>slave</dd><dd style={{ display:'list-item' }}>multi_sig_create</dd><dd style={{ display:'list-item' }}>multi_sig_spend</dd><dd style={{ display:'list-item' }}>multi_sig_vote</dd><dd style={{ display:'list-item' }}>proposal_create</dd><dd style={{ display:'list-item' }}>proposal_vote</dd>    </dl> |
+
 
 ```go
 message Transaction {
@@ -3166,7 +3843,159 @@ message Transaction {
 }
 ```
 
+
+### MiniTransaction
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `transaction_hash` | string |  |
+| `out` | bool |  |
+| `amount` | uint64 |  |
+
+
+```go
+message MiniTransaction {
+    string transaction_hash = 1;
+    bool out = 2;
+    uint64 amount = 3;
+}
+```
+
+
+
+### GetTransactionResp 
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `tx` |Transaction |  | 
+| `confirmations` |uint64 |  | 
+| `block_number` |uint64 |  | 
+| `block_header_hash` |bytes |  | 
+| `timestamp` |uint64 |  | 
+| `addr_from` |bytes |  | 
+
+```go
+message GetTransactionResp {
+    Transaction tx = 1;
+    uint64 confirmations = 2;
+    uint64 block_number = 3;
+    bytes block_header_hash = 4;
+    uint64 timestamp = 5;
+    bytes addr_from = 6;
+}
+```
+
+
+### TokenDetail
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | bytes |  |
+| `name` | bytes |  |
+| `symbol` | bytes |  |
+| `balance` | uint64 |  |
+
+
+```go
+message TokenDetail {
+    bytes token_txhash = 1;
+    bytes name = 2;
+    bytes symbol = 3;
+    uint64 balance = 4;
+}
+```
+
+
+### SlaveDetail
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `slave_address` | bytes |  |
+| `access_type` | uint64 |  |
+
+```go
+message SlaveDetail {
+    bytes slave_address = 1;
+    uint64 access_type = 2;
+}
+```
+
+
+### LatticePKsDetail
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `pk1` | bytes |  |
+| `pk2` | bytes |  |
+| `pk3` | bytes |  |
+| `tx_hash` | bytes |  |
+
+```go
+message LatticePKsDetail {
+    bytes pk1 = 1;
+    bytes pk2 = 2;
+    bytes pk3 = 3;
+    bytes tx_hash = 4;
+}
+```
+
+
+### MultiSigDetail
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bytes  |  |
+| `balance` | uint64  |  |
+
+```go
+message MultiSigDetail {
+    bytes address = 1;
+    uint64 balance = 2;
+}
+```
+
+
 ### VoteStats
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `multi_sig_address` | bytes | |
+| `shared_key` | bytes | |
+| `signatories` | repeated bytes | |
+| `tx_hashes` | repeated bytes | |
+| `unvotes` | repeated bool | |
+| `expiry_block_number` | uint64 | |
+| `total_weight` | uint64 | |
+| `executed` | bool | |
+
 
 ```go
 message VoteStats {
@@ -3181,7 +4010,23 @@ message VoteStats {
 }
 ```
 
+
 ### ProposalVoteStats
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `addr_from` |bytes |  |
+| `shared_key` |bytes |  |
+| `proposal_type` |string |  |
+| `weight_by_option` |repeated uint64 |  |
+| `expiry_block_number` |uint64 |  |
+| `executed` |bool |  | 
+| `number_of_tx_hashes` |uint64 | Keep track of number of pages for vote txn hash |
+
 
 ```go
 message ProposalVoteStats {
@@ -3196,7 +4041,17 @@ message ProposalVoteStats {
 }
 ```
 
+
 ### ProposalRecord
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `number_of_tx_hashes` | uint64 |  |
+
 
 ```go
 message ProposalRecord {
@@ -3204,7 +4059,16 @@ message ProposalRecord {
 }
 ```
 
+
 ### TokenList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | repeated bytes |  |
 
 ```go
 message TokenList {
@@ -3212,7 +4076,20 @@ message TokenList {
 }
 ```
 
+
 ### TokenBalance
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `balance` | uint64 |  |
+| `decimals` | uint64 |  |
+| `tx_hash` | bytes | Tx hash responsible for the creation of this data |
+| `delete` | bool | For internal use only |
+
 
 ```go
 message TokenBalance {
@@ -3223,7 +4100,37 @@ message TokenBalance {
 }
 ```
 
+
+### OTSBitfieldByPage
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `ots_bitfield` | repeated bytes  |  |
+| `page_number` | uint64  |  |
+
+```go
+message OTSBitfieldByPage {
+    repeated bytes ots_bitfield = 1;
+    uint64 page_number = 2;
+}
+```
+
+
 ### SlaveMetadata
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `access_type` | uint64  |  |
+| `tx_hash` | bytes  |  |
+| `delete` | bool  |  |
 
 ```go
 message SlaveMetadata {
@@ -3233,7 +4140,18 @@ message SlaveMetadata {
 }
 ```
 
+
 ### LatticePKMetadata
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `enabled` | bool |  |
+| `tx_hash` | bytes |  |
+| `delete` | bool |  |
 
 ```go
 message LatticePKMetadata {
@@ -3243,7 +4161,17 @@ message LatticePKMetadata {
 }
 ```
 
+
 ### TokenMetadata
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | bytes |  |
+| `transfer_token_tx_hashes` | repeated bytes |  |
 
 ```go
 message TokenMetadata {
@@ -3252,7 +4180,21 @@ message TokenMetadata {
 }
 ```
 
+
 ### EncryptedEphemeralMessage
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `msg_id` | bytes | NEW or PRF |
+| `ttl` | uint64 |  Expiry Timestamp in seconds |
+| `ttr` | uint64 |  Time to relay |
+| `channel` | Channel Object |<dl><dt>Channel object contains:</dt><dd style={{ display:'list-item' }}>enc_aes256_symkey</dd></dl>  |
+| `nonce` | uint64 |  nonce |
+| `payload` | bytes | JSON content, encrypted by aes256_symkey |
 
 ```go
 message EncryptedEphemeralMessage {
@@ -3268,7 +4210,16 @@ message EncryptedEphemeralMessage {
 }
 ```
 
+
 ### AddressList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `addresses` | repeated bytes |  |
 
 ```go
 message AddressList {
@@ -3276,7 +4227,18 @@ message AddressList {
 }
 ```
 
+
 ### BlockHeightData
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` |  |  |
+| `block_headerhash` |  |  |
+| `cumulative_difficulty` |  |  |
 
 ```go
 message BlockHeightData {
@@ -3286,7 +4248,19 @@ message BlockHeightData {
 }
 ```
 
+
 ### BlockMetaData
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_difficulty` | bytes |  |
+| `cumulative_difficulty` | bytes |  |
+| `child_headerhashes` | repeated bytes |  |
+| `last_N_headerhashes` | repeated bytes | Keeps last N headerhashes, for measurement of timestamp difference |
 
 ```go
 message BlockMetaData {
@@ -3297,7 +4271,17 @@ message BlockMetaData {
 }
 ```
 
+
 ### BlockNumberMapping
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `headerhash` | bytes |  |
+| `prev_headerhash` | bytes |  |
 
 ```go
 message BlockNumberMapping {
@@ -3306,7 +4290,17 @@ message BlockNumberMapping {
 }
 ```
 
+
+
 ### PeerStat
+
+`PeerStat` returns stats on a peer.
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_ip` | bytes | Peer public IP address |
+| `port` | uint32 | peer p2p open port |
+| `node_chain_state` | [NodeChainState Object](#nodechainstate) | <dl><dt>NodeChainState object contains:</dt><dd style={{ display:'list-item' }}>block_number</dd><dd style={{ display:'list-item' }}>header_hash</dd><dd style={{ display:'list-item' }}>cumulative_difficulty</dd><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>timestamp</dd></dl> |
 
 ```go
 message PeerStat {
@@ -3316,8 +4310,26 @@ message PeerStat {
 }
 ```
 
+:::note
+See the [NodeChainState object](#nodechainstate) for more information
+:::
+
+
 
 ### NodeChainState
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` | uint64 |  |  |
+| `header_hash` | bytes |  |  |
+| `cumulative_difficulty` | bytes |  |  |
+| `version` | string |  |  |
+| `timestamp` | uint64 |  |  |
+
 
 ```go
 message NodeChainState {
@@ -3332,6 +4344,16 @@ message NodeChainState {
 
 ### NodeHeaderHash
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` | uint64 |  |
+| `headerhashes` | repeated bytes |  |
+
+
 ```go
 message NodeHeaderHash {
     uint64 block_number = 1;
@@ -3342,6 +4364,14 @@ message NodeHeaderHash {
 
 ### P2PAcknowledgement
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `bytes_processed` | uint32 |  |
+
 ```go
 message P2PAcknowledgement {
     uint32 bytes_processed = 1;
@@ -3350,6 +4380,17 @@ message P2PAcknowledgement {
 
 
 ### PeerInfo
+
+`PeerInfo` returns data on a peer.
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_ip` | bytes | Peer's public IP address |
+| `port` | uint32 | p2p open port of peer |
+| `banned_timestamp` | uint32 | timestamp if peer has ban |
+| `credibility` | uint32 | credibility rating |
+| `last_connections_timestamp` | repeated uint32 | last seen connection time |
 
 ```go
 message PeerInfo {
@@ -3364,13 +4405,73 @@ message PeerInfo {
 
 ### Peers
 
+Peers message returns all information from the [PeerInfo](#peerinfo) message function.
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_info_list` | repeated [PeerInfo Object](#peerinfo) | <dl><dt>PeerInfo object contains:</dt><dd style={{ display:'list-item' }}>peer_ip</dd><dd style={{ display:'list-item' }}>port</dd><dd style={{ display:'list-item' }}>banned_timestamp</dd><dd style={{ display:'list-item' }}>credibility</dd><dd style={{ display:'list-item' }}>last_connections_timestamp</dd></dl> |
+
 ```go
 message Peers {
     repeated PeerInfo peer_info_list = 1;
 }
 ```
 
+
+### BlockDataPoint
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `number` | uint64  | Block number |
+| `difficulty` | string  | Block difficulty |
+| `timestamp` | uint64  | Block timestamp |
+| `time_last` | uint64  |  |
+| `time_movavg` | uint64  |  |
+| `hash_power` | float  | Hash power |
+| `header_hash` | bytes  | Block header hash |
+| `header_hash_prev` | bytes  | Previous block's header hash |
+
+```go
+/**
+ * BlockDataPoint message definition
+*/
+message BlockDataPoint
+{
+    uint64 number = 1;                      // Block number
+    string difficulty = 2;                  // Block difficulty
+    uint64 timestamp = 3;                   // Block timestamp
+    uint64 time_last = 4;
+    uint64 time_movavg = 5;
+    float hash_power = 6;                   // Hash power
+
+    bytes header_hash = 7;                  // Block header hash
+    bytes header_hash_prev = 8;             // Previous block's header hash
+}
+```
+
+
 ### DevConfig
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `prev_state_key` | bytes |  |
+| `current_state_key` | bytes |  |
+| `activation_header_hash` | bytes |  |
+| `activation_block_number` | uint64 |  |
+| `chain` | Chain Object | <dl><dt>Dev Chain object contains:</dt><dd style={{ display:'list-item' }}>reorg_limit</dd><dd style={{ display:'list-item' }}>max_coin_supply</dd><dd style={{ display:'list-item' }}>complete_emission_time_span_in_years</dd></dl> |
+| `block` | Block Object | <dl><dt>Dev Block object contains:</dt><dd style={{ display:'list-item' }}>mining_nonce_offset</dd><dd style={{ display:'list-item' }}>extra_nonce_offset</dd><dd style={{ display:'list-item' }}>mining_blob_size_in_bytes</dd><dd style={{ display:'list-item' }}>block_timing_in_seconds</dd><dd style={{ display:'list-item' }}> <dt>block_size_controller</dt> <dd style={{ display:'list-item' }}>number_of_blocks_analyze</dd><dd style={{ display:'list-item' }}>size_multiplier</dd><dd style={{ display:'list-item' }}>block_min_size_limit_in_bytes</dd></dd></dl> |
+| `transaction` | Transaction Object | <dl><dt>Dev Transaction object contains:</dt><dd style={{ display:'list-item' }}>multi_output_limit</dd><dd style={{ display:'list-item' }}><dt>message</dt>  <dd style={{ display:'list-item' }}>max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>slave</dt>  <dd style={{ display:'list-item' }}>slave_pk_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>token</dt>  <dd style={{ display:'list-item' }}>symbol_max_length</dd><dd style={{ display:'list-item' }}>name_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>lattice</dt>  <dd style={{ display:'list-item' }}>pk1_max_length</dd><dd style={{ display:'list-item' }}>pk2_max_length</dd><dd style={{ display:'list-item' }}>pk3_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>foundation_multi_sig</dt>  <dd style={{ display:'list-item' }}>threshold_percentage</dd>  </dd><dd style={{ display:'list-item' }}><dt>proposal</dt>  <dd style={{ display:'list-item' }}>threshold_per</dd><dd style={{ display:'list-item' }}>default_options</dd><dd style={{ display:'list-item' }}>description_max_length</dd><dd style={{ display:'list-item' }}>options_max_number</dd><dd style={{ display:'list-item' }}>option_max_text_length</dd><dd style={{ display:'list-item' }}>proposal_config_activation_delay</dd>  </dd></dl> |
+| `pow` | POW Object | <dl><dt>POW object contains:</dt><dd style={{ display:'list-item' }}>N_measurement</dd><dd style={{ display:'list-item' }}>kp</dd></dl> |
+
 
 ```go
 message DevConfig {
