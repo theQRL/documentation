@@ -2814,7 +2814,7 @@ The PublicAPIService service provides public API methods for interacting with th
 
 
 | Method | Request | Response |
-| :---: | :---: | :---: |
+| :---: | :---: | :--- |
 | [GetNodeState](#getnodestate) | [GetNodeStateReq](#getnodestate) | [GetNodeStateResp](#getnodestate) |
 | [GetKnownPeers](#getknownpeers) | [GetKnownPeersReq](#getknownpeers) | [GetKnownPeersResp](#getknownpeers) |
 | [GetPeersStat](#getpeersstat) | [GetPeersStatReq](#getpeersstat) | [GetPeersStatResp](#getpeersstat) |
@@ -5798,10 +5798,39 @@ message GetBlockByNumberResp {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Content
-
-
-
 
 ### NodeInfo
 
@@ -5809,14 +5838,14 @@ Node info returns the following:
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `version` | (string) | The version of the QRL node |
-| `state` | (State) | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
-| `num_connections` | (uint32) | Number of connections seen to node |
-| `num_known_peers` | (uint32) | Number of know peers seen by node |
-| `uptime` | (uint64) | The uptime of the node in seconds |
-| `block_height` | (uint64) | Blockheight currently known to node |
-| `block_last_hash` | (bytes) | Last block hash; |
-| `network_id` | (string) | Network ID |
+| `version` | string | The version of the QRL node |
+| `state` | State | One of  *UNKNOWN, UNSYNCED, SYNCING, SYNCED, FORKED* signifying the state of the node |
+| `num_connections` | uint32 | Number of connections seen to node |
+| `num_known_peers` | uint32 | Number of know peers seen by node |
+| `uptime` | uint64 | The uptime of the node in seconds |
+| `block_height` | uint64 | Blockheight currently known to node |
+| `block_last_hash` | bytes | Last block hash; |
+| `network_id` | string | Network ID |
 
 
 ```go
@@ -5878,6 +5907,10 @@ message AddressDescriptor {
 
 ### StoredPeers
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `peers` | repeated [Peer Object](#peer) | <dl><dt>Peer Object contains:</dt><dd style={{ display:'list-item' }}> ip</dd></dl> |
+
 
 ```go
 message StoredPeers {
@@ -5887,26 +5920,29 @@ message StoredPeers {
 
 ### Peer
 
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `ip` | string | Returns the public peer IP Address |
+
 ```go
 message Peer {
     string ip = 1;
 }
 ```
 
-
 ### AddressState
 
 | Field | Type | Details | 
-| :---: | :---: | :---: |
-| address | bytes | Pub Address in bytes |
-| balance | uint64 | Address balance |
-| nonce | uint64 | Address Nonce |
-| ots_bitfield | repeated bytes | One Time Signature Bitfield |
-| transaction_hashes | repeated bytes | Repeated list of all transaction hashes |
-| tokens | map<string, uint64> | Map of tokens found in address |
-| latticePK_list | repeated [LatticePK](#latticepk) | Repeated list of lattice public keys |
-| slave_pks_access_type | map<string, uint32> | Map of slave key access type |
-| ots_counter | uint64 | Count of used OTS Keys |
+| :---: | :---: | :--- |
+| `address` | bytes | Pub Address in bytes |
+| `balance` | uint64 | Address balance |
+| `nonce` | uint64 | Address Nonce |
+| `ots_bitfield` | repeated bytes | One Time Signature Bitfield |
+| `transaction_hashes` | repeated bytes | Repeated list of all transaction hashes |
+| `tokens` | map<string, uint64> | Map of tokens found in address |
+| `latticePK_list` | repeated [LatticePK](#latticepk) | Repeated list of lattice public keys |
+| `slave_pks_access_type` | map<string, uint32> | Map of slave key access type |
+| `ots_counter` | uint64 | Count of used OTS Keys |
 
 
 ```go
@@ -5925,23 +5961,23 @@ message AddressState {
 ### OptimizedAddressState
 
 | Field | Type | Details | 
-| :---: | :---: | :---: |
-| address | bytes | Pub Address in bytes  |
-| balance | uint64 | Address balance  |
-| nonce | uint64 | Address Nonce  |
-| ots_bitfield_used_page | uint64 | Keep track of last page till which all ots key has been used |
-| used_ots_key_count | uint64 | Keep track of number of ots key that has been used |
-| transaction_hash_count | uint64 | |
-| tokens_count | uint64 | |
-| slaves_count | uint64 | |
-| lattice_pk_count | uint64 | |
-| multi_sig_address_count | uint64 | |
-| multi_sig_spend_count | uint64 | |
-| inbox_message_count | uint64 | |
-| foundation_multi_sig_spend_txn_hash | repeated | |
-| foundation_multi_sig_vote_txn_hash | repeated | |
-| unvotes | repeated | |
-| proposal_vote_stats | repeated | |
+| :---: | :---: | :--- |
+| `address` | bytes | Pub Address in bytes  |
+| `balance` | uint64 | Address balance  |
+| `nonce` | uint64 | Address Nonce  |
+| `ots_bitfield_used_page` | uint64 | Keep track of last page till which all ots key has been used |
+| `used_ots_key_count` | uint64 | Keep track of number of ots key that has been used |
+| `transaction_hash_count` | uint64 | |
+| `tokens_count` | uint64 | |
+| `slaves_count` | uint64 | |
+| `lattice_pk_count` | uint64 | |
+| `multi_sig_address_count` | uint64 | |
+| `multi_sig_spend_count` | uint64 | |
+| `inbox_message_count` | uint64 | |
+| `foundation_multi_sig_spend_txn_hash` | repeated | |
+| `foundation_multi_sig_vote_txn_hash` | repeated | |
+| `unvotes` | repeated | |
+| `proposal_vote_stats` | repeated | |
 
 
 ```go
@@ -5968,6 +6004,23 @@ message OptimizedAddressState {
 ```
 ### MultiSigAddressState
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bbytes | Pub Address in bytes  |
+| `creation_tx_hash` | bytes | | 
+| `nonce` | uint64  | | 
+| `balance` | uint64 | Address balance  |
+| `signatories` | bytes  | |
+| `weights` | uint32  | | 
+| `threshold` | uint32  | | 
+| `transaction_hash_count` | uint64  | | 
+| `multi_sig_spend_count` | uint64  | | 
+| `multi_sig_address_count` | uint64  | | 
+| `foundation_multi_sig_spend_txn_hash` | bytes  | | 
+| `foundation_multi_sig_vote_txn_hash` | bytes  | | 
+| `unvotes` | bytes  | | 
+| `proposal_vote_stats` | [Transaction Object](#transaction)  | Returns a transaction object with address state proposal vote stats | 
+
 ```go
 message MultiSigAddressState {
     bytes address = 1;
@@ -5989,28 +6042,48 @@ message MultiSigAddressState {
     repeated Transaction proposal_vote_stats = 14;
 }
 ```
+
 ### MultiSigAddressesList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `hashes` | repeated bytes |  |
 
 ```go
 message MultiSigAddressesList {
     repeated bytes hashes = 1;
 }
 ```
+
 ### DataList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `values` | repeated bytes |  |
 
 ```go
 message DataList {
     repeated bytes values = 1;
 }
 ```
+
 ### Bitfield
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| bitfields | repeated bytes | |
 
 ```go
 message Bitfield {
     repeated bytes bitfields = 1;
 }
 ```
+
 ### TransactionHashList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
 
 ```go
 message TransactionHashList {
@@ -6018,6 +6091,11 @@ message TransactionHashList {
 }
 ```
 ### LatticePK
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
+
 
 ```go
 message LatticePK {
@@ -6027,6 +6105,10 @@ message LatticePK {
 ```
 ### AddressAmount 
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
+
 ```go
 message AddressAmount {
     bytes address = 1;
@@ -6034,6 +6116,10 @@ message AddressAmount {
 }
 ```
 ### BlockHeader
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
 
 ```go
 message BlockHeader {
@@ -6053,6 +6139,11 @@ message BlockHeader {
 ```
 ### BlockHeaderExtended
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
+
+
 ```go
 message BlockHeaderExtended {
     BlockHeader header = 1;
@@ -6061,6 +6152,11 @@ message BlockHeaderExtended {
 ```
 ### TransactionCount
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
+
+
 ```go
 message TransactionCount {
     map<uint32, uint32> count = 1;
@@ -6068,6 +6164,10 @@ message TransactionCount {
 ```
 
 ### TransactionExtended
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+|  |  |  |
 
 ```go
 message TransactionExtended {
@@ -6080,7 +6180,47 @@ message TransactionExtended {
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### BlockExtended
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `extended_transactions` | repeated [TransactionExtended Object](#transactionextended) |  |
+| \*`genesis_balance` | repeated [GenesisBalance Object](#genesisbalance) | This is only applicable to genesis blocks |
+| `size` | uint64 | Block size |
+
+:::note \* Genesis_Balance
+`genesis_balance` is only applicable to genesis blocks.
+:::
 
 ```go
 message BlockExtended {
@@ -6093,7 +6233,19 @@ message BlockExtended {
 }
 ```
 
+
+
 ### Block
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `transactions` | [Transaction Object](#transaction) |  |
+| \*`genesis_balance` | [repeated GenesisBalance Object](#genesisbalance) | This is only applicable to genesis blocks |
+
+:::note \* Genesis_Balance
+`genesis_balance` is only applicable to genesis blocks.
+:::
 
 ```go
 message Block {
@@ -6105,7 +6257,14 @@ message Block {
 }
 ```
 
+
+
 ### GenesisBalance
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bytes | Address is string only here to increase visibility |
+| `balance` | uint64 |  |
 
 ```go
 message GenesisBalance
@@ -6115,7 +6274,13 @@ message GenesisBalance
 }
 ```
 
+
+
 ### BlockMetaDataList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number_hashes` | repeated [BlockMetaData Object](#blockmetadata) | <dl><dt>BlockMetaData object contains:</dt>    <dd style={{ display:'list-item' }}>block_difficulty</dd><dd style={{ display:'list-item' }}>cumulative_difficulty</dd><dd style={{ display:'list-item' }}>child_headerhashes</dd><dd style={{ display:'list-item' }}>last_N_headerhashes</dd>    </dl> |
 
 ```go
 message BlockMetaDataList {
@@ -6123,7 +6288,20 @@ message BlockMetaDataList {
 }
 ```
 
+
+
 ### Transaction
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `master_addr` | bytes |  |
+| `fee` | uint64 |  |
+| `public_key` | bytes |  |
+| `signature` | bytes |  |
+| `nonce` | uint64 |  |
+| `transaction_hash` | bytes |  |
+| `transactionType` | One of: | <dl><dt>transactionType:</dt>    <dd style={{ display:'list-item' }}>transfer</dd><dd style={{ display:'list-item' }}>coinbase</dd><dd style={{ display:'list-item' }}>latticePK</dd><dd style={{ display:'list-item' }}>message</dd><dd style={{ display:'list-item' }}>token</dd><dd style={{ display:'list-item' }}>transfer_token</dd><dd style={{ display:'list-item' }}>slave</dd><dd style={{ display:'list-item' }}>multi_sig_create</dd><dd style={{ display:'list-item' }}>multi_sig_spend</dd><dd style={{ display:'list-item' }}>multi_sig_vote</dd><dd style={{ display:'list-item' }}>proposal_create</dd><dd style={{ display:'list-item' }}>proposal_vote</dd>    </dl> |
+
 
 ```go
 message Transaction {
@@ -6281,6 +6459,13 @@ message Transaction {
 
 ### MiniTransaction
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `transaction_hash` | string |  |
+| `out` | bool |  |
+| `amount` | uint64 |  |
+
+
 ```go
 message MiniTransaction {
     string transaction_hash = 1;
@@ -6289,7 +6474,18 @@ message MiniTransaction {
 }
 ```
 
+
+
 ### GetTransactionResp 
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `tx` |Transaction |  | 
+| `confirmations` |uint64 |  | 
+| `block_number` |uint64 |  | 
+| `block_header_hash` |bytes |  | 
+| `timestamp` |uint64 |  | 
+| `addr_from` |bytes |  | 
 
 ```go
 message GetTransactionResp {
@@ -6305,6 +6501,14 @@ message GetTransactionResp {
 
 ### TokenDetail
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | bytes |  |
+| `name` | bytes |  |
+| `symbol` | bytes |  |
+| `balance` | uint64 |  |
+
+
 ```go
 message TokenDetail {
     bytes token_txhash = 1;
@@ -6314,7 +6518,13 @@ message TokenDetail {
 }
 ```
 
+
 ### SlaveDetail
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `slave_address` | bytes |  |
+| `access_type` | uint64 |  |
 
 ```go
 message SlaveDetail {
@@ -6323,7 +6533,15 @@ message SlaveDetail {
 }
 ```
 
+
 ### LatticePKsDetail
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `pk1` | bytes |  |
+| `pk2` | bytes |  |
+| `pk3` | bytes |  |
+| `tx_hash` | bytes |  |
 
 ```go
 message LatticePKsDetail {
@@ -6334,7 +6552,13 @@ message LatticePKsDetail {
 }
 ```
 
+
 ### MultiSigDetail
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `address` | bytes  |  |
+| `balance` | uint64  |  |
 
 ```go
 message MultiSigDetail {
@@ -6343,7 +6567,20 @@ message MultiSigDetail {
 }
 ```
 
+
 ### VoteStats
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `multi_sig_address` | bytes | |
+| `shared_key` | bytes | |
+| `signatories` | repeated bytes | |
+| `tx_hashes` | repeated bytes | |
+| `unvotes` | repeated bool | |
+| `expiry_block_number` | uint64 | |
+| `total_weight` | uint64 | |
+| `executed` | bool | |
+
 
 ```go
 message VoteStats {
@@ -6358,7 +6595,19 @@ message VoteStats {
 }
 ```
 
+
 ### ProposalVoteStats
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `addr_from` |bytes |  |
+| `shared_key` |bytes |  |
+| `proposal_type` |string |  |
+| `weight_by_option` |repeated uint64 |  |
+| `expiry_block_number` |uint64 |  |
+| `executed` |bool |  | 
+| `number_of_tx_hashes` |uint64 | Keep track of number of pages for vote txn hash |
+
 
 ```go
 message ProposalVoteStats {
@@ -6373,7 +6622,13 @@ message ProposalVoteStats {
 }
 ```
 
+
 ### ProposalRecord
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `number_of_tx_hashes` | uint64 |  |
+
 
 ```go
 message ProposalRecord {
@@ -6381,7 +6636,12 @@ message ProposalRecord {
 }
 ```
 
+
 ### TokenList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | repeated bytes |  |
 
 ```go
 message TokenList {
@@ -6389,7 +6649,16 @@ message TokenList {
 }
 ```
 
+
 ### TokenBalance
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `balance` | uint64 |  |
+| `decimals` | uint64 |  |
+| `tx_hash` | bytes | Tx hash responsible for the creation of this data |
+| `delete` | bool | For internal use only |
+
 
 ```go
 message TokenBalance {
@@ -6400,7 +6669,13 @@ message TokenBalance {
 }
 ```
 
+
 ### OTSBitfieldByPage
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `ots_bitfield` | repeated bytes  |  |
+| `page_number` | uint64  |  |
 
 ```go
 message OTSBitfieldByPage {
@@ -6409,7 +6684,14 @@ message OTSBitfieldByPage {
 }
 ```
 
+
 ### SlaveMetadata
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `access_type` | uint64  |  |
+| `tx_hash` | bytes  |  |
+| `delete` | bool  |  |
 
 ```go
 message SlaveMetadata {
@@ -6419,7 +6701,14 @@ message SlaveMetadata {
 }
 ```
 
+
 ### LatticePKMetadata
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `enabled` | bool |  |
+| `tx_hash` | bytes |  |
+| `delete` | bool |  |
 
 ```go
 message LatticePKMetadata {
@@ -6429,7 +6718,13 @@ message LatticePKMetadata {
 }
 ```
 
+
 ### TokenMetadata
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `token_txhash` | bytes |  |
+| `transfer_token_tx_hashes` | repeated bytes |  |
 
 ```go
 message TokenMetadata {
@@ -6438,7 +6733,17 @@ message TokenMetadata {
 }
 ```
 
+
 ### EncryptedEphemeralMessage
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `msg_id` | bytes | NEW or PRF |
+| `ttl` | uint64 |  Expiry Timestamp in seconds |
+| `ttr` | uint64 |  Time to relay |
+| `channel` | Channel Object |<dl><dt>Channel object contains:</dt><dd style={{ display:'list-item' }}>enc_aes256_symkey</dd></dl>  |
+| `nonce` | uint64 |  nonce |
+| `payload` | bytes | JSON content, encrypted by aes256_symkey |
 
 ```go
 message EncryptedEphemeralMessage {
@@ -6454,7 +6759,12 @@ message EncryptedEphemeralMessage {
 }
 ```
 
+
 ### AddressList
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `addresses` | repeated bytes |  |
 
 ```go
 message AddressList {
@@ -6462,7 +6772,14 @@ message AddressList {
 }
 ```
 
+
 ### BlockHeightData
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` |  |  |
+| `block_headerhash` |  |  |
+| `cumulative_difficulty` |  |  |
 
 ```go
 message BlockHeightData {
@@ -6472,7 +6789,15 @@ message BlockHeightData {
 }
 ```
 
+
 ### BlockMetaData
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_difficulty` | bytes |  |
+| `cumulative_difficulty` | bytes |  |
+| `child_headerhashes` | repeated bytes |  |
+| `last_N_headerhashes` | repeated bytes | Keeps last N headerhashes, for measurement of timestamp difference |
 
 ```go
 message BlockMetaData {
@@ -6483,7 +6808,13 @@ message BlockMetaData {
 }
 ```
 
+
 ### BlockNumberMapping
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `headerhash` | bytes |  |
+| `prev_headerhash` | bytes |  |
 
 ```go
 message BlockNumberMapping {
@@ -6492,9 +6823,17 @@ message BlockNumberMapping {
 }
 ```
 
+
+
 ### PeerStat
 
 `PeerStat` returns stats on a peer.
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_ip` | bytes | Peer public IP address |
+| `port` | uint32 | peer p2p open port |
+| `node_chain_state` | [NodeChainState Object](#nodechainstate) | <dl><dt>NodeChainState object contains:</dt><dd style={{ display:'list-item' }}>block_number</dd><dd style={{ display:'list-item' }}>header_hash</dd><dd style={{ display:'list-item' }}>cumulative_difficulty</dd><dd style={{ display:'list-item' }}>version</dd><dd style={{ display:'list-item' }}>timestamp</dd></dl> |
 
 ```go
 message PeerStat {
@@ -6508,7 +6847,18 @@ message PeerStat {
 See the [NodeChainState object](#nodechainstate) for more information
 :::
 
+
+
 ### NodeChainState
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` | uint64 |  |  |
+| `header_hash` | bytes |  |  |
+| `cumulative_difficulty` | bytes |  |  |
+| `version` | string |  |  |
+| `timestamp` | uint64 |  |  |
+
 
 ```go
 message NodeChainState {
@@ -6523,6 +6873,12 @@ message NodeChainState {
 
 ### NodeHeaderHash
 
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `block_number` | uint64 |  |
+| `headerhashes` | repeated bytes |  |
+
+
 ```go
 message NodeHeaderHash {
     uint64 block_number = 1;
@@ -6532,6 +6888,10 @@ message NodeHeaderHash {
 
 
 ### P2PAcknowledgement
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `bytes_processed` | uint32 |  |
 
 ```go
 message P2PAcknowledgement {
@@ -6543,6 +6903,15 @@ message P2PAcknowledgement {
 ### PeerInfo
 
 `PeerInfo` returns data on a peer.
+
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_ip` | bytes | Peer's public IP address |
+| `port` | uint32 | p2p open port of peer |
+| `banned_timestamp` | uint32 | timestamp if peer has ban |
+| `credibility` | uint32 | credibility rating |
+| `last_connections_timestamp` | repeated uint32 | last seen connection time |
 
 ```go
 message PeerInfo {
@@ -6559,13 +6928,30 @@ message PeerInfo {
 
 Peers message returns all information from the [PeerInfo](#peerinfo) message function.
 
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `peer_info_list` | repeated [PeerInfo Object](#peerinfo) | <dl><dt>PeerInfo object contains:</dt><dd style={{ display:'list-item' }}>peer_ip</dd><dd style={{ display:'list-item' }}>port</dd><dd style={{ display:'list-item' }}>banned_timestamp</dd><dd style={{ display:'list-item' }}>credibility</dd><dd style={{ display:'list-item' }}>last_connections_timestamp</dd></dl> |
+
 ```go
 message Peers {
     repeated PeerInfo peer_info_list = 1;
 }
 ```
 
+
 ### BlockDataPoint
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `number` | uint64  | Block number |
+| `difficulty` | string  | Block difficulty |
+| `timestamp` | uint64  | Block timestamp |
+| `time_last` | uint64  |  |
+| `time_movavg` | uint64  |  |
+| `hash_power` | float  | Hash power |
+| `header_hash` | bytes  | Block header hash |
+| `header_hash_prev` | bytes  | Previous block's header hash |
 
 ```go
 /**
@@ -6585,7 +6971,20 @@ message BlockDataPoint
 }
 ```
 
+
 ### DevConfig
+
+| Field | Type | Details | 
+| :---: | :---: | :--- |
+| `prev_state_key` | bytes |  |
+| `current_state_key` | bytes |  |
+| `activation_header_hash` | bytes |  |
+| `activation_block_number` | uint64 |  |
+| `chain` | Chain Object | <dl><dt>Dev Chain object contains:</dt><dd style={{ display:'list-item' }}>reorg_limit</dd><dd style={{ display:'list-item' }}>max_coin_supply</dd><dd style={{ display:'list-item' }}>complete_emission_time_span_in_years</dd></dl> |
+| `block` | Block Object | <dl><dt>Dev Block object contains:</dt><dd style={{ display:'list-item' }}>mining_nonce_offset</dd><dd style={{ display:'list-item' }}>extra_nonce_offset</dd><dd style={{ display:'list-item' }}>mining_blob_size_in_bytes</dd><dd style={{ display:'list-item' }}>block_timing_in_seconds</dd><dd style={{ display:'list-item' }}> <dt>block_size_controller</dt> <dd style={{ display:'list-item' }}>number_of_blocks_analyze</dd><dd style={{ display:'list-item' }}>size_multiplier</dd><dd style={{ display:'list-item' }}>block_min_size_limit_in_bytes</dd></dd></dl> |
+| `transaction` | Transaction Object | <dl><dt>Dev Transaction object contains:</dt><dd style={{ display:'list-item' }}>multi_output_limit</dd><dd style={{ display:'list-item' }}><dt>message</dt>  <dd style={{ display:'list-item' }}>max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>slave</dt>  <dd style={{ display:'list-item' }}>slave_pk_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>token</dt>  <dd style={{ display:'list-item' }}>symbol_max_length</dd><dd style={{ display:'list-item' }}>name_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>lattice</dt>  <dd style={{ display:'list-item' }}>pk1_max_length</dd><dd style={{ display:'list-item' }}>pk2_max_length</dd><dd style={{ display:'list-item' }}>pk3_max_length</dd>  </dd><dd style={{ display:'list-item' }}><dt>foundation_multi_sig</dt>  <dd style={{ display:'list-item' }}>threshold_percentage</dd>  </dd><dd style={{ display:'list-item' }}><dt>proposal</dt>  <dd style={{ display:'list-item' }}>threshold_per</dd><dd style={{ display:'list-item' }}>default_options</dd><dd style={{ display:'list-item' }}>description_max_length</dd><dd style={{ display:'list-item' }}>options_max_number</dd><dd style={{ display:'list-item' }}>option_max_text_length</dd><dd style={{ display:'list-item' }}>proposal_config_activation_delay</dd>  </dd></dl> |
+| `pow` | POW Object | <dl><dt>POW object contains:</dt><dd style={{ display:'list-item' }}>N_measurement</dd><dd style={{ display:'list-item' }}>kp</dd></dl> |
+
 
 ```go
 message DevConfig {
