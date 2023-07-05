@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrl-public-api
 title: QRL Public API
 hide_title: false
@@ -5794,42 +5794,6 @@ message GetBlockByNumberResp {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Content
 
 ### NodeInfo
@@ -5872,6 +5836,11 @@ message NodeInfo
 ```
 
 ### AddressDescriptor
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
 
 | Name | Bits | Count | Description |
 | ---- | ---- | ----- | ----------- |
@@ -5960,6 +5929,10 @@ message AddressState {
 ```
 ### OptimizedAddressState
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `address` | bytes | Pub Address in bytes  |
@@ -6004,6 +5977,11 @@ message OptimizedAddressState {
 ```
 ### MultiSigAddressState
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `address` | bbytes | Pub Address in bytes  |
@@ -6045,6 +6023,11 @@ message MultiSigAddressState {
 
 ### MultiSigAddressesList
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `hashes` | repeated bytes |  |
@@ -6056,6 +6039,11 @@ message MultiSigAddressesList {
 ```
 
 ### DataList
+
+:::caution Define this function
+Define this function and request parameters
+:::
+
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6069,6 +6057,11 @@ message DataList {
 
 ### Bitfield
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | bitfields | repeated bytes | |
@@ -6081,9 +6074,14 @@ message Bitfield {
 
 ### TransactionHashList
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
+| `hashes` | repeated bytes |  |
 
 ```go
 message TransactionHashList {
@@ -6092,10 +6090,15 @@ message TransactionHashList {
 ```
 ### LatticePK
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
-
+| `kyber_pk` | bytes |  |
+| `dilithium_pk` | bytes |  |
 
 ```go
 message LatticePK {
@@ -6105,9 +6108,16 @@ message LatticePK {
 ```
 ### AddressAmount 
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
+| `address` | bytes |  |  
+| `amount` | uint64 |  |  
+
 
 ```go
 message AddressAmount {
@@ -6117,9 +6127,23 @@ message AddressAmount {
 ```
 ### BlockHeader
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
+| `hash_header` | bytes |  |
+| `block_number` | uint64 |  |
+| `timestamp_seconds` | uint64 |  |
+| `hash_header_prev` | bytes |  |
+| `reward_block` | uint64 |  |
+| `reward_fee` | uint64 |  |
+| `merkle_root` | bytes |  |
+| `mining_nonce` | uint32 |  |
+| `extra_nonce` | uint64 |  |
+
 
 ```go
 message BlockHeader {
@@ -6139,10 +6163,15 @@ message BlockHeader {
 ```
 ### BlockHeaderExtended
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
-
+| `header` | [BlockHeader Object](#blockheader) |  |
+| `transaction_count` | [TransactionCount Object](#transactioncount) |  |
 
 ```go
 message BlockHeaderExtended {
@@ -6152,10 +6181,14 @@ message BlockHeaderExtended {
 ```
 ### TransactionCount
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
-
+| `count` | map<uint32, uint32>  |  |
 
 ```go
 message TransactionCount {
@@ -6165,10 +6198,17 @@ message TransactionCount {
 
 ### TransactionExtended
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
-|  |  |  |
-
+| `header` | [BlockHeader Object](#blockheader)  |  |
+| `tx` | [Transaction Object](#transacction)  |  |
+| `addr_from` | bytes  |  |
+| `size` | uint64  |  |
+| `timestamp_seconds` | uint64  |  |
 ```go
 message TransactionExtended {
     BlockHeader header = 1;
@@ -6180,36 +6220,11 @@ message TransactionExtended {
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### BlockExtended
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6237,6 +6252,10 @@ message BlockExtended {
 
 ### Block
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `header` | [BlockHeader Object](#blockheader) |  |
@@ -6260,6 +6279,10 @@ message Block {
 
 
 ### GenesisBalance
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6291,6 +6314,10 @@ message BlockMetaDataList {
 
 
 ### Transaction
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6459,6 +6486,10 @@ message Transaction {
 
 ### MiniTransaction
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `transaction_hash` | string |  |
@@ -6477,6 +6508,10 @@ message MiniTransaction {
 
 
 ### GetTransactionResp 
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6501,6 +6536,10 @@ message GetTransactionResp {
 
 ### TokenDetail
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `token_txhash` | bytes |  |
@@ -6521,6 +6560,10 @@ message TokenDetail {
 
 ### SlaveDetail
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `slave_address` | bytes |  |
@@ -6535,6 +6578,10 @@ message SlaveDetail {
 
 
 ### LatticePKsDetail
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6555,6 +6602,10 @@ message LatticePKsDetail {
 
 ### MultiSigDetail
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `address` | bytes  |  |
@@ -6569,6 +6620,10 @@ message MultiSigDetail {
 
 
 ### VoteStats
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6598,6 +6653,10 @@ message VoteStats {
 
 ### ProposalVoteStats
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `addr_from` |bytes |  |
@@ -6625,6 +6684,10 @@ message ProposalVoteStats {
 
 ### ProposalRecord
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `number_of_tx_hashes` | uint64 |  |
@@ -6639,6 +6702,10 @@ message ProposalRecord {
 
 ### TokenList
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `token_txhash` | repeated bytes |  |
@@ -6651,6 +6718,10 @@ message TokenList {
 
 
 ### TokenBalance
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6672,6 +6743,10 @@ message TokenBalance {
 
 ### OTSBitfieldByPage
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `ots_bitfield` | repeated bytes  |  |
@@ -6686,6 +6761,10 @@ message OTSBitfieldByPage {
 
 
 ### SlaveMetadata
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6704,6 +6783,10 @@ message SlaveMetadata {
 
 ### LatticePKMetadata
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `enabled` | bool |  |
@@ -6721,6 +6804,10 @@ message LatticePKMetadata {
 
 ### TokenMetadata
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `token_txhash` | bytes |  |
@@ -6735,6 +6822,10 @@ message TokenMetadata {
 
 
 ### EncryptedEphemeralMessage
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6762,6 +6853,10 @@ message EncryptedEphemeralMessage {
 
 ### AddressList
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `addresses` | repeated bytes |  |
@@ -6774,6 +6869,10 @@ message AddressList {
 
 
 ### BlockHeightData
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6791,6 +6890,10 @@ message BlockHeightData {
 
 
 ### BlockMetaData
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6810,6 +6913,10 @@ message BlockMetaData {
 
 
 ### BlockNumberMapping
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6851,6 +6958,10 @@ See the [NodeChainState object](#nodechainstate) for more information
 
 ### NodeChainState
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `block_number` | uint64 |  |  |
@@ -6873,6 +6984,10 @@ message NodeChainState {
 
 ### NodeHeaderHash
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `block_number` | uint64 |  |
@@ -6888,6 +7003,10 @@ message NodeHeaderHash {
 
 
 ### P2PAcknowledgement
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -6942,6 +7061,10 @@ message Peers {
 
 ### BlockDataPoint
 
+:::caution Define this function
+Define this function and request parameters
+:::
+
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `number` | uint64  | Block number |
@@ -6973,6 +7096,10 @@ message BlockDataPoint
 
 
 ### DevConfig
+
+:::caution Define this function
+Define this function and request parameters
+:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
