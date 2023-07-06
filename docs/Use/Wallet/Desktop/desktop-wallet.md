@@ -65,9 +65,25 @@ Security and safekeeping is the responsibility of the end user. It is recommende
 
 Follow our guide on Installing the Desktop wallet for all operating systems supported.
 
-:::info Desktop Installation Instructions
-[Install QRL Desktop Wallet](desktop/desktop-wallet-install)
-:::
+
+
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
+
+
 ## New Wallet
 
 The wallet will hold funds for a user and is required to interact with QRL systems.
@@ -76,6 +92,24 @@ The wallet will hold funds for a user and is required to interact with QRL syste
 [Follow This Guide to create a new QRL wallet](desktop/desktop-wallet-new)
 :::
 
+
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
+
+
 ## Backup Wallet
 
 Make sure to backup your wallet and verify the backup is functional prior to funding the address.
@@ -83,6 +117,22 @@ Make sure to backup your wallet and verify the backup is functional prior to fun
 :::info Desktop Backup Wallet Documentation
 Follow [this guide to backup the Desktop Wallet](desktop/desktop-wallet-backup).
 :::
+
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
 
 ## Open Wallet
 
@@ -96,6 +146,22 @@ Recovering or opening a QRL Wallet allows access to the funds and utilization of
 :::note This requires a secret key or wallet file.
 :::
 
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
+
 ## Send Funds
 
 Using the Desktop QRL Wallet to send QRL to another address. Otherwise known as transferring funds.
@@ -107,9 +173,40 @@ Using the Desktop QRL Wallet to send QRL to another address. Otherwise known as 
 :::note This requires a secret key or wallet file.
 :::
 
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
+
 ## Wallet Tools
 
 
 :::tip Desktop Wallet Tools
 [Follow this guide for more information on the Desktop Wallet tools available.](desktop/desktop-wallet-tools)
 :::
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+    <article class="col col--12 margin-bottom--lg">
+      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
+        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          Desktop Wallet Install
+        </h2>
+        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
+          QRL Desktop Wallet installation directions
+        </p>
+      </a>
+    </article>
+  </section>
+</span>
+
