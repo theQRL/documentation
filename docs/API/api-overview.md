@@ -65,7 +65,7 @@ More information on GRPC can be found in [their official documentation](https://
   
   <TabItem value="public">
     <h2>QRL Public API</h2>
-    <p>The core QRL API responsible for all blockchain functions.</p>
+    <p>The core QRL API responsible for all core blockchain functions.</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--6 margin-bottom--lg">
@@ -82,7 +82,7 @@ More information on GRPC can be found in [their official documentation](https://
   
   <TabItem value="wallet">
     <h2>QRL Wallet API</h2>
-    <p>The core wallet API functions.</p>
+    <p>The core wallet API functions</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
@@ -100,7 +100,7 @@ More information on GRPC can be found in [their official documentation](https://
   </TabItem>
   <TabItem value="walletd-rest">
     <h2>Walletd Rest Proxy - API</h2>
-    <p>...</p>
+    <p>The QRL WalletD Rest Proxy makes integrating QRL even easier</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
@@ -110,7 +110,7 @@ More information on GRPC can be found in [their official documentation](https://
               QRL Walletd Rest Proxy API      
             </h2>
             <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Developers general information.">Developers general information.</p>
+               title="Developers general information.">The QRL WalletD Rest Proxy API documentation</p>
           </a>
         </article>
       </section>
@@ -118,7 +118,7 @@ More information on GRPC can be found in [their official documentation](https://
   </TabItem>
   <TabItem value="zeus-proxy">
     <h2>Zeus Proxy API</h2>
-    <p>...</p>
+    <p>The Zeus proxy simplifies interactions with the QRL Blockchain with focus on web development and RESTful queries</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
@@ -137,7 +137,7 @@ More information on GRPC can be found in [their official documentation](https://
 
   <TabItem value="explorer">
     <h2>Explorer API</h2>
-    <p>...</p>
+    <p>The QRL Explorer offers simple and limited API connectivity allowing some basic information gathering</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
