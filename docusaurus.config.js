@@ -108,7 +108,7 @@ const config = {
           hideable: true,
         },
       },
-
+      
       navbar: {
         title: '',
         hideOnScroll: true,    
@@ -124,13 +124,29 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Learn QRL',
+                label: 'About QRL',
                 href: '/learn'
               },
+              {
+                label: 'QRL Whitepaper',
+                href: '/learn/whitepaper'
+              },
+              {
+                label: 'Block Rewards',
+                href: '/learn/qrl-emission'
+              },
+              {
+                label: 'OTS Keys',
+                href: '/learn/ots-keys'
+              },
+              {
+                label: 'On-Chain Voting',
+                href: '/learn/on-chain-voting'
+              },
+
               // ... more learn items
             ],
           },
-
           {
             type: 'dropdown',
             label: 'Use',
@@ -159,8 +175,6 @@ const config = {
               // ... more using items
             ],
           },
-
-          
           {
             type: 'dropdown',
             label: 'Build',
@@ -171,9 +185,18 @@ const config = {
                 href: '/build'
               },
               {
+                label: 'QRL Core Library',
+                href: '/build/qrllib'
+              },
+              {
                 label: 'Address Scheme',
                 href: '/build/addresses'
               },
+              {
+                label: 'QRL Security',
+                href: '/build/security'
+              },
+
               {
                 label: 'Node CLI',
                 href: '/build/node-cli'
@@ -182,11 +205,8 @@ const config = {
                 label: 'QRL Helpers',
                 href: '/build/helpers'
               },
-              // ... more build items
             ],
           },
-
-
           {
             type: 'dropdown',
             label: 'API',
