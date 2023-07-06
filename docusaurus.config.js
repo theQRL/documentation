@@ -255,27 +255,27 @@ const config = {
               },
               {
                 label: 'API Overview',
-                href: '/api/overview'
+                href: '/api/qrl-api-overview'
               },
               {
                 label: 'Public API',
-                href: '/api/qrl-api'
+                href: '/api/qrl-public-api'
               },
               {
                 label: 'Wallet API',
                 href: '/api/wallet-api'
               },
               {
-                label: 'WalletD Rest Proxy',
-                href: '/api/wallet-api'
-              },
-              {
-                label: 'Zeus API',
-                href: '/api/wallet-api'
-              },
-              {
                 label: 'Explorer API',
-                href: '/api/wallet-api'
+                href: '/api/explorer-api'
+              },
+              {
+                label: 'WalletD Rest Proxy',
+                href: '/api/walletd-rest-proxy'
+              },
+              {
+                label: 'Zeus Proxy',
+                href: '/api/zeus-proxy'
               },
             ],
           },
