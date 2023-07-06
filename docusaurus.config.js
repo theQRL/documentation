@@ -127,11 +127,6 @@ const config = {
                 label: 'Learn QRL',
                 href: '/learn'
               },
-              {
-                label: 'Blockchain',
-                href: '/learn/blockchain'
-              },
-                          
               // ... more learn items
             ],
           },
@@ -141,6 +136,10 @@ const config = {
             label: 'Use',
             position: 'left',
             items: [
+              {
+                label: 'Use QRL',
+                href: '/use'
+              },
               {
                 label: 'Wallet',
                 href: '/use/wallet'
@@ -186,19 +185,59 @@ const config = {
               // ... more build items
             ],
           },
+
+
+          {
+            type: 'dropdown',
+            label: 'API',
+            position: 'left',
+            items: [
+              {
+                label: 'QRL API',
+                href: '/api'
+              },
+              {
+                label: 'API Overview',
+                href: '/api/overview'
+              },
+              {
+                label: 'Public API',
+                href: '/api/qrl-api'
+              },
+              {
+                label: 'Wallet API',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'WalletD Rest Proxy',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'Zeus API',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'Explorer API',
+                href: '/api/wallet-api'
+              },
+            ],
+          },
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'tutorialSidebar',
             label: 'Tutorials',
           },
+
+
+/*
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'apiSidebar',
+            sidebarId: 'docSidebar',
             label: 'API',
           },
-
+*/
         // Right Side
 
           {
