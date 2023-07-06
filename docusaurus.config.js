@@ -242,6 +242,43 @@ const config = {
               },
             ],
           },
+
+
+          {
+            type: 'dropdown',
+            label: 'API',
+            position: 'left',
+            items: [
+              {
+                label: 'QRL API',
+                href: '/api'
+              },
+              {
+                label: 'API Overview',
+                href: '/api/overview'
+              },
+              {
+                label: 'Public API',
+                href: '/api/qrl-api'
+              },
+              {
+                label: 'Wallet API',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'WalletD Rest Proxy',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'Zeus API',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'Explorer API',
+                href: '/api/wallet-api'
+              },
+            ],
+          },
           {
             type: 'docSidebar',
             position: 'left',
