@@ -242,43 +242,6 @@ const config = {
               },
             ],
           },
-
-
-          {
-            type: 'dropdown',
-            label: 'API',
-            position: 'left',
-            items: [
-              {
-                label: 'QRL API',
-                href: '/api'
-              },
-              {
-                label: 'API Overview',
-                href: '/api/qrl-api-overview'
-              },
-              {
-                label: 'Public API',
-                href: '/api/qrl-public-api'
-              },
-              {
-                label: 'Wallet API',
-                href: '/api/wallet-api'
-              },
-              {
-                label: 'Explorer API',
-                href: '/api/explorer-api'
-              },
-              {
-                label: 'WalletD Rest Proxy',
-                href: '/api/walletd-rest-proxy'
-              },
-              {
-                label: 'Zeus Proxy',
-                href: '/api/zeus-proxy'
-              },
-            ],
-          },
           {
             type: 'docSidebar',
             position: 'left',
