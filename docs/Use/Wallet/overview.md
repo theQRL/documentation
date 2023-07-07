@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: wallet-overview
 title: QRL Wallet Overview
 hide_title: false
