@@ -20,3 +20,17 @@ slug: /use/wallet/web/open
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
+
+
+
+
+ 
+
+## Open QRL Wallet
+
+By using the recovery method you have created, you can access your wallet to send or receive QRL.
+
+
+Enter your information into the "Wallet Seed / File" field. Make sure the drop down on the right matches the data you chose (Mnemonic, Hexphrase, or wallet file).
+
+Click "Unlock Wallet" and your QRL wallet will open allowing you to check balances and interact with the QRL network. 
