@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: desktop-wallet-open
 title: QRL Desktop Wallet - Open
 hide_title: false
@@ -22,13 +22,51 @@ slug: /use/wallet/desktop/open
 :::
 
 
-To access a wallet using the desktop application you will need to install the [Desktop Application](#) and have your private keys available, either in mnemonic, hex, or a wallet.json file.
+In order to interact with a QRL wallet it must be opened using the private keys that were created during the [wallet creation](/use/wallet/desktop/new) process.
 
-1. Open the Wallet Application
-2. Select Open Wallet
-3. Select Private Key type
-4. Enter private Keys
-5. Select Unlock Wallet
+Open the QRL Desktop Wallet application to get started opening a wallet.
 
-You now have access to any funds and all tools using this wallet. The Public address is shown in the top section. 
+## Private Keys
 
+There are a few ways that the private keys for an address are represented. Any of these recovery methods will suffice to open a QRL address.
+
+| Recovery Key Medium | Information |
+| --- | --- |
+| [Mnemonic Phrase](developers/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
+| [Hexseed](developers/address/hexseed) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexseed consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
+| [`wallet.json` file](developers/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/cli) wallet applications</li></ul> |
+
+
+:::warning Test your backups!
+These keys allow full access to the address and all funds and assets that are held in that address. Ensure you secure them in an appropriate manner to protect the security of the funds.
+:::
+
+
+## Open QRL Wallet
+
+By using one of the recovery methods mentioned above, you can access your wallet to send or receive QRL.
+
+With the Desktop wallet application open, select the **OPEN** tab on the left side of the page.
+
+Enter your recovery key medium into the form.
+
+Using the dropdown on the left you can toggle between a `wallet.json` file, Mnemonic Phrase and Hexseed.
+
+### Using Wallet.json file
+
+Select the wallet.json file stored locally on your computer and if applicable enter the encryption passphrase into the second field.
+
+Click "Unlock Wallet" and your QRL wallet will open allowing you to check balances and interact with the QRL network. 
+
+### Using Mnemonic
+
+With the QRL desktop wallet open, and the Open Wallet tab selected dropdown the form field and select *Mnemonic Phrase*
+
+Enter the address Mnemonic phrase into the form and select "Unlock Wallet" and your QRL wallet will open.
+
+### Using Hexseed
+
+
+With the QRL desktop wallet open, and the Open Wallet tab selected dropdown the form field and select *Hexseed*
+
+Enter the address hexseed into the form and select "Unlock Wallet" and your QRL wallet will open.

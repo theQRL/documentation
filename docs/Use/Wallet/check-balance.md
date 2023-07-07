@@ -21,15 +21,15 @@ slug: /use/wallet/check-balance
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-The blockchain holds all balance information on any QRL wallet address and is the source of truth for all balance information. Every time a transaction is sent to or from an address it is recorded on the chain. 
+The QRL blockchain holds all balance information on any QRL wallet address and is the source of truth for all balance information. Every time a transaction is sent to or from an address it is recorded on the chain. 
 
-To find an address balance a lookup must be performed on the blockchain which searches through all of the blocks to find the latest information on any funds contained in the address. 
+To find an address balance, a lookup must be performed on the blockchain which searches through all of the blocks to find the latest information on any funds contained in the address.
 
-If there have been no transactions for the given address, either incoming or outgoing, the address will not be found. 
+If there are no transactions found for a given address, either incoming or outgoing, the address will not be found eevn if you possess the private keys. 
 
 This does not mean the address has not been created, just that it is not yet found on-chain. Send some funds to the address and it will show up.
 
-:::note A public address will start with a `Q` 
+:::tip A public address will start with a `Q` 
 
 An example public QRL address: Q01040007a591a62c23ed27adfe3df8eb812ee5e4b73e47fb8471e8d78ecd9b4cadc325ca36d86e
 
@@ -81,5 +81,5 @@ Each of these methods are documented in the following links.
 - [QRL node CLI](/use/node/cli#wallet_ls) - `wallet_ls`
 - [QRL Wallet API](/api/wallet-api#getbalance)  - `GetBalance`
 - [QRL Wallet-rest-proxy](/api/walletd-rest-proxy#getbalance) `GetBalance`
-- [QRL Zeus Proxy API](/api/zeus-proxy-api) 
-- [QRL Explorer API](/developers/api/explorer-api#address-by-number) - Address By Number
+- [QRL Zeus Proxy API](/api/zeus-proxy) 
+- [QRL Explorer API](/api/explorer-api#address-by-number) - `Address By Number`

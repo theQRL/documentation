@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: desktop-wallet-backup
 title: QRL Desktop Wallet - Backup
 hide_title: false
@@ -21,29 +21,54 @@ slug: /use/wallet/desktop/backup
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-The process to backup the Desktop wallet is simple. The software gives a few options for backing up an address during address creation. Additionally after the wallet is created the recovery seed can be displayed for backup. 
+The process to backup the Desktop wallet is simple. The software gives a few options for backing up an address during address creation. Chose any of these methods to backup your QRL address.
 
-The medium used to store the data is important as this can lead to a successful long term backup if done properly. Most importantly, the backup must be tested and confirmed to open the same address directly after creating it. This ensures the validity of the data and the ability to open the wallet in the future.
+Additionally after the wallet is created the recovery seed can be displayed for backup. 
 
+
+:::tip
+The backup data must be tested and confirmed to open the same public address directly after creating it, before funds are deposited. This ensures the validity of the data and the ability to open the wallet in the future!
+:::
+
+
+## General Information
+
+
+There are a few ways that the private keys for an address are represented. Any of these recovery methods will suffice to open the address in the future.
+
+| Recovery Key Medium | Information |
+| --- | --- |
+| [Mnemonic Phrase](developers/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
+| [Hexseed](developers/address/hexseed) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
+| [`wallet.json` file](developers/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/cli) wallet applications</li></ul> |
+
+The medium used to store the data is as important as storing the backup securely. 
+
+Strong, long lasting methods are recommended and if used properly will lead to a successful long term backup. 
 
 :::warning Test your backups!
-Recovery of funds is dependent on the correctness of the backup. Open the Wallet using the backup media before you need it to check that it works.
+Recovery of funds is dependent on the correctness of the backup data. Open the Wallet using the backup data directly after creating a new address to check that it works!
 :::
 
 
 ## Backup
+Backup the QRL Desktop Wallet following these instructions.
 
 
 ### During Address Creation
 
 
-During the creation of a new address the desktop wallet software will prompt for the user to save the private details of their new address. This information must be recorded to open the wallet address in the future. After entering a passphrase for the encrypted wallet file the system will prompt for the user to save the mnemonic or secret key. Either of these will work to access the address in the future and are intrinsically the same thing.
+During the creation of a new address the desktop wallet software will prompt for the user to save the private details of their new address. This information must be saved in order to open the new wallet address.
+
+After entering a passphrase for the encrypted wallet file the system will prompt for the user to save the mnemonic or secret key. 
+
+All of these will work to access the address in the future and are intrinsically the same thing.
 
 **Backup Options**
 
+- Write down either the mnemonic phrase or hexseed onto offline media like paper an pen and store in a secure location. 
 - Save a copy of the digital wallet file into multiple locations. The encrypted version uses the passphrase given during address creation to AES encrypt the data in the wallet file. This passphrase will be required to open the wallet at a later date.
 - Copy either the mnemonic phrase or the hexseed into a digital file and backup on an external medium like a flash drive or hard drive
-- write down either the mnemonic phrase or hexseed onto offline media like paper an pen and store in a secure location. 
 
 
 :::info
@@ -53,12 +78,12 @@ There are considerations to be made for all of the options listed. These solutio
 
 ### Backup an Existing Wallet
 
-After an address has been created the recovery seed can be located using the desktop wallet application. 
+After an address has been created, the recovery seed can be located using the desktop wallet application. 
 
 - With a wallet open browse to the receive tab and select the "View Recovery Seed" option. 
 - This will display the hexseed and mnemonic phrase as well as a QR tag that also contains this information.
 
-Copy this information onto another medium and save in a secure location.
+Copy this information onto another medium and save it in a secure location. You will need one of the recovery keys to open the address, either will work.
 
 
 ## Backup Storage
@@ -67,7 +92,7 @@ Storage of the backup is crucial to a successful wallet recovery. Remember, dece
 
 The selection of backup medium will change how to store the information for the longest amount of time and is overly out of scope for this document. There are some great guides out there for storing wallet keys and they apply to the QRL wallet as well. 
 
-:::caution
+:::warning
 Keep the backup secure! Anyone with the secret keys can spend the funds in the wallet.
 :::
 
@@ -95,6 +120,7 @@ Either your wallet file is invalid or it is encrypted and you forgot to enter it
 ```
 
 - Open the wallet file in a text editor and verify it is in JSON format
-  - If encrypted the file will indicate this in one of the JSON fields, use the passphrase to open the file.
-- Check that the passphrase entered is the same as the passphrase used when creating the address.
+- Do you have the correct encryption passphrase?
+  - The wallet.json file may be stored in an AES encrypted state. 
+  - Without this encryption passphrase there is no recovery of the information in the file.
 

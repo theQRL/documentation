@@ -108,7 +108,7 @@ const config = {
           hideable: true,
         },
       },
-
+      
       navbar: {
         title: '',
         hideOnScroll: true,    
@@ -124,23 +124,38 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Learn QRL',
+                label: 'About QRL',
                 href: '/learn'
               },
               {
-                label: 'Blockchain',
-                href: '/learn/blockchain'
+                label: 'QRL Whitepaper',
+                href: '/learn/whitepaper'
               },
-                          
+              {
+                label: 'Block Rewards',
+                href: '/learn/qrl-emission'
+              },
+              {
+                label: 'OTS Keys',
+                href: '/learn/ots-keys'
+              },
+              {
+                label: 'On-Chain Voting',
+                href: '/learn/on-chain-voting'
+              },
+
               // ... more learn items
             ],
           },
-
           {
             type: 'dropdown',
             label: 'Use',
             position: 'left',
             items: [
+              {
+                label: 'Use QRL',
+                href: '/use'
+              },
               {
                 label: 'Wallet',
                 href: '/use/wallet'
@@ -160,8 +175,6 @@ const config = {
               // ... more using items
             ],
           },
-
-          
           {
             type: 'dropdown',
             label: 'Build',
@@ -172,9 +185,18 @@ const config = {
                 href: '/build'
               },
               {
+                label: 'QRL Core Library',
+                href: '/build/qrllib'
+              },
+              {
                 label: 'Address Scheme',
                 href: '/build/addresses'
               },
+              {
+                label: 'QRL Security',
+                href: '/build/security'
+              },
+
               {
                 label: 'Node CLI',
                 href: '/build/node-cli'
@@ -183,7 +205,41 @@ const config = {
                 label: 'QRL Helpers',
                 href: '/build/helpers'
               },
-              // ... more build items
+            ],
+          },
+          {
+            type: 'dropdown',
+            label: 'API',
+            position: 'left',
+            items: [
+              {
+                label: 'QRL API',
+                href: '/api'
+              },
+              {
+                label: 'API Overview',
+                href: '/api/qrl-api-overview'
+              },
+              {
+                label: 'Public API',
+                href: '/api/qrl-public-api'
+              },
+              {
+                label: 'Wallet API',
+                href: '/api/wallet-api'
+              },
+              {
+                label: 'Explorer API',
+                href: '/api/explorer-api'
+              },
+              {
+                label: 'WalletD Rest Proxy',
+                href: '/api/walletd-rest-proxy'
+              },
+              {
+                label: 'Zeus Proxy',
+                href: '/api/zeus-proxy'
+              },
             ],
           },
           {
@@ -192,13 +248,16 @@ const config = {
             sidebarId: 'tutorialSidebar',
             label: 'Tutorials',
           },
+
+
+/*
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'apiSidebar',
+            sidebarId: 'docSidebar',
             label: 'API',
           },
-
+*/
         // Right Side
 
           {
