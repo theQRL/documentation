@@ -22,6 +22,7 @@ slug: /use/wallet/web/open
 :::
 
 
+
 In order to interact with a QRL wallet it must be opened using the private keys that were created during the [wallet creation](/use/wallet/web/new) process.
 
 Browse to the QRL Web wallet at https://wallet.theqrl.org to get started opening a wallet.
