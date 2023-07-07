@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: wallet-overview
 title: QRL Wallet Overview
 hide_title: false
@@ -24,7 +24,6 @@ slug: /use/wallet/overview
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import thumbnail from './assets/img/desktop/desktopWallet.png';
 
 The Quantum Resistant Ledger's wallet functions similar to other cryptocurrencies in which there are both public and private keys that represent an address. Where the QRL wallet differs from most, and where the post quantum security derives, is the signature scheme used.
 
@@ -39,11 +38,7 @@ See the [OTS Documentation](ots-keys) for more information.
 
 ## QRL Wallet Applications
 
-The QRL Foundation provides a multitude of wallet applications including support for the Ledger Nano through the desktop application.
-
-All of the wallets listed here are supported by the project and all can send quanta, the base currency of the Quantum Resistant Ledger. Some may provide advanced functionality and access to new features.
-
----
+All of the wallets listed here are supported by the project and all can send quanta, the base currency of the Quantum Resistant Ledger. Some may provide advanced functionality and access to additional features.
 
 <Tabs
     defaultValue="web"
@@ -64,17 +59,74 @@ All of the wallets listed here are supported by the project and all can send qua
 
 This is the QRL Web wallet developed by The QRL team, hosted at [https://wallet.theqrl.org](https://wallet.theqrl.org).
 
-:::note Web Wallet Docs
-Check out the [Web Wallet documentation](wallet/web) for detailed usage and more information.
-:::
+
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/web/overview">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Web Wallet">
+                    QRL Web Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL web wallet overview, guides and instructions for getting started">
+                    QRL web wallet overview, guides and instructions for getting started.
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/web/new">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Web Wallet">
+                    New Web Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Create a new QRL wallet using the Web interface">
+                    Create a new QRL wallet using the Web interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/web/open">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Web Wallet">
+                    Open Web Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Open a QRL wallet using the Web interface">
+                    Open a QRL wallet using the Web interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/web/send">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Web Wallet">
+                    Send Web Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Send Quanta using the Web interface">
+                    Send Quanta using the Web interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/web/backup">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Web Wallet">
+                    Backup Web Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Backup a QRL Web Wallet">
+                    Backup a QRL wallet using the Web interface
+                </p>
+            </a>
+        </article>
+        <br />
+    </section>
+</span>
+
 
 
 - Built securely using [Meteor](https://www.meteor.com/), [Semantic UI](https://semantic-ui.com/), [NodeJS](https://nodejs.org/en/) and [Electron](https://electronjs.org/)
 - All secure XMSS operations are run in a web assembly compiled version of [qrllib](https://github.com/theQRL/qrllib) locally in your browser
 - Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window
 - Code is all open source, [3rd party audited](https://github.com/theQRL/audits) and can be found at https://github.com/theqrl/
-
-[<Image img={require('./assets/img/web/webWalletOpenSend.png')} quality="85"/>](https://wallet.theqrl.org)
 
 </TabItem>
 
@@ -82,12 +134,80 @@ Check out the [Web Wallet documentation](wallet/web) for detailed usage and more
 
 #### QRL Desktop Wallet
 
-This is the QRL Desktop wallet application developed by The QRL team, identical to the web wallet in most ways and developed to run on most modern operating systems.
+The QRL Desktop Wallet allows a local installation of the QRL Wallet on most modern computers.
 
-:::note Desktop Wallet Docs
-Check out the [Desktop Wallet documentation](wallet/desktop) for detailed usage and more information.
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/overview">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Desktop Wallet">
+                    QRL Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL desktop wallet overview, guides and instructions for getting started">
+                    QRL desktop wallet overview, guides and instructions for getting started.
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/new">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Desktop Wallet">
+                    New Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Create a new QRL wallet using the Desktop interface">
+                    Create a new QRL wallet using the Desktop interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/install">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Desktop Wallet">
+                    Install Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Install the QRL wallet application">
+                    Install the QRL wallet application
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/open">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Desktop Wallet">
+                    Open Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Open a QRL wallet using the Desktop interface">
+                    Open a QRL wallet using the Desktop interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/send">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Desktop Wallet">
+                    Send Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Send Quanta using the Desktop interface">
+                    Send Quanta using the Desktop interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/backup">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Desktop Wallet">
+                    Backup Desktop Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Backup a QRL Desktop Wallet">
+                    Backup a QRL wallet using the Desktop interface
+                </p>
+            </a>
+        </article>
+        <br />
+    </section>
+</span>
 
-:::
 
 
 - Built securely using [Meteor](https://www.meteor.com/), [Semantic UI](https://semantic-ui.com/), [NodeJS](https://nodejs.org/en/) and [Electron](https://electronjs.org/)
@@ -95,12 +215,6 @@ Check out the [Desktop Wallet documentation](wallet/desktop) for detailed usage 
 - Keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window
 - Code is all open source, [3rd party audited](https://github.com/theQRL/audits) and can be found at https://github.com/theqrl/
 
-
-[<Image img={require('./assets/img/desktop/desktopWallet.png')} quality="85"/>](https://github.com/theQRL/qrl-wallet/releases/latest)
-
-:::note 
-Click on the image above to go to the downloads or grab them from the main [QRL Website](https://theqrl.org/downloads/).
-:::
 
 </TabItem>
 
@@ -110,11 +224,77 @@ Click on the image above to go to the downloads or grab them from the main [QRL 
 
 THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
 
-:::note Desktop Wallet Docs
-Find the [QRL Mobile Wallet documentation here](wallet/mobile) for detailed usage and more information.
-:::
-
-[<Image img={require('./Mobile/assets/android1.webp')} quality="85"/>](https://itunes.apple.com/us/app/qrl-wallet/id1458620542?ls=1&mt=8)
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/overview">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Mobile Wallet">
+                    QRL Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL mobile wallet overview, guides and instructions for getting started">
+                    QRL mobile wallet overview, guides and instructions for getting started.
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/new">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Mobile Wallet">
+                    New Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Create a new QRL wallet using the Mobile interface">
+                    Create a new QRL wallet using the Mobile interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/install">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Mobile Wallet">
+                    Install Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Install the QRL wallet application">
+                    Install the QRL wallet application
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/open">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Mobile Wallet">
+                    Open Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Open a QRL wallet using the Mobile interface">
+                    Open a QRL wallet using the Mobile interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/send">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Mobile Wallet">
+                    Send Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Send Quanta using the Mobile interface">
+                    Send Quanta using the Mobile interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/backup">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Mobile Wallet">
+                    Backup Mobile Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Backup a QRL Mobile Wallet">
+                    Backup a QRL wallet using the Mobile interface
+                </p>
+            </a>
+        </article>
+        <br />
+    </section>
+</span>
 
 > FIXME!! Need addresses and images for iOS and Android apps ^^^
 
@@ -123,13 +303,83 @@ Find the [QRL Mobile Wallet documentation here](wallet/mobile) for detailed usag
 
 #### QRL Ledger Wallet
 
-The QRL Ledger wallet is considered one of the most secure methods to store QRL. 
+The Ledger wallet is considered one of the most secure methods to store cryptocurrency. QRL supports wallet creation and hardware wallet function using the ledger nano. 
 
-Hardware storage requires user interaction for any on-chain functions and signs all transactions on device, never exposing the secret keys. The QRL Ledger integration provides 2 QRL address trees that can vbe used to stack QRL. 
 
-[<Image img={require('./assets/img/ledger/QRL-ledger.png')} quality="85"/>](https://shop.ledger.com/products/ledger-nano-s)
+<span>
+  <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/overview">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Ledger Wallet">
+                    QRL Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL ledger wallet overview, guides and instructions for getting started">
+                    QRL ledger wallet overview, guides and instructions for getting started.
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/new">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Ledger Wallet">
+                    New Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Create a new QRL wallet using the Ledger interface">
+                    Create a new QRL wallet using the Ledger interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--6 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/recover">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Recover a QRL Ledger Wallet">
+                    Recover Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Recover the QRL wallet application">
+                    Recover a QRL Ledger wallet
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/open">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Ledger Wallet">
+                    Open Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Open a QRL wallet using the Ledger interface">
+                    Open a QRL wallet using the Ledger interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/send">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Ledger Wallet">
+                    Send Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Send Quanta using the Ledger interface">
+                    Send Quanta using the Ledger interface
+                </p>
+            </a>
+        </article>
+        <article class="col col--4 margin-bottom--md">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/backup">
+                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Ledger Wallet">
+                    Backup Ledger Wallet
+                </h2>
+                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Backup a QRL Ledger Wallet">
+                    Backup a QRL wallet using the Ledger interface
+                </p>
+            </a>
+        </article>
+        <br />
+    </section>
+</span>
 
-:::note Desktop Wallet Docs
+
+:::note Extendable Ledger Addresses
 There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](wallet/ledger).
 :::
 
