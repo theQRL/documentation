@@ -51,7 +51,7 @@ Recovery of funds is dependent on the correctness of the backup data. Open the W
 
 ## Backup
 
-Backup the Web Wallet following these instructions.
+Backup the QRL Web Wallet following these instructions.
 
 
 ### During Address Creation
@@ -65,7 +65,7 @@ All of these methods will work to access the address in the future and are intri
 
 **Backup Options**
 
-- write down either the mnemonic phrase or hexseed onto offline media like paper an pen and store in a secure location. 
+- Write down either the mnemonic phrase or hexseed onto offline media like paper an pen and store in a secure location. 
 - Save a copy of the digital wallet file into multiple locations. The encrypted version uses the passphrase given during address creation to AES encrypt the data in the wallet file. This passphrase will be required to open the wallet at a later date.
 - Copy either the mnemonic phrase or the hexseed into a digital file and backup on an external medium like a flash drive or hard drive
 
@@ -76,7 +76,7 @@ There are considerations to be made for all of the options listed. These solutio
 
 ### Backup an Existing Wallet
 
-After an address has been created the recovery seed can be located using the web wallet application. 
+After an address has been created, the recovery seed can be located using the web wallet application. 
 
 - With a wallet open browse to the receive tab and select the "View Recovery Seed" option. 
 - This will display the hexseed and mnemonic phrase as well as a QR tag that also contains this information.

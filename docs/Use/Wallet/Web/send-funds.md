@@ -1,5 +1,5 @@
 ---
-docstatus: DRA30%FT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-send
 title: QRL Web Wallet - Send Funds
 hide_title: false
@@ -28,7 +28,7 @@ The process of sending QRL to another address using the [QRL Web wallet](https:/
 You must have the private recovery key medium to access your wallet, funds in your address, and the Public address of the recipient.
 
 :::info
-Use [this guide to open the web wallet](/use/wallet/web/open) using recovery medium to access your wallet.
+Use [this guide to open the web wallet](/use/wallet/web/open) using recovery keys to access your wallet.
 :::
 
 ## Send Quanta
