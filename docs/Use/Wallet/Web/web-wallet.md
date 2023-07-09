@@ -22,21 +22,17 @@ slug: /use/wallet/web/overview
 
 
 
-<<<<<<< HEAD
+
+
 The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network and access on-chain tools. 
-=======
-The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network as well as access on-chain tools. 
->>>>>>> 8b5ef29 (Formatting and initial content)
+
 
 
 :::note
 All secure XMSS operations are run in a web assembly compiled version of *qrllib* locally in your browser or desktop application. 
 
-<<<<<<< HEAD
 Private keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet browser window.
-=======
-Private keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet, browser window, or desktop application.
->>>>>>> 8b5ef29 (Formatting and initial content)
+
 :::
 
 ## General Info

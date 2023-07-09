@@ -267,3 +267,4 @@ Using the Desktop QRL Wallet to send QRL to another address. Otherwise known as 
   </section>
 </span>
 
+
