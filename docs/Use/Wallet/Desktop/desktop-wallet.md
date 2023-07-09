@@ -79,21 +79,12 @@ Follow our guide on Installing the Desktop wallet for all operating systems supp
 
 <span>
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
-<<<<<<< HEAD
     <article class="col col--6 margin-bottom--lg">
       <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/desktop/install">
         <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Desktop Wallet Install">
           Desktop Wallet Install
         </h2>
         <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Desktop Wallet installation directions">
-=======
-    <article class="col col--12 margin-bottom--lg">
-      <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="">
-        <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
-          Desktop Wallet Install
-        </h2>
-        <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="">
->>>>>>> 5f1f83b (Progress and updates)
           QRL Desktop Wallet installation directions
         </p>
       </a>
