@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-new
 title: QRL Web Wallet - New
 hide_title: false
@@ -20,16 +20,30 @@ slug: /use/wallet/web/new
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-From the main QRL web wallet menu, select new wallet to begin.
+Creating a new QRL address is simple and straightforward. Browse to the QRL wallet at https://wallet.theqrl.org to begin.
+
+:::caution Backup and verify the address recovery media
+Ensure that you can access the address using your backup media before sending any funds into the address.
+:::
+
+
+From the main QRL web wallet menu, select the "**New Wallet**" tab to begin.
 
 Enter a strong password into the password field. The password must be at least 8 characters in length, and must contain at least 1 number and 1 letter
 
+## Optional Wallet Configuration
 
-#### Tree Height
+There are a few optional configuration properties that may be useful. The defaults settings are usually acceptable for most users.
+
+### Tree Height
 
 This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain. 
 
-By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. The only disadvantage for creating a larger tree height is the time required to generate the additional keys. This can be configured only when a wallet is created.
+By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. 
+
+The only disadvantage for creating a larger tree height is the time required to generate the additional keys. 
+
+This can be configured only when a wallet is created.
 
 
 |  Tree Height | Available Keys | Notes |
@@ -45,7 +59,7 @@ By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may 
 > If needed you can create an additional advanced `slaves.json` file with up to 100 slave OTS keys allowing for additional TX's using the same QRL address. For more information please see the [Slave Keys docs](/build/address/slave-keys)
 
 
-#### Hash Function
+### Hash Function
 
 QRL can utilize multiple hash functions, depending on the setting used during the creation of the wallet.
 
@@ -58,9 +72,9 @@ QRL can utilize multiple hash functions, depending on the setting used during th
 | shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) |  |
 
 
-
-> Which hash function is better to use is debatable, and they all have pros and cons. Most importantly the default can be changed if there is later a vulnerability found in the core cryptography of the hash function.
-{: .info}
+:::tip
+All of these hash functions are considered to be secure, and the default is perfectly acceptable to use
+:::
 
 
 #### Create Wallet
