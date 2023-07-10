@@ -22,13 +22,17 @@ slug: /use/wallet/web/overview
 
 
 
+
+
 The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network and access on-chain tools. 
+
 
 
 :::note
 All secure XMSS operations are run in a web assembly compiled version of *qrllib* locally in your browser or desktop application. 
 
 Private keys stay in the memory space of the XMSS object, which is destroyed the moment you close the wallet browser window.
+
 :::
 
 ## General Info
@@ -115,6 +119,7 @@ Follow the links below to get started with the QRL Web wallet.
         <br />
     </section>
 </span>
+
 
 ### Checking a Wallet Balance
 

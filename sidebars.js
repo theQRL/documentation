@@ -139,7 +139,7 @@ const sidebars = {
               label: 'Desktop Wallet',
               link: {
                 type: 'generated-index',
-                title: 'QRL Web Wallet',
+                title: 'QRL Desktop Wallet',
                 description: 'Covering the QRL Desktop Wallet usage.',
                 slug: '/use/wallet/desktop',
                 keywords: ['use-desktop-wallet'],
@@ -179,10 +179,10 @@ const sidebars = {
                 'Use/Wallet/Ledger/ledger-wallet-new',
                 'Use/Wallet/Ledger/ledger-wallet-open',
                 'Use/Wallet/Ledger/ledger-wallet-send',
-                'Use/Wallet/Ledger/ledger-wallet-recover',
-                'Use/Wallet/Ledger/ledger-wallet-backup',
+                'Use/Wallet/Ledger/ledger-wallet-backup-restore',
                 'Use/Wallet/Ledger/ledger-wallet-plausable-deniability',
                 'Use/Wallet/Ledger/ledger-wallet-known-issues',
+
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
