@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-open
 title: Ledger Wallet - Open
 hide_title: false
@@ -23,9 +23,9 @@ slug: /use/wallet/ledger/open
 :::
 
 
-## Accessing Wallet with Ledger
+## Accessing Ledger Wallet
 
-1. Make sure your Ledger Nano device is **Connected**, **Unlocked** and the **QRL App is Open**.
+1. Make sure your Ledger Nano device is **Connected**, **Unlocked** and the [**QRL Desktop App is Open**](/use/wallet/desktop).
 2. Select the tree to open by scrolling to **Switch Tree** in the QRL menu.
 3. Open the QRL desktop wallet.
 4. Click **Open Wallet** on the left hand menu.
@@ -35,14 +35,14 @@ slug: /use/wallet/ledger/open
 
 This will present you with the unlocked QRL wallet ready to send or receive funds.
 
-:::note
+:::info Ubuntu Connection Issues
 Ubuntu users may run into issues connecting to their Ledger devices. Please reference [this article *Fix-connection-issues*](https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues) from Ledger explaining the issue and solution.
 :::
 
-:::note
-Chrome Users, there is a bug with chrome that will not allow the Ledger to work. Please use another application or download the [qrl wallet](https://theqrl.org)
+:::info Chrome Connection Issues
+Chrome users, there is a bug with chrome that will not allow the Ledger to work. Please use another application or download the [qrl wallet](https://theqrl.org)
 :::
 
-:::note
+:::info Firefox Connection Issues
 If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [Enabling U2F support in Mozilla Firefox](https://support.yubico.com/support/solutions/articles/15000017511-enabling-u2f-support-in-mozilla-firefox)
 :::

@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-new
 title: Ledger Wallet - New
 hide_title: false
@@ -23,9 +23,9 @@ slug: /use/wallet/ledger/new
 :::
 
 
-## Installing the QRL Application
+## Installing the QRL App
 
-Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, follow these instructions:
+Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, [follow these instructions](https://support.ledger.com/hc/en-us/articles/360019184453?support=true:
 
 1. Open the **Manager** in Ledger Live
 2. **Connect and Unlock** your Ledger Nano
@@ -58,29 +58,6 @@ Your Ledger Nano device has been initialized for the QRL app, and contains 2 add
 
 | QRL Tree | OTS Keys | Address |
 |-----|-----|-----| 
-| Tree 1 | 256 OTS | Q00040043096f536b68eb36ec3~~fe577d33e78f3c |
-| Tree 2 | 256 OTS | Q000400c722c2198837153a697~~5ee40365da6ee2 |
+| Tree 1 | 256 OTS | Q00040043096...577d33e78f3c |
+| Tree 2 | 256 OTS | Q000400c722c...e40365da6ee2 |
 
-## Accessing Wallet with Ledger
-
-1. Make sure your Ledger Nano device is **Connected**, **Unlocked** and the **QRL App is Open**.
-2. Select the tree to open by scrolling to **Switch Tree** in the QRL menu.
-3. Open the QRL desktop wallet.
-4. Click **Open Wallet** on the left hand menu.
-5. On the right hand side, select **Ledger Nano** in the drop down menu.
-6. Click the **Open Ledger Nano** button.
-
-
-This will present you with the unlocked QRL wallet ready to send or receive funds.
-
-:::note
-Ubuntu users may run into issues connecting to their Ledger devices. Please reference [this article *Fix-connection-issues*](https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues) from Ledger explaining the issue and solution.
-:::
-
-:::note
-Chrome Users, there is a bug with chrome that will not allow the Ledger to work. Please use another application or download the [qrl wallet](https://theqrl.org)
-:::
-
-:::note
-If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [Enabling U2F support in Mozilla Firefox](https://support.yubico.com/support/solutions/articles/15000017511-enabling-u2f-support-in-mozilla-firefox)
-:::
