@@ -26,7 +26,7 @@ slug: /use/wallet/ledger/open
 ## Accessing Ledger Wallet
 
 1. Make sure your Ledger Nano device is **Connected**, **Unlocked** and the [**QRL Desktop App is Open**](/use/wallet/desktop).
-2. Select the tree to open by scrolling to **Switch Tree** in the QRL menu.
+2. Select the tree to open by scrolling to **Switch Tree** in the QRL menu on the ledger device.
 3. Open the QRL desktop wallet.
 4. Click **Open Wallet** on the left hand menu.
 5. On the right hand side, select **Ledger Nano** in the drop down menu.

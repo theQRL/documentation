@@ -102,7 +102,7 @@ This function provides *Plausible Deniability* where a small amount of $quanta$ 
 This secures a users funds from any physical attacks by allowing the smaller balance to be given up while never allowing the attacker access to the second address space and remaining funds.
 
 
-:::info See the Multi-tree Documentation 
+:::info See the Plausible Deniability Documentation 
 <span >
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--md">
