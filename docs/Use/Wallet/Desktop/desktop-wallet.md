@@ -32,7 +32,7 @@ The wallet is supported across most modern operating systems and can be installe
 
 <span>
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
-        <article class="col col--6 margin-bottom--md">
+        <article class="col col--12 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="https://github.com/theQRL/qrl-wallet/releases/latest">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Desktop Wallet Download">
                     QRL Desktop Wallet Download
