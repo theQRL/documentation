@@ -225,11 +225,9 @@ const sidebars = {
               },              
               items: [
                 'Use/Wallet/Offline/offline-wallet-overview',
-                'Use/Wallet/Offline/offline-wallet-new',
-                /*'Use/Wallet/Offline/offline-wallet-open',
-                'Use/Wallet/Offline/offline-wallet-send',
                 'Use/Wallet/Offline/offline-wallet-install',
-                'Use/Wallet/Offline/offline-wallet-backup',*/
+                'Use/Wallet/Offline/offline-wallet-verify',
+                'Use/Wallet/Offline/offline-wallet-new',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
