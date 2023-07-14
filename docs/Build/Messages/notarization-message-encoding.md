@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  notarization-message-encoding
 title: QRL Notarization Message Encoding
 hide_title: false
@@ -47,10 +47,13 @@ The remaining 77 bytes are reserved for both the hash of the document, and a var
     `3` - MD5 - Subsequent 16 bytes store the SHA1 hash, with the remaining 61 bytes available for free form text.
 
 
+
+:::tip Example Notarization Hash
 `afafa258755c6c52d66d0c7af14252c59e17ee70391ca9fe21ab40354a75554939362468747470733a2f2f71726c2e636f2e696e2f636861696e2f236d61696e6e65742d636861696e`
 
-## Implementation
+| Message Encoding | Hash Function | 32 byte Data Hash | 45 byte Optional Data |
+| :---: | :---: | :---: | :---: |
+| `afafa` | `2` | `58755c6c52d66d0c7af14252c59e17ee70391ca9fe21ab40354a755549393624` | `68747470733a2f2f71726c2e636f2e696e2f636861696e2f236d61696e6e65742d636861696e` |
 
-No immediate implementation work is required for this QIP as it simply states a standard for encoding messages using the QRL networks `MessageTransaction` transaction type.
+:::
 
-Eventual work will be required in any client implementations that wish to adhere to the standard encoding format, such as the public [QRL Wallet](https://wallet.theqrl.org/) or [Block Explorer](https://explorer.theqrl.org/)
