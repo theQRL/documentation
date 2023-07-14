@@ -449,18 +449,35 @@ const sidebars = {
         'Build/qrllib',
         'Build/security',
         'Build/Docker/qrl-docker',
-        'Build/Messages/message-tx-encoding',
         'Build/Mining/qrandomx',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
         'Build/Vote-QRL/vote-qrl',
+        { // Message Encoding//
+          type: 'category',
+          label: 'Message Encoding',
+          link: {
+            type: 'generated-index',
+            title: 'QRL Message Encoding Documentation',
+            description: 'Message encoding standard for the QRL Message Transactions',
+            slug: '/build/message-encoding',
+            keywords: ['learn'],
+            image: '/assets/img/icons/yellow.png',
+          },
+          items: [
+            'Build/Messages/message-tx-encoding',
+            'Build/Messages/notarization-message-encoding',
+          ],
+          collapsible: true, // Set the category to be collapsible
+          collapsed: true, // Set the category to be initially collapsed or open by default
+        },
         { // Address Scheme//
           type: 'category',
           label: 'Address Scheme',
           link: {
             type: 'generated-index',
             title: 'QRL Address Docs',
-            description: 'Building blocks for the QRL Addresses',
+            description: 'Building blocks for the QRL Addresse Scheme',
             slug: '/build/addresses',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -475,7 +492,6 @@ const sidebars = {
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
         },
-
         { // QRL Node CLI //
           type: 'category',
           label: 'QRL Node CLI',

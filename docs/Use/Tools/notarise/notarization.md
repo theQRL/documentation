@@ -23,15 +23,13 @@ slug: /use/tools/notarise/overview
 :::
 
 
-Authenticating a document, or for that matter, any data is possible on the Quantum Resistant Ledger!
-
-Notarization is the method of certifying the validity of a data through a verification process secured by strong cryptography. 
+Authenticating a document, or for that matter, any data is possible on the Quantum Resistant Ledger. Notarization is the method of certifying the validity of a data through a verification process secured by strong cryptography. 
 
 
 Using the [QRL Wallet Tools](#) featured in the [Desktop and Web wallet](/use/wallet), anyone can notarize data and verifiable prove it has not been tampered with. 
 
 :::info Advanced users
-There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](/build/node-cli)
+There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](/build/node-cli) using the `message_tx` with appropriate [message encoding](/build/messages/message-tx-encoding).
 :::
 
 ## Overview
