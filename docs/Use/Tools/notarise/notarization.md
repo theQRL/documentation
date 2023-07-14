@@ -44,26 +44,31 @@ Once notarized, any exact copy of that document can be cryptographically verifie
 
 
 
-
-
-
-
-
-
-
-
-
 Under the hood the notarization system utilizes [QRL message](/use/tools/messages) with some [clever encoding](/build/messages/message-tx-encoding) added to beginning of the file data encoded into a message. By signing the file signature onto the QRL's blockchain, the verifiable file data is immutably saved on-chain.
+
+
+
+
+<details>
+  <summary>Advanced Notarization Overview</summary>
+  <p>
+
 
 In it's simplest form the notarization message is a [SHA-256 hash](https://en.wikipedia.org/wiki/SHA-2) of the document data with the additional `AFAFA2` hex encoding appended to the front of the file data.
 
 :::tip QRL Notarization Structure
+
 | Encoding | SHA256_SUM *(example)*|
-| --- | --- |
+| :---: | :---: |
 | AFAFA2 | 74ef874a9fa69a86e091ea6dc2668047d7e102d518bebed19f8a3958f664e3da |
+
 :::
 
-This data is send in a message is then sent to the blockchain utilizing the address provided, signing and submitting with quantum resistant xMSS keys to ensure that the validity of the original document can be forever verified for authenticity.
+This data is sent in a `message_tx` to the blockchain utilizing the address provided, signing and submitting with quantum resistant XMSS keys to ensure that the validity of the original document can be forever verified for authenticity.
+
+  </p>
+</details>
+
 
 To verify the integrity of the document, you simply pass it through the same hashing algorithm and verify the hash matches the one you have signed using your quantum resistant secure private keys.
 
