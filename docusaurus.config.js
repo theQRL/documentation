@@ -117,7 +117,7 @@ const config = {
           src: 'assets/img/icons/qrl-logo.svg',
         },
         items: [
-        // Left Side
+        /*// Left Side
           {
             type: 'dropdown',
             label: 'Learn',
@@ -147,6 +147,7 @@ const config = {
               // ... more learn items
             ],
           },
+          */
           {
             type: 'dropdown',
             label: 'Use',

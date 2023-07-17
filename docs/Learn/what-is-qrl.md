@@ -13,7 +13,7 @@ keywords:
   - docs
   - intro
 image: /assets/img/icons/yellow.png
-slug: /learn/what-is-qrl
+slug: /what-is-qrl
 
 ---
 

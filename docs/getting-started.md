@@ -39,7 +39,6 @@ The docs are broken into 4 main categories, [Use](/use), [Learn](/learn), [Build
       groupID="syntaxSelection" 
       values={[
         { label: 'Use', value: 'use', },
-        { label: 'Learn', value: 'learn', },
         { label: 'Build', value: 'developer', },
         { label: 'Tutorials', value: 'tutorials', },
       ]}>
@@ -83,64 +82,7 @@ The docs are broken into 4 main categories, [Use](/use), [Learn](/learn), [Build
       </section>
     </span>
   </TabItem>
-  <TabItem value="learn">
-    <h2>Learn About The QRL</h2>
-    <p>Covering all aspects of the project, basic concepts, core cryptography conventions and anything that is not directly related to using or building on The QRL.</p>
-    <span>
-      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
-        <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/what-is-qrl">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="What Is The QL">
-              What is The QRL       
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Project explainer and information.">Project explainer and information.</p>
-          </a>
-        </article>
-        <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/whitepaper">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="QRL Wallet">
-              QRL Whitepaper       
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="The QRL Technical Documentation">The QRL Technical Documentation</p>
-          </a>
-        </article>
-        <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/qrl-emission">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="QRL Node">
-              Qrl Emission 
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="QRL Emission Rate Explanation">QRL Emission Rate Explanation</p>
-          </a>
-        </article>
-        <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/ots-keys">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="QRL Tools">
-              OTS Keys       
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="One Time Signature Keys Overview">One Time Signature Keys Overview</p>
-          </a>
-        </article>
-        <article class="col col--6 margin-bottom--lg" >
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/blockchain">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="Blockchain">
-              Blockchain     
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Blockchain Basics">Blockchain Basics</p>
-          </a>
-        </article>
-      </section>
-    </span>
-  </TabItem>
+ 
   <TabItem value="developer">
     <h2>Advanced Documentation</h2>
     <p>From API calls to address schemes, cli commands and Docker nodes. This is where all of the technical things are kept!</p>

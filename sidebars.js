@@ -22,12 +22,18 @@ const sidebars = {
   // But you can create a sidebar manually
   
   docSidebar: [
-     {
+    {
       type: 'doc',
       id: 'getting-started', // document ID
       label: 'Getting Started', // sidebar label
     },
+    {
+      type: 'doc',
+      id: 'Learn/what-is-qrl', // document ID
+      label: 'What Is The QRL', // sidebar label
+    },    
 
+    /*
     /////////////////////////////
     // learn collapsible section
     /////////////////////////////
@@ -66,14 +72,14 @@ const sidebars = {
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
-        },*/
+        },
 
 
       ],
       collapsible: true, // Set the category to be collapsible
       collapsed: true, // Set the category to be initially collapsed or open by default
     },
-
+*/
 
 
     /////////////////////////////////
@@ -453,6 +459,26 @@ const sidebars = {
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
         'Build/Vote-QRL/vote-qrl',
+        { // Fundamentals//
+          type: 'category',
+          label: 'QRL Fundamentals',
+          link: {
+            type: 'generated-index',
+            title: 'QRL Fundamental Topics',
+            description: 'Covering general topics related to the QRL',
+            slug: '/build/fundamentals',
+            keywords: ['learn'],
+            image: '/assets/img/icons/yellow.png',
+          },
+          items: [
+            'Build/Fundamentals/ots-keys',
+            'Build/Fundamentals/whitepaper',
+            'Build/Fundamentals/qrl-emission',
+            'Build/Fundamentals/on-chain-voting',
+          ],
+          collapsible: true, // Set the category to be collapsible
+          collapsed: true, // Set the category to be initially collapsed or open by default
+        },
         { // Message Encoding//
           type: 'category',
           label: 'Message Encoding',
