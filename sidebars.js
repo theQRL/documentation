@@ -366,20 +366,21 @@ const sidebars = {
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
 
-            // Tools notarise
+            // Tools notarize
             {
               type: 'category',
-              label: 'Notarise',
+              label: 'Notarize',
               link: {
                 type: 'generated-index',
                 title: 'Notarization Usage Guide',
                 description: 'Usage for the Notarization functions.',
-                slug: '/use/tools/notarise',
-                keywords: ['notarise'],
+                slug: '/use/tools/notarize',
+                keywords: ['notarize'],
                 image: '/assets/img/icons/yellow.png',
               },
               items: [
-                'Use/Tools/notarise/notarization-overview',
+                'Use/Tools/notarize/notarization-overview',
+                'Use/Tools/notarize/notarization-data',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
