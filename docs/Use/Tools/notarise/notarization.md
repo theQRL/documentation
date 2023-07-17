@@ -23,30 +23,26 @@ slug: /use/tools/notarise/overview
 :::
 
 
-Authenticating a document, or for that matter, any data is possible on the Quantum Resistant Ledger. Notarization is the method of certifying the validity of a data through a verification process secured by strong cryptography. 
+
+The QRL's notarization system is a secure and decentralized way of proving the existence and integrity of a document or message at a specific point in time. It is designed to provide a trustworthy method of verifying information without relying on a central authority utilizing blockchain technology.
 
 
-Using the [QRL Wallet Tools](#) featured in the [Desktop and Web wallet](/use/wallet), anyone can notarize data and verifiable prove it has not been tampered with. 
+When a user wants to notarize a document or message, they can submit it to the QRL network using the [QRL Wallet Tools](#) featured in the [Desktop and Web wallet](/use/wallet). The system then creates a cryptographic hash of the document, which is a unique representation of its contents.
 
-:::info Advanced users
+This cryptographic hash is then stored on the QRL blockchain, making it a part of the public record. The hash serves as a digital fingerprint of the document and can be used to verify its integrity in the future. Since the blockchain is decentralized and replicated across multiple nodes, it is extremely difficult to tamper with the stored information.
+
+
+Once notarized, any exact copy of that document can be cryptographically verified on-chain using the QRL Block explorer.
+
+
+ ## Advanced users
+
+:::info
 There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](/build/node-cli) using the `message_tx` with appropriate [message encoding](/build/messages/message-tx-encoding).
 :::
 
-## Overview
-
-QRL's notarization system uses additional quantum resistant, XMSS Hash based signatures to add validation to the SHA-256 hash of the data being notarized. 
-
-Using the wallet interface is the simplest way to get started with document notarization. This process allows a user to notarize a file and submit the resulting data onto the blockchain. 
-
-Once notarized, any exact copy of that document can be cryptographically verified on-chain. This allows all sort of functionality and  
-
-
-
-
 
 Under the hood the notarization system utilizes [QRL message](/use/tools/messages) with some [clever encoding](/build/messages/message-tx-encoding) added to beginning of the file data encoded into a message. By signing the file signature onto the QRL's blockchain, the verifiable file data is immutably saved on-chain.
-
-
 
 
 <details>
@@ -77,3 +73,23 @@ To verify the integrity of the document, you simply pass it through the same has
 It is important to point out that this does NOT load the file to the blockchain, only a cryptographic representation (Hash) of the data in the file. An original copy of the file will be needed to verify the notarization.
 :::caution
 
+
+
+
+
+
+
+
+
+
+The system utilizes blockchain technology, which is a distributed and immutable ledger that ensures transparency and security. 
+
+When a user wants to notarize a document or message, they can submit it to the QRL network using the provided tools. The system then creates a cryptographic hash of the document, which is a unique representation of its contents.
+
+This cryptographic hash is then stored on the QRL blockchain, making it a part of the public record. The hash serves as a digital fingerprint of the document and can be used to verify its integrity in the future. Since the blockchain is decentralized and replicated across multiple nodes, it is extremely difficult to tamper with the stored information.
+
+To retrieve the notarized information later, users can make use of the QRL's public API. The API provides a method called "getmessagetxn," which allows users to query the blockchain and retrieve the transaction associated with the notarized document. This transaction includes the cryptographic hash and other relevant details.
+
+To get a deeper understanding of the technical implementation and standards of the QRL's notarization system, you can refer to the QIP002 document on GitHub. QIP002 outlines the technical specifications and procedures for notarization, providing detailed information on how the system works and how developers can interact with it.
+
+Overall, the QRL's notarization system offers a decentralized and secure way to prove the existence and integrity of documents or messages. It leverages blockchain technology to create an immutable record that can be verified by anyone, without the need for a central authority. The provided tools and API make it easy for users to notarize and retrieve information, while the technical documentation gives developers insights into the system's implementation.
