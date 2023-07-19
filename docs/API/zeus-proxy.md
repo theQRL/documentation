@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: zeus-proxy
 title: QRL Zeus Proxy API
 hide_title: false
@@ -26,17 +26,114 @@ slug: /api/zeus-proxy
 
 
 
-###  Multisig transaction
+## Install
 
-```python
-import requests, json, pymongo
+- Node JS & NPM
+- Meteor https://docs.meteor.com/install.html
+- Clone repo at https://github.com/theQRL/zeus
 
-from pyqrllib.pyqrllib import QRLHelper, bin2hstr
-network = "testnet"
-p = requests.post(f'https://zeus-proxy.automated.theqrl.org/grpc/{network}/MultiSigCreateTxnReq', data={  'master_addr': 'Q0204000d8c98d799f2d7f38c3f177bbb583bc4d3cc53ffb329bf2ec851d249413604731d9e5364', 'signatories': ['Q0106006852a0e32f2f555bacfd316ab0e34d78d72072378c7ba1722dd4eba5e99a43e671904338','Q010600b73498cfa4ca470fe878fc7b8ed85b92519d44f19f9b5f30c752405f51384e1c8b419c26'],'weights': [1, 1],'threshold': 1,'fee': 0, 'xmss_pk': 'Q0204000d8c98d799f2d7f38c3f177bbb583bc4d3cc53ffb329bf2ec851d249413604731d9e5364'}) 
-print(p)
+1. Clone repo
+2. Install meteor
+3. Npm install
+4. npm start
 
-data = p.json()
-print (data)
+This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
 
+
+## Usage
+
+Once the proxy is running and accessible either browse to the example page served up at [127.0.0.1:3000](http://127.0.0.1:3001) or make calls through the command line using a tool like cURL, 
+
+:::info
+All of the [QRL Public API service](http://127.0.0.1:3000/api/qrl-public-api#publicapiservice) functions will work with the Zeus proxy. Ensure that all default parameters are passed and the data types are correct.
+:::
+
+### Usage Examples
+
+The following examples should be able to get you started with the Zeus Proxy.
+
+:::note
+Please note, the Zeus proxy is intended to pass through raw data exactly as the gRPC API call expects it. This may make some of the functions a little more complex through the proxy.
+:::
+
+#### GetNodeState
+
+```bash
+curl -XGET http://127.0.0.1:3000/grpc/mainnet/GetNodeState
 ```
+
+This will return the state from the node that the proxy is connected to.
+
+```bash
+{
+  "info": {
+    "version": "4.0.0 python",
+    "state": "SYNCED",
+    "num_connections": 64,
+    "num_known_peers": 302,
+    "uptime": "35472466",
+    "block_height": "2673149",
+    "block_last_hash": {
+      "type": "Buffer",
+      "data": [
+        84,
+        27,
+        172,
+        108,
+        237,
+        14,
+        141,
+        122,
+        44,
+        230,
+        213,
+        26,
+        252,
+        104,
+        176,
+        91,
+        45,
+        28,
+        184,
+        70,
+        109,
+        14,
+        206,
+        249,
+        225,
+        81,
+        133,
+        207,
+        4,
+        0,
+        0,
+        0
+      ]
+    },
+    "network_id": "The sleeper must awaken"
+  }
+}
+``` 
+
+## Configuring the Proxy
+
+To modify the proxy connection details, modify the file `./server/main.ts` changing the `ipMainnet` and `portMainnet` parameters to a reachable node that you run. Pay attention to the GRPC port and adjust as needed to meet your setup.
+
+
+```js
+// Change the default line
+//const ipMainnet = 'mainnet-2.automated.theqrl.org'
+// to:
+const ipMainnet = 'IP_ADDRESS_OF_NODE'
+const portMainnet = '19009'
+```
+
+
+## Run The Proxy
+
+With the configuration pointing to a node you control, start the proxy with:
+
+```bash
+npm start
+```
+
