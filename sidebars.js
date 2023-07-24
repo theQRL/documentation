@@ -746,6 +746,8 @@ const sidebars = {
       items: [
         'Tutorials/Node/dual-node-host',
         'Tutorials/Node/public-api-use',
+        'Tutorials/Node/walletd-api-linux-guide',
+        'Tutorials/Node/backup-restore-node-state',
       ],
       collapsible: true, // Set the category to be collapsible
       collapsed: true, // Set the category to be initially collapsed or open by default
