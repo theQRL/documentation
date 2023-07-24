@@ -22,12 +22,18 @@ const sidebars = {
   // But you can create a sidebar manually
   
   docSidebar: [
-     {
+    {
       type: 'doc',
       id: 'getting-started', // document ID
       label: 'Getting Started', // sidebar label
     },
+    {
+      type: 'doc',
+      id: 'Learn/what-is-qrl', // document ID
+      label: 'What Is The QRL', // sidebar label
+    },    
 
+    /*
     /////////////////////////////
     // learn collapsible section
     /////////////////////////////
@@ -66,14 +72,14 @@ const sidebars = {
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
-        },*/
+        },
 
 
       ],
       collapsible: true, // Set the category to be collapsible
       collapsed: true, // Set the category to be initially collapsed or open by default
     },
-
+*/
 
 
     /////////////////////////////////
@@ -225,11 +231,9 @@ const sidebars = {
               },              
               items: [
                 'Use/Wallet/Offline/offline-wallet-overview',
-                'Use/Wallet/Offline/offline-wallet-new',
-                'Use/Wallet/Offline/offline-wallet-open',
-                'Use/Wallet/Offline/offline-wallet-send',
                 'Use/Wallet/Offline/offline-wallet-install',
-                'Use/Wallet/Offline/offline-wallet-backup',
+                'Use/Wallet/Offline/offline-wallet-verify',
+                'Use/Wallet/Offline/offline-wallet-new',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
@@ -362,20 +366,21 @@ const sidebars = {
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
 
-            // Tools notarise
+            // Tools notarize
             {
               type: 'category',
-              label: 'Notarise',
+              label: 'Notarize',
               link: {
                 type: 'generated-index',
                 title: 'Notarization Usage Guide',
                 description: 'Usage for the Notarization functions.',
-                slug: '/use/tools/notarise',
-                keywords: ['notarise'],
+                slug: '/use/tools/notarize',
+                keywords: ['notarize'],
                 image: '/assets/img/icons/yellow.png',
               },
               items: [
-                'Use/Tools/notarise/notarization-overview',
+                'Use/Tools/notarize/notarization-overview',
+                'Use/Tools/notarize/notarization-data',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
@@ -451,18 +456,55 @@ const sidebars = {
         'Build/qrllib',
         'Build/security',
         'Build/Docker/qrl-docker',
-        'Build/Messages/message-tx-encoding',
         'Build/Mining/qrandomx',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
         'Build/Vote-QRL/vote-qrl',
+        { // Fundamentals//
+          type: 'category',
+          label: 'QRL Fundamentals',
+          link: {
+            type: 'generated-index',
+            title: 'QRL Fundamental Topics',
+            description: 'Covering general topics related to the QRL',
+            slug: '/build/fundamentals',
+            keywords: ['learn'],
+            image: '/assets/img/icons/yellow.png',
+          },
+          items: [
+            'Build/Fundamentals/ots-keys',
+            'Build/Fundamentals/whitepaper',
+            'Build/Fundamentals/qrl-emission',
+            'Build/Fundamentals/on-chain-voting',
+          ],
+          collapsible: true, // Set the category to be collapsible
+          collapsed: true, // Set the category to be initially collapsed or open by default
+        },
+        { // Message Encoding//
+          type: 'category',
+          label: 'Message Encoding',
+          link: {
+            type: 'generated-index',
+            title: 'QRL Message Encoding Documentation',
+            description: 'Message encoding standard for the QRL Message Transactions',
+            slug: '/build/message-encoding',
+            keywords: ['learn'],
+            image: '/assets/img/icons/yellow.png',
+          },
+          items: [
+            'Build/Messages/message-tx-encoding',
+            'Build/Messages/notarization-message-encoding',
+          ],
+          collapsible: true, // Set the category to be collapsible
+          collapsed: true, // Set the category to be initially collapsed or open by default
+        },
         { // Address Scheme//
           type: 'category',
           label: 'Address Scheme',
           link: {
             type: 'generated-index',
             title: 'QRL Address Docs',
-            description: 'Building blocks for the QRL Addresses',
+            description: 'Building blocks for the QRL Addresse Scheme',
             slug: '/build/addresses',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -477,7 +519,6 @@ const sidebars = {
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
         },
-
         { // QRL Node CLI //
           type: 'category',
           label: 'QRL Node CLI',
@@ -705,6 +746,8 @@ const sidebars = {
       items: [
         'Tutorials/Node/dual-node-host',
         'Tutorials/Node/public-api-use',
+        'Tutorials/Node/walletd-api-linux-guide',
+        'Tutorials/Node/backup-restore-node-state',
       ],
       collapsible: true, // Set the category to be collapsible
       collapsed: true, // Set the category to be initially collapsed or open by default

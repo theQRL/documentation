@@ -36,6 +36,50 @@ OTS keys can only be used to sign one transaction. There are limited keys for an
 See the [OTS Documentation](ots-keys) for more information. 
 :::
 
+
+## QRL Address Options
+
+There are a few optional configuration properties that may be useful. The defaults settings are usually acceptable for most users.
+
+### Tree Height
+
+This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain. 
+
+By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. 
+
+The only disadvantage for creating a larger tree height is the time required to generate the additional keys. 
+
+This can be configured only when a wallet is created.
+
+
+|  Tree Height | Available Keys | Notes |
+|:---------: | :----------: | :--- |
+| 8  | 256 | Allows 256 transactions to be **sent** from the address |
+| 10 |  1,024 | Allows 1024 transactions to be **sent** from the address | 
+| 12 |  4,096 | Allows 4,096 transactions to be **sent** from the address |
+| 14 |  16,384 | Allows 16,384 transactions to be **sent** from the address |
+| 16 |  65,536 | Allows 65,536 transactions to be **sent** from the address |
+| 18 |  262,144 | Allows 262,144 transactions to be **sent** from the address |
+
+
+
+### Hash Function
+
+QRL can utilize multiple hash functions, depending on the setting used during the creation of the wallet.
+
+> By default the wallet will utilize the shake128 hash function if no configuration options are given. 
+
+| Hash Function | Hash Algorithm | Description |
+|:-----|:-----|:---------|
+| shake128 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Default used in the web wallet |
+| sha2_256 | [SHA-2](https://en.wikipedia.org/wiki/SHA-2) |  |
+| shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) |  |
+
+
+:::tip
+All of these hash functions are considered to be secure, and the default is perfectly acceptable to use
+:::
+
 ## QRL Wallet Applications
 
 All of the wallets listed here are supported by the project and all can send quanta, the base currency of the Quantum Resistant Ledger. Some may provide advanced functionality and access to additional features.

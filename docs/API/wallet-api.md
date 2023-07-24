@@ -19,7 +19,6 @@ image: /assets/img/icons/yellow.png
 slug: /api/wallet-api
 ---
 
-
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
@@ -27,8 +26,6 @@ slug: /api/wallet-api
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
 
 The QRL Wallet Daemon allows additional functionality to the QRL Node installation. 
 
@@ -44,14 +41,173 @@ This API is available with the base QRL Python package install, and when used wi
 
 ### Requirements
 
-- QRL Node installed on the localhost, fully synced.
+- QRL Node software installed on the localhost.
+- Access to a synced node with the walletd running and access to port default wallet daemon port `19010`
+
 
 
 ## Getting Started
 
-Running the wallet daemon is simple. Once you have met the requirements above, follow the steps below, ensuring the `wallet-rest-proxy` stays running as this will allow interaction with the GRPC node.
+Running the wallet daemon is simple. The `qrl_walletd` daemon comes default with the node software. 
 
-- Run the QRL wallet daemon `qrl_walletd`
+Simply execute the function after successfully installing a node.
+
+```bash
+qrl_walletd
+```
+
+this will create the local `~/.qrl/qrl_walletd.pid`  and `~/.qrl/walletd.log` files in the default QRL directory.
+
+Wallet files will show here as well when created using the `qrl_walletd` API.
+
+### Grpc Bash Tools
+
+Accessing the Grpc commands using a basic linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
+
+:::info
+From the [gRPCurl Docs](https://github.com/fullstorydev/grpcurl#grpcurl):
+
+> `grpcurl` is a command-line tool that lets you interact with gRPC servers. It's basically curl for gRPC servers.
+:::
+
+
+<details>
+  <summary>Install gRPCurl</summary>
+  <p>
+
+:::info
+Golang is required for this method to work.
+:::
+
+Install the `grpcurl` tools following the [installation directions](https://github.com/fullstorydev/grpcurl#installation)
+
+```bash
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+```
+
+This installs the command into the bin sub-folder of wherever your $GOPATH environment variable points. (If you have no GOPATH environment variable set, the default install location is $HOME/go/bin). If this directory is already in your $PATH, then you should be good to go.
+
+
+#### Setup gRPCurl
+
+There are a few things needed to use the tools.
+
+The QRL does not have reflection enabled by default, in order to use the `grpcurl` tools the QRL proto files must be available. 
+
+##### Clone the QRL repo 
+
+```bash
+git clone https://github.com/theQRL/qrl
+```
+
+##### Add Required Google Proto Files
+
+There are two proto files that we need to gather from the main grpc repository for the system to function.
+
+First create the required directory for the google api proto files.
+
+```bash {title="Create api directory"}
+mkdir ~/qrl/src/qrl/protos/google/api
+```
+
+```bash {title="Annotations proto File"}
+wget -O ~/qrl/src/qrl/protos/google/api/annotations.proto https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/annotations.proto
+```
+
+```bash {title="HTTP proto File"}
+wget -O ~/qrl/src/qrl/protos/google/api/http.proto https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto
+```
+
+#### Test gRPCurl
+
+Validate the local setup is correctly working.
+
+##### List Available Functions
+
+```bash
+~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto describe qrl.WalletAPI
+```
+
+```go
+service WalletAPI {
+  rpc AddNewAddress ( .qrl.AddNewAddressReq ) returns ( .qrl.AddNewAddressResp );
+  rpc AddNewAddressWithSlaves ( .qrl.AddNewAddressWithSlavesReq ) returns ( .qrl.AddNewAddressResp );
+  rpc ChangePassphrase ( .qrl.ChangePassphraseReq ) returns ( .qrl.ChangePassphraseResp );
+  rpc EncryptWallet ( .qrl.EncryptWalletReq ) returns ( .qrl.EncryptWalletResp );
+  rpc GetAddressFromPK ( .qrl.AddressFromPKReq ) returns ( .qrl.AddressFromPKResp );
+  rpc GetBalance ( .qrl.BalanceReq ) returns ( .qrl.BalanceResp );
+  rpc GetBlock ( .qrl.BlockReq ) returns ( .qrl.BlockResp );
+  rpc GetBlockByNumber ( .qrl.BlockByNumberReq ) returns ( .qrl.BlockResp );
+  rpc GetHeight ( .qrl.HeightReq ) returns ( .qrl.HeightResp );
+  rpc GetNodeInfo ( .qrl.NodeInfoReq ) returns ( .qrl.NodeInfoResp );
+  rpc GetOTS ( .qrl.OTSReq ) returns ( .qrl.OTSResp );
+  rpc GetPaginatedTransactionsByAddress ( .qrl.PaginatedTransactionsByAddressReq ) returns ( .qrl.PaginatedTransactionsByAddressResp );
+  rpc GetRecoverySeeds ( .qrl.GetRecoverySeedsReq ) returns ( .qrl.GetRecoverySeedsResp );
+  rpc GetTotalBalance ( .qrl.TotalBalanceReq ) returns ( .qrl.TotalBalanceResp );
+  rpc GetTransaction ( .qrl.TransactionReq ) returns ( .qrl.TransactionResp );
+  rpc GetTransactionsByAddress ( .qrl.TransactionsByAddressReq ) returns ( .qrl.TransactionsByAddressResp );
+  rpc GetWalletInfo ( .qrl.GetWalletInfoReq ) returns ( .qrl.GetWalletInfoResp );
+  rpc IsValidAddress ( .qrl.ValidAddressReq ) returns ( .qrl.ValidAddressResp );
+  rpc ListAddresses ( .qrl.ListAddressesReq ) returns ( .qrl.ListAddressesResp );
+  rpc LockWallet ( .qrl.LockWalletReq ) returns ( .qrl.LockWalletResp );
+  rpc RelayMessageTxn ( .qrl.RelayMessageTxnReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayMessageTxnBySlave ( .qrl.RelayMessageTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelaySlaveTxn ( .qrl.RelaySlaveTxnReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelaySlaveTxnBySlave ( .qrl.RelaySlaveTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTokenTxn ( .qrl.RelayTokenTxnReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTokenTxnBySlave ( .qrl.RelayTokenTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTransferTokenTxn ( .qrl.RelayTransferTokenTxnReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTransferTokenTxnBySlave ( .qrl.RelayTransferTokenTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTransferTxn ( .qrl.RelayTransferTxnReq ) returns ( .qrl.RelayTxnResp );
+  rpc RelayTransferTxnBySlave ( .qrl.RelayTransferTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
+  rpc RemoveAddress ( .qrl.RemoveAddressReq ) returns ( .qrl.RemoveAddressResp );
+  rpc UnlockWallet ( .qrl.UnlockWalletReq ) returns ( .qrl.UnlockWalletResp );
+}
+```
+
+##### Describe Functions
+
+```bash
+~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto describe qrl.RelayTransferTokenTxnBySlaveReq
+```
+```bash
+qrl.RelayTransferTokenTxnBySlaveReq is a message:
+message RelayTransferTokenTxnBySlaveReq {
+  repeated string addresses_to = 1;
+  string token_txhash = 2;
+  repeated uint64 amounts = 3;
+  uint64 fee = 4;
+  string master_address = 5;
+}
+```
+
+##### Query Local Node
+
+```bash
+~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto localhost:19010  qrl.WalletAPI.GetNodeInfo
+```
+
+```bash
+{
+  "version": "3.0.1 python",
+  "numConnections": "4",
+  "numKnownPeers": "5",
+  "uptime": "4475717",
+  "blockHeight": "119014",
+  "blockLastHash": "bb0d5e7e59c3c5455881245849b0c1536f361793c4491d4b7931ef39c8040400",
+  "networkId": "Testnet 2022"
+}
+
+```
+
+
+##### Add New Address
+
+```bash
+~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto -d '{"height": "6", "hash_function": "sha2_256"}' localhost:19010 qrl.WalletAPI.AddNewAddress
+```
+  </p>
+</details>
 
 
 | Method Name | Request Type | Response Type | 
@@ -99,213 +255,95 @@ Running the wallet daemon is simple. Once you have met the requirements above, f
 
 
 
-## Grpc Bash Tools
 
-Accessing the Grpc commands using a basic linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
 
-:::info
 
-From the [gRPCurl Docs](https://github.com/fullstorydev/grpcurl#grpcurl):
 
 
-> `grpcurl` is a command-line tool that lets you interact with gRPC servers. It's basically curl for gRPC servers.
->
-> The main purpose for this tool is to invoke RPC methods on a gRPC server from the command-line. gRPC servers use a binary encoding on the wire (protocol buffers, or "protobufs" for short). So they are basically impossible to interact with using regular curl (and older versions of curl that do not support HTTP/2 are of course non-starters). This program accepts messages using JSON encoding, which is much more friendly for both humans and scripts.
 
-:::
 
-### Install gRPCurl
 
-Install the `grpcurl` tools following the [installation directions](https://github.com/fullstorydev/grpcurl#installation)
 
 
-```bash
-go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
-```
 
-This installs the command into the bin sub-folder of wherever your $GOPATH environment variable points. (If you have no GOPATH environment variable set, the default install location is $HOME/go/bin). If this directory is already in your $PATH, then you should be good to go.
 
-:::info
-Golang is required for this method to work.
-:::
 
-### Setup gRPCurl
 
-There are a few things needed to use the tools.
 
-The QRL does not have reflection enabled by default, in order to use the `grpcurl` tools the QRL proto files must be available. 
 
-#### Clone the QRL repo 
 
 
-```bash
-git clone https://github.com/theQRL/qrl
-```
 
-#### Add Required Google Proto Files
 
-There are two proto files that we need to gather from the main grpc repository for the system to function.
+---
+---
 
-First create the required directory for the google api proto files.
 
-```bash {title="Create api directory"}
-mkdir ~/~/qrl/src/qrl/proto/google/api
-```
+## Call
 
-```bash {title="Annotations proto File"}
-wget -O ~/~/qrl/src/qrl/protos/google/api/annotations.proto https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/annotations.proto
-```
-
-```bash {title="HTTP proto File"}
-wget -O ~/~/qrl/src/qrl/protos/google/api/http.proto https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto
-```
-
-### Test gRPCurl
-
-Validate the local setup is correctly working.
-
-#### List Available Functions
-
-```bash
-~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto describe qrl.WalletAPI
-```
-
-```bash
-  rpc AddNewAddress ( .qrl.AddNewAddressReq ) returns ( .qrl.AddNewAddressResp );
-  rpc AddNewAddressWithSlaves ( .qrl.AddNewAddressWithSlavesReq ) returns ( .qrl.AddNewAddressResp );
-  rpc ChangePassphrase ( .qrl.ChangePassphraseReq ) returns ( .qrl.ChangePassphraseResp );
-  rpc EncryptWallet ( .qrl.EncryptWalletReq ) returns ( .qrl.EncryptWalletResp );
-  rpc GetAddressFromPK ( .qrl.AddressFromPKReq ) returns ( .qrl.AddressFromPKResp );
-  rpc GetBalance ( .qrl.BalanceReq ) returns ( .qrl.BalanceResp );
-  rpc GetBlock ( .qrl.BlockReq ) returns ( .qrl.BlockResp );
-  rpc GetBlockByNumber ( .qrl.BlockByNumberReq ) returns ( .qrl.BlockResp );
-  rpc GetHeight ( .qrl.HeightReq ) returns ( .qrl.HeightResp );
-  rpc GetNodeInfo ( .qrl.NodeInfoReq ) returns ( .qrl.NodeInfoResp );
-  rpc GetOTS ( .qrl.OTSReq ) returns ( .qrl.OTSResp );
-  rpc GetRecoverySeeds ( .qrl.GetRecoverySeedsReq ) returns ( .qrl.GetRecoverySeedsResp );
-  rpc GetTotalBalance ( .qrl.TotalBalanceReq ) returns ( .qrl.TotalBalanceResp );
-  rpc GetTransaction ( .qrl.TransactionReq ) returns ( .qrl.TransactionResp );
-  rpc GetTransactionsByAddress ( .qrl.TransactionsByAddressReq ) returns ( .qrl.TransactionsByAddressResp );
-  rpc GetWalletInfo ( .qrl.GetWalletInfoReq ) returns ( .qrl.GetWalletInfoResp );
-  rpc IsValidAddress ( .qrl.ValidAddressReq ) returns ( .qrl.ValidAddressResp );
-  rpc ListAddresses ( .qrl.ListAddressesReq ) returns ( .qrl.ListAddressesResp );
-  rpc LockWallet ( .qrl.LockWalletReq ) returns ( .qrl.LockWalletResp );
-  rpc RelayMessageTxn ( .qrl.RelayMessageTxnReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayMessageTxnBySlave ( .qrl.RelayMessageTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelaySlaveTxn ( .qrl.RelaySlaveTxnReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelaySlaveTxnBySlave ( .qrl.RelaySlaveTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTokenTxn ( .qrl.RelayTokenTxnReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTokenTxnBySlave ( .qrl.RelayTokenTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTransferTokenTxn ( .qrl.RelayTransferTokenTxnReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTransferTokenTxnBySlave ( .qrl.RelayTransferTokenTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTransferTxn ( .qrl.RelayTransferTxnReq ) returns ( .qrl.RelayTxnResp );
-  rpc RelayTransferTxnBySlave ( .qrl.RelayTransferTxnBySlaveReq ) returns ( .qrl.RelayTxnResp );
-  rpc RemoveAddress ( .qrl.RemoveAddressReq ) returns ( .qrl.RemoveAddressResp );
-  rpc UnlockWallet ( .qrl.UnlockWalletReq ) returns ( .qrl.UnlockWalletResp );
-```
-
-#### Describe Functions
-
-```bash
-~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto describe qrl.RelayTransferTokenTxnBySlaveReq
-```
-```bash
-qrl.RelayTransferTokenTxnBySlaveReq is a message:
-message RelayTransferTokenTxnBySlaveReq {
-  repeated string addresses_to = 1;
-  string token_txhash = 2;
-  repeated uint64 amounts = 3;
-  uint64 fee = 4;
-  string master_address = 5;
-}
-```
-
-
-#### Query Local Node
-
-```bash
-~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto localhost:19010  qrl.WalletAPI.GetNodeInfo
-```
-
-```bash
-{
-  "version": "3.0.1 python",
-  "numConnections": "4",
-  "numKnownPeers": "5",
-  "uptime": "4475717",
-  "blockHeight": "119014",
-  "blockLastHash": "bb0d5e7e59c3c5455881245849b0c1536f361793c4491d4b7931ef39c8040400",
-  "networkId": "Testnet 2022"
-}
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## template
-
-Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address is valid. 
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -313,7 +351,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -323,50 +361,105 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
 <br />
 
 ---
-
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -381,35 +474,10 @@ Example code below.
 
 Adds new randomly generated address to the wallet located at `~/.qrl/walletd.json`. 
 
-Will create a new wallet if none is found.
-
-#### AddNewAddress Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| height | UInt64 | Height of the newly generated XMSS tree |
-| hash_function | String | Hash function for XMSS. Possible values are shake128, shake256 |
-
-#### AddNewAddress Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-
-#### AddNewAddress Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| address | String | Return the newly added QRL address |
-
-
-
 <Tabs
+    groupId="AddNewAddress"
     defaultValue="usage"
     className="unique-tabs"
-    groupId="AddNewAddress"
     values={[
         {label: 'Usage', value: 'usage'},
         {label: 'code', value: 'code'},
@@ -417,22 +485,83 @@ Will create a new wallet if none is found.
 
 <TabItem value="usage">
 
-This function will create a single address with no slave keys. For use when outgoing transactions will not exceed addresses tree height. 
+This function will create a single QRL address. For use when outgoing transactions will not exceed addresses one time signature tree height. 
 
-By default this will generate a new address with:
+This address is limited to the initial OTS height given when generated and cannot be changes at a later time.
+
+Using default settings this will generate a new address with:
 
 - OTS key height `{"height": 10}` or $1,024$ outgoing transactions
 - Using the `{"hash_function": "shake_128"}`
 
-The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if not existing.
+The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if it does not already exist.
 
 
 :::note
-This address is limited to the initial OTS height given when generated.
+Ensure the tree height is large enough for your needs and transfer all funds out of the address before all [OTS keys](build/fundamentals/ots-keys) are used!
 :::
 
-</TabItem>
 
+<Tabs
+  groupId="AddNewAddressUsage"
+  defaultValue="method"
+  values={[
+    {label: 'AddNewAddress', value: 'method'},
+    {label: 'AddNewAddressReq', value: 'request'},
+    {label: 'AddNewAddressResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+  
+```go
+service WalletAPI {
+    rpc AddNewAddress(AddNewAddressReq) returns (AddNewAddressResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message AddNewAddressReq {
+    uint64 height = 1;
+    string hash_function = 2;
+}
+```
+
+| Field | Type | Required | Details | 
+| :--: | :---: | :--: | :--- |
+| `height` | UInt64 | NO | Height of the newly generated XMSS tree |
+| `hash_function` | String | NO | Hash function for XMSS. Possible values are shake128, shake256 |
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message AddNewAddressResp {
+    uint32 code = 1;
+    string error = 2;
+    string address = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | String | Returns the newly added QRL address |
+
+**Error Response:**
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+| code | UInt32 | Error Code. Only appears if any exception is triggered. |
+| error | String | Error Message. Only appears if any exception is triggered. |
+
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -472,7 +601,7 @@ Example code below.
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js
 
 ```
 </TabItem>
@@ -493,7 +622,7 @@ print(add_new_address_resp)
 
 #### With Options Defined
 
-```py {}
+```py 
 import json
 import grpc
 from qrl.generated import qrl_pb2_grpc, qrlwallet_pb2_grpc, qrl_pb2, qrlwallet_pb2
@@ -539,10 +668,9 @@ print(add_new_address_resp)
 | `height` | `10` | **Min**: `6`, **Max**: `18` |
 | `hash_function` | `shake128` | **Options**: `shake128`, `sha256`, `sha2_256` |
 
-
-
 </TabItem>
 </Tabs>
+
 <br />
 
 ---
@@ -550,34 +678,17 @@ print(add_new_address_resp)
 
 ## AddNewAddressWithSlaves
 
-Adds a new address into the `~/.qrl/walletd.json` wallet file and generates slaves for the address. 
+:::caution NEED HELP!
+Add more details on this funciton:
+- How are the slaves broadcast onto the network?
+- Where is the slaves file located?
+:::
 
+Adds a new address into the `~/.qrl/walletd.json` wallet file and generates slaves for the address. 
  
 :::info
 These slaves are not valid for use until they are broadcast onto the network in a `RelaySlaveTxn` transaction. 
 :::
-
-#### AddNewAddressWithSlaves Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| height | UInt64 | Height of the newly generated XMSS tree (Min 8) |
-| number_of_slaves | UInt64 | Number of slaves to be generated (Max 100, Default 3) |
-| hash_function | String | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
-
-#### AddNewAddressWithSlaves Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-
-#### AddNewAddressWithSlaves Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| address | String | Return the newly added QRL address |
 
 <Tabs
     defaultValue="usage"
@@ -585,11 +696,10 @@ These slaves are not valid for use until they are broadcast onto the network in 
     groupId="AddNewAddressWithSlaves"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
-
 
 By default this function will generate a new address with: 
 
@@ -601,8 +711,66 @@ By default this function will generate a new address with:
 
 This address and slave keys will be added to the \~/.qrl/walletd.json file, *this file will be created if not existing*.
 
-</TabItem>
+<Tabs
+  groupId="addnewaddresswithslaves"
+  defaultValue="method"
+  values={[
+    {label: 'AddNewAddressWithSlaves', value: 'method'},
+    {label: 'AddNewAddressWithSlavesReq', value: 'request'},
+    {label: 'AddNewAddressWithSlavesResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
 
+```go
+service WalletAPI {
+    rpc AddNewAddressWithSlaves(AddNewAddressWithSlavesReq) returns (AddNewAddressResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message AddNewAddressWithSlavesReq {
+    uint64 height = 1;  // Height of Master Address
+    uint64 number_of_slaves = 2;
+    string hash_function = 3;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `height` | UInt64 | NO | Height of the newly generated XMSS tree (Min 8) |
+| `number_of_slaves` | UInt64 | NO | Number of slaves to be generated (Max 100, Default 3) |
+| `hash_function` | String | NO | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message AddNewAddressResp {
+    uint32 code = 1;
+    string error = 2;
+    string address = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `address` | String | Return the newly added QRL address |
+
+**Error Response**
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+
+
+  </TabItem>
+</Tabs>
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -628,7 +796,6 @@ Example code below.
                  qrl.WalletAPI.AddNewAddressWithSlaves
 ```
 
-
 #### With Options Defined
 
 ```bash
@@ -643,7 +810,7 @@ Example code below.
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {5} 
+```js {} 
 
 ```
 
@@ -651,7 +818,6 @@ Example code below.
 <TabItem value="pyreq" label="Python Request" default>
 
 #### Default Options
-
 
 ```py {}
 import json
@@ -729,10 +895,10 @@ print(add_new_address_with_slaves_resp)
 
 </TabItem>
 </Tabs>
+
 <br />
 
 ---
-
 
 ## AddAddressFromSeed
 
@@ -746,20 +912,73 @@ Not implemented at this time
     groupId="AddAddressFromSeed"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="AddAddressFromSeed-usage"
+  defaultValue="method"
+  values={[
+    {label: 'AddAddressFromSeed', value: 'method'},
+    {label: 'AddAddressFromSeedReq', value: 'request'},
+    {label: 'AddAddressFromSeedResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI
+{
+    //rpc AddAddressFromSeed(AddAddressFromSeedReq) returns (AddAddressFromSeedResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  message AddAddressFromSeedReq {
+    string seed = 1;  // Seed can be either hexseed or mnemonic
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `seed` | String | YES | Seed can be either hexseed or mnemonic |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message AddAddressFromSeedResp {
+    uint32 code = 1;
+    string error = 2;
+    string address = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | uint32 | Returns code from call |
+| `error` | string | Error |
+| `address` | string | Address created |
+
+
+
+  </TabItem>
+</Tabs>
+
 
 </TabItem>
-
 <TabItem value="code" label="Code">
 
 :::note
 Non-functional in base code. Needs development for full functionality
 :::
-
 
 <Tabs
     defaultValue="shreq"
@@ -836,25 +1055,9 @@ Non-functional in base code. Needs development for full functionality
 
 ---
 
-
 ## ListAddresses
 
 List all addresses found in wallet file.
-
-#### ListAddresses Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-#### ListAddresses Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| addresses | Repeated String | Return list of addresses added into your wallet in an array |
-
-
 
 <Tabs
     defaultValue="usage"
@@ -862,7 +1065,7 @@ List all addresses found in wallet file.
     groupId="ListAddresses"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
@@ -874,8 +1077,54 @@ This function will return results from the `walletd.json` file located in the de
 Any manual changes to this file will require the proxy to be restarted to pickup the changes. 
 :::
 
-</TabItem>
+<Tabs
+  groupId="ListAddresses-usage"
+  defaultValue="method"
+  values={[
+    {label: 'ListAddresses', value: 'method'},
+    {label: 'ListAddressesReq', value: 'request'},
+    {label: 'ListAddressesResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
 
+```go
+service WalletAPI {
+  rpc ListAddresses(ListAddressesReq) returns(ListAddressesResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message ListAddressesReq {
+
+}
+```
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message ListAddressesResp {
+    uint32 code = 1;
+    string error = 2;
+    repeated string addresses = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `addresses` | Repeated String | Return list of addresses added into your wallet in an array |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -938,7 +1187,7 @@ print(list_addresses_resp)
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json
 
 ```
 </TabItem>
@@ -950,7 +1199,6 @@ print(list_addresses_resp)
 
 ---
 
-
 ## RemoveAddress
 
 Permanently remove a given address, including all private and slave keys, from the `walletd.json` file.
@@ -959,27 +1207,13 @@ Permanently remove a given address, including all private and slave keys, from t
 Backup the address keys prior file to removing using the [GetRecoverySeeds](#getrecoveryseeds) function.
 :::
 
-#### RemoveAddress Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| address | String | QRL address to be removed from the wallet |
-
-#### RemoveAddress Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
     groupId="RemoveAddress"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
@@ -990,9 +1224,61 @@ Removes given address from the the `walletd.json` wallet file. Requires a QRL ad
 The address to be removed must be given to the function `{"address": ""}`. This action is permanent. 
 ::: 
 
+<Tabs
+  groupId="RemoveAddress-usage"
+  defaultValue="method"
+  values={[
+    {label: 'RemoveAddress', value: 'method'},
+    {label: 'RemoveAddressReq', value: 'request'},
+    {label: 'RemoveAddressResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI {
+    rpc RemoveAddress(RemoveAddressReq) returns (RemoveAddressResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message RemoveAddressReq {
+    string address = 1;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `address` | String | YES | QRL address to be removed from the local wallet |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message RemoveAddressResp {
+    uint32 code = 1;
+    string error = 2;
+}
+```
+
+:::info
+Gives an empty array `{}` on successful removal of the address from the wallet. 
+:::
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+
+
+  </TabItem>
+</Tabs>
+
 
 </TabItem>
-
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -1048,11 +1334,6 @@ print(remove_address_resp)
 {}
 ```
 
-:::info
-Gives an empty array `{}` on successful removal of the address from the wallet. 
-:::
-
-
 </TabItem>
 <TabItem value="err" label="Error" default>
 
@@ -1069,6 +1350,9 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 | :---: | :---: | :---: | 
 | `address` | N/A | Provide QRL address in $Q$ Hex format |
 
+:::info
+Gives an empty array `{}` on successful removal of the address from the wallet. 
+:::
 
 </TabItem>
 </Tabs>
@@ -1076,30 +1360,9 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 
 ---
 
-
 ## IsValidAddress
 
 Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address is valid. 
-
-#### ValidAddress Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| address | String | QRL Address |
-
-#### ValidAddressResp Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-#### IsValidAddress Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| valid | String | Returns True for valid QRL address otherwise False. |
-
 
 <Tabs
     defaultValue="usage"
@@ -1107,7 +1370,7 @@ Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address 
     groupId="IsValidAddress"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
@@ -1119,11 +1382,61 @@ Validates the public address given meets all requirements and is valid to be use
 `IsValidAddress` expects a `Q` hex address format, example: `Q0103006fa2d29c4acb9bc192581694a616d394f7ef2f35dd5ab5a4dddd865740a3f3293e54c560` 
 :::
 
+<Tabs
+  groupId="IsValidAddress-usage"
+  defaultValue="method"
+  values={[
+    {label: 'IsValidAddress', value: 'method'},
+    {label: 'IsValidAddressReq', value: 'request'},
+    {label: 'IsValidAddressResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI {
+ rpc IsValidAddress(ValidAddressReq) returns (ValidAddressResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message ValidAddressReq {
+    string address = 1;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `address` | String | YES | QRL Address |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message ValidAddressResp {
+    uint32 code = 1;
+    string error = 2;
+    string valid = 3;
+}
+```
+
+| Field | Type | Details | 
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `valid` | String | Returns True for valid QRL address otherwise False. |
+
+
+  </TabItem>
+</Tabs>
+
+
 </TabItem>
+<TabItem value="code" label="Code">
 
-<TabItem value="IsValidAddress-code" label="Code">
-
-Example code below. Enter details for the address to lookup  `{"address": ""}`.
+Example code below.
 
 <Tabs
     defaultValue="shreq"
@@ -1200,6 +1513,8 @@ print(is_valid_address_resp)
 ---
 
 
+
+
 ## GetRecoverySeeds
 
 Print out the recovery seeds, or secret keys for the given QRL address if it exists in the local wallet file.
@@ -1208,42 +1523,79 @@ Print out the recovery seeds, or secret keys for the given QRL address if it exi
 The address must exist in the wallet.
 :::
 
-#### GetRecoverySeeds Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| address | String | QRL Address |
-
-#### GetRecoverySeeds Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-#### GetRecoverySeeds Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| hexseed | String | Hexseed for the given address |
-| mnemonic | String | Mnemonic words for the given address |
-
-
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
     groupId="GetRecoverySeeds"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
 Returns the backup or recovery seeds for the address given. 
 
-</TabItem>
+<Tabs
+  groupId="GetRecoverySeeds-usage"
+  defaultValue="method"
+  values={[
+    {label: 'GetRecoverySeeds', value: 'method'},
+    {label: 'GetRecoverySeedsReq', value: 'request'},
+    {label: 'GetRecoverySeedsResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
 
+```go
+service WalletAPI {
+   rpc GetRecoverySeeds(GetRecoverySeedsReq) returns (GetRecoverySeedsResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message GetRecoverySeedsReq {
+    string address = 1;
+}
+```
+
+
+
+
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| address | String | YES | QRL Address |
+
+
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message GetRecoverySeedsResp {
+    uint32 code = 1;
+    string error = 2;
+    string hexseed = 3;
+    string mnemonic = 4;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `hexseed` | String | Hexseed for the given address |
+| `mnemonic` | String | Mnemonic words for the given address |
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -1321,26 +1673,17 @@ print(get_recovery_seeds_resp)
 ---
 
 
+
+
+
+
+
+
+
+
 ## GetWalletInfo
 
 Print info on the wallet.
-
-#### GetWalletInfo Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-
-#### GetWalletInfo Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| version | UInt32 | Wallet version number |
-| address\_count | UInt64 | Number of addresses into the wallet |
-| is\_encrypted | Boolean | True if wallet is already encryptedFalse if wallet is not encrypted |
-
 
 <Tabs
     defaultValue="usage"
@@ -1348,7 +1691,7 @@ Print info on the wallet.
     groupId="GetWalletInfo"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
@@ -1359,8 +1702,59 @@ Returns JSON array of information on the wallet located at `/home/$USER/.qrl/wal
 - Address count
 - Encryption 
 
-</TabItem>
+<Tabs
+  groupId="GetWalletInfo-usage"
+  defaultValue="method"
+  values={[
+    {label: 'GetWalletInfo', value: 'method'},
+    {label: 'GetWalletInfoReq', value: 'request'},
+    {label: 'GetWalletInfoResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
 
+```go
+service WalletAPI {
+   rpc GetWalletInfo(GetWalletInfoReq) returns (GetWalletInfoResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message GetWalletInfoReq {
+
+}
+```
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message GetWalletInfoResp {
+    uint32 code = 1;
+    string error = 2;
+    uint32 version = 3;
+    uint64 address_count = 4;
+    bool is_encrypted = 5;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `version` | UInt32 | Wallet version number |
+| `address_count` | UInt64 | Number of addresses into the wallet |
+| `is_encrypted` | Boolean | True if wallet is already encryptedFalse if wallet is not encrypted |
+
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -1388,13 +1782,13 @@ Example code below.
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```py
 import grpc
 from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
@@ -1437,44 +1831,16 @@ Send or Transfer funds from a QRL address in the wallet to another QRL address.
 This function will use the root OTS keys for the address. 
 
 
-
-#### `RelayTransferTxn` Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| addresses\_to | String | Array of receiver&#39;s addresses |
-| amounts | UInt64 | Array of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
-| fee | UInt64 | Transaction Fee in Shor |
-| master\_address | String | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
-| signer\_address | String | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| ots\_index | UInt64 | One Time Signature Index to be used to sign the transaction. |
-
-#### `RelayTransferTxn` Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| code | UInt32 | Error Code. Only appears if any exception is triggered. |
-| error | String | Error Message. Only appears if any exception is triggered. |
-
-:::info `RelayTransferTxn` Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| tx  | Transaction | Return the transaction that has been relayed to the network. |
-:::
-
-
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
     groupId="RelayTransferTxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
-
 
 Use this function to send QRL from an address contained in the `/home/$USER/.qrl/walletd.json` file to another QRL address, up to 100 recipients are allowed per transaction.
 
@@ -1486,8 +1852,76 @@ Another method to gather the next available OTS key uses the [`GetOTS` function]
 For a more flexible address allowing additional levels of OTS slave keys, use an address created with the [AddNewAddressWithSlaves](#addnewaddresswithslaves) and the [RelayTransferTxnBySlave](#relaytransfertxnbyslave) function. 
 :::
 
-</TabItem>
+<Tabs
+  groupId="RelayTransferTxn-usage"
+  defaultValue="method"
+  values={[
+    {label: 'RelayTransferTxn', value: 'method'},
+    {label: 'RelayTransferTxnReq', value: 'request'},
+    {label: 'RelayTransferTxnResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
 
+```go
+service WalletAPI {
+    rpc RelayTransferTxn(RelayTransferTxnReq) returns (RelayTxnResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message RelayTransferTxnReq {
+    repeated string addresses_to = 1;
+    repeated uint64 amounts = 2;
+    uint64 fee = 3;
+    string master_address = 4;
+    string signer_address = 5;
+    uint64 ots_index = 6;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `addresses_to` | String | YES | Array of receiver&#39;s addresses |
+| `amounts` | UInt64 | YES | Array of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
+| `fee` | UInt64 | YES | Transaction Fee in Shor |
+| `master_address` | String | NO | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
+| `signer_address` | String | YES | QRL Address signing the transaction. QRL Address must be already added into wallet. |
+| `ots_index` | UInt64 | YES | One Time Signature Index to be used to sign the transaction. |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message RelayTxnResp {
+    uint32 code = 1;
+    string error = 2;
+    PlainTransaction tx = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `tx`  | PlainTransaction | Return the transaction that has been relayed to the network. |
+| `tx` | [PlainTransaction OBJECT](#plaintransaction) | Return the transaction that has been relayed to the network. <dl><dt>PlainTransaction Object contains:</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>Transfer</dt>  <dd style={{ display:'list-item' }}>addrs_to</dd><dd style={{ display:'list-item' }}>amounts</dd> </dd>   </dl> |
+
+
+
+
+:::note 
+Please refer to the [PlainTransaction](#plaintransaction) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -1609,6 +2043,82 @@ The OTS key has already been used, and cannot be re-used for transactions. Use t
 <br />
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## RelayTransferTxnBySlave
@@ -4004,3 +4514,178 @@ Example code below.
 <br />
 
 ---
+
+
+## template
+
+Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address is valid. 
+
+#### A Request
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+|  |  |  |
+
+#### A Response
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+| | |  |
+|  |  |  |
+
+#### A Response Data
+
+| **Parameter** | **Type** | **Description** |
+| --- | --- | --- |
+|  |  |  |
+
+
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="A"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+
+
+:::note
+
+:::
+
+</TabItem>
+
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="A-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash
+
+```
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js {} 
+
+```
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```py {}
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json 
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json title=""
+
+```
+</TabItem>
+</Tabs>
+
+#### Required Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `A` |  |  |
+
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+
+### PlainTransaction
+
+```go
+message PlainTransaction {
+    string master_addr = 1;
+    uint64 fee = 2;
+    string public_key = 3;
+    string signature = 4;
+    uint64 nonce = 5;
+    string transaction_hash = 6;
+    string signer_addr = 7;
+
+    oneof transactionType {
+        Transfer transfer = 8;
+        CoinBase coinbase = 9;
+        LatticePublicKey latticePK = 10;
+        Message message = 11;
+        Token token = 12;
+        TransferToken transfer_token = 13;
+        Slave slave = 14;
+    }
+
+    //////////
+    message Transfer {
+        repeated string addrs_to = 1;
+        repeated uint64 amounts = 2;
+    }
+
+    message CoinBase {
+        string addr_to = 1;
+        uint64 amount = 2;
+    }
+
+    message LatticePublicKey {
+        string kyber_pk = 1;
+        string dilithium_pk = 2;
+    }
+
+    message Message {
+        string message_hash = 1;
+    }
+
+    message Token {
+        string symbol = 1;
+        string name = 2;
+        string owner = 3;
+        uint64 decimals = 4;
+        repeated PlainAddressAmount initial_balances = 5;
+    }
+
+    message TransferToken {
+        string token_txhash = 1;
+        repeated string addrs_to = 2;
+        repeated uint64 amounts = 3;
+    }
+
+    message Slave {
+        repeated string slave_pks = 1;
+        repeated uint32 access_types = 2;
+    }
+}
+```
+
+---
+
+
+
