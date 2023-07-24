@@ -1,5 +1,5 @@
 ---
-docstatus: Development  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: getting-started
 title: The QRL Documentation
 hide_title: false
@@ -22,12 +22,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-- Fix color issues on light tabs
-- Better introduction 
-:::
 
 Welcome to the Quantum Resistant Ledger documentation! These doc's aim to be the central source of information for the QRL for all topics from using the base tools to building on the project. Whether you are developing a new project or simply understanding the basics this is the source.
 
