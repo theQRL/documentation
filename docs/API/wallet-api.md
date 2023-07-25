@@ -1887,7 +1887,7 @@ message RelayTransferTxnReq {
 | `addresses_to` | String | YES | Array of receiver&#39;s addresses |
 | `amounts` | UInt64 | YES | Array of amounts in Shor to be received by receiver. Must be in same order as of addresses\_to |
 | `fee` | UInt64 | YES | Transaction Fee in Shor |
-| `master_address` | String | NO | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
+| `master_address` | String | NO | This is an optional field for slave address, only need to be filled if the transaction is sent from a slave address.  |
 | `signer_address` | String | YES | QRL Address signing the transaction. QRL Address must be already added into wallet. |
 | `ots_index` | UInt64 | YES | One Time Signature Index to be used to sign the transaction. |
 
@@ -1907,7 +1907,6 @@ message RelayTxnResp {
 | :--: | :---: | :--- |
 | `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
 | `error` | String | Error Message. Only appears if any exception is triggered. |
-| `tx`  | PlainTransaction | Return the transaction that has been relayed to the network. |
 | `tx` | [PlainTransaction OBJECT](#plaintransaction) | Return the transaction that has been relayed to the network. <dl><dt>PlainTransaction Object contains:</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>Transfer</dt>  <dd style={{ display:'list-item' }}>addrs_to</dd><dd style={{ display:'list-item' }}>amounts</dd> </dd>   </dl> |
 
 
@@ -1940,15 +1939,15 @@ Example code below.
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash
-~/go/bin/grpcurl -plaintext  \
+~/go/bin/grpcurl -plaintext \
                  -import-path ~/qrl/src/qrl/protos/ \
-                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
-                 -d '{"addresses_to": "Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55",  "Q010300010e65015a34e2711c3ffc9bde650f7361fde192c5845df991da56940ff411cfd155ddaf",
-                        "amounts": '[10000, 100000]',
-                        "fee": 100,
-                        "master_address": "",
-                        "signer_address": "Q000300c37ba50e616cd36c9e4ca6e35c533da903df9f3f73e80352162795bd8872e464e09b8091",
-                        "ots_index": 1}' \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \ 
+                 -d '{"addresses_to": ["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55", "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"], 
+                 "amounts": [2000, 100000], 
+                 "fee": 0, 
+                 "master_address": "", 
+                 "signer_address": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67", 
+                 "ots_index": 3}' \
                  localhost:19010 \
                  qrl.WalletAPI.RelayTransferTxn
 ```
@@ -2053,75 +2052,173 @@ The OTS key has already been used, and cannot be re-used for transactions. Use t
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## RelayTransferTxnBySlave
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI {
+   rpc RelayTransferTxnBySlave(RelayTransferTxnBySlaveReq) returns (RelayTxnResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message RelayTransferTxnBySlaveReq {
+    repeated string addresses_to = 1;
+    repeated uint64 amounts = 2;
+    uint64 fee = 3;
+    string master_address = 4;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `addresses_to` | String | YES | Array of receiver&#39;s addresses |
+| `amounts` | UInt64 | YES | Array of amounts in Shor to be received by receiver. This array index is related directly to the `addresses_to` field |
+| `fee` | UInt64 | YES | Transaction Fee in Shor |
+| `master_address` | String | NO | This is an optional field for slave address, only need to be filled if the transaction is sent from a slave address.  |
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message RelayTxnResp {
+    uint32 code = 1;
+    string error = 2;
+    PlainTransaction tx = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `tx` | [PlainTransaction OBJECT](#plaintransaction) | Return the transaction that has been relayed to the network. <dl><dt>PlainTransaction Object contains:</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>Transfer</dt>  <dd style={{ display:'list-item' }}>addrs_to</dd><dd style={{ display:'list-item' }}>amounts</dd> </dd>   </dl> |
+
+:::note 
+Please refer to the [PlainTransaction](#plaintransaction) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+~/go/bin/grpcurl -plaintext \
+                 -import-path ~/qrl/src/qrl/protos/ \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                 -d '{"addresses_to": ["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55", "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"], 
+                 "amounts": [2000, 100000], 
+                 "fee": 0, 
+                 "master_address": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"}' \
+                 localhost:19010 \
+                 qrl.WalletAPI.RelayTransferTxnBySlave
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+{ 
+  "tx": {
+    "masterAddr": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67",
+    "publicKey": "01050091c744a2b170c1bc39565cc0b38df1770b8370681d3ecc1e859baac5362ab5a6c980d3b03c4097adce26614643e0e3ec7f44c933b9005070bd18ccdaa04bc83b",   
+    "signature": "00000000ff7c5aa32ceb8ccbddd23f4a034e1bf00b015544d61e094f9c0dceb5d8f5bd8eed552f8a063c7df3d44b2b2c2d909b08bf749414741aa7ef7fccb842d0f644f9399fb258e076101591763e4b6144728af80110b3e7d129c0e2132463b1e83f6a367a6fe5824b1f2fd5a4ac253f0a7be3a1cc3a2794117813922c27f3fa3f432a33b9b1c60532a631931f729608979bfa30638e46a3fdc6553b5f60ec0c06c6040cf28edd2ecf8beba870aa4edb2eebb36d5e47f8ee8a7c1ef60848e11440c847dc215e2519f45e30fddb2a55940937c14bbb0946a2963941f940f7f806796d4ce8914be663fe0190189771ae3b9b35e6b262c5dea04a075275bf6efd37082fafc793a910d27e90a5fa0ad7f332bd641c81ba4db621ffe6a225d60fa3ed7f534babf42b5d5a437d00f3496a0e83bd43b662feb8efa5284f6a5b0c0f39bfbdda92bf99eb2d09169b59533b96643e470d13a0bf72cfb500978a4b53ec41806dd9c170754cf029aac8abf0508bc4ce765bdb31e9c6d79516bc22b97386701f4978b3cafe68481708fb16c9f20e7cda60a41c2486cb1f28f7bdd7945de971364d781c22b900ecbd17524a7b09a02935a86925de02726106c36446077f5b491581e477d87bc25a9cb427c6116f0002f16a579c3f7303649aeeca8310f50c39017edda4b0ee4f34ad9b65ffd1aacef0397a8aea089e0137f4d2a2bd17a1c18d145c962399b15468e49e477681392f84bfe913d6233ed57a3ac8fd57a5bccbda6e4a4404518ddfea739fb1946b6ead25883cfecd3465e2e28f91dc348103359fd66d2291a3dd501ca99b85a19f85aecb858052db12b600215eff0fb49011e20adaab1460e00265d61e2009c010dccc841546fbda118456537bfeb21a7b1e58bcbe049f67c273ea681cee4db19efd235cf6de80f35455fd0108e9747fb56f8587777c608fe7a9a3c65bae06aac1e4e3033707d3713199412e18472cf43d45fc1d6e031e9a5675f83ce3be695dbe370e41fc41fc3275f2dd3de34a70832d89cf4edaaddaf937392259e9321a6a115473e6a559a4f8bb322fd931bd84999644359d5ef05c1a36455809f7bfe6bf8064f16c4f817ac042d2055e74c87c013a2910ef338b0c036ba755fd7107ea3aed0e883362fa9bf6bc228a22740a2a190dfaf772d6444d6f7b2e614a65b15df6cd13a2147313b7df86b5bd873eb76a83b1608df78f4d6e3dc1a4fcf6efc6e99a085446264dcdd36da8f69eb07fd01b3f18d5114957ee02421fa1fa7c997f8c336c836bc01950fb3842134f2ee6101134db65963347ef8734b93cd82181fc858a8833e65a2b2ff2a3a6ef3479fa5d79014274d5a65de369b8dbd10754a62b4da30d93bc3ab605a690fd4f2225fa6946640a56787d2526ee8e6c4e307147f8091d90e22b0c06274953acbfb635112b9133f72f34ee8c1d10cc4f58e8a3ba055b1ab2cbee9fd31a25e9b4352528d144b625585048002118011afd7c82ebaef9b028ae6711281fd7457bfe918b8ef6d12e13b0de63ed802560ac6eb03beecf542d0497a9931e91a0ba84b78db7694d789f8824d80904e71c2b3935421b530956de453f504939a76f00baf62abaa4b412393a213c91ad3928a613ed7cec1be8d597f4e441148e0b2e42ae944b9c275dbd9468c230cb7137761a3b3bbf5cc55ccfbc3b72fea4533219428ae917bf27a6f8bfc3ac00b7d79136ffae346e463878042c25859af2737399603750a241fc52034ec0c7620a23c7dcb8f6d3db3ba5b0eb7c6d71b2c58b6e06c6ea92e1bca056648b0a9ff91539233c7897b20e845813381ad8a53248d5b8b41668dd3e16fe6edfb6b224087e9c240068d2fae350b18f0d3edf8829ca9e08438070c6d4d96fdb4cd325e82b5b0e235592e2eac1848962131c6cb2b81c8ea2589b3294e413e38d8fce6ce39855a090604138504e5d7dd832cd1a9a3884acc09352eee3d3af1d298b9eafa505c212b794b21ffa4f212705e8d0bfb72c60b94126657c15765ecd7e0e0be6e69f609c170a84fe9d5692efac53ad3013599afc98ac0e0420f74b1aa8c0f979691e768a2f82269650fa015d77237effc068adabf8bd609c379a2f37f9aadcced594482e590760fdadfda012a2ce2c095ecf9c098b7e0bacf888f128d0ada2e9e60ec0e5ee79ad2a55c1c189fc9a45821a8ae5d096c88090358bffc6f80f0b9cea8275cf77c155c51baed5829e8663ea600169109f484c0035f39eb99ede5447dedb65bfd699efbd19b37efea2cc3b69007929c71cb535bcfaf4a8f5681b42f55b70dbcd148a127b2a9face2be4aa96bfad93be1527ed9c3fc15fef9f3e759db296530ddc4b8c61a48b69601171429c4ae4b2dafc871737f38ac79096672c909d8a21259bccac32ce85074a63ae113299cee1537eae1402a0a37a2a82cfa0f6caaf9fcf99be6e87fe99fb82e235003694a983772566421d28b6f3f8c1318b6bf9f88e450751a3bc5d3396a81b1ca71d19778a87434b6193f54e946c495b1bebe5ff54e4d120ca823fa702b0e8ffa4464e4dc22ecd080b40a052c15ac6976282e5fb4bd958d00fded51f059e267739c758a70857cacf408acc90e93da15db9006a4e974c96e421fb4afa0d9b5797ee07c5adc32a59911d2179959c61d66fffe80ec6dabc6b2d59afb1526a64b272608911375537c8ef5902e6fd1238a34fa457d5f75d37d5bd7f06ee914c3b7646e879dff82b1ad74d30c818ad4f4bc915ac5a0ca9a87a19869fad58525bce9bcecaf2441991bcb2bcc35c4d4b52f2b47527d6d9465350541125e30555c7c3ff4a78e6afd3ea9dcf080e465213ff8406f809631d0f96078588133d5a377760ec4c1461adebc6e3a58b479ca747f8bbd8a5e4478b03dcb912214dc9b03e6e7b2c73de1ea25ad693048f75df2785d4e5abb40588a43e0c2bb499c976274c8f9c569bb80241cd2bb00410d534847a4272b946d243b21da9e43f829dd18e8a27731b752c8ad11a66dd5eaf7e61c75aaef153cde81422f62027180fd582882307a83c8af75b97ed28831973807270e9b225e9c053881d520b36073460d0851a9b50c06e52ef46c520c50d2dfd03f24e7f389bf33465c14e2183915b96cb0a147633ca69e06687d60de8b99bf6397c227bb452576dd2122e844026b5badd0d5146529e5c92d3ca3babf4c8e245232c40dbea677012fe2e52ee2a07be1449a08a18dc9687be673226d053ad7e6a44f69113a9f858da57ca159bff5eeb7f9d385e74b23fb75ff245fc8c114e16df16fb69cb01e8bd7d94c5b5c79ebe93f02a4c8d28d9a9bd085ecf2726ea2da4bfe1d1ec7a2e7d44c6334185ba7052d6c61a1e1a0e49ae985b97ae4b38cb3c95a5e46db3379955915dbf14540f57603820d5572bb684eae354e12bf82778bb83c57ba5bb0f81d744de5ae0c891e8bc2daa86b38cd5a9c6af797dda06f6c5b3049040dd0dfb390b0a6ca896f5547fbb5b4693e8da5d8b9742eaf3e0ae2df8a390d4004d1f2c7dfc540758263f03f3c8b643035",
+    "transactionHash": "4c17ec991f6906942a459fb5f1198ef35d6bc39408248e8a3e531b7efd94f4db",
+    "signerAddr": "Q010500f37f4933d8dfc2b682baab2ebfc8722d83d9f290d8397caea7744fbd0bd98048d05c4e38",
+    "transfer": {
+      "addrsTo": [
+        "Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55",
+        "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"
+      ],
+      "amounts": [
+        "2000",
+        "100000"
+      ]
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+
+
 
 #### A Request
 
@@ -2222,6 +2319,34 @@ Example code below.
 <br />
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## RelayMessageTxn
