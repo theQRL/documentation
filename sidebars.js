@@ -482,12 +482,12 @@ const sidebars = {
         },
         { // Message Encoding//
           type: 'category',
-          label: 'Message Encoding',
+          label: 'QRL Messages',
           link: {
             type: 'generated-index',
             title: 'QRL Message Encoding Documentation',
             description: 'Message encoding standard for the QRL Message Transactions',
-            slug: '/build/message-encoding',
+            slug: '/build/messages',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
           },
