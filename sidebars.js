@@ -500,11 +500,11 @@ const sidebars = {
         },
         { // Address Scheme//
           type: 'category',
-          label: 'Address Scheme',
+          label: 'QRL Addresses',
           link: {
             type: 'generated-index',
             title: 'QRL Address Docs',
-            description: 'Building blocks for the QRL Addresse Scheme',
+            description: 'Building blocks for the QRL Address Scheme, how addresses are constructed and the cryptography behind them',
             slug: '/build/addresses',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
