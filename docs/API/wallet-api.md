@@ -36,15 +36,6 @@ This API is available with the base QRL Python package install, and when used wi
 :::
 
 
-## WalletD General Info
-
-
-### Requirements
-
-- QRL Node software installed on the localhost.
-- Access to a synced node with the walletd running and access to port default wallet daemon port `19010`
-
-
 
 ## Getting Started
 
@@ -59,6 +50,14 @@ qrl_walletd
 this will create the local `~/.qrl/qrl_walletd.pid`  and `~/.qrl/walletd.log` files in the default QRL directory.
 
 Wallet files will show here as well when created using the `qrl_walletd` API.
+
+### Requirements
+
+- QRL Node software installed on the localhost.
+- Access to a synced node with the walletd running and access to port default wallet daemon port `19010`
+
+
+
 
 ### Grpc Bash Tools
 
@@ -210,267 +209,49 @@ message RelayTransferTokenTxnBySlaveReq {
 </details>
 
 
+## Methods
+
 | Method Name | Request Type | Response Type | 
 | ----------- | ------------ | ------------- | 
 | [AddNewAddress](#addnewaddress) | AddNewAddressReq | AddNewAddressResp | |
-| [AddNewAddressWithSlaves](#AddNewAddressWithSlaves) | AddNewAddressWithSlavesReq | AddNewAddressWithSlavesResp | |
-| [AddAddressFromSeed](#AddAddressFromSeed) | AddAddressFromSeedReq | AddAddressFromSeedResp | |
-| [ListAddresses](#ListAddresses) | ListAddressesReq | ListAddressesResp | |
-| [RemoveAddress](#RemoveAddress) | RemoveAddressReq | RemoveAddressResp | |
-| [IsValidAddress](#IsValidAddress) | IsValidAddressReq | IsValidAddressResp | |
-| [GetRecoverySeeds](#GetRecoverySeeds) | GetRecoverySeedsReq | GetRecoverySeedsResp | |
-| [GetWalletInfo](#GetWalletInfo) | GetWalletInfoReq | GetWalletInfoResp | |
-| [RelayTransferTxn](#RelayTransferTxn) | RelayTransferTxnReq | RelayTransferTxnResp | |
-| [RelayTransferTxnBySlave](#RelayTransferTxnBySlave) | RelayTransferTxnBySlaveReq | RelayTransferTxnBySlaveResp | |
-| [RelayMessageTxn](#RelayMessageTxn) | RelayMessageTxnReq | RelayMessageTxnResp | |
-| [RelayMessageTxnBySlave](#RelayMessageTxnBySlave) | RelayMessageTxnBySlaveReq | RelayMessageTxnBySlaveResp | |
-| [RelayTokenTxn](#RelayTokenTxn) | RelayTokenTxnReq | RelayTokenTxnResp | |
-| [RelayTokenTxnBySlave](#RelayTokenTxnBySlave) | RelayTokenTxnBySlaveReq | RelayTokenTxnBySlaveResp | |
-| [RelayTransferTokenTxn](#RelayTransferTokenTxn) | RelayTransferTokenTxnReq | RelayTransferTokenTxnResp | |
-| [RelayTransferTokenTxnBySlave](#RelayTransferTokenTxnBySlave) | RelayTransferTokenTxnBySlaveReq | RelayTransferTokenTxnBySlaveResp | |
-| [RelaySlaveTxn](#RelaySlaveTxn) | RelaySlaveTxnReq | RelaySlaveTxnResp | |
-| [RelaySlaveTxnBySlave](#RelaySlaveTxnBySlave) | RelaySlaveTxnBySlaveReq | RelaySlaveTxnBySlaveResp | |
-| [EncryptWallet](#EncryptWallet) | EncryptWalletReq | EncryptWalletResp | |
-| [LockWallet](#LockWallet) | LockWalletReq | LockWalletResp | |
-| [UnlockWallet](#UnlockWallet) | UnlockWalletReq | UnlockWalletResp | |
-| [ChangePassphrase](#ChangePassphrase) | ChangePassphraseReq | ChangePassphraseResp | |
-| [GetTransactionsByAddress](#GetTransactionsByAddress) | GetTransactionsByAddressReq | GetTransactionsByAddressResp | |
-| [GetTransaction](#GetTransaction) | GetTransactionReq | GetTransactionResp | |
-| [GetBalance](#GetBalance) | GetBalanceReq | GetBalanceResp | |
-| [GetTotalBalance](#GetTotalBalance) | GetTotalBalanceReq | GetTotalBalanceResp | |
-| [GetOTS](#GetOTS) | GetOTSReq | GetOTSResp | |
-| [GetHeight](#GetHeight) | GetHeightReq | GetHeightResp | |
-| [GetBlock](#GetBlock) | GetBlockReq | GetBlockResp | |
-| [GetBlockByNumber](#GetBlockByNumber) | GetBlockByNumberReq | GetBlockByNumberResp | |
-| [GetAddressFromPK](#GetAddressFromPK) | GetAddressFromPKReq | GetAddressFromPKResp | |
-| [GetNodeInfo](#GetNodeInfo) | GetNodeInfoReq | GetNodeInfoResp | |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
----
-
-
-## Call
-
-Short description
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="Call"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'Code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-Usage details
-
-<Tabs
-  groupId="Call-usage"
-  defaultValue="method"
-  values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
-  ]}>
-  <TabItem value="method">
-
-```go
-
-```
-  
-  </TabItem>
-  <TabItem value="request">
-
-```go
-  
-```
-
-| Field | Type | Required| Details | 
-| :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
-
-
-  </TabItem>
-  <TabItem value="response">
-
-```go
-
-```
-
-| Field | Type | Details | 
-| :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
-
-:::note 
-Please refer to the [PARAM](#call) content for more details.
-:::
-
-  </TabItem>
-</Tabs>
-
-
-</TabItem>
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="Call-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash 
-
-```
-
-#### With Options Defined
-
-```bash 
-
-```
-
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js 
-
-```
-
-#### With Options Defined
-
-```js 
-
-```
-
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```python 
-
-```
-
-#### With Options Defined
-
-```python 
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json {title="ERROR-1"}
-
-```
-</TabItem>
-</Tabs>
-
-#### Optional Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `CONF` | `DEF_VAL` | NOTES |
-| `CONF` | `DEF_VAL` | NOTES |
-
-</TabItem>
-</Tabs>
-<br />
-
----
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## AddNewAddress
+| [AddNewAddressWithSlaves](#addnewaddresswithslaves) | AddNewAddressWithSlavesReq | AddNewAddressWithSlavesResp | |
+| [AddAddressFromSeed](#addaddressfromseed) | AddAddressFromSeedReq | AddAddressFromSeedResp | |
+| [ListAddresses](#listaddresses) | ListAddressesReq | ListAddressesResp | |
+| [RemoveAddress](#removeaddress) | RemoveAddressReq | RemoveAddressResp | |
+| [IsValidAddress](#isvalidaddress) | IsValidAddressReq | IsValidAddressResp | |
+| [GetRecoverySeeds](#getrecoveryseeds) | GetRecoverySeedsReq | GetRecoverySeedsResp | |
+| [GetWalletInfo](#getwalletinfo) | GetWalletInfoReq | GetWalletInfoResp | |
+| [RelayTransferTxn](#relaytransfertxn) | RelayTransferTxnReq | RelayTransferTxnResp | |
+| [RelayTransferTxnBySlave](#relaytransfertxnbyslave) | RelayTransferTxnBySlaveReq | RelayTransferTxnBySlaveResp | |
+| [RelayMessageTxn](#relaymessagetxn) | RelayMessageTxnReq | RelayMessageTxnResp | |
+| [RelayMessageTxnBySlave](#relaymessagetxnbyslave) | RelayMessageTxnBySlaveReq | RelayMessageTxnBySlaveResp | |
+| [RelayTokenTxn](#relaytokentxn) | RelayTokenTxnReq | RelayTokenTxnResp | |
+| [RelayTokenTxnBySlave](#relaytokentxnbyslave) | RelayTokenTxnBySlaveReq | RelayTokenTxnBySlaveResp | |
+| [RelayTransferTokenTxn](#relaytransfertokentxn) | RelayTransferTokenTxnReq | RelayTransferTokenTxnResp | |
+| [RelayTransferTokenTxnBySlave](#relaytransfertokentxnbyslave) | RelayTransferTokenTxnBySlaveReq | RelayTransferTokenTxnBySlaveResp | |
+| [RelaySlaveTxn](#relayslavetxn) | RelaySlaveTxnReq | RelaySlaveTxnResp | |
+| [RelaySlaveTxnBySlave](#relayslavetxnbyslave) | RelaySlaveTxnBySlaveReq | RelaySlaveTxnBySlaveResp | |
+| [EncryptWallet](#encryptwallet) | EncryptWalletReq | EncryptWalletResp | |
+| [LockWallet](#lockwallet) | LockWalletReq | LockWalletResp | |
+| [UnlockWallet](#unlockwallet) | UnlockWalletReq | UnlockWalletResp | |
+| [ChangePassphrase](#changepassphrase) | ChangePassphraseReq | ChangePassphraseResp | |
+| [GetTransactionsByAddress](#gettransactionsbyaddress) | GetTransactionsByAddressReq | GetTransactionsByAddressResp | |
+| [GetTransaction](#gettransaction) | GetTransactionReq | GetTransactionResp | |
+| [GetBalance](#getbalance) | GetBalanceReq | GetBalanceResp | |
+| [GetTotalBalance](#gettotalbalance) | GetTotalBalanceReq | GetTotalBalanceResp | |
+| [GetOTS](#getots) | GetOTSReq | GetOTSResp | |
+| [GetHeight](#getheight) | GetHeightReq | GetHeightResp | |
+| [GetBlock](#getblock) | GetBlockReq | GetBlockResp | |
+| [GetBlockByNumber](#getblockbynumber) | GetBlockByNumberReq | GetBlockByNumberResp | |
+| [GetAddressFromPK](#getaddressfrompk) | GetAddressFromPKReq | GetAddressFromPKResp | |
+| [GetNodeInfo](#getnodeinfo) | GetNodeInfoReq | GetNodeInfoResp | |
+
+
+
+
+
+
+### AddNewAddress
 
 Adds new randomly generated address to the wallet located at `~/.qrl/walletd.json`. 
 
@@ -676,7 +457,7 @@ print(add_new_address_resp)
 ---
 
 
-## AddNewAddressWithSlaves
+### AddNewAddressWithSlaves
 
 :::caution NEED HELP!
 Add more details on this funciton:
@@ -900,7 +681,7 @@ print(add_new_address_with_slaves_resp)
 
 ---
 
-## AddAddressFromSeed
+### AddAddressFromSeed
 
 :::warning
 Not implemented at this time
@@ -1055,7 +836,7 @@ Non-functional in base code. Needs development for full functionality
 
 ---
 
-## ListAddresses
+### ListAddresses
 
 List all addresses found in wallet file.
 
@@ -1199,7 +980,7 @@ print(list_addresses_resp)
 
 ---
 
-## RemoveAddress
+### RemoveAddress
 
 Permanently remove a given address, including all private and slave keys, from the `walletd.json` file.
 
@@ -1360,7 +1141,7 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 
 ---
 
-## IsValidAddress
+### IsValidAddress
 
 Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address is valid. 
 
@@ -1515,7 +1296,7 @@ print(is_valid_address_resp)
 
 
 
-## GetRecoverySeeds
+### GetRecoverySeeds
 
 Print out the recovery seeds, or secret keys for the given QRL address if it exists in the local wallet file.
 
@@ -1672,16 +1453,7 @@ print(get_recovery_seeds_resp)
 
 ---
 
-
-
-
-
-
-
-
-
-
-## GetWalletInfo
+### GetWalletInfo
 
 Print info on the wallet.
 
@@ -1825,7 +1597,7 @@ print(get_wallet_info_resp)
 ---
 
 
-## RelayTransferTxn
+### RelayTransferTxn
 
 Send or Transfer funds from a QRL address in the wallet to another QRL address. 
 This function will use the root OTS keys for the address. 
@@ -1954,26 +1726,26 @@ Example code below.
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js
 
 ```
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python
 import grpc
 from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
 peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
 peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
-get_wallet_info_req = qrlwallet_pb2.RelayTransferTxnReq(addresses_to=["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55"],
+get_relaytransfertxn_req = qrlwallet_pb2.RelayTransferTxnReq(addresses_to=["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55"],
                         amounts=[1],
                         fee=1,
                         master_address="",
                         signer_address="Q000300c37ba50e616cd36c9e4ca6e35c533da903df9f3f73e80352162795bd8872e464e09b8091",
                         ots_index=1)
-get_wallet_info_resp = peer_stub.RelayTransferTxn( get_wallet_info_req, timeout=10 )
-print(get_wallet_info_resp)
+get_relaytransfertxn_resp = peer_stub.RelayTransferTxn( get_relaytransfertxn_req, timeout=10 )
+print(get_relaytransfertxn_resp)
 
 ```
 </TabItem>
@@ -2043,23 +1815,18 @@ The OTS key has already been used, and cannot be re-used for transactions. Use t
 
 ---
 
+### RelayTransferTxnBySlave
 
+:::caution CLARIFICATION NEEDED
+Validate the description of this function and if related nomenclature is correct.
+:::
 
-
-
-
-
-
-
-
-## RelayTransferTxnBySlave
-
-Short description
+Relay a transfer transaction using a slave address contained in the local wallet.
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="Call"
+    groupId="RelayTransferTxnBySlave"
     values={[
         {label: 'Usage', value: 'usage'},
         {label: 'Code', value: 'code'},
@@ -2067,15 +1834,21 @@ Short description
 
 <TabItem value="usage">
 
-Usage details
+This function will use a previously created address with slaves. This function will send funds from the master QRL address using the slave address to send.
+
+:::note
+OTS Key use for slave addresses is automatically tracked using this system. 
+:::
+
+
 
 <Tabs
-  groupId="Call-usage"
+  groupId="RelayTransferTxnBySlave-usage"
   defaultValue="method"
   values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
+    {label: 'RelayTransferTxnBySlave', value: 'method'},
+    {label: 'RelayTransferTxnBySlaveReq', value: 'request'},
+    {label: 'RelayTransferTxnBySlaveResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
@@ -2102,7 +1875,22 @@ message RelayTransferTxnBySlaveReq {
 | `addresses_to` | String | YES | Array of receiver&#39;s addresses |
 | `amounts` | UInt64 | YES | Array of amounts in Shor to be received by receiver. This array index is related directly to the `addresses_to` field |
 | `fee` | UInt64 | YES | Transaction Fee in Shor |
-| `master_address` | String | NO | This is an optional field for slave address, only need to be filled if the transaction is sent from a slave address.  |
+| `master_address` | String | NO | This is the Slave address to send the transaction from, must be a slave owned by the address you intend to send from.  |
+
+
+:::info Slave Address Lookup
+
+Using the wallet API to find slave addresses requires a few steps;
+
+- Create an address with slaves using the [`AddNewAddressWithSlaves` method](#addnewaddresswithslaves)
+- Lookup the transaction hash for the slave address creation using [`GetTransactionsByAddress` method](#gettransactionsbyaddress)
+- Using this `tx_hash`, lookup the transaction and parse the slave addresses out of the response with [`GetTransaction` method](#gettransaction) (*returns the slave PK*)
+- Using the [`GetAddressFromPK` method](#) to get the $Q$ hex address for use
+
+Use these addresses for the `master_address` here to send with slave OTS keys.
+
+Additional lookup for OTS key use for each slave can be found using the [`GetOTS` method](#getots) which returns the boolean value if there are unused keys available.
+:::
 
   </TabItem>
   <TabItem value="response">
@@ -2136,7 +1924,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="Call-code"
+    groupId="RelayTransferTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -2169,7 +1957,17 @@ Example code below.
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_relaytransfertxnbyslave_req = qrlwallet_pb2.RelayTransferTxnReq(addresses_to=["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55"],
+                        amounts=[1],
+                        fee=1,
+                        master_address="Q01050088236f34080ba9df5b2cb2a32a5aaed4118538d8e4d6ce5d3ae80575184c4d3d80a7449e")
+get_relaytransfertxnbyslave_resp = peer_stub.RelayTransferTxnBySlave( get_relaytransfertxnbyslave_req, timeout=10 )
+print(get_relaytransfertxnbyslave_resp)
 ```
 
 </TabItem>
@@ -2192,6 +1990,230 @@ Example code below.
         "2000",
         "100000"
       ]
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+
+
+#### Array Required for `addresses_to` and `amounts`
+
+Both `addresses_to` and `amounts` must be given as an array, even for single address transactions. This error will result:
+
+```json title="Value not given as array"
+{"error":"json: cannot unmarshal number into Go value of type []json.RawMessage","code":3,"message":"json: cannot unmarshal number into Go value of type []json.RawMessage"}
+```
+
+#### Invalid `amounts`
+
+Each `address_to` must have a corresponding `amounts` value to send the address.
+
+```json title="Count of array values in addresses_to and amounts do not match"
+{"code":1,"error":"Custom validation failed"}
+```
+
+#### Invalid `addresses_to`
+
+```json title="QRL address_to is invalid, wrong number of characters"
+{"code":1,"error":"hex string is expected to have an even number of characters"}
+```
+
+#### Invalid `signer_address`
+
+The `master_address` is either not found in the `/home/$USER/.qrl/walletd.json` file or it is invalid.
+
+```json title="QRL address_to is invalid or not found"
+{"code":1,"error":"('Signer Address Not Found ', 'Q010300133082645e43fa1cc0aa1e00f269c2aa8ec76cce87175b7e4099723913d50f7d87e9187')"}
+```
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### RelayMessageTxn
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="RelayMessageTxn"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="RelayMessageTxn-usage"
+  defaultValue="method"
+  values={[
+    {label: 'RelayMessageTxn', value: 'method'},
+    {label: 'RelayMessageTxnReq', value: 'request'},
+    {label: 'RelayMessageTxnResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI {
+  rpc RelayMessageTxn(RelayMessageTxnReq) returns (RelayTxnResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message RelayMessageTxnReq {
+    string message = 1;
+    uint64 fee = 2;
+    string master_address = 3;
+    string signer_address = 4;
+    uint64 ots_index = 5;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `message` | string  | YES | Details |
+| `fee` | uint64  | YES | Details |
+| `master_address` | string  | NO | Details |
+| `signer_address` | string  | YES | QRL Address to send message from |
+| `ots_index` | uint64  | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message RelayMessageTxnBySlaveReq {
+    string message = 1;
+    uint64 fee = 2;
+    string master_address = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="RelayMessageTxn-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
 
 ```
 </TabItem>
@@ -2220,46 +2242,93 @@ Example code below.
 
 
 
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### RelayMessageTxnBySlave
+
+
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -2267,7 +2336,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -2277,42 +2346,1825 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### RelayTokenTxn
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+
+---
+
+
+### RelayTokenTxnBySlave
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### RelayTransferTokenTxn
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### RelayTransferTokenTxnBySlave
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### RelaySlaveTxn
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### RelaySlaveTxnBySlave
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### EncryptWallet
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### LockWallet
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### UnlockWallet
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### ChangePassphrase
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### GetTransactionsByAddress
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### GetTransaction
+
+
+Short description
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="Call"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="Call-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'JS Request', value: 'jsreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+
+```
+
+#### With Options Defined
+
+```bash 
+
+```
+
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js 
+
+```
+
+#### With Options Defined
+
+```js 
+
+```
+
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
+
+```
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="ERROR-1"}
+
+```
+</TabItem>
+</Tabs>
+
+#### Optional Data 
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -2343,1455 +4195,7 @@ Example code below.
 
 
 
-
-
-
-
-
-
-## RelayMessageTxn
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelayMessageTxnBySlave
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelayTokenTxn
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelayTokenTxnBySlave
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelayTransferTokenTxn
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelayTransferTokenTxnBySlave
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelaySlaveTxn
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## RelaySlaveTxnBySlave
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## EncryptWallet
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## LockWallet
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## UnlockWallet
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## ChangePassphrase
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## GetTransactionsByAddress
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## GetTransaction
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="A"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-
-
-:::note
-
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="A-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash
-
-```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js {} 
-
-```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```py {}
-
-```
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title=""
-
-```
-</TabItem>
-</Tabs>
-
-#### Required Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `A` |  |  |
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
-
-## GetBalance
+### GetBalance
 
 Retrieve balance information for the address given. 
 
@@ -3918,48 +4322,110 @@ $1$ QRL $= 1000000000$ shor **OR** QRL $\times 10^9$
 ---
 
 
-## GetTotalBalance
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### GetTotalBalance
+
+
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -3967,7 +4433,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -3977,42 +4443,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4021,48 +4507,72 @@ Example code below.
 ---
 
 
-## GetOTS
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
+### GetOTS
 
 
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4070,7 +4580,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4080,42 +4590,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4124,7 +4654,34 @@ Example code below.
 ---
 
 
-## GetHeight
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### GetHeight
 
 
 
@@ -4179,7 +4736,11 @@ Example code below.
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash
-~/go/bin/grpcurl -plaintext  -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto localhost:19009 qrl.PublicAPI.GetHeight
+~/go/bin/grpcurl -plaintext  \
+                 -import-path ~/qrl/src/qrl/protos/ \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                 localhost:19009 \
+                 qrl.PublicAPI.GetHeight
 ```
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
@@ -4230,48 +4791,89 @@ height: 117346
 ---
 
 
-## GetBlock
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### GetBlock
+
+
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4279,7 +4881,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4289,42 +4891,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4333,48 +4955,72 @@ Example code below.
 ---
 
 
-## GetBlockByNumber
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
+### GetBlockByNumber
 
 
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4382,7 +5028,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4392,42 +5038,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
-~/go/bin/grpcurl -plaintext  -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto -d '{"block_number":1400}' localhost:19009 qrl.PublicAPI.GetBlockByNumber
+```bash 
+
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4436,48 +5102,72 @@ Example code below.
 ---
 
 
-## GetAddressFromPK
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
+### GetAddressFromPK
 
 
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4485,7 +5175,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4495,42 +5185,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4539,47 +5249,73 @@ Example code below.
 ---
 
 
-## GetNodeInfo
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
+### GetNodeInfo
 
 
+
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4587,7 +5323,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4597,42 +5333,62 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
-~/go/bin/grpcurl -plaintext -import-path ~/qrl/src/qrl/protos/ -proto ~/qrl/src/qrl/protos/qrlwallet.proto localhost:19010  qrl.WalletAPI.GetNodeInfo
+```bash 
+
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
@@ -4641,50 +5397,72 @@ Example code below.
 ---
 
 
-## template
-
-Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address is valid. 
-
-#### A Request
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
-
-#### A Response
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-| | |  |
-|  |  |  |
-
-#### A Response Data
-
-| **Parameter** | **Type** | **Description** |
-| --- | --- | --- |
-|  |  |  |
+### template
 
 
+Short description
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="A"
+    groupId="Call"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Code', value: 'code'},
     ]}>
 
 <TabItem value="usage">
 
+Usage details
+
+<Tabs
+  groupId="Call-usage"
+  defaultValue="method"
+  values={[
+    {label: 'Call', value: 'method'},
+    {label: 'CallReq', value: 'request'},
+    {label: 'CallResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+  
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | YES | Details |
 
 
-:::note
+  </TabItem>
+  <TabItem value="response">
 
+```go
+
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
+| `param` | TYPE | Details |
+
+:::note 
+Please refer to the [PARAM](#call) content for more details.
 :::
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
+
+</TabItem>
 <TabItem value="code" label="Code">
 
 Example code below.
@@ -4692,7 +5470,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="A-code"
+    groupId="Call-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -4702,48 +5480,98 @@ Example code below.
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
-```bash
+```bash 
 
 ```
+
+#### With Options Defined
+
+```bash 
+
+```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {} 
+```js 
 
 ```
+
+#### With Options Defined
+
+```js 
+
+```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+```python 
+
+```
+
+#### With Options Defined
+
+```python 
 
 ```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
-```json 
+```json
 
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title=""
+```json {title="ERROR-1"}
 
 ```
 </TabItem>
 </Tabs>
 
-#### Required Data 
+#### Optional Data 
 
 | Configuration | Default | Notes |
 | :---: | :---: | :---: | 
-| `A` |  |  |
-
+| `CONF` | `DEF_VAL` | NOTES |
+| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
 <br />
 
 ---
+
+
+
+
+
+
+
+
+## Messages
+
+These golang messages support the methods above.
+
+
+
+| Message Name | Details | 
+| :-----------: | :------------ | 
+| [PlainTransaction](#plaintransaction) | This is the main transaction method and includes *Transfer, CoinBase, LatticePublicKey, Message, Token, TransferToken, and Slave* transaction types  |
+| [message](#messages) | Message Details |
+| [message](#messages) | Message Details |
+
+
+
+
+
+
+
+
+
+
+
 
 
 
