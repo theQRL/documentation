@@ -2948,12 +2948,12 @@ This indicates that we attempted to send with the fee in shor of $10.000000000$ 
 ### RelayTransferTokenTxn
 
 
-Short description
+Transfer tokens held in the local QRL wallet address to another QRL address.
 
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
-    groupId="Call"
+    groupId="RelayTransferTokenTxn"
     values={[
         {label: 'Usage', value: 'usage'},
         {label: 'Code', value: 'code'},
@@ -2961,50 +2961,78 @@ Short description
 
 <TabItem value="usage">
 
-Usage details
+This method will transfer tokens held in a QRL Address in the local wallet. Using this method you can transfer tokens between addresses.
+
+:::note
+To find all addresses held by an address use the [QRL Block Explorer](https://explorer.theqrl.org) to look up the address and list all tokens held. 
+
+Additionally you can use another API to lookup the address details and tokens held by address. For instance the [GetTokensByAddresss Method](api/qrl-public-api#gettokensbyaddress) will return a list of tokens held by that address.
+:::
 
 <Tabs
-  groupId="Call-usage"
+  groupId="RelayTransferTokenTxn-usage"
   defaultValue="method"
   values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
+    {label: 'RelayTransferTokenTxn', value: 'method'},
+    {label: 'RelayTransferTokenTxn', value: 'request'},
+    {label: 'RelayTransferTokenTxn', value: 'response'},
   ]}>
   <TabItem value="method">
 
 ```go
-
+service WalletAPI
+{
+    rpc RelayTransferTokenTxn(RelayTransferTokenTxnReq) returns (RelayTxnResp);
+}
 ```
   
   </TabItem>
   <TabItem value="request">
 
 ```go
-  
+message RelayTransferTokenTxnReq {
+    repeated string addresses_to = 1;
+    string token_txhash = 2;
+    repeated uint64 amounts = 3;
+    uint64 fee = 4;
+    string master_address = 5;
+    string signer_address = 6;
+    uint64 ots_index = 7;
+}
 ```
 
 | Field | Type | Required| Details | 
 | :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
-
+| `addresses_to` | repeated string | YES | Array of addresses to send tokens to, max addresses allowed: 100 |
+| `token_txhash` | string | YES | The transaction hash from the initial token creation transaction |
+| `amounts` | repeated uint64 | YES | Array of amounts to be sent to each address, index of amount correlates to the address_to array |
+| `fee` | uint64 | YES | Transaction fee for the token transfer |
+| `master_address` | string | NO | Master address is only needed if sending from a slave address |
+| `signer_address` | string | YES | QRL address that holds the tokens and is sending the transfer transaction |
+| `ots_index` | uint64 | YES | OTS keys to use for the transfer transaction, must be unused |
 
   </TabItem>
   <TabItem value="response">
 
 ```go
-
+message RelayTxnResp {
+    uint32 code = 1;
+    string error = 2;
+    PlainTransaction tx = 3;
+}
 ```
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
+| `code` | UInt32 | Error Code. Only appears if any exception is triggered. |
+| `error` | String | Error Message. Only appears if any exception is triggered. |
+| `tx` | [PlainTransaction OBJECT](#plaintransaction) | Return the transaction that has been relayed to the network. <dl><dt>PlainTransaction Object contains:</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>TransferToken</dt><dd style={{ display:'list-item' }}>token_txhash</dd><dd style={{ display:'list-item' }}>addrs_to</dd><dd style={{ display:'list-item' }}>amounts</dd></dd>   </dl> |
+
 
 :::note 
-Please refer to the [PARAM](#call) content for more details.
+Please refer to the [PlainTransaction](#plaintransaction) `TransferToken`.
 :::
+
 
   </TabItem>
 </Tabs>
@@ -3018,7 +3046,7 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="Call-code"
+    groupId="RelayTransferTokenTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
@@ -3029,14 +3057,21 @@ Example code below.
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash 
-
+~/go/bin/grpcurl -plaintext \
+                 -import-path ~/qrl/src/qrl/protos/ \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                 -d '{"addresses_to": ["Q00030095e434327d8f22b05b23e4e50131e6265707bec7adf99035d3583da5f93c2c86744e1b46"],
+                      "token_txhash": "2f697db9b3a48e7bfe1817a6bdb8f20fc383acd055cb4ce2e74b2df206641b5c",
+                      "amounts": [1],
+                      "fee": 0,
+                      "master_address": "",
+                      "signer_address": "Q000300e2acf7cab2b722f350af276468c6657610625f4b247e40e17607df20735bce04d08d285c",
+                      "ots_index": 4}' \
+                      localhost:19010 \
+                      qrl.WalletAPI.RelayTransferTokenTxn
 ```
 
-#### With Options Defined
 
-```bash 
-
-```
 
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
@@ -3045,45 +3080,90 @@ Example code below.
 
 ```
 
-#### With Options Defined
-
-```js 
-
-```
 
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_relaytransfertokentxn_req = qrlwallet_pb2.RelayTransferTokenTxnReq(addresses_to=["Q00030095e434327d8f22b05b23e4e50131e6265707bec7adf99035d3583da5f93c2c86744e1b46"],
+        token_txhash="2f697db9b3a48e7bfe1817a6bdb8f20fc383acd055cb4ce2e74b2df206641b5c",
+        amounts=[1],
+        fee=0,
+        master_address="",
+        signer_address="Q000300e2acf7cab2b722f350af276468c6657610625f4b247e40e17607df20735bce04d08d285c",
+        ots_index=4)
+get_relaytransfertokentxn_resp = peer_stub.RelayTransferTokenTxn( get_relaytransfertokentxn_req, timeout=10 )
+print(get_relaytransfertokentxn_resp)
 ```
 
-#### With Options Defined
 
-```python 
-
-```
 </TabItem>
 <TabItem value="resp" label="Response" default>
 
 ```json
-
+{
+  "tx": {
+    "publicKey": "0003001b3db18e77b427a208d5cb49134b58698fbe9e8cfc328589ee736c8a7a3aefbd3fe8288fbe728a69f3cabf9efc52f86eae6ee8024d811047fb3a35d569577658",
+    "signature": "000000041862f98740a16ecce10e7660b164e949ec98365f7e2cc1c1161ca7971bfdc99113878f2174ce88fd85276eb6d9375406115b21333db027eb0fb4cd43cbf64aca93467f4bd5343184399d4b58b67dab94dd3112b97d7d6fd3a2c496214b15cd13987c90a4c8880a2139d427e7441a142e3f16271b5771adb1142ed978bf99ae049e132aaa693232d496bd556bf215eabf0f1fbb92e86c7ea1f4ff777fadbe2674ff91f48933aec09e8d964fd6878c0925ed9821575f556ffccba3f9e017d68b68eb9c94bb1d639bda2c151cd761ebddc539b22bbca831bff173f7200ef4e77b95d8febe10a9295dc490766487ddb67641e69c69f89b611945cce1f8eaae0c95367ad2d745f127b248f538c82ea4933043fc04feccb7755a133b877f80cd188a84374914afba280b532c282b04e6d4be9a247f882072c272d16c1b9a455cf9ae4396cd8d40258db4ed0a56fcd4782e1169dedb505e768c68ba294d51aa0dc67520615bdc501674f86a71aac250e3a49dd07bd5f00029de99b0a5c282bcfb08e8867c4f74fe89cd65b99c053cd59a44548745a1f65372119b1f8f3654ad3d9f46a5df05bcb3dd21f169a2e1d9a36da0d6ffcd0327c65e05fac48a5f88f96cd56712550179cd70368be165c66ef2e756a3663ffa1e8e865be8c2ee971bdb990db7b846d852328b55a7d74e2b9bf645a6c4912909dd4ec1a27d49b8c11d8e02767124b5a4b8518e46bd9b256e348219e32fc3114dd10dd7bee5a4edb7383c4ac5af26193c5a38ed69b6e66513e5a4d566489acbeb621f80d9a64b4c0acd1c472231d7807a0449fb84d2f58776205f41f5e190cd49df2edd3f66f445ab7f1410debd54292734b3eae81254dca52bb624c1d1dba14df2945c26e6db2b46be5dd85c59b5a1c94cebcc05923305bacccaaf590b52daa422c21644c3ee01cab3a04abf6b68a78d026ac7279479049ea0ee3180f968603e427f5dba6922baead89c836aacb477d63025f8a0d6a7a45f9f388daf10f2108d0aefe833508c97808acca4f65dc547ba7ae0c7af71031d360fee57191f95f12bf311de838675f721d5661116a16d824d92305f91e0094c9ca4931ed1e81dc18e4a08e79738c7d4a15ca7894454fdb596afc4af56635230d767b893cbc31847a0d342508d5298abcf883dcd651444be64a1461a62c77db54b5b5d4a04a53554ff17a5da2ab6c07c39a9c621366a0fd8035da5f2c43d59ee9b6d8b075bb109aadd5ea05143ba3239fb589c8795d69de0f531baf3da1537e42826bebdd1475e0351666da2abc8b83909fb80b3cd73b33edc34cb61240c3a73d361f7dd25ed460e7fbc30950c13532296fac1defd82bb9abd9ea818ea6fb3058e1eb5b1641b506c038faeafdf710eb0af2dccad9e35997fff9720ddcb7e9f784d37aa1a1e6fe9985428273d4820ceff5ae610e953deea99218465dcab50bef0289276869bf7b66471c008e35fade705167c7e917159a02431b2d2d93350e4ea65e4645138aed84f9fe8742adfbd5b7aca6b2d828b57e4ab2039843a06c4a81c7831db2497a03d9a6b589895682df5980fece765a9ca0efb5a140bdec31df46ca8e6756da91f6e399a6c76af5446a11255e7bd9ee1cc25e7145ea8f65017715c531053d43a34d36b20e2aa2aaffbf60f6db7c45b08c25f24070fe5d42cf6b11cbd12c14bbca6f1a57f814a4d85826dd09f39c6d10675a86de792194230b247c2da53c2d3dd32f3a1af2acf7084cf927a20ec445c16073b6a4844a30e1a88ccfb9c48fb08d852e7cd8f41b0083c45eadf78820df37493ed2307003743ce85656be3fda0aee0eecf876553d6bb2b193a2932933f8d00f0f70e183aee73b5144d7bc1cd7d3f3d54fdddfbf8a46c3a3beb278b11dd75f04a813fd79b5530d096bd3fc3a5f9b13a111e7159ae7df3e252599e5e60a708140bcc6282d98be41669cfd4fb7e44b8c4f9dbbcdd91c31b4973f8631fe333f4cc9f9afe2644ef1484e809c2e7f47a85ecb1b46d21d394486e5ce611c1e3afe32403c1a8dee3822abfde9f0b7fb1623843b0eb17e5cc6da879e7bbf6320e856b16018e1a56d1c09f17de1b64d98a054eb690d4c768a7657d1efb80643493b1b916b6b284db1aef415b71e930a5ef0d8b9ed415d93015794d3ea3c38662158c16fd00f434c6f302a24a439094c21cb959b42383b6b499b3d3211ae976d969cd13015b52fc02580a61771e249d6c1e9339fca4a6877bb8aeef6636f8633aae583d18affdc27e5fb490b9fc0699d4cdf3885af387984a57dce53110fe5745a10b41a1a5689bed5c95bfff24602d30dfa4dfce1972f3252888c9cb618d1f803eacb92e19ed45b269eb5b63d6a6921e07a1ba699ce40a252ae7ee868feac6429240db46cb59b5268377a393a307ad033d0a513a0737950285dbc86f1e78ae3028c1bbc20b8840154582f56bd5714ec85e0d8c6ceb66c39ca69f1ea356ee31f87cc4ff56bb89bbf38cc04764d38d372583d8e8400f7d82382e5c00d01193f47663e54b834bdd202ba4faf9a2aaf9aec6b1468f28610257cc2f66323870786c7376592bc6539b338ae5cf5e7303771aa72f0424d31e82c215484d922124e344f4cd37f5796f1d10260ea69fcabbf09739872c947e15f77828f5f96170fe4473a1f67d2424513bc003a18f8b673efde3724d2884bd7fd5be601bb860dd7263f207a23ec6f744ad66ad20bda3f65c5ebe5ed38bda069c5ff1d4940a4190ae1eca5901df7c6e2597a34af187759e07a9a72c5aa0e02492aefe1cdcbc7dbf3d1a61d66343c9a5a201a705acc4b2ff447ef69d2e47881f46ffcfe7c1dc041cc7fcfae66ccdb860c0379b2c8acb6c3eb7f968ab2125321767041856b9304a46956fddb5b67185bce9d78aedc78c5e7ff91c83d35a6a4c562c6fa89ba0df1933ca6c16f8e7cc971cc8fb7c4047d3583d88e153b903e9bd46696e5996ed8010550f9abdb2851ac6c1ef715593157cf0a9cb0994598da61185a58873582ac127a400b88c244f2df1e03d0e90c53a1b58acf521733e701a8b15dc3c638bf157b056c6caf1d93e342384ba520359473965fbae2e9275e0de7dc902986113036e09b10e28e3dfbefccb04601cc40fda29ccdfdfada55eb52b445e12e69b82cb6ddd9a682519cef946892844cfbeaeb8d74b1a95ba70b09a1a403aee0fc827f1a19e90df4cd241b5bac6686ebdd1bedafe46c1bab5a689289ba6155fdcffa38c4ab0aea2c0b7dbda7ecf8a5be7c36ffe410432c42c4083d600d23f8e298f88ddd330371f909baa32ed3770f387959e52750339737859d1f73e3c1372189ad8324f3e04aca42b540913dc98b653",
+    "transactionHash": "610473402c5a29a10de289d83a2b41e64e301e9728bc603e17c6478ec4e344a8",
+    "signerAddr": "Q000300e2acf7cab2b722f350af276468c6657610625f4b247e40e17607df20735bce04d08d285c",
+    "transferToken": {
+      "tokenTxhash": "2f697db9b3a48e7bfe1817a6bdb8f20fc383acd055cb4ce2e74b2df206641b5c",
+      "addrsTo": [
+        "Q00030095e434327d8f22b05b23e4e50131e6265707bec7adf99035d3583da5f93c2c86744e1b46"
+      ],
+      "amounts": [
+        "1"
+      ]
+    }
+  }
+}
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json {title="ERROR-1"}
+#### OTS Key Reuse
 
+```json {title="OTS Key Reuse Attempt"}
+{
+  "code": 1,
+  "error": "cannot rewind"
+}
 ```
+
+#### Address Not Found or Incorrect
+
+This error will trigger when the address is not found in the local `~/.qrl/wallet.json` file or the address is not valid as entered.
+
+```json {title="Address not found or Invalid"}
+{
+  "code": 1,
+  "error": "('Signer Address Not Found ', 'Q00030095e434327d8f22b05b23e4e50131e6265707bec7adf99035d3583da5f93c2c86744e1b26')"
+}
+```
+
+#### Fee Exceeds Available Funds
+
+If the address does not contain enough funds to send the transaction an error will be shown on the node log similar to below:
+
+```json {title="Fee Exceeds Available Funds"}
+2023-07-26 16:01:51,807|4.0.2 python|synced  |MainThread | INFO : [TransferTokenTransaction] State validation failed for 868d9def15233d685c23254805e6a66e77531d4b7ec15155a22566f647aebe44 because: Insufficient funds
+```
+
+:::note 
+This error will not show up in the CLI, and will only display any issue in the node logs. The CLI will display a successful transaction however the explorer and chain will never see it as the node rejected the transaction.
+:::
+
+This indicates that we attempted to send with the fee in shor greater than the available balance in the address.
+
+
 </TabItem>
 </Tabs>
-
-#### Optional Data 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `CONF` | `DEF_VAL` | NOTES |
-| `CONF` | `DEF_VAL` | NOTES |
 
 </TabItem>
 </Tabs>
