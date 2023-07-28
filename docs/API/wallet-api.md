@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: wallet-api
 title: QRL API - Wallet
 hide_title: false
@@ -213,38 +213,38 @@ message RelayTransferTokenTxnBySlaveReq {
 
 | Method Name | Request Type | Response Type | 
 | ----------- | ------------ | ------------- | 
-| [AddNewAddress](#addnewaddress) | AddNewAddressReq | AddNewAddressResp | |
-| [AddNewAddressWithSlaves](#addnewaddresswithslaves) | AddNewAddressWithSlavesReq | AddNewAddressWithSlavesResp | |
-| [AddAddressFromSeed](#addaddressfromseed) | AddAddressFromSeedReq | AddAddressFromSeedResp | |
-| [ListAddresses](#listaddresses) | ListAddressesReq | ListAddressesResp | |
-| [RemoveAddress](#removeaddress) | RemoveAddressReq | RemoveAddressResp | |
-| [IsValidAddress](#isvalidaddress) | IsValidAddressReq | IsValidAddressResp | |
-| [GetRecoverySeeds](#getrecoveryseeds) | GetRecoverySeedsReq | GetRecoverySeedsResp | |
-| [GetWalletInfo](#getwalletinfo) | GetWalletInfoReq | GetWalletInfoResp | |
-| [RelayTransferTxn](#relaytransfertxn) | RelayTransferTxnReq | RelayTransferTxnResp | |
-| [RelayTransferTxnBySlave](#relaytransfertxnbyslave) | RelayTransferTxnBySlaveReq | RelayTransferTxnBySlaveResp | |
-| [RelayMessageTxn](#relaymessagetxn) | RelayMessageTxnReq | RelayMessageTxnResp | |
-| [RelayMessageTxnBySlave](#relaymessagetxnbyslave) | RelayMessageTxnBySlaveReq | RelayMessageTxnBySlaveResp | |
-| [RelayTokenTxn](#relaytokentxn) | RelayTokenTxnReq | RelayTokenTxnResp | |
-| [RelayTokenTxnBySlave](#relaytokentxnbyslave) | RelayTokenTxnBySlaveReq | RelayTokenTxnBySlaveResp | |
-| [RelayTransferTokenTxn](#relaytransfertokentxn) | RelayTransferTokenTxnReq | RelayTransferTokenTxnResp | |
-| [RelayTransferTokenTxnBySlave](#relaytransfertokentxnbyslave) | RelayTransferTokenTxnBySlaveReq | RelayTransferTokenTxnBySlaveResp | |
-| [RelaySlaveTxn](#relayslavetxn) | RelaySlaveTxnReq | RelaySlaveTxnResp | |
-| [RelaySlaveTxnBySlave](#relayslavetxnbyslave) | RelaySlaveTxnBySlaveReq | RelaySlaveTxnBySlaveResp | |
-| [EncryptWallet](#encryptwallet) | EncryptWalletReq | EncryptWalletResp | |
-| [LockWallet](#lockwallet) | LockWalletReq | LockWalletResp | |
-| [UnlockWallet](#unlockwallet) | UnlockWalletReq | UnlockWalletResp | |
-| [ChangePassphrase](#changepassphrase) | ChangePassphraseReq | ChangePassphraseResp | |
-| [GetTransactionsByAddress](#gettransactionsbyaddress) | GetTransactionsByAddressReq | GetTransactionsByAddressResp | |
-| [GetTransaction](#gettransaction) | GetTransactionReq | GetTransactionResp | |
-| [GetBalance](#getbalance) | GetBalanceReq | GetBalanceResp | |
-| [GetTotalBalance](#gettotalbalance) | GetTotalBalanceReq | GetTotalBalanceResp | |
-| [GetOTS](#getots) | GetOTSReq | GetOTSResp | |
-| [GetHeight](#getheight) | GetHeightReq | GetHeightResp | |
-| [GetBlock](#getblock) | GetBlockReq | GetBlockResp | |
-| [GetBlockByNumber](#getblockbynumber) | GetBlockByNumberReq | GetBlockByNumberResp | |
-| [GetAddressFromPK](#getaddressfrompk) | GetAddressFromPKReq | GetAddressFromPKResp | |
-| [GetNodeInfo](#getnodeinfo) | GetNodeInfoReq | GetNodeInfoResp | |
+| [AddNewAddress](#addnewaddress) | AddNewAddressReq | AddNewAddressResp |
+| [AddNewAddressWithSlaves](#addnewaddresswithslaves) | AddNewAddressWithSlavesReq | AddNewAddressResp |
+| [AddAddressFromSeed](#addaddressfromseed) | AddAddressFromSeedReq | AddAddressFromSeedResp |
+| [ListAddresses](#listaddresses) | ListAddressesReq | ListAddressesResp |
+| [RemoveAddress](#removeaddress) | RemoveAddressReq | RemoveAddressResp |
+| [IsValidAddress](#isvalidaddress) | ValidAddressReq | ValidAddressResp |
+| [GetRecoverySeeds](#getrecoveryseeds) | GetRecoverySeedsReq | GetRecoverySeedsResp |
+| [GetWalletInfo](#getwalletinfo) | GetWalletInfoReq | GetWalletInfoResp |
+| [RelayTransferTxn](#relaytransfertxn) | RelayTransferTxnReq | RelayTxnResp |
+| [RelayTransferTxnBySlave](#relaytransfertxnbyslave) | RelayTransferTxnBySlaveReq | RelayTxnResp |
+| [RelayMessageTxn](#relaymessagetxn) | RelayMessageTxnReq | RelayTxnResp |
+| [RelayMessageTxnBySlave](#relaymessagetxnbyslave) | RelayMessageTxnBySlaveReq | RelayTxnResp |
+| [RelayTokenTxn](#relaytokentxn) | RelayTokenTxnReq | RelayTxnResp |
+| [RelayTokenTxnBySlave](#relaytokentxnbyslave) | RelayTokenTxnBySlaveReq | RelayTxnResp |
+| [RelayTransferTokenTxn](#relaytransfertokentxn) | RelayTransferTokenTxnReq | RelayTxnResp |
+| [RelayTransferTokenTxnBySlave](#relaytransfertokentxnbyslave) | RelayTransferTokenTxnBySlaveReq | RelayTxnResp |
+| [RelaySlaveTxn](#relayslavetxn) | RelaySlaveTxnReq | RelayTxnResp |
+| [RelaySlaveTxnBySlave](#relayslavetxnbyslave) | RelaySlaveTxnBySlaveReq | RelayTxnResp |
+| [EncryptWallet](#encryptwallet) | EncryptWalletReq | EncryptWalletResp |
+| [LockWallet](#lockwallet) | LockWalletReq | LockWalletResp |
+| [UnlockWallet](#unlockwallet) | UnlockWalletReq | UnlockWalletResp |
+| [ChangePassphrase](#changepassphrase) | ChangePassphraseReq | ChangePassphraseResp |
+| [GetTransactionsByAddress](#gettransactionsbyaddress) | TransactionsByAddressReq | TransactionsByAddressResp |
+| [GetTransaction](#gettransaction) | TransactionReq | TransactionResp |
+| [GetBalance](#getbalance) | BalanceReq | BalanceResp |
+| [GetTotalBalance](#gettotalbalance) | TotalBalanceReq | TotalBalanceResp |
+| [GetOTS](#getots) | OTSReq | OTSResp |
+| [GetHeight](#getheight) | HeightReq | HeightResp |
+| [GetBlock](#getblock) | BlockReq | BlockResp |
+| [GetBlockByNumber](#getblockbynumber) | BlockByNumberReq | BlockResp |
+| [GetAddressFromPK](#getaddressfrompk) | AddressFromPKReq | AddressFromPKResp |
+| [GetNodeInfo](#getnodeinfo) | NodeInfoReq | NodeInfoResp |
 
 
 
@@ -353,7 +353,6 @@ Example code below.
     groupId="AddNewAddress-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -380,12 +379,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python
@@ -562,7 +556,6 @@ Example code below.
     groupId="AddNewAddressWithSlaves-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -589,13 +582,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 #### Default Options
@@ -767,7 +754,6 @@ Non-functional in base code. Needs development for full functionality
     groupId="AddAddressFromSeed-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -797,12 +783,7 @@ Non-functional in base code. Needs development for full functionality
 
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
@@ -916,7 +897,6 @@ Example code below.
     groupId="ListAddresses-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -931,12 +911,7 @@ Example code below.
                  qrl.WalletAPI.ListAddresses
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
@@ -1070,7 +1045,6 @@ Example code below.
     groupId="RemoveAddress-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1087,13 +1061,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
@@ -1225,7 +1193,6 @@ Example code below.
     groupId="IsValidAddress-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1241,12 +1208,7 @@ Example code below.
                  qrl.WalletAPI.IsValidAddress
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
@@ -1387,7 +1349,6 @@ Example code below.
     groupId="GetRecoverySeeds-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1403,12 +1364,7 @@ Example code below.
                  qrl.WalletAPI.GetRecoverySeeds
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js {} 
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
@@ -1537,7 +1493,6 @@ Example code below.
     groupId="GetWalletInfo-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1552,12 +1507,7 @@ Example code below.
                  qrl.WalletAPI.GetWalletInfo
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```py
@@ -1703,7 +1653,6 @@ Example code below.
     groupId="RelayTransferTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1713,23 +1662,18 @@ Example code below.
 ```bash
 ~/go/bin/grpcurl -plaintext \
                  -import-path ~/qrl/src/qrl/protos/ \
-                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \ 
-                 -d '{"addresses_to": ["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55", "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"], 
-                 "amounts": [2000, 100000], 
-                 "fee": 0, 
-                 "master_address": "", 
-                 "signer_address": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67", 
-                 "ots_index": 3}' \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                 -d '{"addresses_to": ["Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55", "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"],
+                 "amounts": [2000, 100000],
+                 "fee": 0,
+                 "master_address": "",
+                 "signer_address": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67",
+                 "ots_index": 4}' \
                  localhost:19010 \
                  qrl.WalletAPI.RelayTransferTxn
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js
-
-```
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python
@@ -1752,7 +1696,24 @@ print(get_relaytransfertxn_resp)
 <TabItem value="resp" label="Response" default>
 
 ```json 
-
+{
+  "tx": {
+    "publicKey": "010500d4e376e27096e01cd59acf20ecce16a3dc8c7e48d8e10bced7c9e8fd6a09a2c6512a5b6f64c37320fe02ca375c3de2cce4148b16a398b11cd2bd6f77cc2d8df6",
+    "signature": "00000004b022a72b36e39f22e8ce9add5d95c8515b440e87482edfec8e4e363028c8f21a4750c778af427aeb449cd9a43597fd1aa9bc19b153fb3ad450953447b0e77d238f888f0e27c2ef1c3d41ad9bf149f95e7f24f5ccfae3f6475682be736d9b03554f9fd5f03a1bfeeab30c5a5f7748ff2858c2a7d5325f710d979b95454ad57fe287551951fae8a1d53892e100bbe9ae55303831133a6dda1e5d59ee700d781e8e7ec8c960a88eb868a2d8526604aa7d70d193ce29e6860f64f2349eebe5549b6b9c0adfadce66f4b48e91acc6b652e16f5b95dea31ca5446925726c16acdad2299dc01bde8efc0c55c0c40431031bcb6ccb7347b2bd3a11aac25a840bb0194dc6a5ab277f86b20482ef086360f4d0110d5513d481ae8f1704e465e8d31df13d0d698e9825b9c1a91cfcd547590fa0e542b2df7aebf957758b09252cbaad8bd4abdec1a042db6dcfe5aa396ee29c701b888592ea492629399844c4e6a36f22a38047c47a186e279051e62a88b3e56b8baa8671bdf8bc6b1bf4363ebcc9c8169a24f684d990e4157d5dc96c7018c5505462054a986b49d50b194333164eb7ca8ac97ac228e270d4d9ba4933dac3a02e025c7f3b324c40aa9ebc6a0d896f020f044466432789de2623b144ff5134c092688f7831c1eb3ed0e7e5974858f27976a9e9bd14ec086931b7893653ec32f295904d36232ed5a4282087e5fdb135deafe93f30ea40302b60bea3deacceb4199ee31d30f087ba7b4ae0bde2bb98f450d9e50aae5917b6a2202df9ea36cc264ad2afb23b1bec0407db7f5bc351a47a97d5fd687215630c184ab5a859e6560b325c3ff2603aaa3dab2138549e709877f5cbc4aaf4bc1eb3ace2d64558d2394ee4c45802244cddb033b91c5f041b81db174ff953cf50d0b61d530d71d28074726bf3d2880590a6819c3f0193712782676c60e5fda169a383e5ad7780da5dc4faee05eb61f881d1c449ed02d8a1e442841e62ccb6343ee2606e0aaaf5f6a7146022c27484db6b54f1e5c46974e9533f328ed9cec361c64f285e007fd8918df18d07cc7cfcb9e02e562aa3ff1f8449c638b42345b166b95c9611babe984e97e350310c54815295bf053c171af6e08ae1acf87106d5c5755b3fd0510853e55feecf77c5e1501e1329486b50920df174100eb8efb7b25a8154ab89c68a2df1661529f019eb9f1db0d177361cbc478bb999dd52ca3b2671a2115ba301c0d3877a9198586b7218ca10aab59cab01a6b018a6e1b9f061f5ed0c64b9386dd7c4eec741a945a799e3a33612740226d4f9be57ab4ae37025be6bc45b36dc8fbf6a4bac495f81acabfd27627076a00612860b0a49e360291f1902c0bf3422a10145c43e1f2321ff65ba99804f54bb9d21418b4ef0726fad5f0e031490a3e2249d242e7a078054396204321c87fdfa41fd5a09f81b5cd74dbb4fe7ab37233b21beba3e93c395462ba2718b1a68e8e440018b89fb17ebe6ce97f44b0a6eea14f96f8df64b0d8f59ef1d08c34b418c593a4cbb99e3ed6667277b07fe8cee1d133a49a428f72c78c93b39f495bf4760b5084c58608559fce807168ef8266d14eef96e07dad5d2a7cf618623ff0c84c71c576dab3cf26ffe21ed2500a817a74e4afe43b9369886ec90b8b1efd8fc67b7d4a76bed6181d8e27bad5dbd12771c382d35cd7428395fb18b00674d60ef219457332c25230f0335041cbfc216e96608d7a718fc2b1cec9691555181e4f4abc76b6d8ef57c20327e2a37d106c3508fdbc209a7a2b8457e5dc94395a0cf51c56ddf4174cca5c2b6f5d74de53f5ea93297c45297c090b1f774cad8f6291a14a050cdbb93816220d598e59fc6a295aaa466f3aa260712648a208d311321bde058478df01bef867d99bab8f133d22393b7173245c9687aa2f26e13a9297a76c69932742f7819c698ff575a0c3c6cc59334e439f5f8bfaae90ab846f33c4493307376185e49f2bf74900907076a0f70ee43f7b44f8257af507d43817db0f406695347d2623d6f0a090c7018d0733c5a2458a093103ec7e25acf2aa918722be9e557f2b486fd2c5d411ffcdfe05ab05a3c539f85d2e1710949debe67d5c011ddc8dc4064ae16f157c445dc76bafa952b21aee1142fb18d44a864b95832aa87648f1bdc627cadfcdc5af63f3cf9c03040f546c11131bcbbf70ed2ced198d0fa5a0443f14044fafbe63e6893a3d8ad9802780ceca3f627dd32c2445fbe0e5c93f65c53131cac70527aee5c91378ea7f1adfd15843a33b5120a5ce05923186b0ac7f851280ec5fc71f9d747c64a11c697950c7101e153b167a06d7930178d084a6015d82e05e0a009bf7d357cec69a2a08a1176bd5f28246021ec47cf7f7bd5666ca9f282501c858c3a6946de0edb1b430e3470729dd3f08634bbc471d7b5ccfda396d2d0b459707b842738af8545c93c3eecf81764c1cf8fc345e21f1d9b5a324091dddfa75eaf8e68cc31daa8cd6a2459b871249da46946b8eb6b36cf400942c25170bb99e2932a40f88905169b842ed93975912eecdc375aa730e6adb3e0a31a16649b5bd41760938a2de8ef71a2e06e328e87f02ac948bad6fae05c69f2fb3a8d4b6e8b229b31c34ef1a3452e38913e55fd76ce0ae1c912b5c9a10ad4fb8c9e9fb85bbadcd97194c0f59e6b91e4ab9ddc2089c88617a6ea97c96986d0388ac2daef6e33e86366adaeb614ac40fdce583eb5e6524d9885a4becbee8d83be3fdeb8a1d28e07d8a233debb6415f51ebe646ff2f462a175322a8a7d3ec1b167a7995b315454a566ad64eeb08af77f4a3ad4677aa5dca138c910723416c97aadc8311e1919022da4539f40fb9817a1bb7d019f205c882c090212cca98bfd1a1853b4305a0f98a739ecddd337d81a430224ebbda016965e57703a4bf3a92fbb42de71266b529cdc0b9b1a076ad0f2e7fe65bc272882b0b425bea89eebb5a82ea638151c470537f2741c550004c221de09faee14617773782e9de5bfd30facafd18f26016570f3685352237728ba4b9bd55eca3eff818f6fc244c9c9d461274b3ddd0d178a7fac47f12fe224c98de6e9bcf980d8e4c2234da4e27670f764307b7d801368235f46693756480ae483eb3a20bccb8ab97b3f16b923c2eb495fc0508073fce27d4c740493b89492fcda10e06494be9b1d12a5e73466ebb7e50977b2ed4509fd6da743bbb670cd638cbb072cbf3aa433a0eda2bf53d48c09b9bac06fba27e57ac41118e899286e33159ec6e63761d681a563e1b7e84fc9383409eb56cc05153da7dd15f2a8f9e8d3c3eabd84d468ab267948d1c526b14e030a6c2e8b4a6f95346d49b45f1bce5d290c5e5501ee81d238d14ffe486232f06b37b41cc62ce36983b2f776deaeed67ed880edeb14188dc3b6e6bcaa9894226659804c126717e7726c06c7751da4728e36363a994a4630b9633e9d1ad89c48c8034c667cf365762c09b4901b232d28785c6b530aeaa315b0971962d6ca3ad2384c09f85eab4883491276a16a38992b3bc9bebfd2d3e86",
+    "transactionHash": "94638182778c0fd1c31352fa074c7be7e00dd5ccfd323d9a08652fafe36f74a4",
+    "signerAddr": "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67",
+    "transfer": {
+      "addrsTo": [
+        "Q0103007f44eb8e11de8a0a6d69c21088245951bdb77637a082b713abbf9bdf35f13ac2c8d58d55",
+        "Q0105005475198feb2456a80b2ea6c40cc40d698361031c3de52f7c1f9dcdc2aab8e712c02adb67"
+      ],
+      "amounts": [
+        "2000",
+        "100000"
+      ]
+    }
+  }
+}
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
@@ -1917,7 +1878,6 @@ Example code below.
     groupId="RelayTransferTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -1937,13 +1897,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -2133,7 +2087,6 @@ Example code below.
     groupId="RelayMessageTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -2153,14 +2106,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -2350,7 +2296,6 @@ Example code below.
     groupId="RelayMessageTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -2370,14 +2315,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -2572,7 +2510,6 @@ Example code below.
     groupId="RelayTokenTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -2598,13 +2535,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -2800,7 +2731,6 @@ Example code below.
     groupId="RelayTokenTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -2825,14 +2755,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -3091,7 +3014,6 @@ Example code below.
     groupId="RelayTransferTokenTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -3116,14 +3038,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -3319,7 +3234,6 @@ Example code below.
     groupId="RelayTransferTokenTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -3340,13 +3254,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -3568,7 +3476,6 @@ Example code below.
     groupId="RelaySlaveTxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -3581,14 +3488,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -3766,7 +3666,6 @@ Example code below.
     groupId="RelaySlaveTxnBySlave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -3778,13 +3677,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -3903,7 +3796,6 @@ Example code below.
     groupId="EncryptWallet-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -3921,18 +3813,18 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_encrypt_wallet_req = qrlwallet_pb2.EncryptWalletReq(passphrase="PASSWORD123")
+get_encrypt_wallet_resp = peer_stub.EncryptWallet( get_encrypt_wallet_req, timeout=10 )
+print(get_encrypt_wallet_resp)
 ```
 
 </TabItem>
@@ -4018,7 +3910,9 @@ Usage details
   <TabItem value="method">
 
 ```go
-
+service WalletAPI {
+   rpc LockWallet(LockWalletReq) returns (LockWalletResp);
+}
 ```
   
   </TabItem>
@@ -4064,7 +3958,6 @@ Example code below.
     groupId="LockWallet-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4080,18 +3973,18 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+lock_wallet_req = qrlwallet_pb2.LockWalletReq()
+lock_wallet_resp = peer_stub.LockWallet( lock_wallet_req, timeout=10 )
+print(lock_wallet_resp)
 ```
 
 
@@ -4203,7 +4096,6 @@ Example code below.
     groupId="UnlockWallet-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4221,17 +4113,18 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+unlock_wallet_req = qrlwallet_pb2.UnlockWalletReq(passphrase="PASSWORD123")
+unlock_wallet_resp = peer_stub.UnlockWallet( unlock_wallet_req, timeout=10 )
+print(unlock_wallet_resp)
 ```
 
 </TabItem>
@@ -4344,7 +4237,6 @@ Example code below.
     groupId="ChangePassphrase-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4363,18 +4255,18 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+change_passphrase_req = qrlwallet_pb2.ChangePassphraseReq(passphrase="PASSWORD123")
+change_passphrase_resp = peer_stub.ChangePassphrase( change_passphrase_req, timeout=10 )
+print(change_passphrase_resp)
 ```
 
 </TabItem>
@@ -4491,7 +4383,6 @@ Example code below.
     groupId="GetTransactionsByAddress-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4509,17 +4400,19 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import json
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
+
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_transactions_by_address_req = qrlwallet_pb2.TransactionsByAddressReq(address="Q0002008815fa2cedae25de933ce25f4536ea988e768baa5031af59cef4816e13a81fb79241294c")
+get_transactions_by_address_resp = peer_stub.GetTransactionsByAddress( get_transactions_by_address_req, timeout=10 )
+print(get_transactions_by_address_resp)
 
 ```
 
@@ -4661,7 +4554,6 @@ Example code below.
     groupId="GetTransaction-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4678,18 +4570,19 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import json
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
+
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_transactions_req = qrlwallet_pb2.TransactionReq(tx_hash="1e30eab4f1fa5737946f150560c0559ab7d1bdec969f20b69c66714ad764e041")
+get_transactions_resp = peer_stub.GetTransaction( get_transactions_req, timeout=10 )
+print(get_transactions_resp)
 
 ```
 
@@ -4755,17 +4648,6 @@ Example code below.
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
 ### GetBalance
 
 Retrieve balance information for the address given.
@@ -4781,7 +4663,12 @@ Retrieve balance information for the address given.
 
 <TabItem value="usage">
 
-Usage details
+Returns the address balance in $shor$ if any available funds exist in this address.
+
+
+:::info
+Additional validation for an address can be found using the [QRL Block explorer](https://explorer.theqrl.org)
+:::
 
 <Tabs
   groupId="GetBalance-usage"
@@ -4846,7 +4733,6 @@ Example code below.
     groupId="GetBalance-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -4865,15 +4751,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -5003,7 +4881,6 @@ Example code below.
     groupId="GetTotalBalance-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5019,13 +4896,7 @@ Example code below.
 ```
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -5153,7 +5024,6 @@ Example code below.
     groupId="GetOTS-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5172,15 +5042,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -5308,7 +5170,6 @@ Example code below.
     groupId="GetHeight-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5326,13 +5187,7 @@ Example code below.
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
@@ -5437,11 +5292,12 @@ message BlockResp {
 | `error` | string | Error Message. Only appears if any exception is triggered. |
 | `block` | [PlainBlock OBJECT](#plainblock) | <dl><dt>PlainBlock Object contains:</dt> <dd style={{ display:'list-item' }}> <dt>header</dt> <dd style={{ display:'list-item' }}>hash_header</dd><dd style={{ display:'list-item' }}>block_number</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd><dd style={{ display:'list-item' }}>hash_header_prev</dd><dd style={{ display:'list-item' }}>reward_block</dd><dd style={{ display:'list-item' }}>reward_fee</dd><dd style={{ display:'list-item' }}>merkle_root</dd><dd style={{ display:'list-item' }}>mining_nonce</dd><dd style={{ display:'list-item' }}>extra_nonce</dd></dd> <dd style={{ display:'list-item' }}>          <dt>transactions</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>TRANSACTION_TYPE</dt></dd></dd><dd style={{ display:'list-item' }}><dt>genesis_balance</dt>  <dd style={{ display:'list-item' }}>address</dd><dd style={{ display:'list-item' }}>balance</dd></dd></dl> |
 
-
-
-
 :::note 
-Please refer to the [PlainBlock message](#plainblock), [PlainBlockHeader Message](#plainblockheader) and [PlainGenesisBalance message](#plaingenesisbalance) content for more details.
+Please refer to the following messages related to the block response:
+
+- [PlainBlock message](#plainblock)
+- [PlainBlockHeader Message](#plainblockheader) 
+- [PlainGenesisBalance message](#plaingenesisbalance) 
 :::
 
   </TabItem>
@@ -5459,7 +5315,6 @@ Example code below.
     groupId="GetBlock-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5475,22 +5330,223 @@ Example code below.
                  qrl.WalletAPI.GetBlock
 ```
 
-
-
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
+<TabItem value="pyreq" label="Python Request" default>
 
+```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
+
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_block_req = qrlwallet_pb2.BlockReq()
+get_block_resp = peer_stub.GetBlock( get_block_req, timeout=10 )
+print(get_block_resp)
+```
+
+</TabItem>
+<TabItem value="resp" label="Response" default>
+
+```json
+{ 
+  "block": {
+    "header": {
+      "hashHeader": "e962ac52d457196a8832cfd57304fc080537f3851a6fc34c3b007bc0ca000000",
+      "blockNumber": "15",
+      "timestampSeconds": "1530015361",
+      "hashHeaderPrev": "cb81bf3bf3a3d7df8039934c178c8f2f6c55765fd3408f84ac18e18a15000000",
+      "rewardBlock": "6656333953",
+      "rewardFee": "1000000",
+      "merkleRoot": "fe046e2eef141801badb5c6f180ecce2b66659bb0ca29862437c4fa6b4d52645",
+      "miningNonce": 2781151944,
+      "extraNonce": "16980399104"
+    },
+    "transactions": [
+      { 
+        "masterAddr": "Q0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "16",
+        "transactionHash": "269f1f53a87dcaa87aa27ca6abf945109abf5d11cf28a6e3f9dae6bc73a2e606",
+        "coinbase": {
+          "addrTo": "Q0106001d34628da087339ddd650a843e131fa4a3f3b107e9b6222d609f6dad3860b4798cc5b361",
+          "amount": "6657333953"
+        }
+      },
+      { 
+        "fee": "1000000",
+        "publicKey": "000600b3a4edefe61e5fab0465f4de68a500305ed1014447eca85cb36be74d6db72eb5417fe14215eafcedcad872c531f6eade1c7ba04c6f89fed2b07183c180c93abf",
+        "signature": "000000007f137e3b767bfe09fb179cf1e5a58165cf94f3aab91bbe459cf9c93de15dd545deec21bdbc5ab30f688faf92a40c23cb520249d94179e7dab12f7bd247abfc3bc1ccb5fddebc80c4723aebe5aa650f5a8fb81254486a4f3ca53330e3fc8e0fdf849c690ee4c1117fe90dc39c0fea886feae337393261de53fa41a7ffa780431c33f7054ab08d404f94b3b07b4a9d96b3a8a78b1df2f9219baf39ec04359d4dcc48a6ae24ff439df55201140d3db61fecbcb6426c7e5819f67b21ba13e0d431ee14e700d2cd4cba38ced917daee81f16905ac9dcb57a552dc2ef0ee946e848b6548897fb2554c8588b38028d5a7335bd02f0932d65ea9beac6ab72a4b06ab4225fae4d56b8fabb1ee926d253d3c8027369f18771f08e161a8738d1a029081906c762a7c690a900c91222837c2ee0af8db281b5dd42b121a572fe42520793513041551b55e9d892e3dd6aa59d378d9c83001b3ed5fecad58e2f045ed70e0e3b8e2f44287a785eb28725e7e75b5f497232efbeaa15d0b97cdcc66f9d056e13312ca8236c5296008b76a44db87b2d3b0980759eea9d338a3804a9e44b191a3e6f3d38e73fef4670bc4ce66b3ef8c539ec0ddc8808c3695a57d80a1284b70ff715bf8c1234fe28c666fcc0e264482249b0082f843a49571ff734241f37d92ae1432fdc737bf59186084eee2992a165ec4033cc6084cb7c8b76b761cec61237ab654cea8ee7bac7cde86eff5c4983d2e64f92f28b1255cd6e7c0ec3b4b3049e4fe75930d4790199b25a9e1a8fadf7614122f29f4a2a60a011c785e13fb9e0c6496c8404c705f808543518b255422119757cbf3d1ddcafa0055101b0a79649f3e8052c385618556e1cf1f71f14ecb727a94d241051bf0916fe06d2733f20d5e95971ef35d12f384c8353391f275d7285b902acc2da93c02e9ad3e7a0d9d9417cb16946b8617e59f2d9266cd4505ad8c2ffa3464dc1d643c20a7fa331563402747b6a4d1ce07d160e87ffbf6f3472ee9de8d29f791e7e18c6e7f7041b219c926683698aa12eac73c57c700e38629680f5e3fd09ee06de49c9ff0c6e5915b3666c42fb2978dea8287cf539c4659011feafb534b4249edfbfad6615884ce1112df85a1c5dfddb8e27cfd3caab00564d0de8ce0e3c9c2cd5e59816a1aa9f26a8a4ef965a1f6de2eb62762b7021fd28c7d71862f83d92ca9e687e6c7968956127f18e21c4e95591f46362f05a91f12c0204be31012d90de2d1aa1f04f64dacf5d35e0f01b3bdd0ef071596f9235e3a61be09a4bdfcc29baf7ca301475eb530d9fb2cb3bcbcebf8699136481c92244e97a182317c52fe2a53f8317a861a6da45a8991dbe1edbd20a5edd4707d46a92e5ac4d7170fe381db62c0d833ecf9cfa99632fc501e3f560e8be2ecebddc28215de43028524c0f4347c82a3a0b4322d67d52bb038c97612c5eda67cfc3eafc84246030462dcd094628e2604b3c5e449e15ea1e79a88305a1fafcd6dfb462c871e7531c1058324f73cd513255e71a3213ebf2825e3aef09e614af62e3f8af0e21a34a822b91b118c2e61ffcddbb4e589ecf3232cccb28356a496091a9b81e9d776d5668df323036c4e53adf63027f9034f3d4b734e829a0feb701b79be1a094dfe469e03afc19a6d74a882805a43c234fd319040ca6032148716a2c7efac64b6123d15918bf337b0473bf56c1265573bb2e9cd6169c73af3e1b9b0e02df3ba0231696ea614ee0eaad3a038fb31bce5bbb4bd7c51b9c64c30eee78eb1e75b7d17c37bd4de8150969144996059f12f9ae77c325c12be7cd0ba3e0048ab2178aa1564f182431e99095bdcc1c23cad13c9d2913578c020fea9ec5faef26f444404483cd3dde4f661f5a8a84296a8f927c062b45ba4cd5f09afef131607ccca4b62d3840aa8b59447e92f55d732556d2b12aec3b6f82b7c9155c6ae2a16c59f385a3dd1e6d181821c0b6ce4c195f3ff8f12856d4232109ea152208585823faa86b28b78fd4dd8750a1867845fb821ddf6421ccc7a642f3bffb6b8ac6fbb7084e60ad99910fddd374d441cfbe75408f84b2800c2d3ec6c7a2d4a8754b778ab53673bbf61405afe601ba7b7429866895566812732a521926c8f5244a369da01287303e8c11588370681aa8db3b9fed19f8cafb95e3895f083aee11b6317e8cdb754000d31a80480fc38b9bd5f645d69eeba4719a916f23e1aa4b5551ce89b24d8fc1cd597b449402d023c65386522191d73f7bb9922258a8e2388d624bae85a5dde48f17ebbbb619892a1a53e26d27fef74bbfa90db6891b08044eb77e06e3371bfd28de824755c485669903e8e0582b5c153a38e867b76416c467b0d62fa1310ccfd4e3e0879e9c3c9fb454295d465020b3afd285a85a71a9dcc209d05472df69bba7a372987ee6f287fc687a1fb3013465709704aec65a010474bac5f6fb868e9416acef3b5a9f363087dffe7459cdcc84b6717ed9937f654ee3f7a65b55dd7c5bc7f56680f3debc161af8589fadb8f59267f53cf1dadbdac88b6af7648461cf39d5d64ae0cebe716bf6a20ad53945a7295690d42b1d1b2b3ac70394282595b4bcbfd18e835629d97fca0c6157cd96b57a56aa25aceeaf8dd0ea4b72036448cfd3b697ffd1de4b54d92304f5f0766a787e3a2cf7f955323518c944d177a02f36371204b7f7110ef70b23ea8407f1d506fbf59d743bdbc462d045e870447612f0ebf42d6388166ed953ae4633f37a8d5031a08006a4028a92413605945cc1ef4c0bcad46c02c5083cab88120e47ccc8a7929629e8248f2fb3ca0d89c14996755e99b5ab098b7ffad9fd503db2820ba49705e9c1bbfe5b2a478379da8299366ec8b4100677c096805f0bc5c70444b31cafaba496976bb7a3e968caebb7db635b810780fbf1c662f49a2a66fb0a3492065d84b43a5023becbcd870566612d0fef03337247cdaf39fe0d31e1534be46cd9e944cbb6977507f8375f198d72ba81a7fa6925860304af4d2bbf45a1d0e942501694f4449163ec57b5fc224c731bb8ba8c7c53222b8ed0dcab6f5ca23d67dafe89e3389551a78c16e3254e63cbd63a44dacf5ccd06a477999d119de6c758aaf8ff4c0d3348d5dd6699774f7a7acfc3d67ac3110cad0276fa39195bc4a02a5ffdb31d67b1320082833ba3d63cf934922430a43186d2a71c13d36c2cf5654cdf2fdb4f8f316a010f7db21aeeb145ddb9eb8b5e3a08545567fa050b031e7eb8348853b1118aab5ce4b81579ecb3780df913f8121cd2aabb5bfcdb6c4683fef472c613ebd9cccc71d58f04a7682d3f18eb397ac152ed2e1091a38c8244ba31988a740a98909f6724dfb0a98d7924dc5b981d2d53b0b65e374a1b1575991723b7101dc52f49358bab04fc3b978cef880a97ce62ff4a8febc095276b0d0bfe085af76be01025eed7a96a0cab8ac9d192b2c16f16e089a40e88cc410892fbaa57e08b704b68df99e4c2b8c197861918cfe7466a08d72fea4afa89c7d3cda0c91e659190b2816d3e08176207b9defe695fd236919de1818f733573867730ea11496a4d554760b9c175da377887d14b3df5f88a0ebc6d1008efd0beef6bc2db9908896d9e14167d17381665ac8fd254b",
+        "nonce": "1",
+        "transactionHash": "bc64bd33a69ead60a8123d01a9b5b923067b8f2c388e9102109fdbd6e2f9a1cd",
+        "signerAddr": "Q0006003c7a58a7e75cfdf557a3c3a2dcb9da04f0e108254487afc7f2606eba809b3337df630d6b",
+        "token": {
+          "symbol": "Fr1t2",
+          "name": "Fr1t2",
+          "owner": "Q0006003c7a58a7e75cfdf557a3c3a2dcb9da04f0e108254487afc7f2606eba809b3337df630d6b",
+          "decimals": "10",
+          "initialBalances": [
+            { 
+              "address": "0006003c7a58a7e75cfdf557a3c3a2dcb9da04f0e108254487afc7f2606eba809b3337df630d6b",
+              "amount": "1000000000000000000"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json {title="Invalid Hex String"}
+{
+  "code": 1,
+  "error": "hex string is expected to have an even number of characters"
+}
 ```
 
 
 
+```json {title="No Block Found"}
+{
+  "block": {
+    "header": {
+      
+    }
+  }
+}
+```
+
 </TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
+<br />
+
+---
+
+
+### GetBlockByNumber
+
+Get QRL block data by block number from the QRL Blockchain.
+
+<Tabs
+    defaultValue="usage"
+    className="unique-tabs"
+    groupId="GetBlockByNumber"
+    values={[
+        {label: 'Usage', value: 'usage'},
+        {label: 'Code', value: 'code'},
+    ]}>
+
+<TabItem value="usage">
+
+Using a previously mined block number to lookup block data on-chain.
+
+
+<Tabs
+  groupId="GetBlockByNumber-usage"
+  defaultValue="method"
+  values={[
+    {label: 'GetBlockByNumber', value: 'method'},
+    {label: 'GetBlockByNumberReq', value: 'request'},
+    {label: 'GetBlockByNumberResp', value: 'response'},
+  ]}>
+  <TabItem value="method">
+
+```go
+service WalletAPI {
+    rpc GetBlockByNumber(BlockByNumberReq) returns (BlockResp);
+}
+```
+  
+  </TabItem>
+  <TabItem value="request">
+
+```go
+message BlockByNumberReq {
+    uint64 block_number = 1;
+}
+```
+
+| Field | Type | Required| Details | 
+| :--: | :---: | :--: | :--- |
+| `block_number` | uint64 | YES | Block number to lookup |
+
+
+  </TabItem>
+  <TabItem value="response">
+
+```go
+message BlockResp {
+    uint32 code = 1;
+    string error = 2;
+    PlainBlock block = 3;
+}
+```
+
+| Field | Type | Details | 
+| :--: | :---: | :--- |
+| `code` | uint32 | Error Code. Only appears if any exception is triggered. |
+| `error` | string | Error Message. Only appears if any exception is triggered. |
+| `block` | [PlainBlock OBJECT](#plainblock) | <dl><dt>PlainBlock Object contains:</dt> <dd style={{ display:'list-item' }}> <dt>header</dt> <dd style={{ display:'list-item' }}>hash_header</dd><dd style={{ display:'list-item' }}>block_number</dd><dd style={{ display:'list-item' }}>timestamp_seconds</dd><dd style={{ display:'list-item' }}>hash_header_prev</dd><dd style={{ display:'list-item' }}>reward_block</dd><dd style={{ display:'list-item' }}>reward_fee</dd><dd style={{ display:'list-item' }}>merkle_root</dd><dd style={{ display:'list-item' }}>mining_nonce</dd><dd style={{ display:'list-item' }}>extra_nonce</dd></dd> <dd style={{ display:'list-item' }}>          <dt>transactions</dt><dd style={{ display:'list-item' }}>master_addr</dd><dd style={{ display:'list-item' }}>fee</dd><dd style={{ display:'list-item' }}>public_key</dd><dd style={{ display:'list-item' }}>signature</dd><dd style={{ display:'list-item' }}>nonce</dd><dd style={{ display:'list-item' }}>transaction_hash</dd><dd style={{ display:'list-item' }}>signer_addr</dd>  <dd style={{ display:'list-item' }}> <dt>TRANSACTION_TYPE</dt></dd></dd><dd style={{ display:'list-item' }}><dt>genesis_balance</dt>  <dd style={{ display:'list-item' }}>address</dd><dd style={{ display:'list-item' }}>balance</dd></dd></dl> |
+
+
+
+
+:::note 
+Please refer to the following messages related to the block response:
+
+- [PlainBlock message](#plainblock)
+- [PlainBlockHeader Message](#plainblockheader) 
+- [PlainGenesisBalance message](#plaingenesisbalance) 
+:::
+
+  </TabItem>
+</Tabs>
+
+
+</TabItem>
+<TabItem value="code" label="Code">
+
+Example code below.
+
+<Tabs
+    defaultValue="shreq"
+    className="unique-tabs"
+    groupId="GetBlockByNumber-code"
+    values={[
+        {label: 'Curl Request', value: 'shreq'},
+        {label: 'Python Request', value: 'pyreq'},
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash 
+ ~/go/bin/grpcurl -plaintext \
+                  -import-path ~/qrl/src/qrl/protos/ \
+                  -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                  -d '{"block_number": 15}' \
+                  localhost:19010 \
+                  qrl.WalletAPI.GetBlockByNumber
+```
+
+</TabItem>    
+
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_block_by_num_req = qrlwallet_pb2.BlockByNumberReq()
+get_block_by_num_resp = peer_stub.GetBlockByNumber( get_block_by_num_req, timeout=10 )
+print(get_block_by_num_resp)
 ```
 
 
@@ -5548,143 +5604,9 @@ Example code below.
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json {title="ERROR-1"}
-
-```
-</TabItem>
-</Tabs>
-
-
 
 </TabItem>
 </Tabs>
-<br />
-
----
-
-
-### GetBlockByNumber
-
-
-Short description
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="Call"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'Code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-Usage details
-
-<Tabs
-  groupId="Call-usage"
-  defaultValue="method"
-  values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
-  ]}>
-  <TabItem value="method">
-
-```go
-
-```
-  
-  </TabItem>
-  <TabItem value="request">
-
-```go
-  
-```
-
-| Field | Type | Required| Details | 
-| :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
-
-
-  </TabItem>
-  <TabItem value="response">
-
-```go
-
-```
-
-| Field | Type | Details | 
-| :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
-
-:::note 
-Please refer to the [PARAM](#call) content for more details.
-:::
-
-  </TabItem>
-</Tabs>
-
-
-</TabItem>
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="Call-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash 
-
-```
-
-
-
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js 
-
-```
-
-
-
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```python 
-
-```
-
-
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json {title="ERROR-1"}
-
-```
-</TabItem>
-</Tabs>
-
-
 
 </TabItem>
 </Tabs>
@@ -5696,7 +5618,7 @@ Example code below.
 ### GetAddressFromPK
 
 
-Short description
+Returns typical QRL Address `Q00010...` from PK address `01060089256a7ea3...`
 
 <Tabs
     defaultValue="usage"
@@ -5709,50 +5631,55 @@ Short description
 
 <TabItem value="usage">
 
-Usage details
+Provide the PK of a QRL address and return the typical address prepended with a `Q`.
 
 <Tabs
-  groupId="Call-usage"
+  groupId="GetAddressFromPK-usage"
   defaultValue="method"
   values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
+    {label: 'GetAddressFromPK', value: 'method'},
+    {label: 'GetAddressFromPKReq', value: 'request'},
+    {label: 'GetAddressFromPKResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
 ```go
-
+service WalletAPI {
+    rpc GetAddressFromPK(AddressFromPKReq) returns (AddressFromPKResp);
+}
 ```
   
   </TabItem>
   <TabItem value="request">
 
 ```go
-  
+message AddressFromPKReq {
+    string pk = 1;
+}
 ```
 
 | Field | Type | Required| Details | 
 | :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
+| `pk` | string | YES | QRL raw PK string `01060089256a7ea3...` |
 
 
   </TabItem>
   <TabItem value="response">
 
 ```go
-
+message AddressFromPKResp {
+    uint32 code = 1;
+    string error = 2;
+    string address = 3;
+}
 ```
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
+| `code` | uint32 | Error Code. Only appears if any exception is triggered. |
+| `error` | string | Error Message. Only appears if any exception is triggered. |
+| `address` | string | Returns correctly formatted QRL address `Q00010...` |
 
-:::note 
-Please refer to the [PARAM](#call) content for more details.
-:::
 
   </TabItem>
 </Tabs>
@@ -5766,10 +5693,9 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="Call-code"
+    groupId="GetAddressFromPK-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5777,25 +5703,27 @@ Example code below.
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash 
-
+ ~/go/bin/grpcurl -plaintext \
+                  -import-path ~/qrl/src/qrl/protos/ \
+                  -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                  -d '{"pk": "01060089256a7ea32fd0634d21f519b257bbf1fd73d9a4dc873031b5a6b3369acdd860397bb5c938a60d70d815f8be5c9f34afd2b7f29abaf991d1c3c2e3367d81580e"}' \
+                  localhost:19010 \
+                  qrl.WalletAPI.GetAddressFromPK
 ```
-
-
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_address_from_pk_req = qrlwallet_pb2.AddressFromPKReq()
+get_address_from_pk_resp = peer_stub.GetAddressFromPK( get_address_from_pk_req, timeout=10 )
+print(get_address_from_pk_resp)
 ```
 
 
@@ -5803,7 +5731,9 @@ Example code below.
 <TabItem value="resp" label="Response" default>
 
 ```json
-
+{
+  "address": "Q010600cdb476b0a5a8a69e480266023e2595fe44f42218e03ebdc8a3d5581eb4505bdd598c89e7"
+}
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
@@ -5813,8 +5743,6 @@ Example code below.
 ```
 </TabItem>
 </Tabs>
-
-
 
 </TabItem>
 </Tabs>
@@ -5827,7 +5755,7 @@ Example code below.
 
 
 
-Short description
+Returns the node information for the connected QRL node.
 
 <Tabs
     defaultValue="usage"
@@ -5843,47 +5771,59 @@ Short description
 Usage details
 
 <Tabs
-  groupId="Call-usage"
+  groupId="GetNodeInfo-usage"
   defaultValue="method"
   values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
+    {label: 'GetNodeInfo', value: 'method'},
+    {label: 'GetNodeInfoReq', value: 'request'},
+    {label: 'GetNodeInfoResp', value: 'response'},
   ]}>
   <TabItem value="method">
 
 ```go
-
+service WalletAPI {
+    rpc GetNodeInfo(NodeInfoReq) returns (NodeInfoResp);
+}
 ```
   
   </TabItem>
   <TabItem value="request">
 
 ```go
-  
+message NodeInfoReq {
+}
 ```
-
-| Field | Type | Required| Details | 
-| :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
-
 
   </TabItem>
   <TabItem value="response">
 
 ```go
+message NodeInfoResp {
+    uint32 code = 1;
+    string error = 2;
 
+    string version = 3;
+    string num_connections = 4;
+    string num_known_peers = 5;
+    uint64 uptime = 6;               // Uptime in seconds
+    uint64 block_height = 7;
+    string block_last_hash = 8;
+    string network_id = 9;
+}
 ```
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
+| `code` | uint32 | Error Code. Only appears if any exception is triggered. |
+| `error` | string | Error Message. Only appears if any exception is triggered. |
+| `version` | string | Version of the [QRL software](https://github.com/theQRL/QRL/releases/latest) running on the node i.e. `4.0.2 python` |
+| `num_connections` | string | Number of connections known to the QRL node |
+| `num_known_peers` | string | Number of known peers seen recently by the node |
+| `uptime` | uint64 | Length of time in seconds |
+| `block_height` | uint64 | Last Blockheight know to node, this will advance as new blocks are mined |
+| `block_last_hash` | string | Last block header hash |
+| `network_id` | string | String ID of the version of code |
 
-:::note 
-Please refer to the [PARAM](#call) content for more details.
-:::
 
   </TabItem>
 </Tabs>
@@ -5897,10 +5837,9 @@ Example code below.
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
-    groupId="Call-code"
+    groupId="GetNodeInfo-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
@@ -5908,25 +5847,28 @@ Example code below.
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash 
-
+~/go/bin/grpcurl -plaintext \
+                 -import-path ~/qrl/src/qrl/protos/ \
+                 -proto ~/qrl/src/qrl/protos/qrlwallet.proto \
+                 localhost:19010 \
+                 qrl.WalletAPI.GetNodeInfo
 ```
 
 
 
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
 
-```js 
-
-```
-
-
-
-</TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
 ```python 
+import grpc
+from qrl.generated import qrlwallet_pb2_grpc, qrlwallet_pb2
 
+peer_grpc_channel = grpc.insecure_channel( '127.0.0.1:19010', options=(('grpc.enable_http_proxy', 0),))
+peer_stub = qrlwallet_pb2_grpc.WalletAPIStub(peer_grpc_channel)
+get_node_info_req = qrlwallet_pb2.NodeInfoReq()
+get_node_info_resp = peer_stub.GetNodeInfo( get_node_info_req, timeout=10 )
+print(get_node_info_resp)
 ```
 
 
@@ -5934,12 +5876,26 @@ Example code below.
 <TabItem value="resp" label="Response" default>
 
 ```json
-
+{
+  "version": "4.0.2 python",
+  "numConnections": "21",
+  "numKnownPeers": "22",
+  "uptime": "81945",
+  "blockHeight": "2687766",
+  "blockLastHash": "a14f5561ac9a8fc99194ec809a7eb26909c127d482466a3712d59e8705000000",
+  "networkId": "The sleeper must awaken"
+}
 ```
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json {title="ERROR-1"}
+#### QRL Node Not Running
+
+```json {title="InactiveRpcError of RPC that terminated"}
+{
+  "code": 1,
+  "error": "\u003c_InactiveRpcError of RPC that terminated with:\n\tstatus = StatusCode.UNAVAILABLE\n\tdetails = \"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:19009: Failed to connect to remote host: Connection refused\"\n\tdebug_error_string = \"UNKNOWN:failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:19009: Failed to connect to remote host: Connection refused {grpc_status:14, created_time:\"2023-07-28T12:09:31.780424373-06:00\"}\"\n\u003e"
+}
 
 ```
 </TabItem>
@@ -5952,137 +5908,6 @@ Example code below.
 <br />
 
 ---
-
-
-### template
-
-
-Short description
-
-<Tabs
-    defaultValue="usage"
-    className="unique-tabs"
-    groupId="Call"
-    values={[
-        {label: 'Usage', value: 'usage'},
-        {label: 'Code', value: 'code'},
-    ]}>
-
-<TabItem value="usage">
-
-Usage details
-
-<Tabs
-  groupId="Call-usage"
-  defaultValue="method"
-  values={[
-    {label: 'Call', value: 'method'},
-    {label: 'CallReq', value: 'request'},
-    {label: 'CallResp', value: 'response'},
-  ]}>
-  <TabItem value="method">
-
-```go
-
-```
-  
-  </TabItem>
-  <TabItem value="request">
-
-```go
-  
-```
-
-| Field | Type | Required| Details | 
-| :--: | :---: | :--: | :--- |
-| `param` | [PARAM OBJECT](#call) | NO | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | YES | Details |
-
-
-  </TabItem>
-  <TabItem value="response">
-
-```go
-
-```
-
-| Field | Type | Details | 
-| :--: | :---: | :--- |
-| `param` | [PARAM OBJECT](#call) | <dl><dt>PARAM Object contains:</dt><dd style={{ display:'list-item' }}>X</dd><dd style={{ display:'list-item' }}>Y</dd><dd style={{ display:'list-item' }}>Z</dd></dl> |
-| `param` | TYPE | Details |
-
-:::note 
-Please refer to the [PARAM](#call) content for more details.
-:::
-
-  </TabItem>
-</Tabs>
-
-
-</TabItem>
-<TabItem value="code" label="Code">
-
-Example code below.
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="Call-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
-
-```bash 
-
-```
-
-
-
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
-
-```js 
-
-```
-
-
-
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
-
-```python 
-
-```
-
-
-</TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json
-
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json {title="ERROR-1"}
-
-```
-</TabItem>
-</Tabs>
-
-
-
-</TabItem>
-</Tabs>
-<br />
-
----
-
 
 
 
@@ -6099,17 +5924,12 @@ These golang messages support the methods above.
 | Message Name | Details | 
 | :-----------: | :------------ | 
 | [PlainTransaction](#plaintransaction) | This is the main transaction method and includes *Transfer, CoinBase, LatticePublicKey, Message, Token, TransferToken, and Slave* transaction types  |
-| [message](#messages) | Message Details |
-| [message](#messages) | Message Details |
-
-
-
-
-
-
-
-
-
+| [PlainAddressAmount](#plainaddressamount) | Returns address and amount for balance lookup |
+| [MiniTransaction](#minitransaction) | Returns transaction_hash, outgoing or incoming and the amount of the transaction |
+| [OTSBitfieldByPage](#otsbitfieldbypage) | Returns ots_bitfield and page_number by page for an address |
+| [PlainBlockHeader](#plainblockheader) | Returns hash_header, block_number, timestamp_seconds, hash_header_prev, reward_block, reward_fee, merkle_root, mining_nonce, extra_nonce from block given  |
+| [PlainBlock](#plainblock) | returns [PlainBlockHeader](#plainblockheader),[ PlainTransaction](#plaintransaction), [PlainGenesisBalance](#plaingenesisbalance) |
+| [PlainGenesisBalance](#plaingenesisbalance) | returns the address, balance from Genesis |
 
 
 
