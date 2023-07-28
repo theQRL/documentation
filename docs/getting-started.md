@@ -25,7 +25,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 Welcome to the Quantum Resistant Ledger documentation! These doc's aim to be the central source of information for the QRL for all topics from using the base tools to building on the project. Whether you are developing a new project or simply understanding the basics this is the source.
 
-The docs are broken into 4 main categories, [Use](/use), [Learn](/learn), [Build](/build) , and [Tutorials](/tutorials). These sections aim to guide a user through the project from basic functionality into more advanced topics like the quantum resistant nature of the cryptography used.
+The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [API](/api). These sections aim to guide a users, developers, and everyone in between through the project from basic functionality into more advanced topics like API usage and Extended XMSS HyperTree creation.
 
 ---
 
@@ -171,7 +171,7 @@ The docs are broken into 4 main categories, [Use](/use), [Learn](/learn), [Build
 If you don't find all you need from these docs, please join us in our [Discord Server](https://theqrl.org/discord) for more direct help.
 :::
 
-:::caution DOCUMENT STATUS 
+:::caution DOCUMENT STATUS
 **Contributions welcome and appreciated!**
 
 <span> This site is in <i>{frontMatter.docstatus}</i> status and needs additional input and work! </span>
