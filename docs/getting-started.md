@@ -114,7 +114,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
         <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/ots-keys">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/fundamentals/ots-keys">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="OTS Keys">
               OTS Keys       
@@ -162,7 +162,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
           <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/qrl-wallet-api">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/wallet-api">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="QRL Wallet API">
               QRL Wallet API

@@ -21,7 +21,7 @@ slug: /build/fundamentals/ots-keys
 :::
 
 
-**O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of the hash based cryptography [XMSS](basics/cryptography/xmss), the underlying cryptography that The Quantum Resistant Ledger uses. 
+**O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of the hash based cryptography XMSS, the underlying cryptography that The Quantum Resistant Ledger uses. 
 
 The OTS key and how it applies to the QRL can be a little confusing and is different from most other cryptocurrencies. Understanding the basics will help prevent any issues later on. 
 
@@ -50,7 +50,7 @@ An individual address will contain multiple OTS keys (*default of 1024*) all ava
 ![](assets/img/merkleTreeSig_transparent-grey-sm.png)
 *These OTS keys are verifiable and provable to be owned by the master seed as they cannot be generated without the master seed.* 
 
-The experts call this [stateful cryptography](basics/cryptography/stateful) as it is imperative that the state of the exposed keys be kept in order to ensure never to reuse any keys.
+The experts call this stateful cryptography as it is imperative that the state of the exposed keys be kept in order to ensure never to reuse any keys.
 
 ## How is it Secure?
 
@@ -131,7 +131,7 @@ After multiple cryptographic reviews and audits the QRL, through some clever mat
 The ability to create sub-trees and even *sub-sub* trees extends the amount of outgoing transactions, intrinsically creating a never ending address of post-quantum secure OTS keys all deterministically linked back to a single secret seed (master) key. 
 
 :::info
-Extensible Merkle Trees, or slave keys, are an advanced function of the project. The typical user will not need to worry about slave tree keys. To learn more about how QRL uses [Extendable Addresses](developers/address/hypertree).
+Extensible Merkle Trees, or slave keys, are an advanced function of the project. The typical user will not need to worry about slave tree keys.
 :::
 
 

@@ -204,7 +204,7 @@ const config = {
               },
               {
                 label: 'QRL Helpers',
-                href: '/build/helpers'
+                href: '/developers/helpers'
               },
             ],
           },
@@ -300,8 +300,20 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
+                label: 'User Documentation',
+                to: '/use',
+              },
+              {
+                label: 'Developer Documentation',
+                to: '/build',
+              },
+              {
+                label: 'API Documentation',
+                to: '/api',
+              },
+              {
+                label: 'Tutorials and Guides',
+                to: '/tutorials/overview',
               },
             ],
           },
