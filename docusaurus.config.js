@@ -137,7 +137,7 @@ const config = {
               },
               {
                 label: 'OTS Keys',
-                href: '/learn/ots-keys'
+                href: '/build/fundamentals/ots-keys'
               },
               {
                 label: 'On-Chain Voting',
@@ -204,7 +204,7 @@ const config = {
               },
               {
                 label: 'QRL Helpers',
-                href: '/build/helpers'
+                href: '/developers/helpers'
               },
             ],
           },
@@ -300,8 +300,20 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
+                label: 'User Documentation',
+                to: '/use',
+              },
+              {
+                label: 'Developer Documentation',
+                to: '/build',
+              },
+              {
+                label: 'API Documentation',
+                to: '/api',
+              },
+              {
+                label: 'Tutorials and Guides',
+                to: '/tutorials/overview',
               },
             ],
           },

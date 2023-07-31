@@ -26,7 +26,7 @@ slug: /build/node-cli/overview
 Interacting with the QRL network can be done utilizing the CLI interface. This will allow you to complete some more advanced tasks on the network. Using the CLI is easy and there is a great `--help` section to guide you along.
 
     
-It is recommended that you have a local working installation of QRL in order to use the CLI. See the Node installation instructions to get started today. Follow the guide to setup a [QRL node](/node/QRLnode) if you haven't already.
+It is recommended that you have a local working installation of QRL in order to use the CLI. See the Node installation instructions to get started today. Follow the guide to setup a [QRL node](/use/node) if you haven't already.
 
 :::info Remote Node Connection
 It is possible to connect to a remote node that allows external connections. Use the `--host {REMOTE_IP_ADDRESS}` flag on the CLI to connect. 
@@ -35,7 +35,7 @@ It is possible to connect to a remote node that allows external connections. Use
 
 ## Overview
 
-Running commands using the qrl node cli requires the QRL node software is installed. [See the documentation to get started installing the QRL node](/node/node-installation) as well as the full [Node cli documentation](/Node/node-cli)
+Running commands using the qrl node cli requires the QRL node software is installed. [See the documentation to get started installing the QRL node](/use/node/installation) as well as the full [Node cli documentation](/use/node/node-cli)
 
 ## CLI Help
 

@@ -39,6 +39,7 @@ From the main page there are links along the side bar for all of the various fun
 - **Recent Transactions** - Shows a list of the latest transactions shown on the chain
 - **Unconfirmed Transactions **- Shows any transactions that are in the Mempool awaiting a block to mint
 - **Peers** - Gives a list of all peers the explorer node is aware of
+- **Richlist** - Full list of all public addresses ranked in total value.
 - **Wallet** - This is a link the the QRL Web Wallet
 
 

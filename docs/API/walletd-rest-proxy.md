@@ -78,7 +78,7 @@ The wallet daemon will by default create the wallet file at `~/.qrl/walletd.json
 - golang v1.8 or greater
 
 :::tip
-The `qrl_walletd` API is installed with the base [QRL Node](/node). Follow [this guide](/node/node-installation) to install the tools and get started.
+The `qrl_walletd` API is installed with the base [QRL Node](/use/node). Follow [this guide](/use/node/installation) to install the tools and get started.
 :::
 
 ## Getting Started
@@ -1965,8 +1965,8 @@ Relay up to 80 bytes of a message onto the network from given address.
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail.
 
 :::tip
-This function can be used to [notarize](/tools/notarise/) data or for on-chain voting, as well as any free form data. 
-See the [message encoding](/developers/messages/message-tx-encoding) documentation for information on established encoding formats. 
+This function can be used to [notarize](/use/tools/notarize) data or for on-chain voting, as well as any free form data. 
+See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
 :::
 
 </TabItem>
@@ -2290,7 +2290,7 @@ This function generates a new colored token on the QRL blockchain, originating f
 The initial token balance will be sent to the QRL addresses listed in the `addresses` array.
 
 :::info
-More information can be found in the [QRL Token Documentation](/tools/tokens/)
+More information can be found in the [QRL Token Documentation](/use/tools/tokens/)
 :::
 
 #### Token Quantity

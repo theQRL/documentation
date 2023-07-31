@@ -270,12 +270,12 @@ const sidebars = {
             type: 'generated-index',
             title: 'QRL Node',
             description: 'Covering QRL Node installation and operation.',
-            slug: '/use/node/node-overview',
+            slug: '/use/node',
             keywords: ['use-node'],
             image: '/assets/img/icons/yellow.png',
           },
           items: [
-            'Use/Node/qrl-node',
+            'Use/Node/overview',
             'Use/Node/node-requirements',
             'Use/Node/node-installation',
             'Use/Node/node-config',
@@ -606,6 +606,7 @@ const sidebars = {
         'API/qrl-public-api',
         'API/wallet-api',
         'API/explorer-api',
+        'API/richlist-api',
         'API/walletd-rest-proxy',
         'API/zeus-proxy',
       ]

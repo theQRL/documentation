@@ -34,6 +34,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
       values={[
         { label: 'Use', value: 'use', },
         { label: 'Build', value: 'developer', },
+        { label: 'API', value: 'api', },
         { label: 'Tutorials', value: 'tutorials', },
       ]}>
   <TabItem value="use">
@@ -113,7 +114,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
         <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/learn/ots-keys">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/fundamentals/ots-keys">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="OTS Keys">
               OTS Keys       
@@ -130,6 +131,74 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
             </h2>
             <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                title="QRL API documentation and examples">QRL API documentation and examples</p>
+          </a>
+        </article>
+      </section>
+    </span>
+  </TabItem>
+  <TabItem value="api">
+    <h2>API</h2>
+    <p>API documentation for advanced usage and programmatic connections.</p>
+    <span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+      <article class="col col--12 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/qrl-api-overview">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="API Overview">
+              API Overview
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL API Documentation.">QRL API Documentation.</p>
+          </a>
+        </article>
+          <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/qrl-public-api">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Public API">
+              QRL Public API
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Public API Documentation">QRL Public API documentation.</p>
+          </a>
+        </article>
+          <article class="col col--6 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/wallet-api">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Wallet API">
+              QRL Wallet API
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Wallet API documentation">QRL Wallet API documentation.</p>
+          </a>
+        </article>
+          <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/walletd-rest-proxy">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Walletd Rest Proxy API">
+              QRL Walletd Rest Proxy API
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Walletd Rest Proxy API documentation">QRL Walletd Rest Proxy API documentation.</p>
+          </a>
+        </article>
+          <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/zeus-proxy">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Zeus Proxy API">
+              QRL Zeus Proxy API
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Zeus Proxy API documentation">QRL Zeus Proxy API documentation.</p>
+          </a>
+        </article>
+          <article class="col col--4 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/zeus-proxy">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Explorer API">
+              QRL Explorer API
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="QRL Explorer API documentation">QRL Explorer API documentation.</p>
           </a>
         </article>
       </section>

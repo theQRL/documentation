@@ -28,7 +28,7 @@ The QRL has instituted a standard for encoding data into the `message_tx` functi
 
 
 :::info
-QRL's [Document Notarization](/use/tools/notarise/overview) as mentioned in QIP002 has been integrated into both the [QRL Wallet](https://wallet.theqrl.org) and the [Block Explorer](https://explorer.theqrl.org) allowing a user to notarize and validate a document on the QRL blockchain. This system was implemented prior to the standard being instituted and uses a little different encoding.
+QRL's [Document Notarization](/use/tools/notarize) as mentioned in QIP002 has been integrated into both the [QRL Wallet](https://wallet.theqrl.org) and the [Block Explorer](https://explorer.theqrl.org) allowing a user to notarize and validate a document on the QRL blockchain. This system was implemented prior to the standard being instituted and uses a little different encoding.
 :::
 
 

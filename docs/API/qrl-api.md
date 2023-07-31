@@ -990,9 +990,9 @@ See [OptimizedAddressState Object](#optimizedaddressstate), [TransactionExtended
 
 | Field | Type | Details | 
 | :--: | :---: | :--- |
-| `blockheaders` | [BlockHeaderExtended Object](blockheaderextended) | <dl><dt>BlockHeaderExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transaction_count</dd></dl> |
-| `transactions` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
-| `transactions_unconfirmed` | [TransactionExtended Object](transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+| `blockheaders` | [BlockHeaderExtended Object](#blockheaderextended) | <dl><dt>BlockHeaderExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> transaction_count</dd></dl> |
+| `transactions` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
+| `transactions_unconfirmed` | [TransactionExtended Object](#transactionextended) | <dl><dt>TransactionExtended Object contains:</dt><dd style={{ display:'list-item' }}> header</dd><dd style={{ display:'list-item' }}> tx</dd><dd style={{ display:'list-item' }}> addr_from</dd><dd style={{ display:'list-item' }}> size</dd><dd style={{ display:'list-item' }}> timestamp_seconds</dd></dl> |
 
 
 
@@ -1005,7 +1005,7 @@ See [OptimizedAddressState Object](#optimizedaddressstate), [TransactionExtended
   ```    
 
 :::note
-See [BlockHeaderExtended Object](blockheaderextended), [TransactionExtended Object](transactionextended), [TransactionExtended Object](transactionextended) for more information
+See [BlockHeaderExtended Object](#blockheaderextended), [TransactionExtended Object](#transactionextended), [TransactionExtended Object](#transactionextended) for more information
 :::
 
   </TabItem>

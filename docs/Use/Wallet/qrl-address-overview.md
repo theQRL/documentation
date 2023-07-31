@@ -48,7 +48,7 @@ For more information on how the public address is structured and what the bytes 
 
 The QRL public address is paired to a private key, which is represented in a few different ways, each are valid to access the wallet and are used to transact with the blockchain.
 
-A secure source of entropy is used to generate a private key, or seed, which is passed through a secure [_Pseudo-Random Function_ (PRF)](https://crypto.stanford.edu/pbc/notes/crypto/prf.html) to generate a set of pseudo-random keys which generate the merkle tree consisting of many [OTS keys](/learn/ots-keys)
+A secure source of entropy is used to generate a private key, or seed, which is passed through a secure [_Pseudo-Random Function_ (PRF)](https://crypto.stanford.edu/pbc/notes/crypto/prf.html) to generate a set of pseudo-random keys which generate the merkle tree consisting of many [OTS keys](/build/fundamentals/ots-keys)
 
 The wallet software will re-generate this tree each time an address is opened, giving access to each of the OTS keys available to the given address for signing transactions on-chain. 
 
