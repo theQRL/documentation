@@ -56,7 +56,7 @@ To send QRL there are four (4) fields you need to fill in:
 | **Recipient Address** | A valid QRL address to receive funds from you |
 | **Amount** | How much QRL to send to recipient |
 | **Fee** | How much you are paying to broadcast this transaction onto the network |
-| **OTS Key Index** | Enter an unused [One Time Signature OTS Key](/learn/ots-keys) for signing the transaction |
+| **OTS Key Index** | Enter an unused [One Time Signature OTS Key](/build/fundamentals/ots-keys) for signing the transaction |
 
 :::info
 Keep track of used OTS Keys! The desktop wallet will keep track of your OTS key index for you from the blockchain, but it is good practice to write this number down after each use.

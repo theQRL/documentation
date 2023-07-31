@@ -23,10 +23,10 @@ slug: /developers/QIP/qip-reference
 
 This is the suggested template for new QIPs which is modeled closely after the Bitcoin Improvement Proposals (BIPs) and Ethereum Improvement Proposals (EIPs).
 
-- For the full QIP specification, see [specification document]({{site.github.repository_url}}/blob/master/qip-specification.md) page.
-- To get started, see the [workflow document]({{site.github.repository_url}}/blob/master/qip-workflow.md).
+- For the full QIP specification, see [specification document](https://github.com/theqrl/qips/blob/master/qip-specification.md) page.
+- To get started, see the [workflow document](https://github.com/theqrl/qips/blob/master/qip-workflow.md).
 
-See the repos [README.md]({{site.github.repository_url}}/blob/master/README.md) for more information on the structure.
+See the repos [README.md](https://github.com/theqrl/qips/blob/master/README.md) for more information on the structure.
 
 ## Abstract
 

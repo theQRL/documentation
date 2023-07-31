@@ -82,4 +82,4 @@ For more information on the security implementations and usage of Post-Quantum c
 - [TheQRL.org](https://theqrl.org)
 - [The QRL Whitepaper](https://github.com/theQRL/Whitepaper/)
 - [Address Scheme](/build/address/address-scheme)
-- [OTS Keys](/learn/ots-keys)
+- [OTS Keys](/build/fundamentals/ots-keys)

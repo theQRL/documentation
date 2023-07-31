@@ -53,7 +53,7 @@ Being Quantum Resistant comes with some inherent challenges. Before creating you
  
 ### OTS Key Index
 
-When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or [One Time Signature](/learn/ots-keys) key index. 
+When you create a new wallet you create an XMSS tree, which is comprised of many signatures to make a signature scheme. Every signature is referenced as your OTS index or [One Time Signature](/build/fundamentals/ots-keys) key index. 
 
 **The OTS key index is limited.** 
 
