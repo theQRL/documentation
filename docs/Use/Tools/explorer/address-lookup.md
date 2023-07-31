@@ -89,7 +89,7 @@ This tab shows all OTS keys that have been used, and the remaining OTS keys avai
 Keys may have been sent to the mempool without being accepted in a block, so this list should be referred to only as a reference. Managing a personal list of OTS keys used should be done as good practice to avoid any key reuse.
 
 :::info
-See the [One Time Signature Key documentation](/learn/ots-keys) for more information on the OTS key system and the importance of not re-using OTS keys.
+See the [One Time Signature Key documentation](/build/fundamentals/ots-keys) for more information on the OTS key system and the importance of not re-using OTS keys.
 :::
 
 

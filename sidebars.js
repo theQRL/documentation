@@ -606,6 +606,7 @@ const sidebars = {
         'API/qrl-public-api',
         'API/wallet-api',
         'API/explorer-api',
+        'API/richlist-api',
         'API/walletd-rest-proxy',
         'API/zeus-proxy',
       ]
