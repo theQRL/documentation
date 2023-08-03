@@ -40,7 +40,7 @@ pgp import security.theqrl.org.gpg.asc
 
 ### **Verify the Offline Wallet PGP signed shasum file**
 
-- Download the PGP signed shasum file for this release from the [QRL security repo](https://github.com/theQRL/security/tree/master/offline-wallet-generator)
+- Download the PGP signed shasum file for the release from the [QRL security repo](https://github.com/theQRL/security/tree/master/offline-wallet-generator)
 - Check the PGP signature of the shasum hashes file:
 
 ```
