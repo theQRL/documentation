@@ -17,7 +17,13 @@ image: /assets/img/icons/yellow.png
 slug: /build/overview
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
+
+Building on the QRL extends the secure cryptography and security of an immutable blockchain to developers needs. The project has made available multiple on ramps and compatability software to provide the least abbrasive introduction to quantum resistant blockchain technology.
+
+

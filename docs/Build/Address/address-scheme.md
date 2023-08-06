@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrl-address-scheme
 title: QRL Address Scheme
 hide_title: false
@@ -23,7 +23,9 @@ slug: /build/address/address-scheme
 :::
 
 
-QRL uses an extensible stateful asymmetrical hypertree signature scheme composed of chained XMSS trees. This has the dual benefit of utilizing a validated signature scheme and allowing generation of ledger addresses with the ability to sign transactions avoiding a lengthy pre-computation delay seen with giant XMSS constructions. W-OTS+ is the chosen hash-based one-time signature in the scheme for both security and performance reasons.
+QRL uses an extensible stateful asymmetrical hypertree signature scheme composed of chained XMSS trees. 
+
+This has the dual benefit of utilizing a validated signature scheme and allowing generation of ledger addresses with the ability to sign transactions avoiding a lengthy pre-computation delay seen with giant XMSS constructions. W-OTS+ is the chosen hash-based one-time signature in the scheme for both security and performance reasons.
 
 
 ## Public Address Structure
@@ -34,9 +36,8 @@ The first three bytes of any address (descriptor) encode information to describe
 
 A typical account address is represented as follows:
 
-$$
-Q01070050d31c7f123995f097bc98209e9231d663dc26e06085df55dc2f6afe3c2cd62e8271a6bd
-$$
+`Q01070050d31c7f123995f097bc98209e9231d663dc26e06085df55dc2f6afe3c2cd62e8271a6bd`
+
 
 
 QRL Addresses are structured in the following way:
@@ -46,10 +47,10 @@ QRL Addresses are structured in the following way:
 | *DESC* | *0 .. 2* | *3* |  *Address Descriptor* |
 | *DATA* | *3 .. N* | *??* | *N will depend on the address format* | 
 
-When using `sha256 2X`, a QRL address is composed of 39 bytes. This is the internal format used by any API or module in the project. 
+Using `sha256 2X`, a QRL address is composed of 39 bytes. This is the internal format used by any API or module in the project. 
 
 :::info
-At the moment, only one address format is supported: `sha256 2X`.
+At the moment, only one address format is utilized,  `sha256 2X`, however we support crypto-agility and the ability to later move to new hash schemes as the security landscape changes.
 :::
 
 

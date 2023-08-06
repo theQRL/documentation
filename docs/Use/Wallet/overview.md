@@ -266,7 +266,7 @@ The QRL Desktop Wallet allows a local installation of the QRL Wallet on most mod
 
 #### QRL Mobile Wallet
 
-THe QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
+The QRL mobile wallet is available on both iOS and Android. Search in the application stores or the links below.
 
 <span>
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">

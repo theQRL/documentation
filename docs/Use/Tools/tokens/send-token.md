@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: send-token
 title: QRL Token - Send
 hide_title: false
@@ -19,4 +19,25 @@ slug: /use/tools/tokens/send
 
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
+:::
+
+
+Once you have created a QRL token, the asset can then be sent to other QRL addresses using the QRL Gui wallet, API or developer tools like the node CLI.
+
+This opens up possibilities of additional functionality being built onto the network.
+
+
+## Sending Tokens
+
+Using the web wallet we can send tokens to another QRL address. 
+
+- With an open wallet that contains some tokens select the "Send and Receive" screen, 
+- Select the drop down to the right of the "Amount" field and chose the token you wish to use
+- Enter the details to send the tokens including amount and address similar to transferring QRL, and select "Confirm". 
+- Progress through the following screens and wait for the confirmation.
+
+This will transfer the amount given to the other address given as recipient.
+
+:::caution
+Token transfers are not reversible, and once sent are the property of the address sent to. Ensure you have the correct address!
 :::

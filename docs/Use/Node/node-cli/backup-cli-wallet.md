@@ -17,7 +17,7 @@ keywords:
   - node-cli
   - Backup
 image: /assets/img/icons/yellow.png
-slug: /build/node-cli/backup-cli-wallet
+slug: /use/node/node-cli/backup-cli-wallet
 ---
 
 

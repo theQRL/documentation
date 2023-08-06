@@ -16,7 +16,7 @@ keywords:
   - Node
   - Slave XMSS Address
 image: /assets/img/icons/yellow.png
-slug: /build/node-cli/node-cli-slave-xmss
+slug: /use/node/node-cli/node-cli-slave-xmss
 ---
 
 

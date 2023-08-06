@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrl-docker
 title: QRL Docker Overview
 hide_title: false
@@ -21,8 +21,6 @@ slug: /build/docker/overview
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-
-# qrl-docker
 
 [![CircleCI](https://circleci.com/gh/theQRL/qrl-docker.svg?style=svg)](https://circleci.com/gh/theQRL/qrl-docker)
 

@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: validate-qrl-address
 title: Validate QRL Address
 hide_title: false
@@ -22,7 +22,6 @@ slug: /build/helpers/validate-qrl-address
 :::
 
 
-# Validate QRL Address
 
 [![Build Status](https://travis-ci.org/theQRL/validate-qrl-address.svg?branch=master)](https://travis-ci.org/theQRL/validate-qrl-address) [![Coverage Status](https://coveralls.io/repos/github/theQRL/validate-qrl-address/badge.svg?branch=master)](https://coveralls.io/github/theQRL/validate-qrl-address?branch=master) [![npm version](https://badge.fury.io/js/%40theqrl%2Fvalidate-qrl-address.svg)](https://badge.fury.io/js/%40theqrl%2Fvalidate-qrl-address)
 

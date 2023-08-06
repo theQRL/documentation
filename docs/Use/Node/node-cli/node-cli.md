@@ -1,20 +1,20 @@
 ---
 docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-cli
-title: QRL Node CLI
+title: QRL Node Command Line Interface
 hide_title: false
 hide_table_of_contents: false
 sidebar_label: CLI
 sidebar_position: 5
-pagination_label: Node - CLI
+pagination_label: Node-CLI
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: QRL Node CLI
+description: QRL Node CLI Overview
 keywords:
   - docs
   - node
   - advanced
 image: /assets/img/icons/yellow.png
-slug: /use/node/cli
+slug: /use/node/node-cli/overview
 ---
 
 
@@ -22,21 +22,26 @@ slug: /use/node/cli
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-The QRL CLI allows users and developers the ability to interact with the QRL network for fundamental chain operations. This allows users to create new wallet files, transfer quanta, and create tokens.
+Interacting with the QRL network can be done utilizing the CLI interface. This will allow you to complete some more advanced tasks on the network. Using the CLI is easy and there is a great `--help` section to guide you along.
 
-In order to use the cli the main QRL software must be installed. It is not necessary to use sync the node to use the cli, however you will need the address and port of a publicly available node.
+It is recommended that you have a local working installation of QRL in order to use the CLI. See the Node installation instructions to get started today. Follow the guide to setup a [QRL node](/use/node) if you haven't already.
 
-:::info
-To use a remote QRL node, enter the address and port before the command: 
-
-` qrl --host mainnet-1.automated.theqrl.org --port_pub 19009 state`
+:::info Remote Node Connection
+It is possible to connect to a remote node that allows external connections. Use the `--host {REMOTE_IP_ADDRESS}` flag on the CLI to connect. 
 :::
+
+## Overview
+
+Running commands using the qrl node cli requires the QRL node software is installed. [See the documentation to get started installing the QRL node](/use/node/installation) as well as the full [Node cli documentation](/use/node/node-cli)
 
 ## CLI Help
 
-All command line options have a help file available to assist in the use of the `qrl --help` command. 
+All command line options have a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
 
+```bash
+qrl --help
 ```
+```bash
 Usage: qrl [OPTIONS] COMMAND [ARGS]...
 
   QRL Command Line Interface
@@ -50,35 +55,35 @@ Options:
   --version           Show the version and exit.
   --help              Show this message and exit.
 
-Commands:b
+Commands:
   slave_tx_generate    Generates Slave Transaction for the wallet
-  state                Shows Information about a Node's State
+  state                Shows Information about a Node\'s State
   token_list           Fetch the list of tokens owned by an address.
   tx_inspect           Inspected a transaction blob
   tx_message           Message Transaction
-  tx_multi_sig_create  Creates Multi Sig Create Transaction, that results...
+  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
   tx_multi_sig_spend   Transfer coins from src to dsts
   tx_push              Sends a signed transaction blob to a node
-  tx_token             Create Token Transaction, that results into the...
+  tx_token             Create Token Transaction, that results into...
   tx_transfer          Transfer coins from src to dsts
-  tx_transfertoken     Create Transfer Token Transaction, which moves
-                       tokens...
-
-  wallet_add           Adds an address or generates a new wallet (working...
+  tx_transfertoken     Create Transfer Token Transaction, which...
+  wallet_add           Adds an address or generates a new wallet...
   wallet_decrypt
   wallet_encrypt
   wallet_gen           Generates a new wallet with one address
   wallet_ls            Lists available wallets
-  wallet_recover       Recovers a wallet from a hexseed or mnemonic (32...
-  wallet_rm            Removes an address from the wallet using the given...
-  wallet_secret        Provides the mnemonic/hexseed of the given address...
+  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
+  wallet_rm            Removes an address from the wallet using the...
+  wallet_secret        Provides the mnemonic/hexseed of the given...
+
 ```
 
 You can browse even further into sub commands like:
 
-```sh {1}
+```bash
 qrl tx_transfer --help
-
+```
+```bash
 Usage: qrl tx_transfer [OPTIONS]
 
   Transfer coins from src to dsts
@@ -99,7 +104,7 @@ Options:
 
 These options allow advanced functionality like remote node. 
 
-```
+```bash
   -v, --verbose       verbose output whenever possible
   --host TEXT         remote host address             [127.0.0.1]
   --port_pub INTEGER  remote port number (public api) [19009]
@@ -936,7 +941,7 @@ Number  Address                                                                 
 
 ### wallet_recover
 
-Recover a wallet file using the private keys from a QRL address. Can be either hexseed or mnemonic. This will reproduce teh same wallet.json file generated when the initial address was created.
+Recover a wallet file using the private keys from a QRL address. Can be either hexseed or mnemonic. This will reproduce the same wallet.json file generated when the initial address was created.
 
 #### Help
 

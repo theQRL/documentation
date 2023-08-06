@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: notarization-overview
 title: QRL Notarization Overview
 hide_title: false
@@ -37,7 +37,7 @@ Once notarized, any exact copy of that document can be cryptographically verifie
 
  ## Advanced users
 
-:::info
+:::note
 There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](/build/node-cli) using the `message_tx` with appropriate [message encoding](/build/messages/message-tx-encoding).
 :::
 
@@ -69,7 +69,7 @@ This data is sent in a `message_tx` to the blockchain utilizing the address prov
 To verify the integrity of the document, you simply pass it through the same hashing algorithm and verify the hash matches the one you have signed using your quantum resistant secure private keys.
 
 
-:::info
+:::tip
 It is important to point out that this does NOT load the file to the blockchain, only a cryptographic representation (Hash) of the data in the file. An original copy of the file will be needed to verify the notarization.
 :::caution
 

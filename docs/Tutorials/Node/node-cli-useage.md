@@ -1,110 +1,45 @@
 ---
-id: node-cli-wallet
-docstatus: DRAFT
-title: Node Command Line (CLI) Overview
+docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+id: node-cli-usage
+title: Node CLI Usage
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: Node CLI
+sidebar_label: Node CLI Usage 
 sidebar_position: 1
-pagination_label: Node CLI 
+pagination_label: Node CLI Usage
 custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-description: Usage guide for the QRL Node CLI tools
+description: Tutorial for using the public API.
 keywords:
-  - docs
-  - wallet
-  - CLI
-  - node-cli
+  - tutorials
+  - Node-CLI
 image: /assets/img/icons/yellow.png
-slug: /build/node-cli/overview
+slug: /tutorials/node/node-cli-use
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-Interacting with the QRL network can be done utilizing the CLI interface. This will allow you to complete some more advanced tasks on the network. Using the CLI is easy and there is a great `--help` section to guide you along.
-
-    
-It is recommended that you have a local working installation of QRL in order to use the CLI. See the Node installation instructions to get started today. Follow the guide to setup a [QRL node](/use/node) if you haven't already.
-
-:::info Remote Node Connection
-It is possible to connect to a remote node that allows external connections. Use the `--host {REMOTE_IP_ADDRESS}` flag on the CLI to connect. 
-:::
+This tutorial covers some basic usage and gives an example of the wallet functions using the QRL Node command line tools.
 
 
-## Overview
+These tools are available by installing the QRL node on your computer. You do not nessesarly need a synced QRL node locally to perform all of these functions.
 
-Running commands using the qrl node cli requires the QRL node software is installed. [See the documentation to get started installing the QRL node](/use/node/installation) as well as the full [Node cli documentation](/use/node/node-cli)
+Anything that is off-chain like creating and encrypting an address can be done without connection to a node.
 
-## CLI Help
+For the rest of the functions you will need access to a node with the puublic API port 19009 available.
 
-All command line options have a help file available to assist in the use of the command. Simply add the `--help` option to the end of any command to see the help.
+For indivigual use you can try to use one of the foundations nodes
 
-```bash
-qrl --help
-```
-```bash
-Usage: qrl [OPTIONS] COMMAND [ARGS]...
+| Mainnet |  Testnet |
+| :--: | :--: | 
+| `mainnet-1.automated.theqrl.org:19009` |  `testnet-1.automated.theqrl.org:29009` | 
+| `mainnet-2.automated.theqrl.org:19009` |  `testnet-2.automated.theqrl.org:29009` | 
+| `mainnet-3.automated.theqrl.org:19009` |  `testnet-3.automated.theqrl.org:29009` | 
+| `mainnet-4.automated.theqrl.org:19009` |  `testnet-4.automated.theqrl.org:29009` | 
 
-  QRL Command Line Interface
 
-Options:
-  -v, --verbose       verbose output whenever possible
-  --host TEXT         remote host address             [127.0.0.1]
-  --port_pub INTEGER  remote port number (public api) [19009]
-  --wallet_dir TEXT   local wallet dir
-  --json              output in json
-  --version           Show the version and exit.
-  --help              Show this message and exit.
 
-Commands:
-  slave_tx_generate    Generates Slave Transaction for the wallet
-  state                Shows Information about a Node\'s State
-  token_list           Fetch the list of tokens owned by an address.
-  tx_inspect           Inspected a transaction blob
-  tx_message           Message Transaction
-  tx_multi_sig_create  Creates Multi Sig Create Transaction, that...
-  tx_multi_sig_spend   Transfer coins from src to dsts
-  tx_push              Sends a signed transaction blob to a node
-  tx_token             Create Token Transaction, that results into...
-  tx_transfer          Transfer coins from src to dsts
-  tx_transfertoken     Create Transfer Token Transaction, which...
-  wallet_add           Adds an address or generates a new wallet...
-  wallet_decrypt
-  wallet_encrypt
-  wallet_gen           Generates a new wallet with one address
-  wallet_ls            Lists available wallets
-  wallet_recover       Recovers a wallet from a hexseed or mnemonic...
-  wallet_rm            Removes an address from the wallet using the...
-  wallet_secret        Provides the mnemonic/hexseed of the given...
-
-```
-
-You can browse even further into sub commands like:
-
-```bash
-qrl tx_transfer --help
-```
-```bash
-Usage: qrl tx_transfer [OPTIONS]
-
-  Transfer coins from src to dsts
-
-Options:
-  --src TEXT               signer QRL address
-  --master TEXT            master QRL address
-  --dsts TEXT              List of destination addresses
-  --amounts TEXT           List of amounts to transfer (Quanta)
-  --message_data TEXT      Message (Optional)
-  --fee DECIMAL            fee in Quanta
-  --ots_key_index INTEGER  OTS key Index (1..XMSS num signatures)
-  --help                   Show this message and exit.
-
-```
 
 ## Wallet Functions
 
+These functions apply to the 
 
 ### wallet_gen
 
@@ -206,15 +141,6 @@ you can see the hash function of the wallet file by using the `wallet_ls` option
 
 
 
-
-
-
-
-
-
-
-
-
 ### wallet_add
 
 QRL allows additional addresses to be added to the wallet after the wallet file is created by using the `wallet_add` command. This
@@ -247,9 +173,6 @@ Number  Address                                                                 
 3       Q02090081f7e33cc535ca6ca54305f7d34cf2cd9620b1efcae657a76ca4c072902dfc4ed0f23a4a    0.00000000   shake256
 
 ```
-
-
-
 
 
 ### wallet_decrypt
@@ -314,43 +237,6 @@ Number  Address                                                                 
 0       Q000600f1afe2a5d8247779795f0eb0d5225e5fe7b91bcb38c614b5a62fa3df0f5cfe92e6355ace    0.00000000   sha2_256
 ```
 This will also print the available qrl balance and the wallet address. 
-
-
-
-
-### wallet_recover
-
-
-### wallet_rm
-
-### wallet_secret
-
-### slave_tx_generate
-
-### token_list
-
-
-
-
-
-
-
-## Transactions
-
-### tx_inspect
-### tx_message
-### tx_multi_sig_create
-### tx_multi_sig_spend
-### tx_push
-### tx_token
-### tx_transfer
-### tx_transfertoken
-
-
-
-
-
-
 
 
 
@@ -549,5 +435,3 @@ Number  Address                                                                 
 :::tip
 The `wallet_idx` used in various commands is the number to the left in the output of the terminal. 
 :::
-
-

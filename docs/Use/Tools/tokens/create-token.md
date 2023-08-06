@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: create-token
 title: QRL Token - Create
 hide_title: false
@@ -21,25 +21,34 @@ slug: /use/tools/tokens/create
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
 
-The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same encryption and QC resistance as the main QRL blockchain. You can create tokens either by using the `qrl` command line, or by browsing to the qrl web wallet application hosted at [wallet.theqrl.org](https://wallet.theqrl.org). Open your wallet, or create a new one to begin with this guide.
+The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same cryptography and Quantum Resistance as the main QRL blockchain. 
 
-Creating a new token is easy. Once you have all of the pertinent details entered and the fee paid, the network takes care of the rest. 
+You can create tokens either by using the `qrl` command line, API, or through a GUI by browsing to the qrl web wallet application hosted at [wallet.theqrl.org](https://wallet.theqrl.org). Open your wallet, or create a new one to begin with this guide.
+
+Creating a new token is easy. Once you have all of the details entered and the fee paid, the network takes care of the rest. 
 
 ### Token Creation
 
 To create a token you will need to provide the following information:
-* The token creation owners QRL address
-* The token symbol
-* the token name
-* The amount of decimals for your token
-* Initial Token Holder Address
-    * Enter at least one QRL address and the amount of tokens to create and send to this address
 
-The "Initial Token Holders" field allows you to select the addresses that will receive the initial tokens. You can add as many addresses as you see fit. Below is an example showing the QRL fee for processing the transaction and the OTS key index we intend to use. Ensure this is an unused OTS Key.
 
-Once you have filled in all of the necessary details, click the create token button at the bottom of the form. This will broadcast the creation of your token across the QRL network and send the newly minted tokens to the addresses specified.
+| Field |  Details | 
+| :--: |  :--- |
+| `Owner Address` |  Address shown to be the owner of the token, different from the initial token holding addresses |
+| `Token Symbol` |  User defined Token symbol, max length $10$ $bytes$ |
+| `Token Name` |  User defined Token name, max length $30$ $bytes$ |
+| `Decimals` |  Amount of decimals supported for the token, max $9$ or $(10 ** 9)$|
+| `Holder Balance` |  Array of initial token receiver's address and initial balance, limited to 100 QRL addresses |
+| `Token Creation Fee` |  Initial token creation transaction fee set at the default $100$ $shor$|
+| `OTS Key Index` |  This function will auto increment the OTS key from the last used. Otherwise a specific OTS Key can be used for this token transaction. |
 
-You will get a confirmation page that shows the details of the transaction. Verify the information is correct and press "Confirm Token Creation"
+The "Holder Balance" field allows you to select the address(es) that will receive the initial tokens. You can add up to 100 QRL addresses. 
+
+Once you have filled in all of the necessary details, click the create token button at the bottom of the form. 
+
+This will broadcast the creation of your token across the QRL network and send the newly minted tokens to the addresses specified.
+
+You will see a confirmation page that shows the details of the transaction. Verify the information is correct and press "Confirm Token Creation"
 
 
 The confirmation screen will print the details of the transaction.
@@ -52,9 +61,3 @@ You can check the balance of any tokens you have in your wallet by selecting the
 You can also see the recent transactions on the right of the balance screen.
 
 You can receive tokens at your main QRL address, no need for anything special to receive.
-
-### Sending Tokens
-
-Using the web wallet we can send tokens to another QRL address. From the "Send and Receive" screen, select the drop down to the right of the "Amount" field.
-
-Enter the details to send the tokens, and select "Confirm". Progress through the following screens and wait for the confirmation.
