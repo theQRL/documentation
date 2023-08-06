@@ -16,10 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/qip/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 QRL Improvement Proposals (QIPs) are open proposals put forward to improve the QRL core-protocol and other components of the QRL system.
 

@@ -16,11 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/mining/overview
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 Mining QRL is the basis of the blockchain network and powers the security and utility of the project. This in turn gives back a reward for those that chose to share their computer power for cryptographic hashes.
 
 :::tip Block Rewards

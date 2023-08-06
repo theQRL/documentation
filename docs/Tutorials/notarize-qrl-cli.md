@@ -16,10 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /tutorials/notarize-qrl-cli
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 Recently a project came up that required additional security for users downloading a publicly hosted file. Utilizing the [Quantum Resistant Ledger's](https://theqrl.org) Notarization system seemed like a logical choice. *__Post quantum secure cryptography__* and a simple user interface!
 
 The notarization system is simple and very straightforward to use. Additionally there are some advantages to using a system like this as opposed to some of the commercially available solutions, none which seemed to solve this issue in full. 

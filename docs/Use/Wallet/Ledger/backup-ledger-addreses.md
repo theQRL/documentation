@@ -19,10 +19,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/backup-restore
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 The QRL Ledger application, like all Ledger applications will never expose the QRL private keys associated to an address. Instead the Ledger device recovery keys are needed to recover a QRL address that is stored on the device.
 

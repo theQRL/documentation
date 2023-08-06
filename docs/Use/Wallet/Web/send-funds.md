@@ -18,11 +18,6 @@ slug: /use/wallet/web/send
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The process of sending QRL to another address using the [QRL Web wallet](https://wallet.theqrl.org) is simple and secure. 
 
 You must have the private recovery key medium to access your wallet, funds in your address, and the Public address of the recipient.

@@ -17,10 +17,6 @@ slug: /what-is-qrl
 
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 The Quantum Resistant Ledger (QRL) is an externally audited enterprise-grade blockchain platform secure today from the quantum computing advances of tomorrow. 
 

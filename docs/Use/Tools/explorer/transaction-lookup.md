@@ -18,14 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/explorer/transaction-lookup
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-**Needed**
-- Link to transaction types
-:::
-
-
 A transaction can be looked up by providing the transaction hash to the [QRL Explorer](https://explorer.theqrl.org) search bar, or clicking on the *txhash* in a block or address lookup.
 
 This lookup gives detailed information on the transaction and will vary depending on the type of transaction. 

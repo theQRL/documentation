@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  qip-template
 title: QIP Template
 hide_title: false
@@ -17,15 +17,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /developers/QIP/qip-template
 ---
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-<br/><br/>
-
-- This is pulled directly from [github](https://github.com/theQRL/qips/) with slight modifications. 
-- Input on the best way to serve this document without completely duplicating information is appreciated.
-:::
 
 This is the suggested template for new QIPs which is modeled closely after the Bitcoin Improvement Proposals (BIPs) and Ethereum Improvement Proposals (EIPs).
 

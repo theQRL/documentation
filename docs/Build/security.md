@@ -21,9 +21,6 @@ slug: /build/security
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 The QRL provides means for secure communication and verification of various functions and features of the project.
 

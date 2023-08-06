@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/address/hexphrase
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 A QRL Addresses secret key can be represented in a Hexphrase, or in a hexadecimal format. This key is the seed to generating the XMSS tree that correlates to the QRL public address.
 
 :::info Example Hexphrase

@@ -18,10 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/open
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 ## Accessing Ledger Wallet
 

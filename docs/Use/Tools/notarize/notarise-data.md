@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: notarization-data
 title: QRL - Notarize Data
 hide_title: false
@@ -16,11 +16,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /use/tools/notarize/noatrize
 ---
-
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 
 Notarizing data on the QRL Blockchain can be accomplished in a few different manners. For the scope of this document we will use the QRL Web or Desktop wallet for this function.

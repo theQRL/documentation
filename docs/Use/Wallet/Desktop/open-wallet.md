@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/open
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 In order to interact with a QRL wallet it must be opened using the private keys that were created during the [wallet creation](/use/wallet/desktop/new) process.
 
 Open the QRL Desktop Wallet application to get started opening a wallet.

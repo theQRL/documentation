@@ -20,10 +20,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/mobile/backup
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 The process of backing up the QRL mobile wallet is simple and very straightforward. Each address created by the Mobile wallet will have a backup key that must be stored in a safe location off device.
 

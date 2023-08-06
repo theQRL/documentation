@@ -19,18 +19,8 @@ slug: /tutorials/node/dual-node-host
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 
-### NEEDED
-
-- Review and test
-- Spelling and grammar
-- Overall flow of document
-:::
-
-
-There are many reasion a person would want to run multiple versions of the node software on a single host. This could be to aid in development of on-chain tooling, to use the local nodes to create a new tool or to test broadcasting multiple scripted transactions on a test network before actually sending real funds.
+There are many reason a person would want to run multiple versions of the node software on a single host. This could be to aid in development of on-chain tooling, to use the local nodes to create a new tool or to test broadcasting multiple scripted transactions on a test network before actually sending real funds.
 
 
 This tutorial will cover installing both Mainnet and Testnet QRL Nodes on a single host PC running Ubuntu. 
@@ -160,7 +150,7 @@ qrl --json --port_pub 19019 state
 }
 ```
 
-From this output you can see the testnet node is running, the blockheoght is different form the mainnet node running and the networkID is different.
+From this output you can see the testnet node is running, the blockheight is different form the mainnet node running and the networkID is different.
 
 :::tip 
 Check the node blockHeight against the [QRL Testnet Explorer](https:testnet-explorer.theqrl.org)

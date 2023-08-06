@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/web/backup
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The process to backup the Web wallet is simple. The wallet gives a few options for backing up an address during the address creation process. Chose any of these methods to backup your QRL address.
 
 Additionally after the wallet is created the recovery seed can be displayed for backup allowing future backups to be made.

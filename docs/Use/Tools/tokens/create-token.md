@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/tokens/create
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same cryptography and Quantum Resistance as the main QRL blockchain. 
 
 You can create tokens either by using the `qrl` command line, API, or through a GUI by browsing to the qrl web wallet application hosted at [wallet.theqrl.org](https://wallet.theqrl.org). Open your wallet, or create a new one to begin with this guide.

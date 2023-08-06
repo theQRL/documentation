@@ -20,11 +20,6 @@ slug: /use/node/node-cli/node-cli-slave-xmss
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL wallet is an XMSS Merkle tree constructed using the private key to generate leaves of this tree. Each "leaf" can also generate a tree of OTS Slave keys that can be used to sign transactions. This allows further expansion of a QRL wallet extending the number of transactions you can process before needing to regenerate a new wallet.
 
 > To create a slaves.json file you will need a QRL wallet.json file and a working installation of QRL. See the guide for creating a [QRL Wallet CLI](/build/node-cli/overview)

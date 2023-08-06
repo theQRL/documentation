@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/messages/overview
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL network supports on-chain messages providing a variety of functionality to the project. These messages are sent onto the QRL network writing data into the immutable quantum resistant blockchain ledger.
 
 Anyone is able to write data to the chain and can do so in multiple ways.

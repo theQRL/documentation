@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/tokens/overveiw
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 QRL supports the generation of colored tokens, allowing a multitude of functionality in addition to the typical blockchain functions. 
 
 These tokens are generated and sent in separate transaction types *([`RelayTokenTxn`](/api/wallet-api#relaytokentxn) and [`RelayTransferTokenTxn`](/api/wallet-api#relaytransfertokentxn))* allowing additional versatility as they are not tied to any QRL funds and can be transferred interdependently from an QRL coins. 

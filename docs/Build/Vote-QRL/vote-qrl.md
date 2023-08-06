@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/vote-qrl/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 Deployed at <https://vote.theqrl.org>
 

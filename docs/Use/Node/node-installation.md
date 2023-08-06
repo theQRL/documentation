@@ -17,15 +17,8 @@ image: /assets/img/icons/yellow.png
 slug: /use/node/installation
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 
 Installing QRL is simple, and is possible on most modern operating systems. The install relies on `python3.5` or newer and the `pip3` python package install system. 

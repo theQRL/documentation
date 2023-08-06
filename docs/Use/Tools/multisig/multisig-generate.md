@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/multisig/generate
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-:::
-
 A multisig address is generated using signatory addresses and their respective weight to vote. These addresses are cryptographically associated together with their output being a new multisig address.
 
 This new address can accept a deposit of funds from any QRL address, similar to a normal QRL address. Where the multisig address differs is in how funds are authorized to spend.

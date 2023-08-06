@@ -17,9 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/mining/solo-mining
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 You can setup a QRL mining node on most PCs or servers. This allows you to mine QRL while also running a full node on the QRL network. You simply need to enable mining on the QRL node in a config file to begin mining QRL.
 

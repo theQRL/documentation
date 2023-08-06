@@ -16,10 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/web/new
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 Creating a new QRL address is simple and straightforward. Browse to the QRL wallet at https://wallet.theqrl.org to begin.
 
 :::caution Backup and verify the address recovery media

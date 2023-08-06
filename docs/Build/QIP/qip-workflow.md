@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  qip-workflow
 title: QIP Workflow
 hide_title: false
@@ -17,15 +17,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /developers/QIP/qip-workflow
 ---
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-<br/><br/>
-
-- This is pulled directly from [github](https://github.com/theQRL/qips/) with slight modifications. 
-- Input on the best way to serve this document without completely duplicating information is appreciated.
-:::
 
 ## 1. Considerations and Governance
 

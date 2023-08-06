@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/overview
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The QRL Desktop wallet provides users the ability to create new QRL wallets, open existing wallets from private recovery keys *(Hexseed or Mnemonic)* or `wallet.json` files. 
 
 The QRL Wallet is the main interaction point for most users to the QRL blockchain. This provides a portal and all of the tools to interact with the chain.

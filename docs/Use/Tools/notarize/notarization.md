@@ -18,12 +18,6 @@ slug: /use/tools/notarize/overview
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
 The QRL's notarization system is a secure and decentralized way of proving the existence and integrity of a document or message at a specific point in time. It is designed to provide a trustworthy method of verifying information without relying on a central authority utilizing blockchain technology.
 
 

@@ -18,19 +18,11 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/plausable-deniability
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 import ImageSwitcher from '@site/src/components/UseColorMode.js';
-
 import KeyspaceSmall from './assets/keyspace-small.png';
 import KeyspaceSmallDark from './assets/keyspace-small-dark.png';
-
 import Keyspace2 from './assets/keyspace2.png';
 import Keyspace2Dark from './assets/keyspace2-dark.png';
-
 
 One of the most exciting features the QRL Ledger application supports is the ability to create a secondary profile with it's own address space. 
 

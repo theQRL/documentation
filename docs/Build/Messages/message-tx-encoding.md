@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/messages/message-tx-encoding
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL has instituted a standard for encoding data into the `message_tx` function to differentiate encoded data on the blockchain. This highlights the usage and versatility of on-chain tools like messaging when paired with some additional off chain tooling.
 
 [QIP002 - *A standard message encoding format to indicate encoded data in MessageTransaction transactions*](https://github.com/theQRL/qips/blob/master/qips/QIP002.md) set the standard for QRL message encoding that's used to differentiate various message types and their functions on the blockchain.

@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/docker/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 [![CircleCI](https://circleci.com/gh/theQRL/qrl-docker.svg?style=svg)](https://circleci.com/gh/theQRL/qrl-docker)
 
 This repo contains images used by QRL build processes.

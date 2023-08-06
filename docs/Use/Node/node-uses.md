@@ -16,11 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/node/uses
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 Ruining a valid, up to date node client will, by it's very presence in the blockchain process, help secure the network and any transactions routed through the node. 
 
 We have covered the basic functions of the node in previous documents. This document will dive deeper into the uses of a QRL Node.

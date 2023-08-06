@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/install
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

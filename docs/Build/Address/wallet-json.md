@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/address/wallet-json
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 A wallet.json file is an amalgamation of all of the wallet information. This file contains every bit of information for an address including the full seed (_pk_), hexseed, mnemonic phrase, public address, as well as various information on how the address was generated.
 
 

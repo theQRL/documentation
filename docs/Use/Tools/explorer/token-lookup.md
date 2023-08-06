@@ -18,12 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/explorer/token-lookup
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 Token information is searched similar to any other transaction in [the QRL Block Explorer](https://explorer.theqrl.org). Instead of searching by the token name, search for the token using the `create_token_tx` transaction hash or `token_tx` transaction hash.
 
 :::info

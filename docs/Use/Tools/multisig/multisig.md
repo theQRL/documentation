@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/multisig/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-:::
-
-
 “Multisig” or *multiple signature transactions* require one or more valid signatures to transfer funds from a special QRL address, called a multi-signature address to a destination address. 
 
 Funds held in a multi-signature address cannot be spent without the cryptographic agreement of a specified number of parties. This function lends it self to systems where multiple parties want to have control over shared funds.

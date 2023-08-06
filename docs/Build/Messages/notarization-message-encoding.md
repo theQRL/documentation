@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/messages/notarization-message-encoding
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 This document covers the QRL Notarization message encoding standard that was instituted into the project through the QIP process in 2018. 
 
 :::note

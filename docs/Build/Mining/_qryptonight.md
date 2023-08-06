@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /developers/mining/qryptonight
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 [![PyPI version](https://badge.fury.io/py/pyqryptonight.svg)](https://badge.fury.io/py/pyqryptonight)
 [![CircleCI](https://circleci.com/gh/theQRL/qryptonight.svg?style=shield)](https://circleci.com/gh/theQRL/qryptonight)

@@ -17,13 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /developers/integration-tests
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
-
 [![CircleCI](https://circleci.com/gh/theQRL/integration_tests.svg?style=svg)](https://circleci.com/gh/theQRL/integration_tests)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/theQRL/qrllib/master/LICENSE)
 

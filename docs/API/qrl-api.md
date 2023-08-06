@@ -18,20 +18,8 @@ image: /assets/img/icons/yellow.png
 slug: /api/qrl-public-api
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!
-
-- Rework intro and code usage examples with functional examples.
-
-</span>
-:::
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-
 
 
 ## Introduction

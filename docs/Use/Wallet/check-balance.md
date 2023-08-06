@@ -17,9 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/check-balance
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 The QRL blockchain holds all balance information on any QRL wallet address and is the source of truth for all balance information. Every time a transaction is sent to or from an address it is recorded on the chain. 
 

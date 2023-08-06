@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-install
 title: QRL Offline Wallet - Install
 hide_title: false
@@ -16,14 +16,8 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/offline/install
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the opperating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
-
-
 
 
 <details>

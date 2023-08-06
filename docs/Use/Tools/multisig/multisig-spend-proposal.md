@@ -19,10 +19,6 @@ slug: /use/tools/multisig/spend-proposal
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 Transferring funds from a Multisig address requires a spend proposal be initiated by one of the members of the Multisig address.
 
 As funds stored in a Multisig address are held under the rules established when the address was created, the minimum threshold must be met for any transaction to be sent. Defined signatories are required to vote on a spend proposal until the minimum threshold is met.

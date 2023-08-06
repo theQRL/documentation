@@ -18,11 +18,6 @@ slug: /build/address/address-scheme
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 QRL uses an extensible stateful asymmetrical hypertree signature scheme composed of chained XMSS trees. 
 
 This has the dual benefit of utilizing a validated signature scheme and allowing generation of ledger addresses with the ability to sign transactions avoiding a lengthy pre-computation delay seen with giant XMSS constructions. W-OTS+ is the chosen hash-based one-time signature in the scheme for both security and performance reasons.

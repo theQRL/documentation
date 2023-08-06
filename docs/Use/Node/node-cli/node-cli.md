@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-cli
 title: QRL Node Command Line Interface
 hide_title: false
@@ -16,11 +16,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /use/node/node-cli/overview
 ---
-
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 Interacting with the QRL network can be done utilizing the CLI interface. This will allow you to complete some more advanced tasks on the network. Using the CLI is easy and there is a great `--help` section to guide you along.
 

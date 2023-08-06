@@ -20,12 +20,6 @@ slug: /api/explorer-api
 ---
 
 
-:::caution DOCUMENT STATUS 
-
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL block explorer has been built with an API endpoint to enable an easy way for developers to grab data from the QRL blockchain. This endpoint is limited in scope and may change in future iterations of the explorer.
 
 :::info

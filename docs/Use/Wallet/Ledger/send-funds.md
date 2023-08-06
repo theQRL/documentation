@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/send
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 
 Sending quanta using a ledger device is simple and straight forward. This guide will cover the process of sending funds stored on the device to another QRL address.
 

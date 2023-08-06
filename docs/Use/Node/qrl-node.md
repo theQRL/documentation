@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: overview
 title: QRL Node Overview
 hide_title: false
@@ -15,11 +15,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /use/node/overview
 ---
-
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 
 A QRL node is a dedicated computer running software developed by the QRL team. These computers make up the core building blocks of the network and strengthen the chain by helping to agree on the immutable consensus of each block.

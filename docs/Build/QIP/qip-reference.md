@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  qip-reference
 title: QIP Reference
 hide_title: false

@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/tokens/send
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 Once you have created a QRL token, the asset can then be sent to other QRL addresses using the QRL Gui wallet, API or developer tools like the node CLI.
 
 This opens up possibilities of additional functionality being built onto the network.

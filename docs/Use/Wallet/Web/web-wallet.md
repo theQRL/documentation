@@ -16,13 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/web/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
-
 
 The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network and access on-chain tools. 
 

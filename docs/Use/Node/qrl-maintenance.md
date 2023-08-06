@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrl-maintenance 
 title: QRL Node Maintenance
 hide_title: false
@@ -17,13 +17,7 @@ slug: /use/node/maintenance
 
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL node requires very little maintenance to keep running. There are a few things that can come up over the life of the node to be aware of and account for.
-
 
 ## State File Growth
 

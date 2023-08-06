@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/qrl-status
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL foundation monitors and maintains multiple services related to the Quantum Resisant Ledger and it's functional operation.
 
 These services can be seen on the [QRL Service Status Dashboard](https://status.theqrl.org/).

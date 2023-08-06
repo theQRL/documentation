@@ -17,20 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/fundamentals/qrl-emission
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-
-Explain the emission schedule of the project, and how it decreases over the years.
-
-**Needed**
-
-- What year/block height did the fork go in place for QIP16
-
-
-:::
-
-
 The QRL blockchain is mined using computers running custom mining software, each block in the chain returns a reward to the miner who mints a new coin accepted by the network. The rate that these coins are distributed is defined in the **emission standard** and is set to exponentially decay (reduce) over time as the chain progresses.
 
 In simple terms, each new block will pay the miner a little less than the previous block.

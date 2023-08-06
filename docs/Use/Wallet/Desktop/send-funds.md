@@ -18,12 +18,7 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/send
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-Send funds using the desktop wallet
+Send funds using the desktop wallet:
 
 It is assumed you have already installed the application on your computer and have opened a wallet address containing funds. Please see our guides to [check a QRL balance](#) or to [receive QRL](#).
 
