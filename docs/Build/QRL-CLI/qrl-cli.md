@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL-CLI
 sidebar_position: 5
 pagination_label: QRL-CLI
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QRL-CLI/qrl-cli.md
 description: QRL-CLI usage and installation.
 keywords:
   - docs

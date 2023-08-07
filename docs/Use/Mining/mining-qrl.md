@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
 pagination_label: Mining QRL - Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Mining/mining-qrl.md
 description: Mining QRL documentation
 keywords:
   - docs

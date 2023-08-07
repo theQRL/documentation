@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API Overview
 sidebar_position: 1
 pagination_label: API Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/fr1t2/documentation/edit/main/docs/API/api-overview.md
 description: QRL API Overview
 keywords:
   - docs

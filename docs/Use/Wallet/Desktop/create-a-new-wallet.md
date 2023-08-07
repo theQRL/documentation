@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: New
 sidebar_position: 3
 pagination_label: Desktop Wallet - New
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Desktop/create-a-new-wallet.md
 description: Create New QRL Desktop Wallet
 keywords:
   - docs

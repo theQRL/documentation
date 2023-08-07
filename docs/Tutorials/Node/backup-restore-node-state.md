@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Backup and Restore Node 
 sidebar_position: 1
 pagination_label: Backup and Restore Node 
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/backup-restore-node-state.md
 description: Tutorial for backing up the QRL Node and restoring the state from a backup.
 keywords:
   - tutorials
@@ -39,7 +39,7 @@ The QRL uses a LevelDB Database to store block data. This means there is a prope
 Bootstrapping the QRL node is simple and quickly gets you started using the node.
 
 
-Follow the backup proceedure above on a node that you have already synced, or grab the state files from a source like [https://qrl.co.in/chain](https://qrl.co.in/chain)
+Follow the backup procedure above on a node that you have already synced, or grab the state files from a source like [https://qrl.co.in/chain](https://qrl.co.in/chain)
 
 Once you have this backup in a zipped (*tar.gz*) file on the computer that you wish to run the node on, unzip the files into the `~/.qrl/` directory
 

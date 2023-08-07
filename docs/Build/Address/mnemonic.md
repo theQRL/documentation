@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Mnemonic
 sidebar_position: 4
 pagination_label: Mnemonic
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Address/mnemonic.md
 description: QRL Address Mnemonic Documentation.
 keywords:
   - docs

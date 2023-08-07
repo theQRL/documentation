@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - walletd-rest-proxy
 sidebar_position: 4
 pagination_label: API - walletd-rest-proxy
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Developers/API/walletd-rest-proxy.md
+custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/API/walletd-rest-proxy.md
 description: QRL API - walletd-rest-proxy
 keywords:
   - docs
@@ -36,7 +36,7 @@ QRL node. This proxy eliminates any need to interact with the GRPC functions, al
 #### Automatic Slave transactions 
 
 The `wallets-rest-proxy` provides an automatic slave system, where new slaves are generated under a `root_slave` with a 3rd layer of recursion 
-of merkle trees under a single private key. This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous 
+of Merkle trees under a single private key. This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous 
 tier 3 slave OTS keys are used.
 
 :::info Automatic Slave Transaction Diagram 

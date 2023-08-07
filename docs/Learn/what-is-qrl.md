@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: What is The QRL
 sidebar_position: 1
 pagination_label: What is The QRL
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Learn/what-is-qrl.md
 description: Overview of the Quantum Resistant Ledger
 keywords:
   - docs

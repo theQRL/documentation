@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRLLIB
 sidebar_position: 3
 pagination_label: QRLLIB
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/qrllib.md
 description: QRLLIB - The QRL Core Library
 keywords:
   - docs
@@ -75,7 +75,7 @@ pip3 install pyqrllib
 
 #### OSX
 
-If you dont have brew yet, we think you should :) Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
+If you don't have brew yet, we think you should :) Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
 
 Now install some dependencies
 

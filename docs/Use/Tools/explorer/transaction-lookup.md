@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Transaction Lookup
 sidebar_position: 3
 pagination_label: Transaction Lookup
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/explorer/transaction-lookup.md
 description: QRL Explorer Transaction Lookup
 keywords:
   - docs

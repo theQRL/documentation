@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Wallet
 sidebar_position: 3
 pagination_label: API - Wallet
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/wallet-api.md
 description: QRL API - Wallet
 keywords:
   - docs
@@ -56,7 +56,7 @@ Wallet files will show here as well when created using the `qrl_walletd` API.
 
 ### Grpc Bash Tools
 
-Accessing the Grpc commands using a basic linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
+Accessing the Grpc commands using a basic Linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
 
 :::info
 From the [gRPCurl Docs](https://github.com/fullstorydev/grpcurl#grpcurl):

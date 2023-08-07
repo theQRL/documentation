@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Send
 sidebar_position: 3
 pagination_label: QRL Token - Send
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/tokens/send-token.md
 description: Send a QRL token to another address
 keywords:
   - docs

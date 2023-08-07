@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Ledger QRL JS
 sidebar_position: 2
 pagination_label: Ledger QRL JS
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
 description: Ledger QRL JS
 keywords:
   - docs

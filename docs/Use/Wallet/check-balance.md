@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Check Balance
 sidebar_position: 2
 pagination_label: Check Balance
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/check-balance.md
 description: Check a wallet balance
 keywords:
   - docs
@@ -22,7 +22,7 @@ The QRL blockchain holds all balance information on any QRL wallet address and i
 
 To find an address balance, a lookup must be performed on the blockchain which searches through all of the blocks to find the latest information on any funds contained in the address.
 
-If there are no transactions found for a given address, either incoming or outgoing, the address will not be found eevn if you possess the private keys. 
+If there are no transactions found for a given address, either incoming or outgoing, the address will not be found even if you possess the private keys. 
 
 This does not mean the address has not been created, just that it is not yet found on-chain. Send some funds to the address and it will show up.
 

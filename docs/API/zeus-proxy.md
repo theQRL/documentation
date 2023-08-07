@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Zeus Proxy
 sidebar_position: 5
 pagination_label: API - Zeus Proxy
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/zeus-proxy.md
 description: QRL API - Zeus Proxy
 keywords:
   - docs
@@ -31,7 +31,7 @@ slug: /api/zeus-proxy
 3. Npm install
 4. npm start
 
-This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
+This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the Zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
 
 
 ## Usage

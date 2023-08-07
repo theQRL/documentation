@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QIP
 sidebar_position: 1
 pagination_label: QRL Improvement Proposal (QIP)
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QIP/qip.md
 description: QRL Improvement Proposal
 keywords:
   - cryptography

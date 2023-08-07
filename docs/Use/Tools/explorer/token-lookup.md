@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Token Lookup
 sidebar_position: 5
 pagination_label: Token Lookup
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/explorer/token-lookup.md
 description: QRL Explorer Token Lookup
 keywords:
   - docs

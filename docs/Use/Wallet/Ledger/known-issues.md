@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Known Issues
 sidebar_position: 8
 pagination_label: Ledger Wallet - Known Issues
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/known-issues.md
 description: Known issues with the Ledger Nanao and QRL 
 keywords:
   - docs

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Install
 sidebar_position: 2
 pagination_label: Offline Wallet - Install
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Offline/install-offline-wallet.md
 description: QRL Offline Wallet - Install
 keywords:
   - docs
@@ -17,7 +17,7 @@ slug: /use/wallet/offline/install
 ---
 
 
-The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the opperating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
+The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the operating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
 
 
 <details>

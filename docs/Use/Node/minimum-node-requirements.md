@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Requirements
 sidebar_position: 2
 pagination_label: Node - Requirements
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Node/minimum-node-requirements.md
 description: QRL Node Requirements
 keywords:
   - docs
@@ -18,7 +18,7 @@ slug: /use/node/requirements
 
 In order to run a QRL node, the computer must meet some basic requirements. This doc will cover these minimum requirements and give some known working examples.
 
-The main QRL node software is developed in python, though it relies on some code that is not yet ported to Windows. For now the QRL node will need to be ran from a linux/Unix system.
+The main QRL node software is developed in python, though it relies on some code that is not yet ported to Windows. For now the QRL node will need to be ran from a Linux/Unix system.
 
 
 ## Hardware Requirements

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
 pagination_label: Overview
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/overview.md
 description: General Info covering the various official QRL wallets and their usage.
 keywords:
   - docs
@@ -406,7 +406,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
 
 
 :::note Extendable Ledger Addresses
-There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](/use/wallet/ledger/plausable-deniability).
+There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](/use/wallet/ledger/plausible-deniability).
 :::
 
 </TabItem>

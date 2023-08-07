@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Send
 sidebar_position: 5
 pagination_label: Ledger Wallet - Send
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/send-funds.md
 description: Send funds using the Ledger Device.
 keywords:
   - docs
@@ -24,7 +24,7 @@ Sending quanta using a ledger device is simple and straight forward. This guide 
 
 ## Requirements
 
-- Ledger device with QRL addresses already initilized and funded, connected to your PC
+- Ledger device with QRL addresses already initialized and funded, connected to your PC
 - The QRL Desktop Application Installed on your PC
 - Recipient QRL Address
 

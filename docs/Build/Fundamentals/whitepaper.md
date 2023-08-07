@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL Whitepaper
 sidebar_position: 3
 pagination_label: QRL Whitepaper
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Fundamentals/whitepaper.md
 description: QRL Whitepaper link and information
 keywords:
   - docs

@@ -7,7 +7,7 @@ hide_table_of_contents: true
 sidebar_label: automatic-wallet-api
 sidebar_position: 1
 pagination_label: automatic-wallet-api
-custom_edit_url: 
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Wallet/automatic-wallet-api.md
 description: automatic-wallet-api
 keywords:
   - docs

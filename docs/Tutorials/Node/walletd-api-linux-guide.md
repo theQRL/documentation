@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: WalletD Linux CLI
 sidebar_position: 1
 pagination_label: WalletD Linux CLI
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/walletd-api-linux-guide.md
 description: Tutorial for using the QRL walletD API in a linux command line with grpcurl.
 keywords:
   - tutorials
@@ -21,9 +21,9 @@ slug: /tutorials/node/walletd-api-linux-guide
 
 
 
-Using the QRL walletD API in a linux command line is simple with the [gRPCurl](https://github.com/fullstorydev/grpcurl) tools.
+Using the QRL walletD API in a Linux command line is simple with the [gRPCurl](https://github.com/fullstorydev/grpcurl) tools.
 
-This guide will go over setting up and using the gRPCurl tools in a linux system to interact with the [QRL walletD API](/api/wallet-api. 
+This guide will go over setting up and using the gRPCurl tools in a Linux system to interact with the [QRL walletD API](/api/wallet-api. 
 
 :::info
 This guide was written with using Ubuntu, however most OS's should work.

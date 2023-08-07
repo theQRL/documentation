@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Hexphrase
 sidebar_position: 3
 pagination_label: Hexphrase
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Address/hexphrase.md
 description: QRL Address Hexphrase Documentation
 keywords:
   - docs
@@ -27,11 +27,11 @@ A QRL Addresses secret key can be represented in a Hexphrase, or in a hexadecima
 A secure source of entropy is used to generate a SEED which is passed through a secure PRF function to generate a set of pseudorandom keys which generate the XMSS tree.
 
 An XMSS address is derived from the public key, $PK$, which
-contains the merkle root, and public SEED. 
+contains the Merkle root, and public SEED. 
 
-If the SEED remains constant but the number of OTS keypairs
-to compute the tree varies then the merkle root will change for each variation. Thus for every single addition
-or subtraction of a single OTS keypair the derived address will change.
+If the SEED remains constant but the number of OTS key pairs
+to compute the tree varies then the Merkle root will change for each variation. Thus for every single addition
+or subtraction of a single OTS key pair the derived address will change.
 
 :::warning
 Hexphrase information is secrete and will allow anyone that posses it to access all funds and assets contained within the address.

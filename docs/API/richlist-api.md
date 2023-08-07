@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Richlist
 sidebar_position: 6
 pagination_label: API - Richlist
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/richlist-api.md
 description: QRL API - Richlist
 keywords:
   - docs

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Installation
 sidebar_position: 3
 pagination_label: Node - Installation
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Node/node-installation.md
 description: QRL Node Installation
 keywords:
   - docs

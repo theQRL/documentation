@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QIP Reference
 sidebar_position: 4
 pagination_label: QIP Reference
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QIP/qip-reference.md
 description: QIP Reference
 keywords:
   - docs
@@ -26,7 +26,7 @@ This is the suggested template for new QIPs which is modeled closely after the B
 - For the full QIP specification, see [specification document](https://github.com/theqrl/qips/blob/master/qip-specification.md) page.
 - To get started, see the [workflow document](https://github.com/theqrl/qips/blob/master/qip-workflow.md).
 
-See the repos [README.md](https://github.com/theqrl/qips/blob/master/README.md) for more information on the structure.
+See the repo's [README.md](https://github.com/theqrl/qips/blob/master/README.md) for more information on the structure.
 
 ## Abstract
 
@@ -50,7 +50,7 @@ All QIPs that introduce backwards incompatibilities must include a section descr
 
 ## Reference Implementation
 
-An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files under the qips directory named after your padded qip number (ie QIP001/) or by including a link to your repository in this section.
+An optional section that contains a reference/example implementation that people can use to assist in understanding or implementing this specification. If the implementation is too large to reasonably be included inline, then consider adding it as one or more files under the QIP's directory named after your padded QIP number (ie QIP001/) or by including a link to your repository in this section.
 
 ## Security Considerations
 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overveiw
 sidebar_position: 1
 pagination_label: Ledger Wallet - Overveiw
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/ledger-wallet.md
 description: The QRL Ledger wallet overview
 keywords:
   - docs
@@ -100,7 +100,7 @@ This secures a users funds from any physical attacks by allowing the smaller bal
 <span >
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/plausable-deniability">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/plausible-deniability">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Ledger Plausible Deniability Setup">
                     Ledger Plausible Deniability Setup 
                 </h2>

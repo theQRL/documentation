@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QIP Specification
 sidebar_position: 4
 pagination_label: QIP Specification
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QIP/qip-specification.md
 description: QIP Specification
 keywords:
   - docs

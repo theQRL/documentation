@@ -1,21 +1,21 @@
 ---
 docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
-id: ledger-wallet-plausable-deniability
-title: Ledger wallet - Plausable Deniability 
+id: ledger-wallet-plausible-deniability
+title: Ledger wallet - Plausible Deniability 
 hide_title: false
 hide_table_of_contents: false
 sidebar_position: 7
-sidebar_label: Plausable Deniability
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
-pagination_label: Ledger Wallet - Plausable Deniability
+sidebar_label: Plausible Deniability
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/plausible-deniability.md
+pagination_label: Ledger Wallet - Plausible Deniability
 description: Plausably Deniabile QRL address using the ledger device
 keywords:
   - docs
   - wallet
   - ledger
-  - plausable deniability
+  - Plausible deniability
 image: /assets/img/icons/yellow.png
-slug: /use/wallet/ledger/plausable-deniability
+slug: /use/wallet/ledger/plausible-deniability
 ---
 
 import ImageSwitcher from '@site/src/components/UseColorMode.js';
@@ -27,7 +27,7 @@ import Keyspace2Dark from './assets/keyspace2-dark.png';
 One of the most exciting features the QRL Ledger application supports is the ability to create a secondary profile with it's own address space. 
 
 This function provides *Plausible Deniability* where a small amount of $quanta$ can be stored in one address space while the remaining balance is secured behind an additional passphrase in another address space.
-
+ 
 This secures a users funds from any physical attacks by allowing the smaller balance to be given up while never allowing the attacker access to the second address space and remaining funds.
 
 This second profile space allows an additional $2$ QRL XMSS trees or *Addresses* to be created on the Ledger. 

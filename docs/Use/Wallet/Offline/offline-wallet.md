@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overveiw
 sidebar_position: 1
 pagination_label: Offline Wallet - Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Offline/offline-wallet.md
 description: QRL Offline Wallet documentation
 keywords:
   - docs

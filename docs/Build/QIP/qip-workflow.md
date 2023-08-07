@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QIP Workflow
 sidebar_position: 2
 pagination_label: QIP Workflow
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
 description: QIP Workflow
 keywords:
   - docs
@@ -208,4 +208,4 @@ Head over to the [pull requests section of theQRL/qips](https://github.com/theQR
 
 ## 4. Getting help
 
-If you're lost at anypoint during this process, feel free to reach out to the community on [Reddit](https://reddit.com/r/QRL), [Discord](https://www.theqrl.org/discord) or email QRL support at [support@theqrl.org](mailto:support@theqrl.org).
+If you're lost at any point during this process, feel free to reach out to the community on [Reddit](https://reddit.com/r/QRL), [Discord](https://www.theqrl.org/discord) or email QRL support at [support@theqrl.org](mailto:support@theqrl.org).

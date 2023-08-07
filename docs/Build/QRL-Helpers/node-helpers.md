@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Node Helpers
 sidebar_position: 10
 pagination_label: Node Helpers
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QRL-Helpers/node-helpers.md
 description: QRL Node Helpers
 keywords:
   - docs
@@ -85,7 +85,7 @@ testnet.connect().then(() => {
 
 Development requires node version > 10.  If using nvm (which is recommended) then `nvm use` inside the cloned repo will set a correct node version.
 
-`npm install` to install dependecies
+`npm install` to install dependencies
 
 `npm run dev` will run a nodemon server with continual linting, testing and coverage on file updating
 

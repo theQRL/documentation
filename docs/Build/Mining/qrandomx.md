@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QrandomX
 sidebar_position: 3
 pagination_label: QrandomX
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Mining/qrandomx.md
 description: QrandomX
 keywords:
   - docs
@@ -48,7 +48,7 @@ pip3 install pyqrandomx
 
 #### OSX
 
-If you dont have brew yet, then Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
+If you don't have brew yet, then Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
 
 Now install some dependencies
 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Public API Usage 
 sidebar_position: 1
 pagination_label: Public API Usage
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/node-public-api-use.md
 description: Tutorial for using the public API.
 keywords:
   - tutorials

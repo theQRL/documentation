@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Update
 sidebar_position: 1
 pagination_label: QRL Node Update
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Node/node-update.md
 description: QRL Node Update
 keywords:
   - docs
@@ -90,7 +90,7 @@ The node is stopped now, you can move on to updating.
 
 #### QRL Node in Background with `systemd`
 
-If the node has been setup to run in the background with linux systemd follow these steps to stop the node.
+If the node has been setup to run in the background with Linux systemd follow these steps to stop the node.
 
 check for the running node process
 
