@@ -32,7 +32,7 @@ QRL's [Document Notarization](/use/tools/notarize) as mentioned in QIP002 has be
 
 The QRL network supports arbitrary messages up to 80 bytes in length to be stored on chain through the [MessageTransaction](https://github.com/theQRL/QRL/blob/v4.0.2/src/qrl/core/txs/MessageTransaction.py#L8) transaction subtype.
 
-There is the capability for second layer clients to read and interpret the data contained within these message transactions, and format interfaces accordingly. This can be seen with the currently implemented `Document Notarisation` transaction type found on both the [QRL Wallet](https://github.com/theQRL/qrl-wallet/blob/v1.0.4/imports/ui/pages/tools/notarise/start.js#L71) and [QRL Explorer](https://github.com/theQRL/block-explorer/blob/2b11358f31415812bd374fb572c6ab9c8a06e9ad/imports/ui/components/tx/tx.html#L124) applications, and further implemented in the [explorer-helpers](https://github.com/theQRL/explorer-helpers/blob/v0.0.7/index.js#L356) repository.
+There is the capability for second layer clients to read and interpret the data contained within these message transactions, and format interfaces accordingly. This can be seen with the currently implemented `Document Notarization` transaction type found on both the [QRL Wallet](https://github.com/theQRL/qrl-wallet/blob/v1.0.4/imports/ui/pages/tools/notarise/start.js#L71) and [QRL Explorer](https://github.com/theQRL/block-explorer/blob/2b11358f31415812bd374fb572c6ab9c8a06e9ad/imports/ui/components/tx/tx.html#L124) applications, and further implemented in the [explorer-helpers](https://github.com/theQRL/explorer-helpers/blob/v0.0.7/index.js#L356) repository.
 
 
 ## Motivation

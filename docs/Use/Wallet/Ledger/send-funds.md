@@ -24,7 +24,7 @@ Sending quanta using a ledger device is simple and straight forward. This guide 
 
 ## Requirements
 
-- Ledger device with QRL addresses already initilized and funded, connected to your PC
+- Ledger device with QRL addresses already initialized and funded, connected to your PC
 - The QRL Desktop Application Installed on your PC
 - Recipient QRL Address
 

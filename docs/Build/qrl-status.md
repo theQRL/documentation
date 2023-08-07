@@ -17,7 +17,7 @@ image: /assets/img/icons/yellow.png
 slug: /build/qrl-status
 ---
 
-The QRL foundation monitors and maintains multiple services related to the Quantum Resisant Ledger and it's functional operation.
+The QRL foundation monitors and maintains multiple services related to the Quantum Resistant Ledger and it's functional operation.
 
 These services can be seen on the [QRL Service Status Dashboard](https://status.theqrl.org/).
 
@@ -29,6 +29,6 @@ Look for a button with a bell in the top right corner of the status page. Submit
 
 
 :::info
-If you notice the status is ddown on a service, please notify the project support@theqrl.org 
+If you notice the status is down on a service, please notify the project support@theqrl.org 
 :::
 

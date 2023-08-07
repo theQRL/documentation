@@ -31,7 +31,7 @@ slug: /api/zeus-proxy
 3. Npm install
 4. npm start
 
-This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
+This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the Zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
 
 
 ## Usage

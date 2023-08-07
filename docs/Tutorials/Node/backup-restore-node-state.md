@@ -39,7 +39,7 @@ The QRL uses a LevelDB Database to store block data. This means there is a prope
 Bootstrapping the QRL node is simple and quickly gets you started using the node.
 
 
-Follow the backup proceedure above on a node that you have already synced, or grab the state files from a source like [https://qrl.co.in/chain](https://qrl.co.in/chain)
+Follow the backup procedure above on a node that you have already synced, or grab the state files from a source like [https://qrl.co.in/chain](https://qrl.co.in/chain)
 
 Once you have this backup in a zipped (*tar.gz*) file on the computer that you wish to run the node on, unzip the files into the `~/.qrl/` directory
 

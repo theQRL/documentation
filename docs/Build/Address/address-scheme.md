@@ -49,7 +49,7 @@ At the moment, only one address format is utilized,  `sha256 2X`, however we sup
 :::
 
 
-For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hexstring prefixed with Q (79 hexadecimal characters). This is appropriate for user related purposes but will be rejected by the API
+For representational purposes (i.e. user interface, debugging, logs), it is possible that the address is represented as a hex-string prefixed with Q (79 hexadecimal characters). This is appropriate for user related purposes but will be rejected by the API
 
 | Name | Bits | Count | Description |
 | ---- | ---- | ----- | ----------- |

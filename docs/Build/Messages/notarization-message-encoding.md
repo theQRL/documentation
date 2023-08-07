@@ -23,19 +23,19 @@ This document covers the QRL Notarization message encoding standard that was ins
 This document is derived from [QIP 2 - A standard message encoding format to indicate encoded data in MessageTransaction transactions](https://github.com/theQRL/qips/blob/master/qips/QIP002.md)
 :::
 
-#### Document Notarisation Specification
+#### Document Notarization Specification
 
-The following describes the structure of the `Document Notarisation` message transaction sub type for historical purposes. There are approximately 25 transactions from early stages of the network that utilise this format. It is optional to implement for display purposes.
+The following describes the structure of the `Document Notarization` message transaction sub type for historical purposes. There are approximately 25 transactions from early stages of the network that utilize this format. It is optional to implement for display purposes.
 
 First 2 Bytes: `AFAF` - Indicates encoded message.
-Subsequent Half Byte: `A` - Indicates this is a document notarisation message transaction sub type.
-Subsequent Half Byte: `1`, `2`, or `3` indicating which hash function has been used to notarise the document as per below:
+Subsequent Half Byte: `A` - Indicates this is a document notarization message transaction sub type.
+Subsequent Half Byte: `1`, `2`, or `3` indicating which hash function has been used to notarize the document as per below:
 
-    `1` - SHA1 (Now deprecated in user interfaces when notarising a document)
+    `1` - SHA1 (Now deprecated in user interfaces when notarizing a document)
     `2` - SHA256
-    `3` - MD5 (Now deprecated in user interfaces when notarising a document)
+    `3` - MD5 (Now deprecated in user interfaces when notarizing a document)
 
-The remaining 77 bytes are reserved for both the hash of the document, and a variable amount of free form text depending which hash function was use. For each hash function above, the following describes the remaining 77 bytes utilisation.
+The remaining 77 bytes are reserved for both the hash of the document, and a variable amount of free form text depending which hash function was use. For each hash function above, the following describes the remaining 77 bytes utilization.
 
     `1` - SHA1 - Subsequent 20 bytes store the SHA1 hash, with the remaining 57 bytes available for free form text.
     `2` - SHA256 - Subsequent 32 bytes store the SHA256 hash, with the remaining 45 bytes available for free form text.

@@ -47,5 +47,5 @@ Below is an example of the wallet.json file contents stored insecurely without e
 ]
 ```
 
-A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
+A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full Merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
 

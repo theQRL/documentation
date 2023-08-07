@@ -44,11 +44,11 @@ For more information on how the public address is structured and what the bytes 
 
 The QRL public address is paired to a private key, which is represented in a few different ways, each are valid to access the wallet and are used to transact with the blockchain.
 
-A secure source of entropy is used to generate a private key, or seed, which is passed through a secure [_Pseudo-Random Function_ (PRF)](https://crypto.stanford.edu/pbc/notes/crypto/prf.html) to generate a set of pseudo-random keys which generate the merkle tree consisting of many [OTS keys](/build/fundamentals/ots-keys)
+A secure source of entropy is used to generate a private key, or seed, which is passed through a secure [_Pseudo-Random Function_ (PRF)](https://crypto.stanford.edu/pbc/notes/crypto/prf.html) to generate a set of pseudo-random keys which generate the Merkle tree consisting of many [OTS keys](/build/fundamentals/ots-keys)
 
 The wallet software will re-generate this tree each time an address is opened, giving access to each of the OTS keys available to the given address for signing transactions on-chain. 
 
-A user will likely never see the full merkle tree as it is unnecessary for any user functions. This is also why an address with a larger tree height takes longer to open as the tree is larger which take more computations to work through the PRF.
+A user will likely never see the full Merkle tree as it is unnecessary for any user functions. This is also why an address with a larger tree height takes longer to open as the tree is larger which take more computations to work through the PRF.
 
 :::caution
 Any of the private keys will allow a user full access to the wallet and are considered secret. Ensure that at least one of these private keys are stored in a secure location as they are __required__ for access to any funds contained in the address.
@@ -68,9 +68,9 @@ This phrase can be entered into the wallet software and will allow full access t
 
 ### Hexseed
 
-The hexseed is another way to represent the seed used to regenerate the full merkle tree.
+The hexseed is another way to represent the seed used to regenerate the full Merkle tree.
 
-This seed is given in a hexadecimal string consisting of numbers and letters, and when passed through the PRF will generate the same merkle tree as the mnemonic phrase.
+This seed is given in a hexadecimal string consisting of numbers and letters, and when passed through the PRF will generate the same Merkle tree as the mnemonic phrase.
 
 :::info Example hexseed
 _000400dbf4ead7e3eec1155b6ea44b7181c94cb7cadee49969eb798fdea34ad5c3c01b64b4661dfbeb51f76609a0c182eb7a47_
@@ -108,5 +108,5 @@ Below is an example of the wallet.json file contents stored insecurely without e
 ]
 ```
 
-A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
+A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full Merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
 

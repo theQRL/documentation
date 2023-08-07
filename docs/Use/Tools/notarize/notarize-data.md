@@ -36,10 +36,10 @@ With these few things we can get started.
 
 With an open QLR wallet application, either the Web wallet or Desktop wallet will provide easy access to the notarization tools.
 
-1. Open the QRL Address that you wish to use for the notarization using the Addresses backup recivery media
-2. Select the "Tools" then "Notarise Document" tabs to access these tools.
-3. Chose the file you want to notarize, add any additional text for the file and select the "Notarise Document" button
+1. Open the QRL Address that you wish to use for the notarization using the Addresses backup recovery media
+2. Select the "Tools" then "Notarize Document" tabs to access these tools.
+3. Chose the file you want to notarize, add any additional text for the file and select the "Notarize Document" button
 4. Confirm the details and send the transaction onto the network.
-5. Take note of the Transaction Hash from the notarization. Using this tx_hash in future lookups will allow verification of the notarized document.
+5. Take note of the Transaction Hash from the notarization. Using this tx_hash in future lockups will allow verification of the notarized document.
 
 

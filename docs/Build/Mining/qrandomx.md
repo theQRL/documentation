@@ -48,7 +48,7 @@ pip3 install pyqrandomx
 
 #### OSX
 
-If you dont have brew yet, then Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
+If you don't have brew yet, then Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
 
 Now install some dependencies
 

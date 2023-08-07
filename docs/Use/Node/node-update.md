@@ -90,7 +90,7 @@ The node is stopped now, you can move on to updating.
 
 #### QRL Node in Background with `systemd`
 
-If the node has been setup to run in the background with linux systemd follow these steps to stop the node.
+If the node has been setup to run in the background with Linux systemd follow these steps to stop the node.
 
 check for the running node process
 

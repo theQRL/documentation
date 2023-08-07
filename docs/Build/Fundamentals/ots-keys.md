@@ -110,7 +110,7 @@ The security of any hash based system is entirely reliant on the hash function u
  The QRL has deployed [Crypto-Agility](https://en.wikipedia.org/wiki/Cryptographic_agility) within our systems to allow easy migration from cryptographic functions should something happen. We like to think with a *future secure* mindset around here after all!
 :::
 
-Taking this secure hash function and combining it with the hierarchical structure of a merkle tree we are able to generate a grouping, or tree, of OTS keys all linked back to one master seed creating a multi use QRL address. 
+Taking this secure hash function and combining it with the hierarchical structure of a Merkle tree we are able to generate a grouping, or tree, of OTS keys all linked back to one master seed creating a multi use QRL address. 
 
 Even more these OTS keys can be extended using one of the OTS keys to sign an entirely new Merkle tree of OTS keys into the address, extending the amount of signed transactions an address can produce.
 
@@ -118,11 +118,11 @@ Even more these OTS keys can be extended using one of the OTS keys to sign an en
 
 Each QRL address is a [Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree) of XMSS OTS keys, each able to sign once. The amount of keys an address can use is determined during address creation and cannot later be changed. If additional OTS keys are needed an additional address will need to be created and funds transferred to the new address prior to running out of OTS keys.
 
-To achieve usable functionality while maintaining security these merkle trees are limited to minimum and maximum tree heights.
+To achieve usable functionality while maintaining security these Merkle trees are limited to minimum and maximum tree heights.
 
 ### Extensible Merkle Trees
 
-After multiple cryptographic reviews and audits the QRL, through some clever math, is able to generate additional merkle trees using one of the OTS keys from an address as the seed for additional slave OTS key trees.
+After multiple cryptographic reviews and audits the QRL, through some clever math, is able to generate additional Merkle trees using one of the OTS keys from an address as the seed for additional slave OTS key trees.
 
 The ability to create sub-trees and even *sub-sub* trees extends the amount of outgoing transactions, intrinsically creating a never ending address of post-quantum secure OTS keys all deterministically linked back to a single secret seed (master) key. 
 

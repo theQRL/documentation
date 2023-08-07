@@ -21,9 +21,9 @@ slug: /tutorials/node/walletd-api-linux-guide
 
 
 
-Using the QRL walletD API in a linux command line is simple with the [gRPCurl](https://github.com/fullstorydev/grpcurl) tools.
+Using the QRL walletD API in a Linux command line is simple with the [gRPCurl](https://github.com/fullstorydev/grpcurl) tools.
 
-This guide will go over setting up and using the gRPCurl tools in a linux system to interact with the [QRL walletD API](/api/wallet-api. 
+This guide will go over setting up and using the gRPCurl tools in a Linux system to interact with the [QRL walletD API](/api/wallet-api. 
 
 :::info
 This guide was written with using Ubuntu, however most OS's should work.

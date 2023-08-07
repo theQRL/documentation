@@ -30,7 +30,7 @@ he QRL Desktop wallet can be installed on most modern operating systems.
 
 ## Download
 
-Using the link below to access the latest desktop wallet files, download the version that suits your coputers OS.
+Using the link below to access the latest desktop wallet files, download the version that suits your computers' OS.
 
 <span>
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
@@ -62,7 +62,7 @@ Using the link below to access the latest desktop wallet files, download the ver
 
 #### 1. Download a QRL wallet
 
-These are found on the Gihub releases page: [https://github.com/theQRL/qrl-wallet/releases](https://github.com/theQRL/qrl-wallet/releases)
+These are found on the Github releases page: [https://github.com/theQRL/qrl-wallet/releases](https://github.com/theQRL/qrl-wallet/releases)
 
 #### 2. Download security@theqrl.org GPG public key
 
@@ -97,7 +97,7 @@ selecting key 1 will add the key to your keychain
 - [v1.7.0](https://github.com/theQRL/security/blob/master/qrl-wallet/1.7.0)
 - [v1.6.6](https://github.com/theQRL/security/blob/master/qrl-wallet/1.6.6)
 
-#### 4. Verify the signaure of the SHASUM file
+#### 4. Verify the signature of the SHASUM file
 
 ```
 gpg --verify LINUX-x64_QRL-Wallet_1.8.1.deb.shasum.asc

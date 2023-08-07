@@ -75,7 +75,7 @@ pip3 install pyqrllib
 
 #### OSX
 
-If you dont have brew yet, we think you should :) Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
+If you don't have brew yet, we think you should :) Install brew following the instructions here: [https://brew.sh/](https://brew.sh/)
 
 Now install some dependencies
 

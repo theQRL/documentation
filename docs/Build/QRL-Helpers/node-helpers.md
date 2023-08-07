@@ -85,7 +85,7 @@ testnet.connect().then(() => {
 
 Development requires node version > 10.  If using nvm (which is recommended) then `nvm use` inside the cloned repo will set a correct node version.
 
-`npm install` to install dependecies
+`npm install` to install dependencies
 
 `npm run dev` will run a nodemon server with continual linting, testing and coverage on file updating
 

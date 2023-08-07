@@ -55,5 +55,5 @@ Failure to update by the determined fork blockheight will create 2 networks, one
 on the network and anything that happens will not be recognized by the main chain. 
 
 :::info
-Hard fork updates are well announced prior to the the fork height. Join the mailinglist or our support chat on Discord to keep up with the latest updates.
+Hard fork updates are well announced prior to the the fork height. Join the mailing list or our support chat on Discord to keep up with the latest updates.
 :::
