@@ -406,7 +406,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
 
 
 :::note Extendable Ledger Addresses
-There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](/use/wallet/ledger/plausable-deniability).
+There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](/use/wallet/ledger/plausible-deniability).
 :::
 
 </TabItem>

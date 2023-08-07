@@ -100,7 +100,7 @@ This secures a users funds from any physical attacks by allowing the smaller bal
 <span >
   <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/plausable-deniability">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/plausible-deniability">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Ledger Plausible Deniability Setup">
                     Ledger Plausible Deniability Setup 
                 </h2>

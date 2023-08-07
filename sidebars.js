@@ -186,9 +186,9 @@ const sidebars = {
                 'Use/Wallet/Ledger/ledger-wallet-open',
                 'Use/Wallet/Ledger/ledger-wallet-send',
                 'Use/Wallet/Ledger/ledger-wallet-backup-restore',
-                'Use/Wallet/Ledger/ledger-wallet-plausable-deniability',
+                'Use/Wallet/Ledger/ledger-wallet-plausible-deniability',
                 'Use/Wallet/Ledger/ledger-wallet-known-issues',
-
+                
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
