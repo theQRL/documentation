@@ -27,7 +27,7 @@ This tutorial will cover installing both Mainnet and Testnet QRL Nodes on a sing
 
 ## Mainnet Node Setup
 
-It is assumed that you have a working installation of Ubuntu 20.04 and have followed the [guides for installing a mainnet node on Ubuntu](/docs/node/node-installation#qrl-ubuntu-installation).
+It is assumed that you have a working installation of Ubuntu 20.04 and have followed the [guides for installing a mainnet node on Ubuntu](/use/node/installation).
 
 You can verify that the node is running and check it's syncing status by running the following command `qrl --json state`. 
 
@@ -100,7 +100,7 @@ Before we start the testnet node we need to set a few things up. First of all we
 The QRL node software comes with a bunch of functionality built in, including the ability to specify the network type for the node. This will grab a genesis file, create a config.yaml file and begin to sync the chain using the same ports as the mainnet node that is already running.
 
 :::tip
-Check out all of the functions with `qrl --help` or see the [Node CLI Documentation](/docs/node/node-cli#cli-help)
+Check out all of the functions with `qrl --help` or see the [Node CLI Documentation](/use/node/node-cli#cli-help)
 :::
 
 ### Generate Testnet Directory

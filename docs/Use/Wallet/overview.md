@@ -28,7 +28,7 @@ XMSS is considered to be one of the most secure quantum resistant algorithms in 
 
 :::info **OTS** *(One Time Signature Keys)*
 OTS keys can only be used to sign one transaction. There are limited keys for an address depending on tree height selected during address creation. 
-See the [OTS Documentation](ots-keys) for more information. 
+See the [OTS Documentation](/build/fundamentals/ots-keys) for more information. 
 :::
 
 
@@ -335,8 +335,6 @@ The QRL mobile wallet is available on both iOS and Android. Search in the applic
     </section>
 </span>
 
-> FIXME!! Need addresses and images for iOS and Android apps ^^^
-
 </TabItem>
 <TabItem value="ledger" label="Ledger Wallet">
 
@@ -369,17 +367,6 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--6 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/recover">
-                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Recover a QRL Ledger Wallet">
-                    Recover Ledger Wallet
-                </h2>
-                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Recover the QRL wallet application">
-                    Recover a QRL Ledger wallet
-                </p>
-            </a>
-        </article>
         <article class="col col--4 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/open">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Ledger Wallet">
@@ -403,7 +390,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
             </a>
         </article>
         <article class="col col--4 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/backup">
+            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/backup-restore">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Ledger Wallet">
                     Backup Ledger Wallet
                 </h2>
@@ -419,7 +406,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
 
 
 :::note Extendable Ledger Addresses
-There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](wallet/ledger).
+There is an additional address space that can be unlocked to extend the amount of addresses one can generate on device. See these and more details about the [Ledger QRL wallet in the documentation here](/use/wallet/ledger/plausable-deniability).
 :::
 
 </TabItem>
@@ -473,10 +460,10 @@ Public and private keys can be stored in a multitude of ways and are typically u
 
 | Private Key Medium | Information |
 | --- | --- |
-|[`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexphrase and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](wallet/desktop), [Web](wallet/web) and [CLI](Build/wallet/cli/node-cli-wallet) wallet applications</li></ul> |
+|[`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexphrase and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop), [Web](/use/wallet/web) and [CLI](/use/node/node-cli/overview) wallet applications</li></ul> |
 | [Mnemonic Phrase](/build/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
 | [Hexphrase](/build/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
-| [Ledger Hardware](/wallet/ledger) | <ul><li>Ledger manages QRL private keys on device, never exposing them to the end user</li><li>Master Ledger Recovery Seed is required to recover a QRL address stored on a Ledger device</li></ul> |
+| [Ledger Hardware](/use/wallet/ledger) | <ul><li>Ledger manages QRL private keys on device, never exposing them to the end user</li><li>Master Ledger Recovery Seed is required to recover a QRL address stored on a Ledger device</li></ul> |
 | [Slave Keys](/build/address/slave-keys) | <ul><li>Advanced address functionality. CLI tools are required to generate slave Keys</li><li>Generated slaves files are typically named `slaves.json` or `payment_slaves.json`</li><li>Slave keys are additional secret key(s) that are allowed to spend for a given master address</li></ul> |
 
 :::danger Never Share Private Wallet Keys
@@ -496,5 +483,5 @@ absorb filled elder lake swing behind thirst ink easter lucy sinful viola judge 
 010500457794dcc149e3570243d837c90f3b75252abeb17fb08db6f267fdc88e16fa29e72cc33a0b04259305bb8c692c3bde81
 ```
 :::info
-For more information on QRL's cryptography see the [Address Scheme](developers/address/qrl-address-scheme), [QRL Cryptography Overview](developers/cryptography/qrl-cryptography) documentation, as well as the [QRL Whitepaper (PDF)](https://github.com/theQRL/Whitepaper/raw/f1b0f61b7cf61195fa9489aeaf1a2e05643c12ec/QRL_whitepaper.pdf)
+For more information on QRL's cryptography see the [Address Scheme](/build/address/address-scheme) as well as the [QRL Whitepaper (PDF)](https://github.com/theQRL/Whitepaper/raw/f1b0f61b7cf61195fa9489aeaf1a2e05643c12ec/QRL_whitepaper.pdf)
 :::

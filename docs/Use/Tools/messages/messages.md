@@ -44,7 +44,7 @@ The only limitation is the length of text (*80 bytes or characters*), and the us
 
 ## Message Transaction
 
-This functionality has many uses and is the basis of a few other tools implemented on the QRL chain like the [on-chain notarization](/use/tools/notarise/overview) functions. 
+This functionality has many uses and is the basis of a few other tools implemented on the QRL chain like the [on-chain notarization](/use/tools/notarize/overview) functions. 
 
 At it's core the message is simply a string of text, established by the user sending the transaction. This string is limited to 80 bytes, or text characters and will fail if anything larger than that is used.
 

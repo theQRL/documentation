@@ -15,7 +15,7 @@ keywords:
   - QRL Improvement Process
   - QIP Specification
 image: /assets/img/icons/yellow.png
-slug: /developers/QIP/qip-specification
+slug: /build/qip/qip-specification
 ---
 
 

@@ -32,7 +32,7 @@ Once notarized, any exact copy of that document can be cryptographically verifie
  ## Advanced users
 
 :::note
-There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](/build/node-cli) using the `message_tx` with appropriate [message encoding](/build/messages/message-tx-encoding).
+There are multiple ways to access the notarization process through the [QRL API](/api) and [Command Line Tools](use/node/node-cli/overview) using the `message_tx` with appropriate [message encoding](/build/messages/message-tx-encoding).
 :::
 
 

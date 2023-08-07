@@ -2125,8 +2125,8 @@ Relay up to 80 bytes of a message onto the network from given address using slav
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail. 
 
 :::tip
-This function can be used to [notarize](/tools/notarise/) data or for on-chain voting, as well as any free form data. 
-See the [message encoding](/developers/messages/message-tx-encoding) documentation for information on established encoding formats. 
+This function can be used to [notarize](/use/tools/notarize/overview) data or for on-chain voting, as well as any free form data. 
+See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
 :::
 
 </TabItem>
@@ -2511,7 +2511,7 @@ This function generates a new colored token on the QRL blockchain, originating f
 The initial token balance will be sent to the QRL addresses listed in the `addresses` array.
 
 :::info
-More information can be found in the [QRL Token Documentation](/tools/tokens/)
+More information can be found in the [QRL Token Documentation](/use/tools/tokens/)
 :::
 
 #### Token Quantity

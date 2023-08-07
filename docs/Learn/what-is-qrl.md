@@ -22,7 +22,7 @@ The Quantum Resistant Ledger (QRL) is an externally audited enterprise-grade blo
 
 QRL is the first industrial implementation to utilize [IETF specified XMSS](https://tools.ietf.org/html/rfc8391); a hash-based, forward secure signature scheme with minimal security assumptions and reusable addresses that comes with [NIST approval](https://csrc.nist.gov/publications/detail/sp/800-208/final).
 
-QRL utilizes an [extensible address format](/developers/address/qrl-address-scheme) with quantum security built in from the genesis block. We maintain an open source code-base with implementation [verified by third-party audits](https://github.com/theQRL/audits) from [red4sec](https://red4sec.com/) and [x41 D-sec](https://www.x41-dsec.de/).
+QRL utilizes an [extensible address format](/build/address/address-scheme) with quantum security built in from the genesis block. We maintain an open source code-base with implementation [verified by third-party audits](https://github.com/theQRL/audits) from [red4sec](https://red4sec.com/) and [x41 D-sec](https://www.x41-dsec.de/).
 
 Aiming to be developer friendly, we have built this extensive documentation as well as an API reference, giving the tools to build anything, today, on an industrial grade platform that will survive tomorrow.
 

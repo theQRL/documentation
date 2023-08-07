@@ -49,7 +49,7 @@ We will add an additional layer to this function by notarizing the file as well,
 Notarization is simple and relies on a few requirements and foundations. 
 
 1. The entire notarization system is based on the security provided by the `sha256sum` of the file.
-2. The [`qrl-cli`](/developers/qrl-cli) is used for the notarization function. This utility provides simple interfacing with the QRL system allowing the hash to be passed through bash scripting.
+2. The [`qrl-cli`](/use/node/node-cli/overview) is used for the notarization function. This utility provides simple interfacing with the QRL system allowing the hash to be passed through bash scripting.
 3. A QRL Address is required with available OTS keys. We'll use the `qrl-cli` again to generate a new address.
 
 ## Scripting
@@ -58,13 +58,13 @@ Step by step process for notarizing a file on the chain through a bash script.
 
 ### Generate a new QRL Address
 
-Using the `qrl-cli` to generate a new QRL address. Ensure there are enough OTS keys to send transactions for an extended period of time if you intend to make this process automated. As seen in the [OTS Key - Tree Height](ots-keys#tree-height) documentation the address height can be quite large. 
+Using the `qrl-cli` to generate a new QRL address. Ensure there are enough OTS keys to send transactions for an extended period of time if you intend to make this process automated. As seen in the [OTS Key - Tree Height](/build/fundamentals/ots-keys#tree-height) documentation the address height can be quite large. 
 
 For this example I have decided to settle on **Tree Height: 14** which allows **16,384** notarization transactions before running out of *One Time Signature keys* and need to re-generate a new address. 
 
 I'm planing to send a tx every 6 hours, or 4 times a day: $16,384 \div 4=4096$ notarization transactions or over 11 years.
 
-> More information on OTS keys can be found in the [OTS documentation](/ots-keys).
+> More information on OTS keys can be found in the [OTS documentation](/build/fundamentals/ots-keys).
 
 ```bash
 qrl-cli create-wallet -f wallet.json -h 14

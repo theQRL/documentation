@@ -26,14 +26,14 @@ This is what makes up the distributed ledger and forms the core blockchain.
 
 
 :::info
-For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/learn/whitepaper) 
+For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/build/fundamentals/whitepaper) 
 :::
 
 ## QRL Network
 
 The Peer-To-Peer network that is formed by the QRL nodes allows the basic foundational security to exist in the chain. Through some incredible math and an ultra-secure address scheme using post quantum cryptography QRL has created one of the most secure and trusted blockchains in existence today.
 
-Running a node is simple, see the [installation documentation](node/node-installation) to get started. 
+Running a node is simple, see the [installation documentation](/use/node/installation) to get started. 
 
 ## Functions
 

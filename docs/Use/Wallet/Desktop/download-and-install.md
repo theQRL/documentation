@@ -91,11 +91,11 @@ selecting key 1 will add the key to your keychain
 
 #### 3. Download SHASUM file for the OS/version of wallet release
 
-- [v1.8.1](1.8.1)
-- [v1.8.0](1.8.0)
-- [v1.7.3](1.7.3)
-- [v1.7.0](1.7.0)
-- [v1.6.6](1.6.6)
+- [v1.8.1](https://github.com/theQRL/security/blob/master/qrl-wallet/1.8.1)
+- [v1.8.0](https://github.com/theQRL/security/blob/master/qrl-wallet/1.8.0)
+- [v1.7.3](https://github.com/theQRL/security/blob/master/qrl-wallet/1.7.3)
+- [v1.7.0](https://github.com/theQRL/security/blob/master/qrl-wallet/1.7.0)
+- [v1.6.6](https://github.com/theQRL/security/blob/master/qrl-wallet/1.6.6)
 
 #### 4. Verify the signaure of the SHASUM file
 

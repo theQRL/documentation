@@ -75,8 +75,8 @@ When possible prefer to use the public address to lookup a balance of the given 
 Each of these methods are documented in the following links.
 
 - [The QRL-CLI](/build/qrl-cli/overview#qrl-cli-balance-address) - `qrl-cli balance`
-- [QRL node CLI](/use/node/cli#wallet_ls) - `wallet_ls`
-- [QRL Wallet API](/api/wallet-api#getbalance)  - `GetBalance`
+- [QRL node CLI](/use/node/node-cli/overview#wallet_ls) - `wallet_ls`
+- [QRL Wallet API](/api/wallet-api#getba/use/node/node-cli/overview#wallet_lslance)  - `GetBalance`
 - [QRL Wallet-rest-proxy](/api/walletd-rest-proxy#getbalance) `GetBalance`
 - [QRL Zeus Proxy API](/api/zeus-proxy) 
 - [QRL Explorer API](/api/explorer-api#address-by-number) - `Address By Number`

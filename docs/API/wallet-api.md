@@ -3418,7 +3418,7 @@ message RelaySlaveTxnReq {
 
 | Field | Type | Required| Details | 
 | :--: | :---: | :--: | :--- |
-| `slave_pks` | repeated bytes | YES | Array of slave PK's generated using a function similar to the [QRL Node CLI `slave_tx_generate`](build/node-cli/node-cli-slave-xmss) command. |
+| `slave_pks` | repeated bytes | YES | Array of slave PK's generated using a function similar to the [QRL Node CLI `slave_tx_generate`](/use/node/node-cli/overview#slave_tx_generate) command. |
 | `access_types` | repeated uint32 | YES | Array of Access type, oneof: `1` |
 | `fee` | uint64 | YES | Details |
 | `master_address` | string | NO | This field is only required if sending this transaction with an already generated slave address |

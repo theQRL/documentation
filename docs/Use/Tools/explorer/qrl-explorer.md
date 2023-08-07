@@ -137,7 +137,7 @@ This shows the total supply that is yet to be mined and distributed in block rew
 
 ### Block Reward
 
-This is the current block reward that is distributed to the miner who mints the next block. This number will continue to diminish according the the [emission algorithm](/learn/qrl-emission).
+This is the current block reward that is distributed to the miner who mints the next block. This number will continue to diminish according the the [emission algorithm](/build/fundamentals/qrl-emission).
 
 **Example Status** - *Block Reward: 1.733252118*
 

@@ -19,7 +19,7 @@ slug: /use/mining/overview
 Mining QRL is the basis of the blockchain network and powers the security and utility of the project. This in turn gives back a reward for those that chose to share their computer power for cryptographic hashes.
 
 :::tip Block Rewards
-See the [QRL Emission](/learn/qrl-emission) documentation for more on the block reward
+See the [QRL Emission](/build/fundamentals/qrl-emission) documentation for more on the block reward
 :::
 
 QRL uses a Proof Of Work consensus algorithm called RandomX which favors mining with traditional CPU hardware. The algorithm is developed to be more efficient on a CPU, limiting other mining devices such as ASICS and GPU's profitability.

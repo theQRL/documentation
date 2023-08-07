@@ -61,7 +61,7 @@ For instance, the wallet software uses a private key to sign a transaction which
 When a new transaction is created the node runs through a few verification checks prior to sending the transaction to the mempool. If the address OTS key used to sign the transaction is already known to the blockchain the node will reject the transaction, protecting the address from broadcasting a OTS key re-use.
 
 :::info
-OTS key information can be found in the [OTS Key Documentation](/ots-keys)
+OTS key information can be found in the [OTS Key Documentation](/build/fundamentals/ots-keys)
 :::
 
 If there are enough funds in the address to cover the fee and any fund transfer the node will send the transaction to it's peers to be added to the next available block. 

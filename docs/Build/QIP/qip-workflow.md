@@ -15,7 +15,7 @@ keywords:
   - QRL Improvement Process
   - QIP
 image: /assets/img/icons/yellow.png
-slug: /developers/QIP/qip-workflow
+slug: /build/qip/qip-workflow
 ---
 
 ## 1. Considerations and Governance
