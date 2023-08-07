@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/explorer/address-lookup
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The address lookup tool is provided in the [QRL Explorer](https://explorer.theqrl.org) and is accessible using any modern browser. 
 
 Looking up an address is a simple as entering the valid QRL address into the explorer search bar. This will browse to a screen that will print all relevant information on the address given, if found.

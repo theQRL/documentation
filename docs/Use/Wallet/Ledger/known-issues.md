@@ -18,12 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/known-issues
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
 The QRL has developed and integrated QRL's XMSS address scheme into the Ledger Nano S and have successfully launched an app with the oversight of the Ledger developers. 
 
 As with any evolving ecosystem, there are growing pains to be worked through when using cutting edge cryptography. 

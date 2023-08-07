@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: security
 title: QRL Security
 hide_title: false
@@ -18,12 +18,34 @@ image: /assets/img/icons/yellow.png
 slug: /build/security
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
-This repository contains:
+The QRL provides means for secure communication and verification of various functions and features of the project.
+
+From validating releases for the QRL wallet to providing a secure means to report security impacts and concerns, the QRL Security repo provides the Public PGP keys for the project.
+
+
+<div style={{ "text-align": "center"}}>
+<span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--lg">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="https://github.com/theQRL/security">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Security - PGP">
+              QRL Security - PGP
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="The QRL Security - PGP keys and signed verification messages">The QRL Security - PGP keys and signed verification messages</p>
+          </a>
+        </article>
+      </section>
+</span>    
+</div>
+<br />
+
+The QRL security repo contains:
 
 1. The public key for security@theqrl.org
 2. Signed messages containing the hashes of some QRL releases in order that they may be verified

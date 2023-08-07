@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-verify
 title: QRL Offline Wallet Verify
 hide_title: false
@@ -16,14 +16,7 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/offline/verify
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-Verification of the wallet files are the next steps toward full security. This process allows you to be confident that the files you have downloaded have not been tampered with and are safe to trust for address creation.
-
+Verification of the downloaded QRL wallet installation files are the next steps toward full security. This process allows you to be confident that the files you have downloaded have not been tampered with and are safe to trust for address creation.
 
 
 ## Verify Offline Wallet Files
@@ -40,7 +33,7 @@ pgp import security.theqrl.org.gpg.asc
 
 ### **Verify the Offline Wallet PGP signed shasum file**
 
-- Download the PGP signed shasum file for this release from the [QRL security repo](https://github.com/theQRL/security/tree/master/offline-wallet-generator)
+- Download the PGP signed shasum file for the release from the [QRL security repo](https://github.com/theQRL/security/tree/master/offline-wallet-generator)
 - Check the PGP signature of the shasum hashes file:
 
 ```

@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/mining/qrandomx
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 [![PyPI version](https://badge.fury.io/py/pyqrandomx.svg)](https://badge.fury.io/py/pyrandomx)
 

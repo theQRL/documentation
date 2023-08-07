@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  node-helpers
 title: QRL Node Helpers
 hide_title: false
@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/helpers/node-helpers
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-# @theqrl/node-helpers
 
 [![Build Status](https://travis-ci.com/theQRL/node-helpers.svg?branch=master)](https://travis-ci.com/theQRL/node-helpers) [![Coverage Status](https://coveralls.io/repos/github/theQRL/node-helpers/badge.svg?branch=master)](https://coveralls.io/github/theQRL/node-helpers?branch=master) [![npm version](https://badge.fury.io/js/%40theqrl%2Fnode-helpers.svg)](https://badge.fury.io/js/%40theqrl%2Fnode-helpers) ![GitHub](https://img.shields.io/github/license/theqrl/node-helpers)
 

@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /developers/electrify-qrl
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-# electrify-qrl
-
 Electron packager for QRL-Wallet.
 
 Based on https://github.com/Mairu/meteor-electrify

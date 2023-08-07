@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/qrl-address-overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The QRL address is a fundamental building block to the ecosystem. The public address is responsible for representing a users wallet in a publicly sharable identity without fear of the funds being vulnerable. 
 
 The corresponding private key is the piece responsible for interaction on-chain and allows access to any funds stored in the public address.
@@ -112,5 +108,5 @@ Below is an example of the wallet.json file contents stored insecurely without e
 ]
 ```
 
-A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full merkle tree for the given address. THis will allow full interaction with the blockchain and access to all funds contained in the wallet.
+A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
 

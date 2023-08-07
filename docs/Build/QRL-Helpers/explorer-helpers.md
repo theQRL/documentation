@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: explorer-helpers
 title: QRL Explorer Helpers
 hide_title: false
@@ -16,13 +16,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /build/helpers/explorer-helpers
 ---
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
 
 
 [![Build Status](https://travis-ci.org/theQRL/explorer-helpers.svg?branch=master)](https://travis-ci.org/theQRL/explorer-helpers) [![Coverage Status](https://coveralls.io/repos/github/theQRL/explorer-helpers/badge.svg?branch=master)](https://coveralls.io/github/theQRL/explorer-helpers?branch=master) [![npm version](https://badge.fury.io/js/%40theqrl%2Fexplorer-helpers.svg)](https://badge.fury.io/js/%40theqrl%2Fexplorer-helpers)

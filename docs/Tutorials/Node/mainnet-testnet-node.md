@@ -19,25 +19,15 @@ slug: /tutorials/node/dual-node-host
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 
-### NEEDED
-
-- Review and test
-- Spelling and grammar
-- Overall flow of document
-:::
-
-
-There are many reasion a person would want to run multiple versions of the node software on a single host. This could be to aid in development of on-chain tooling, to use the local nodes to create a new tool or to test broadcasting multiple scripted transactions on a test network before actually sending real funds.
+There are many reason a person would want to run multiple versions of the node software on a single host. This could be to aid in development of on-chain tooling, to use the local nodes to create a new tool or to test broadcasting multiple scripted transactions on a test network before actually sending real funds.
 
 
 This tutorial will cover installing both Mainnet and Testnet QRL Nodes on a single host PC running Ubuntu. 
 
 ## Mainnet Node Setup
 
-It is assumed that you have a working installation of Ubuntu 20.04 and have followed the [guides for installing a mainnet node on Ubuntu](/docs/node/node-installation#qrl-ubuntu-installation).
+It is assumed that you have a working installation of Ubuntu 20.04 and have followed the [guides for installing a mainnet node on Ubuntu](/use/node/installation).
 
 You can verify that the node is running and check it's syncing status by running the following command `qrl --json state`. 
 
@@ -110,7 +100,7 @@ Before we start the testnet node we need to set a few things up. First of all we
 The QRL node software comes with a bunch of functionality built in, including the ability to specify the network type for the node. This will grab a genesis file, create a config.yaml file and begin to sync the chain using the same ports as the mainnet node that is already running.
 
 :::tip
-Check out all of the functions with `qrl --help` or see the [Node CLI Documentation](/docs/node/node-cli#cli-help)
+Check out all of the functions with `qrl --help` or see the [Node CLI Documentation](/use/node/node-cli#cli-help)
 :::
 
 ### Generate Testnet Directory
@@ -160,7 +150,7 @@ qrl --json --port_pub 19019 state
 }
 ```
 
-From this output you can see the testnet node is running, the blockheoght is different form the mainnet node running and the networkID is different.
+From this output you can see the testnet node is running, the blockheight is different form the mainnet node running and the networkID is different.
 
 :::tip 
 Check the node blockHeight against the [QRL Testnet Explorer](https:testnet-explorer.theqrl.org)

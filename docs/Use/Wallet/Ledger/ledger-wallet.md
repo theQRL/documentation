@@ -18,17 +18,11 @@ slug: /use/wallet/ledger/overview
 ---
 
 import ImageSwitcher from '@site/src/components/UseColorMode.js';
-
 import KeyspaceSmall from './assets/keyspace-small.png';
 import KeyspaceSmallDark from './assets/keyspace-small-dark.png';
-
 import Keyspace2 from './assets/keyspace2.png';
 import Keyspace2Dark from './assets/keyspace2-dark.png';
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 Hardware wallets are considered one of the most secure methods to safely store cryptocurrency. These devices allow a physical barrier to a wallet's private keys by storing them offline.
 

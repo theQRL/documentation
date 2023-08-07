@@ -18,11 +18,6 @@ slug: /build/fundamentals/whitepaper
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL Whitepaper was developed during the initial development phase of the project back in 2016 by the core developers and cryptographers working on the project.
 
 This paper covers the fundamental building blocks, security decisions and cryptographic functions that make up the core software that governs the core project and blockchain fundamentals.

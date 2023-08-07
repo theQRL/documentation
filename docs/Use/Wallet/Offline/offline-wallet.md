@@ -16,11 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/offline/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL Offline Wallet Generator allows a user to create a completely offline, air-gapped QRL wallet. This allows additional security while vulnerable functions of address creation are exposed. 
 
 Users then can save the unexposed private keys to a backup medium for safe keeping. If done correctly this will never expose the keys to the internet, reducing the overall risk for that address.

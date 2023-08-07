@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/messages/overview
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 The QRL network supports on-chain messages providing a variety of functionality to the project. These messages are sent onto the QRL network writing data into the immutable quantum resistant blockchain ledger.
 
 Anyone is able to write data to the chain and can do so in multiple ways.
@@ -50,7 +44,7 @@ The only limitation is the length of text (*80 bytes or characters*), and the us
 
 ## Message Transaction
 
-This functionality has many uses and is the basis of a few other tools implemented on the QRL chain like the [on-chain notarization](/use/tools/notarise/overview) functions. 
+This functionality has many uses and is the basis of a few other tools implemented on the QRL chain like the [on-chain notarization](/use/tools/notarize/overview) functions. 
 
 At it's core the message is simply a string of text, established by the user sending the transaction. This string is limited to 80 bytes, or text characters and will fail if anything larger than that is used.
 

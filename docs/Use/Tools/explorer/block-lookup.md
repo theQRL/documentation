@@ -18,10 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/explorer/block-lookup
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 To lookup a block on the chain, simply enter the block number into the search bar at the top of the [QRL Explorer site](https://explorer.theqrl.org). 
 
 This will return all relevant information from that block as found in the immutable blockchain. This information will be the same no matter which node is queried as the chain came to consensus when the block was minted.

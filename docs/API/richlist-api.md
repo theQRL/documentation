@@ -19,17 +19,20 @@ image: /assets/img/icons/yellow.png
 slug: /api/richlist-api
 ---
 
-The QRL serves out richlict information on the endpoint https://richlist-api.theqrl.org/. this information is gathered in real timeand reflects the latest balance found on-chain.
+The QRL serves out richlist information on the endpoint https://richlist-api.theqrl.org/. this information is gathered in real time and reflects the latest balance found on-chain.
 
 This information is intended to provide to services that are interested in tokenomics of the QRL project.
+
+:::info
+The API returns each address balance in $shor$ or to the ninth decimal place, $$10* *9$$. This means the balance shown like: `75358000000 shor` would equate to `75.358000000 Quanta`
+:::
 
 
 ## Methods
 
 | Method Name | Endpoint | Description | 
 | :---------: | :------: | :---------- | 
-| [richlist](#richlist) | [/richlist](https://richlist-api.theqrl.org/richlist) | Returns the top 100 richest addresses |
-
+| [richlist](#richlist) | [/richlist](https://richlist-api.theqrl.org/richlist) | Returns the top 100 richest addresses with balance in $shor$|
 
 
 ## Richlist

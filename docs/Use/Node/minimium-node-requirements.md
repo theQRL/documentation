@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-requirements
 title: QRL Node Requirements
 hide_title: false
@@ -16,11 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/node/requirements
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 In order to run a QRL node, the computer must meet some basic requirements. This doc will cover these minimum requirements and give some known working examples.
 
 The main QRL node software is developed in python, though it relies on some code that is not yet ported to Windows. For now the QRL node will need to be ran from a linux/Unix system.
@@ -33,9 +28,6 @@ These are the basic hardware requirements to run a QRL Node.
 ### AES-NI and AVX2
 
 An AES-NI enabled processor is required for cryptographic functions of the system. AES provides XXXXX while AVX2 is used by the keccak library for hashing functions.
-
-> NEED CITATION CORRECTION ABOVE ^^^^ - What do AES and AVX provide to the system?
-
 
 
 #### Compatibility Check

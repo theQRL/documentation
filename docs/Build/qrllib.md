@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: qrllib
 title: QRLLIB - The QRL Core Library
 hide_title: false
@@ -17,10 +17,26 @@ image: /assets/img/icons/yellow.png
 slug: /build/qrllib
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+<div style={{ "text-align": "center"}}>
+<span>
+      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
+        <article class="col col--12 margin-bottom--md">
+          <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="https://github.com/theQRL/qrllib">
+            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+                title="QRL Core Library">
+              QRL Core Library
+            </h2>
+            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
+               title="Providing QRL Core Functions to Developers ">Providing QRL Core Functions to Developers </p>
+          </a>
+        </article>
+      </section>
+</span>    
+</div>
+<br />
 
 [![PyPI version](https://badge.fury.io/py/pyqrllib.svg)](https://badge.fury.io/py/pyqrllib)
 [![npm version](https://badge.fury.io/js/qrllib.svg)](https://badge.fury.io/js/qrllib)
@@ -28,9 +44,10 @@ slug: /build/qrllib
 [![CircleCI](https://circleci.com/gh/theQRL/qrllib.svg?style=svg)](https://circleci.com/gh/theQRL/qrllib)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/theQRL/qrllib/master/LICENSE)
 
-# QRL Core Library
 
-*WARNING: This is work in progress, changes might not be backward compatible.*
+
+
+
 
 This library currently exposes the following functionality:  
 

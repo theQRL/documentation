@@ -16,10 +16,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/fundamentals/ots-keys
 
 ---
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 
 **O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of the hash based cryptography XMSS, the underlying cryptography that The Quantum Resistant Ledger uses. 
 

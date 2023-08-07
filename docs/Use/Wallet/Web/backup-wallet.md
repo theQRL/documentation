@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/web/backup
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The process to backup the Web wallet is simple. The wallet gives a few options for backing up an address during the address creation process. Chose any of these methods to backup your QRL address.
 
 Additionally after the wallet is created the recovery seed can be displayed for backup allowing future backups to be made.
@@ -38,8 +34,8 @@ There are a few ways that the private keys for an address are represented. Any o
 | Recovery Key Medium | Information |
 | --- | --- |
 | [Mnemonic Phrase](/build/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
-| [Hexseed](/build/address/hexseed) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
-| [`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/cli) wallet applications</li></ul> |
+| [Hexphrase](/build/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexstring consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
+| [`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/node-cli/overview) wallet applications</li></ul> |
 
 The medium used to store the data is as important as storing the backup securely. 
 

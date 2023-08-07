@@ -1,5 +1,5 @@
 ---
-docstatus: 60%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-installation
 title: QRL Node Installation
 hide_title: false
@@ -17,21 +17,14 @@ image: /assets/img/icons/yellow.png
 slug: /use/node/installation
 ---
 
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 
 Installing QRL is simple, and is possible on most modern operating systems. The install relies on `python3.5` or newer and the `pip3` python package install system. 
 
 :::info Minimum Node Hardware Requirements
-There are some basic requirements that must be met to run a QRL node. See the [QRL Node Requirements](node-requirements) documentation for more info.
+There are some basic requirements that must be met to run a QRL node. See the [QRL Node Requirements](/use/node/requirements) documentation for more info.
 :::
 
 Follow the directions below to get started running a QRL Node.

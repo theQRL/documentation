@@ -17,13 +17,8 @@ keywords:
   - node-cli
   - Backup
 image: /assets/img/icons/yellow.png
-slug: /build/node-cli/backup-cli-wallet
+slug: /use/node/node-cli/backup-cli-wallet
 ---
-
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 Backing up a QRL CLI wallet is similar to the GUI wallets offered. Simply print the secret keys and store them somewhere safe. Additionally the `wallet.json` file can be encrypted using AES encryption and stored digitally until needed. 
 

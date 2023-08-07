@@ -84,7 +84,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build/overview">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/build">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="Developers Overview">
               Developers Overview       

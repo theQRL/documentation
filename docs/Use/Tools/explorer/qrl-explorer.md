@@ -17,10 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/explorer/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
 The Block Explorer is a portal into the QRL blockchain, allowing users to lookup information from the chain directly.
 
 The explorer is connected through a QRL node and the information provided is sourced from the immutable data contained in the blockchain. All transactions, addresses that have seen transactions, tokens, mining payouts etc. are stored and accessible through the explorer. 
@@ -141,7 +137,7 @@ This shows the total supply that is yet to be mined and distributed in block rew
 
 ### Block Reward
 
-This is the current block reward that is distributed to the miner who mints the next block. This number will continue to diminish according the the [emission algorithm](/learn/qrl-emission).
+This is the current block reward that is distributed to the miner who mints the next block. This number will continue to diminish according the the [emission algorithm](/build/fundamentals/qrl-emission).
 
 **Example Status** - *Block Reward: 1.733252118*
 

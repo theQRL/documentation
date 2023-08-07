@@ -20,3 +20,9 @@ slug: /build/address/slave-keys
 :::caution DOCUMENT STATUS 
 <span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
 :::
+
+
+The QRL wallet is an XMSS Merkle tree constructed using the private key to generate leaves of this tree. 
+
+Each "leaf" can also generate a tree of OTS Slave keys that can be used to sign transactions. This allows further expansion of a QRL wallet extending the number of transactions you can process before needing to regenerate a new wallet.
+

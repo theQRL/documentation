@@ -200,7 +200,7 @@ const config = {
 
               {
                 label: 'Node CLI',
-                href: '/build/node-cli'
+                href: '/use/node/node-cli/overview'
               },
               {
                 label: 'QRL Helpers',

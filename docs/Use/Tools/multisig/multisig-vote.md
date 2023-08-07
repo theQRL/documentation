@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/multisig/vote
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-
-:::
-
 
 For funds to be transferred from a Multisig address, a successful vote must be initiated. Enough approve vote transactions must be received within the block limit defined in the proposal.
 

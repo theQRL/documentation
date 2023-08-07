@@ -279,10 +279,33 @@ const sidebars = {
             'Use/Node/node-requirements',
             'Use/Node/node-installation',
             'Use/Node/node-config',
-            'Use/Node/node-cli',
+            //'Use/Node/node-cli',
             'Use/Node/node-uses',
             'Use/Node/node-update',
             'Use/Node/qrl-maintenance',
+
+            { // node-cli section //
+              type: 'category',
+              label: 'Node-CLI',
+              link: {
+                type: 'generated-index',
+                title: 'QRL Node-CLI',
+                description: 'QRL node command line tools.',
+                slug: '/use/node/node-cli',
+                keywords: ['node-cli'],
+                image: '/assets/img/icons/yellow.png',
+              },
+              items: [
+                'Use/Node/node-cli/node-cli',
+                'Use/Node/node-cli/backup-cli-wallet',
+                'Use/Node/node-cli/node-cli-slave-xmss',
+                ]
+            },
+
+
+
+
+
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
@@ -381,6 +404,7 @@ const sidebars = {
               items: [
                 'Use/Tools/notarize/notarization-overview',
                 'Use/Tools/notarize/notarization-data',
+                'Use/Tools/notarize/notarization-verification',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
@@ -451,7 +475,7 @@ const sidebars = {
         image: '/assets/img/icons/yellow.png',
       },
       items: [
-        'Build/developers-overview',
+        // 'Build/developers-overview',
         'Build/qrl-status',
         'Build/qrllib',
         'Build/security',
@@ -519,7 +543,7 @@ const sidebars = {
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
         },
-        { // QRL Node CLI //
+        /*{ // QRL Node CLI //
           type: 'category',
           label: 'QRL Node CLI',
           link: {
@@ -537,7 +561,7 @@ const sidebars = {
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
-        },
+        }, */
 
         { // QRL Node CLI //
           type: 'category',

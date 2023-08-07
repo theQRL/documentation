@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-config
 title: QRL Node Configuration
 hide_title: false
@@ -17,10 +17,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /use/node/config
 ---
-
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 The QRL node allows custom configurable settings to be established by user directives. These configuration settings guide how the node functions and allows for custom integration.
 

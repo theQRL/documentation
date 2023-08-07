@@ -20,12 +20,6 @@ slug: /api/zeus-proxy
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
 ## Install
 
 - Node JS & NPM

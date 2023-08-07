@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id: vote-qrl
 title: Vote QRL Overview
 hide_title: false
@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /build/vote-qrl/overview
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-# vote-qrl
 
 Deployed at <https://vote.theqrl.org>
 

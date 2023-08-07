@@ -17,11 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/open
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 In order to interact with a QRL wallet it must be opened using the private keys that were created during the [wallet creation](/use/wallet/desktop/new) process.
 
 Open the QRL Desktop Wallet application to get started opening a wallet.
@@ -33,8 +28,8 @@ There are a few ways that the private keys for an address are represented. Any o
 | Recovery Key Medium | Information |
 | --- | --- |
 | [Mnemonic Phrase](/build/address/mnemonic)  | <ul><li>Wordlist consisting of 34 selected words from the [master QRL wordlist](https://github.com/theQRL/qrllib/blob/master/src/qrl/wordlist.cpp)</li><li>Available using backup functions of the wallet applications</li> <li>Provided during most address generation steps</li></ul> |
-| [Hexseed](/build/address/hexseed) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexseed consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
-| [`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/cli) wallet applications</li></ul> |
+| [Hexphrase](/build/address/hexphrase) | <ul><li>Available using backup functions of the wallet applications</li><li>Hexseed consisting of 102 mixed alpha numeric characters</li><li>Provided during most address generation processes, or found in a "Backup Wallet" function</li></ul> |
+| [`wallet.json` file](/build/address/wallet-json) |  <ul><li>Contains both Hexseed and Mnemonic as well as the Public Key</li><li>May be encrypted *(recommended)* and passphrase will be required to open</li><li>Generated from the [Desktop](/use/wallet/desktop/overview), [Web](/use/wallet/web/overview) and [CLI](/use/node/node-cli/overview) wallet applications</li></ul> |
 
 
 :::warning Test your backups!

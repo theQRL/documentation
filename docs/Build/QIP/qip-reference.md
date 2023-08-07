@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  qip-reference
 title: QIP Reference
 hide_title: false
@@ -15,7 +15,7 @@ keywords:
   - QRL Improvement Process
   - QIP Reference
 image: /assets/img/icons/yellow.png
-slug: /developers/QIP/qip-reference
+slug: /build/qip/qip-reference
 ---
 
 

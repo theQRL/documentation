@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/ledger/new
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 ## Installing the QRL App
 
 Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, [follow these instructions](https://support.ledger.com/hc/en-us/articles/360019184453?support=true:

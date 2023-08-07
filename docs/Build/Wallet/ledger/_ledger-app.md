@@ -17,12 +17,6 @@ image: /assets/img/icons/yellow.png
 slug: /developers/wallet/ledger/ledger-app
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
-
 
 [![CircleCI](https://circleci.com/gh/theQRL/ledger-qrl.svg?style=svg)](https://circleci.com/gh/theQRL/ledger-qrl)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e5130886a7e44a23b11844c44fb323ed)](https://www.codacy.com/app/qrl/ledger-qrl?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=theQRL/ledger-qrl&amp;utm_campaign=Badge_Grade)

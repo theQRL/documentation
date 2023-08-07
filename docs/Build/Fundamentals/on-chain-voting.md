@@ -14,11 +14,7 @@ keywords:
   - decentralized-governance
 image: /assets/img/icons/yellow.png
 slug: /build/fundamentals/on-chain-voting
-
 ---
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
 
 
 The QRL has implemented an on-chain voting system to help facilitate decentralized decision making, allowing the user base, coin holders, and the community, a say in the direction and outcome of the core project.

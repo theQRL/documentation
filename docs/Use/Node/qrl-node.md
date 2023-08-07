@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: overview
 title: QRL Node Overview
 hide_title: false
@@ -17,11 +17,6 @@ slug: /use/node/overview
 ---
 
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 A QRL node is a dedicated computer running software developed by the QRL team. These computers make up the core building blocks of the network and strengthen the chain by helping to agree on the immutable consensus of each block.
 
 
@@ -31,14 +26,14 @@ This is what makes up the distributed ledger and forms the core blockchain.
 
 
 :::info
-For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/learn/whitepaper) 
+For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/build/fundamentals/whitepaper) 
 :::
 
 ## QRL Network
 
 The Peer-To-Peer network that is formed by the QRL nodes allows the basic foundational security to exist in the chain. Through some incredible math and an ultra-secure address scheme using post quantum cryptography QRL has created one of the most secure and trusted blockchains in existence today.
 
-Running a node is simple, see the [installation documentation](node/node-installation) to get started. 
+Running a node is simple, see the [installation documentation](/use/node/installation) to get started. 
 
 ## Functions
 

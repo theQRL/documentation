@@ -1,5 +1,5 @@
 ---
-docstatus: DRAFT
+docstatus: 30%
 id:  qip-specification
 title: QIP Specification
 hide_title: false
@@ -15,7 +15,7 @@ keywords:
   - QRL Improvement Process
   - QIP Specification
 image: /assets/img/icons/yellow.png
-slug: /developers/QIP/qip-specification
+slug: /build/qip/qip-specification
 ---
 
 
