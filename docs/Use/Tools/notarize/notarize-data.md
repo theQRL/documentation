@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Notarize
 sidebar_position: 1
 pagination_label: Notarize
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/notarize/notarize-data.md
 description: QRL Notarisation guide
 keywords:
   - docs

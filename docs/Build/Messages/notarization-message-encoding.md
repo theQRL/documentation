@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Notarization Encoding
 sidebar_position: 12
 pagination_label: Notarization Encoding
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Messages/notarization-message-encoding.md
 description: QRL Notarization Message TX Encoding definition and documentation.
 keywords:
   - docs

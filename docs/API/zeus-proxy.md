@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Zeus Proxy
 sidebar_position: 5
 pagination_label: API - Zeus Proxy
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/zeus-proxy.md
 description: QRL API - Zeus Proxy
 keywords:
   - docs

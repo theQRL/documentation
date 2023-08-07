@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Multisig Vote
 sidebar_position: 1
 pagination_label: Multisig Vote
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/multisig/multisig-vote.md
 description: Multisig vote transaction
 keywords:
   - docs

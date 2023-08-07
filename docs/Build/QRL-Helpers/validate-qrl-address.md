@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Validate QRL Address
 sidebar_position: 13
 pagination_label: Validate QRL Address
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QRL-Helpers/validate-qrl-address.md
 description: Validate QRL Address helpers documentation
 keywords:
   - docs

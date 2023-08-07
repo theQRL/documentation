@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: WalletD Linux CLI
 sidebar_position: 1
 pagination_label: WalletD Linux CLI
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/walletd-api-linux-guide.md
 description: Tutorial for using the QRL walletD API in a linux command line with grpcurl.
 keywords:
   - tutorials

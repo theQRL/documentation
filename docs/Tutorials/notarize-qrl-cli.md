@@ -7,7 +7,7 @@ hide_table_of_contents: true
 sidebar_label: QRL Tutorials - Notarize qrl-cli
 sidebar_position: 2
 pagination_label: QRL Tutorials - Notarize qrl-cli
-custom_edit_url: 
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/notarize-qrl-cli.md
 description: Tutorials covering QRL focused tasks, building new tools, connecting advanced topics.
 keywords:
   - docs

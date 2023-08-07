@@ -59,7 +59,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
         <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/mining">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/node">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Node">
               QRL Node       
             </h2>
@@ -67,7 +67,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
         <article class="col col--6 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/mining">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/tools">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="QRL Tools">
               QRL Tools       
             </h2>
@@ -192,7 +192,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
           </a>
         </article>
           <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/zeus-proxy">
+          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/explorer-api">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="QRL Explorer API">
               QRL Explorer API

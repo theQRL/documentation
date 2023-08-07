@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Install
 sidebar_position: 2
 pagination_label: Offline Wallet - Install
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Offline/install-offline-wallet.md
 description: QRL Offline Wallet - Install
 keywords:
   - docs

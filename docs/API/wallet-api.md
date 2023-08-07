@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Wallet
 sidebar_position: 3
 pagination_label: API - Wallet
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/wallet-api.md
 description: QRL API - Wallet
 keywords:
   - docs

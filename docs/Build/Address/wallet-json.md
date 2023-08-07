@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Wallet.json File
 sidebar_position: 2
 pagination_label: Wallet.json File
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Address/wallet-json.md
 description: QRL Address Wallet.json File Documentation
 keywords:
   - docs

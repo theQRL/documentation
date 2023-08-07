@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: ledger-hw-app-qrl
 sidebar_position: 4
 pagination_label: ledger-hw-app-qrl
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
 description: ledger-hw-app-qrl
 keywords:
   - docs

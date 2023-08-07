@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL Status
 sidebar_position: 12
 pagination_label: QRL Status
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/qrl-status.md
 description: QRL Status
 keywords:
   - docs

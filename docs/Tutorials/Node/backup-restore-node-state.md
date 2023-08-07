@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Backup and Restore Node 
 sidebar_position: 1
 pagination_label: Backup and Restore Node 
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/backup-restore-node-state.md
 description: Tutorial for backing up the QRL Node and restoring the state from a backup.
 keywords:
   - tutorials

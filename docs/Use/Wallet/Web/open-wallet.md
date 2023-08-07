@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Open 
 sidebar_position: 4
 pagination_label: Web Wallet - Open
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Web/open-wallet.md
 description: Open QRL address using the web wallet.
 keywords:
   - docs

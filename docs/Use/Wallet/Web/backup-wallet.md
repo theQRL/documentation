@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Backup 
 sidebar_position: 3
 pagination_label: Web Wallet - Backup
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Web/backup-wallet.md
 description: Backup QRL address keys using the web wallet.
 keywords:
   - docs

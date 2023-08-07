@@ -8,7 +8,7 @@ hide_table_of_contents: true
 sidebar_label: Generate Address - Dice
 sidebar_position: 1
 pagination_label: Generate Address - Dice
-custom_edit_url: 
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Wallet/generate-address-dice.md
 description: Generating a QRL wallet using dice for random entropy used for the address cryptography.
 keywords:
   - docs

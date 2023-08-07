@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Solo Mining
 sidebar_position: 3
 pagination_label: Solo Mining
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Mining/solo-mining.md
 description: Documentation for Solo Mining QRL using a basic computer
 keywords:
   - docs

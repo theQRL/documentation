@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
 pagination_label: Overview
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/overview.md
 description: General Info covering the various official QRL wallets and their usage.
 keywords:
   - docs

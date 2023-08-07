@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: New
 sidebar_position: 4
 pagination_label: Offline Wallet - New
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Offline/create-a-new-offline-address.md
 description: Creating a new QRL wallet offline
 keywords:
   - docs

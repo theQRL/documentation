@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: OTS Keys
 sidebar_position: 2
 pagination_label: OTS Keys
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Fundamentals/ots-keys.md
 description: XMSS overview and basics
 keywords:
   - cryptography

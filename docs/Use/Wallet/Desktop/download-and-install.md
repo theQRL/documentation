@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Install
 sidebar_position: 2
 pagination_label: Desktop Wallet - Install
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Desktop/download-and-install.md
 description: Install QRL Desktop Wallet
 keywords:
   - docs

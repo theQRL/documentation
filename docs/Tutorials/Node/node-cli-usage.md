@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Node CLI Usage 
 sidebar_position: 1
 pagination_label: Node CLI Usage
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/Node/node-cli-usage.md
 description: Tutorial for using the public API.
 keywords:
   - tutorials
@@ -19,13 +19,13 @@ slug: /tutorials/node/node-cli-use
 This tutorial covers some basic usage and gives an example of the wallet functions using the QRL Node command line tools.
 
 
-These tools are available by installing the QRL node on your computer. You do not nessesarly need a synced QRL node locally to perform all of these functions.
+These tools are available by installing the QRL node on your computer. You do not necessarily need a synced QRL node locally to perform all of these functions.
 
 Anything that is off-chain like creating and encrypting an address can be done without connection to a node.
 
-For the rest of the functions you will need access to a node with the puublic API port 19009 available.
+For the rest of the functions you will need access to a node with the public API port 19009 available.
 
-For indivigual use you can try to use one of the foundations nodes
+For individual use you can try to use one of the foundations nodes
 
 | Mainnet |  Testnet |
 | :--: | :--: | 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: New
 sidebar_position: 2
 pagination_label: Ledger Wallet - New
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/new-wallet.md
 description: Create a new address using a Ledger device.
 keywords:
   - docs

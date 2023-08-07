@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - walletd-rest-proxy
 sidebar_position: 4
 pagination_label: API - walletd-rest-proxy
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Developers/API/walletd-rest-proxy.md
+custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/API/walletd-rest-proxy.md
 description: QRL API - walletd-rest-proxy
 keywords:
   - docs

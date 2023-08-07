@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Slaves Address
 sidebar_position: 2
 pagination_label:  Node CLI - Slaves Address
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Node/node-cli/node-cli-slave-xmss.md
 description: Generating slave xmss keys to extend the OTS count on an address.
 keywords:
   - docs

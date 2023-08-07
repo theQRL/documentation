@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Slave Keys
 sidebar_position: 5
 pagination_label: Slave Keys
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Address/slaves.md
 description: Overview of the QRL Slave Key addresses.
 keywords:
   - docs

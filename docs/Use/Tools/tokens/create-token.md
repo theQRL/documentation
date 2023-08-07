@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Create
 sidebar_position: 2
 pagination_label: Token - Create
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/tokens/create-token.md
 description: Create new token on the QRL newtwork
 keywords:
   - docs

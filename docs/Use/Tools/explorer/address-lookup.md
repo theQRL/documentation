@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Address Lookup
 sidebar_position: 2
 pagination_label: Address Lookup
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/explorer/address-lookup.md
 description: QRL Explorer Address Lookup
 keywords:
   - docs

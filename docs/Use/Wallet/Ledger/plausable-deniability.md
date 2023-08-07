@@ -6,7 +6,7 @@ hide_title: false
 hide_table_of_contents: false
 sidebar_position: 7
 sidebar_label: Plausable Deniability
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Ledger/plausable-deniability.md
 pagination_label: Ledger Wallet - Plausable Deniability
 description: Plausably Deniabile QRL address using the ledger device
 keywords:

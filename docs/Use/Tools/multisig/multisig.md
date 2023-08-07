@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
 pagination_label: Multisig Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/multisig/multisig.md
 description: Multi-Signature - Overveiw
 keywords:
   - docs

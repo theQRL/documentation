@@ -7,7 +7,7 @@ hide_table_of_contents: true
 sidebar_label: QRL Tutorials
 sidebar_position: 1
 pagination_label: QRL Tutorials
-custom_edit_url: 
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Tutorials/qrl-tutorials.md
 description: Tutorials covering QRL focused tasks, building new tools, connecting advanced topics.
 keywords:
   - docs

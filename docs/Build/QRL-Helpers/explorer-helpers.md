@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Explorer Helpers
 sidebar_position: 14
 pagination_label: Explorer Helpers
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QRL-Helpers/explorer-helpers.md
 description: QRL Explorer Helpers
 keywords:
   - docs

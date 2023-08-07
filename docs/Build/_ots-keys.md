@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: OTS Keys
 sidebar_position: 2
 pagination_label: OTS Keys
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
 description: OTS Keys documentation for the Quantum Resistant Ledger.
 keywords:
   - docs

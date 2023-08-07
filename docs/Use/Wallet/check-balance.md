@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Check Balance
 sidebar_position: 2
 pagination_label: Check Balance
-custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/Wallet/qrl-wallet.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/check-balance.md
 description: Check a wallet balance
 keywords:
   - docs

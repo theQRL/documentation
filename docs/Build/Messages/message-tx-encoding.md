@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Message Encoding
 sidebar_position: 12
 pagination_label: Message Encoding
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Messages/message-tx-encoding.md
 description: QRL Message TX Encoding
 keywords:
   - docs

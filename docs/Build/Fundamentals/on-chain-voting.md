@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: On-chain Voting
 sidebar_position: 5
 pagination_label: On-chain Voting
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Fundamentals/on-chain-voting.md
 description: QRL On-chain voting system info
 keywords:
   - On-chain Voting

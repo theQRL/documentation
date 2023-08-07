@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Address Overview
 sidebar_position: 2
 pagination_label: Address Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/qrl-address-overview.md
 description: QRL Address overview covering public and private keys.
 keywords:
   - docs

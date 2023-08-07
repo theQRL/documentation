@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Electrify QRL
 sidebar_position: 7
 pagination_label: Electrify QRL
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
 description: Electrify QRL
 keywords:
   - docs

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Backup
 sidebar_position: 2
 pagination_label: Node CLI Wallet - Backup
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Node/node-cli/backup-cli-wallet.md
 description: Backup a QRL Node CLI wallet address using the node CLI tools
 keywords:
   - docs

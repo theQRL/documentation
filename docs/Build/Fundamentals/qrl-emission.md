@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL Emission
 sidebar_position: 4
 pagination_label: QRL Emission
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/xmss.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Fundamentals/qrl-emission.md
 description: QRL Emission schedule and rate
 keywords:
   - Blockchain

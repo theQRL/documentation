@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Vote QRL
 sidebar_position: 9
 pagination_label: Vote QRL
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Vote-QRL/vote-qrl.md
 description: Vote QRL
 keywords:
   - docs

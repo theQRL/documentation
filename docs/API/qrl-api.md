@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: API - Public
 sidebar_position: 2
 pagination_label: API - Public 
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/qrl-api.md
 description: QRL Public API
 keywords:
   - docs

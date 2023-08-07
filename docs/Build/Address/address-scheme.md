@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Address Scheme
 sidebar_position: 1
 pagination_label: Address Scheme
-custom_edit_url: https://github.com/theqrl/documentation/edit/master/docs/basics/what-is-qrl.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/Address/address-scheme.md
 description: QRL Address Scheme Documentation.
 keywords:
   - docs
