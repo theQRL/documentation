@@ -17,7 +17,7 @@ slug: /use/wallet/offline/install
 ---
 
 
-The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the opperating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
+The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the operating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
 
 
 <details>

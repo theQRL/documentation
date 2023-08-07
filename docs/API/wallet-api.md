@@ -56,7 +56,7 @@ Wallet files will show here as well when created using the `qrl_walletd` API.
 
 ### Grpc Bash Tools
 
-Accessing the Grpc commands using a basic linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
+Accessing the Grpc commands using a basic Linux command line can be accomplished using a 3rd party tool. For this guide we are using a [tool called `grpcurl`](https://github.com/fullstorydev/grpcurl)
 
 :::info
 From the [gRPCurl Docs](https://github.com/fullstorydev/grpcurl#grpcurl):
