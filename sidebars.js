@@ -483,7 +483,6 @@ const sidebars = {
         'Build/Mining/qrandomx',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
-        'Build/Vote-QRL/vote-qrl',
         { // Fundamentals//
           type: 'category',
           label: 'QRL Fundamentals',
