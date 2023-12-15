@@ -5,6 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
+
+/*
 :root {
   --ifm-color-primary: #ffa729;
   --ifm-color-primary-dark: #ff9b0b;
@@ -23,6 +25,34 @@
   --ifm-color-primary-lighter: #7bc5ff;
   --ifm-color-primary-lightest: #addbff;
 }
+
+*/
+
+:root {
+  --ifm-color-primary: #4aafff;
+  --ifm-color-primary-dark: #29a0ff;
+  --ifm-color-primary-darker: #1999ff;
+  --ifm-color-primary-darkest: #0081e6;
+  --ifm-color-primary-light: #6bbeff;
+  --ifm-color-primary-lighter: #7bc5ff;
+  --ifm-color-primary-lightest: #addbff;
+  --ifm-color-primary: #4aafff;
+  --ifm-color-secondary: #ffa729;
+  --ifm-color-success: #00a400;
+  --ifm-color-info: #54c7ec;
+  --ifm-color-warning: #ffba00;
+  --ifm-color-danger: #fa383e;
+}
+[data-theme='dark'] {
+  --ifm-color-primary: #ffa729;
+  --ifm-color-primary-dark: #ff9b0b;
+  --ifm-color-primary-darker: #fc9400;
+  --ifm-color-primary-darkest: #cf7a00;
+  --ifm-color-primary-light: #ffb347;
+  --ifm-color-primary-lighter: #ffb955;
+  --ifm-color-primary-lightest: #ffcc82;
+}
+
 
 .grid-container {
   display: grid;
@@ -66,3 +96,5 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     border: 1px solid var(--ifm-color-emphasis-100);
     background-color: #282A36;
   }
+
+
