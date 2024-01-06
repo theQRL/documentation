@@ -26,8 +26,8 @@ The QRL uses [eXtended Merkle Signature Scheme *(XMSS)*](https://eprint.iacr.org
 
 XMSS is considered to be one of the most secure quantum resistant algorithms in use today. There is one drawback to hash based cryptography however, a signature key index may only be used one time.
 
-:::info **OTS** *(One Time Signature)* Keys
-OTS keys can only be used to sign one transaction. There are limited keys for an address depending on tree height selected during address creation. 
+:::info **OTS** *(One Time Signature)* Key Index
+OTS key indexes can only be used to sign one transaction. There are limited keys for an address depending on tree height selected during address creation. 
 See the [OTS Documentation](/build/fundamentals/ots-keys) for more information. 
 :::
 

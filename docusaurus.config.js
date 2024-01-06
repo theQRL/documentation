@@ -139,10 +139,6 @@ const config = {
                 label: 'OTS Keys',
                 href: '/build/fundamentals/ots-keys'
               },
-              {
-                label: 'On-Chain Voting',
-                href: '/learn/on-chain-voting'
-              },
 
               // ... more learn items
             ],

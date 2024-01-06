@@ -1960,7 +1960,7 @@ Relay up to 80 bytes of a message onto the network from given address.
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail.
 
 :::tip
-This function can be used to [notarize](/use/tools/notarize) data or for on-chain voting, as well as any free form data. 
+This function can be used to [notarize](/use/tools/notarize) data or for any free form data. 
 See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
 :::
 
@@ -2125,7 +2125,7 @@ Relay up to 80 bytes of a message onto the network from given address using slav
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail. 
 
 :::tip
-This function can be used to [notarize](/use/tools/notarize/overview) data or for on-chain voting, as well as any free form data. 
+This function can be used to [notarize](/use/tools/notarize/overview) data or for as any free form data. 
 See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
 :::
 

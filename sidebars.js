@@ -53,7 +53,6 @@ const sidebars = {
         'Learn/whitepaper',
         'Learn/qrl-emission',
         'Learn/ots-keys',
-        'Learn/on-chain-voting',
         // Learn Blockchain
         /*{
           type: 'category',
@@ -498,7 +497,6 @@ const sidebars = {
             'Build/Fundamentals/ots-keys',
             'Build/Fundamentals/whitepaper',
             'Build/Fundamentals/qrl-emission',
-            'Build/Fundamentals/on-chain-voting',
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
