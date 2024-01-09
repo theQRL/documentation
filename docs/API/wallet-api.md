@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id: wallet-api
 title: QRL API - Wallet
 hide_title: false
@@ -8,7 +8,7 @@ sidebar_label: API - Wallet
 sidebar_position: 3
 pagination_label: API - Wallet
 custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/wallet-api.md
-description: QRL API - Wallet
+description: QRL API - Wallet API for programatic interaction with the QRL Blockchain
 keywords:
   - docs
   - build
@@ -22,7 +22,7 @@ slug: /api/wallet-api
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The QRL Wallet Daemon allows additional functionality to the QRL Node installation. 
+The QRL Wallet Daemon allows additional functionality to the QRL Node installation giving access to wallet functions and advanced control of accounts.
 
 Source code https://github.com/theQRL/QRL/blob/master/src/qrl/daemon/walletd.py
 
@@ -42,17 +42,12 @@ Simply execute the function after successfully installing a node.
 qrl_walletd
 ```
 
-this will create the local `~/.qrl/qrl_walletd.pid`  and `~/.qrl/walletd.log` files in the default QRL directory.
-
-Wallet files will show here as well when created using the `qrl_walletd` API.
+this will create the local `~/.qrl/qrl_walletd.pid`  and `~/.qrl/walletd.log` files in the default QRL directory. Wallet files will be created here as well when using the `qrl_walletd` API.
 
 ### Requirements
 
 - QRL Node software installed on the localhost.
 - Access to a synced node with the walletd running and access to port default wallet daemon port `19010`
-
-
-
 
 ### Grpc Bash Tools
 
@@ -242,10 +237,6 @@ message RelayTransferTokenTxnBySlaveReq {
 | [GetNodeInfo](#getnodeinfo) | NodeInfoReq | NodeInfoResp |
 
 
-
-
-
-
 ### AddNewAddress
 
 Adds new randomly generated address to the wallet located at `~/.qrl/walletd.json`. 
@@ -272,11 +263,9 @@ Using default settings this will generate a new address with:
 
 The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if it does not already exist.
 
-
 :::note
 Ensure the tree height is large enough for your needs and transfer all funds out of the address before all [OTS keys](build/fundamentals/ots-keys) are used!
 :::
-
 
 <Tabs
   groupId="AddNewAddressUsage"
@@ -287,8 +276,8 @@ Ensure the tree height is large enough for your needs and transfer all funds out
     {label: 'AddNewAddressResp', value: 'response'},
   ]}>
   <TabItem value="method">
-
   
+
 ```go
 service WalletAPI {
     rpc AddNewAddress(AddNewAddressReq) returns (AddNewAddressResp);
@@ -297,6 +286,7 @@ service WalletAPI {
   
   </TabItem>
   <TabItem value="request">
+
 
 ```go
 message AddNewAddressReq {
@@ -332,10 +322,8 @@ message AddNewAddressResp {
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 
-
   </TabItem>
 </Tabs>
-
 
 </TabItem>
 <TabItem value="code" label="Code">
@@ -448,12 +436,6 @@ print(add_new_address_resp)
 
 ### AddNewAddressWithSlaves
 
-:::caution NEED HELP!
-Add more details on this funciton:
-- How are the slaves broadcast onto the network?
-- Where is the slaves file located?
-:::
-
 Adds a new address into the `~/.qrl/walletd.json` wallet file and generates slaves for the address. 
  
 :::info
@@ -490,6 +472,7 @@ This address and slave keys will be added to the \~/.qrl/walletd.json file, *thi
     {label: 'AddNewAddressWithSlavesResp', value: 'response'},
   ]}>
   <TabItem value="method">
+
 
 ```go
 service WalletAPI {
@@ -1772,10 +1755,6 @@ The OTS key has already been used, and cannot be re-used for transactions. Use t
 ---
 
 ### RelayTransferTxnBySlave
-
-:::caution CLARIFICATION NEEDED
-Validate the description of this function and if related nomenclature is correct.
-:::
 
 Relay a transfer transaction using a slave address contained in the local wallet.
 
@@ -3307,9 +3286,6 @@ print(get_relaytransfertokentxnbyslave_resp)
 
 If the transaction hash is not correct and does not point to a token on the blockchain the transfer will not work,
 
-:::caution
-There is no warning given on the cli or log for the walletd and it appears the transaction proceeded, however it will be rejected by the node. This will consume an OTS key from the local wallet file even though the transaction did not proceed.
-:::
 
 There is a log printed in the node output that indicates the error.
 
@@ -3459,7 +3435,6 @@ Please refer to the [PlainTransaction](#plaintransaction) `Slave`.
 
 
 :::caution Need Code Examples
-Finish the code examples below for this function!
 :::
 
 
@@ -3649,7 +3624,6 @@ Please refer to the [PlainTransaction](#plaintransaction) `Slave`.
 <TabItem value="code" label="Code">
 
 :::caution Need Code Examples
-Finish the code examples below for this function!
 :::
 
 

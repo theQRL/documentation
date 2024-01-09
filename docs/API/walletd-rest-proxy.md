@@ -1,5 +1,5 @@
 ---
-docstatus: 60%
+docstatus: 90%
 id: walletd-rest-proxy
 title: QRL API - walletd-rest-proxy
 hide_title: false
@@ -8,7 +8,7 @@ sidebar_label: API - walletd-rest-proxy
 sidebar_position: 4
 pagination_label: API - walletd-rest-proxy
 custom_edit_url: https://github.com/theQRL/documentation/edit/main/docs/API/walletd-rest-proxy.md
-description: QRL API - walletd-rest-proxy
+description: QRL API - walletd-rest-proxy API for programatic interaction with the QRL Blockchain
 keywords:
   - docs
   - build
@@ -23,21 +23,15 @@ slug: /api/walletd-rest-proxy
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Interaction with wallet functions is simplified with the use of the walletd-rest-proxy, allowing typical REST API calls to be made to the 
-QRL node. This proxy eliminates any need to interact with the GRPC functions, allowing typical CURL calls to be utilized making interaction 
-with wallet functions simple.
+Interaction with wallet functions is simplified with the use of the walletd-rest-proxy, allowing typical REST API calls to be made to the QRL node. 
 
-
-
-Interaction with wallet functions is simplified with the use of the walletd-rest-proxy, allowing typical REST API calls to be made to the 
-QRL node. This proxy eliminates any need to interact with the GRPC functions, allowing typical CURL calls to be utilized making interaction with wallet functions simple.
-
+This proxy eliminates any need to interact with the GRPC functions, allowing typical CURL calls to be utilized making interaction with wallet functions simple.
 
 #### Automatic Slave transactions 
 
-The `wallets-rest-proxy` provides an automatic slave system, where new slaves are generated under a `root_slave` with a 3rd layer of recursion 
-of Merkle trees under a single private key. This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous 
-tier 3 slave OTS keys are used.
+The `wallets-rest-proxy` provides an automatic slave system, where new slaves are generated under a `root_slave` with a 3rd layer of recursion of Merkle trees under a single private key. 
+
+This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous tier 3 slave OTS keys are used.
 
 :::info Automatic Slave Transaction Diagram 
 ![auto slave tree system diagram](./assets/img/Auto-slave_tree-System.png)
@@ -54,14 +48,16 @@ This system also uses the [QRL walletd-rest-proxy](https://github.com/theQRL/wal
 
 ## `walletd-rest-proxy` General Info
 
-By default the `walletd-rest-proxy` expects there to be a QRL node running on the localhost with default ports available.
+By default the `walletd-rest-proxy` expects there to be a QRL node running on the `localhost` with default ports available.
 
 - Wallet API on `19010` 
+- Node API on `19009`
 
+These [configuration settings](https://github.com/theQRL/QRL/blob/353b32aeb3897c7ffb50c9a5759091928f493f1d/src/qrl/core/config.py#L121) can be 
+overridden. See the [node configuration documentation](/use/node/config) for information on setting these to a different port in your local node.
 
-By default the API expects there to be a QRL node running on the localhost with port `19009` available. 
-This [configuration setting](https://github.com/theQRL/QRL/blob/353b32aeb3897c7ffb50c9a5759091928f493f1d/src/qrl/core/config.py#L121) can be 
-overridden with the `self.public_api_server = "127.0.0.1:19009"` directive.
+- `self.public_api_server = "127.0.0.1:19009"` 
+- `self.wallet_api_port = 19010`
 
 
 The wallet daemon will by default create the wallet file at `~/.qrl/walletd.json`.
@@ -102,13 +98,7 @@ Clone walletd-rest-proxy from the repo hosted at https://github.com/theQRL/walle
 
 ```bash
 git clone github.com/theQRL/walletd-rest-proxy
-```
-
-```bash
 cd walletd-rest-proxy
-```
-
-```bash
 go build
 ```
 
@@ -147,9 +137,6 @@ Enter the directory and build the package.
 
 ```bash
 cd walletd-rest-proxy
-```
-
-```bash
 go build
 ```
 
@@ -336,13 +323,11 @@ Higher tree heights may take longer to generate.
 
 ---
 
-
 ## AddNewAddressWithSlaves
-
 
 Adds a new address into the `~/.qrl/walletd.json` wallet file, generates and transmits slave transaction to the chain. 
 
- 
+
 :::info
 This command will create an unlimited address, re-generating slave keys as needed. Additionally the system will preserve 5 OTS keys from each 
 slave to ensure there are no lost funds with this system.
@@ -2859,8 +2844,6 @@ print(relayTransferTokenTxn.text)
 
 
 ## RelayTransferTokenTxnBySlave
-
-## RelayTransferTokenTxn
 
 Send a token transfer to another QRL address using the automatic slave key system.
 

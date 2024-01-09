@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: getting-started
 title: The QRL Documentation
 hide_title: false
@@ -7,7 +7,7 @@ hide_table_of_contents: true
 sidebar_label: Getting Started
 sidebar_position: 1
 pagination_label: Getting Started
-custom_edit_url: https://github.com/fr1t2/documentation/edit/main/docs/getting-started.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/getting-started.md
 description: Getting started with the QRL Blockchain and ecosystem
 keywords:
   - docs
@@ -35,7 +35,8 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
         { label: 'Use', value: 'use', },
         { label: 'Build', value: 'developer', },
         { label: 'API', value: 'api', },
-        { label: 'Tutorials', value: 'tutorials', },
+        
+      
       ]}>
   <TabItem value="use">
     <h2>Using QRL</h2>
@@ -204,34 +205,7 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
       </section>
     </span>
   </TabItem>
-  <TabItem value="tutorials">
-    <h2>Tutorials</h2>
-    <p>Tutorial guides to get started using The QRL. Walking through basic tasks like setting up a node, requesting blockchain data etc.</p>
-    <span>
-      <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
-        <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/tutorials/node">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="Node Tutorials">
-              Node Tutorials
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="QRL Node related tutorials.">QRL Node related tutorials.</p>
-          </a>
-        </article>
-        <article class="col col--4 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/tutorials/wallet">
-            <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-                title="Wallet Tutorials">
-              Wallet Tutorials
-            </h2>
-            <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="QRL Wallet Related Tutorials">QRL Wallet Related Tutorials</p>
-          </a>
-        </article>
-      </section>
-    </span>
-  </TabItem>
+
 </Tabs>
 
 ---
