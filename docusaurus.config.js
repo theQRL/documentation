@@ -200,7 +200,7 @@ const config = {
               },
               {
                 label: 'QRL Helpers',
-                href: '/developers/helpers'
+                href: '/build/helpers'
               },
             ],
           },

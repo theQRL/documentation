@@ -567,7 +567,7 @@ const sidebars = {
             type: 'generated-index',
             title: 'QRL Code Libraries and helpers',
             description: 'Various helper scripts developed to aid and assist in developing on the QRL.',
-            slug: '/developers/helpers',
+            slug: '/build/helpers',
             keywords: ['qrl-helpers', 'node-helpers'],
             image: '/assets/img/icons/yellow.png',
           },
