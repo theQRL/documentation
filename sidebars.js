@@ -488,7 +488,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Fundamental Topics',
-            description: 'Covering general topics related to the QRL',
+            description: 'Covering some fundamental topics related to the QRL',
             slug: '/build/fundamentals',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -507,7 +507,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Message Encoding Documentation',
-            description: 'Message encoding standard for the QRL Message Transactions',
+            description: 'Message encoding standard for the various QRL Message Transaction types',
             slug: '/build/messages',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -566,7 +566,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Code Libraries and helpers',
-            description: 'Main QRL node CLI tools and usage.',
+            description: 'Various helper scripts developed to aid and assist in developing on the QRL.',
             slug: '/developers/helpers',
             keywords: ['qrl-helpers', 'node-helpers'],
             image: '/assets/img/icons/yellow.png',

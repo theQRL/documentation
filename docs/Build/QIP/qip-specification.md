@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id:  qip-specification
 title: QIP Specification
 hide_title: false
