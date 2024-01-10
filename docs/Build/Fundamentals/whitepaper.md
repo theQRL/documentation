@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id:  whitepaper
 title: QRL Whitepaper
 hide_title: false
