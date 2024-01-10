@@ -617,7 +617,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'API Docs',
-        description: 'Advanced documentation for developers and adventurers building on the QRL.',
+        description: 'API documentation for developers building on the QRL.',
         slug: '/api',
         keywords: ['api', 'developers', 'rest', 'grpc'],
         image: '/assets/img/icons/yellow.png',
