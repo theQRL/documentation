@@ -316,7 +316,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Tools',
-            description: 'Covering QRL Tools and integrations.',
+            description: 'Covering QRL Tools.',
             slug: '/use/tools',
             keywords: ['use-tool'],
             image: '/assets/img/icons/yellow.png',
@@ -430,6 +430,7 @@ const sidebars = {
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
             // Tools Integrations
+            /*
             {
               type: 'category',
               label: 'Integrations',
@@ -446,7 +447,7 @@ const sidebars = {
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
-            },
+            }, */
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
