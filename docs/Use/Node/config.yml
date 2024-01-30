@@ -4,26 +4,26 @@
 ## It is typically found in the ~/.qrl/ directory
 ## Default settings are shown below. 
 ## All commands begin with single(#) 
-## Uncomment and adjust to suit your needs
+## Un-comment and adjust to suit your needs
 ##
-##======================================
+## ======================================
 ##   Mining Configuration
-##======================================
+## ======================================
 # mining_enabled: False
 # mining_address: ''
 # mining_thread_count: 0  # 0 to auto detect thread count based on CPU/GPU number of processors
 #
-##======================================
+## ======================================
 ##   Ephemeral Configuration
-##======================================
+## ======================================
 # accept_ephemeral: True
 # Cache Size
 # lru_state_cache_size: 10
 # max_state_limit: 10
 #
-##======================================
+## ======================================
 ##   PEER Configuration
-##======================================
+## ======================================
 # max_redundant_connections: 5  # Number of connections allowed from nodes having same IP
 # enable_peer_discovery: True  # Allows to discover new peers from the connected peers
 # peer_list: 
@@ -53,59 +53,59 @@
 # stale_transaction_threshold: 15   # 15 Blocks
 # _qrl_dir: "~/.qrl"
 #
-##======================================
+## ======================================
 ##       ADMIN API CONFIGURATION
-##======================================
+## ======================================
 # admin_api_enabled: False
 # admin_api_host: "127.0.0.1"
 # admin_api_port: 19008
 # admin_api_threads: 1
 # admin_api_max_concurrent_rpc: 100
 #
-##======================================
+## ======================================
 ##       PUBLIC API CONFIGURATION
-##======================================
+## ======================================
 # public_api_enabled: True
 # public_api_host: "127.0.0.1"
 # public_api_port: 19009
 # public_api_threads: 1
 # public_api_max_concurrent_rpc: 100
 #
-##======================================
+## ======================================
 ##       MINING API CONFIGURATION
-##======================================
+## ======================================
 # mining_api_enabled: False
 # mining_api_host: "127.0.0.1"
 # mining_api_port: 19007
 # mining_api_threads: 1
 # mining_api_max_concurrent_rpc: 100
 #
-##======================================
+## ======================================
 ##        DEBUG API CONFIGURATION
-##======================================
+## ======================================
 # debug_api_enabled: False
 # debug_api_host: "127.0.0.1"
 # debug_api_port: 52134
 # debug_api_threads: 1
 # debug_api_max_concurrent_rpc: 100
 #
-##======================================
+## ======================================
 ##       GRPC PROXY CONFIGURATION
-##======================================
+## ======================================
 # grpc_proxy_host: "127.0.0.1"
 # grpc_proxy_port: 18090
 #
-##======================================
+## ======================================
 ##      WALLET DAEMON CONFIGURATION
-##======================================
+## ======================================
 # public_api_server: "127.0.0.1:19009"
 # wallet_daemon_host: "127.0.0.1"
 # wallet_daemon_port: 18091
 # number_of_slaves: 3
 #
-##======================================
+## ======================================
 ##        WALLET API CONFIGURATION
-##======================================
+## ======================================
 # wallet_api_host: "127.0.0.1"
 # wallet_api_port: 19010
 # wallet_api_threads: 1
