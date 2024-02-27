@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-config
 title: QRL Node Configuration
 hide_title: false
@@ -71,20 +71,12 @@ mining_address: 'Q01050040b1f8b6e87e3c114f61f921f25b9e392f5ae90b7a1e8bbc0551dabd
 mining_thread_count: 0
 ```
 
-
-
-
-
-
 ###  Ephemeral Config
 
 Ephemeral messaging configuration details are shown below. 
 
 :::info This function is still in development and may change at a later date
 :::
-
-
-
 
 
 #### `accept_ephemeral`
@@ -114,7 +106,6 @@ Set the time before outgoing messages expire.
 accept_ephemeral: True
 outgoing_message_expiry: 90
 ```
-
 
 ###  P2P Config
 
@@ -171,15 +162,6 @@ May require additional firewall port forward settings depending on the network c
 | p2p_q_size | *10000* |  |
 
 
-
-
-
-> FIXME! What is this directive for? ^^^
-
-
-
-
-
 #### `peer_rate_limit`
 
 Maximum number of messages that can be sent between peers. 
@@ -197,16 +179,12 @@ Number of minutes to ban offending peer IP addresses.
 |:----------|:-------:|:------------|
 | ban_minutes | *20* | Allows to ban a peer's IP who is breaking protocol |
 
-
-> FIXME! What defines breaking protocol?
-
 #### `monitor_connections_interval`
 
 | Directive | Default | Description |
 |:----------|:-------:|:------------|
 | monitor_connections_interval | *30* | Monitor connection every 30 seconds |
 
-> FIXME! What is this directive for? ^^^
 
 #### `max_peers_limit`
 
@@ -248,10 +226,6 @@ List of NTP servers for the node to use
 | chain_state_timeout | *180* | |
 
 
-> FIXME! What is this directive for? ^^^
-
-
-
 #### `chain_state_broadcast_period`
 
 | Directive | Default | Description |
@@ -259,21 +233,11 @@ List of NTP servers for the node to use
 | chain_state_broadcast_period | *180* | must be less than ping_timeout |
 
 
-
-> FIXME! What is this directive for? ^^^
-
-
 #### `transaction_pool_size`
 
 | Directive | Default | Description |
 |:----------|:-------:|:------------|
 | transaction_pool_size | *25000* |  |
-
-
-
-> FIXME! What is this directive for? ^^^
-
-
 
 
 #### `transaction_minimum_fee`
@@ -291,20 +255,11 @@ Minimum fee allowed by the node to be accepted into a block.
 | pending_transaction_pool_size | *75000* | 1% of the pending_transaction_pool will be reserved for moving stale txn |
 
 
-
-
-> FIXME! What is this directive for? ^^^
-
-
-
 #### `pending_transaction_pool_reserve`
 
 | Directive | Default | Description |
 |:----------|:-------:|:------------|
 | pending_transaction_pool_reserve | *75* | `int(self.pending_transaction_pool_size * 0.01)` |
-
-
-> FIXME! What is this directive for? ^^^
 
 
 #### `stale_transaction_threshold`
@@ -353,7 +308,6 @@ stale_transaction_threshold: 15
 
 ### Admin API Config
 
-> FIXME! What is this directive for? ^^^
 
 #### `admin_api_enabled`
 
@@ -448,7 +402,6 @@ public_api_port: 19009
 public_api_threads: 1
 public_api_max_concurrent_rpc: 100
 ```
-
 
 
 ### Mining API Config

@@ -20,10 +20,6 @@ slug: /use/wallet/offline/install
 The Offline QRL Wallet is not installed like other programs are typically and will work agnostic to the operating system you are running. As long as the browser used to access the files is modern and supports [WebAssembly](https://webassembly.org/)
 
 
-<details>
-  <summary>Quick Start Guide</summary>
-  <p>
-
 ## Quick Start Guide
 
 Use this guide to get up and running quickly. 
@@ -53,6 +49,3 @@ http-server offline-wallet-generator/
 :::info 
 No internet connection required after files are downloaded and verified.
 :::
-
-</p>
-</details>

@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-open
 title: QRL Web Wallet - Open Wallet
 hide_title: false
@@ -18,7 +18,7 @@ slug: /use/wallet/web/open
 ---
 
 
-In order to interact with a QRL wallet it must be opened using the private keys that were created during the [wallet creation](/use/wallet/web/new) process.
+In order to interact with a QRL wallet, it must be opened using the private keys that were created during the [wallet creation](/use/wallet/web/new) process.
 
 Browse to the QRL Web wallet at https://wallet.theqrl.org to get started opening a wallet.
 
@@ -40,13 +40,9 @@ These keys allow full access to the address and all funds and assets that are he
 
 ## Open QRL Wallet
 
-By using one of the recovery methods mentioned above, you can access your wallet to send or receive QRL.
+By using one of the recovery methods mentioned above, you can access your wallet to send or receive QRL. Using a web browser to access https://wallet.theqrl.org select the **OPEN** tab on the left side of the page.
 
-Using a web browser to access https://wallet.theqrl.org select the **OPEN** tab on the left side of the page.
-
-Enter your recovery key medium into the form.
-
-Using the dropdown on the left you can toggle between a `wallet.json` file, Mnemonic Phrase and Hexseed.
+Using the drop down on the left you can toggle between a `wallet.json` file, Mnemonic Phrase and Hexseed.
 
 ### Using Wallet.json file
 
@@ -56,13 +52,13 @@ Click "Unlock Wallet" and your QRL wallet will open allowing you to check balanc
 
 ### Using Mnemonic
 
-With the wallet web page open, and the Open Wallet tab selected dropdown the form field and select *Mnemonic Phrase*
+With the wallet web page open, and the Open Wallet tab selected drop down the form field and select *Mnemonic Phrase*
 
 Enter the address Mnemonic phrase into the form and select "Unlock Wallet" and your QRL wallet will open.
 
 ### Using Hexseed
 
 
-With the wallet web page open, and the Open Wallet tab selected dropdown the form field and select *Hexseed*
+With the wallet web page open, and the Open Wallet tab selected drop down the form field and select *Hexseed*
 
 Enter the address hexseed into the form and select "Unlock Wallet" and your QRL wallet will open.

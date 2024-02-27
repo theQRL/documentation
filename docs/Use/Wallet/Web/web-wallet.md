@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-overview
 title: QRL Web Wallet
 hide_title: false
@@ -19,8 +19,6 @@ slug: /use/wallet/web/overview
 
 The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network and access on-chain tools. 
 
-
-
 :::note
 All secure XMSS operations are run in a web assembly compiled version of *qrllib* locally in your browser or desktop application. 
 
@@ -33,13 +31,13 @@ Private keys stay in the memory space of the XMSS object, which is destroyed the
 Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few quirks worth noting about QRL. 
 
 * The QRL uses hash based cryptography, and due to this requires a new signature for each transaction.
-* One Time Signature Keys (*OTS Keys*) must never be used more than 1 time. 
-* Once all OTS Keys are consumed the address will no longer be able to send outbound transactions
+* One Time Signature Key indexes (*OTS Keys*) must never be used more than 1 time. 
+* Once all OTS Key indexes are consumed the address will no longer be able to send outbound transactions
 
 
 ### Best Wallet Practices 
 
-* Track all OTS Keys used in a spreadsheet *(ledger)* or paper file
+* Track all OTS Key indexes used in a spreadsheet *(ledger)* or paper file
 * Backup the wallet onto paper or other physical media 
 * Store your private keys somewhere safe offline
 
@@ -50,7 +48,7 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 **The OTS key index is limited.** 
 
-You can only use each key **ONCE**. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough! 
+You can only use each key index **ONCE**. When you've used your last key index, you will no longer be able to sign transactions. This can not be stressed enough! 
 
 :::caution
 If you use all of your OTS Key Indexes with funds in the wallet, these funds will be **lost FOREVER**!
@@ -125,12 +123,3 @@ You will see all of the transactions the address has as well as the balance of q
 
 If you need to find the remaining OTS keys for an address, you can see them in the OTS tab in the [Block Explorer](https://explorer.theqrl.org). Search for your address in the search bar and select the OTS tab to see the used OTS keys and find the next available.
 
-
-#### OTS Bitfield 
-
-Once you have passed the OTS Bitfield of 4096 OTS keys you will need to use the keys in order, sequentially. If you skip a number you will not be able to go back and use it past the Bitfield.
-
-| Keys | Info |
-|:----:|:----:|
-|0 --> 4095 | Bitfield tracks the use. May be used in any order |
-| 4096 --> Last OTS | Must be used in ascending order, advances OTS from largest key used |

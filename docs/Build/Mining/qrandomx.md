@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id: qrandomx
 title: QrandomX
 hide_title: false

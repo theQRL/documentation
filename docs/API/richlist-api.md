@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id: richlist-api
 title: QRL API - Richlist
 hide_title: false

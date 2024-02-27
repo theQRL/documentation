@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id:  qrl-status
 title: QRL Services Status
 hide_title: false
@@ -17,9 +17,7 @@ image: /assets/img/icons/yellow.png
 slug: /build/qrl-status
 ---
 
-The QRL foundation monitors and maintains multiple services related to the Quantum Resistant Ledger and it's functional operation.
-
-These services can be seen on the [QRL Service Status Dashboard](https://status.theqrl.org/).
+The QRL foundation monitors and maintains multiple services related to the Quantum Resistant Ledger and it's functional operation. These services can be seen on the [QRL Service Status Dashboard](https://status.theqrl.org/).
 
 This dashboard gives insight to critical services such as the Web Wallet, Block Explorer, and various QRL Nodes for these services. 
 

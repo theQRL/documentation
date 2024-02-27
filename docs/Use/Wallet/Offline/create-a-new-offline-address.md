@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-new
 title: QRL Offline Wallet - New
 hide_title: false
@@ -16,7 +16,7 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/offline/new
 ---
 
-This software will allow you to generate a wallet for use on the QRL network. For security, it is designed to be used in an offline environment. It is recommended to use this software from a bootable Desktop OS (e.g. Ubuntu, Tails, Whonix, debian) without any network connection.
+This software will allow you to generate a wallet for use on the QRL network. For security, it is designed to be used in an offline environment. It is recommended to use this software from a bootable Desktop OS (e.g. Ubuntu, Tails, Whonix, Debian) without any network connection.
 
 :::tip
 The offline wallet software can be downloaded, verified and saved onto a USB thumb drive allowing the host OS to never be exposed to the web.

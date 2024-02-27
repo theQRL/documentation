@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id: explorer-api
 title: QRL API - Explorer
 hide_title: false
@@ -100,7 +100,7 @@ def getblockByNumber(block_number):
   jsonResponse = getBlockResp
   return(jsonResponse)
 
-getblockByNumber("34556")
+print(getblockByNumber("34556"))
 ```
 
 
@@ -149,7 +149,7 @@ def getTransactionByHash(tx_hash):
   jsonResponse = getTXResp
   return(jsonResponse)
 
-getTransactionByHash("c9656d989bce2000c794314b73882b0ebb99fa1fe58e7a466a8a64e7b851a4c6")
+print(getTransactionByHash("c9656d989bce2000c794314b73882b0ebb99fa1fe58e7a466a8a64e7b851a4c6"))
 ```
 
 ## Address
@@ -194,7 +194,7 @@ def getAddress(address):
   jsonResponse = getAddressResp
   return(jsonResponse)
 
-getAddress("Q01040007a591a62c23ed27adfe3df8eb812ee5e4b73e47fb8471e8d78ecd9b4cadc325ca36d86e")
+print(getAddress("Q01040007a591a62c23ed27adfe3df8eb812ee5e4b73e47fb8471e8d78ecd9b4cadc325ca36d86e"))
 ```
 
 
@@ -240,7 +240,7 @@ def getEmission():
   return(jsonResponse)
 
 
-getEmission()
+print(getEmission())
 ```
 
 
@@ -284,7 +284,7 @@ def getEmissionText():
   return(jsonResponse)
 
 
-getEmissionText()
+print(getEmissionText())
 ```
 
 ## Reward
@@ -329,7 +329,7 @@ def getReward():
   return(jsonResponse)
 
 
-getReward()
+print(getReward())
 ```
 
 ## Reward Text
@@ -370,7 +370,7 @@ def getRewardText():
   return(jsonResponse)
 
 
-getRewardText()
+print(getRewardText())
 ```
 
 ## RewardShor
@@ -413,7 +413,7 @@ def getRewardShor():
   return(jsonResponse)
 
 
-getRewardShor()
+print(getRewardShor())
 ```
 
 ## RewardShor Text
@@ -454,7 +454,7 @@ def getRewardShorText():
   return(jsonResponse)
 
 
-getRewardShorText()
+print(getRewardShorText())
 ```
 
 
@@ -502,7 +502,7 @@ def getBlockheight():
   return(jsonResponse)
 
 
-getBlockheight()
+print(getBlockheight())
 ```
 
 
@@ -544,8 +544,7 @@ def getBlockheightText():
   jsonResponse = getBlockheightTextResp
   return(jsonResponse)
 
-
-getBlockheightText()
+print(getBlockheightText())
 ```
 
 
@@ -594,7 +593,7 @@ def getStatus():
   return(json.dumps(jsonResponse, indent=4, sort_keys=True))
 
 
-getStatus()
+print(getStatus())
 ```
 
 
@@ -618,7 +617,7 @@ Get the mining status information for the current QRL block.
 
 
 :::info 
-`/api/status` requests will only return in JSON format. 
+`/api/miningstats` requests will only return in JSON format. 
 Parse the response using json tools in a language of your choice. 
 :::
 
@@ -626,22 +625,21 @@ Parse the response using json tools in a language of your choice.
 **cURL Example**
 
 ```bash
-curl -XGET https://explorer.theqrl.org/api/status
+curl -XGET https://explorer.theqrl.org/api/miningstats
 ```
 
 **Python Example**
 
 ```python
-def getStatus():
+def getMiningStats():
   import requests
   import json
-  request = requests.get("https://explorer.theqrl.org/api/status")
+  request = requests.get("https://explorer.theqrl.org/api/miningstats")
   response = request.text
   getStatusResp = json.loads(response)
   jsonResponse = getStatusResp
-  #return(jsonResponse)
   return(json.dumps(jsonResponse, indent=4, sort_keys=True))
 
 
-getStatus()
+print(getMiningStats())
 ```

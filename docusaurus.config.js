@@ -54,8 +54,8 @@ const config = {
 
         
         theme: {
-//          customCss: require.resolve('./src/css/custom.css'),
-          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
+          customCss: require.resolve('./src/css/custom.css'),
+//          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
         },
       }),
     ],
@@ -168,7 +168,7 @@ const config = {
               },
               {
                 label: 'QRL Helpers',
-                href: '/developers/helpers'
+                href: '/build/helpers'
               },
             ],
           },

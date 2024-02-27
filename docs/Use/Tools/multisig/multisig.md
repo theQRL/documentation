@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: multisig
 title: QRL Multi-Signature Overview
 hide_title: false
@@ -60,8 +60,6 @@ graph LR
     end    
 ```
 
-
-
 ## Important Concepts
 
 There are a few nuances with multi-signature addresses that are good to know.
@@ -91,12 +89,8 @@ There are a few nuances with multi-signature addresses that are good to know.
 | **Spend** | A proposal to spend funds allocated to the address, must be initiated by an address associated with the multisig address  |
 | **Expiry Block Number** | A block number in the future where, if the threshold is not met, the spend proposal expires without approval |
 
-
-
 ### Spend Proposal
 ![Spend Multisig Flow](./assets/img/spend-vote.png)
-
-
 
 ### OTS Key Usage
 
@@ -106,8 +100,6 @@ OTS keys are used at various stages and from various addresses in the lifetime o
 - One key is used to create the spend tx (*spend vote initiator address*)
 - one key is used for each vote of the multisig (*each signatory that votes*)
 
-
-
 ## References
 
 - Create a new multisig address
@@ -116,8 +108,6 @@ OTS keys are used at various stages and from various addresses in the lifetime o
 - Vote on a spend proposal
 - Reject a spend proposal
 - Multi-sig transaction type 
-
-
 
 ## Multi-Signature Example Uses
 
