@@ -208,10 +208,10 @@ const sidebars = {
                 'Use/Wallet/Mobile/mobile-wallet-overview',
                 'Use/Wallet/Mobile/mobile-wallet-new',
                 'Use/Wallet/Mobile/mobile-wallet-open',
-                'Use/Wallet/Mobile/mobile-wallet-send',
-                'Use/Wallet/Mobile/mobile-wallet-install',
                 'Use/Wallet/Mobile/mobile-wallet-backup',
-                'Use/Wallet/Mobile/mobile-wallet-switch-addresses',
+                //'Use/Wallet/Mobile/mobile-wallet-send',
+                //'Use/Wallet/Mobile/mobile-wallet-install',
+                //'Use/Wallet/Mobile/mobile-wallet-switch-addresses',
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default

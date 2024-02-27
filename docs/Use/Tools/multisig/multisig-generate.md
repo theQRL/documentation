@@ -36,11 +36,8 @@ graph LR
   O(Fund Multisig) -.-> B 
 ```
 
-
 Alice and Bob have a weight of 1, and Eve has a weight of 2. This allows both Bob and Alice to come to consensus for transferring the funds or allows Eve to act alone to approve the transfer.
 :::
-
-
 
 ## Multi-sig Address Creation
 
