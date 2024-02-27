@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id: qrl-emission
 title: QRL Emission
 hide_title: false
@@ -17,6 +17,10 @@ image: /assets/img/icons/yellow.png
 slug: /build/fundamentals/qrl-emission
 ---
 
+
+
+QRL emissions, or the emission rate, refers to the slow release of the total circulating supply of quanta to miners over time. The decrease in the amount given as a reward for mining a block is the emission rate.
+
 The QRL blockchain is mined using computers running custom mining software, each block in the chain returns a reward to the miner who mints a new coin accepted by the network. The rate that these coins are distributed is defined in the **emission standard** and is set to exponentially decay (reduce) over time as the chain progresses.
 
 In simple terms, each new block will pay the miner a little less than the previous block.
@@ -32,15 +36,12 @@ See the documentation on [QRL mining](/use/mining) and the [QRandomX mining algo
 
 
 #### Approximate Daily $quanta$ Emissions Curve
+
 ![](assets/img/chart1.png)
-
-
-
 
 ### QRL Emission Standards
 
 :::note From the [QRL Whitepaper](whitepaper) section 8: Cryptocurrency design parameters
-
 
 #### 8.6 Coin emission schedule
 
@@ -62,7 +63,7 @@ $b=Z_{t-1}-Z_t$
 
 The QRL emission schedule, or amount of quanta generated with each block mined, was updated in QIP-16 (*QRL Improvement Proposal*) through a public on-chain vote to reduce the total reward each block paid out by a factor of 60%. 
 
-You can read more about the [QIP process here](build/qip/overview), and review the history of this QIP in the GitHub repository. Additional information for the [on-chain voting system can be found here](/build/fundamentals/on-chain-voting)
+You can read more about the [QIP process here](build/qip/overview), and review the history of this QIP in the GitHub repository.
 
 
 

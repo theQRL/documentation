@@ -102,7 +102,6 @@ getting-started
         ↳ qrandomx
         ↳ qip
         ↳ qrl-cli
-        ↳ vote-qrl
         ↳ helpers/
             ↳ node-helpers
             ↳ validate-address

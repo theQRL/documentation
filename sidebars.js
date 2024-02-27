@@ -53,7 +53,6 @@ const sidebars = {
         'Learn/whitepaper',
         'Learn/qrl-emission',
         'Learn/ots-keys',
-        'Learn/on-chain-voting',
         // Learn Blockchain
         /*{
           type: 'category',
@@ -317,7 +316,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Tools',
-            description: 'Covering QRL Tools and integrations.',
+            description: 'Covering QRL Tools.',
             slug: '/use/tools',
             keywords: ['use-tool'],
             image: '/assets/img/icons/yellow.png',
@@ -431,6 +430,7 @@ const sidebars = {
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
             // Tools Integrations
+            /*
             {
               type: 'category',
               label: 'Integrations',
@@ -447,7 +447,7 @@ const sidebars = {
               ],
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
-            },
+            }, */
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
@@ -483,14 +483,13 @@ const sidebars = {
         'Build/Mining/qrandomx',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
-        'Build/Vote-QRL/vote-qrl',
         { // Fundamentals//
           type: 'category',
           label: 'QRL Fundamentals',
           link: {
             type: 'generated-index',
             title: 'QRL Fundamental Topics',
-            description: 'Covering general topics related to the QRL',
+            description: 'Covering some fundamental topics related to the QRL',
             slug: '/build/fundamentals',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -499,7 +498,6 @@ const sidebars = {
             'Build/Fundamentals/ots-keys',
             'Build/Fundamentals/whitepaper',
             'Build/Fundamentals/qrl-emission',
-            'Build/Fundamentals/on-chain-voting',
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
@@ -510,7 +508,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Message Encoding Documentation',
-            description: 'Message encoding standard for the QRL Message Transactions',
+            description: 'Message encoding standard for the various QRL Message Transaction types',
             slug: '/build/messages',
             keywords: ['learn'],
             image: '/assets/img/icons/yellow.png',
@@ -569,8 +567,8 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'QRL Code Libraries and helpers',
-            description: 'Main QRL node CLI tools and usage.',
-            slug: '/developers/helpers',
+            description: 'Various helper scripts developed to aid and assist in developing on the QRL.',
+            slug: '/build/helpers',
             keywords: ['qrl-helpers', 'node-helpers'],
             image: '/assets/img/icons/yellow.png',
           },
@@ -620,7 +618,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'API Docs',
-        description: 'Advanced documentation for developers and adventurers building on the QRL.',
+        description: 'API documentation for developers building on the QRL.',
         slug: '/api',
         keywords: ['api', 'developers', 'rest', 'grpc'],
         image: '/assets/img/icons/yellow.png',

@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: block-lookup
 title: QRL Explorer Block Lookup
 hide_title: false

@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: mining-qrl-overview
 title: Mining QRL Overview
 hide_title: false
@@ -38,9 +38,9 @@ As a general rule, you will have a better chance at finding blocks using a pool.
 
 Solo mining is referred to a QRL node that is also used for mining new blocks. This method uses the CPU of the node for hashing and is working alone to solve blocks on the network. 
 
-Any found block is submitted through the locally synced QRL node and adds to the decentralization of the network by adding additional validation to the chain. This method is limited to the hash power of the local CPU.
+Any block found is submitted through the locally synced QRL node and adds to the decentralization of the network by adding additional validation to the chain. This method is limited to the hash power of the local CPU.
 
-If solo mining node discovers a block that is accepted into the chain the full block reward is given to the miner. This has a larger payout however is less likely to happen when compared to pool mining.
+If solo mining node discovers a block that is accepted into the chain the full block reward is given to the miner. This has a larger payout, however is less likely to happen when compared to pool mining.
 
 :::tip Solo Mining Docs
 Learn more in our [solo-mining](/use/mining/solo-mining) guide and get started syncing a full QRL node with the [QRL Node Documentation](/use/node/overview)

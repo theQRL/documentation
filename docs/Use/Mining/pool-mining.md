@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: pool-mining
 title: Pool Mining QRL
 hide_title: false
@@ -18,7 +18,7 @@ slug: /use/mining/pool-mining
 ---
 
 
-Pool mining is the process of multiple users pooling their CPU resources in order to create a larger processing power. The miners then split the rewards they collect as the pool evenly depending on the amount of input.
+Pool mining is the process of multiple users pooling their CPU resources in order to create larger processing power. The miners then split the rewards the pool collects, distributed relative to the input of each miner.
 
 In order to mine QRL using a PC without syncing the entire blockchain, you can connect to a QRL Pool and offer your hash power to the pool. This will allow you to utilize almost any piece of hardware without the need to run a full node.
 

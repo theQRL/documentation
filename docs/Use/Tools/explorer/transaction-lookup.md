@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: transaction-lookup
 title: QRL Explorer Transaction Lookup
 hide_title: false
@@ -26,7 +26,7 @@ This lookup gives detailed information on the transaction and will vary dependin
 :::info
 A transaction hash is a hexadecimal string that is unique to that transaction. Example txhash -  *269f1f53a87dcaa87aa27ca6abf945109abf5d11cf28a6e3f9dae6bc73a2e606*
 
-For a detailed list of transaction types and their usage see the [developer documentation](#)
+For a detailed list of transaction types and their usage see the [developer documentation](/api/qrl-public-api#transaction)
 :::
 
 At the top of the transaction search screen is a list of general information related to the transaction that was queried.

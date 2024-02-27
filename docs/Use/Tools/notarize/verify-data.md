@@ -1,12 +1,12 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: notarization-verification
 title: QRL - Notarization Verification
 hide_title: false
 hide_table_of_contents: false
-sidebar_label: Notarization Verification
+sidebar_label: Verification
 sidebar_position: 1
-pagination_label: Notarization Verification
+pagination_label: Verification
 custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/notarize/verify-data.md
 description: QRL Notarisation verification guide
 keywords:
@@ -16,7 +16,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /use/tools/notarize/noatrization-verification
 ---
-
 
 Verifying a document that has been notarized on the QRL blockchain is simple and can be done using a web browser.
 

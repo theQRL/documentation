@@ -1,6 +1,6 @@
 ---
 id: backup-cli-wallet
-docstatus: 30%
+docstatus: 90%
 title: Node CLI Wallet - Backup
 hide_title: false
 hide_table_of_contents: false
@@ -20,10 +20,12 @@ image: /assets/img/icons/yellow.png
 slug: /use/node/node-cli/backup-cli-wallet
 ---
 
-Backing up a QRL CLI wallet is similar to the GUI wallets offered. Simply print the secret keys and store them somewhere safe. Additionally the `wallet.json` file can be encrypted using AES encryption and stored digitally until needed. 
+Backing up a QRL CLI wallet is similar to the GUI wallets offered. Print the secret keys and store them somewhere safe. 
+
+Additionally the `wallet.json` file can be encrypted using AES encryption and stored digitally until needed. 
 
 :::tip 
-It's recommended that you store a copy of your private keys in at least 2 physical locations in case of catastrophe. If lost no one can help you.
+It's recommended that you store a copy of your private keys in at least 2 physical locations in case of catastrophe.
 :::
 
 ## wallet.json Secrets
@@ -53,8 +55,6 @@ qrl wallet_secret
 :::info
 This requires a QRL wallet has already been generated and is in the local directory. To specify an additional directory location for the wallet.json file use the `--wallet_dir {PATH}` flag.
 :::
-
-
 
 After successful decryption the private key information will be printed.
 

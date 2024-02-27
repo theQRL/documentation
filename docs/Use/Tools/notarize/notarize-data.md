@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: notarization-data
 title: QRL - Notarize Data
 hide_title: false

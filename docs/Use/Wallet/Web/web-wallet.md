@@ -33,13 +33,13 @@ Private keys stay in the memory space of the XMSS object, which is destroyed the
 Being Quantum Resistant comes with some inherent challenges. Before creating your new wallet, there are a few quirks worth noting about QRL. 
 
 * The QRL uses hash based cryptography, and due to this requires a new signature for each transaction.
-* One Time Signature Keys (*OTS Keys*) must never be used more than 1 time. 
-* Once all OTS Keys are consumed the address will no longer be able to send outbound transactions
+* One Time Signature Key indexes (*OTS Keys*) must never be used more than 1 time. 
+* Once all OTS Key indexes are consumed the address will no longer be able to send outbound transactions
 
 
 ### Best Wallet Practices 
 
-* Track all OTS Keys used in a spreadsheet *(ledger)* or paper file
+* Track all OTS Key indexes used in a spreadsheet *(ledger)* or paper file
 * Backup the wallet onto paper or other physical media 
 * Store your private keys somewhere safe offline
 
@@ -50,7 +50,7 @@ When you create a new wallet you create an XMSS tree, which is comprised of many
 
 **The OTS key index is limited.** 
 
-You can only use each key **ONCE**. When you've used your last key, you will no longer be able to sign transactions. This can not be stressed enough! 
+You can only use each key index **ONCE**. When you've used your last key index, you will no longer be able to sign transactions. This can not be stressed enough! 
 
 :::caution
 If you use all of your OTS Key Indexes with funds in the wallet, these funds will be **lost FOREVER**!
@@ -128,9 +128,9 @@ If you need to find the remaining OTS keys for an address, you can see them in t
 
 #### OTS Bitfield 
 
-Once you have passed the OTS Bitfield of 4096 OTS keys you will need to use the keys in order, sequentially. If you skip a number you will not be able to go back and use it past the Bitfield.
+The wallet applications will track the OTS key indexes in a given address using a bitfield.
 
 | Keys | Info |
 |:----:|:----:|
 |0 --> 4095 | Bitfield tracks the use. May be used in any order |
-| 4096 --> Last OTS | Must be used in ascending order, advances OTS from largest key used |
+| 4095 --> Last OTS Key Index | Advances OTS key index from largest index used |

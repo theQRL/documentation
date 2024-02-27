@@ -1,5 +1,5 @@
 ---
-docstatus: 30%
+docstatus: 90%
 id:  message-tx-encoding
 title: QRL Message Transaction Encoding
 hide_title: false
@@ -17,7 +17,7 @@ image: /assets/img/icons/yellow.png
 slug: /build/messages/message-tx-encoding
 ---
 
-The QRL has instituted a standard for encoding data into the `message_tx` function to differentiate encoded data on the blockchain. This highlights the usage and versatility of on-chain tools like messaging when paired with some additional off chain tooling.
+The QRL project has instituted a standard for encoding data into the `message_tx` function to differentiate encoded data on the blockchain. This highlights the usage and versatility of on-chain tools like messaging when paired with some additional off chain tooling.
 
 [QIP002 - *A standard message encoding format to indicate encoded data in MessageTransaction transactions*](https://github.com/theQRL/qips/blob/master/qips/QIP002.md) set the standard for QRL message encoding that's used to differentiate various message types and their functions on the blockchain.
 
@@ -58,9 +58,9 @@ The remaining 76 bytes contain any data relevant to the encoded message, and sho
 
 ## Supported encoding bytes for specific message type (hex)
 
-- 0000 - reserved
-- 0001 - reserved
-- 0002 - keybase
-- 0003 - github
-- 0004 - on-chain voting
+- `0000` - reserved
+- `0001` - reserved
+- `0002` - keybase
+- `0003` - github
+- `0004` - on-chain voting
 

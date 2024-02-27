@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-requirements
 title: QRL Node Requirements
 hide_title: false
@@ -50,7 +50,6 @@ The prompt will show compatible support if available.
 
 Enough storage is required for the current () and future chain growth. The node software will sync each block from the genesis block on June 2018 till current block height as agreed across the network.
 
-> NEED TO ADD SOME REFERENCE INFORMATION ON BLOCKCHAIN AND LINK ABOVE ^^^^^ ALSO Chain Size
 
 
 ### Reliable Network Connection
@@ -62,7 +61,6 @@ The node will send information and request information from other nodes in the n
 
 Advanced configuration is required for the node to validate blocks and share block information via the p2p network. Additional ports need to be reachable and a static IP address is preferred
 
-> NEED LINKS TO AN ADVANCED NETWORK CONFIGURATION GUIDE FOR EXTERNAL REACHABLE NODE ABOVE ^^^^
 
 ### Modern 64 bit Processor
 
