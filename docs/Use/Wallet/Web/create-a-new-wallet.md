@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-new
 title: QRL Web Wallet - New
 hide_title: false
@@ -19,7 +19,7 @@ slug: /use/wallet/web/new
 Creating a new QRL address is simple and straightforward. Browse to the QRL wallet at https://wallet.theqrl.org to begin.
 
 :::caution Backup and verify the address recovery media
-Ensure that you can access the address using your backup media before sending any funds into the address.
+Ensure that you can access the address using your backup media before sending any funds into the address!
 :::
 
 
@@ -37,9 +37,7 @@ This option allows you to create a wallet with varying tree size. In other words
 
 By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. 
 
-The only disadvantage for creating a larger tree height is the time required to generate the additional keys. 
-
-This can be configured only when a wallet is created.
+The only disadvantage for creating a larger tree height is the time required to generate the additional keys. This can be configured only when a wallet is created.
 
 
 |  Tree Height | Available Keys | Notes |
@@ -52,14 +50,17 @@ This can be configured only when a wallet is created.
 | 18 |  262,144 | Allows 262,144 transactions to be **sent** from the address |
 
 
-> If needed you can create an additional advanced `slaves.json` file with up to 100 slave OTS keys allowing for additional TX's using the same QRL address. For more information please see the [Slave Keys docs](/build/address/slave-keys)
-
+:::info Slaves.json
+If needed you can create an additional advanced `slaves.json` file with up to 100 slave OTS keys allowing for additional TX's using the same QRL address. For more information please see the [Slave Keys docs](/build/address/slave-keys)
+:::
 
 ### Hash Function
 
 QRL can utilize multiple hash functions, depending on the setting used during the creation of the wallet.
 
-> By default the wallet will utilize the shake128 hash function if no configuration options are given. 
+:::note
+ By default the wallet will utilize the shake128 hash function if no configuration options are given. 
+:::
 
 | Hash Function | Hash Algorithm | Description |
 |:-----|:-----|:---------|

@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-overview
 title: QRL Web Wallet
 hide_title: false
@@ -18,8 +18,6 @@ slug: /use/wallet/web/overview
 
 
 The easiest way to interact with a QRL wallet is through the online wallet found here: [https://wallet.theqrl.org](https://wallet.theqrl.org) allowing users to create new addresses, open and transact with the network and access on-chain tools. 
-
-
 
 :::note
 All secure XMSS operations are run in a web assembly compiled version of *qrllib* locally in your browser or desktop application. 
@@ -125,12 +123,3 @@ You will see all of the transactions the address has as well as the balance of q
 
 If you need to find the remaining OTS keys for an address, you can see them in the OTS tab in the [Block Explorer](https://explorer.theqrl.org). Search for your address in the search bar and select the OTS tab to see the used OTS keys and find the next available.
 
-
-#### OTS Bitfield 
-
-The wallet applications will track the OTS key indexes in a given address using a bitfield.
-
-| Keys | Info |
-|:----:|:----:|
-|0 --> 4095 | Bitfield tracks the use. May be used in any order |
-| 4095 --> Last OTS Key Index | Advances OTS key index from largest index used |

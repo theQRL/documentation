@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: wallet-overview
 title: QRL Wallet Overview
 hide_title: false
@@ -66,9 +66,9 @@ QRL can utilize multiple hash functions, depending on the setting used during th
 
 | Hash Function | Hash Algorithm | Description |
 |:-----|:-----|:---------|
-| shake128 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Default used in the web wallet |
-| sha2_256 | [SHA-2](https://en.wikipedia.org/wiki/SHA-2) |  |
-| shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) |  |
+| shake128 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Secure Hash Algorithm 3 - Default used in the web wallet |
+| sha2_256 | [SHA-2](https://en.wikipedia.org/wiki/SHA-2) | Secure Hash Algorithm 2 |
+| shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Secure Hash Algorithm 3 |
 
 
 :::tip

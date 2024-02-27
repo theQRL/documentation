@@ -1,5 +1,5 @@
 ---
-docstatus: 60%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-address-overview
 title: QRL Address Overview
 hide_title: false
@@ -17,9 +17,9 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/qrl-address-overview
 ---
 
-The QRL address is a fundamental building block to the ecosystem. The public address is responsible for representing a users wallet in a publicly sharable identity without fear of the funds being vulnerable. 
+The QRL address is a fundamental building block of the ecosystem. The **public address** is responsible for representing a users wallet in a publicly sharable identity without fear of the funds being vulnerable. 
 
-The corresponding private key is the piece responsible for interaction on-chain and allows access to any funds stored in the public address.
+The corresponding **private key** is the piece responsible for interaction on-chain and allows access to any funds stored in the public address.
 
 Addresses, or key pairs, are generated using one of the QRL wallets, and once generated cannot be changed or altered. This Public Private key pair will represent a wallet, the public key is meant to be shared while the private key is never to be shared. 
 
