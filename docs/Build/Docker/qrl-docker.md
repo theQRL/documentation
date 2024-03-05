@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrl-docker
 title: QRL Docker Overview
 hide_title: false

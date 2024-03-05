@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id:  message-tx-encoding
 title: QRL Message Transaction Encoding
 hide_title: false

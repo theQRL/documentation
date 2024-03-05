@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-overview
 title: QRL Web Wallet
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: wallet-json
 title: QRL Address Wallet.json File
 hide_title: false
@@ -50,5 +49,5 @@ Below is an example of the wallet.json file contents stored insecurely without e
 A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full Merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
 
 :::info
-The recomendation is to never store a plaintext wallet file. Use the tools included with the QRL wallet software to encrypt the file and store that encryption password somewhere safe!
+The recommendation is to never store a plaintext wallet file. Use the tools included with the QRL wallet software to encrypt the file and store that encryption password somewhere safe!
 :::

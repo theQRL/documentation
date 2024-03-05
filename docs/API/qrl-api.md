@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrl-public-api
 title: QRL Public API
 hide_title: false

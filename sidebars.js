@@ -353,25 +353,6 @@ const sidebars = {
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
-            // Tools Integrations
-            /*
-            {
-              type: 'category',
-              label: 'Integrations',
-              link: {
-                type: 'generated-index',
-                title: 'QRL Integrations',
-                description: 'QRL Integrations and usage.',
-                slug: '/use/tools/integrations',
-                keywords: ['tokens'],
-                image: '/assets/img/icons/yellow.png',
-              },
-              items: [
-                'Use/Tools/Integrations/integrations-overview',
-              ],
-              collapsible: true, // Set the category to be collapsible
-              collapsed: true, // Set the category to be initially collapsed or open by default
-            }, */
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
@@ -532,7 +513,6 @@ const sidebars = {
 
       items: [
         'Tutorials/Node/dual-node-host',
-        'Tutorials/Node/public-api-use',
         'Tutorials/Node/walletd-api-linux-guide',
         'Tutorials/Node/backup-restore-node-state',
       ],
@@ -553,8 +533,8 @@ const sidebars = {
       },
 
       items: [
-      'Tutorials/Wallet/automatic-wallet-api-use', 
-      'Tutorials/Wallet/automatic-wallet-api', 
+      // 'Tutorials/Wallet/automatic-wallet-api-use', 
+      // 'Tutorials/Wallet/automatic-wallet-api', 
       'Tutorials/Wallet/generate-address-dice',
       ],
       collapsible: true, // Set the category to be collapsible

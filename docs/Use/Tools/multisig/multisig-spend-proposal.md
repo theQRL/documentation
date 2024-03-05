@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: Multisig-spend-proposal
 title: Multisig Spend Proposal
 hide_title: false

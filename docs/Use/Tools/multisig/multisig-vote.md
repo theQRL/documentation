@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: multisig-vote
 title: QRL Multi-Signature Vote
 hide_title: false

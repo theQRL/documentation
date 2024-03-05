@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: multisig
 title: QRL Multi-Signature Overview
 hide_title: false
@@ -75,19 +74,49 @@ There are a few nuances with multi-signature addresses that are good to know.
 
 ## Definitions 
 
-| Multi-sig Term | Description |
-| ---- | ----------- |
-| **Transaction** |   An action (*typically spending funds*) on-chain which requires at least one signature from a private key|
-| **Multi-Sig** |  *Multi-signature Transaction* - A transaction sent from a defined multi-signature address that require one or more signatures from a group of signatories before being accepted by the network. |
-| **Weight** | Each signatory has an associated weight their vote is counted as  |
-| **Signatory** |   One of up to 100 addresses allowed to initiate a spend transaction or vote on a multisig spend proposal|
-| **Threshold** | The accumulative amount of votes needed to accept a spend proposal |
-| **Fee** | The fee required for the transaction to broadcast on the network |
-| **OTS** | The *One Time Signature* key used to sign the transaction |
-| **Creator** | Address who created the multisig address |
-| **Vote** | A vote transaction on a spend proposal |
-| **Spend** | A proposal to spend funds allocated to the address, must be initiated by an address associated with the multisig address  |
-| **Expiry Block Number** | A block number in the future where, if the threshold is not met, the spend proposal expires without approval |
+**Transaction** 
+: An action (*typically spending funds*) on-chain which requires at least one signature from a private key
+
+
+**Multi-Sig** 
+: *Multi-signature Transaction* - A transaction sent from a defined multi-signature address that require one or more signatures from a group of signatories before being accepted by the network. 
+
+
+**Weight** 
+: Each signatory has an associated weight their vote is counted as  
+
+
+**Signatory** 
+: One of up to 100 addresses allowed to initiate a spend transaction or vote on a multisig spend proposal
+
+
+**Threshold** 
+: The accumulative amount of votes needed to accept a spend proposal 
+
+
+**Fee** 
+: The fee required for the transaction to broadcast on the network 
+
+
+**OTS** 
+: The *One Time Signature* key used to sign the transaction 
+
+
+**Creator** 
+: Address who created the multisig address 
+
+
+**Vote** 
+: A vote transaction on a spend proposal 
+
+
+**Spend** 
+: A proposal to spend funds allocated to the address, must be initiated by an address associated with the multisig address  
+
+
+**Expiry Block Number** 
+: A block number in the future where, if the threshold is not met, the spend proposal expires without approval 
+
 
 ### Spend Proposal
 ![Spend Multisig Flow](./assets/img/spend-vote.png)

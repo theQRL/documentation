@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: desktop-wallet-install
 title: QRL Desktop Wallet - Install 
 hide_title: false

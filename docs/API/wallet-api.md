@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: wallet-api
 title: QRL API - Wallet
 hide_title: false

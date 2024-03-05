@@ -1,5 +1,4 @@
 ---
-docstatus: 60%
 id: slave-keys
 title: QRL Slave Keys
 hide_title: false

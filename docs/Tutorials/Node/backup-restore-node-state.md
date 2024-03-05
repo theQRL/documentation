@@ -19,9 +19,7 @@ image: /assets/img/icons/yellow.png
 slug: /tutorials/node/backup-restore-node-state
 ---
 
-Restoring and backing up a QRL node is simple once you have the correct tools to do so.
-
-It is always recommended to fully sync the node, not trusting other users for the blockchains immutable truth. 
+Restoring and backing up a QRL node is simple once you have the correct tools to do so. It is always recommended to fully sync the node, not trusting other users for the blockchains immutable truth. 
 
 That said, it does take quite a while to work through all of the blocks validating each one along the way (*thanks to some python limitations*)
 

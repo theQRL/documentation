@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-address-overview
 title: QRL Address Overview
 hide_title: false

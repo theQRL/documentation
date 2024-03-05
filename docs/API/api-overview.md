@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrl-api-overview
 title: QRL API Overview
 hide_title: false

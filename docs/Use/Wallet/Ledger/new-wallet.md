@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-new
 title: Ledger Wallet - New
 hide_title: false

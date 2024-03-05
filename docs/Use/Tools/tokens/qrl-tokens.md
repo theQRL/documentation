@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-tokens-overview
 title: QRL Token Overview
 hide_title: false

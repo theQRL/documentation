@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-cli-usage
 title: Node CLI Usage
 hide_title: false
@@ -18,7 +17,6 @@ slug: /tutorials/node/node-cli-use
 
 This tutorial covers some basic usage and gives an example of the wallet functions using the QRL Node command line tools.
 
-
 These tools are available by installing the QRL node on your computer. You do not necessarily need a synced QRL node locally to perform all of these functions.
 
 Anything that is off-chain like creating and encrypting an address can be done without connection to a node.
@@ -33,8 +31,6 @@ For individual use you can try to use one of the foundations nodes
 | `mainnet-2.automated.theqrl.org:19009` |  `testnet-2.automated.theqrl.org:29009` | 
 | `mainnet-3.automated.theqrl.org:19009` |  `testnet-3.automated.theqrl.org:29009` | 
 | `mainnet-4.automated.theqrl.org:19009` |  `testnet-4.automated.theqrl.org:29009` | 
-
-
 
 
 ## Wallet Functions

@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: mobile-wallet-backup
 title: QRL Mobile Wallet - Backup
 hide_title: false
@@ -35,7 +34,7 @@ Never share the private recovery data with anyone! These keys have full access t
 In order to backup the private recovery media for the mobile wallet, the application must be installed on the users phone and a QRL wallet must have been created previously.
 
 :::info
-See the [Mobile Wallet Installation Documentation](/use/wallet/mobile/install) and our guide on creating [New Mobile Wallet Addresses](/use/wallet/mobile/new).
+See our guide on creating [New Mobile Wallet Addresses](/use/wallet/mobile/new).
 :::
 
 With the wallet application opened on your phone, 

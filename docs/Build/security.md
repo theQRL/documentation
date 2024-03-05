@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: security
 title: QRL Security
 hide_title: false

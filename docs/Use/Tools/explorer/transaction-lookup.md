@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: transaction-lookup
 title: QRL Explorer Transaction Lookup
 hide_title: false
@@ -31,14 +30,29 @@ For a detailed list of transaction types and their usage see the [developer docu
 
 At the top of the transaction search screen is a list of general information related to the transaction that was queried.
 
-- **Confirmations** - Example -*2579730 confirmations* - Number of blocks that have been confirmed since the transaction was minted
-- **Block** - Example -*15* - Block number from the transaction
-- **Nonce** - Example -*16* - Nonce the transaction used
-- **OTS Key** - Example -*12* - The One Time Signature Key used from sending address
-- **Fee** - Example -*0.0005 Quanta* - Amount of $Quanta$ that was used to submit transaction
-- **Size**  - Example -*19 Bytes* - Size of the transaction in the block
-- **Status** - Example -*OK* - Status of the sent transaction
-- **Time**  - Example -*6:16 26 Jun 2018* - Time the transaction was sent and minted onto the chain
+**Confirmations**
+: Example -*2579730 confirmations* - Number of blocks that have been confirmed since the transaction was minted
+
+**Block**
+: Example -*15* - Block number from the transaction
+
+**Nonce**
+: Example -*16* - Nonce the transaction used
+
+**OTS Key**
+: Example -*12* - The One Time Signature Key used from sending address
+
+**Fee**
+: Example -*0.0005 Quanta* - Amount of $Quanta$ that was used to submit transaction
+
+**Size**
+: Example -*19 Bytes* - Size of the transaction in the block
+
+**Status**
+: Example -*OK* - Status of the sent transaction
+
+**Time**
+: Example -*6:16 26 Jun 2018* - Time the transaction was sent and minted onto the chain
 
 ## Transaction Information
 

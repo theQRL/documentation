@@ -14,8 +14,8 @@ const config = {
   tagline: 'Documentation for The Quantum Resistant Ledger - The QRL',
   url: 'https://docs.theqrl.org',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/favicon.svg',
 
   // GitHub pages deployment config.
@@ -292,10 +292,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',

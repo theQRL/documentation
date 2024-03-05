@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qip-overview
 title: QRL Improvement Proposal (QIP)
 hide_title: false

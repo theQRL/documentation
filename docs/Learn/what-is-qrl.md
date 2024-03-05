@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: what-is-qrl
 title: What Is The QRL?
 hide_title: false

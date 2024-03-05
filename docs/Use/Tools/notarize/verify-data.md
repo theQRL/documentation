@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: notarization-verification
 title: QRL - Notarization Verification
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrllib
 title: QRLLIB - The QRL Core Library
 hide_title: false

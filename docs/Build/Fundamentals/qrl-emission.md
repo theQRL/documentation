@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrl-emission
 title: QRL Emission
 hide_title: false

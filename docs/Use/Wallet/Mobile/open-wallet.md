@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: mobile-wallet-open
 title: QRL Mobile Wallet - Open
 hide_title: false

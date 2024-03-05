@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-requirements
 title: QRL Node Requirements
 hide_title: false

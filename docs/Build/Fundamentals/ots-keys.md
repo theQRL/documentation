@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: ots-keys
 title: One Time Signature Keys
 hide_title: false

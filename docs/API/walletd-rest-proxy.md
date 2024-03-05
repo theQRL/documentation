@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: walletd-rest-proxy
 title: QRL API - walletd-rest-proxy
 hide_title: false

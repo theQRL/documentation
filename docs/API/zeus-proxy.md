@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: zeus-proxy
 title: QRL Zeus Proxy API
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: desktop-wallet-new
 title: New QRL Desktop Wallet
 hide_title: false
@@ -8,7 +7,7 @@ sidebar_label: New
 sidebar_position: 3
 pagination_label: Desktop Wallet - New
 custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Desktop/create-a-new-wallet.md
-description: Create New QRL Desktop Wallet
+description: Create a New QRL Wallet using the QRL Desktop Application
 keywords:
   - docs
   - wallet
@@ -20,13 +19,13 @@ slug: /use/wallet/desktop/new
 
 Creating a new QRL address is simple and straightforward. Open the QRL Desktop wallet software to begin.
 
+
+1. From the main QRL desktop wallet menu, select the "**New Wallet**" tab to begin. 
+2. Enter a strong password into the password field.
+
 :::caution Backup and verify the address recovery media
 Ensure that you can access the QRL address using your backup media before sending any funds into the address.
 :::
-
-From the main QRL desktop wallet menu, select the "**New Wallet**" tab to begin.
-
-Enter a strong password into the password field. The password must be at least 8 characters in length, and must contain at least 1 number and 1 letter
 
 ## Optional Wallet Configuration
 

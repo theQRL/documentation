@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: explorer-api
 title: QRL API - Explorer
 hide_title: false

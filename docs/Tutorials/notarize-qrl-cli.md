@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT
 id: notarize-qrl-cli
 title: QRL Tutorials - Notarize QRL-CLI
 hide_title: false

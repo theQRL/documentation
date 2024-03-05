@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-new
 title: QRL Offline Wallet - New
 hide_title: false

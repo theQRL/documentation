@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: qrl-cli
 title: QRL-CLI Overview
 hide_title: false

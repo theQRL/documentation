@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: mnemonic
 title: QRL Address Mnemonic
 hide_title: false

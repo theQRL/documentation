@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-known-issues
 title: Ledger Wallet - Known Issues
 hide_title: false

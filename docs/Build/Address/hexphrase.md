@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: hexphrase
 title: QRL Address Hexphrase
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id: node-update
 title: QRL Node Update
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-verify
 title: QRL Offline Wallet Verify
 hide_title: false

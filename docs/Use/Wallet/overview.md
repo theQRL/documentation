@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: wallet-overview
 title: QRL Wallet Overview
 hide_title: false
@@ -288,17 +287,6 @@ The QRL mobile wallet is available on both iOS and Android. Search in the applic
             </a>
         </article>
         <article class="col col--6 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/install">
-                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Mobile Wallet">
-                    Install Mobile Wallet
-                </h2>
-                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Install the QRL wallet application">
-                    Install the QRL wallet application
-                </p>
-            </a>
-        </article>
-        <article class="col col--4 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/open">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Mobile Wallet">
                     Open Mobile Wallet
@@ -309,18 +297,7 @@ The QRL mobile wallet is available on both iOS and Android. Search in the applic
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/send">
-                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Mobile Wallet">
-                    Send Mobile Wallet
-                </h2>
-                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Send Quanta using the Mobile interface">
-                    Send Quanta using the Mobile interface
-                </p>
-            </a>
-        </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--12 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/backup">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Mobile Wallet">
                     Backup Mobile Wallet
@@ -367,7 +344,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/open">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Ledger Wallet">
                     Open Ledger Wallet
@@ -378,7 +355,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/send">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Ledger Wallet">
                     Send Ledger Wallet
@@ -389,7 +366,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/backup-restore">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Ledger Wallet">
                     Backup Ledger Wallet

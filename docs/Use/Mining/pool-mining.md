@@ -1,5 +1,4 @@
 ---
-docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: pool-mining
 title: Pool Mining QRL
 hide_title: false

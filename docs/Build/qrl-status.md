@@ -1,5 +1,4 @@
 ---
-docstatus: 90%
 id:  qrl-status
 title: QRL Services Status
 hide_title: false
