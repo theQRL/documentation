@@ -27,17 +27,7 @@ Hardware wallets are considered one of the most secure methods to safely store c
 
 To send a transaction, a hardware wallet requires some physical action to authorize any spend. By providing this barrier, a users funds are secured from computer viruses and attackers attempts to remotely steal funds.
 
-:::note Ledger QRL Hardware Support
 
-The Ledger Nano S device was sunset June 2022 and replaced it with the [Ledger Nano S Plus](https://shop.ledger.com/products/ledger-nano-s-plus). 
-
-See official notification from Ledger: https://support.ledger.com/hc/en-us/articles/5615862066717-Ledger-Nano-S-Sunset-FAQ?support=true
-
-Additionally there is a confirmed issue with the latest Ledger QRL app (V1.1.4) published by Ledger. Using the latest version causes the device to freeze up when sending a transaction. The last supported version of the QRL Ledger app is 1.1.3.
-
-It is recommended that you migrate from the unsupported device. [Follow the guide here for more information on migration options for ledger nano S users.](/use/wallet/ledger/known-issues#qrl-app-v114-on-nano-s)
-
-:::
 
 
 
@@ -47,6 +37,17 @@ It is recommended that you migrate from the unsupported device. [Follow the guid
 * Multi-Tree dual QRL address support allowing $2$ addresses with $256$ OTS each
 * [Plausible Deniability](https://support.ledger.com/hc/en-us/articles/115005214529-Advanced-passphrase-security) allowing multiple address spaces with advanced passphrase security
 
+:::note Ledger QRL Hardware Support
+
+The Ledger Nano S device was sunset June 2022 and replaced it with the [Ledger Nano S Plus](https://shop.ledger.com/products/ledger-nano-s-plus). 
+
+See official notification from Ledger: https://support.ledger.com/hc/en-us/articles/5615862066717-Ledger-Nano-S-Sunset-FAQ?support=true
+
+The QRL app is incompatible with v2.x firmware on this legacy device: it is recommended to either maintain v1.x firmware (with QRL app version 1.1.3) or upgrade this device to a Ledger Nano S Plus.
+
+[Follow the guide here for more information on migration options for ledger nano S users.](/use/wallet/ledger/known-issues#qrl-app-freezes-on-nano-s-firmware--20)
+
+:::
 
 ## Multi-Tree Support
 

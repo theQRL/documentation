@@ -28,19 +28,19 @@ If you come across something not working as you would expect please report it to
 
 ## Known Issues
 
-| Issue Name | Description | Impact |
-|------------|-------------|--------| 
-| [QRL App v1.1.4 Freezes on Nano S](#qrl-app-v114-freezes-on-nano-s) | Running the latest release of the QRL ledger app v1.1.4 causes device to freeze when sending transactions. | Transactions fail when using the latest version. | 
-| [NANO S End Of Life](#nano-s-end-of-life) | The NANO S device reached EOL and was sunset on JUNE 2022.  | The device is no longer supported | 
-| [U2F Timeout](#u2f-timeout) |  The browser will timeout with a "U2F Timeout" warning when attempting to transfer QRL from a Ledger, showing a consumed OTS key on the device. | Sending funds will not succeed as expected, and the OTS counter on the Ledger will become out of sync |
+| Issue Name | Description | Impact | Mitigation |
+|------------|-------------|--------| ---------- |
+| [QRL app freezes on Nano S Firmware > 2.0](#qrl-app-freezes-on-nano-s-firmware--20) | Running the latest release of the QRL ledger app v1.1.4 causes device to freeze when sending transactions. | Transactions fail when using the latest version. | Downgrade the devices firmware or upgrade to a supported Ledger device (Nano S Plus or Nano X) |
+| [NANO S End Of Life](#nano-s-end-of-life) | The NANO S device reached EOL and was sunset on JUNE 2022.  | The device is no longer supported | Upgrade to a new device |
+| [U2F Timeout](#u2f-timeout) |  The browser will timeout with a "U2F Timeout" warning when attempting to transfer QRL from a Ledger, showing a consumed OTS key on the device. | Sending funds will not succeed as expected, and the OTS counter on the Ledger will become out of sync | Download and use the [QRL desktop wallet](https://theqrl.org/downloads/) |
 
 ---
 
-### QRL APP v1.1.4 Freezes on Nano S
+### QRL app freezes on Nano S Firmware > 2.0
 
 Running the latest QRL app on the old NANO S device will cause any transactions to fail. This is due to a memory restriction on the Ledger Nano S and the latest updates to the base application pushed by Ledger consuming more memory.
 
-:::note The last supported version of the QRL application on the NANO S is v1.1.3.
+:::note THE LAST SUPPORTED VERSION OF THE QRL APPLICATION ON THE NANO S IS V1.1.3 ON v1.x FIRMWARE
 :::
 
 #### Migration to New Device
