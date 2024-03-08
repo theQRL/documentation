@@ -97,4 +97,38 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     background-color: #282A36;
   }
 
+[data-theme='dark'] .aa-DetachedSearchButtonIcon {
+  color: #0081e6 !important;
+}
 
+[data-theme='light'] .aa-DetachedSearchButtonIcon {
+  color: #addbff !important;
+}
+[data-theme='light'] .aa-DetachedSearchButton {
+    border: 1px solid #addbff !important;
+    border-color: #addbff !important;
+}
+[data-theme='light'] .aa-DetachedSearchButton:focus {
+    box-shadow: #4aafff 0 0 0 3px, inset #4aafff 0 0 0 2px;
+}
+[data-theme='dark'] .aa-DetachedSearchButton {
+    border: 1px solid #0081e6 !important;
+    border-color: #0081e6 !important;
+}
+[data-theme='dark'] .aa-DetachedSearchButton:focus {
+    box-shadow: #4aafff 0 0 0 3px, inset #4aafff 0 0 0 2px;
+}
+[data-theme='dark'] .aa-DetachedSearchButtonPlaceholder {
+    color: rgba(128, 126, 163, 0.6);
+}
+[data-theme='dark'] .aa-Form {
+    border: 1px solid #4aafff !important;
+    border-color: #4aafff !important;
+}
+[data-theme='light'] .aa-Form {
+    border: 1px solid #4aafff !important;
+    border-color: #4aafff !important;
+}
+[data-theme='dark'] .aa-SubmitIcon {
+  color: #0081e6 !important;
+}
