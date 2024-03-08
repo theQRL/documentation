@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-plausible-deniability
 title: Ledger wallet - Plausible Deniability 
 hide_title: false

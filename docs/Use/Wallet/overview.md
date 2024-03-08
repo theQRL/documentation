@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: wallet-overview
 title: QRL Wallet Overview
 hide_title: false
@@ -24,10 +23,10 @@ The Quantum Resistant Ledger's wallet functions similar to other cryptocurrencie
 
 The QRL uses [eXtended Merkle Signature Scheme *(XMSS)*](https://eprint.iacr.org/2011/484), a hash based cryptography that's been around since the 70's and recently [approved for use in cryptographic systems by NIST](https://csrc.nist.gov/publications/detail/sp/800-208/final). 
 
-XMSS is considered to be one of the most secure quantum resistant algorithms in use today. There is one drawback to hash based cryptography however, a signature key may only be used one time.
+XMSS is considered to be one of the most secure quantum resistant algorithms in use today. There is one drawback to hash based cryptography however, a signature key index may only be used one time.
 
-:::info **OTS** *(One Time Signature Keys)*
-OTS keys can only be used to sign one transaction. There are limited keys for an address depending on tree height selected during address creation. 
+:::info **OTS** *(One Time Signature)* Key Index
+OTS key indexes can only be used to sign one transaction. There are limited keys for an address depending on tree height selected during address creation. 
 See the [OTS Documentation](/build/fundamentals/ots-keys) for more information. 
 :::
 
@@ -40,12 +39,12 @@ There are a few optional configuration properties that may be useful. The defaul
 
 This option allows you to create a wallet with varying tree size. In other words this controls the amount of signatures your wallet can use for transactions safely on the blockchain. 
 
-By default an XMSS Tree height of 10 provides 1024 One Time Signatures. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. 
+By default an XMSS Tree height of 10 provides 1024 One Time Signatures, or OTS key indexes. You may chose to create a wallet with more or less OTS keys used to sign transactions on the QRL network. 
 
-The only disadvantage for creating a larger tree height is the time required to generate the additional keys. 
 
-This can be configured only when a wallet is created.
+One of the main disadvantages to creating a larger tree height (*amount of OTS Key Indexes*) is the time required to generate the additional keys. Each time you access the wallet the keys must be calculated and thus adding time to opening a larger address. 
 
+These parameters can only be configured when a wallet is created. *The height of the tree is fundamental to the OTS key index creation and adds to the uniqueness of a private key.*
 
 |  Tree Height | Available Keys | Notes |
 |:---------: | :----------: | :--- |
@@ -66,9 +65,9 @@ QRL can utilize multiple hash functions, depending on the setting used during th
 
 | Hash Function | Hash Algorithm | Description |
 |:-----|:-----|:---------|
-| shake128 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Default used in the web wallet |
-| sha2_256 | [SHA-2](https://en.wikipedia.org/wiki/SHA-2) |  |
-| shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) |  |
+| shake128 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Secure Hash Algorithm 3 - Default used in the web wallet |
+| sha2_256 | [SHA-2](https://en.wikipedia.org/wiki/SHA-2) | Secure Hash Algorithm 2 |
+| shake256 | [SHA-3](https://en.wikipedia.org/wiki/SHA-3) | Secure Hash Algorithm 3 |
 
 
 :::tip
@@ -288,17 +287,6 @@ The QRL mobile wallet is available on both iOS and Android. Search in the applic
             </a>
         </article>
         <article class="col col--6 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/install">
-                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Create a new QRL Mobile Wallet">
-                    Install Mobile Wallet
-                </h2>
-                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Install the QRL wallet application">
-                    Install the QRL wallet application
-                </p>
-            </a>
-        </article>
-        <article class="col col--4 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/open">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Mobile Wallet">
                     Open Mobile Wallet
@@ -309,18 +297,7 @@ The QRL mobile wallet is available on both iOS and Android. Search in the applic
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
-            <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/send">
-                <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Mobile Wallet">
-                    Send Mobile Wallet
-                </h2>
-                <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Send Quanta using the Mobile interface">
-                    Send Quanta using the Mobile interface
-                </p>
-            </a>
-        </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--12 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/mobile/backup">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Mobile Wallet">
                     Backup Mobile Wallet
@@ -367,7 +344,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/open">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Open Ledger Wallet">
                     Open Ledger Wallet
@@ -378,7 +355,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/send">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Send Ledger Wallet">
                     Send Ledger Wallet
@@ -389,7 +366,7 @@ The Ledger wallet is considered one of the most secure methods to store cryptocu
                 </p>
             </a>
         </article>
-        <article class="col col--4 margin-bottom--md">
+        <article class="col col--6 margin-bottom--md">
             <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/use/wallet/ledger/backup-restore">
                 <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title="Backup Ledger Wallet">
                     Backup Ledger Wallet
@@ -416,11 +393,11 @@ There is an additional address space that can be unlocked to extend the amount o
 
 ## QRL Wallet Security
 
-All QRL wallets are made up of a cryptographic key pair, or *public* and *private* keys, from which the Merkle tree of One Time Signature keys are generated. These OTS keys are then used to sign user transactions, never exposing the root secret "private" key. 
+All QRL wallets are made up of a cryptographic key pair, or *public* and *private* keys, from which the Merkle tree of One Time Signature key indexes are generated. These OTS key indexes are then used individually to sign outgoing user transactions, never exposing the root secret "private" key. 
 
 
 :::caution 
-Correctly recording and securing recovery keys is the most important thing a user needs to do before interacting with the QRL network.
+Correctly recording and securing private recovery keys (*mnemonic or hexphrase*) and then verifying the recovery keys work, is the most important thing a user needs to do before interacting with the QRL network. This ensures that funds are not sent to an address out of your control.
 :::
 
 ### Public Keys

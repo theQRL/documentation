@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id:  qip-template
 title: QIP Template
 hide_title: false

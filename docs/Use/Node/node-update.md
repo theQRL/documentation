@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: node-update
 title: QRL Node Update
 hide_title: false
@@ -22,7 +21,7 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 
-Running a QRL node requires maintenance from time to time. Follw these instructions to update.
+Running a QRL node requires maintenance from time to time. Follow these instructions to update.
 
 ## Updating
 
@@ -162,5 +161,3 @@ start_qrl
 ### State Migration
 
 Any time there is a major update there will be a state migration the happens once you start the node.
-
-> FIXME! What happens with state migration and when is it needed?

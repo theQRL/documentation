@@ -1,5 +1,5 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
+docstatus: 90%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-cli
 title: QRL Node Command Line Interface
 hide_title: false
@@ -136,7 +136,6 @@ Slave transaction allow an extension to the master address, allowing an entirely
 See the [Slave Tree Documentation](#) for complete explanation of deterministic OTS key trees and how QRL has extend the life of an XMSS address to an almost infinite amount of OTS keys.
 :::
 
-> NEED TO ADD REFERENCE TO THE SLAVE DOCUMENTATION ^^^
 
 #### slave_tx_generate Help
 
@@ -170,7 +169,6 @@ Options:
 | --ots_key_index | *Yes* | INTEGER | OTS Key Index used to sign the transaction, must be an UNUSED OTS for the `--src` address  |
 
 
-> NEED TO ADD CLARIFICATION ON OPTIONS ^^^
 
 #### Example Command
 
@@ -473,7 +471,6 @@ Options:
 | --fee | *Yes* | DECIMAL | Transaction fee to send the transaction|
 | --ots_key_index | *Yes* | INTEGER | OTS Key Index used to sign the transaction, must be an UNUSED OTS for the `--src` address|
 
-> NEED TO SORT THE LIST FORMAT ABOVE for the dsts address and amounts ^^^^
 
 #### Example Command
 
@@ -500,7 +497,6 @@ tx_hash: "\322\242\021>\201U\375\313\240\200U\326\356\204>sp\317\2636\326]\373\2
 
 Push a signed transaction blob to a node for broadcasting. 
 
-> NEED TO FIX ^^^ What is the txblob format and how do we sign a tx without sending it? Signed or unsigned?
 
 #### Help
 
@@ -548,7 +544,6 @@ qrl tx_push --txblob .........
 
 ```
 
-> FIX THIS OUTPUT ^^^ Need to send a txblob that has not been signed and broadcast on network. This one is not a valid tx, key reuse
 
 ### tx_token
 
@@ -585,7 +580,6 @@ Options:
 | --fee | *Yes* | DECIMAL | Transaction fee to send the transaction|
 | --ots_key_index | *Yes* | INTEGER | OTS Key Index used to sign the transaction, must be an UNUSED OTS for the `--src` address|
 
-> NEED TO FIX DECIMALS COMMENTS ABOVE ^^^
 
 #### Example Command
 
@@ -745,7 +739,6 @@ Options:
 | --fee | *Yes* | DECIMAL | Transaction fee to send the transaction|
 | --ots_key_index | *Yes* | INTEGER | OTS Key Index used to sign the transaction, must be an UNUSED OTS for the `--src` address|
 
-> NEED TO FIX DECIMALS COMMENTS ABOVE ^^^
 
 #### Example Command
 

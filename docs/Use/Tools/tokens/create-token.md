@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: create-token
 title: QRL Token - Create
 hide_title: false
@@ -19,14 +18,15 @@ slug: /use/tools/tokens/create
 
 The QRL supports QRT or Quantum Resistant Ledger Tokens. These tokens share the same cryptography and Quantum Resistance as the main QRL blockchain. 
 
-You can create tokens either by using the `qrl` command line, API, or through a GUI by browsing to the qrl web wallet application hosted at [wallet.theqrl.org](https://wallet.theqrl.org). Open your wallet, or create a new one to begin with this guide.
+You can create tokens either by using the `qrl` command line, API, or through a GUI by browsing to the qrl web wallet application hosted at [https://wallet.theqrl.org](https://wallet.theqrl.org). 
 
-Creating a new token is easy. Once you have all of the details entered and the fee paid, the network takes care of the rest. 
+Open your wallet, or create a new one to begin with this guide.
 
 ### Token Creation
 
-To create a token you will need to provide the following information:
+Creating a new token is easy. Once you have all of the details entered and the fee paid, the network takes care of the rest. 
 
+To create a token you will need to provide the following information:
 
 | Field |  Details | 
 | :--: |  :--- |
@@ -46,13 +46,11 @@ This will broadcast the creation of your token across the QRL network and send t
 
 You will see a confirmation page that shows the details of the transaction. Verify the information is correct and press "Confirm Token Creation"
 
-
 The confirmation screen will print the details of the transaction.
 
 ### Checking Token Balance
 
 You can check the balance of any tokens you have in your wallet by selecting the tokens tab in the top bar of the "Send and Receive" tab in the web wallet.
-
 
 You can also see the recent transactions on the right of the balance screen.
 

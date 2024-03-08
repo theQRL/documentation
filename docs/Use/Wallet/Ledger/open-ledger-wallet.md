@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-open
 title: Ledger Wallet - Open
 hide_title: false

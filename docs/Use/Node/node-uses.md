@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-uses
 title: QRL Node Uses
 hide_title: false
@@ -32,14 +31,12 @@ In addition to the network security provided by as many nodes on network as poss
 
 Running a transaction through a local, secure node ensures that the transaction can not be modified and will be broadcast to the active and accepted network and chain.
 
-> FIX THIS - Add information on how this security is provided through running a node
 
 ## Wallet Functions
 
 One of the main uses of a node is to broadcast signed transactions to the network, adding them to a block that is approved and agreed on through the network.
 
 Any transaction that consumes an OTS key, requiring a signature has to be sent through a node. This includes sending quanta, sending message transactions, notarizing data, or creating a colored token. All of these transactions can be sent through a local node. Depending on how you are interacting with the system, the means to signify a custom node vary, however the functionality is present in all QRL wallet tools
-
 
 
 ## Chain Analytics Functions
@@ -71,7 +68,3 @@ If there are enough funds in the address to cover the fee and any fund transfer 
 When an address balance is looked up or a  transaction is verified, this is simply looking at the history in the chain for the address/transaction involved. All of this data is stored on the chain and is validated and agreed upon by a majority of nodes in the network. 
 
 These transactions are stored in the nodes chain state files which compose a level database that has been verified through a P2P syncing process. These historical transactions are validated by verifying cryptographic hashes provided by peers on the network.
-
-
-
-> FIX ME - Need to improve these explanations with references and additional examples of usage

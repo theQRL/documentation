@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-explorer
 title: QRL Explorer Overview
 hide_title: false
@@ -31,12 +30,23 @@ The main explorer page can be access through any modern web browser and is locat
 
 From the main page there are links along the side bar for all of the various functions of the tool. These link to additional functionality that expands on the main page info.
 
-- **Blocks** - Shows the latest blocks minted onto the chain
-- **Recent Transactions** - Shows a list of the latest transactions shown on the chain
-- **Unconfirmed Transactions **- Shows any transactions that are in the Mempool awaiting a block to mint
-- **Peers** - Gives a list of all peers the explorer node is aware of
-- **Richlist** - Full list of all public addresses ranked in total value.
-- **Wallet** - This is a link the the QRL Web Wallet
+**Blocks**
+: Shows the latest blocks minted onto the chain
+
+**Recent Transactions**
+: Shows a list of the latest transactions shown on the chain
+
+**Unconfirmed Transactions**
+:Shows any transactions that are in the Mempool awaiting a block to mint
+
+**Peers**
+: Gives a list of all peers the explorer node is aware of
+
+**Richlist**
+: Full list of all public addresses ranked in total value.
+
+**Wallet**
+: This is a link the the QRL Web Wallet
 
 
 

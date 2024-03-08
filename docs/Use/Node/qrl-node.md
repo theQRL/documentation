@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: overview
 title: QRL Node Overview
 hide_title: false
@@ -19,11 +18,9 @@ slug: /use/node/overview
 
 A QRL node is a dedicated computer running software developed by the QRL team. These computers make up the core building blocks of the network and strengthen the chain by helping to agree on the immutable consensus of each block.
 
-
 Each node works in conjunction with other nodes to form a an agreed upon chain, gaining consensus on what the next valid block is in the chain. Additionally they are responsible for collecting and inserting transactions into the chains history from the transaction mempool. 
 
 This is what makes up the distributed ledger and forms the core blockchain.
-
 
 :::info
 For more information on the p2p interaction between nodes take a look at the QRL [White Paper](/build/fundamentals/whitepaper) 
@@ -53,11 +50,10 @@ A node is interacted with every time a transaction is sent to the network, no ma
 
 For instance, the wallet software uses a private key to sign a transaction which is then sent to the network via a QRL node operated by the foundation. The node listens for these incoming transactions from the wallet application from users and broadcasts them to be minted into a future block.
 
-
 When a new transaction is created the node runs through a few verification checks prior to sending the transaction to the mempool. If the address OTS key used to sign the transaction is already known to the blockchain the node will reject the transaction, protecting the address from broadcasting a OTS key re-use.
 
 :::info
-OTS key information can be found in the [OTS Key Documentation](#)
+OTS key information can be found in the [OTS Key Documentation](/build/fundamentals/ots-keys)
 :::
 
 If there are enough funds in the address to cover the fee and any fund transfer the node will send the transaction to it's peers to be added to the next available block. 

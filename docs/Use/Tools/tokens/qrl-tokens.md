@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: qrl-tokens-overview
 title: QRL Token Overview
 hide_title: false
@@ -17,7 +16,7 @@ image: /assets/img/icons/yellow.png
 slug: /use/tools/tokens/overveiw
 ---
 
-QRL supports the generation of colored tokens, allowing a multitude of functionality in addition to the typical blockchain functions. 
+QRL supports the generation of *colored* tokens, allowing a multitude of functionality in addition to the typical blockchain functions. 
 
 These tokens are generated and sent in separate transaction types *([`RelayTokenTxn`](/api/wallet-api#relaytokentxn) and [`RelayTransferTokenTxn`](/api/wallet-api#relaytransfertokentxn))* allowing additional versatility as they are not tied to any QRL funds and can be transferred interdependently from an QRL coins. 
 
@@ -62,14 +61,6 @@ This section covers the GUI interface through the web wallet tools section.
 
 For automated token functionality, including using slave OTS keys to generate and send see the [API Documentation](/api/wallet-api) as well as the [QRL Command Line Documentation](/use/node/node-cli/overview)
 :::
-
-
-
-
-
-
-
-
 
 ## Send Tokens
 

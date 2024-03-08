@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: token-lookup
 title: QRL Token Lookup
 hide_title: false

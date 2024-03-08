@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: mobile-wallet-backup
 title: QRL Mobile Wallet - Backup
 hide_title: false
@@ -26,12 +25,16 @@ The process of backing up the QRL mobile wallet is simple and very straightforwa
 This backup key will allow the address to be opened in any of the QRL wallet software and provide full access to the users funds stored within.
 
 
+:::danger
+Never share the private recovery data with anyone! These keys have full access to all funds stored in that address. 
+:::
+
 ## Backup Procedure
 
 In order to backup the private recovery media for the mobile wallet, the application must be installed on the users phone and a QRL wallet must have been created previously.
 
 :::info
-See the [Mobile Wallet Installation Documentation](/use/wallet/mobile/install) and our guide on creating [New Mobile Wallet Addresses](/use/wallet/mobile/new).
+See our guide on creating [New Mobile Wallet Addresses](/use/wallet/mobile/new).
 :::
 
 With the wallet application opened on your phone, 
@@ -46,10 +49,3 @@ The wallet will show the Mnemonic phrase and the hex seed. Either one will recov
 It is recommended that you test your recovery media prior to depositing any funds into an address. This ensures that access to funds is available in case something happens to the device.
 :::
 
-
-
-
-
-:::danger
-Never share the private recovery data with anyone! These keys have full access to all funds stored in that address. 
-:::

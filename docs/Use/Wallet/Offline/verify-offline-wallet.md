@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: offline-wallet-verify
 title: QRL Offline Wallet Verify
 hide_title: false
@@ -25,7 +24,7 @@ Follow the steps below to verify the Offline QRL wallet files.
 
 ### **Get QRL's Public PGP Key**
 
-- Obtain security@theqrl.org public PGP key from PGP keyservers or [Github](https://raw.githubusercontent.com/theQRL/security/master/security.theqrl.org.gpg.asc)
+- Obtain security@theqrl.org public PGP key from PGP key servers or [Github](https://raw.githubusercontent.com/theQRL/security/master/security.theqrl.org.gpg.asc)
 
 ```bash
 pgp import security.theqrl.org.gpg.asc

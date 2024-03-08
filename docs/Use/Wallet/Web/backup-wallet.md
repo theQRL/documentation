@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: web-wallet-backup
 title: QRL Web Wallet - Backup
 hide_title: false

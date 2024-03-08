@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: qrl-address-scheme
 title: QRL Address Scheme
 hide_title: false

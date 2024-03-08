@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: qrllib
 title: QRLLIB - The QRL Core Library
 hide_title: false
@@ -30,7 +29,7 @@ import TabItem from '@theme/TabItem';
               QRL Core Library
             </h2>
             <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="Providing QRL Core Functions to Developers ">Providing QRL Core Functions to Developers </p>
+               title="GitHub Repository link">GitHub repository link for the QRL Core Library </p>
           </a>
         </article>
       </section>

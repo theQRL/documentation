@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: walletd-api-linux-guide
 title: QRL walletD API + Linux Command Line
 hide_title: false

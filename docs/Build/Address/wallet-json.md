@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: wallet-json
 title: QRL Address Wallet.json File
 hide_title: false
@@ -17,11 +16,10 @@ image: /assets/img/icons/yellow.png
 slug: /build/address/wallet-json
 ---
 
-A wallet.json file is an amalgamation of all of the wallet information. This file contains every bit of information for an address including the full seed (_pk_), hexseed, mnemonic phrase, public address, as well as various information on how the address was generated.
+A wallet.json file is an amalgamation of all of the various wallet information that makes a QRL address. This file contains every bit of information for an address including the full seed (_pk_), hexseed, mnemonic phrase, public address, as well as various information on how the address was generated.
 
 
-
-:::warning Never share this file!
+:::warning Never share this file or it's contents!
 The wallet.json file should be stored encrypted, and should never be shared. It allows full access to any funds contained in the wallet address.
 ::: 
 
@@ -46,6 +44,10 @@ Below is an example of the wallet.json file contents stored insecurely without e
   }
 ]
 ```
+:::
 
 A wallet.json file can be uploaded to the wallet software encrypted or unsecured, and will allow the wallet software to re-generate the full Merkle tree for the given address. This will allow full interaction with the blockchain and access to all funds contained in the wallet.
 
+:::info
+The recommendation is to never store a plaintext wallet file. Use the tools included with the QRL wallet software to encrypt the file and store that encryption password somewhere safe!
+:::

@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: desktop-wallet-backup
 title: QRL Desktop Wallet - Backup
 hide_title: false
@@ -17,10 +16,7 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/desktop/backup
 ---
 
-The process to backup the Desktop wallet is simple. The software gives a few options for backing up an address during address creation. Chose any of these methods to backup your QRL address.
-
-Additionally after the wallet is created the recovery seed can be displayed for backup. 
-
+The process to backup the Desktop wallet is simple. The software gives a few options for backing up an address during address creation. Chose any of these methods to backup your QRL address. Main point is that you have saved the private key information to be used later for recovery.
 
 :::tip
 The backup data must be tested and confirmed to open the same public address directly after creating it, before funds are deposited. This ensures the validity of the data and the ability to open the wallet in the future!

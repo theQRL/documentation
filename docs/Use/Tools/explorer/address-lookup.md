@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: address-lookup
 title: Explorer Address Lookup
 hide_title: false

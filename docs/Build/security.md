@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: security
 title: QRL Security
 hide_title: false
@@ -31,13 +30,13 @@ From validating releases for the QRL wallet to providing a secure means to repor
 <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
-          <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="https://github.com/theQRL/security">
+          <a class="card padding--md cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="https://github.com/theQRL/security">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="QRL Security - PGP">
-              QRL Security - PGP
+              QRL Security - PGP 
             </h2>
             <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="The QRL Security - PGP keys and signed verification messages">The QRL Security - PGP keys and signed verification messages</p>
+               title="The QRL Security - PGP keys and signed verification messages">The QRL Security - PGP keys and signed verification messages hosted in GitHub</p>
           </a>
         </article>
       </section>

@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: qrl-public-api
 title: QRL Public API
 hide_title: false
@@ -8,7 +7,7 @@ sidebar_label: API - Public
 sidebar_position: 2
 pagination_label: API - Public 
 custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/qrl-api.md
-description: QRL Public API
+description: QRL Public API Documentation and Reference for programatic interaction with the QRL Blockchain
 keywords:
   - docs
   - build
@@ -25,24 +24,26 @@ import TabItem from '@theme/TabItem';
 ## Introduction
 
 
-The QRL Public API allows developers to interact with the QRL blockchain network, perform various operations, and access blockchain data.
+The QRL Public API allows developers to interact with the QRL blockchain network, perform transactions, and access blockchain data. Used to lookup information, send and process transactions, on the network and gather information on the node or network status.
 
-While there is no authentication required to interact with most of the QRL's API's, you will need to be able to reach a node at the API service IP and port. It is recommended that you run a local QRL node and serve the API from the local node.
-
-This may require additional configuration through your network and settings will differ depending on your configuration. This is out of scope for this document.
+While there is no authentication required to interact with most of the QRL's API's, you will need to be able to reach a node at the API service IP and port in order to interact with the QRL Blockchain. It is recommended that you run a local QRL node and serve the API from the local node. More information can be found to [run your own QRL node](/use/node/overview) here.
 
 
 ## Prerequisites
 
 Before using the API, make sure you have the following prerequisites:
 
-- Connection to a synced QRL Node (*remote or local*)
+- Connection to a synced [QRL Node](/use/node/overview) (*remote or local*)
 - Open API port (*Default enabled at port 19009)
 - Basic understanding of the QRL blockchain and gRPC
 
 ## Base URL
 
-The base URL for accessing the QRL API running on a local node is: `127.0.0.1:19009`
+The base URL for accessing the QRL API running on a local node is: `127.0.0.1:19009`. This address is configurable and may be different depending on your setup.
+
+:::info
+See the [Node Configuration documentation](/use/node/config) for more information for setting port numbers for your QRL Node. Additional network settings and configuration may be needed to reach a node and is outside the scope of this document. 
+:::
 
 
 ## Protobuf Definition
@@ -291,7 +292,6 @@ Please refer to the [NodeInfo](#nodeinfo) content for more details.
 ### GetKnownPeers
 
 :::caution Need clarification
-Does this return a list of Peers IP's from the `Peer` function? Or detailed information from the `PeerInfo` function? 
 :::
 
 Returns data on known peers connected to the node queried.
@@ -1307,7 +1307,6 @@ message GetChainStatsResp {
 ### GetAddressFromPK
 
 :::caution Define this function
-Define this function and request parameters
 :::
 
 <Tabs
@@ -1542,7 +1541,6 @@ See the [TransactionExtended Object](#transactionextended) for more information
 ### GetMultiSigVoteTxn
 
 :::caution Define this function and parameters
-Define the function and cover what each request parameter is
 :::
 
 <Tabs
@@ -1625,7 +1623,6 @@ Define the function and cover what each request parameter is
 ### GetMessageTxn
 
 :::caution Define this function and parameters
-Define the function and cover what each request parameter is
 :::
 
 <Tabs
@@ -1790,7 +1787,6 @@ Creates a token on the QRL network
 ### GetTransferTokenTxn
 
 :::caution Define this function and parameters
-Define the function and cover what each request parameter is
 :::
 
 <Tabs
@@ -2868,7 +2864,6 @@ message GetTotalBalanceResp {
 ### GetOTS
 
 :::caution Need clarification
-Define the Request parameters 
 :::
 
 <Tabs
@@ -2954,7 +2949,6 @@ message GetOTSReq {
 ### GetHeight
 
 :::caution Need clarification
-Define this function and response values 
 :::
 
 <Tabs
@@ -3186,10 +3180,6 @@ message NodeInfo
 
 ### AddressDescriptor
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Name | Bits | Count | Description |
 | ---- | ---- | ----- | ----------- |
@@ -3278,10 +3268,6 @@ message AddressState {
 ```
 ### OptimizedAddressState
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `address` | bytes | Pub Address in bytes  |
@@ -3326,11 +3312,6 @@ message OptimizedAddressState {
 ```
 ### MultiSigAddressState
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `address` | bbytes | Pub Address in bytes  |
@@ -3372,10 +3353,6 @@ message MultiSigAddressState {
 
 ### MultiSigAddressesList
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3389,11 +3366,6 @@ message MultiSigAddressesList {
 
 ### DataList
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `values` | repeated bytes |  |
@@ -3405,11 +3377,6 @@ message DataList {
 ```
 
 ### Bitfield
-
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3423,11 +3390,6 @@ message Bitfield {
 
 ### TransactionHashList
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `hashes` | repeated bytes |  |
@@ -3438,10 +3400,6 @@ message TransactionHashList {
 }
 ```
 ### LatticePK
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 
 | Field | Type | Details | 
@@ -3457,10 +3415,6 @@ message LatticePK {
 ```
 ### AddressAmount 
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3475,11 +3429,6 @@ message AddressAmount {
 }
 ```
 ### BlockHeader
-
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3512,11 +3461,6 @@ message BlockHeader {
 ```
 ### BlockHeaderExtended
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `header` | [BlockHeader Object](#blockheader) |  |
@@ -3530,10 +3474,6 @@ message BlockHeaderExtended {
 ```
 ### TransactionCount
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3546,10 +3486,6 @@ message TransactionCount {
 ```
 
 ### TransactionExtended
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3571,9 +3507,6 @@ message TransactionExtended {
 
 ### BlockExtended
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3601,9 +3534,6 @@ message BlockExtended {
 
 ### Block
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3628,10 +3558,6 @@ message Block {
 
 
 ### GenesisBalance
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3663,10 +3589,6 @@ message BlockMetaDataList {
 
 
 ### Transaction
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3835,9 +3757,6 @@ message Transaction {
 
 ### MiniTransaction
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3858,9 +3777,6 @@ message MiniTransaction {
 
 ### GetTransactionResp 
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3885,9 +3801,6 @@ message GetTransactionResp {
 
 ### TokenDetail
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3909,9 +3822,6 @@ message TokenDetail {
 
 ### SlaveDetail
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3928,9 +3838,6 @@ message SlaveDetail {
 
 ### LatticePKsDetail
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3951,9 +3858,6 @@ message LatticePKsDetail {
 
 ### MultiSigDetail
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -3970,9 +3874,6 @@ message MultiSigDetail {
 
 ### VoteStats
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4002,10 +3903,6 @@ message VoteStats {
 
 ### ProposalVoteStats
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `addr_from` |bytes |  |
@@ -4033,10 +3930,6 @@ message ProposalVoteStats {
 
 ### ProposalRecord
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `number_of_tx_hashes` | uint64 |  |
@@ -4051,9 +3944,6 @@ message ProposalRecord {
 
 ### TokenList
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4067,10 +3957,6 @@ message TokenList {
 
 
 ### TokenBalance
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4092,9 +3978,6 @@ message TokenBalance {
 
 ### OTSBitfieldByPage
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4111,9 +3994,6 @@ message OTSBitfieldByPage {
 
 ### SlaveMetadata
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4132,9 +4012,6 @@ message SlaveMetadata {
 
 ### LatticePKMetadata
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4153,9 +4030,6 @@ message LatticePKMetadata {
 
 ### TokenMetadata
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4171,10 +4045,6 @@ message TokenMetadata {
 
 
 ### EncryptedEphemeralMessage
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4202,9 +4072,6 @@ message EncryptedEphemeralMessage {
 
 ### AddressList
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4219,9 +4086,6 @@ message AddressList {
 
 ### BlockHeightData
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4239,10 +4103,6 @@ message BlockHeightData {
 
 
 ### BlockMetaData
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4262,10 +4122,6 @@ message BlockMetaData {
 
 
 ### BlockNumberMapping
-
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4307,9 +4163,6 @@ See the [NodeChainState object](#nodechainstate) for more information
 
 ### NodeChainState
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4333,9 +4186,6 @@ message NodeChainState {
 
 ### NodeHeaderHash
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4353,9 +4203,6 @@ message NodeHeaderHash {
 
 ### P2PAcknowledgement
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |
@@ -4410,10 +4257,6 @@ message Peers {
 
 ### BlockDataPoint
 
-:::caution Define this function
-Define this function and request parameters
-:::
-
 | Field | Type | Details | 
 | :---: | :---: | :--- |
 | `number` | uint64  | Block number |
@@ -4446,9 +4289,6 @@ message BlockDataPoint
 
 ### DevConfig
 
-:::caution Define this function
-Define this function and request parameters
-:::
 
 | Field | Type | Details | 
 | :---: | :---: | :--- |

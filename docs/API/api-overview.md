@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT
 id: qrl-api-overview
 title: QRL API Overview
 hide_title: false
@@ -7,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: API Overview
 sidebar_position: 1
 pagination_label: API Overview
-custom_edit_url: https://github.com/fr1t2/documentation/edit/main/docs/API/api-overview.md
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/api-overview.md
 description: QRL API Overview
 keywords:
   - docs
@@ -25,25 +24,19 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 
-The QRL API's are the portal into the inner workings of the Quantum Resistant Ledger's blockchain and wallet functions.
-
-These API allow developers and advanced users access to core functions and information from the blockchain.
+The QRL API's are the developers portal into the inner workings of the Quantum Resistant Ledger's blockchain. These API's allow developers and advanced users access to core functions and information from the blockchain.
 
 :::info
-While there is no authentication required to interact with most of the QRL's API's, you will need to be able to reach the API service IP and Port of the node you are attempting to connect to. 
+While there is no authentication required to interact with most of the QRL's API's, you will need access to an API service IP and Port of a node running on the QRL network. 
 
 Best practice is to [run your own QRL node](/use/node/overview).
 :::
 
 ## gRPC
 
-The QRL API is organized around [gRPC (Google Remote Procedure Call)](https://grpc.io/). GRPC uses [protocol buffers](https://developers.google.com/protocol-buffers/docs/overview) for serializing structured data. 
+The QRL API is organized around [gRPC (Google Remote Procedure Call)](https://grpc.io/). GRPC uses [protocol buffers](https://developers.google.com/protocol-buffers/docs/overview) for serializing structured data. Every function requires an object as parameter and returns another object as response. Our qrl.proto file lists the different objects as messages in two categories, request (*Req*) and response (*Resp*).
 
-Every function requires an object as parameter and returns another object as response. Our qrl.proto file lists the different objects as messages in two categories, request (named \*Req) and response (named \*Resp).
-
-:::info
 More information on GRPC can be found in [their official documentation](https://grpc.io/)
-:::
 
 <Tabs defaultValue="public" 
       groupID="syntaxSelection" 
@@ -92,17 +85,17 @@ More information on GRPC can be found in [their official documentation](https://
   </TabItem>
   <TabItem value="walletd-rest">
     <h2>Walletd Rest Proxy - API</h2>
-    <p>The QRL WalletD Rest Proxy makes integrating QRL even easier</p>
+    <p>The QRL Wallet Daemon Rest Proxy makes integrating QRL even easier</p>
     <span>
       <section class="row list_node_modules-@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module">
         <article class="col col--12 margin-bottom--lg">
           <a class="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href="/api/walletd-rest-proxy">
             <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
                 title="Wallet Daemon Rest Proxy">
-              QRL Walletd Rest Proxy API      
+              QRL Walletd-Rest Proxy API      
             </h2>
             <p class="text--truncate cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" 
-               title="QRL Wallet Daemon Proxy API.">The QRL WalletD Rest Proxy API documentation</p>
+               title="QRL Wallet Daemon Proxy API.">The QRL WalletD-Rest Proxy API documentation</p>
           </a>
         </article>
       </section>

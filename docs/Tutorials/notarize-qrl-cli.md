@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT
 id: notarize-qrl-cli
 title: QRL Tutorials - Notarize QRL-CLI
 hide_title: false
@@ -24,7 +23,7 @@ The notarization system is simple and very straightforward to use. Additionally 
 - It allows a file of any size to be notarized on the blockchain
 - There are both front end tools and command line tools available
 - The notarization will never expire or fail to verify, being part of the blockchain
-- These notarizations are considered post quantum secure, using hash based cryptography
+- These notarization's are considered post quantum secure, using hash based cryptography
 
 
 While not exactly a true notarization, as there is no trusted party involved to witness the transaction and verify my identity, for my purposes it is secure enough.

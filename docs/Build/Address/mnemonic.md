@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: mnemonic
 title: QRL Address Mnemonic
 hide_title: false
@@ -18,11 +17,11 @@ image: /assets/img/icons/yellow.png
 slug: /build/address/mnemonic
 ---
 
-
 A mnemonic phrase is a list of words that cryptographically represent the seed when compared to a given word list and passed through an algorithm. 
 
+The QRL uses [this wordlist](https://github.com/theQRL/qrllib/blob/4c63c7e4976ba111e5e405de466f824d8ef1deb8/src/rust_wrapper/qrl/wordlist.rs#L4) to generate mnemonic phrase that represents a QRL addresses secret keys.
 
-Depending on where these words are in the list assigns a unique number to each word. When passed through an algorithm they produce the same SEED used to generate a XMSS tree. 
+Depending on where these words are in the list assigns a unique number to each word. When passed through an [algorithm](https://github.com/theQRL/wallet.js/blob/bcf1587bea0455554e669c775c38faeca6faa1e3/src/utils/mnemonic.js#L2) they produce the same SEED used to generate a XMSS tree. 
 
 The Mnemonic is a user friendly way to represent the hexseed and is less error prone than a hexseed when a user is presented with backing up and storing key information.
 

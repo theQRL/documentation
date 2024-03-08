@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: ots-keys
 title: One Time Signature Keys
 hide_title: false
@@ -12,41 +11,42 @@ description: XMSS overview and basics
 keywords:
   - cryptography
   - xmss
+  - OTS Keys
 image: /assets/img/icons/yellow.png
 slug: /build/fundamentals/ots-keys
 
 ---
 
-**O**ne **T**ime **S**ignature (**OTS**) keys are a fundamental element of the hash based cryptography XMSS, the underlying cryptography that The Quantum Resistant Ledger uses. 
+**O**ne **T**ime **S**ignature (**OTS**) key indexes are a fundamental element of the hash based cryptography XMSS, the underlying cryptography that The Quantum Resistant Ledger uses. 
 
-The OTS key and how it applies to the QRL can be a little confusing and is different from most other cryptocurrencies. Understanding the basics will help prevent any issues later on. 
+The OTS key index and how it applies to the QRL can be a little confusing and is different from most other cryptocurrencies. Understanding the basics will help prevent any issues later on. 
 
 :::note The most important OTS concepts:
-- OTS keys can only be used one time
-- A default address contains 1,024 OTS keys for outgoing transactions
-- Once all keys are used, no other transactions can be preformed from that address
-- Incoming transactions **Do Not** consume OTS keys by the receiving address
-- OTS keys are used to sign transactions on-chain
+- OTS key indexes can only be used one time
+- A default address contains 1,024 OTS key indexes for outgoing transactions
+- Once all key indexes are used, no other transactions can be preformed from that address
+- Incoming transactions **Do Not** consume OTS key indexes by the receiving address
+- OTS key indexes are used to sign transactions on-chain
 
 :::
 
 :::caution
-If an OTS key were to be exposed more than once, the address should be considered compromised and all funds moved to a newly generated address. 
+If an OTS key index were to be exposed more than once, the address should be considered compromised and all funds moved to a newly generated address. 
 :::
 
 ## What is a One Time Signature?
 
-An OTS key is used to sign a message, or in the QRL's case, to sign a transaction.
+An OTS key index is used to sign data or a message. In the QRL's case, we use them to sign a transaction onto the blockchain.
 
-Each OTS key can sign only once, as it reveals some information about the secret key. Not enough data is revealed to compromise the secret key if exposed exactly one time however.
+Each OTS key index can sign only once, as it reveals some information about it's secret key. Not enough data is revealed to compromise the seed key if exposed exactly one time however.
 
 
-An individual address will contain multiple OTS keys (*default of 1024*) all available to sign transactions. This tree height is selected during address creation.
+An individual address will contain multiple OTS key indexes (*default of 1024*) all available to sign transactions. This tree height is selected during address creation.
 
 ![](assets/img/merkleTreeSig_transparent-grey-sm.png)
-*These OTS keys are verifiable and provable to be owned by the master seed as they cannot be generated without the master seed.* 
+*These OTS key indexes are verifiable and provable to be owned by the master seed as they cannot be generated without the master seed.* 
 
-The experts call this stateful cryptography as it is imperative that the state of the exposed keys be kept in order to ensure never to reuse any keys.
+The experts call this *stateful cryptography* as it is imperative that the state of the exposed keys be kept in order to ensure never to reuse any keys.
 
 ## How is it Secure?
 
@@ -74,7 +74,7 @@ These methods are described in the whitepaper as *Hypertrees*, and documented he
 
 ## Tree Height
 
-By default the QRL wallet application generates wallet addresses with a tree height of 10, generating 1024 available OTS keys for signing. This is adjustable, though larger tree's will require some additional time to open a wallet file, as the entire tree must be regenerated each time the address is opened.
+By default the QRL wallet application generates wallet addresses with a tree height of 10, generating 1024 available OTS key indexes for signing. This is adjustable, though larger tree's will require some additional time to open a wallet file, as the entire tree must be regenerated each time the address is opened.
 
 | Tree Height | Available Keys | Info |
 |--- | --- |--- |
@@ -93,12 +93,12 @@ If you expect the need for larger transaction counts, generate a larger tree or 
 
 ## How Does This Apply to the QRL? 
 
-- Each address is composed of multiple OTS keys, that are generated from a random seed 
-- An OTS key can be used **exactly one time**, without compromising the entire addresses security
+- Each address is composed of multiple OTS key indexes, that are generated from a random seed 
+- An OTS key index can be used **exactly one time**, without compromising the entire addresses security
 - QRL Address tree height is chosen during the initial address creation and cannot be changed
-- The QRL network nodes will reject any transaction that uses a duplicate OTS key
+- The QRL network nodes will reject any transaction that uses a duplicate OTS key index
 
-OTS keys are limited as each address has a finite maximum amount of transactions (*outgoing*) that can be sent from any address. Once all keys are used the address will not be able to sign any further transactions. While limiting, it is also what we owe the advanced security and quantum resistance to. 
+OTS key indexes are limited as each address has a finite maximum amount of transactions (*outgoing*) that can be sent from any address. Once all keys are used the address will not be able to sign any further transactions. While limiting, it is also what we owe the advanced security and quantum resistance to. 
 
 
 

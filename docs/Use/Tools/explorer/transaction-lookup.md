@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: transaction-lookup
 title: QRL Explorer Transaction Lookup
 hide_title: false
@@ -26,19 +25,34 @@ This lookup gives detailed information on the transaction and will vary dependin
 :::info
 A transaction hash is a hexadecimal string that is unique to that transaction. Example txhash -  *269f1f53a87dcaa87aa27ca6abf945109abf5d11cf28a6e3f9dae6bc73a2e606*
 
-For a detailed list of transaction types and their usage see the [developer documentation](#)
+For a detailed list of transaction types and their usage see the [developer documentation](/api/qrl-public-api#transaction)
 :::
 
 At the top of the transaction search screen is a list of general information related to the transaction that was queried.
 
-- **Confirmations** - Example -*2579730 confirmations* - Number of blocks that have been confirmed since the transaction was minted
-- **Block** - Example -*15* - Block number from the transaction
-- **Nonce** - Example -*16* - Nonce the transaction used
-- **OTS Key** - Example -*12* - The One Time Signature Key used from sending address
-- **Fee** - Example -*0.0005 Quanta* - Amount of $Quanta$ that was used to submit transaction
-- **Size**  - Example -*19 Bytes* - Size of the transaction in the block
-- **Status** - Example -*OK* - Status of the sent transaction
-- **Time**  - Example -*6:16 26 Jun 2018* - Time the transaction was sent and minted onto the chain
+**Confirmations**
+: Example -*2579730 confirmations* - Number of blocks that have been confirmed since the transaction was minted
+
+**Block**
+: Example -*15* - Block number from the transaction
+
+**Nonce**
+: Example -*16* - Nonce the transaction used
+
+**OTS Key**
+: Example -*12* - The One Time Signature Key used from sending address
+
+**Fee**
+: Example -*0.0005 Quanta* - Amount of $Quanta$ that was used to submit transaction
+
+**Size**
+: Example -*19 Bytes* - Size of the transaction in the block
+
+**Status**
+: Example -*OK* - Status of the sent transaction
+
+**Time**
+: Example -*6:16 26 Jun 2018* - Time the transaction was sent and minted onto the chain
 
 ## Transaction Information
 

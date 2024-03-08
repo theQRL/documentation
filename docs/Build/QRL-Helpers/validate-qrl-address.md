@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: validate-qrl-address
 title: Validate QRL Address
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: qrl-maintenance 
 title: QRL Node Maintenance
 hide_title: false

@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: dual-node-host
 title: Dual Node Shared Host
 hide_title: false
@@ -17,8 +16,6 @@ keywords:
 image: /assets/img/icons/yellow.png
 slug: /tutorials/node/dual-node-host
 ---
-
-
 
 There are many reason a person would want to run multiple versions of the node software on a single host. This could be to aid in development of on-chain tooling, to use the local nodes to create a new tool or to test broadcasting multiple scripted transactions on a test network before actually sending real funds.
 

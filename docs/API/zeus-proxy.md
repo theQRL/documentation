@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: zeus-proxy
 title: QRL Zeus Proxy API
 hide_title: false
@@ -8,7 +7,7 @@ sidebar_label: API - Zeus Proxy
 sidebar_position: 5
 pagination_label: API - Zeus Proxy
 custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/API/zeus-proxy.md
-description: QRL API - Zeus Proxy
+description: QRL API - Zeus Proxy web API for programatic interaction with the QRL Blockchain
 keywords:
   - docs
   - build
@@ -19,6 +18,8 @@ image: /assets/img/icons/yellow.png
 slug: /api/zeus-proxy
 ---
 
+The QRL Zeus proxy is intended to simplify interaction with the QRL gRPC API's and allow an additional on-road into the QRL Ecosystem.
+
 
 ## Install
 
@@ -28,8 +29,8 @@ slug: /api/zeus-proxy
 
 1. Clone repo
 2. Install meteor
-3. Npm install
-4. npm start
+3. `npm install`
+4. `npm start`
 
 This will launch a local interface at 127.0.0.1:3000 with some limited examples. This allows one to place API calls to the Zeus proxy which in turn converts these to gRPC calls and communicates with the QRL Network.
 
@@ -44,7 +45,7 @@ All of the [QRL Public API service](http://127.0.0.1:3000/api/qrl-public-api#pub
 
 ### Usage Examples
 
-The following examples should be able to get you started with the Zeus Proxy.
+The following examples should get you started with the Zeus Proxy.
 
 :::note
 Please note, the Zeus proxy is intended to pass through raw data exactly as the gRPC API call expects it. This may make some of the functions a little more complex through the proxy.

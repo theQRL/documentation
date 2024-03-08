@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id: qrl-docker
 title: QRL Docker Overview
 hide_title: false
@@ -47,11 +46,6 @@ Each branch contains configuration specific for each platform. The Dockerfile ca
 
     ``docker exec -i -t qrl-node qrl wallet_gen --encrypt``
 
-## Docker desktop
-
-![CLI](https://i.imgur.com/ukaYP6s.gif)
-
-[![Docker Desktop](https://i.imgur.com/FibGaaG.png)](https://vimeo.com/387298687)
 
 ### Windows user?
 

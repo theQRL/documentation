@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: node-installation
 title: QRL Node Installation
 hide_title: false
@@ -98,8 +97,6 @@ pip3 install --user service-identity==21.1.0
 pip3 install -U qrl
 ```
 
-> FIXME!! Need to update install instructions for MacOS
-
 </TabItem>
 <TabItem value="redhat">
 
@@ -141,9 +138,6 @@ pip3 install --user -U setuptools
 # Install QRL
 pip3 install --user -U qrl
 ```
-
-> FIXME!! Need to update install instructions for Redhat
-
 
 </TabItem>
 </Tabs>

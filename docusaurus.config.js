@@ -11,17 +11,17 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'QRL Docs',
-  tagline: 'Documentation for The Quantum Resistant Ledger - QRL',
+  tagline: 'Documentation for The Quantum Resistant Ledger - The QRL',
   url: 'https://docs.theqrl.org',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'assets/favicon.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'theQRL', // Usually your GitHub org/user name.
-  projectName: 'The Quantum Resistant Ledger', // Usually your repo name.
+  projectName: 'documentation', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -54,8 +54,8 @@ const config = {
 
         
         theme: {
-//          customCss: require.resolve('./src/css/custom.css'),
-          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
+          customCss: require.resolve('./src/css/custom.css'),
+//          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
         },
       }),
     ],
@@ -71,11 +71,7 @@ const config = {
     },
   ],
 
-
-
   plugins: [
-
-
     [require.resolve('@cmfcmf/docusaurus-search-local'), {
       // whether to index docs pages
       indexDocs: true,
@@ -90,7 +86,6 @@ const config = {
     }],
      
   ],
-
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -117,37 +112,7 @@ const config = {
           src: 'assets/img/icons/qrl-logo.svg',
         },
         items: [
-        /*// Left Side
-          {
-            type: 'dropdown',
-            label: 'Learn',
-            position: 'left',
-            items: [
-              {
-                label: 'About QRL',
-                href: '/learn'
-              },
-              {
-                label: 'QRL Whitepaper',
-                href: '/learn/whitepaper'
-              },
-              {
-                label: 'Block Rewards',
-                href: '/learn/qrl-emission'
-              },
-              {
-                label: 'OTS Keys',
-                href: '/build/fundamentals/ots-keys'
-              },
-              {
-                label: 'On-Chain Voting',
-                href: '/learn/on-chain-voting'
-              },
-
-              // ... more learn items
-            ],
-          },
-          */
+        /*// Left Side */
           {
             type: 'dropdown',
             label: 'Use',
@@ -173,7 +138,6 @@ const config = {
                 label: 'Tools',
                 href: '/use/tools'
               },
-              // ... more using items
             ],
           },
           {
@@ -204,7 +168,7 @@ const config = {
               },
               {
                 label: 'QRL Helpers',
-                href: '/developers/helpers'
+                href: '/build/helpers'
               },
             ],
           },
@@ -250,15 +214,6 @@ const config = {
             label: 'Tutorials',
           },
 
-
-/*
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'docSidebar',
-            label: 'API',
-          },
-*/
         // Right Side
 
           {
@@ -338,17 +293,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} The QRL - Built with Docusaurus.`,
       },
       prism: {
         theme: require('prism-react-renderer/themes/github'),

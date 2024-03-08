@@ -1,5 +1,4 @@
 ---
-docstatus: 30%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: multisig-vote
 title: QRL Multi-Signature Vote
 hide_title: false
@@ -44,9 +43,9 @@ From within an open wallet, select the "Tools" tab, select "Multisig" and find t
 
 Select the transaction which you intend to vote on from the popup window. If no transactions are shown, either the spend proposal is still pending or the address is not associated with this multisig address. Ensure you have the correct address.
 
- Once the correct transaction is selected, you will be presented with the spend proposal details and 2 options, APPROVE or REJECT. Select the intended vote here and verify the Fee and OTS are correct. 
+Once the correct transaction is selected, you will be presented with the spend proposal details and 2 options, APPROVE or REJECT. Select the intended vote here and verify the Fee and OTS are correct. 
 
- Confirm and validate the information is correct, then select the "Click To Send" button at the bottom of this page.
+Confirm and validate the information is correct, then select the "Click To Send" button at the bottom of this page.
 
 This will register the vote onto the chain, and count towards the threshold required to approve.
 

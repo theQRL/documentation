@@ -1,5 +1,4 @@
 ---
-docstatus: 30%
 id:  notarization-message-encoding
 title: QRL Notarization Message Encoding
 hide_title: false

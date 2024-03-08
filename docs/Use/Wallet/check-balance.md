@@ -1,5 +1,4 @@
 ---
-docstatus: 60%  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: check-balance
 title: Check QRL Wallet Balance
 hide_title: false
@@ -18,7 +17,7 @@ slug: /use/wallet/check-balance
 ---
 
 
-The QRL blockchain holds all balance information on any QRL wallet address and is the source of truth for all balance information. Every time a transaction is sent to or from an address it is recorded on the chain. 
+The QRL blockchain holds all balance information on any QRL wallet address and is the source of truth. Every time a transaction is sent to or from an address it is immutably recorded on the chain. 
 
 To find an address balance, a lookup must be performed on the blockchain which searches through all of the blocks to find the latest information on any funds contained in the address.
 

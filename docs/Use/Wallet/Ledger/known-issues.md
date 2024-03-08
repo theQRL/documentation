@@ -1,5 +1,4 @@
 ---
-docstatus: DRAFT  # one of {DRAFT, 30%, 90%, COMPLETE}
 id: ledger-wallet-known-issues
 title: Ledger Wallet - Known Issues
 hide_title: false
@@ -29,13 +28,61 @@ If you come across something not working as you would expect please report it to
 
 ## Known Issues
 
-| Github Issue Number | Issue Name | Description | Impact |
-|--------------|------------|-------------|--------| 
-| NONE | U2F Timeout  |  The browser will timeout with a "U2F Timeout" warning when attempting to transfer QRL from a Ledger, showing a consumed OTS key on the device. | Sending funds will not succeed as expected, and the OTS counter on the Ledger will become out of sync |
+| Issue Name | Description | Impact | Mitigation |
+|------------|-------------|--------| ---------- |
+| [QRL app freezes on Nano S Firmware > 2.0](#qrl-app-freezes-on-nano-s-firmware--20) | Running the latest release of the QRL ledger app v1.1.4 causes device to freeze when sending transactions. | Transactions fail when using the latest version. | Downgrade the devices firmware or upgrade to a supported Ledger device (Nano S Plus or Nano X) |
+| [NANO S End Of Life](#nano-s-end-of-life) | The NANO S device reached EOL and was sunset on JUNE 2022.  | The device is no longer supported | Upgrade to a new device |
+| [U2F Timeout](#u2f-timeout) |  The browser will timeout with a "U2F Timeout" warning when attempting to transfer QRL from a Ledger, showing a consumed OTS key on the device. | Sending funds will not succeed as expected, and the OTS counter on the Ledger will become out of sync | Download and use the [QRL desktop wallet](https://theqrl.org/downloads/) |
+
+---
+
+### QRL app freezes on Nano S Firmware > 2.0
+
+Running the latest QRL app on the old NANO S device will cause any transactions to fail. This is due to a memory restriction on the Ledger Nano S and the latest updates to the base application pushed by Ledger consuming more memory.
+
+:::note THE LAST SUPPORTED VERSION OF THE QRL APPLICATION ON THE NANO S IS V1.1.3 ON v1.x FIRMWARE
+:::
+
+#### Migration to New Device
+
+If you have updated to the latest version you can recover the wallet using the Ledger recovery keys from the original device. 
+
+Using these keys in a new [Ledger Nano S Plus](https://shop.ledger.com/pages/ledger-nano-s-plus) or [Ledger Nano X](https://shop.ledger.com/pages/ledger-nano-x) will re-create the same QRL addresses and recover the funds contained within.
+
+#### Transfer to new QRL Address
+
+If you have not updated the QRL ledger application it is recommended that you transfer all funds from the un-supported device to a newly created QRL address. 
+
+:::tip[Follow one of our guides on creating a new QRL wallet to transfer funds to](/use/wallet/overview#qrl-wallet-applications)
+:::
+
+Using the [guide to send funds on a ledger device](/use/wallet/ledger/send), transfer all funds to an address that you control.
+
+---
+
+### NANO S End Of Life
+
+Ledger announced the NANO S has reached sunset on June 2022 and will no longer be sold or supported. The company has released a replacement device, the NANO S Plus that supersedes the old hardware.
+
+End of life announcement:
+https://support.ledger.com/hc/en-us/articles/5615862066717-Ledger-Nano-S-Sunset-FAQ?support=true
+
+Replacement Device:
+https://shop.ledger.com/pages/ledger-nano-s-plus
+
+
+:::note
+Using the [guide to send funds on a ledger device](/use/wallet/ledger/send), transfer all funds to an address that you control.
+
+[Follow one of our guides on creating a new QRL wallet to transfer funds to](/use/wallet/overview#qrl-wallet-applications) if you don't already have a new address ready.
+:::
+
+
+---
 
 ### U2F Timeout
 
-Ledger devices have been using the U2F protocol for easy and cryptographically secure second factor mechanism with the web browser since 2016. Lately, U2F timeouts have been enforced by browser applications more aggressively — which you may have noticed if you’ve ever experienced a “U2F timeout” warning. 
+Ledger devices have been using the U2F protocol for easy and cryptographically secure second factor mechanism with the web browser since 2016. Lately, U2F timeouts have been enforced by browser applications more aggressively — which you may have noticed if you have ever experienced a “U2F timeout” warning. 
 
 #### The Error
 
@@ -45,7 +92,7 @@ Additionally there will be an error message shown in the developer tools of the 
 
 #### Mitigation
 
-Previously, we’ve recommended using another browser or playing browser bingo, switching to a browser that will still function with the U2F requirements of the Ledger. 
+Previously, we have recommended using another browser or playing browser bingo, switching to a browser that will still function with the U2F requirements of the Ledger. 
 
 The new current recommended action is to use our desktop wallets, which can be found on the [front page of our website](https://theqrl.org/) and our [github releases page](https://github.com/theQRL/qrl-wallet/releases/latest).
 
