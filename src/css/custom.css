@@ -159,6 +159,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 [data-theme='dark'] .aa-Item {
     color: #ffa729 !important;
 }
-.aa-ItemContentDescription[aria-selected=true] {
+[data-theme='dark'] .aa-ItemContentDescription[aria-selected=true] {
   color: #0b181e !important;
 }
