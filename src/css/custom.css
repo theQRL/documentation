@@ -132,3 +132,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 [data-theme='dark'] .aa-SubmitIcon {
   color: #0081e6 !important;
 }
+[data-theme='dark'] .aa-Form ::placeholder {
+  color: #0081e6 !important;
+}
+[data-theme='light'] .aa-SubmitIcon {
+  color: #4aafff !important;
+}
