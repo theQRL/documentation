@@ -132,9 +132,33 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 [data-theme='dark'] .aa-SubmitIcon {
   color: #0081e6 !important;
 }
+[data-theme='dark'] .aa-ClearIcon {
+  color: #0081e6 !important;
+}
 [data-theme='dark'] .aa-Form ::placeholder {
   color: #0081e6 !important;
 }
 [data-theme='light'] .aa-SubmitIcon {
   color: #4aafff !important;
+}
+.aa-Item[aria-selected=true] {
+  background-color: #addbff !important;
+}
+[data-theme='dark'] .aa-DetachedContainer {
+  background: #0b181e !important;
+}
+[data-theme='dark'] .aa-DetachedContainer .aa-Panel {
+    background-color: #0b181e !important;
+}
+[data-theme='dark'] .aa-ItemActionButton {
+    color: #0b181e !important;
+}
+.dsla-search-field {
+  width: 250px;
+}
+[data-theme='dark'] .aa-Item {
+    color: #ffa729 !important;
+}
+.aa-ItemContentDescription[aria-selected=true] {
+  color: #0b181e !important;
 }
