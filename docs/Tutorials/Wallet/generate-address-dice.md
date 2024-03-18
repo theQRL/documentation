@@ -18,11 +18,6 @@ image: /assets/img/icons/yellow.png
 slug: /tutorials/wallet/generate-address-dice
 ---
 
-:::caution DOCUMENT STATUS 
-<span>This document is in: <b>{frontMatter.docstatus}</b> status and needs additional input!</span>
-:::
-
-
 For those who are completely paranoid about random number generation, it is possible to create entropy for a seed or mnemonic by rolling a dice. 
 
 The more sides the dice has the more bits of entropy may be gathered with each roll, resulting in fewer rolls to complete a mnemonic.

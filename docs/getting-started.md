@@ -21,10 +21,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
+:::info QRL Zond Documentation
+See [test-zond.theqrl.org](https://test-zond.theqrl.org) to try our new cutting edge Proof-of-Stake network with EVM smart contracts.
+:::
 
 Welcome to the Quantum Resistant Ledger documentation! These doc's aim to be the central source of information for the QRL for all topics from using the base tools to building on the project. Whether you are developing a new project or simply understanding the basics this is the source.
 
 The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [API](/api). These sections aim to guide a users, developers, and everyone in between through the project from basic functionality into more advanced topics like API usage and Extended XMSS HyperTree creation.
+
+
 
 ---
 
@@ -211,12 +216,4 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
 
 :::info MORE QUESTIONS?
 If you don't find all you need from these docs, please join us in our [Discord Server](https://theqrl.org/discord) for more direct help.
-:::
-
-:::caution DOCUMENT STATUS
-**Contributions welcome and appreciated!**
-
-<span> This site is in <i>{frontMatter.docstatus}</i> status and needs additional input and work! </span>
-
-<span>Use the links to edit any document in Github, sign in and make your changes. For in-depth contributions, fork the <a href="https://github.com/theqrl/documentation">documentation repo</a> and branch your changes to get started, or see us in the <a href="https://theqrl.org/discord">QRL Discord server. </a></span>
 :::

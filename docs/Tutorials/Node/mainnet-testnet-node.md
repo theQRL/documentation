@@ -150,7 +150,7 @@ qrl --json --port_pub 19019 state
 From this output you can see the testnet node is running, the blockheight is different form the mainnet node running and the networkID is different.
 
 :::tip 
-Check the node blockHeight against the [QRL Testnet Explorer](https:testnet-explorer.theqrl.org)
+Check the node blockHeight against the [QRL Testnet Explorer](https://testnet-explorer.theqrl.org)
 :::
 
 ## Final Thoughts

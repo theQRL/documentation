@@ -263,7 +263,7 @@ Using default settings this will generate a new address with:
 The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if it does not already exist.
 
 :::note
-Ensure the tree height is large enough for your needs and transfer all funds out of the address before all [OTS keys](build/fundamentals/ots-keys) are used!
+Ensure the tree height is large enough for your needs and transfer all funds out of the address before all [OTS keys](/build/fundamentals/ots-keys) are used!
 :::
 
 <Tabs
@@ -1981,7 +1981,7 @@ Send up to 80 bytes of message data onto the chain.
 Send message data onto the chain. Allows up to 80 Bytes of data to be sent onto the QRL blockchain.
 
 :::info Message Encoding
-For more information on the QRL Message Encoding please see the [Message documentation](build/messages)
+For more information on the QRL Message Encoding please see the [Message documentation](/use/tools/messages/overview)
 :::
 
 <Tabs
@@ -2900,7 +2900,7 @@ This method will transfer tokens held in a QRL Address in the local wallet. Usin
 :::note
 To find all addresses held by an address use the [QRL Block Explorer](https://explorer.theqrl.org) to look up the address and list all tokens held. 
 
-Additionally you can use another API to lookup the address details and tokens held by address. For instance the [GetTokensByAddresss Method](api/qrl-public-api#gettokensbyaddress) will return a list of tokens held by that address.
+Additionally you can use another API to lookup the address details and tokens held by address. For instance the [GetTokensByAddresss Method](/api/qrl-public-api#gettokensbyaddress) will return a list of tokens held by that address.
 :::
 
 :::info Requires token transaction hash

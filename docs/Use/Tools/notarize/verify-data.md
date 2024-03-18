@@ -25,7 +25,7 @@ Use our Document Notarization guide to get started with on-chain quantum resista
 
 ## Document Verification
 
-Browse to the [QRL Block Explorer](https:explorer.theqrl.org) and lookup the transaction hash from the initial document notarization.
+Browse to the [QRL Block Explorer](https://explorer.theqrl.org) and lookup the transaction hash from the initial document notarization.
 
 You can either save the tx_hash from the original transaction or simply lookup the QRL address used to send the notarization.
 
