@@ -39,5 +39,5 @@ Chrome users, there is a bug with chrome that will not allow the Ledger to work.
 :::
 
 :::info Firefox Connection Issues
-If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [Enabling U2F support in Mozilla Firefox](https://support.yubico.com/support/solutions/articles/15000017511-enabling-u2f-support-in-mozilla-firefox)
+If you are a Firefox user, ensure you have enabled **u2f** before proceeding. [Enabling U2F support in Mozilla Firefox](https://www.key-id.com/enable-fido-u2f-firefox/)
 :::

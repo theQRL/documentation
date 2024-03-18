@@ -31,7 +31,7 @@ Slave addresses are advanced and are not usually needed for most users!
 
 ## Overview
 
-A slave key is generated using the [QRL command line tools](use/node/node-cli/node-cli-slave-xmss) or via the API.
+A slave key is generated using the [QRL command line tools](/use/node/node-cli/node-cli-slave-xmss) or via the API.
 
 This process is similar to generating a QRL address and will output a slaves.json file which contains the private keys for each slave generated (Up to 100).
 

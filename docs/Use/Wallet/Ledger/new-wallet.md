@@ -19,7 +19,7 @@ slug: /use/wallet/ledger/new
 
 ## Installing the QRL App
 
-Using the [Ledger Live](https://www.ledger.com/pages/ledger-live) application, [follow these instructions](https://support.ledger.com/hc/en-us/articles/360019184453?support=true:
+Using the [Ledger Live](https://www.ledger.com/ledger-live) application, [follow these instructions](https://support.ledger.com/hc/en-us/articles/360019184453?support=true):
 
 1. Open the **Manager** in Ledger Live
 2. **Connect and Unlock** your Ledger Nano

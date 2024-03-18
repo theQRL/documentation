@@ -62,7 +62,7 @@ $b=Z_{t-1}-Z_t$
 
 The QRL emission schedule, or amount of quanta generated with each block mined, was updated in QIP-16 (*QRL Improvement Proposal*) through a public on-chain vote to reduce the total reward each block paid out by a factor of 60%. 
 
-You can read more about the [QIP process here](build/qip/overview), and review the history of this QIP in the GitHub repository.
+You can read more about the [QIP process here](/build/qip/overview), and review the history of this QIP in the GitHub repository.
 
 
 
