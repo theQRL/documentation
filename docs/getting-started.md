@@ -217,11 +217,3 @@ The docs are broken into 3 main categories, [Use](/use), [Build](/build) , and [
 :::info MORE QUESTIONS?
 If you don't find all you need from these docs, please join us in our [Discord Server](https://theqrl.org/discord) for more direct help.
 :::
-
-:::caution DOCUMENT STATUS
-**Contributions welcome and appreciated!**
-
-<span> This site is in <i>{frontMatter.docstatus}</i> status and needs additional input and work! </span>
-
-<span>Use the links to edit any document in Github, sign in and make your changes. For in-depth contributions, fork the <a href="https://github.com/theqrl/documentation">documentation repo</a> and branch your changes to get started, or see us in the <a href="https://theqrl.org/discord">QRL Discord server. </a></span>
-:::
