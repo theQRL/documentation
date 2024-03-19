@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: New
 sidebar_position: 3
 pagination_label: Mobile Wallet - New
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Mobile/create-new-wallet.md
 description: The QRL Mobile new address creation
 keywords:
   - docs

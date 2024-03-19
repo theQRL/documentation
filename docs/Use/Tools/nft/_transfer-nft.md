@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL NFT - Transfer
 sidebar_position: 3
 pagination_label: QRL NFT - Transfer
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/nft/_transfer-nft.md
 description: Transfer QRL Non-Fungable Tokens
 keywords:
   - docs
