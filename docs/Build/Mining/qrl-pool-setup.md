@@ -14,7 +14,7 @@ keywords:
   - developers
   - Pool Setup
 image: /assets/img/icons/yellow.png
-slug: /developers/mining/qrl-pool-setup
+slug: /build/mining/qrl-pool-setup
 ---
 
 
