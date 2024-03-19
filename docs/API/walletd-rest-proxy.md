@@ -32,7 +32,7 @@ The `wallets-rest-proxy` provides an automatic slave system, where new slaves ar
 
 This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous tier 3 slave OTS keys are used.
 
-:::info Automatic Slave Transaction Diagram 
+:::note Automatic Slave Transaction Diagram 
 ![auto slave tree system diagram](./assets/img/Auto-slave_tree-System.png)
 
 Any `walletd-rest-proxy` function that utilizes slaves will use this automatic slave system. *The address will need to be initially setup using 
@@ -4260,41 +4260,33 @@ Retrieve block information from a given block headerhash.
     groupId="getblock"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'response'},
     ]}>
 
-<TabItem value="usage">
+  <TabItem value="usage">
 
 Given correct headerhash will return information on specified block.
 
-:::info
+  <Tabs
+          defaultValue="shreq"
+          className="unique-tabs"
+          groupId="getblock-code"
+          values={[
+              {label: 'Curl Request', value: 'shreq'},
+              {label: 'JS Request', value: 'jsreq'},
+              {label: 'Python Request', value: 'pyreq'},
+      ]}>
 
-Example headerhash returned from transaction lookup: $$72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800$$
-:::
 
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-
-<Tabs
-    defaultValue="shreq"
-    className="unique-tabs"
-    groupId="getblock-code"
-    values={[
-        {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
-<TabItem value="shreq" label="Curl Request" default>
+  <TabItem value="shreq" label="Curl Request" default>
 
 ```bash
 curl -XPOST http://127.0.0.1:5359/api/GetBlock -d '{"header_hash": "72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800"}'
 ```
-</TabItem>    
-<TabItem value="jsreq" label="Request" default>
+
+  </TabItem>    
+      
+  <TabItem value="jsreq" label="Request" default>
 
 ```js {} 
 const util = require('util');
@@ -4314,8 +4306,10 @@ getBlock().then(function(response){
   console.log(getBlockResp)
 })
 ```
-</TabItem>
-<TabItem value="pyreq" label="Python Request" default>
+
+  </TabItem>
+      
+  <TabItem value="pyreq" label="Python Request" default>
 
 ```py {}
 import json
@@ -4327,8 +4321,22 @@ getBlock = requests.post("http://127.0.0.1:5359/api/GetBlock", data=json.dumps(p
 print(getBlock.text)
 
 ```
-</TabItem>
-<TabItem value="resp" label="Response" default>
+
+  </TabItem>
+
+  </Tabs>
+  </TabItem>
+
+  <TabItem value="response" label="Response">
+      <Tabs
+          defaultValue="resp"
+          className="unique-tabs"
+          groupId="getblock-code"
+          values={[
+              {label: 'Response', value: 'resp'},
+              {label: 'Error', value: 'err'},
+      ]}>
+        <TabItem value="resp" label="Response" default>
 
 ```json 
 {
@@ -4375,19 +4383,22 @@ print(getBlock.text)
 }
 
 ```
-</TabItem>
-<TabItem value="err" label="Error" default>
 
-```json title="Invalid header_hash given"
-{"code":1,"error":"hex string is expected to have an even number of characters"}
-```
+  </TabItem>
 
-```json title="No headerhash given or not found on chain"
-{"block": {"header": {}}}
-```
+  <TabItem value="err" label="Error" default>
 
+  ```json title="Invalid header_hash given"
+  {"code":1,"error":"hex string is expected to have an even number of characters"}
+  ```
 
-</TabItem>
+  ```json title="No headerhash given or not found on chain"
+  {"block": {"header": {}}}
+  ```
+
+  </TabItem>
+  </Tabs>
+  </TabItem>
 </Tabs>
 
 #### Required Data
@@ -4396,8 +4407,6 @@ print(getBlock.text)
 | :---: | :---: | :---: |
 | `header_hash` | N/A | Block hash header |
 
-</TabItem>
-</Tabs>
 <br />
 
 ---
