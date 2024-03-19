@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL NFT
 sidebar_position: 1
 pagination_label: QRL NFT
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/nft/_nft.md
 description: QRL NFT - Non-Fungable Tokens
 keywords:
   - docs

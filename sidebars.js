@@ -401,6 +401,7 @@ const sidebars = {
         'Build/security',
         'Build/Docker/qrl-docker',
         'Build/Mining/qrandomx',
+        'Build/Mining/qrl-pool-setup',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
         'Build/qrl-private-network',

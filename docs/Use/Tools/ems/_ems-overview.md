@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: Ephemeral Message System Overview
 sidebar_position: 1
 pagination_label: Ephemeral Message System Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/ems/_ems-overview.md
 description: Ephemeral Message System Overview
 keywords:
   - docs

@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: Backup
 sidebar_position: 4
 pagination_label: Mobile Wallet - Backup
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Mobile/backup-wallet.md
 description: The QRL Mobile Wallet backup guide
 keywords:
   - docs

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: Crystals Keys
 sidebar_position: 1
 pagination_label: Crystals Keys
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/crystals/_crystals-keys.md
 description: Crystals Keys
 keywords:
   - docs
