@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: QIP Workflow
 sidebar_position: 2
 pagination_label: QIP Workflow
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Build/QIP/qip-workflow.md
 description: QIP Workflow
 keywords:
   - docs

@@ -9,7 +9,7 @@ sidebar_position: 1
 toc_min_heading_level: 3
 toc_max_heading_level: 6
 pagination_label: Crystals Key Generation
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/crystals/_key-generation.md
 description: Crystals Key Generation
 keywords:
   - docs

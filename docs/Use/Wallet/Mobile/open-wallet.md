@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: Open
 sidebar_position: 5
 pagination_label: Mobile Wallet - Open
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Mobile/open-wallet.md
 description: Open an address using the QRL Mobile app
 keywords:
   - docs

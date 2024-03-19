@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: Overview
 sidebar_position: 1
 pagination_label: Mobile Wallet - Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Wallet/Mobile/mobile-wallet.md
 description: The QRL Mobile Wallet documentation
 keywords:
   - docs
