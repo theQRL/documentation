@@ -8,6 +8,7 @@
 /developers/integrationTests https://github.com/theQRL/integration_tests
 /developers/knownIssues /use/wallet/ledger/known-issues
 /developers/ots /build/fundamentals/ots-keys
+/developers/privatenetwork /build/private-network
 /developers/pyqryptonight https://github.com/theQRL/qryptonight
 /developers/qrl-cli /build/qrl-cli/overview
 /developers/walletAPI /api/wallet-api
@@ -17,7 +18,7 @@
 /mining/full-node /use/mining/solo-mining
 /mining/mining /use/mining/overview
 /mining/pool-mining /use/mining/pool-mining
-/mining/pool /use/mining/overview
+/mining/pool /build/mining/qrl-pool-setup
 /mining/pools /use/mining/overview
 /mining/testnetPool /use/mining/overview
 /node/QRLnode /use/node/installation
@@ -26,6 +27,7 @@
 /node/docker /build/docker/overview
 /node/testnetNode /tutorials/node/dual-node-host#testnet-node
 /tools/github https://www.github.com/theQRL/
+/tools/keybase /use/tools/integrations/keybase
 /tools/messages /build/messages/message-tx-encoding
 /tools/notarisation /use/tools/notarize/overview
 /wallet/basics /use/wallet/overview
