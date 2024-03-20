@@ -16,6 +16,8 @@ image: /assets/img/icons/yellow.png
 slug: /build/mining/qrandomx
 ---
 
+
+[![PyPI version](https://badge.fury.io/py/pyqrandomx.svg)](https://badge.fury.io/py/pyqrandomx)
 [![CircleCI](https://circleci.com/gh/theQRL/qrandomx.svg?style=shield)](https://circleci.com/gh/theQRL/qrandomx)
 [![GPL3 licensed](https://img.shields.io/badge/license-GPL3-blue.svg)](https://raw.githubusercontent.com/theQRL/qrandomx/master/LICENSE)
 
