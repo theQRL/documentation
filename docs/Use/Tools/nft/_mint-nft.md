@@ -7,7 +7,7 @@ hide_table_of_contents: false
 sidebar_label: QRL NFT - Mint
 sidebar_position: 2
 pagination_label: QRL NFT - Mint
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/nft/_mint-nft.md
 description: Mint QRL Non-Fungable Tokens
 keywords:
   - docs

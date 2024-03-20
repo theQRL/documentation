@@ -353,6 +353,23 @@ const sidebars = {
               collapsible: true, // Set the category to be collapsible
               collapsed: true, // Set the category to be initially collapsed or open by default
             },
+            {
+              type: 'category',
+              label: 'Integrations',
+              link: {
+                type: 'generated-index',
+                title: 'QRL Integrations',
+                description: 'QRL integrations with other projects.',
+                slug: '/use/tools/integrations',
+                keywords: ['integrations'],
+                image: '/assets/img/icons/yellow.png',
+              },
+              items: [
+                'Use/Tools/Integrations/keybase/keybase',
+              ],
+              collapsible: true, // Set the category to be collapsible
+              collapsed: true, // Set the category to be initially collapsed or open by default
+            },
           ],
           collapsible: true, // Set the category to be collapsible
           collapsed: true, // Set the category to be initially collapsed or open by default
@@ -384,8 +401,10 @@ const sidebars = {
         'Build/security',
         'Build/Docker/qrl-docker',
         'Build/Mining/qrandomx',
+        'Build/Mining/qrl-pool-setup',
         'Build/QIP/qip-overview',
         'Build/QRL-CLI/qrl-cli',
+        'Build/qrl-private-network',
         { // Fundamentals//
           type: 'category',
           label: 'QRL Fundamentals',

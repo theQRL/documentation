@@ -32,7 +32,7 @@ The `wallets-rest-proxy` provides an automatic slave system, where new slaves ar
 
 This allows a nearly unlimited amount of outgoing transactions, where new slaves are automatically generated when all previous tier 3 slave OTS keys are used.
 
-:::info Automatic Slave Transaction Diagram 
+:::note Automatic Slave Transaction Diagram 
 ![auto slave tree system diagram](./assets/img/Auto-slave_tree-System.png)
 
 Any `walletd-rest-proxy` function that utilizes slaves will use this automatic slave system. *The address will need to be initially setup using 
@@ -198,27 +198,17 @@ Adds new randomly generated address to the wallet located at `~/.qrl/walletd.jso
     className="unique-tabs"
     groupId="addnewaddress"
     values={[
-        {label: 'Usage', value: 'usage', className: 'red'},
-        {label: 'code', value: 'code'},
+        {label: 'Usage', value: 'usage' },
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage" >
 
 
-This function will create a single address with no slave keys. For use when outgoing transactions will not exceed addresses tree height. 
-
-By default this will generate a new address with:
+This function will create a single address with no slave keys. For use when outgoing transactions will not exceed addresses tree height. By default this will generate a new address with:
 
 - OTS key height `{"height": 10}` or $1,024$ outgoing transactions
 - Using the `{"hash_function": "shake_128"}`
-
-The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if not existing.
-
-> This address is limited to the initial OTS height given when generated.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 Code examples below use the default values, change as needed.
 
@@ -230,8 +220,6 @@ Code examples below use the default values, change as needed.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -243,7 +231,7 @@ curl -XPOST http://127.0.0.1:5359/api/AddNewAddress \
 </TabItem>
 <TabItem value="jsreq" label="Request" default>
 
-```js {5}
+```js {}
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
@@ -265,7 +253,7 @@ addNewAddress().then(function(generatedAddress){
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {5}
+```py {}
 import json
 import requests
 
@@ -275,9 +263,46 @@ newAddress = requests.post("http://127.0.0.1:5359/api/AddNewAddress", data=json.
 print(newAddress.text)
 
 ```
+</TabItem>
+
+</Tabs>
+
+The newly generated address will be added to the `~/.qrl/walletd.json` file. This file will be created if not existing.
+
+:::info
+This address is limited to the initial OTS height given in optional configuration parameters when generated.
+:::
+
+#### Optional Configurations
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `height` | `10` | **Min**: `6`, **Max**: `18` |
+| `hash_function` | `shake128` | **Options**: `shake128`, `sha256`, `sha2_256` |
+
+:::note 
+Higher tree heights may take longer to generate.
+:::
 
 </TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+Code examples below use the default values, change as needed.
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="addnewaddress-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+
 <TabItem value="resp" label="Response" default>
+
+Returns the public key of the newly created XMSS address 
 
 ```json
 {
@@ -303,19 +328,6 @@ print(newAddress.text)
 ```
 </TabItem>
 </Tabs>
-
-#### Optional Configurations
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `height` | `10` | **Min**: `6`, **Max**: `18` |
-| `hash_function` | `shake128` | **Options**: `shake128`, `sha256`, `sha2_256` |
-
-:::note 
-Higher tree heights may take longer to generate.
-:::
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -326,13 +338,20 @@ Higher tree heights may take longer to generate.
 
 Adds a new address into the `~/.qrl/walletd.json` wallet file, generates and transmits slave transaction to the chain. 
 
+### Automatic OTS Key System
+
+When used with a wallet API transaction that utilizes slave OTS keys, like [RelayTransferTxnBySlave](#relaytransfertxnbyslave)
+the API will generate new slave keys when needed using the [RelaySlaveTxnBySlave](#relayslavetxnbyslave) function.
+
 
 :::info
+Use this function to generate an address to use the automatic OTS key system. 
+
 This command will create an unlimited address, re-generating slave keys as needed. Additionally the system will preserve 5 OTS keys from each 
 slave to ensure there are no lost funds with this system.
 :::
 
-#### AddNewAddress Request
+#### AddNewAddressWithSlaves Request
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -340,7 +359,7 @@ slave to ensure there are no lost funds with this system.
 | number_of_slaves | UInt64 | Number of slaves to be generated (Max 100, Default 3) |
 | hash_function | String | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
 
-#### AddNewAddress Response
+#### AddNewAddressWithSlaves Response
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -348,7 +367,7 @@ slave to ensure there are no lost funds with this system.
 | error | String | Error Message. Only appears if any exception is triggered. |
 
 
-#### AddNewAddress Response Data
+#### AddNewAddressWithSlaves Response Data
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -361,37 +380,17 @@ slave to ensure there are no lost funds with this system.
     groupId="addnewaddresswithslaves"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
-#### Automatic OTS Key System
+The examples below are using the default address values. Change as needed.
 
-When used with a wallet API transaction that utilizes slave OTS keys, like [RelayTransferTxnBySlave](#relaytransfertxnbyslave)
-the API will generate new slave keys when needed using the [RelaySlaveTxnBySlave](#relayslavetxnbyslave) function.
-
-
-:::note
-Use this function to generate an address to use the automatic OTS key system. 
+:::info
+This address and slave keys will be added to the \~/.qrl/walletd.json file, *this file will be created if not existing*.
 :::
 
-By default this will generate a new address with: 
-
-- Tree height 10 `{"height": 10}` or $1,024$ outgoing transactions
-- Three slave keys each with height 10 `{"number_of_slaves":3}` 
-- Using the shake-128 hash function  `{"hash_function": "shake_128"}` 
-- The first five slave OTS keys will be preserved, beginning at `{"index": 5}`
-  - Keys `{0 - 4}` are saved for backup or recovery for each slave generated.
-
-This address and slave keys will be added to the \~/.qrl/walletd.json file, *this file will be created if not existing*.
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-The examples below are using the default address values. Change as needed.
 
 <Tabs
     defaultValue="shreq"
@@ -401,8 +400,6 @@ The examples below are using the default address values. Change as needed.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 
 <TabItem value="shreq" label="Curl Request" default>
@@ -415,7 +412,7 @@ curl -XPOST http://127.0.0.1:5359/api/AddNewAddressWithSlaves \
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
-```js {5} 
+```js {} 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
@@ -439,7 +436,7 @@ addNewAddressWithSlaves().then(function(generatedAddress){
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
-```py {5}
+```py {}
 import json
 import requests
 
@@ -449,8 +446,32 @@ newAddressWithSlaves = requests.post("http://127.0.0.1:5359/api/AddNewAddressWit
 print(newAddressWithSlaves.text)
 
 ```
+</TabItem>
+</Tabs>
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: | 
+| `height` | `10` | {Min: `6`, Max: `18`} outgoing transactions per slave |
+| `number_of_slaves` | `3` | {Min: `1`, Max: `100`} Number of slaves to generate | 
+| `hash_function` | `shake128` | **Options**: `shake128`, `sha256`, `sha2_256` |
+
+:::note Account Recovery
+The first five slave OTS keys will be preserved, beginning at `{"index": 5}`. Keys `{0 - 4}` are saved for backup or recovery for each slave generated. 
+:::
 
 </TabItem>
+<TabItem value="resp" label="Response">
+
+The examples below are using the default address values. Change as needed.
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="addnewaddresswithslaves-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -485,22 +506,11 @@ print(newAddressWithSlaves.text)
 
 </TabItem>
 </Tabs>
-
-#### Optional Configurations 
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: | 
-| `height` | `10` | **Min**: `6`, **Max**: `18` |
-| `number_of_slaves` | `3` | **Min**: `1`, **Max**: `100` | 
-| `hash_function` | `shake128` | **Options**: `shake128`, `sha256`, `sha2_256` |
-
-
 </TabItem>
 </Tabs>
 <br />
 
 ---
-
 
 ## IsValidAddress
 
@@ -533,22 +543,12 @@ Check if a QRL address is valid. Returns `{"valid": "True"}` if the QRL Address 
     groupId="isvalidaddress"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
-This function requires a QRL address to lookup. 
 Validates the public address given meets all requirements and is valid to be used as recipient of a transaction.
-
-
-:::note
-`IsValidAddress` expects a `Q` hex address format, example: `Q0103006fa2d29c4acb9bc192581694a616d394f7ef2f35dd5ab5a4dddd865740a3f3293e54c560` 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 Example code below. Enter details for the address to lookup  `{"address": ""}`.
 
@@ -560,8 +560,6 @@ Example code below. Enter details for the address to lookup  `{"address": ""}`.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -604,6 +602,25 @@ print(validAddress.text)
 
 ```
 </TabItem>
+</Tabs>
+
+
+:::note
+`IsValidAddress` expects a `Q` hex address format, example: `Q0103006fa2d29c4acb9bc192581694a616d394f7ef2f35dd5ab5a4dddd865740a3f3293e54c560` 
+:::
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="isvalidaddress-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -661,21 +678,12 @@ Lists all addresses located in the `~/.qrl/walletd.json` file loaded into the wa
     groupId="listaddresses"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Returns an array of public addresses found in the `walletd.json` wallet file.
-
-:::note
-This function will return results from the `walletd.json` file located in the default location when the `walletd-rest-proxy` was started.
-Any manual changes to this file will require the proxy to be restarted to pickup the changes. 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -685,8 +693,6 @@ Any manual changes to this file will require the proxy to be restarted to pickup
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -727,6 +733,26 @@ print(json.loads(listAddresses.text))
 
 ```
 </TabItem>
+
+</Tabs>
+
+:::note
+This function will return results from the `walletd.json` file located in the default location when the `walletd-rest-proxy` was started.
+Any manual changes to this file will require the proxy to be restarted to pickup the changes. 
+:::
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="listaddresses-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json
@@ -786,7 +812,7 @@ Backup the address keys prior file to removing using the [GetRecoverySeeds](#get
     groupId="removeaddress"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -797,11 +823,6 @@ Removes given address from the the `walletd.json` wallet file. Requires a QRL ad
 Replace the `{"address": ""}` with the address to be removed. This action is permanent. 
 ::: 
 
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
@@ -810,8 +831,6 @@ Replace the `{"address": ""}` with the address to be removed. This action is per
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -854,6 +873,31 @@ print(removeAddress.text)
 
 ```
 </TabItem>
+
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `address` | N/A | Provide QRL address in $Q$ Hex format |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+Returns an empty array with successful removal.
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="removeaddress-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -873,12 +917,6 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `address` | N/A | Provide QRL address in $Q$ Hex format |
-
 </TabItem>
 </Tabs>
 <br />
@@ -889,6 +927,11 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 ## EncryptWallet
 
 Encrypts the QRL wallet using the passphrase given. 
+
+Secure the walletd.json file by encrypting it using the EncryptWallet function which will result in an AES encrypted `/home/$USER/.qrl/walletd.json` file. 
+
+Further interaction with the wallet will require the file is decrypted first using the [Unlock Wallet Function](#unlockwallet) and by [Locking](#lockwallet) locking it after complete, rendering it encrypt ed again, removing the passphrase from memory.
+
 
 #### EncryptWallet Request
 
@@ -909,19 +952,12 @@ Encrypts the QRL wallet using the passphrase given.
     groupId="encryptwallet"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
-Secure the walletd.json file by encrypting it using the EncryptWallet function which will result in an AES encrypted `/home/$USER/.qrl/walletd.json` file. 
-
-Further interaction with the wallet will require the file is decrypted first using the [Unlock Wallet Function](#unlockwallet) and by [Locking](#lockwallet) locking it after complete, rendering it encrypt ed again, removing the passphrase from memory.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
+See the code examples below.
 
 <Tabs
     defaultValue="shreq"
@@ -931,8 +967,6 @@ Further interaction with the wallet will require the file is decrypted first usi
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -975,6 +1009,28 @@ print(encryptWallet.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `passphrase` | N/A | Provide passphrase in string format |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Resposne">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="encryptwallet-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -997,23 +1053,13 @@ To change the encryption passphrase use the [`ChangePassphrase`](#changepassphra
 {"code":1,"error":"Missing Passphrase"}
 ```
 
-
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `passphrase` | N/A | Provide passphrase in string format |
-
 </TabItem>
 </Tabs>
 <br />
 
 ---
-
-
 
 ## LockWallet
 
@@ -1033,21 +1079,12 @@ Lock a previously [encrypted wallet file](#encryptwallet).
     groupId="lockwallet"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Using the previously set encryption passphrase, lock the wallet and remove stored passphrase from memory.
-
-:::note
-After locking the wallet the passphrase is required to unlock.
-:::
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -1057,8 +1094,6 @@ After locking the wallet the passphrase is required to unlock.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1098,6 +1133,25 @@ print(lockWallet.text)
 
 ```
 </TabItem>
+</Tabs>
+
+:::note
+After locking the wallet, the passphrase will be required to unlock.
+:::
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="lockwallet-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -1151,17 +1205,12 @@ Unlock an encrypted, and locked wallet using the encryption passphrase establish
     groupId="unlockwallet"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Using the previously set encryption passphrase, unlock the wallet allowing transactions to be signed using addresses in the wallet.
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -1172,8 +1221,6 @@ Using the previously set encryption passphrase, unlock the wallet allowing trans
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1216,6 +1263,29 @@ print(unlockWallet.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `passphrase` | N/A | Provide passphrase in string format |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="unlockwallet-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -1235,22 +1305,13 @@ Response is a blank array `{}` if successful.
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `passphrase` | N/A | Provide passphrase in string format |
-
-
 </TabItem>
 </Tabs>
 <br />
 
 ---
 
-
 ## GetRecoverySeeds
-
 
 Print out the recovery seeds, or secret keys for the given QRL address.
 
@@ -1285,16 +1346,12 @@ The address must exist in the wallet.
     groupId="getrecoveryseeds"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Returns the backup or recovery seeds for the address given. 
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -1305,8 +1362,6 @@ Returns the backup or recovery seeds for the address given.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1349,6 +1404,27 @@ print(getRecoverySeeds.text)
 
 ```
 </TabItem>
+</Tabs>
+
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `address` | N/A | Provide QRL address in $Q$ Hex format |
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getrecoveryseeds-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -1366,14 +1442,6 @@ print(getRecoverySeeds.text)
 
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `address` | N/A | Provide QRL address in $Q$ Hex format |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -1400,27 +1468,18 @@ Print info on the wallet.
 | address\_count | UInt64 | Number of addresses into the wallet |
 | is\_encrypted | Boolean | True if wallet is already encryptedFalse if wallet is not encrypted |
 
-
 <Tabs
     defaultValue="usage"
     className="unique-tabs"
     groupId="getwalletinfo"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Returns JSON array of information on the wallet located at `/home/$USER/.qrl/walletd.json`
-
-- Wallet Version
-- Address count
-- Encryption 
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -1430,8 +1489,6 @@ Returns JSON array of information on the wallet located at `/home/$USER/.qrl/wal
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1471,6 +1528,20 @@ print(getWalletInfo.text)
 
 ```
 </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getwalletinfo-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -1486,8 +1557,6 @@ print(getWalletInfo.text)
 </TabItem>
 </Tabs>
 
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -1499,7 +1568,9 @@ print(getWalletInfo.text)
 Send or Transfer funds from a QRL address in the wallet to another QRL address. 
 This function will use the root OTS keys for the address. 
 
-
+:::note
+For a more flexible address allowing additional levels of OTS slave keys, use an address created with the [AddNewAddressWithSlaves](#addnewaddresswithslaves) and the [RelayTransferTxnBySlave](#relaytransfertxnbyslave) function. 
+:::
 
 #### RelayTransferTxn Request
 
@@ -1532,7 +1603,7 @@ This function will use the root OTS keys for the address.
     groupId="relaytransfertxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -1540,15 +1611,6 @@ This function will use the root OTS keys for the address.
 Use this function to send QRL from an address contained in the `/home/$USER/.qrl/walletd.json` file to another QRL address given, up to 100 recipients per transaction.
 
 You must provide the `ots_index` for the transaction, keeping track of keys that have already been used to avoid any attempted key reuse.
-
-:::note
-For a more flexible address allowing additional levels of OTS slave keys, use an address created with the [AddNewAddressWithSlaves](#addnewaddresswithslaves) and the [RelayTransferTxnBySlave](#relaytransfertxnbyslave) function. 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 
 <Tabs
     defaultValue="shreq"
@@ -1558,8 +1620,6 @@ For a more flexible address allowing additional levels of OTS slave keys, use an
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1619,7 +1679,33 @@ print(relayTransferTxn.text)
 ```
 
 </TabItem>
-<TabItem value="resp" label="Response" default>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `address` | N/A | Provide QRL address in $Q$ Hex format to send transaction from |
+| `addresses_to` | N/A | Recipient QRL addresses array  |
+| `amounts` | N/A | Amount for each address in an array |
+| `fee` | N/A | Fee to pay for transaction |
+| `signer_address` | N/A | Address that is signing and sending the transaction |
+| `ots_index` | N/A | Unused OTS key index to sign the transaction |
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytransfertxn-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+    <TabItem value="resp" label="Response" default>
 
 ```json 
 {
@@ -1686,23 +1772,11 @@ The OTS key has already been used, and cannot be re-used for transactions. Use t
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `address` | N/A | Provide QRL address in $Q$ Hex format to send transaction from |
-| `addresses_to` | N/A | Recipient QRL addresses array  |
-| `amounts` | N/A | Amount for each address in an array |
-| `fee` | N/A | Fee to pay for transaction |
-| `signer_address` | N/A | Address that is signing and sending the transaction |
-| `ots_index` | N/A | Unused OTS key index to sign the transaction |
-
 </TabItem>
 </Tabs>
 <br />
 
 ---
-
 
 ## RelayTransferTxnBySlave
 
@@ -1742,17 +1816,12 @@ Use this function to send nearly infinite number of outgoing transactions. Addre
     groupId="relaytransfertxnbyslave"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Use this function to send QRL from an address with slave keys contained in the `/home/$USER/.qrl/walletd.json` file to another QRL address given, up to 100 recipients per transaction.
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -1762,8 +1831,6 @@ Use this function to send QRL from an address with slave keys contained in the `
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -1817,6 +1884,30 @@ print(relayTransferTxnBySlave.text)
 ```
 
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `addresses_to` | N/A | Recipient QRL addresses array  |
+| `amounts` | N/A | Amount for each address in an array |
+| `fee` | N/A | Fee to pay for transaction |
+| `master_address` | N/A | Master Address that is signing and sending the transaction using next slave OTS|
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytransfertxnbyslave-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -1842,6 +1933,7 @@ print(relayTransferTxnBySlave.text)
 }
 
 ```
+
 </TabItem>
 <TabItem value="err" label="Error" default>
 
@@ -1881,17 +1973,6 @@ The `signer_address` is either not found in the `/home/$USER/.qrl/walletd.json` 
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `addresses_to` | N/A | Recipient QRL addresses array  |
-| `amounts` | N/A | Amount for each address in an array |
-| `fee` | N/A | Fee to pay for transaction |
-| `master_address` | N/A | Master Address that is signing and sending the transaction using next slave OTS|
-
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -1902,6 +1983,11 @@ The `signer_address` is either not found in the `/home/$USER/.qrl/walletd.json` 
 ## RelayMessageTxn
 
 Transmit a message transaction onto the chain.
+
+:::tip
+This function can be used to [notarize](/use/tools/notarize) data or for any free form data. 
+See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
+:::
 
 #### RelayMessageTxn Request
 
@@ -1934,7 +2020,7 @@ Transmit a message transaction onto the chain.
     groupId="relaymessagetxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -1942,15 +2028,6 @@ Transmit a message transaction onto the chain.
 Relay up to 80 bytes of a message onto the network from given address.
 
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail.
-
-:::tip
-This function can be used to [notarize](/use/tools/notarize) data or for any free form data. 
-See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -1961,8 +2038,6 @@ See the [message encoding](/build/messages/message-tx-encoding) documentation fo
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2014,6 +2089,30 @@ print(relayMessageTxn.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `message` | N/A | Message string |
+| `fee` | N/A | Fee to pay for transaction |
+| `signer_address` | N/A | Address that is signing and sending the transaction |
+| `ots_index` | N/A | Unused OTS key index to sign the transaction |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaymessagetxn-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2031,6 +2130,7 @@ print(relayMessageTxn.text)
 }
 
 ```
+
 </TabItem>
 <TabItem value="err" label="Error" default>
 
@@ -2048,15 +2148,6 @@ print(relayMessageTxn.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `message` | N/A | Message string |
-| `fee` | N/A | Fee to pay for transaction |
-| `signer_address` | N/A | Address that is signing and sending the transaction |
-| `ots_index` | N/A | Unused OTS key index to sign the transaction |
-
 </TabItem>
 </Tabs>
 <br />
@@ -2069,6 +2160,12 @@ print(relayMessageTxn.text)
 Relay message transaction to the QRL network using slave address found in the `/home/$USER/.qrl/walletd.json` file.
 
 Address must have been created using the [`AddNewAddressWithSlaves`](#AddNewAddressWithSlaves) function.
+
+:::tip
+This function can be used to [notarize](/use/tools/notarize/overview) data or for as any free form data. 
+See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
+:::
+
 
 ####  RelayMessageTxnBySlave Request
 
@@ -2099,7 +2196,7 @@ Address must have been created using the [`AddNewAddressWithSlaves`](#AddNewAddr
     groupId="relaymessagetxnbyslave"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -2107,15 +2204,6 @@ Address must have been created using the [`AddNewAddressWithSlaves`](#AddNewAddr
 Relay up to 80 bytes of a message onto the network from given address using slave keys for signing. 
 
 Message length must be validated prior to submitting to the node or an OTS key will be consumed and the transaction will fail. 
-
-:::tip
-This function can be used to [notarize](/use/tools/notarize/overview) data or for as any free form data. 
-See the [message encoding](/build/messages/message-tx-encoding) documentation for information on established encoding formats. 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -2125,8 +2213,6 @@ See the [message encoding](/build/messages/message-tx-encoding) documentation fo
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2175,6 +2261,27 @@ print(relayMessageTxnBySlave.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `message` | N/A | Message string |
+| `fee` | N/A | Fee to pay for transaction |
+| `master_address` | N/A | Address that is signing and sending the transaction |
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaymessagetxnbyslave-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2199,18 +2306,8 @@ print(relayMessageTxnBySlave.text)
 {"code":1,"error":"('Signer Address Not Found ', 'Q010500e26037717191572726f1cab7c98f98db2e80b4465edc8700e1dfd6000cad0713356be6b')"}
 ```
 
-
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `message` | N/A | Message string |
-| `fee` | N/A | Fee to pay for transaction |
-| `master_address` | N/A | Address that is signing and sending the transaction |
-
 
 </TabItem>
 </Tabs>
@@ -2222,6 +2319,23 @@ print(relayMessageTxnBySlave.text)
 
 Create a new token on the blockchain associated with the address given as owner, with token transferred to the addresses listed in
 the `addresses` array. 
+
+:::info
+More information can be found in the [QRL Token Documentation](/use/tools/tokens/)
+:::
+
+#### Token Quantity
+
+The total token quantity distribution is calculated by taking the amounts and multiplying it by the decimal
+ place, distributed to the addresses given. 
+
+Say you have a token with a `"decimals": 2` and `"amounts": [100]` minted tokens, creating a 
+whole token that can be divided into `100` sub-token derivatives to the second decimal place. 
+
+$$
+100 \times 0.01=1\text{ token (divisible by 100)}
+$$
+
 
 #### RelayTokenTxn Request
 
@@ -2260,7 +2374,7 @@ the `addresses` array.
     groupId="relaytokentxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -2268,31 +2382,8 @@ the `addresses` array.
 This function generates a new colored token on the QRL blockchain, originating from the signer address. 
 The initial token balance will be sent to the QRL addresses listed in the `addresses` array.
 
-:::info
-More information can be found in the [QRL Token Documentation](/use/tools/tokens/)
-:::
-
-#### Token Quantity
-
-The total token quantity distribution is calculated by taking the amounts and multiplying it by the decimal
- place, distributed to the addresses given. 
-
-
-:::note 
-Say you have a token with a `"decimals": 2` and `"amounts": [100]` minted tokens, creating a 
-whole token that can be divided into `100` sub-token derivatives to the second decimal place. 
-
-$$
-100 \times 0.01=1\text{ token (divisible by 100)}
-$$
-:::
 
 In the code examples given, each address will receive one whole token, with 2 tokens created in total.
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -2302,8 +2393,6 @@ In the code examples given, each address will receive one whole token, with 2 to
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2371,6 +2460,36 @@ print(relayTokenTxn.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `symbol` | N/A | Symbol of the token to be created `symbol_max_length=10` bytes |
+| `name` | N/A | Name of the token to be created `name_max_length=30` bytes |
+| `owner` | N/A | QRL Address of the token owner (*does not need to be the same as the creator or holder addresses*)|
+| `decimals` | N/A | Maximum supported decimals `19` |
+| `addresses` | N/A | List of address to whom initial token will be assigned |
+| `amounts` | N/A | Array of amounts in Shor of token to be assigned to addresses. Must be in same count as addresses array. Max amount `999,999,999,999,999,999`|
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | This is an optional field, only need to be filled with QRL address if the transaction is signed from a slave address. |
+| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
+| `ots_index` | N/A | One Time Signature *(OTS)* Index to be used to sign the transaction. |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytokentxn-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2419,22 +2538,6 @@ print(relayTokenTxn.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `symbol` | N/A | Symbol of the token to be created `symbol_max_length=10` bytes |
-| `name` | N/A | Name of the token to be created `name_max_length=30` bytes |
-| `owner` | N/A | QRL Address of the token owner (*does not need to be the same as the creator or holder addresses*)|
-| `decimals` | N/A | Maximum supported decimals `19` |
-| `addresses` | N/A | List of address to whom initial token will be assigned |
-| `amounts` | N/A | Array of amounts in Shor of token to be assigned to addresses. Must be in same count as addresses array. Max amount `999,999,999,999,999,999`|
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | This is an optional field, only need to be filled with QRL address if the transaction is signed from a slave address. |
-| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| `ots_index` | N/A | One Time Signature *(OTS)* Index to be used to sign the transaction. |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -2445,6 +2548,21 @@ print(relayTokenTxn.text)
 
 Create a new token on the blockchain associated with the address given as owner, with token transferred to the addresses listed in
 the `addresses` array using the master addresses slave keys for transaction signing. 
+
+
+
+#### Token Quantity
+
+The total token quantity distribution is calculated by taking the amounts and multiplying it by the decimal
+ place, distributed to the addresses given. 
+
+Say you have a token with a `"decimals": 2` and `"amounts": [100]` minted tokens, creating a 
+whole token that can be divided into `100` sub-token derivatives to the second decimal place. 
+
+$$
+100 \times 0.01=1\text{ token (divisible by 100)}
+$$
+
 
 :::tip
 Use this function with an address generated with the `AddNewAddressWithSlaves` function for a nearly unlimited outgoing address
@@ -2486,7 +2604,7 @@ Use this function with an address generated with the `AddNewAddressWithSlaves` f
     groupId="relaytokentxnbyslave"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -2498,26 +2616,7 @@ The initial token balance will be sent to the QRL addresses listed in the `addre
 More information can be found in the [QRL Token Documentation](/use/tools/tokens/)
 :::
 
-#### Token Quantity
-
-The total token quantity distribution is calculated by taking the amounts and multiplying it by the decimal
- place, distributed to the addresses given. 
-
-
-:::note 
-Say you have a token with a `"decimals": 2` and `"amounts": [100]` minted tokens, creating a 
-whole token that can be divided into `100` sub-token derivatives to the second decimal place. 
-
-$$
-100 \times 0.01=1\text{ token (divisible by 100)}
-$$
-:::
-
 In the code examples given, each address will receive one whole token, with 2 tokens created in total.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -2528,8 +2627,6 @@ In the code examples given, each address will receive one whole token, with 2 to
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2593,6 +2690,35 @@ print(relayTokenTxnBySlave.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `symbol` | N/A | Symbol of the token |
+| `name` | N/A | Name of the token |
+| `owner` | N/A | QRL Address of the token owner |
+| `decimals` | N/A | Maximum supported decimals |
+| `addresses` | N/A | List of address to whom initial token will be assigned |
+| `amounts` | N/A | Array of amounts of token to be assigned to addresses. Must be in same order as of addresses |
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytokentxnbyslave-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2643,20 +2769,6 @@ print(relayTokenTxnBySlave.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `symbol` | N/A | Symbol of the token |
-| `name` | N/A | Name of the token |
-| `owner` | N/A | QRL Address of the token owner |
-| `decimals` | N/A | Maximum supported decimals |
-| `addresses` | N/A | List of address to whom initial token will be assigned |
-| `amounts` | N/A | Array of amounts of token to be assigned to addresses. Must be in same order as of addresses |
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -2699,17 +2811,13 @@ Send a token transfer to another QRL address consuming a root OTS key from the a
     groupId="relaytransfertokentxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 This function is used to transfer a token from a holding address to another address. The `RelayTransferTokenTxn` will consume
 an OTS key from the address used to send the token.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -2720,8 +2828,6 @@ an OTS key from the address used to send the token.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2779,6 +2885,34 @@ print(relayTransferTokenTxn.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `token_txhash` | N/A | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
+| `addresses_to` | N/A | Array of receiver&#39;s addresses |
+| `amounts` | N/A | Array of amounts to be received by receiver. Must be in same order as of addresses\_to |
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
+| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
+| `ots_index` | N/A | One Time Signature Index to be used to sign the transaction. |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytransfertokentxn-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2823,18 +2957,6 @@ print(relayTransferTokenTxn.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `token_txhash` | N/A | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
-| `addresses_to` | N/A | Array of receiver&#39;s addresses |
-| `amounts` | N/A | Array of amounts to be received by receiver. Must be in same order as of addresses\_to |
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
-| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| `ots_index` | N/A | One Time Signature Index to be used to sign the transaction. |
-
 </TabItem>
 </Tabs>
 <br />
@@ -2845,6 +2967,9 @@ print(relayTransferTokenTxn.text)
 ## RelayTransferTokenTxnBySlave
 
 Send a token transfer to another QRL address using the automatic slave key system.
+
+:::tip User the Automatic OTS Key System
+:::
 
 #### RelayTransferTokenTxnBySlave Request
 
@@ -2877,7 +3002,7 @@ Send a token transfer to another QRL address using the automatic slave key syste
     groupId="relaytransfertokentxnbyslaves"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -2885,12 +3010,7 @@ Send a token transfer to another QRL address using the automatic slave key syste
 This function is used to transfer a token from a holding address to another address. The `RelayTransferTokenTxnBySlave` function will consume
 an OTS key from the addresses automatic slave tree for addresses that have been created with slave keys.
 
-:::tip Automatic OTS Key System
-:::
 
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -2900,8 +3020,6 @@ an OTS key from the addresses automatic slave tree for addresses that have been 
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -2956,6 +3074,31 @@ print(relayTransferTokenTxnBySlave.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `token_txhash` | N/A | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
+| `addresses_to` | N/A | List of receiver&#39;s address |
+| `amounts` | N/A | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relaytransfertokentxnbyslaves-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -2989,17 +3132,6 @@ print(relayTransferTokenTxnBySlave.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `token_txhash` | N/A | Token transaction hash is the transaction hash by which the token has been created. This is used to uniquely identify each created token in QRL network. |
-| `addresses_to` | N/A | List of receiver&#39;s address |
-| `amounts` | N/A | List of Amounts to be received by receiver. Must be in same order as of addresses\_to |
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -3009,10 +3141,7 @@ print(relayTransferTokenTxnBySlave.text)
 
 ## RelaySlaveTxn
 
-> This section needs work!
-
 Relay slave public keys authorized for use by the master address. Links the slave key OTS trees to the master address from which the transaction is sent.
-
 
 #### RelaySlaveTxn Request
 
@@ -3046,7 +3175,7 @@ Relay slave public keys authorized for use by the master address. Links the slav
     groupId="relayslavetxn"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -3057,22 +3186,12 @@ be passed to the command.
 Generate slave trees and pass the public keys and the access type to the function to sign
  and send the transaction to the network.
 
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
     groupId="relayslavetxn-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3085,18 +3204,32 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxn \
            "ots_index": 16 }'
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
+</Tabs>
 
-```js {} 
+#### Required Data
 
-```
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `slave_pks` | N/A | List of Base64 encoded Public Keys which are allowed to act as slave |
+| `access_types` | N/A | Current supported access\_type is 0 |
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
+| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
+| `ots_index` | N/A | One Time Signature Index to be used to sign the transaction. |
+
+
 </TabItem>
-<TabItem value="pyreq" label="Python Request" default>
 
-```py {}
+<TabItem value="resp" label="Response">
 
-```
-</TabItem>
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relayslavetxn-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3128,17 +3261,6 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxn \
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `slave_pks` | N/A | List of Base64 encoded Public Keys which are allowed to act as slave |
-| `access_types` | N/A | Current supported access\_type is 0 |
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | This is an optional field, only need to be filled with QRL address, if the transaction is signed from slave address. |
-| `signer_address` | N/A | QRL Address signing the transaction. QRL Address must be already added into wallet. |
-| `ots_index` | N/A | One Time Signature Index to be used to sign the transaction. |
-
 </TabItem>
 </Tabs>
 <br />
@@ -3148,13 +3270,10 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxn \
 
 ## RelaySlaveTxnBySlave
 
-> This section needs work!
-
 Creates the signed slave transaction using one of the slaves and relay it to the network. 
 Master Address must exist into wallet. It may relay a slave transaction if the remaining slave OTS key are less than 100.
 
 #### RelaySlaveTxnBySlave Request
-
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -3183,7 +3302,7 @@ Master Address must exist into wallet. It may relay a slave transaction if the r
     groupId="relayslavetxnbyslave"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -3194,23 +3313,12 @@ be passed to the command.
 Generate slave trees and pass the public keys and the access type to the function to sign
  and send the transaction to the network.
 
-
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
     groupId="relayslavetxnbyslave-code"
     values={[
         {label: 'Curl Request', value: 'shreq'},
-        {label: 'JS Request', value: 'jsreq'},
-        {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3222,17 +3330,32 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxnBySlave \
      "master_address": "Q010500aba127bfb010f63334fc772be860a8cfb4706d5d4c91b51d7fe1988bef4ce46db7974781"}'
 ```
 </TabItem>    
-<TabItem value="jsreq" label="Request" default>
+</Tabs>
 
-```js {} 
+#### Required Data
 
-```
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `slave_pks` | N/A | List of Base64 encoded Public Keys which are allowed to act as slave |
+| `access_types` | N/A | Current supported access\_type is 0 |
+| `fee` | N/A | Transaction Fee in Shor |
+| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
+
+
 </TabItem>
-<TabItem value="pyreq" label="Python Request" default>
 
-```py {}
-```
-</TabItem>
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="relayslavetxnbyslave-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3265,29 +3388,15 @@ curl -XPOST http://127.0.0.1:5359/api/RelaySlaveTxnBySlave \
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `slave_pks` | N/A | List of Base64 encoded Public Keys which are allowed to act as slave |
-| `access_types` | N/A | Current supported access\_type is 0 |
-| `fee` | N/A | Transaction Fee in Shor |
-| `master_address` | N/A | QRL address whose slave will be signing the transaction. QRL Address must exist into wallet. |
-
-
 </TabItem>
 </Tabs>
 <br />
 
 ---
 
-
-
-
 ## ChangePassphrase
 
 Change the passphrase that encrypts the wallet. 
-
 
 #### ChangePassphrase Request
 
@@ -3310,7 +3419,7 @@ Change the passphrase that encrypts the wallet.
     groupId="changepassphrase"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -3321,12 +3430,6 @@ Change the passphrase of an already encrypted wallet. For initial encryption use
 This will completely remove any old passphrase and reassign the passphrase given with this command.
 
 
-</TabItem>
-
-
-
-<TabItem value="code" label="Code">
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
@@ -3335,8 +3438,6 @@ This will completely remove any old passphrase and reassign the passphrase given
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 
 <TabItem value="shreq" label="Curl Request" default>
@@ -3383,6 +3484,26 @@ print(changePassphrase.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `oldPassphrase` | N/A | Old Passphrase |
+| `newPassphrase` | N/A | New Passphrase |
+
+</TabItem>
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="changepassphrase-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3414,14 +3535,6 @@ Gives an empty array `{}` on successful removal of the address from the wallet.
 
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `oldPassphrase` | N/A | Old Passphrase |
-| `newPassphrase` | N/A | New Passphrase |
-
 
 </TabItem>
 </Tabs>
@@ -3461,21 +3574,13 @@ Get transactions hash and  other details for a given address.
     groupId="gettransactionsbyaddress"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 
 Retrieve all transaction information from the address given. This command will return all address information in one json array.
-
-:::note
-This may return significant information depending on the address queried and amount of transactions. 
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -3485,8 +3590,6 @@ This may return significant information depending on the address queried and amo
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3530,6 +3633,30 @@ print(getTransactionsByAddress.text)
 ```
 
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `address` | N/A | QRL address |
+
+:::note
+This may return significant information depending on the address queried and amount of transactions. 
+:::
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="gettransactionsbyaddress-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3570,13 +3697,6 @@ print(getTransactionsByAddress.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `address` | N/A | QRL address |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -3615,7 +3735,7 @@ Get transaction details for a given transaction hash.
     groupId="gettransaction"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -3625,10 +3745,6 @@ Retrieve information for the transaction hash given.
 
 This command will return transaction information in a json array.
 
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
@@ -3637,8 +3753,6 @@ This command will return transaction information in a json array.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3681,6 +3795,28 @@ print(getTransaction.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `tx_hash` | N/A | Transaction hash |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="gettransaction-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3721,13 +3857,6 @@ print(getTransaction.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `tx_hash` | N/A | Transaction hash |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -3766,16 +3895,12 @@ Retrieve balance information for the address given.
     groupId="getbalance"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Retrieve balance information for the address given. 
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -3785,8 +3910,6 @@ Retrieve balance information for the address given.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3830,6 +3953,27 @@ print(getBalance.text)
 ```
 
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `address` | N/A | QRL Address |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getbalance-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3856,13 +4000,6 @@ $1$ QRL $= 1000000000$ shor **OR** QRL $\times 10^9$
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `address` | N/A | QRL Address |
-
-
 </TabItem>
 </Tabs>
 <br />
@@ -3881,7 +4018,6 @@ Get total balance of all addresses found in wallet.
 | code | UInt32 | Error Code. Only appears if any exception is triggered. |
 | error | String | Error Message. Only appears if any exception is triggered. |
 
-
 #### GetTotalBalance Response Data
 
 | **Parameter** | **Type** | **Description** |
@@ -3895,16 +4031,12 @@ Get total balance of all addresses found in wallet.
     groupId="gettotalbalance"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Retrieve balance information for the `walletd.json` file loaded. Includes balances from all addresses contained in the wallet.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 <Tabs
     defaultValue="shreq"
@@ -3914,8 +4046,6 @@ Retrieve balance information for the `walletd.json` file loaded. Includes balanc
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -3956,6 +4086,20 @@ print(getTotalBalance.text)
 
 ```
 </TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="gettotalbalance-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -3976,6 +4120,7 @@ Method Not Allowed
 
 </TabItem>
 </Tabs>
+
 </TabItem>
 </Tabs>
 <br />
@@ -4016,7 +4161,7 @@ Retrieve next unused OTS key for the address given
     groupId="getots"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -4026,20 +4171,6 @@ The `GetOTS` function will return the lowest unused OTS key from the network.
 While a transaction is pending the next OTS will remain the same. Ensure proper OTS key tracking is performed in addition to the bitfield returned 
 from the chain. 
 
-
-:::info
-If an OTS key is skipped, the `GetOTS` response and next expected `walletd-rest-proxy` OTS key will mismatch. Attempted use of the skipped key will appear as
-key reuse and will trigger an error. 
-
-```json
-{ "code": 1, "error": "cannot rewind" }
-```
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
@@ -4048,8 +4179,6 @@ key reuse and will trigger an error.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -4093,19 +4222,6 @@ print(getOTS.text)
 ```
 
 </TabItem>
-<TabItem value="resp" label="Response" default>
-
-```json 
-{"next_unused_ots_index": "2"}
-```
-</TabItem>
-<TabItem value="err" label="Error" default>
-
-```json title="No address given"
-{"error": "local variable 'resp' referenced before assignment", "code": 2, "message": "local variable 'resp' referenced before assignment"}
-```
-
-</TabItem>
 </Tabs>
 
 #### Required Data
@@ -4114,19 +4230,56 @@ print(getOTS.text)
 | :---: | :---: | :---: |
 | `address` | N/A | QRL Address |
 
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getots-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
+<TabItem value="resp" label="Response" default>
+
+```json 
+{"next_unused_ots_index": "2"}
+```
+</TabItem>
+<TabItem value="err" label="Error" default>
+
+```json title="Cannot Rewind"
+{ "code": 1, "error": "cannot rewind" }
+```
+If an OTS key is skipped, the `GetOTS` response and next expected `walletd-rest-proxy` OTS key will mismatch. Attempted use of the skipped key will appear as
+key reuse and will trigger this "cannot rewind" error.
+
+
+```json title="No address given"
+{"error": "local variable 'resp' referenced before assignment", "code": 2, "message": "local variable 'resp' referenced before assignment"}
+```
+
+</TabItem>
+</Tabs>
+
 </TabItem>
 </Tabs>
 <br />
 
 ---
 
-
-
 ## GetHeight
 
 Returns the connected node's blockheight.
 
-Response
+:::note
+This will return the connected node's blockheight, consensus with additional nodes to ensure the node is fully synced is recommended.
+:::
+
+#### GetHeight Response
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
@@ -4141,20 +4294,12 @@ Response
     groupId="getheight"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Queries the local node for it's greatest blockheight.
-
-:::note
-This will return the connected node's blockheight, consensus with additional nodes to ensure the node is fully synced is recommended.
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -4165,8 +4310,6 @@ This will return the connected node's blockheight, consensus with additional nod
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -4206,6 +4349,22 @@ print(json.loads(getHeight.text))
 
 ```
 </TabItem>
+</Tabs>
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getheight-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -4226,12 +4385,9 @@ print(json.loads(getHeight.text))
 
 ---
 
-
-
 ## GetBlock
 
 Retrieve block information from a given block headerhash. 
-
 
 #### GetBlock Request
 
@@ -4260,22 +4416,12 @@ Retrieve block information from a given block headerhash.
     groupId="getblock"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
-    ]}>
+        {label: 'Response', value: 'response'},
+  ]}>
 
 <TabItem value="usage">
 
 Given correct headerhash will return information on specified block.
-
-:::info
-
-Example headerhash returned from transaction lookup: $$72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800$$
-:::
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 
 <Tabs
     defaultValue="shreq"
@@ -4285,14 +4431,13 @@ Example headerhash returned from transaction lookup: $$72fd6f1d03c73a89c88fa9a62
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
-    ]}>
+      ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
 ```bash
 curl -XPOST http://127.0.0.1:5359/api/GetBlock -d '{"header_hash": "72fd6f1d03c73a89c88fa9a62fa529b625fa24a2137b228029a24f5bb3fd0800"}'
 ```
+
 </TabItem>    
 <TabItem value="jsreq" label="Request" default>
 
@@ -4314,6 +4459,7 @@ getBlock().then(function(response){
   console.log(getBlockResp)
 })
 ```
+
 </TabItem>
 <TabItem value="pyreq" label="Python Request" default>
 
@@ -4327,7 +4473,28 @@ getBlock = requests.post("http://127.0.0.1:5359/api/GetBlock", data=json.dumps(p
 print(getBlock.text)
 
 ```
+
 </TabItem>
+</Tabs>
+
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `header_hash` | N/A | Block hash header |
+
+
+</TabItem>
+<TabItem value="response" label="Response">
+    <Tabs
+        defaultValue="resp"
+        className="unique-tabs"
+        groupId="getblock-resp"
+        values={[
+            {label: 'Response', value: 'resp'},
+            {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -4375,33 +4542,26 @@ print(getBlock.text)
 }
 
 ```
+
 </TabItem>
 <TabItem value="err" label="Error" default>
 
-```json title="Invalid header_hash given"
-{"code":1,"error":"hex string is expected to have an even number of characters"}
-```
+  ```json title="Invalid header_hash given"
+  {"code":1,"error":"hex string is expected to have an even number of characters"}
+  ```
 
-```json title="No headerhash given or not found on chain"
-{"block": {"header": {}}}
-```
-
+  ```json title="No headerhash given or not found on chain"
+  {"block": {"header": {}}}
+  ```
 
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `header_hash` | N/A | Block hash header |
 
 </TabItem>
 </Tabs>
 <br />
 
 ---
-
 
 
 ## GetBlockByNumber
@@ -4434,17 +4594,12 @@ Return block information for a given block number.
     groupId="gettotalbalance"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Returns all block information by block number given.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 
 <Tabs
     defaultValue="shreq"
@@ -4454,8 +4609,6 @@ Returns all block information by block number given.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -4497,6 +4650,26 @@ print(getBlockByNumber.text)
 
 ```
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `block_number` | N/A | Block number |
+
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="wallets"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -4557,12 +4730,6 @@ print(getBlockByNumber.text)
 </TabItem>
 </Tabs>
 
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `block_number` | N/A | Block number |
-
 </TabItem>
 </Tabs>
 <br />
@@ -4602,16 +4769,12 @@ Get QRL address for a given public key.
     groupId="getaddressfrompk"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
 
 Given an addresses extended public key, return the $Q$ public QRL hex address.
-
-</TabItem>
-
-<TabItem value="code" label="Code">
 
 
 <Tabs
@@ -4622,8 +4785,6 @@ Given an addresses extended public key, return the $Q$ public QRL hex address.
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
-        {label: 'Response', value: 'resp'},
-        {label: 'Error', value: 'err'},
     ]}>
 <TabItem value="shreq" label="Curl Request" default>
 
@@ -4667,6 +4828,27 @@ print(getAddressFromPK.text)
 ```
 
 </TabItem>
+</Tabs>
+
+#### Required Data
+
+| Configuration | Default | Notes |
+| :---: | :---: | :---: |
+| `pk` | N/A | Public key |
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getaddressfrompk-resp"
+    values={[
+        {label: 'Response', value: 'resp'},
+        {label: 'Error', value: 'err'},
+    ]}>
 <TabItem value="resp" label="Response" default>
 
 ```json 
@@ -4684,12 +4866,6 @@ print(getAddressFromPK.text)
 
 </TabItem>
 </Tabs>
-
-#### Required Data
-
-| Configuration | Default | Notes |
-| :---: | :---: | :---: |
-| `pk` | N/A | Public key |
 
 </TabItem>
 </Tabs>
@@ -4718,7 +4894,7 @@ Returns information from the connected node.
     groupId="getnodeinfo"
     values={[
         {label: 'Usage', value: 'usage'},
-        {label: 'code', value: 'code'},
+        {label: 'Response', value: 'resp'},
     ]}>
 
 <TabItem value="usage">
@@ -4733,11 +4909,6 @@ Will return information related to the connected node including:
   - block_last_hash
   - network_id
 
-
-</TabItem>
-
-<TabItem value="code" label="Code">
-
 <Tabs
     defaultValue="shreq"
     className="unique-tabs"
@@ -4746,6 +4917,56 @@ Will return information related to the connected node including:
         {label: 'Curl Request', value: 'shreq'},
         {label: 'JS Request', value: 'jsreq'},
         {label: 'Python Request', value: 'pyreq'},
+    ]}>
+<TabItem value="shreq" label="Curl Request" default>
+
+```bash
+curl -XGET http://127.0.0.1:5359/api/GetNodeInfo
+```
+</TabItem>    
+<TabItem value="jsreq" label="Request" default>
+
+```js {} 
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+async function getNodeInfo() {
+  const { stdout, stderr } = await exec(`curl -XGET http://127.0.0.1:5359/api/GetNodeInfo`)
+  if (stderr) {
+    console.error(`error: ${stderr}`);
+  }
+  return stdout;
+}
+
+getNodeInfo().then(function(addresses){
+  const getNodeInfoResp = JSON.parse(addresses);
+  console.log(getNodeInfoResp)
+})
+```
+</TabItem>
+<TabItem value="pyreq" label="Python Request" default>
+
+```py {}
+import json
+import requests
+
+getNodeInfo = requests.get("http://127.0.0.1:5359/api/GetNodeInfo")
+
+print(json.loads(getNodeInfo.text))
+
+```
+</TabItem>
+</Tabs>
+
+</TabItem>
+
+<TabItem value="resp" label="Response">
+
+<Tabs
+    defaultValue="resp"
+    className="unique-tabs"
+    groupId="getnodeinfo-resp"
+    values={[
         {label: 'Response', value: 'resp'},
         {label: 'Error', value: 'err'},
     ]}>

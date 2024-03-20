@@ -6,7 +6,7 @@ hide_table_of_contents: false
 sidebar_label: Overveiw
 sidebar_position: 1
 pagination_label: Notarization - Overview
-custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/
+custom_edit_url: https://github.com/theqrl/documentation/edit/main/docs/Use/Tools/notarize/notarization.md
 description: QRL Notarization
 keywords:
   - docs
