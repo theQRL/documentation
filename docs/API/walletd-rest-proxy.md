@@ -355,7 +355,7 @@ slave to ensure there are no lost funds with this system.
 
 | **Parameter** | **Type** | **Description** |
 | --- | --- | --- |
-| height | UInt64 | Height of the newly generated XMSS tree (Min 8) |
+| height | UInt64 | Height of the newly generated XMSS tree (Min 6) |
 | number_of_slaves | UInt64 | Number of slaves to be generated (Max 100, Default 3) |
 | hash_function | String | Hash function for XMSS. Possible values are shake128, shake256, sha2_256. |
 
