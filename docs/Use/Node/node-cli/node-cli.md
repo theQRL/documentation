@@ -133,7 +133,7 @@ Slave transaction allow an extension to the master address, allowing an entirely
 
 
 :::tip Additional Info
-See the [Slave Tree Documentation](#) for complete explanation of deterministic OTS key trees and how QRL has extend the life of an XMSS address to an almost infinite amount of OTS keys.
+See the [Slave Tree Documentation](/build/address/slave-keys) for complete explanation of deterministic OTS key trees and how QRL has extend the life of an XMSS address to an almost infinite amount of OTS keys.
 :::
 
 
@@ -338,7 +338,7 @@ qrl tx_inspect --txblob 1a43010500f6e8e9521b19934c0fa221324101c6075f114aa764ad36
 Transmit a message on-chain using address given, additionally this message can be sent to a specific address. Message data can be up to 80 bytes in length max.
 
 :::tip Message Encoding Format
-See the [Message Encoding Documentation](#) for additional message use cases, hashing data that is prepended with determined encoding schemes
+See the [Message Encoding Documentation](/build/messages/message-tx-encoding) for additional message use cases, hashing data that is prepended with determined encoding schemes
 :::
 
 #### `tx_message` Help
