@@ -19,6 +19,14 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/mobile/open
 ---
 
+:::danger
+**Important Notice:** The QRL Mobile Wallet will be delisted from app stores on May 30th, 2025. 
+
+While existing users can still access the app, new downloads will no longer be available. To ensure a smooth transition, [please backup your wallet](/use/wallet/mobile/backup) and explore alternative solutions found on our [Downloads](https://www.theqrl.org/downloads) page. 
+
+For more information, visit our blog on [Sunsetting the QRL Mobile Wallet](https://www.theqrl.org/blog/sunsetting-the-qrl-mobile-wallet/).
+:::
+
 Follow this guide to open a QRL address in the QRL mobile application.
 
 Using the QRL mobile wallet application you can open QRL wallets that have been generated on other devices and services. You will need the secret keys of the address in order to open or recover the address, and access any funds contained in the wallet.
