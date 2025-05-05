@@ -19,6 +19,13 @@ image: /assets/img/icons/yellow.png
 slug: /use/wallet/mobile/backup
 ---
 
+:::danger
+**Important Notice:** The QRL Mobile Wallet will be delisted from app stores on May 30th, 2025. 
+
+While existing users can still access the app, new downloads will no longer be available. To ensure a smooth transition, [please backup your wallet](/use/wallet/mobile/backup) and explore alternative solutions found on our [Downloads](https://www.theqrl.org/downloads) page. 
+
+For more information, visit our blog on [Sunsetting the QRL Mobile Wallet](https://www.theqrl.org/blog/sunsetting-the-qrl-mobile-wallet/).
+:::
 
 The process of backing up the QRL mobile wallet is simple and very straightforward. Each address created by the Mobile wallet will have a backup key that must be stored in a safe location off device.
 
