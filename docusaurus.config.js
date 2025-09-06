@@ -38,13 +38,6 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
-        gtag: {
-          trackingID: 'G-GXCWXK9LEJ',
-          anonymizeIP: true,
-        },
-      },
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
@@ -57,9 +50,11 @@ const config = {
             'https://github.com/theqrl.org/documentation',
           remarkPlugins: [math],
           rehypePlugins: [katex],
+        },        
+        gtag: {
+          trackingID: 'G-GXCWXK9LEJ',
+          anonymizeIP: true,
         },
-
-        
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
 //          customCss: [require.resolve('./static/assets/css/overrides.css'), require.resolve('./src/css/custom.css')]
