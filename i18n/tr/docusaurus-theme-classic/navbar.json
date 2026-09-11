@@ -1,0 +1,118 @@
+{
+  "logo.alt": {
+    "message": "QRL Logosu",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Use": {
+    "message": "Kullanım",
+    "description": "Navbar item with label Use"
+  },
+  "item.label.Build": {
+    "message": "Geliştirme",
+    "description": "Navbar item with label Build"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Tutorials": {
+    "message": "Eğitimler",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.QRL Network": {
+    "message": "QRL Ağı",
+    "description": "Navbar item with label QRL Network"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Use QRL": {
+    "message": "QRL Kullanımı",
+    "description": "Navbar item with label Use QRL"
+  },
+  "item.label.Wallet": {
+    "message": "Cüzdan",
+    "description": "Navbar item with label Wallet"
+  },
+  "item.label.Mining": {
+    "message": "Madencilik",
+    "description": "Navbar item with label Mining"
+  },
+  "item.label.Node": {
+    "message": "Node",
+    "description": "Navbar item with label Node"
+  },
+  "item.label.Tools": {
+    "message": "Araçlar",
+    "description": "Navbar item with label Tools"
+  },
+  "item.label.Build On QRL": {
+    "message": "QRL Üzerinde Geliştirme",
+    "description": "Navbar item with label Build On QRL"
+  },
+  "item.label.QRL Core Library": {
+    "message": "QRL Çekirdek Kütüphanesi",
+    "description": "Navbar item with label QRL Core Library"
+  },
+  "item.label.Address Scheme": {
+    "message": "Adres Şeması",
+    "description": "Navbar item with label Address Scheme"
+  },
+  "item.label.QRL Security": {
+    "message": "QRL Güvenliği",
+    "description": "Navbar item with label QRL Security"
+  },
+  "item.label.Node CLI": {
+    "message": "Node CLI",
+    "description": "Navbar item with label Node CLI"
+  },
+  "item.label.QRL Helpers": {
+    "message": "QRL Yardımcı Kütüphaneleri",
+    "description": "Navbar item with label QRL Helpers"
+  },
+  "item.label.QRL API": {
+    "message": "QRL API",
+    "description": "Navbar item with label QRL API"
+  },
+  "item.label.API Overview": {
+    "message": "API Genel Bakış",
+    "description": "Navbar item with label API Overview"
+  },
+  "item.label.Public API": {
+    "message": "Genel API",
+    "description": "Navbar item with label Public API"
+  },
+  "item.label.Wallet API": {
+    "message": "Cüzdan API",
+    "description": "Navbar item with label Wallet API"
+  },
+  "item.label.Explorer API": {
+    "message": "Gezgin API",
+    "description": "Navbar item with label Explorer API"
+  },
+  "item.label.WalletD Rest Proxy": {
+    "message": "WalletD Rest Proxy",
+    "description": "Navbar item with label WalletD Rest Proxy"
+  },
+  "item.label.Zeus Proxy": {
+    "message": "Zeus Proxy",
+    "description": "Navbar item with label Zeus Proxy"
+  },
+  "item.label.Main Site": {
+    "message": "Ana Site",
+    "description": "Navbar item with label Main Site"
+  },
+  "item.label.Explorer": {
+    "message": "Gezgin",
+    "description": "Navbar item with label Explorer"
+  },
+  "item.label.QRL Wallet": {
+    "message": "QRL Cüzdanı",
+    "description": "Navbar item with label QRL Wallet"
+  },
+  "item.label.Status": {
+    "message": "Durum",
+    "description": "Navbar item with label Status"
+  }
+}

@@ -28,7 +28,17 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'tr'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en',
+      },
+      tr: {
+        label: 'Türkçe',
+        htmlLang: 'tr',
+      },
+    },
   },
   markdown: {
       mermaid: true,
@@ -218,6 +228,10 @@ const config = {
 
         // Right Side
 
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             type: 'dropdown',
             label: 'QRL Network',

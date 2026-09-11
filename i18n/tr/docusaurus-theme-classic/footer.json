@@ -1,0 +1,50 @@
+{
+  "link.title.Docs": {
+    "message": "Dokümanlar",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Topluluk",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "Diğer",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.User Documentation": {
+    "message": "Kullanıcı Dokümanları",
+    "description": "The label of footer link with label=User Documentation linking to /use"
+  },
+  "link.item.label.Developer Documentation": {
+    "message": "Geliştirici Dokümanları",
+    "description": "The label of footer link with label=Developer Documentation linking to /build"
+  },
+  "link.item.label.API Documentation": {
+    "message": "API Dokümanları",
+    "description": "The label of footer link with label=API Documentation linking to /api"
+  },
+  "link.item.label.Tutorials and Guides": {
+    "message": "Eğitimler ve Rehberler",
+    "description": "The label of footer link with label=Tutorials and Guides linking to /tutorials/overview"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://www.theqrl.org/discord"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://www.theqrl.org/telegram"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/QRLedger"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/theQRL/"
+  },
+  "copyright": {
+    "message": "Telif Hakkı © The QRL - Docusaurus ile oluşturulmuştur.",
+    "description": "The footer copyright"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "version.label": {
+    "message": "Güncel",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Use The QRL": {
+    "message": "QRL'yi Kullanma",
+    "description": "The label for category Use The QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use The QRL.link.generated-index.title": {
+    "message": "QRL'yi Kullanma",
+    "description": "The generated-index page title for category Use The QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Use The QRL.link.generated-index.description": {
+    "message": "QRL Cüzdan kullanımı, Node kurulumu, Madencilik ve QRL Ağı ile etkileşimin tüm yönlerini kapsar",
+    "description": "The generated-index page description for category Use The QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Wallet": {
+    "message": "Cüzdan",
+    "description": "The label for category Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Wallet.link.generated-index.title": {
+    "message": "QRL Cüzdanı",
+    "description": "The generated-index page title for category Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Wallet.link.generated-index.description": {
+    "message": "Desteklenen tüm dağıtımlar ve cihazlarda QRL Cüzdanlarını kapsar.",
+    "description": "The generated-index page description for category Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Web Wallet": {
+    "message": "Web Cüzdanı",
+    "description": "The label for category Web Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Web Wallet.link.generated-index.title": {
+    "message": "QRL Web Cüzdanı",
+    "description": "The generated-index page title for category Web Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Web Wallet.link.generated-index.description": {
+    "message": "QRL Web Cüzdanı kullanımını kapsar.",
+    "description": "The generated-index page description for category Web Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Desktop Wallet": {
+    "message": "Masaüstü Cüzdanı",
+    "description": "The label for category Desktop Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Desktop Wallet.link.generated-index.title": {
+    "message": "QRL Masaüstü Cüzdanı",
+    "description": "The generated-index page title for category Desktop Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Desktop Wallet.link.generated-index.description": {
+    "message": "QRL Masaüstü Cüzdanı kullanımını kapsar.",
+    "description": "The generated-index page description for category Desktop Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Ledger Wallet": {
+    "message": "Ledger Cüzdanı",
+    "description": "The label for category Ledger Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Ledger Wallet.link.generated-index.title": {
+    "message": "QRL Ledger Cüzdanı",
+    "description": "The generated-index page title for category Ledger Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Ledger Wallet.link.generated-index.description": {
+    "message": "QRL Ledger cihazı kullanımını kapsar.",
+    "description": "The generated-index page description for category Ledger Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Mobile Wallet": {
+    "message": "Mobil Cüzdan",
+    "description": "The label for category Mobile Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Offline Wallet": {
+    "message": "Çevrimdışı Cüzdan",
+    "description": "The label for category Offline Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Offline Wallet.link.generated-index.title": {
+    "message": "QRL Çevrimdışı Cüzdanı",
+    "description": "The generated-index page title for category Offline Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Offline Wallet.link.generated-index.description": {
+    "message": "QRL çevrimdışı Cüzdan kullanımını kapsar.",
+    "description": "The generated-index page description for category Offline Wallet in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Mining": {
+    "message": "Madencilik",
+    "description": "The label for category Mining in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Mining.link.generated-index.title": {
+    "message": "QRL Madenciliği",
+    "description": "The generated-index page title for category Mining in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Mining.link.generated-index.description": {
+    "message": "QRL Madencilik konularını kapsar.",
+    "description": "The generated-index page description for category Mining in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node": {
+    "message": "Node",
+    "description": "The label for category Node in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node.link.generated-index.title": {
+    "message": "QRL Node",
+    "description": "The generated-index page title for category Node in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node.link.generated-index.description": {
+    "message": "QRL Node kurulumu ve işletimini kapsar.",
+    "description": "The generated-index page description for category Node in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node-CLI": {
+    "message": "Node-CLI",
+    "description": "The label for category Node-CLI in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node-CLI.link.generated-index.title": {
+    "message": "QRL Node-CLI",
+    "description": "The generated-index page title for category Node-CLI in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Node-CLI.link.generated-index.description": {
+    "message": "QRL node komut satırı araçları.",
+    "description": "The generated-index page description for category Node-CLI in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tools": {
+    "message": "Araçlar",
+    "description": "The label for category Tools in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tools.link.generated-index.title": {
+    "message": "QRL Araçları",
+    "description": "The generated-index page title for category Tools in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tools.link.generated-index.description": {
+    "message": "QRL Araçlarını kapsar.",
+    "description": "The generated-index page description for category Tools in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Explorer": {
+    "message": "Gezgin",
+    "description": "The label for category Explorer in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Explorer.link.generated-index.title": {
+    "message": "QRL Gezgini Kullanımı",
+    "description": "The generated-index page title for category Explorer in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Explorer.link.generated-index.description": {
+    "message": "QRL Gezgini'nin kullanımı.",
+    "description": "The generated-index page description for category Explorer in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Messages": {
+    "message": "Mesajlar",
+    "description": "The label for category Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Messages.link.generated-index.title": {
+    "message": "QRL Mesaj Kullanımı",
+    "description": "The generated-index page title for category Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Messages.link.generated-index.description": {
+    "message": "QRL Mesaj işlemi kullanımı",
+    "description": "The generated-index page description for category Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Multisig": {
+    "message": "Çoklu İmza",
+    "description": "The label for category Multisig in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Multisig.link.generated-index.title": {
+    "message": "QRL Çoklu İmza Kullanımı",
+    "description": "The generated-index page title for category Multisig in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Multisig.link.generated-index.description": {
+    "message": "Çoklu imza işlemi kullanımı ve rehberi.",
+    "description": "The generated-index page description for category Multisig in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Notarize": {
+    "message": "Noter Onayı",
+    "description": "The label for category Notarize in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Notarize.link.generated-index.title": {
+    "message": "Noter Onayı Kullanım Rehberi",
+    "description": "The generated-index page title for category Notarize in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Notarize.link.generated-index.description": {
+    "message": "Noter onayı işlevlerinin kullanımı.",
+    "description": "The generated-index page description for category Notarize in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tokens": {
+    "message": "Tokenlar",
+    "description": "The label for category Tokens in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tokens.link.generated-index.title": {
+    "message": "QRL Token Kullanımı",
+    "description": "The generated-index page title for category Tokens in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Tokens.link.generated-index.description": {
+    "message": "Token işlemleri ve kullanımı.",
+    "description": "The generated-index page description for category Tokens in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Integrations": {
+    "message": "Entegrasyonlar",
+    "description": "The label for category Integrations in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Integrations.link.generated-index.title": {
+    "message": "QRL Entegrasyonları",
+    "description": "The generated-index page title for category Integrations in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Integrations.link.generated-index.description": {
+    "message": "QRL'nin diğer projelerle entegrasyonları.",
+    "description": "The generated-index page description for category Integrations in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Build On QRL": {
+    "message": "QRL Üzerinde Geliştirme",
+    "description": "The label for category Build On QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Build On QRL.link.generated-index.title": {
+    "message": "Geliştirici Dokümanları",
+    "description": "The generated-index page title for category Build On QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Build On QRL.link.generated-index.description": {
+    "message": "QRL üzerinde geliştirme yapan geliştiriciler ve meraklılar için ileri düzey dokümantasyon.",
+    "description": "The generated-index page description for category Build On QRL in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Fundamentals": {
+    "message": "QRL Temelleri",
+    "description": "The label for category QRL Fundamentals in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Fundamentals.link.generated-index.title": {
+    "message": "QRL Temel Konuları",
+    "description": "The generated-index page title for category QRL Fundamentals in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Fundamentals.link.generated-index.description": {
+    "message": "QRL ile ilgili bazı temel konuları kapsar",
+    "description": "The generated-index page description for category QRL Fundamentals in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Messages": {
+    "message": "QRL Mesajları",
+    "description": "The label for category QRL Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Messages.link.generated-index.title": {
+    "message": "QRL Mesaj Kodlama Dokümantasyonu",
+    "description": "The generated-index page title for category QRL Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Messages.link.generated-index.description": {
+    "message": "Çeşitli QRL Mesaj İşlemi türleri için mesaj kodlama standardı",
+    "description": "The generated-index page description for category QRL Messages in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Addresses": {
+    "message": "QRL Adresleri",
+    "description": "The label for category QRL Addresses in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Addresses.link.generated-index.title": {
+    "message": "QRL Adres Dokümanları",
+    "description": "The generated-index page title for category QRL Addresses in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Addresses.link.generated-index.description": {
+    "message": "QRL Adres Şeması'nın yapı taşları: adreslerin nasıl oluşturulduğu ve arkasındaki kriptografi",
+    "description": "The generated-index page description for category QRL Addresses in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Helpers": {
+    "message": "QRL Yardımcı Kütüphaneleri",
+    "description": "The label for category QRL Helpers in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Helpers.link.generated-index.title": {
+    "message": "QRL Kod Kütüphaneleri ve Yardımcıları",
+    "description": "The generated-index page title for category QRL Helpers in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL Helpers.link.generated-index.description": {
+    "message": "QRL üzerinde geliştirmeye yardımcı olmak için hazırlanmış çeşitli yardımcı betikler.",
+    "description": "The generated-index page description for category QRL Helpers in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL API": {
+    "message": "QRL API",
+    "description": "The label for category QRL API in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL API.link.generated-index.title": {
+    "message": "API Dokümanları",
+    "description": "The generated-index page title for category QRL API in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.QRL API.link.generated-index.description": {
+    "message": "QRL üzerinde geliştirme yapan geliştiriciler için API dokümantasyonu.",
+    "description": "The generated-index page description for category QRL API in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.doc.Getting Started": {
+    "message": "Başlarken",
+    "description": "The label for the doc item Getting Started in sidebar docSidebar, linking to the doc getting-started"
+  },
+  "sidebar.docSidebar.doc.What Is The QRL": {
+    "message": "QRL Nedir",
+    "description": "The label for the doc item What Is The QRL in sidebar docSidebar, linking to the doc Learn/what-is-qrl"
+  },
+  "sidebar.tutorialSidebar.category.Node": {
+    "message": "Node",
+    "description": "The label for category Node in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Node.link.generated-index.title": {
+    "message": "QRL Node Eğitimleri",
+    "description": "The generated-index page title for category Node in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Node.link.generated-index.description": {
+    "message": "Node işlemleriyle ilgili rehberler.",
+    "description": "The generated-index page description for category Node in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wallet": {
+    "message": "Cüzdan",
+    "description": "The label for category Wallet in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wallet.link.generated-index.title": {
+    "message": "QRL Cüzdan Eğitimleri",
+    "description": "The generated-index page title for category Wallet in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wallet.link.generated-index.description": {
+    "message": "Cüzdan işlemleriyle ilgili rehberler.",
+    "description": "The generated-index page description for category Wallet in sidebar tutorialSidebar"
+  }
+}
