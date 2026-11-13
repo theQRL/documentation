@@ -47,7 +47,7 @@ const config = {
           //path: 'docs/',
           routeBasePath: '/', // Serve the docs at the site's root
           editUrl:
-            'https://github.com/theqrl.org/documentation',
+            'https://github.com/theQRL/documentation/edit/main/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },        
